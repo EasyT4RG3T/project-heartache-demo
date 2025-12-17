@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8tkwovpcmrta"]
+
+[ext_resource type="Script" uid="uid://wcbk1gsr8ak7" path="res://Entities/Player/flashlight.gd" id="1_j7gns"]
+
+[node name="Flashlight" type="Node3D"]
+script = ExtResource("1_j7gns")
+
+[node name="Light" type="SpotLight3D" parent="."]
+unique_name_in_owner = true
+visible = false
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 2.0
+shadow_opacity = 0.9
+shadow_blur = 2.0
+shadow_caster_mask = 4294966277
+spot_range = 5.5
+spot_angle = 25.0
+spot_angle_attenuation = 1.5

@@ -8,7 +8,15 @@ var inventory: Node
 var console_input: bool = false
 var menu_input: bool = false
 var inventory_input: bool = false
-var player_character_input: bool = false
+var player_character_input: bool = false:
+	set(value):
+		player_character_input = value
+		if !value and player_character:
+			player_character.movement_vector = Vector2.ZERO
+
+
+func _init() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
 func _input(event: InputEvent) -> void:

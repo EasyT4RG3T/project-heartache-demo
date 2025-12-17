@@ -1,2 +1,364 @@
 class_name PlayerCharacter
-extends Node3D
+extends CharacterBody3D
+
+
+const player_collision_height: float = 1.8
+const player_collision_position: Vector3 = Vector3(0, 0.9, 0)
+const player_crouch_collision_height: float = 0.8
+const player_crouch_collision_position: Vector3 = Vector3(0, 0.4, 0)
+func _check_can_uncrouch() -> bool:
+	player_shape_query.transform.origin = global_position + player_collision_position
+	if direct_space_state.intersect_shape(player_shape_query, 1):
+		return false
+	else:
+		player_crouch_query.transform.origin = global_position + player_crouch_head_position
+		if direct_space_state.intersect_shape(player_crouch_query, 1):
+			return false
+		return true
+
+const player_head_position: Vector3 = Vector3(0, 1.7, 0)
+const player_crouch_head_position: Vector3 = Vector3(0, 0.7, 0)
+
+var direct_space_state: PhysicsDirectSpaceState3D
+var player_shape_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.35, 1.8)
+var player_crouch_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.35, 0.8)
+
+
+@onready var body_collision: CollisionShape3D = %BodyCollision
+@onready var head: Node3D = %Head
+var head_tween: Tween
+func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Callable()) -> void:
+	if head.position.is_equal_approx(pos):
+		head.position = pos
+		if on_complete.is_valid():
+			on_complete.call()
+			return
+	
+	if head_tween:
+		head_tween.kill()
+	
+	head_tween = create_tween().set_ease(Tween.EASE_IN_OUT)\
+	.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	head_tween.tween_property(head, "position", pos, duration)
+	head_tween.finished.connect(func():
+		if on_complete.is_valid():
+			on_complete.call())
+
+@onready var player_hud: PlayerHUD = %PlayerHUD
+@onready var flashlight: Flashlight = %Flashlight
+
+@onready var main_camera: Camera3D = %MainCamera
+@onready var inventory_camera: Camera3D = %InventoryCamera
+@onready var inventory_sub_viewport: SubViewport = %InventorySubViewport
+@export var player_fov: float = 90
+var fov_tween: Tween
+func _change_fov_smooth(fov: float) -> void:
+	if fov_tween:
+		fov_tween.kill()
+	fov_tween = create_tween().set_ease(Tween.EASE_IN).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	fov_tween.tween_property(main_camera, "fov", fov, 0.3)
+
+@onready var dust_particles: GPUParticles3D = %DustParticles
+@onready var dust_collider: GPUParticlesCollisionBox3D = %DustCollider
+
+
+@export var mouse_sensitivity: float = 10.0
+var mouse_sensitivity_modifier: float = 0.0001
+var look_vector: Vector2 = Vector2.ZERO
+
+var movement_acceleration: float = 20.0
+var movement_vector: Vector2 = Vector2.ZERO
+var movement_vector_fly: float = 0.0
+var wanted_movement_direction: Vector2 = Vector2.ZERO
+enum MovementMode { NONE, FLY, WALKING, SPRINTING, CROUCHING, CARRYING, VAULTING }
+var movement_speeds: Dictionary[MovementMode, float] = {
+	MovementMode.NONE: 0,
+	MovementMode.FLY: 5,
+	MovementMode.WALKING: 2,
+	MovementMode.SPRINTING: 3.5,
+	MovementMode.CROUCHING: 1,
+	MovementMode.CARRYING: 1.5,
+	MovementMode.VAULTING: 0,
+}
+var current_movement_mode: MovementMode = MovementMode.WALKING
+var current_movement_speed: float = movement_speeds[MovementMode.WALKING]
+var movement_speed_tween: Tween
+var pre_fly_movement_mode: MovementMode = MovementMode.WALKING
+var pre_fly_movement_speed: float = movement_speeds[MovementMode.WALKING]
+
+const vault_distances: Dictionary = {
+	MovementMode.WALKING: 0.6,
+	MovementMode.SPRINTING: 0.8,
+	MovementMode.CROUCHING: 0.5,
+}
+var vault_distance: float = vault_distances[MovementMode.WALKING]
+var can_vault: bool = false
+
+var interaction_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+var interaction_ray_result: Dictionary:
+	set(value):
+		if value and value["collider"].has_method("interact"):
+			interaction_ray_result = value
+			player_hud.active = true
+		else:
+			interaction_ray_result = {}
+			player_hud.active = false
+
+
+func _ready() -> void:
+	direct_space_state = get_world_3d().direct_space_state
+	get_window().size_changed.connect(_update_sub_viewport)
+	_update_sub_viewport()
+
+
+func take_input(event: InputEvent) -> void:
+	_handle_camera_input(event)
+	_handle_movement_input(event)
+	_handle_action_input(event)
+
+
+func _handle_camera_input(event: InputEvent) -> void:
+	if event is not InputEventMouseMotion: return
+	
+	var raw_input: Vector2 = event.relative * mouse_sensitivity * mouse_sensitivity_modifier
+	
+	look_vector -= raw_input
+	
+	look_vector.x = wrapf(look_vector.x, -PI, PI)
+	look_vector.y = clamp(look_vector.y, -PI / 2.2, PI / 2.2)
+	
+	var look_rotation_x = Quaternion(Vector3.UP, look_vector.x)
+	var look_rotation_y = Quaternion(Vector3.RIGHT, look_vector.y)
+	
+	head.quaternion = look_rotation_x * look_rotation_y
+
+
+func _handle_movement_input(event: InputEvent) -> void:
+	movement_vector = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	movement_vector_fly = Input.get_axis("crouch", "vault")
+	
+	if event.is_action_pressed("sprint"):
+		match current_movement_mode:
+			MovementMode.WALKING:
+				if !movement_vector.y < 0: return
+				change_movement_mode(MovementMode.SPRINTING)
+			MovementMode.SPRINTING:
+				change_movement_mode(MovementMode.WALKING)
+			MovementMode.CROUCHING:
+				if !_check_can_uncrouch(): return
+				change_movement_mode(MovementMode.SPRINTING)
+	
+	if event.is_action_pressed("crouch"):
+		match current_movement_mode:
+			MovementMode.WALKING:
+				change_movement_mode(MovementMode.CROUCHING)
+			MovementMode.SPRINTING:
+				change_movement_mode(MovementMode.CROUCHING)
+			MovementMode.CROUCHING:
+				if !_check_can_uncrouch(): return
+				change_movement_mode(MovementMode.WALKING)
+	
+	#if event.is_action_pressed("vault"):
+	#	if !can_vault: return
+	#	match current_movement_mode:
+	#		MovementMode.WALKING:
+	#			_vault()
+	#		MovementMode.SPRINTING:
+	#			_vault()
+	#		MovementMode.CROUCHING:
+	#			_vault()
+
+
+func _handle_action_input(event: InputEvent) -> void:
+	if event.is_action_pressed("flashlight"):
+		if !flashlight.disabled:
+			#if current_movement_mode != MovementMode.CARRYING:
+				flashlight.switch()
+
+
+func change_movement_mode(mode: MovementMode) -> void:
+	exit_movement_mode(current_movement_mode)
+	current_movement_mode = mode
+	match mode:
+		MovementMode.WALKING:
+			change_movement_speed(movement_speeds[MovementMode.WALKING])
+			_change_fov_smooth(player_fov)
+			vault_distance = vault_distances[MovementMode.WALKING]
+		MovementMode.SPRINTING:
+			change_movement_speed(movement_speeds[MovementMode.SPRINTING])
+			_change_fov_smooth(player_fov + 10)
+			vault_distance = vault_distances[MovementMode.SPRINTING]
+		MovementMode.CROUCHING:
+			change_movement_speed(movement_speeds[MovementMode.CROUCHING])
+			_change_fov_smooth(player_fov - 10)
+			body_collision.shape.height = player_crouch_collision_height
+			body_collision.position = player_crouch_collision_position
+			vault_distance = vault_distances[MovementMode.CROUCHING]
+			_move_head_smooth(player_crouch_head_position, 0.3)
+		MovementMode.CARRYING:
+			change_movement_speed(movement_speeds[MovementMode.CARRYING])
+			_change_fov_smooth(player_fov - 5)
+			can_vault = false
+			flashlight.turn_off()
+		MovementMode.VAULTING:
+			can_vault = false
+
+
+func exit_movement_mode(mode: MovementMode) -> void:
+	match mode:
+		MovementMode.CROUCHING:
+			body_collision.shape.height = player_collision_height
+			body_collision.position.y = player_collision_position.y
+			_move_head_smooth(player_head_position, 0.3)
+
+
+func change_movement_speed(speed: float) -> void:
+	if movement_speed_tween:
+		movement_speed_tween.kill()
+	
+	movement_speed_tween = create_tween().set_ease(Tween.EASE_OUT)\
+	.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	movement_speed_tween.tween_property(self, "current_movement_speed", speed, 0.5)
+
+
+func _process(delta: float) -> void:
+	interaction_ray_query.from = main_camera.global_position
+	interaction_ray_query.to = head.global_position - main_camera.global_basis.z *\
+		clampf(abs(head.rotation.x) * 2, 1.2, 1.6)
+	
+	interaction_ray_result = direct_space_state.intersect_ray(interaction_ray_query)
+	
+	flashlight.global_position = head.global_position
+	flashlight.global_rotation.x = lerpf(
+		flashlight.global_rotation.x,
+		head.global_rotation.x,
+		delta * 20
+	)
+	flashlight.global_rotation.y = lerp_angle(
+		flashlight.global_rotation.y,
+		head.global_rotation.y,
+		delta * 20)
+
+
+func _physics_process(delta: float) -> void:
+	dust_particles.global_position = main_camera.global_position - main_camera.global_basis.z * 2
+	
+	match current_movement_mode:
+		MovementMode.NONE:
+			pass
+		MovementMode.WALKING:
+			_on_ground_movement(delta)
+		MovementMode.SPRINTING:
+			_on_ground_movement(delta)
+			if !movement_vector.y < 0:
+				change_movement_mode(MovementMode.WALKING)
+		MovementMode.CROUCHING:
+			_on_ground_movement(delta)
+		MovementMode.CARRYING:
+			_on_ground_movement(delta)
+		MovementMode.VAULTING:
+			pass
+		MovementMode.FLY:
+			_apply_fly_velocity(delta, current_movement_speed)
+			move_and_slide()
+
+
+func _on_ground_movement(delta: float) -> void:
+	_apply_velocity(delta, current_movement_speed)
+	if is_on_floor():
+		_step_check()
+	else:
+		_gravity(delta)
+	move_and_slide()
+
+
+func _apply_velocity(delta: float, wanted_movement_speed: float) -> void:
+	wanted_movement_direction = movement_vector.rotated(-head.rotation.y)
+	var target_velocity: Vector2 = wanted_movement_direction * wanted_movement_speed
+	
+	velocity.x = lerpf(velocity.x, target_velocity.x, 1.0 - exp(-movement_acceleration * delta))
+	if is_equal_approx(velocity.x, target_velocity.x):
+		velocity.x = target_velocity.x
+	velocity.z = lerpf(velocity.z, target_velocity.y, 1.0 - exp(-movement_acceleration * delta))
+	if is_equal_approx(velocity.z, target_velocity.y):
+		velocity.z = target_velocity.y
+
+
+func _apply_fly_velocity(delta: float, wanted_movement_speed: float) -> void:
+	var forward = -head.basis.z * -movement_vector.y
+	var right = head.basis.x * movement_vector.x
+	var up = Vector3.UP * movement_vector_fly
+	
+	if Input.is_action_pressed("fly_speed_up"):
+		wanted_movement_speed *= 1.5
+	elif Input.is_action_pressed("fly_speed_down"):
+		wanted_movement_speed *= 0.5
+	
+	var target_velocity: Vector3 = (forward + right + up) * wanted_movement_speed
+	
+	for i in range(3):
+		velocity[i] = lerpf(velocity[i], target_velocity[i], 1.0 - exp(-movement_acceleration * delta))
+		if is_equal_approx(velocity[i], target_velocity[i]):
+			velocity[i] = target_velocity[i]
+
+
+func _gravity(delta: float) -> void:
+	velocity.y -= 50 * delta
+
+
+func _step_check() -> void:
+	if !is_on_wall(): return
+	
+	var move_direction: Vector2 = wanted_movement_direction \
+		if wanted_movement_direction != Vector2.ZERO else Vector2(velocity.x, velocity.z).normalized()
+	
+	if move_direction.length() < 0.1:
+		return
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		
+		var to_collision: Vector3 = collision.get_position() - global_position
+		var to_collision_xz: Vector2 = Vector2(to_collision.x, to_collision.z).normalized()
+		
+		if move_direction.dot(to_collision_xz) < 0: continue
+		
+		to_collision_xz = to_collision_xz.limit_length(0.01)
+		
+		var high_difference: float = (collision.get_position().y - position.y)
+		if high_difference > 0.345: continue
+		
+		var step_ray = PhysicsRayQueryParameters3D.new()
+		step_ray.from = collision.get_position() + Vector3(to_collision_xz.x, 0.05, to_collision_xz.y)
+		step_ray.to = collision.get_position() + Vector3(to_collision_xz.x, -0.25, to_collision_xz.y)
+		var result = direct_space_state.intersect_ray(step_ray)
+		var step_point = result.get("position")
+		var step_normal = result.get("normal")
+		
+		if !step_normal: continue
+		if abs(step_normal.dot(Vector3.UP)) < 0.701: continue
+		
+		var step_pos_multiplier: float = high_difference * 2
+		
+		var to_step: Vector3 = step_point - global_position
+		
+		var step_position = global_position + Vector3(
+			to_step.x * step_pos_multiplier,
+			to_step.y,
+			to_step.z * step_pos_multiplier
+		)
+		
+		if current_movement_mode == MovementMode.CROUCHING:
+			player_crouch_query.transform.origin = step_position + player_crouch_collision_position
+			if !direct_space_state.intersect_shape(player_crouch_query, 1):
+				position = step_position
+				break
+		else:
+			player_shape_query.transform.origin = step_position + player_collision_position
+			if !direct_space_state.intersect_shape(player_shape_query, 1):
+				position = step_position
+				break
+
+
+func _update_sub_viewport() -> void:
+	inventory_sub_viewport.size = get_window().size

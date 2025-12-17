@@ -1,6 +1,92 @@
-[gd_scene load_steps=2 format=3 uid="uid://c28pkwyvm76o1"]
+[gd_scene load_steps=10 format=3 uid="uid://c28pkwyvm76o1"]
 
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
+[ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
+[ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/flashlight.tscn" id="2_stcdd"]
+[ext_resource type="PackedScene" uid="uid://c0tamd213o31x" path="res://Entities/Player/player_hud.tscn" id="3_b2vmj"]
+[ext_resource type="Shader" uid="uid://bwrc3gdocmt4n" path="res://Assets/Shaders/skinamarink.gdshader" id="3_lobkq"]
+[ext_resource type="PackedScene" path="res://Entities/Player/dust_particles.tscn" id="6_d821y"]
+[ext_resource type="PackedScene" path="res://Entities/Player/gpu_particles_collision_box_3d.tscn" id="7_3xgjn"]
 
-[node name="PlayerCharacter" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lobkq"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2vmj"]
+shader = ExtResource("3_lobkq")
+shader_parameter/threshold = 0.4
+shader_parameter/blur_size = 0.002
+shader_parameter/grain_intensity = 0.2
+shader_parameter/grain_blur_size = 5.0
+
+[node name="PlayerCharacter" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_12kfy")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_lobkq")
+
+[node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Flashlight" parent="Head" instance=ExtResource("2_stcdd")]
+unique_name_in_owner = true
+
+[node name="MainCamera" type="Camera3D" parent="Head"]
+unique_name_in_owner = true
+cull_mask = 1047553
+environment = ExtResource("2_f477v")
+fov = 80.0
+far = 100.0
+
+[node name="PlayerHUD" parent="Head/MainCamera" instance=ExtResource("3_b2vmj")]
+unique_name_in_owner = true
+z_index = -1
+
+[node name="Shader" type="ColorRect" parent="Head/MainCamera"]
+unique_name_in_owner = true
+z_index = -2
+material = SubResource("ShaderMaterial_b2vmj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InventorySubViewportContainer" type="SubViewportContainer" parent="Head/MainCamera"]
+unique_name_in_owner = true
+z_index = -3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InventorySubViewport" type="SubViewport" parent="Head/MainCamera/InventorySubViewportContainer"]
+unique_name_in_owner = true
+transparent_bg = true
+handle_input_locally = false
+positional_shadow_atlas_16_bits = false
+positional_shadow_atlas_quad_2 = 2
+positional_shadow_atlas_quad_3 = 2
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="InventoryCamera" type="Camera3D" parent="Head/MainCamera/InventorySubViewportContainer/InventorySubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+cull_mask = 1047554
+environment = ExtResource("2_f477v")
+fov = 60.0
+far = 5.0
+
+[node name="DustParticles" parent="Head/MainCamera" instance=ExtResource("6_d821y")]
+unique_name_in_owner = true
+
+[node name="DustCollider" parent="Head/MainCamera" instance=ExtResource("7_3xgjn")]
+unique_name_in_owner = true

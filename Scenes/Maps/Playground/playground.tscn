@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://clfnlnf15u3v"]
+
+[node name="Playground" type="Node3D"]
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+size = Vector3(50, 0.1, 50)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9659259, -0.1294096, 0.22414392, -0.12940955, 0.5085185, 0.8512709, -0.22414395, -0.8512709, 0.47444433, 0, 4, 0)
