@@ -24,5 +24,4 @@ func close() -> void:
 
 
 func take_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_page_down"):
-		print("console pg down")
+	pass

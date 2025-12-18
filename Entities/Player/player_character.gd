@@ -86,13 +86,18 @@ var movement_speed_tween: Tween
 var pre_fly_movement_mode: MovementMode = MovementMode.WALKING
 var pre_fly_movement_speed: float = movement_speeds[MovementMode.WALKING]
 
-const vault_distances: Dictionary = {
-	MovementMode.WALKING: 0.6,
-	MovementMode.SPRINTING: 0.8,
-	MovementMode.CROUCHING: 0.5,
-}
-var vault_distance: float = vault_distances[MovementMode.WALKING]
-var can_vault: bool = false
+var vault_checks: VaultChecks = VaultChecks.new()
+var vault_position: Vector3 = Vector3.ZERO
+var can_vault: bool = false:
+	set(value):
+		can_vault = value
+		if value:
+			player_hud.vault = true
+			#_raise_player_hands(true)
+		else:
+			player_hud.vault = false
+			#_raise_player_hands(false)
+var player_tween: Tween
 
 var interaction_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var interaction_ray_result: Dictionary:
@@ -109,6 +114,7 @@ func _ready() -> void:
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
+	vault_checks.p = self
 
 
 func take_input(event: InputEvent) -> void:
@@ -158,15 +164,15 @@ func _handle_movement_input(event: InputEvent) -> void:
 				if !_check_can_uncrouch(): return
 				change_movement_mode(MovementMode.WALKING)
 	
-	#if event.is_action_pressed("vault"):
-	#	if !can_vault: return
-	#	match current_movement_mode:
-	#		MovementMode.WALKING:
-	#			_vault()
-	#		MovementMode.SPRINTING:
-	#			_vault()
-	#		MovementMode.CROUCHING:
-	#			_vault()
+	if event.is_action_pressed("vault"):
+		if !can_vault: return
+		match current_movement_mode:
+			MovementMode.WALKING:
+				_vault()
+			MovementMode.SPRINTING:
+				_vault()
+			MovementMode.CROUCHING:
+				_vault()
 
 
 func _handle_action_input(event: InputEvent) -> void:
@@ -183,17 +189,17 @@ func change_movement_mode(mode: MovementMode) -> void:
 		MovementMode.WALKING:
 			change_movement_speed(movement_speeds[MovementMode.WALKING])
 			_change_fov_smooth(player_fov)
-			vault_distance = vault_distances[MovementMode.WALKING]
+			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.WALKING]
 		MovementMode.SPRINTING:
 			change_movement_speed(movement_speeds[MovementMode.SPRINTING])
 			_change_fov_smooth(player_fov + 10)
-			vault_distance = vault_distances[MovementMode.SPRINTING]
+			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.SPRINTING]
 		MovementMode.CROUCHING:
 			change_movement_speed(movement_speeds[MovementMode.CROUCHING])
 			_change_fov_smooth(player_fov - 10)
 			body_collision.shape.height = player_crouch_collision_height
 			body_collision.position = player_crouch_collision_position
-			vault_distance = vault_distances[MovementMode.CROUCHING]
+			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
 			_move_head_smooth(player_crouch_head_position, 0.3)
 		MovementMode.CARRYING:
 			change_movement_speed(movement_speeds[MovementMode.CARRYING])
@@ -248,12 +254,15 @@ func _physics_process(delta: float) -> void:
 			pass
 		MovementMode.WALKING:
 			_on_ground_movement(delta)
+			_vault_check()
 		MovementMode.SPRINTING:
 			_on_ground_movement(delta)
 			if !movement_vector.y < 0:
 				change_movement_mode(MovementMode.WALKING)
+			_vault_check()
 		MovementMode.CROUCHING:
 			_on_ground_movement(delta)
+			_vault_check()
 		MovementMode.CARRYING:
 			_on_ground_movement(delta)
 		MovementMode.VAULTING:
@@ -360,5 +369,55 @@ func _step_check() -> void:
 				break
 
 
+func _vault_check() -> void:
+	if !is_on_floor(): return
+	
+	vault_checks.check()
+
+
+func _vault() -> void:
+	var pre_vault_movement_mode = current_movement_mode
+	if current_movement_mode != MovementMode.CROUCHING or vault_checks.vault_uncrouch_height == Vector3.ZERO:
+		current_movement_mode = MovementMode.VAULTING
+		_move_player_smooth(vault_position, 0.4, func():
+			current_movement_mode = pre_vault_movement_mode)
+		return
+	
+	current_movement_mode = MovementMode.VAULTING
+	if vault_checks.vault_crouch_mid == Vector3.ZERO:
+		_move_player_smooth(global_position + vault_checks.vault_uncrouch_height, 0.2, func():
+			_move_player_smooth(vault_position, 0.4, func():
+				current_movement_mode = pre_vault_movement_mode))
+		return
+	
+	_move_player_smooth(global_position + vault_checks.vault_uncrouch_height, 0.2, func():
+		_move_player_smooth(vault_checks.vault_crouch_mid, 0.4, func():
+			_move_player_smooth(vault_position, 0.2, func():
+				current_movement_mode = pre_vault_movement_mode)))
+
+
+func _move_player_smooth(pos: Vector3, duration: float, on_complete: Callable = Callable()) -> void:
+	if global_position.is_equal_approx(pos):
+		global_position = pos
+		if on_complete.is_valid():
+			on_complete.call()
+			return
+	
+	if player_tween:
+		player_tween.kill()
+	
+	player_tween = create_tween().set_ease(Tween.EASE_IN_OUT)\
+	.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	player_tween.tween_property(self, "global_position", pos, duration)
+	player_tween.finished.connect(func():
+		if on_complete.is_valid():
+			on_complete.call())
+
+
 func _update_sub_viewport() -> void:
 	inventory_sub_viewport.size = get_window().size
+
+
+func apply_settings() -> void:
+	player_fov = SaverLoader.settings.fov
+	main_camera.fov = player_fov

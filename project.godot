@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 GameManager="*res://Scripts/Autoloads/game_manager.gd"
 InputManager="*res://Scripts/Autoloads/input_manager.gd"
 Console="*res://Scripts/Autoloads/console.tscn"
-Saverloader="*res://Scripts/Autoloads/saverloader.gd"
+SaverLoader="*res://Scripts/Autoloads/saverloader.gd"
 
 [display]
 
@@ -96,6 +96,7 @@ flashlight={
 
 3d_render/layer_1="Main"
 3d_render/layer_2="Inventory"
+3d_render/layer_3="Dynamic"
 3d_physics/layer_1="World"
 3d_physics/layer_2="Player"
 

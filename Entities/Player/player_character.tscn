@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://c28pkwyvm76o1"]
+[gd_scene load_steps=11 format=3 uid="uid://c28pkwyvm76o1"]
 
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
 [ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/flashlight.tscn" id="2_stcdd"]
 [ext_resource type="PackedScene" uid="uid://c0tamd213o31x" path="res://Entities/Player/player_hud.tscn" id="3_b2vmj"]
 [ext_resource type="Shader" uid="uid://bwrc3gdocmt4n" path="res://Assets/Shaders/skinamarink.gdshader" id="3_lobkq"]
-[ext_resource type="PackedScene" path="res://Entities/Player/dust_particles.tscn" id="6_d821y"]
-[ext_resource type="PackedScene" path="res://Entities/Player/gpu_particles_collision_box_3d.tscn" id="7_3xgjn"]
+[ext_resource type="Script" uid="uid://cvox7ompr4c2t" path="res://Entities/Player/main_camera.gd" id="4_3xgjn"]
+[ext_resource type="PackedScene" uid="uid://y8bwsn68l4yx" path="res://Entities/Player/dust_particles.tscn" id="6_d821y"]
+[ext_resource type="PackedScene" uid="uid://cei20eyprbmtm" path="res://Entities/Player/dust_collider.tscn" id="7_3xgjn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lobkq"]
 radius = 0.35
@@ -41,6 +42,7 @@ cull_mask = 1047553
 environment = ExtResource("2_f477v")
 fov = 80.0
 far = 100.0
+script = ExtResource("4_3xgjn")
 
 [node name="PlayerHUD" parent="Head/MainCamera" instance=ExtResource("3_b2vmj")]
 unique_name_in_owner = true
