@@ -25,6 +25,7 @@ var player_crouch_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_quer
 
 
 @onready var body_collision: CollisionShape3D = %BodyCollision
+@onready var head_collision: CollisionShape3D = %HeadCollision
 @onready var head: Node3D = %Head
 var head_tween: Tween
 func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Callable()) -> void:
@@ -247,6 +248,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	head_collision.position = head.position + Vector3(0, -0.35, 0)
 	dust_particles.global_position = main_camera.global_position - main_camera.global_basis.z * 2
 	
 	match current_movement_mode:

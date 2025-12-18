@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c28pkwyvm76o1"]
+[gd_scene load_steps=12 format=3 uid="uid://c28pkwyvm76o1"]
 
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
@@ -13,6 +13,9 @@
 radius = 0.35
 height = 1.8
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3xgjn"]
+radius = 0.35
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2vmj"]
 shader = ExtResource("3_lobkq")
 shader_parameter/threshold = 0.4
@@ -20,7 +23,7 @@ shader_parameter/blur_size = 0.002
 shader_parameter/grain_intensity = 0.2
 shader_parameter/grain_blur_size = 5.0
 
-[node name="PlayerCharacter" type="CharacterBody3D"]
+[node name="PlayerCharacter" type="CharacterBody3D" groups=["PlayerCharacter"]]
 collision_layer = 2
 script = ExtResource("1_12kfy")
 
@@ -28,6 +31,11 @@ script = ExtResource("1_12kfy")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_lobkq")
+
+[node name="HeadCollision" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+shape = SubResource("SphereShape3D_3xgjn")
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true

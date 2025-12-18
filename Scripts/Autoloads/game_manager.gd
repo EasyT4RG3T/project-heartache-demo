@@ -4,13 +4,17 @@ extends Node
 var player_character: PlayerCharacter
 
 
+func _init() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
 func load_playground() -> void:
 	var playground = load("res://Scenes/Maps/Playground/playground.tscn")
 	playground = playground.instantiate()
-	add_child(playground)
+	Game.add_child(playground)
 	var player = load("res://Entities/Player/player_character.tscn")
 	player = player.instantiate()
-	add_child(player)
+	Game.add_child(player)
 	player_character = player
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 	InputManager.player_character = player
