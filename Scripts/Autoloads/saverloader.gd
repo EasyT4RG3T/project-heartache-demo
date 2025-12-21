@@ -50,6 +50,9 @@ func save_game_data(slot: int) -> void:
 func load_game_data(slot: int) -> void:
 	_queue_function("load_game_data", slot)
 
+func erase_game_data(slot: int) -> void:
+	_queue_function("erase_game_data", slot)
+
 func save_temp() -> void:
 	_queue_function("save_temp")
 
@@ -249,14 +252,14 @@ func _remove_json(path: String) -> String:
 func _save_game_data(slot) -> void:
 	save_requsted.emit()
 	print("save game on slot: ", slot)
-	pass
 
 
 func _load_game_data(slot) -> void:
 	print("load game from slot: ", slot)
 
 
-
+func _erase_game_data(slot) -> void:
+	print("erased game from slot: ", slot)
 
 
 

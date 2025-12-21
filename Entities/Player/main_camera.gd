@@ -16,7 +16,7 @@ func apply_settings() -> void:
 	environment.ssao_power = SaverLoader.graphics_settings.ssao_power
 	environment.ssao_detail = SaverLoader.graphics_settings.ssao_detail
 	environment.ssao_horizon = SaverLoader.graphics_settings.ssao_horizon
-	environment.ssao_sharpness = SaverLoader.graphics_settings.ssao_shapness
+	environment.ssao_sharpness = SaverLoader.graphics_settings.ssao_sharpness
 	environment.ssao_light_affect = SaverLoader.graphics_settings.ssao_light_affect
 	
 	environment.ssil_enabled = SaverLoader.graphics_settings.ssil_enabled

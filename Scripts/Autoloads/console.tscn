@@ -51,7 +51,6 @@ layout_mode = 2
 placeholder_text = "Command"
 emoji_menu_enabled = false
 backspace_deletes_composite_character_enabled = true
-shortcut_keys_enabled = false
 virtual_keyboard_enabled = false
 tab_input_mode = false
 scroll_fit_content_height = true
@@ -61,13 +60,11 @@ caret_multiple = false
 [node name="CommandHint" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -58.0
-offset_right = 40.000023
-offset_bottom = -35.0
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.945
+anchor_right = 0.005
+anchor_bottom = 0.945
 grow_vertical = 0
 mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_jnqr3")
@@ -76,5 +73,6 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 shortcut_keys_enabled = false
+vertical_alignment = 2
 
 [connection signal="text_changed" from="VBoxContainer/CommandLine" to="." method="_on_command_line_text_changed"]
