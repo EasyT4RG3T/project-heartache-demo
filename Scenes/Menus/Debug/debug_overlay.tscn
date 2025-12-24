@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://be8nto6fraipm"]
+
+[ext_resource type="Script" uid="uid://7alvm4cbkvfg" path="res://Scenes/Menus/Debug/debug_overlay.gd" id="1_4vfu0"]
+
+[node name="DebugOverlay" type="Control"]
+z_index = 250
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vfu0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FPSLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FPS:"
+
+[node name="PositionLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pos: "
+
+[node name="RotationLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rot: "
+
+[node name="VaultsLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Vault: "

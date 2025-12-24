@@ -6,48 +6,69 @@ var debug: bool = false:
 		debug = value
 		match value:
 			true:
-				add_child(d_crouch_mesh)
+				d_crouch_mesh = ShapeHelper.create_capsule_mesh(0.35, 0.8, Color.RED, 0.5)
+				p.add_child(d_crouch_mesh)
 				d_crouch_mesh.top_level = true
-				add_child(d_player_mesh)
+				d_player_mesh = ShapeHelper.create_capsule_mesh(0.35, 1.8, Color.RED, 0.5)
+				p.add_child(d_player_mesh)
 				d_player_mesh.top_level = true
-				add_child(d_v_check_mesh)
+				d_v_check_mesh = ShapeHelper.create_cylinder_mesh(0.15, 0.655, Color.DEEP_PINK, 0.5)
+				p.add_child(d_v_check_mesh)
 				d_v_check_mesh.top_level = true
-				add_child(d_v_height_mesh)
+				d_v_height_mesh = ShapeHelper.create_sphere_mesh(0.35, Color.AQUA, 0.5)
+				p.add_child(d_v_height_mesh)
 				d_v_height_mesh.top_level = true
-				add_child(d_v_height_floor_mesh)
+				d_v_height_floor_mesh = ShapeHelper.create_sphere_mesh(0.35, Color.SKY_BLUE, 0.5)
+				p.add_child(d_v_height_floor_mesh)
 				d_v_height_floor_mesh.top_level = true
-				add_child(d_v_floor_mesh_1)
+				d_v_floor_mesh_1 = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
+				p.add_child(d_v_floor_mesh_1)
 				d_v_floor_mesh_1.top_level = true
-				add_child(d_v_floor_mesh_2)
+				d_v_floor_mesh_2 = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
+				p.add_child(d_v_floor_mesh_2)
 				d_v_floor_mesh_2.top_level = true
-				add_child(d_v_floor_mesh_3)
+				d_v_floor_mesh_3 = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
+				p.add_child(d_v_floor_mesh_3)
 				d_v_floor_mesh_3.top_level = true
-				add_child(d_v_floor_mesh_4)
+				d_v_floor_mesh_4 = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
+				p.add_child(d_v_floor_mesh_4)
 				d_v_floor_mesh_4.top_level = true
-				add_child(d_v_point_mesh)
+				d_v_point_mesh = ShapeHelper.create_sphere_mesh(0.02, Color.WHITE, 1)
+				p.add_child(d_v_point_mesh)
 				d_v_point_mesh.top_level = true
 			false:
-				remove_child(d_crouch_mesh)
-				remove_child(d_player_mesh)
-				remove_child(d_v_check_mesh)
-				remove_child(d_v_height_mesh)
-				remove_child(d_v_height_floor_mesh)
-				remove_child(d_v_floor_mesh_1)
-				remove_child(d_v_floor_mesh_2)
-				remove_child(d_v_floor_mesh_3)
-				remove_child(d_v_floor_mesh_4)
-				remove_child(d_v_point_mesh)
+				d_crouch_mesh.queue_free()
+				d_player_mesh.queue_free()
+				d_v_check_mesh.queue_free()
+				d_v_height_mesh.queue_free()
+				d_v_height_floor_mesh.queue_free()
+				d_v_floor_mesh_1.queue_free()
+				d_v_floor_mesh_2.queue_free()
+				d_v_floor_mesh_3.queue_free()
+				d_v_floor_mesh_4.queue_free()
+				d_v_point_mesh.queue_free()
+				await get_tree().process_frame
+				d_crouch_mesh = null
+				d_player_mesh = null
+				d_v_check_mesh = null
+				d_v_height_mesh = null
+				d_v_height_floor_mesh = null
+				d_v_floor_mesh_1 = null
+				d_v_floor_mesh_2 = null
+				d_v_floor_mesh_3 = null
+				d_v_floor_mesh_4 = null
+				d_v_point_mesh = null
 
-var d_crouch_mesh: MeshInstance3D = ShapeHelper.create_capsule_mesh(0.35, 0.8, Color.RED, 0.5)
-var d_player_mesh: MeshInstance3D = ShapeHelper.create_capsule_mesh(0.35, 1.8, Color.RED, 0.5)
-var d_v_check_mesh: MeshInstance3D = ShapeHelper.create_cylinder_mesh(0.15, 0.655, Color.DEEP_PINK, 0.5)
-var d_v_height_mesh: MeshInstance3D = ShapeHelper.create_sphere_mesh(0.35, Color.AQUA, 0.5)
-var d_v_height_floor_mesh: MeshInstance3D = ShapeHelper.create_sphere_mesh(0.35, Color.SKY_BLUE, 0.5)
-var d_v_floor_mesh_1: MeshInstance3D = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
-var d_v_floor_mesh_2: MeshInstance3D = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
-var d_v_floor_mesh_3: MeshInstance3D = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
-var d_v_floor_mesh_4: MeshInstance3D = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
-var d_v_point_mesh: MeshInstance3D = ShapeHelper.create_sphere_mesh(0.02, Color.WHITE, 1)
+var d_crouch_mesh: MeshInstance3D
+var d_player_mesh: MeshInstance3D
+var d_v_check_mesh: MeshInstance3D
+var d_v_height_mesh: MeshInstance3D
+var d_v_height_floor_mesh: MeshInstance3D
+var d_v_floor_mesh_1: MeshInstance3D
+var d_v_floor_mesh_2: MeshInstance3D
+var d_v_floor_mesh_3: MeshInstance3D
+var d_v_floor_mesh_4: MeshInstance3D
+var d_v_point_mesh: MeshInstance3D
 
 
 const vault_max_height: float = 1.36
@@ -125,15 +146,14 @@ func check() -> void:
 		p.MovementMode.CROUCHING:
 			if _vault_crouch_cast(p.vault_position):
 				p.can_vault = true
-				vault_error = "can_vault"
 				return
 		_:
 			if _vault_standing_cast(p.vault_position):
 				p.can_vault = true
-				vault_error = "can_vault"
 				return
 	
 	p.can_vault = false
+	vault_error = "something went wrong"
 
 
 func _vault_end_point_set(point: Vector3, normal: Vector3) -> bool:
@@ -227,10 +247,10 @@ func _vault_floor_check(check_pos: Vector3) -> bool:
 	]
 	
 	if debug:
-		d_v_floor_mesh_1.p.global_position = vault_floor_checks[0] - Vector3(0, 0.1, 0)
-		d_v_floor_mesh_2.p.global_position = vault_floor_checks[1] - Vector3(0, 0.1, 0)
-		d_v_floor_mesh_3.p.global_position = vault_floor_checks[2] - Vector3(0, 0.1, 0)
-		d_v_floor_mesh_4.p.global_position = vault_floor_checks[3] - Vector3(0, 0.1, 0)
+		d_v_floor_mesh_1.global_position = vault_floor_checks[0] - Vector3(0, 0.1, 0)
+		d_v_floor_mesh_2.global_position = vault_floor_checks[1] - Vector3(0, 0.1, 0)
+		d_v_floor_mesh_3.global_position = vault_floor_checks[2] - Vector3(0, 0.1, 0)
+		d_v_floor_mesh_4.global_position = vault_floor_checks[3] - Vector3(0, 0.1, 0)
 	
 	for pos in vault_floor_checks:
 		vault_ray_query.from = pos
@@ -264,9 +284,9 @@ func _vault_height_adjust(pos: Vector3) -> Vector3:
 	vault_height_query.motion = Vector3(0, -0.45, 0)
 	
 	if debug:
-		d_v_height_mesh.p.global_position = vault_height_query.transform.origin
-		d_v_height_floor_mesh.p.global_position = vault_height_query.transform.origin + vault_height_query.motion
-		d_v_height_floor_mesh.p.global_position.y += 0.35
+		d_v_height_mesh.global_position = vault_height_query.transform.origin
+		d_v_height_floor_mesh.global_position = vault_height_query.transform.origin + vault_height_query.motion
+		d_v_height_floor_mesh.global_position.y += 0.35
 	
 	var vault_height_result = p.direct_space_state.cast_motion(vault_height_query)
 	
@@ -294,7 +314,7 @@ func _vault_end_point_final(point: Vector3) -> bool:
 
 func _vault_standing_cast(vault_end_point: Vector3) -> bool:
 	if debug:
-		d_player_mesh.p.global_position = vault_end_point + p.player_collision_position
+		d_player_mesh.global_position = vault_end_point + p.player_collision_position
 	
 	vault_fit_query.transform.origin = p.global_position + vault_fit_query_position
 	vault_fit_query.motion = vault_end_point - p.global_position
@@ -310,7 +330,7 @@ func _vault_standing_cast(vault_end_point: Vector3) -> bool:
 
 func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 	if debug:
-		d_crouch_mesh.p.global_position = vault_end_point + p.player_crouch_collision_position
+		d_crouch_mesh.global_position = vault_end_point + p.player_crouch_collision_position
 	
 	vault_fit_query.transform.origin = p.global_position + vault_fit_query_crouch_position
 	vault_fit_query.motion = vault_end_point - p.global_position

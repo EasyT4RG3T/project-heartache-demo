@@ -1,6 +1,8 @@
 extends Node
 
 
+var debug_overlay: DebugOverlay
+
 var player_character: PlayerCharacter
 
 
@@ -79,3 +81,15 @@ func apply_graphics_settings_data() -> void:
 	
 	if player_character:
 		player_character.main_camera.apply_settings()
+
+
+func set_debug_overlay(value: int) -> void:
+	if value >= 1:
+		if !debug_overlay:
+			debug_overlay = load("uid://be8nto6fraipm").instantiate()
+			add_child(debug_overlay)
+		debug_overlay.overlay_layer = value
+	else:
+		debug_overlay.queue_free()
+		await get_tree().process_frame
+		debug_overlay = null

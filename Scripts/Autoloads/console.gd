@@ -163,6 +163,8 @@ func _process_command(tree: Dictionary, tokens: PackedStringArray) -> String:
 					return valid[1]
 			return current[0].call(current[1])
 		return current[0].call()
+	elif current is Callable:
+		return current.call()
 	elif current is Dictionary:
 		return _process_command(current, tokens.slice(1))
 	else:
@@ -235,9 +237,9 @@ func _hint_select() -> void:
 
 var command_tree: Dictionary = {
 	"settings": {
-		"save": [_command_settings_save],
-		"load": [_command_settings_load],
-		"erase": [_command_settings_erase],
+		"save": _command_settings_save,
+		"load": _command_settings_load,
+		"erase": _command_settings_erase,
 		"max_fps": [_command_settings_max_fps, _need_int, func(): return Engine.max_fps],
 		"vsync": {
 			"disabled": [_command_settings_vsync, DisplayServer.VSYNC_DISABLED],
@@ -257,14 +259,14 @@ var command_tree: Dictionary = {
 		},
 	},
 	"graphics": {
-		"save": [_command_graphics_save],
+		"save": _command_graphics_save,
 		"load": {
 			"user": [_command_graphics_load, 0],
 			"low": [_command_graphics_load, 1],
 			"medium": [_command_graphics_load, 2],
 			"high": [_command_graphics_load, 3],
 		},
-		"erase": [_command_graphics_erase],
+		"erase": _command_graphics_erase,
 		"3d_scale_mode": {
 			"bilinear": [_command_graphics_3d_scale_mode, Viewport.SCALING_3D_MODE_BILINEAR],
 			"fsr": [_command_graphics_3d_scale_mode, Viewport.SCALING_3D_MODE_FSR],
@@ -563,8 +565,8 @@ var command_tree: Dictionary = {
 		"erase": [_command_game_erase, _need_int, "slot"],
 	},
 	"player": {
-		"fly": [_command_player_fly],
-		"fly_collision": [_command_player_fly_collision],
+		"fly": _command_player_fly,
+		"fly_collision": _command_player_fly_collision,
 		"speed": [_command_player_speed, _need_float, func():
 			if GameManager.player_character:
 				return str(GameManager.player_character.current_movement_speed)
@@ -580,8 +582,15 @@ var command_tree: Dictionary = {
 		"speed": [_command_engine_speed, _need_int, func(): return str(Engine.time_scale)],
 	},
 	"system": {
-		"quit": [_command_system_quit],
-	#	"debug": _command_system_debug,
+		"quit": _command_system_quit,
+		"debug": {
+			"overlay": [_command_system_debug_overlay, _need_int, func():
+				if GameManager.debug_overlay:
+					return str(GameManager.debug_overlay.overlay_layer)
+				else:
+					return "0"],
+			"vault": _command_system_debug_vault,
+		},
 	}
 }
 
@@ -1226,3 +1235,17 @@ func _command_engine_speed(value: int) -> String:
 func _command_system_quit() -> String:
 	get_tree().quit.call_deferred()
 	return "quitting..."
+
+func _command_system_debug_overlay(value: int) -> String:
+	GameManager.set_debug_overlay(value)
+	return "set debug overlay to " + str(value)
+
+func _command_system_debug_vault() -> String:
+	if GameManager.player_character:
+		if GameManager.player_character.vault_checks.debug:
+			GameManager.player_character.vault_checks.debug = false
+			return "turend vault debug off"
+		else:
+			GameManager.player_character.vault_checks.debug = true
+			return "turned vault debug on"
+	return "couldn't find player"
