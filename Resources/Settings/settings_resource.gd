@@ -8,3 +8,5 @@ extends Resource
 @export_range(50, 110) var fov: float = 80
 
 @export var window_mode: DisplayServer.WindowMode = DisplayServer.WINDOW_MODE_WINDOWED
+
+@export var hud_size: float = 1.0

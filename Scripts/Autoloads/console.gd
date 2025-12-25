@@ -154,19 +154,22 @@ func _process_command(tree: Dictionary, tokens: PackedStringArray) -> String:
 	if current is Array:
 		if current.size() > 1:
 			if current[1] is Callable:
-				if !tokens[1]:
-					return str(current[3])
+				if tokens.size() < 2:
+					return "[color=yellow]incomplete command[/color]"
 				var valid = current[1].call(tokens.slice(1))
 				if valid[0]:
 					return current[0].call(valid[1])
 				else:
 					return valid[1]
-			return current[0].call(current[1])
-		return current[0].call()
+			return "[color=red]command is broken[/color]"
+		return "[color=red]command is broken[/color]"
+	
 	elif current is Callable:
 		return current.call()
+	
 	elif current is Dictionary:
 		return _process_command(current, tokens.slice(1))
+	
 	else:
 		return "[color=red]invalid command[/color]"
 
@@ -256,7 +259,8 @@ var command_tree: Dictionary = {
 			"windowed": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_WINDOWED],
 			"minimized": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_MINIMIZED],
 			"get": [func(): return str(DisplayServer.window_get_mode())],
-		},
+			},
+		"hud_size": [_command_settings_hud_size, _need_float, func(): return SaverLoader.settings.hud_size],
 	},
 	"graphics": {
 		"save": _command_graphics_save,
@@ -652,6 +656,12 @@ func _command_settings_window_mode(value: DisplayServer.WindowMode) -> String:
 	SaverLoader.settings.window_mode = value
 	DisplayServer.window_set_mode(value)
 	return "set window mode to " + str(value)
+
+func _command_settings_hud_size(value: float) -> String:
+	SaverLoader.settings.hud_size = value
+	if GameManager.player_character:
+		GameManager.player_character.player_hud.apply_settings()
+	return "set hud size to " + str(value)
 
 func _command_graphics_save() -> String:
 	SaverLoader.save_graphics_settings()

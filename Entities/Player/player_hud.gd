@@ -13,12 +13,9 @@ extends Control
 @export var thought_text_offset: float = 10.0
 @export var thought_text_size: float = 16
 
-@export var hud_size: float = 1.0:
-	set(value):
-		hud_size = value
-		apply_settings()
+var hud_size: float = 1.0
 
-@export var default_crosshair_radius: float = 2.0:
+var default_crosshair_radius: float = 2.0:
 	set(value):
 		default_crosshair_radius = value
 		apply_settings()
@@ -26,10 +23,13 @@ var crosshair_radius: float = default_crosshair_radius
 var crosshair_opacity: float = hud_opacity_inactive
 var vault_width: float = 3.0
 var vault_opacity: float = hud_opacity_inactive
+var interact_radius: float = default_crosshair_radius
+var interact_width: float = 2.0
+var interact_opacity: float = hud_opacity_inactive
 
 const default_tween_time: float = 0.2
 var crosshair_tween: Tween
-var active: bool:
+var active: bool = false:
 	set(value):
 		if active == value: return
 		active = value
@@ -37,7 +37,7 @@ var active: bool:
 		if crosshair_tween:
 			crosshair_tween.kill()
 		
-		crosshair_tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).\
+		crosshair_tween = create_tween().set_ease(Tween.EASE_IN_OUT).\
 			set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_parallel(true)
 		
 		var target_radius = default_crosshair_radius * 1.5 if value else default_crosshair_radius
@@ -47,16 +47,60 @@ var active: bool:
 		crosshair_tween.tween_property(self, "crosshair_opacity", target_opacity, default_tween_time)
 		
 		while crosshair_tween.is_running():
-			queue_redraw()
 			await get_tree().process_frame
+			queue_redraw()
+
+var interact_tween: Tween
+var can_tap: bool = false:
+	set(value):
+		if can_tap == value: return
+		can_tap = value
+		interact_radius = 5 * hud_size
+		
+		var target_opacity = hud_opacity_active if value else 0.0
+		
+		if interact_tween:
+			interact_tween.kill()
+		
+		interact_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		
+		interact_tween.tween_property(self, "interact_opacity", target_opacity, default_tween_time)
+		
+		while can_tap:
+			await get_tree().process_frame
+			if interact_radius > 0:
+				interact_radius -= get_process_delta_time() * 10 * hud_size
+			else:
+				interact_radius = 5 * hud_size
+			queue_redraw()
+
 var can_hold: bool = false:
 	set(value):
+		if can_hold == value: return
 		can_hold = value
-		queue_redraw()
-var hold_progress: float = 0.0:
-	set(value):
-		hold_progress = value
-		queue_redraw()
+		var pulse_dir = false
+		interact_radius = 5 * hud_size
+		
+		var target_opacity = hud_opacity_active if value else 0.0
+		
+		if interact_tween:
+			interact_tween.kill()
+		
+		interact_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		
+		interact_tween.tween_property(self, "interact_opacity", target_opacity, default_tween_time)
+		
+		while can_hold:
+			await get_tree().process_frame
+			if pulse_dir:
+				interact_radius -= get_process_delta_time() * 5 * hud_size
+			else:
+				interact_radius += get_process_delta_time() * 5 * hud_size
+			if interact_radius <= 0:
+				pulse_dir = false
+			elif interact_radius >= 5 * hud_size:
+				pulse_dir = true
+			queue_redraw()
 
 var vault_tween: Tween
 var vault: bool:
@@ -67,8 +111,7 @@ var vault: bool:
 		if vault_tween:
 			vault_tween.kill()
 		
-		vault_tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).\
-			set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		vault_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		
 		var target_opacity = hud_opacity_active if value else 0.0
 		
@@ -96,6 +139,7 @@ func _draw() -> void:
 	
 	_draw_crosshair(center)
 	_draw_vault(center)
+	_draw_interact(center)
 
 
 func _draw_crosshair(center: Vector2) -> void:
@@ -109,10 +153,22 @@ func _draw_vault(center: Vector2) -> void:
 		crosshair_radius + vault_width * hud_size * 1.5,
 		-PI * 0.7,
 		-PI * 0.3,
-		6,
+		int(6 * hud_size),
 		hud_color_primary * Color(1, 1, 1, vault_opacity),
 		vault_width * hud_size
 		)
+
+
+func _draw_interact(center: Vector2) -> void:
+	draw_arc(
+		center,
+		crosshair_radius + interact_radius + interact_width * hud_size,
+		0,
+		TAU,
+		int(12 * hud_size),
+		hud_color_secondary * Color(1, 1, 1, interact_opacity),
+		interact_width * hud_size
+	)
 
 
 func display_thought(thought: String, story: bool, time: float = 2.0) -> void:
@@ -141,6 +197,7 @@ func _hide_thought() -> void:
 
 
 func apply_settings() -> void:
+	hud_size = SaverLoader.settings.hud_size
 	queue_redraw()
 	thought_label.offset_top = default_crosshair_radius + thought_text_offset * hud_size
 	var font_size = int(thought_text_size * hud_size)

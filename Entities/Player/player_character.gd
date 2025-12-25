@@ -94,27 +94,46 @@ var can_vault: bool = false:
 		can_vault = value
 		if value:
 			player_hud.vault = true
-			#_raise_player_hands(true)
+			#_raise_hands(true)
 		else:
 			player_hud.vault = false
-			#_raise_player_hands(false)
+			#_raise_hands(false)
 var player_tween: Tween
 
+var interact_type: String = ""
 var interaction_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var interaction_ray_result: Dictionary:
 	set(value):
-		if value and value["collider"].has_method("interact"):
+		if value == interaction_ray_result: return
+		if value and value["collider"] is Interactable and value["collider"].active:
 			interaction_ray_result = value
 			player_hud.active = true
+			match value["collider"].interact_type:
+				Interactable.InteractableType.PRESS:
+					player_hud.can_tap = false
+					player_hud.can_hold = false
+					interact_type = "Press"
+				Interactable.InteractableType.TAP:
+					player_hud.can_tap = true
+					player_hud.can_hold = false
+					interact_type = "Tap"
+				Interactable.InteractableType.HOLD:
+					player_hud.can_hold = true
+					player_hud.can_tap = false
+					interact_type = "Hold"
 		else:
 			interaction_ray_result = {}
 			player_hud.active = false
+			player_hud.can_tap = false
+			player_hud.can_hold = false
+			interact_type = ""
 
 
 func _ready() -> void:
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
+	interaction_ray_query.collision_mask = 1
 	vault_checks.p = self
 
 
@@ -177,9 +196,17 @@ func _handle_movement_input(event: InputEvent) -> void:
 
 
 func _handle_action_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if interaction_ray_result:
+			interaction_ray_result["collider"].interact(self)
+	
+	if event.is_action_released("interact"):
+		if interaction_ray_result:
+			interaction_ray_result["collider"].stop_interacting(self)
+	
 	if event.is_action_pressed("flashlight"):
 		if !flashlight.disabled:
-			#if current_movement_mode != MovementMode.CARRYING:
+			if current_movement_mode != MovementMode.CARRYING:
 				flashlight.switch()
 
 
