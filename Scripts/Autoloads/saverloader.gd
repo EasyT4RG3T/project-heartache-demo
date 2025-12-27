@@ -4,13 +4,14 @@ extends Node
 signal save_requsted(save_data: Dictionary)
 
 
+const GAME_VERSION: int = 1
 const SETTINGS_VERSION: int = 1
 
 var settings: SettingsResource
 var graphics_settings: GraphicsSettingsResource
-const GRAPHICS_SETTINGS_HIGH = preload("uid://ldpqnegmnmh5")
-const GRAPHICS_SETTINGS_LOW = preload("uid://bfovucerggnnc")
-const GRAPHICS_SETTINGS_MEDIUM = preload("uid://bp4k7iymm81kk")
+var GRAPHICS_SETTINGS_HIGH: GraphicsSettingsResource
+const GRAPHICS_SETTINGS_LOW = preload("uid://cutv363x14c4e")
+var GRAPHICS_SETTINGS_MEDIUM: GraphicsSettingsResource
 
 
 var load_thread: Thread = Thread.new()
@@ -27,37 +28,37 @@ var GAME_DATA_PATH = GAME_PATH + "saves/"
 
 
 func save_settings() -> void:
-	_queue_function("save_settings")
+	_queue_function(_save_settings_data)
 
 func load_settings() -> void:
-	_queue_function("load_settings")
+	_queue_function(_load_settings_data)
 
 func erase_settings() -> void:
-	_queue_function("erase_settings")
+	_queue_function(_erase_settings_data)
 
 func save_graphics_settings() -> void:
-	_queue_function("save_graphics_settings")
+	_queue_function(_save_graphics_settings_data)
 
 func load_graphics_settings(preset: int) -> void:
-	_queue_function("load_graphics_settings", preset)
+	_queue_function(_load_graphics_settings_data, preset)
 
 func erase_graphics_settings() -> void:
-	_queue_function("erase_graphics_settings")
+	_queue_function(_erase_graphics_settings_data)
 
 func save_game_data(slot: int) -> void:
-	_queue_function("save_game_data", slot)
+	_queue_function(_save_game_data, slot)
 
 func load_game_data(slot: int) -> void:
-	_queue_function("load_game_data", slot)
+	_queue_function(_load_game_data, slot)
 
 func erase_game_data(slot: int) -> void:
-	_queue_function("erase_game_data", slot)
+	_queue_function(_erase_game_data, slot)
 
 func save_temp() -> void:
-	_queue_function("save_temp")
+	_queue_function(_save_temp)
 
 func load_temp() -> void:
-	_queue_function("load_temp")
+	_queue_function(_load_temp)
 
 
 func _init() -> void:
@@ -81,8 +82,8 @@ func _exit_tree() -> void:
 		load_thread.wait_to_finish()
 
 
-func _queue_function(function: String, arg = null) -> void:
-	function_queue.append({"type": function, "args": arg})
+func _queue_function(function: Callable, arg = null) -> void:
+	function_queue.append({"func": function, "args": arg})
 	queue_semaphore.post()
 
 
@@ -99,32 +100,16 @@ func _thread_worker() -> void:
 
 
 func _process_function(function: Dictionary) -> void:
-	match function.type:
-		"save_settings":
-			_save_settings_data()
-		"load_settings":
-			_load_settings_data()
-		"erase_settings":
-			_erase_settings_data()
-		"save_graphics_settings":
-			_save_graphics_settings_data()
-		"load_graphics_settings":
-			var preset = function.args
-			_load_graphics_settings_data(preset)
-		"erase_graphics_settings":
-			_erase_graphics_settings_data()
-		"save_game_data":
-			var slot = function.args
-			_save_game_data(slot)
-		"load_game_data":
-			var slot = function.args
-			_load_game_data(slot)
+	if function.args:
+		function.func.call(function.args)
+	else:
+		function.func.call()
 
 
 func _save_settings_data() -> void:
 	var data = _resource_to_dict(settings)
 	var error: String = _save_to_json(SETTINGS_PATH, data)
-	#Console.call_deferred("console_print", "settings data: " + error)
+	Console.call_deferred("console_print", "settings data: " + error)
 
 
 func _load_settings_data() -> void:
@@ -134,27 +119,27 @@ func _load_settings_data() -> void:
 	var data = error_data[1] if error_data.size() > 1 else null
 	
 	if !data:
-		#Console.call_deferred("console_print", "settings data: " + error)
+		Console.call_deferred("console_print", "settings data: " + error)
 		_save_settings_data()
 		GameManager.call_deferred("apply_settings_data")
 		return
 	
 	_resource_from_dict(data, settings)
 	GameManager.call_deferred("apply_settings_data")
-	#Console.call_deferred("console_print", "settings data: " + error)
+	Console.call_deferred("console_print", "settings data: " + error)
 
 
 func _erase_settings_data() -> void:
 	settings = SettingsResource.new()
 	var error: String = _remove_json(SETTINGS_PATH)
 	GameManager.call_deferred("apply_settings_data")
-	#Console.call_deferred("console_print", "settings data: " + error)
+	Console.call_deferred("console_print", "settings data: " + error)
 
 
 func _save_graphics_settings_data() -> void:
 	var data = _resource_to_dict(graphics_settings)
 	var error: String = _save_to_json(GRAPHICS_SETTINGS_PATH, data)
-	#Console.call_deferred("console_print", "graphics settings data: " + error)
+	Console.call_deferred("console_print", "graphics settings data: " + error)
 
 
 func _load_graphics_settings_data(preset: int = 0) -> void:
@@ -166,7 +151,7 @@ func _load_graphics_settings_data(preset: int = 0) -> void:
 			var data = error_data[1] if error_data.size() > 1 else null
 			
 			if !data:
-				#Console.call_deferred("console_print", "graphics settings data: " + error)
+				Console.call_deferred("console_print", "graphics settings data: " + error)
 				_save_graphics_settings_data()
 				GameManager.call_deferred("apply_graphics_settings_data")
 				return
@@ -182,17 +167,17 @@ func _load_graphics_settings_data(preset: int = 0) -> void:
 			graphics_settings = GraphicsSettingsResource.new()
 			graphics_settings = GRAPHICS_SETTINGS_HIGH
 		_:
-			#Console.call_deferred("console_print", "graphics settings data: invalid preset")
+			Console.call_deferred("console_print", "graphics settings data: invalid preset")
 			return
 	
-	#Console.call_deferred("console_print", "graphics settings data: loaded")
+	Console.call_deferred("console_print", "graphics settings data: loaded")
 	GameManager.call_deferred("apply_graphics_settings_data")
 
 
 func _erase_graphics_settings_data() -> void:
 	graphics_settings = GraphicsSettingsResource.new()
 	var error: String = _remove_json(GRAPHICS_SETTINGS_PATH)
-	#Console.call_deferred("console_print", "graphics settings data: " + error)
+	Console.call_deferred("console_print", "graphics settings data: " + error)
 	GameManager.call_deferred("apply_graphics_settings_data")
 
 

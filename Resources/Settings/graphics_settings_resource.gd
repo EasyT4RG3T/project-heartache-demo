@@ -1,7 +1,6 @@
 class_name GraphicsSettingsResource
 extends Resource
 
-
 @export var scaling_3d_mode: Viewport.Scaling3DMode = Viewport.SCALING_3D_MODE_BILINEAR
 @export_range(0.25, 2) var scaling_3d_scale: float = 1.0
 @export var msaa_2d: Viewport.MSAA = Viewport.MSAA_8X

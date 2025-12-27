@@ -161,8 +161,10 @@ func _process_command(tree: Dictionary, tokens: PackedStringArray) -> String:
 					return current[0].call(valid[1])
 				else:
 					return valid[1]
-			return "[color=red]command is broken[/color]"
-		return "[color=red]command is broken[/color]"
+			else:
+				return current[0].call(current[1])
+		else:
+			return current[0].call()
 	
 	elif current is Callable:
 		return current.call()
@@ -239,14 +241,15 @@ func _hint_select() -> void:
 
 
 var command_tree: Dictionary = {
+	"run": _command_run,
 	"settings": {
 		"save": _command_settings_save,
 		"load": _command_settings_load,
 		"erase": _command_settings_erase,
 		"max_fps": [_command_settings_max_fps, _need_int, func(): return Engine.max_fps],
 		"vsync": {
-			"disabled": [_command_settings_vsync, DisplayServer.VSYNC_DISABLED],
-			"enabled": [_command_settings_vsync, DisplayServer.VSYNC_ENABLED],
+			"disable": [_command_settings_vsync, DisplayServer.VSYNC_DISABLED],
+			"enable": [_command_settings_vsync, DisplayServer.VSYNC_ENABLED],
 			"adaptive": [_command_settings_vsync, DisplayServer.VSYNC_ADAPTIVE],
 			"mailbox": [_command_settings_vsync, DisplayServer.VSYNC_MAILBOX],
 			"get": [func(): return str(DisplayServer.window_get_vsync_mode())],
@@ -260,6 +263,8 @@ var command_tree: Dictionary = {
 			"minimized": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_MINIMIZED],
 			"get": [func(): return str(DisplayServer.window_get_mode())],
 			},
+		"sensitivity": [_command_settings_sensitivity, _need_float, func():
+			return SaverLoader.settings.sensitivity],
 		"hud_size": [_command_settings_hud_size, _need_float, func(): return SaverLoader.settings.hud_size],
 	},
 	"graphics": {
@@ -623,6 +628,10 @@ func _need_vector3(tokens: PackedStringArray) -> Array:
 	return [true, vec]
 
 
+func _command_run() -> String:
+	
+	return "run"
+
 func _command_settings_save() -> String:
 	SaverLoader.save_settings()
 	return "saved personal settings"
@@ -656,6 +665,12 @@ func _command_settings_window_mode(value: DisplayServer.WindowMode) -> String:
 	SaverLoader.settings.window_mode = value
 	DisplayServer.window_set_mode(value)
 	return "set window mode to " + str(value)
+
+func _command_settings_sensitivity(value: float) -> String:
+	SaverLoader.settings.sensitivity = value
+	if GameManager.player_character:
+		GameManager.player_character.mouse_sensitivity = value
+	return "set mouse sensitivity to " + str(value)
 
 func _command_settings_hud_size(value: float) -> String:
 	SaverLoader.settings.hud_size = value

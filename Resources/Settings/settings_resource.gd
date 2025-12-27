@@ -1,7 +1,6 @@
 class_name SettingsResource
 extends Resource
 
-
 @export var vsync: DisplayServer.VSyncMode = DisplayServer.VSYNC_DISABLED
 @export var max_fps: int = 144
 

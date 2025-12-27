@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="GraphicsSettingsResource" load_steps=2 format=3 uid="uid://ldpqnegmnmh5"]
-
-[ext_resource type="Script" uid="uid://c253tshagoeie" path="res://Resources/Settings/graphics_settings_resource.gd" id="1_arp3u"]
-
-[resource]
-script = ExtResource("1_arp3u")
-metadata/_custom_type_script = "uid://bub7e7v865k3l"

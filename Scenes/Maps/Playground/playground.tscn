@@ -81,7 +81,7 @@ shape = SubResource("BoxShape3D_yeqys")
 mesh = SubResource("BoxMesh_ukqwk")
 
 [node name="Node3D2" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.16401297, 1.2519774, -4.923604)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.55325174, 1.2519774, -4.923604)
 
 [node name="Interactable" type="StaticBody3D" parent="Node3D2"]
 script = ExtResource("2_oo8u7")
@@ -95,7 +95,7 @@ shape = SubResource("BoxShape3D_yeqys")
 mesh = SubResource("BoxMesh_ukqwk")
 
 [node name="Node3D3" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.69173354, 1.2519774, -4.923604)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.1745102, 1.2519774, -4.923604)
 
 [node name="Interactable" type="StaticBody3D" parent="Node3D3"]
 script = ExtResource("2_oo8u7")

@@ -63,7 +63,7 @@ func _change_fov_smooth(fov: float) -> void:
 @onready var dust_collider: GPUParticlesCollisionBox3D = %DustCollider
 
 
-@export var mouse_sensitivity: float = 10.0
+var mouse_sensitivity: float = 10.0
 var mouse_sensitivity_modifier: float = 0.0001
 var look_vector: Vector2 = Vector2.ZERO
 
@@ -130,6 +130,7 @@ var interaction_ray_result: Dictionary:
 
 
 func _ready() -> void:
+	SaverLoader.save_requsted.connect(_save)
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
@@ -450,3 +451,16 @@ func _update_sub_viewport() -> void:
 func apply_settings() -> void:
 	player_fov = SaverLoader.settings.fov
 	main_camera.fov = player_fov
+	mouse_sensitivity = SaverLoader.settings.sensitivity
+
+
+func _save(file: Dictionary) -> void:
+	file["player"] = {
+		"position": global_position,
+		"rotation": head.global_rotation,
+	}
+
+
+func _load(file: Dictionary) -> void:
+	global_position = file["player"]["position"]
+	head.global_rotation = file["player"]["rotation"]
