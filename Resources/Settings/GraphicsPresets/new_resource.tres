@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GraphicsSettingsResource" load_steps=2 format=3 uid="uid://b1jvwhit3o0bc"]
+
+[ext_resource type="Script" uid="uid://b8mxsgo0ylr5i" path="res://Resources/Settings/graphics_settings_resource.gd" id="1_nf3fo"]
+
+[resource]
+script = ExtResource("1_nf3fo")
+brightness = 0.845
+metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"

@@ -10,7 +10,7 @@ const SETTINGS_VERSION: int = 1
 var settings: SettingsResource
 var graphics_settings: GraphicsSettingsResource
 var GRAPHICS_SETTINGS_HIGH: GraphicsSettingsResource
-const GRAPHICS_SETTINGS_LOW = preload("uid://cutv363x14c4e")
+var GRAPHICS_SETTINGS_LOW: GraphicsSettingsResource
 var GRAPHICS_SETTINGS_MEDIUM: GraphicsSettingsResource
 
 
@@ -73,6 +73,10 @@ func _ready() -> void:
 	
 	load_settings()
 	load_graphics_settings(0)
+	
+	var kgjal: GraphicsSettingsResource = load("uid://b1jvwhit3o0bc")
+	
+	print(kgjal.brightness)
 
 
 func _exit_tree() -> void:
