@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GraphicsSettingsResource" load_steps=2 format=3 uid="uid://cr40bmj55qsks"]
+
+[ext_resource type="Script" uid="uid://b8mxsgo0ylr5i" path="res://Resources/Settings/graphics_settings_resource.gd" id="1_aq26j"]
+
+[resource]
+script = ExtResource("1_aq26j")
+msaa_2d = 2
+taa = false
+ssao_quality = 1
+positional_shadow_size = 8192
+metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"

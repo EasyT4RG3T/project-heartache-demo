@@ -74,7 +74,7 @@ func _ready() -> void:
 	load_settings()
 	load_graphics_settings(0)
 	
-	var kgjal: GraphicsSettingsResource = load("uid://b1jvwhit3o0bc")
+	var kgjal: GraphicsSettingsResource = load("uid://cn4cbbs6h71o1")
 	
 	print(kgjal.brightness)
 

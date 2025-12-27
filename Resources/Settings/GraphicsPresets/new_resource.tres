@@ -4,5 +4,10 @@
 
 [resource]
 script = ExtResource("1_nf3fo")
-brightness = 0.845
+scaling_3d_scale = 0.8
+msaa_2d = 0
+taa = false
+ssao_quality = 0
+directional_shadow_size = 1024
+positional_shadow_size = 1024
 metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"
