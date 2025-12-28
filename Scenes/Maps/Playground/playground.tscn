@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://clfnlnf15u3v"]
+[gd_scene load_steps=10 format=4 uid="uid://clfnlnf15u3v"]
 
 [ext_resource type="LightmapGIData" uid="uid://b6o2c15wlymkr" path="res://Scenes/Maps/Playground/playground.lmbake" id="1_2tufx"]
 [ext_resource type="Script" uid="uid://dp1su0e2nxtku" path="res://Scripts/Nodes/interactable.gd" id="2_oo8u7"]
+[ext_resource type="Script" uid="uid://dikfhy8p3u7bc" path="res://Scripts/Nodes/heavy_item_3d.gd" id="3_yeqys"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oo8u7"]
 data = PackedVector3Array(-25, -0.1, -25, -25, 0, -25, -25, -0.1, 25, -25, -0.1, -25, 25, -0.1, -25, -25, 0, -25, -25, 0, -25, 25, 0, -25, -1.5, 0, -5.5, -25, -0.1, -25, -25, -0.1, 25, 25, -0.1, -25, -25, 0, -25, -1.5, 0, -5.5, -1.5, 0, -4.5, -25, 0, -25, -1.5, 0, -4.5, 25, 0, 25, -25, -0.1, 25, -25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, 25, -25, 0, 25, -25, -0.1, 25, -25, 0, 25, 25, 0, 25, -25, 0, -25, 25, -0.1, -25, 25, 0, -25, 25, 0, -25, 1.5, 0, -5.5, -1.5, 0, -5.5, 25, 0, -25, 1.5, 0, -4.5, 1.5, 0, -5.5, 25, 0, -25, 25, 0, 25, 1.5, 0, -4.5, 25, -0.1, -25, 25, 0, 25, 25, 0, -25, 25, 0, 25, -1.5, 0, -4.5, 1.5, 0, -4.5, -25, -0.1, 25, 25, -0.1, 25, 25, -0.1, -25, -25, -0.1, 25, 25, 0, 25, 25, -0.1, 25, 25, -0.1, -25, 25, -0.1, 25, 25, 0, 25, -1.5, 1, -5.5, -1.5, 0, -4.5, -1.5, 0, -5.5, -1.5, 1, -5.5, -1.5, 0, -5.5, 1.5, 0, -5.5, -1.5, 1, -5.5, -1.5, 1, -4.5, -1.5, 0, -4.5, -1.5, 1, -4.5, 1.5, 1, -4.5, -1.5, 0, -4.5, -1.5, 1, -5.5, 1.5, 1, -4.5, -1.5, 1, -4.5, 1.5, 1, -4.5, 1.5, 0, -5.5, 1.5, 0, -4.5, 1.5, 1, -4.5, 1.5, 0, -4.5, -1.5, 0, -4.5, -1.5, 1, -5.5, 1.5, 0, -5.5, 1.5, 1, -5.5, 1.5, 1, -5.5, 1.5, 0, -5.5, 1.5, 1, -4.5, -1.5, 1, -5.5, 1.5, 1, -5.5, 1.5, 1, -4.5)
@@ -23,6 +24,12 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_yeqys"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ukqwk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ukqwk"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rd3m0"]
+size = Vector3(0.8, 0.8, 0.8)
 
 [node name="Playground" type="Node3D"]
 
@@ -107,3 +114,17 @@ shape = SubResource("BoxShape3D_yeqys")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D3/Interactable"]
 mesh = SubResource("BoxMesh_ukqwk")
+
+[node name="HeavyItem3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "collision")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.995, 0.4, -4.956)
+script = ExtResource("3_yeqys")
+mesh = NodePath("MeshInstance3D")
+collision = NodePath("CollisionShape3D")
+hand_offset = Vector3(0, -0.435, -0.845)
+metadata/_custom_type_script = "uid://dikfhy8p3u7bc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeavyItem3D"]
+shape = SubResource("BoxShape3D_ukqwk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HeavyItem3D"]
+mesh = SubResource("BoxMesh_rd3m0")

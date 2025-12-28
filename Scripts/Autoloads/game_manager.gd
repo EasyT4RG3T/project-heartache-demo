@@ -14,6 +14,10 @@ func load_playground() -> void:
 	var playground = load("res://Scenes/Maps/Playground/playground.tscn")
 	playground = playground.instantiate()
 	Game.add_child(playground)
+	load_player()
+
+
+func load_player() -> void:
 	var player = load("res://Entities/Player/player_character.tscn")
 	player = player.instantiate()
 	Game.add_child(player)

@@ -47,6 +47,7 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 
 @onready var player_hud: PlayerHUD = %PlayerHUD
 @onready var flashlight: Flashlight = %Flashlight
+@onready var hands: Node3D = %Hands
 
 @onready var main_camera: Camera3D = %MainCamera
 @onready var inventory_camera: Camera3D = %InventoryCamera
@@ -127,10 +128,25 @@ var interaction_ray_result: Dictionary:
 			player_hud.can_tap = false
 			player_hud.can_hold = false
 			interact_type = ""
+var drop_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+var drop_ray_result: Dictionary:
+	set(value):
+		if value:
+			drop_ray_result = value
+		else:
+			drop_ray_result = {}
+
+var heavy_item: HeavyItem3D = null:
+	set(value):
+		heavy_item = value
+		if value is HeavyItem3D:
+			change_movement_mode(MovementMode.CARRYING)
+		else:
+			change_movement_mode(MovementMode.WALKING)
 
 
 func _ready() -> void:
-	SaverLoader.save_requsted.connect(_save)
+	SaverLoader.save_requsted.connect(save)
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
@@ -209,6 +225,31 @@ func _handle_action_input(event: InputEvent) -> void:
 		if !flashlight.disabled:
 			if current_movement_mode != MovementMode.CARRYING:
 				flashlight.switch()
+	
+	if event.is_action_pressed("drop"):
+		if heavy_item:
+			while Input.is_action_pressed("drop"):
+				await get_tree().physics_frame
+				drop_ray_query.from = head.global_position
+				drop_ray_query.to = head.global_position - main_camera.global_basis.z *\
+				clampf(abs(head.rotation.x) * 2, 1.2, 2)
+				drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
+				
+				if drop_ray_result:
+					heavy_item.show_preview(self, drop_ray_result)
+				else:
+					heavy_item.hide_preview()
+	
+	if event.is_action_released("drop"):
+		if heavy_item:
+			heavy_item.hide_preview()
+			drop_ray_query.from = head.global_position
+			drop_ray_query.to = head.global_position - main_camera.global_basis.z *\
+			clampf(abs(head.rotation.x) * 2, 1.2, 2)
+			drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
+			
+			if drop_ray_result:
+				heavy_item.drop(self, drop_ray_result)
 
 
 func change_movement_mode(mode: MovementMode) -> void:
@@ -454,13 +495,17 @@ func apply_settings() -> void:
 	mouse_sensitivity = SaverLoader.settings.sensitivity
 
 
-func _save(file: Dictionary) -> void:
+func save(file: Dictionary) -> Dictionary:
 	file["player"] = {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
 		"position": global_position,
 		"rotation": head.global_rotation,
 	}
+	return file
 
 
-func _load(file: Dictionary) -> void:
-	global_position = file["player"]["position"]
-	head.global_rotation = file["player"]["rotation"]
+func load(file: Dictionary) -> void:
+	var file_player = file["player"]
+	global_position = file_player["position"]
+	head.global_rotation = file_player["rotation"]

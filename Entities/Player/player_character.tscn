@@ -23,7 +23,7 @@ shader_parameter/blur_size = 0.002
 shader_parameter/grain_intensity = 0.2
 shader_parameter/grain_blur_size = 5.0
 
-[node name="PlayerCharacter" type="CharacterBody3D" groups=["PlayerCharacter"]]
+[node name="PlayerCharacter" type="CharacterBody3D" groups=["PlayerCharacter", "Save"]]
 collision_layer = 2
 script = ExtResource("1_12kfy")
 
@@ -44,13 +44,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Flashlight" parent="Head" instance=ExtResource("2_stcdd")]
 unique_name_in_owner = true
 
+[node name="Hands" type="Node3D" parent="Head"]
+unique_name_in_owner = true
+
 [node name="MainCamera" type="Camera3D" parent="Head"]
 unique_name_in_owner = true
-cull_mask = 1047553
+cull_mask = 1047557
 environment = ExtResource("2_f477v")
 fov = 80.0
 far = 100.0
 script = ExtResource("4_3xgjn")
+
+[node name="RemoteInventoryCamera" type="RemoteTransform3D" parent="Head/MainCamera"]
+remote_path = NodePath("../InventorySubViewportContainer/InventorySubViewport/InventoryCamera")
+update_scale = false
 
 [node name="PlayerHUD" parent="Head/MainCamera" instance=ExtResource("3_b2vmj")]
 unique_name_in_owner = true

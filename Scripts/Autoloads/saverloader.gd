@@ -73,10 +73,6 @@ func _ready() -> void:
 	
 	load_settings()
 	load_graphics_settings(0)
-	
-	var kgjal: GraphicsSettingsResource = load("uid://cn4cbbs6h71o1")
-	
-	print(kgjal.brightness)
 
 
 func _exit_tree() -> void:
@@ -163,13 +159,16 @@ func _load_graphics_settings_data(preset: int = 0) -> void:
 			_resource_from_dict(data, graphics_settings)
 		1:
 			graphics_settings = GraphicsSettingsResource.new()
-			graphics_settings = GRAPHICS_SETTINGS_LOW
+			var sett: GraphicsSettingsResource = load("uid://cutv363x14c4e")
+			graphics_settings = sett
 		2:
 			graphics_settings = GraphicsSettingsResource.new()
-			graphics_settings = GRAPHICS_SETTINGS_MEDIUM
+			var sett: GraphicsSettingsResource = load("uid://cr40bmj55qsks")
+			graphics_settings = sett
 		3:
 			graphics_settings = GraphicsSettingsResource.new()
-			graphics_settings = GRAPHICS_SETTINGS_HIGH
+			var sett: GraphicsSettingsResource = load("uid://cn4cbbs6h71o1")
+			graphics_settings = sett
 		_:
 			Console.call_deferred("console_print", "graphics settings data: invalid preset")
 			return
@@ -238,13 +237,88 @@ func _remove_json(path: String) -> String:
 			return "couldn't remove data"
 
 
-func _save_game_data(slot) -> void:
-	save_requsted.emit()
-	print("save game on slot: ", slot)
+func _resource_to_dict(resource: Resource) -> Dictionary:
+	var data: Dictionary = {}
+	
+	for property in resource.get_property_list():
+		var prop_name = property["name"]
+		if property["usage"] & PROPERTY_USAGE_SCRIPT_VARIABLE and\
+		   property["usage"] & PROPERTY_USAGE_STORAGE:
+			data[prop_name] = resource.get(prop_name)
+	
+	return data
 
 
-func _load_game_data(slot) -> void:
-	print("load game from slot: ", slot)
+func _resource_from_dict(dictionary: Dictionary, resource: Resource) -> void:
+	for key in dictionary:
+		if resource.has_method("set"):
+			resource.set(key, dictionary[key])
+
+
+func _save_game_data(slot: int) -> void:
+	if not DirAccess.dir_exists_absolute(GAME_DATA_PATH):
+		DirAccess.make_dir_recursive_absolute(GAME_DATA_PATH)
+	
+	var game_data: Dictionary = {}
+	
+	if FileAccess.file_exists(GAME_DATA_PATH + str(slot)):
+		var file_read = FileAccess.open(GAME_DATA_PATH + str(slot), FileAccess.READ)
+		if !file_read:
+			Console.call_deferred("console_print", "game data: couldn't open file")
+			return
+		
+		var read_data_byte = file_read.get_buffer(file_read.get_length())
+		game_data = bytes_to_var(read_data_byte)
+		file_read.close()
+	
+	var save_data: Dictionary = {}
+	
+	for node in get_tree().get_nodes_in_group("Save"):
+		if node.scene_file_path.is_empty():
+			continue
+		if !node.call_thread_safe("has_meta", "save"):
+			continue
+		save_data = node.call_thread_safe("save", save_data)
+	
+	for key in save_data:
+		game_data[key] = save_data[key]
+	
+	var file_write = FileAccess.open(GAME_DATA_PATH + str(slot), FileAccess.WRITE)
+	if !file_write:
+		Console.call_deferred("console_print", "game data: couldn't create the file")
+		return
+	
+	var write_data_byte = var_to_bytes(game_data)
+	file_write.store_buffer(write_data_byte)
+	file_write.close()
+	
+	Console.call_deferred("console_print", "game data: saved in slot " + str(slot))
+	return
+
+
+func _load_game_data(slot: int) -> void:
+	if !FileAccess.file_exists(GAME_DATA_PATH + str(slot)):
+		Console.call_deferred("console_print", "game data: file doesn't exist")
+		return
+	
+	var file_read = FileAccess.open(GAME_DATA_PATH + str(slot), FileAccess.READ)
+	if !file_read:
+		Console.call_deferred("console_print", "game data: couldn't open file")
+		return
+	
+	#for node in get_tree().get_nodes_in_group("Save"):
+	#	node.queue_free()
+	
+	var game_data: Dictionary = {}
+	
+	var read_data_byte = file_read.get_buffer(file_read.get_length())
+	game_data = bytes_to_var(read_data_byte)
+	file_read.close()
+	
+	print(game_data)
+	
+	Console.call_deferred("console_print", "game data: loaded from slot " + str(slot))
+	return
 
 
 func _erase_game_data(slot) -> void:
@@ -375,21 +449,3 @@ func _load_temp() -> String:
 		return "error loading temp game data, couldn't open file"
 	
 	return "loaded temporary game data"
-
-
-func _resource_to_dict(resource: Resource) -> Dictionary:
-	var data: Dictionary = {}
-	
-	for property in resource.get_property_list():
-		var prop_name = property["name"]
-		if property["usage"] & PROPERTY_USAGE_SCRIPT_VARIABLE and\
-		   property["usage"] & PROPERTY_USAGE_STORAGE:
-			data[prop_name] = resource.get(prop_name)
-	
-	return data
-
-
-func _resource_from_dict(dictionary: Dictionary, resource: Resource) -> void:
-	for key in dictionary:
-		if resource.has_method("set"):
-			resource.set(key, dictionary[key])
