@@ -634,15 +634,15 @@ func _command_run() -> String:
 
 func _command_settings_save() -> String:
 	SaverLoader.save_settings()
-	return "saved personal settings"
+	return "saving personal settings"
 
 func _command_settings_load() -> String:
 	SaverLoader.load_settings()
-	return "loaded personal settings"
+	return "loading personal settings"
 
 func _command_settings_erase() -> String:
 	SaverLoader.erase_settings()
-	return "erased personal settings"
+	return "erasing personal settings"
 
 func _command_settings_max_fps(value: int) -> String:
 	SaverLoader.settings.max_fps = value
@@ -680,15 +680,15 @@ func _command_settings_hud_size(value: float) -> String:
 
 func _command_graphics_save() -> String:
 	SaverLoader.save_graphics_settings()
-	return "saved graphics settings"
+	return "saving graphics settings"
 
 func _command_graphics_load(value: int) -> String:
 	SaverLoader.load_graphics_settings(value)
-	return "loaded graphics settings " + str(value)
+	return "loading graphics settings " + str(value)
 
 func _command_graphics_erase() -> String:
 	SaverLoader.erase_graphics_settings()
-	return "erased user graphics settings"
+	return "erasing user graphics settings"
 
 func _command_graphics_3d_scale_mode(value: Viewport.Scaling3DMode) -> String:
 	SaverLoader.graphics_settings.scaling_3d_mode = value
@@ -1188,15 +1188,15 @@ func _command_graphics_positional_shadow_quality(value: RenderingServer.ShadowQu
 
 func _command_game_save(value: int) -> String:
 	SaverLoader.save_game_data(value)
-	return "saved game in slot " + str(value)
+	return "saving game in slot " + str(value)
 
 func _command_game_load(value: int) -> String:
 	SaverLoader.load_game_data(value)
-	return "loaded game from slot " + str(value)
+	return "loading game from slot " + str(value)
 
 func _command_game_erase(value: int) -> String:
 	SaverLoader.erase_game_data(value)
-	return "erased game data from slot " + str(value)
+	return "erasing game data from slot " + str(value)
 
 func _command_player_fly() -> String:
 	var player = GameManager.player_character

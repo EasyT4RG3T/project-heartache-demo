@@ -303,8 +303,9 @@ func _load_game_data(slot: int) -> void:
 		Console.call_deferred("console_print", "game data: couldn't open file")
 		return
 	
-	#for node in get_tree().get_nodes_in_group("Save"):
-	#	node.queue_free()
+	for node in get_tree().get_nodes_in_group("Save"):
+		if node is PlayerCharacter: continue
+		node.queue_free()
 	
 	var game_data: Dictionary = {}
 	

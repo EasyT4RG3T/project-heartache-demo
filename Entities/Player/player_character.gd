@@ -491,8 +491,8 @@ func _update_sub_viewport() -> void:
 	inventory_sub_viewport.size = get_window().size
 
 
-func add_thought(thought: String) -> void:
-	print(thought)
+func add_thought(thought: String, story: bool = false, time: float = 2.0) -> void:
+	player_hud.display_thought(thought, story, time)
 
 
 func apply_settings() -> void:
@@ -503,20 +503,44 @@ func apply_settings() -> void:
 
 func save(file: Dictionary) -> void:
 	file["player"] = {
-		"position": global_position,
+		"position": global_position if current_movement_mode != MovementMode.VAULTING else vault_position,
 		"rotation": head.global_rotation,
 		"look_vector": look_vector,
+		"movement_mode": current_movement_mode,
 	}
+	
+	file["player"]["flashlight"] = {
+		"disabled": flashlight.disabled,
+		"visible": flashlight.light.visible,
+	}
+	
 	if heavy_item:
-		file["player"]["heavy_item"] = heavy_item.scene_file_path
-		print(heavy_item.scene_file_path)
+		file["player"]["heavy_item"] = {
+			"path": heavy_item.scene_file_path,
+		}
 
 
 func load(file: Dictionary) -> void:
+	velocity = Vector3.ZERO
 	global_position = file["position"]
 	head.global_rotation = file["rotation"]
 	look_vector = file["look_vector"]
+	if file["movement_mode"] == MovementMode.CROUCHING:
+		current_movement_mode = MovementMode.CROUCHING
+		current_movement_speed = movement_speeds[MovementMode.CROUCHING]
+		main_camera.fov = player_fov - 10
+		body_collision.shape.height = player_crouch_collision_height
+		body_collision.position = player_crouch_collision_position
+		vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
+		head.position = player_crouch_head_position
+	
+	flashlight.disabled = file["flashlight"]["disabled"]
+	flashlight.light.visible = file["flashlight"]["visible"]
+	
+	if heavy_item:
+		heavy_item.queue_free()
+		heavy_item = null
 	if file.has("heavy_item"):
-		var hv: HeavyItem3D = load(file["heavy_item"]).instantiate()
+		var hv: HeavyItem3D = load(file["heavy_item"]["path"]).instantiate()
 		add_child(hv)
 		hv._pick_up(self)

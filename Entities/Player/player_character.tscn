@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c28pkwyvm76o1"]
+[gd_scene load_steps=13 format=3 uid="uid://c28pkwyvm76o1"]
 
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cvox7ompr4c2t" path="res://Entities/Player/main_camera.gd" id="4_3xgjn"]
 [ext_resource type="PackedScene" uid="uid://y8bwsn68l4yx" path="res://Entities/Player/dust_particles.tscn" id="6_d821y"]
 [ext_resource type="PackedScene" uid="uid://cei20eyprbmtm" path="res://Entities/Player/dust_collider.tscn" id="7_3xgjn"]
+[ext_resource type="Environment" uid="uid://d2m0td6ed2a2t" path="res://Assets/Environments/stripped_environment.tres" id="7_4rt0j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lobkq"]
 radius = 0.35
@@ -88,6 +89,8 @@ mouse_filter = 2
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
+anisotropic_filtering_level = 0
+fsr_sharpness = 0.0
 positional_shadow_atlas_16_bits = false
 positional_shadow_atlas_quad_2 = 2
 positional_shadow_atlas_quad_3 = 2
@@ -98,9 +101,9 @@ render_target_update_mode = 4
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 cull_mask = 1047554
-environment = ExtResource("2_f477v")
+environment = ExtResource("7_4rt0j")
 fov = 60.0
-far = 5.0
+far = 2.0
 
 [node name="DustParticles" parent="Head/MainCamera" instance=ExtResource("6_d821y")]
 unique_name_in_owner = true

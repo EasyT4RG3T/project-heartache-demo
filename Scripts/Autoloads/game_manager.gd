@@ -5,6 +5,8 @@ var debug_overlay: DebugOverlay
 
 var player_character: PlayerCharacter
 
+var can_save: bool = false
+
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -15,6 +17,7 @@ func load_playground() -> void:
 	playground = playground.instantiate()
 	Game.add_child(playground)
 	load_player()
+	can_save = true
 
 
 func load_player() -> void:
