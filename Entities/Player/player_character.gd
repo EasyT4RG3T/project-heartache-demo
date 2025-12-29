@@ -115,12 +115,12 @@ var interaction_ray_result: Dictionary:
 					player_hud.can_hold = false
 					interact_type = "Press"
 				Interactable.InteractableType.TAP:
-					player_hud.can_tap = true
 					player_hud.can_hold = false
+					player_hud.can_tap = true
 					interact_type = "Tap"
 				Interactable.InteractableType.HOLD:
-					player_hud.can_hold = true
 					player_hud.can_tap = false
+					player_hud.can_hold = true
 					interact_type = "Hold"
 		else:
 			interaction_ray_result = {}
@@ -151,6 +151,7 @@ func _ready() -> void:
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
 	interaction_ray_query.collision_mask = 1
+	drop_ray_query.collision_mask = 1
 	vault_checks.p = self
 
 
@@ -229,7 +230,6 @@ func _handle_action_input(event: InputEvent) -> void:
 	if event.is_action_pressed("drop"):
 		if heavy_item:
 			while Input.is_action_pressed("drop"):
-				await get_tree().physics_frame
 				drop_ray_query.from = head.global_position
 				drop_ray_query.to = head.global_position - main_camera.global_basis.z *\
 				clampf(abs(head.rotation.x) * 2, 1.2, 2)
@@ -239,6 +239,8 @@ func _handle_action_input(event: InputEvent) -> void:
 					heavy_item.show_preview(self, drop_ray_result)
 				else:
 					heavy_item.hide_preview()
+				
+				await get_tree().physics_frame
 	
 	if event.is_action_released("drop"):
 		if heavy_item:
@@ -489,23 +491,32 @@ func _update_sub_viewport() -> void:
 	inventory_sub_viewport.size = get_window().size
 
 
+func add_thought(thought: String) -> void:
+	print(thought)
+
+
 func apply_settings() -> void:
 	player_fov = SaverLoader.settings.fov
 	main_camera.fov = player_fov
 	mouse_sensitivity = SaverLoader.settings.sensitivity
 
 
-func save(file: Dictionary) -> Dictionary:
+func save(file: Dictionary) -> void:
 	file["player"] = {
-		"filename": get_scene_file_path(),
-		"parent": get_parent().get_path(),
 		"position": global_position,
 		"rotation": head.global_rotation,
+		"look_vector": look_vector,
 	}
-	return file
+	if heavy_item:
+		file["player"]["heavy_item"] = heavy_item.scene_file_path
+		print(heavy_item.scene_file_path)
 
 
 func load(file: Dictionary) -> void:
-	var file_player = file["player"]
-	global_position = file_player["position"]
-	head.global_rotation = file_player["rotation"]
+	global_position = file["position"]
+	head.global_rotation = file["rotation"]
+	look_vector = file["look_vector"]
+	if file.has("heavy_item"):
+		var hv: HeavyItem3D = load(file["heavy_item"]).instantiate()
+		add_child(hv)
+		hv._pick_up(self)

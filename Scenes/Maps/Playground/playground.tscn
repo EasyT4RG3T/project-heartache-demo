@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://clfnlnf15u3v"]
+[gd_scene load_steps=8 format=4 uid="uid://clfnlnf15u3v"]
 
 [ext_resource type="LightmapGIData" uid="uid://b6o2c15wlymkr" path="res://Scenes/Maps/Playground/playground.lmbake" id="1_2tufx"]
 [ext_resource type="Script" uid="uid://dp1su0e2nxtku" path="res://Scripts/Nodes/interactable.gd" id="2_oo8u7"]
-[ext_resource type="Script" uid="uid://dikfhy8p3u7bc" path="res://Scripts/Nodes/heavy_item_3d.gd" id="3_yeqys"]
+[ext_resource type="PackedScene" uid="uid://cylqjhsw0iwbo" path="res://Assets/Placeholder/test_cube.tscn" id="3_yeqys"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oo8u7"]
 data = PackedVector3Array(-25, -0.1, -25, -25, 0, -25, -25, -0.1, 25, -25, -0.1, -25, 25, -0.1, -25, -25, 0, -25, -25, 0, -25, 25, 0, -25, -1.5, 0, -5.5, -25, -0.1, -25, -25, -0.1, 25, 25, -0.1, -25, -25, 0, -25, -1.5, 0, -5.5, -1.5, 0, -4.5, -25, 0, -25, -1.5, 0, -4.5, 25, 0, 25, -25, -0.1, 25, -25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, 25, -25, 0, 25, -25, -0.1, 25, -25, 0, 25, 25, 0, 25, -25, 0, -25, 25, -0.1, -25, 25, 0, -25, 25, 0, -25, 1.5, 0, -5.5, -1.5, 0, -5.5, 25, 0, -25, 1.5, 0, -4.5, 1.5, 0, -5.5, 25, 0, -25, 25, 0, 25, 1.5, 0, -4.5, 25, -0.1, -25, 25, 0, 25, 25, 0, -25, 25, 0, 25, -1.5, 0, -4.5, 1.5, 0, -4.5, -25, -0.1, 25, 25, -0.1, 25, 25, -0.1, -25, -25, -0.1, 25, 25, 0, 25, 25, -0.1, 25, 25, -0.1, -25, 25, -0.1, 25, 25, 0, 25, -1.5, 1, -5.5, -1.5, 0, -4.5, -1.5, 0, -5.5, -1.5, 1, -5.5, -1.5, 0, -5.5, 1.5, 0, -5.5, -1.5, 1, -5.5, -1.5, 1, -4.5, -1.5, 0, -4.5, -1.5, 1, -4.5, 1.5, 1, -4.5, -1.5, 0, -4.5, -1.5, 1, -5.5, 1.5, 1, -4.5, -1.5, 1, -4.5, 1.5, 1, -4.5, 1.5, 0, -5.5, 1.5, 0, -4.5, 1.5, 1, -4.5, 1.5, 0, -4.5, -1.5, 0, -4.5, -1.5, 1, -5.5, 1.5, 0, -5.5, 1.5, 1, -5.5, 1.5, 1, -5.5, 1.5, 0, -5.5, 1.5, 1, -4.5, -1.5, 1, -5.5, 1.5, 1, -5.5, 1.5, 1, -4.5)
@@ -22,22 +22,18 @@ _surfaces = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yeqys"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ukqwk"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ukqwk"]
-size = Vector3(0.8, 0.8, 0.8)
-
-[sub_resource type="BoxMesh" id="BoxMesh_rd3m0"]
-size = Vector3(0.8, 0.8, 0.8)
+size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Playground" type="Node3D"]
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 2
-interior = true
 max_texture_size = 2048
 environment_mode = 0
+generate_probes_subdiv = 3
 light_data = ExtResource("1_2tufx")
 
 [node name="Geometry" type="Node3D" parent="."]
@@ -64,67 +60,58 @@ shape = SubResource("ConcavePolygonShape3D_oo8u7")
 mesh = SubResource("ArrayMesh_yeqys")
 skeleton = NodePath("../..")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.9659259, -0.1294096, 0.22414392, -0.12940955, 0.5085185, 0.8512709, -0.22414395, -0.8512709, 0.47444433, 0, 4, 0)
-light_color = Color(1, 0.93766665, 0.89, 1)
-light_energy = 0.8
+[node name="Node3D" type="Node3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0304561, 1.2519774, -4.923604)
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.5950349, -0.5050947, -0.6251504, -0.22414395, -0.851271, 0.47444427, -0.7718116, -0.14218721, -0.6197498, 0, 4, 0)
-light_color = Color(0.74, 0.83533335, 1, 1)
-light_energy = 0.2
-
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0304561, 1.2519774, -4.923604)
-
-[node name="Interactable" type="StaticBody3D" parent="Node3D"]
+[node name="Interactable" type="StaticBody3D" parent="Geometry/Node3D"]
 script = ExtResource("2_oo8u7")
 metadata/_custom_type_script = "uid://dp1su0e2nxtku"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Interactable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Node3D/Interactable"]
 shape = SubResource("BoxShape3D_yeqys")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Interactable"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Node3D/Interactable"]
 mesh = SubResource("BoxMesh_ukqwk")
 
-[node name="Node3D2" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.55325174, 1.2519774, -4.923604)
+[node name="Node3D2" type="Node3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55325174, 1.2519774, -4.923604)
 
-[node name="Interactable" type="StaticBody3D" parent="Node3D2"]
+[node name="Interactable" type="StaticBody3D" parent="Geometry/Node3D2"]
 script = ExtResource("2_oo8u7")
 interact_type = 1
 metadata/_custom_type_script = "uid://dp1su0e2nxtku"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/Interactable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Node3D2/Interactable"]
 shape = SubResource("BoxShape3D_yeqys")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/Interactable"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Node3D2/Interactable"]
 mesh = SubResource("BoxMesh_ukqwk")
 
-[node name="Node3D3" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.1745102, 1.2519774, -4.923604)
+[node name="Node3D3" type="Node3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1745102, 1.2519774, -4.923604)
 
-[node name="Interactable" type="StaticBody3D" parent="Node3D3"]
+[node name="Interactable" type="StaticBody3D" parent="Geometry/Node3D3"]
 script = ExtResource("2_oo8u7")
 interact_type = 2
 metadata/_custom_type_script = "uid://dp1su0e2nxtku"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D3/Interactable"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Node3D3/Interactable"]
 shape = SubResource("BoxShape3D_yeqys")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D3/Interactable"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Node3D3/Interactable"]
 mesh = SubResource("BoxMesh_ukqwk")
 
-[node name="HeavyItem3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh", "collision")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.995, 0.4, -4.956)
-script = ExtResource("3_yeqys")
-mesh = NodePath("MeshInstance3D")
-collision = NodePath("CollisionShape3D")
-hand_offset = Vector3(0, -0.435, -0.845)
-metadata/_custom_type_script = "uid://dikfhy8p3u7bc"
+[node name="HeavyItem3D" parent="Geometry" instance=ExtResource("3_yeqys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0178108, 0.4, -5.0042586)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HeavyItem3D"]
-shape = SubResource("BoxShape3D_ukqwk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HeavyItem3D"]
-mesh = SubResource("BoxMesh_rd3m0")
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+light_energy = 4.845
+light_size = 0.04
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 2.0
+shadow_opacity = 0.9
+shadow_blur = 2.0
+shadow_caster_mask = 4294966277
+omni_range = 17.0

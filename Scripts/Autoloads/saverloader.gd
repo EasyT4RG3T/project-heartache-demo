@@ -46,7 +46,9 @@ func erase_graphics_settings() -> void:
 	_queue_function(_erase_graphics_settings_data)
 
 func save_game_data(slot: int) -> void:
-	_queue_function(_save_game_data, slot)
+	var save_data: Dictionary = {}
+	save_requsted.emit(save_data)
+	_queue_function(_save_game_data, [slot, save_data])
 
 func load_game_data(slot: int) -> void:
 	_queue_function(_load_game_data, slot)
@@ -255,7 +257,9 @@ func _resource_from_dict(dictionary: Dictionary, resource: Resource) -> void:
 			resource.set(key, dictionary[key])
 
 
-func _save_game_data(slot: int) -> void:
+func _save_game_data(data: Array) -> void:
+	var slot: int = data[0]
+	
 	if not DirAccess.dir_exists_absolute(GAME_DATA_PATH):
 		DirAccess.make_dir_recursive_absolute(GAME_DATA_PATH)
 	
@@ -271,14 +275,7 @@ func _save_game_data(slot: int) -> void:
 		game_data = bytes_to_var(read_data_byte)
 		file_read.close()
 	
-	var save_data: Dictionary = {}
-	
-	for node in get_tree().get_nodes_in_group("Save"):
-		if node.scene_file_path.is_empty():
-			continue
-		if !node.call_thread_safe("has_meta", "save"):
-			continue
-		save_data = node.call_thread_safe("save", save_data)
+	var save_data: Dictionary = data[1]
 	
 	for key in save_data:
 		game_data[key] = save_data[key]
@@ -316,6 +313,10 @@ func _load_game_data(slot: int) -> void:
 	file_read.close()
 	
 	print(game_data)
+	
+	for key in game_data:
+		if key == "player":
+			GameManager.player_character.call_deferred("load", game_data[key])
 	
 	Console.call_deferred("console_print", "game data: loaded from slot " + str(slot))
 	return
