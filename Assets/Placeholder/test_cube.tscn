@@ -8,18 +8,18 @@ size = Vector3(0.8, 0.8, 0.8)
 [sub_resource type="BoxMesh" id="BoxMesh_rd3m0"]
 size = Vector3(0.8, 0.8, 0.8)
 
-[node name="HeavyItem3D" type="StaticBody3D" node_paths=PackedStringArray("mesh", "collision")]
+[node name="HeavyItem3D" type="StaticBody3D"]
 script = ExtResource("1_cimlw")
-mesh = NodePath("MeshInstance3D")
-collision = NodePath("CollisionShape3D")
 rest_offset = Vector3(0, 0.4, 0)
+rest_rot = null
 hand_offset = Vector3(0, -0.435, -0.845)
+hand_rot = null
+interact_type = null
 metadata/_custom_type_script = "uid://dikfhy8p3u7bc"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ukqwk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-layers = 4
 gi_mode = 2
 mesh = SubResource("BoxMesh_rd3m0")

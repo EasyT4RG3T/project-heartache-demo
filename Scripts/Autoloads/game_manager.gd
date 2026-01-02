@@ -100,3 +100,19 @@ func set_debug_overlay(value: int) -> void:
 		debug_overlay.queue_free()
 		await get_tree().process_frame
 		debug_overlay = null
+
+
+func save(file: Dictionary) -> void:
+	# save some game stats
+	
+	file["player"] = player_character.save()
+
+
+func load_save(file: Dictionary) -> void:
+	# load some game stats
+	
+	player_character.load_save(file["player"])
+
+
+func load_chunk(file: Dictionary) -> void:
+	pass

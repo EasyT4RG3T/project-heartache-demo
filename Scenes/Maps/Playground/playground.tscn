@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://clfnlnf15u3v"]
+[gd_scene load_steps=9 format=4 uid="uid://clfnlnf15u3v"]
 
 [ext_resource type="LightmapGIData" uid="uid://b6o2c15wlymkr" path="res://Scenes/Maps/Playground/playground.lmbake" id="1_2tufx"]
 [ext_resource type="Script" uid="uid://dp1su0e2nxtku" path="res://Scripts/Nodes/interactable.gd" id="2_oo8u7"]
@@ -26,6 +26,9 @@ size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ukqwk"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yeqys"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Playground" type="Node3D"]
 
@@ -103,6 +106,13 @@ mesh = SubResource("BoxMesh_ukqwk")
 
 [node name="HeavyItem3D" parent="Geometry" instance=ExtResource("3_yeqys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0178108, 0.4, -5.0042586)
+rest_rot = Vector3(0, 0, 0)
+hand_rot = Vector3(0, 0, 0)
+interact_type = 0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/HeavyItem3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4969221, 0)
+mesh = SubResource("BoxMesh_yeqys")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
@@ -114,5 +124,5 @@ shadow_bias = 0.01
 shadow_normal_bias = 2.0
 shadow_opacity = 0.9
 shadow_blur = 2.0
-shadow_caster_mask = 4294966277
+shadow_caster_mask = 4294966273
 omni_range = 17.0

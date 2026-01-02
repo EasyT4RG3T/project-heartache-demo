@@ -1,9 +1,6 @@
 extends Node
 
 
-signal save_requsted(save_data: Dictionary)
-
-
 const GAME_VERSION: int = 1
 const SETTINGS_VERSION: int = 1
 
@@ -47,20 +44,17 @@ func erase_graphics_settings() -> void:
 
 func save_game_data(slot: int) -> void:
 	var save_data: Dictionary = {}
-	save_requsted.emit(save_data)
+	GameManager.save(save_data)
 	_queue_function(_save_game_data, [slot, save_data])
 
 func load_game_data(slot: int) -> void:
 	_queue_function(_load_game_data, slot)
 
+func load_chunk_data(slot: int, chunk: String) -> void:
+	_queue_function(_load_chunk_data, [slot, chunk])
+
 func erase_game_data(slot: int) -> void:
 	_queue_function(_erase_game_data, slot)
-
-func save_temp() -> void:
-	_queue_function(_save_temp)
-
-func load_temp() -> void:
-	_queue_function(_load_temp)
 
 
 func _init() -> void:
@@ -303,151 +297,28 @@ func _load_game_data(slot: int) -> void:
 		Console.call_deferred("console_print", "game data: couldn't open file")
 		return
 	
-	for node in get_tree().get_nodes_in_group("Save"):
-		if node is PlayerCharacter: continue
-		node.queue_free()
-	
 	var game_data: Dictionary = {}
 	
 	var read_data_byte = file_read.get_buffer(file_read.get_length())
 	game_data = bytes_to_var(read_data_byte)
 	file_read.close()
 	
-	print(game_data)
-	
-	for key in game_data:
-		if key == "player":
-			GameManager.player_character.call_deferred("load", game_data[key])
+	GameManager.call_deferred("load_save", game_data)
 	
 	Console.call_deferred("console_print", "game data: loaded from slot " + str(slot))
 	return
 
 
+func _load_chunk_data(slot: int, chunk: String) -> void:
+	print(slot, chunk)
+
+
 func _erase_game_data(slot) -> void:
-	print("erased game from slot: ", slot)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#func save_game_data(slot: int = 0) -> String:
-#	if not DirAccess.dir_exists_absolute(GAME_DATA_PATH):
-#		DirAccess.make_dir_recursive_absolute(GAME_DATA_PATH)
-#	
-#	var save_data: Dictionary = {}
-#	save_requsted.emit(save_data)
-#	
-#	if FileAccess.file_exists(GAME_DATA_PATH + "temp.dat"):
-#		var file_read = FileAccess.open(GAME_DATA_PATH + "temp.dat", FileAccess.READ)
-#		if !file_read:
-#			return "error saving game data to slot " + str(slot) + ", couldn't open temp file"
-#		
-#		# add data from save_data to file_read data and ovverride existing data?
-#		
-#		file_read.close()
-#	
-#	var file = FileAccess.open(GAME_DATA_PATH + "slot_" + str(slot) + ".dat", FileAccess.WRITE)
-#	if !file:
-#		return "error saving game data to slot " + str(slot) + ", couldn't create the file"
-#	
-#	file.store_8(GameManager.GAME_VERSION_1)
-#	file.store_8(GameManager.GAME_VERSION_2)
-#	file.store_8(GameManager.GAME_VERSION_3)
-#	
-#	var time = Time.get_datetime_string_from_system()
-#	file.store_32(Time.get_unix_time_from_datetime_string(time))
-#	
-#	var data_byte = var_to_bytes(save_data)
-#	file.store_buffer(data_byte)
-#	file.close()
-#	
-#	return "saved game data in slot " + str(slot)
-
-
-#func load_game_data(slot: int = 0) -> String:
-#	if !FileAccess.file_exists(GAME_DATA_PATH + "slot_" + str(slot) + ".dat"):
-#		return "error loading game data slot " + str(slot) + ", file doesn't exist"
-#	
-#	var file = FileAccess.open(GAME_DATA_PATH + "slot_" + str(slot) + ".dat", FileAccess.READ)
-#	if !file:
-#		return "error loading game data slot " + str(slot) + ", couldn't open file"
-#	
-#	var version_1 = file.get_8()
-#	var version_2 = file.get_8()
-#	if version_1 != GameManager.GAME_VERSION_1 or version_2 != GameManager.GAME_VERSION_2:
-#		return "error loading game data slot " + str(slot) + ", version missmatch"
-#	file.seek(7)
-#	
-#	var data_byte = file.get_buffer(file.get_length() - 7)
-#	file.close()
-#	
-#	var save_data = bytes_to_var(data_byte)
-#	if save_data is not Dictionary:
-#		return "error loading game data slot " + str(slot) + ", not dictionary"
-#	
-#	load_requested.emit(save_data)
-#	
-#	return "loaded game data from slot " + str(slot)
-
-
-func delete_game_data(slot: int = 0) -> String:
-	if !FileAccess.file_exists(GAME_DATA_PATH + "slot_" + str(slot)):
-		return "error deleteing game data slot " + str(slot) + ", file not found"
+	if !FileAccess.file_exists(GAME_DATA_PATH + str(slot)):
+		Console.call_deferred("console_print", "game data: slot " + str(slot) + ", file not found")
 	
-	var error = DirAccess.remove_absolute(GAME_DATA_PATH + "slot_" + str(slot))
+	var error = DirAccess.remove_absolute(GAME_DATA_PATH + str(slot))
 	if error == OK:
-		return "deleted game data slot " + str(slot)
+		Console.call_deferred("console_print", "game data: deleted slot " + str(slot))
 	else:
-		return "error deleting game data slot " + str(slot) + ", " + error
-
-
-func _save_temp(save_data: Dictionary) -> String:
-	if not DirAccess.dir_exists_absolute(GAME_DATA_PATH):
-		DirAccess.make_dir_recursive_absolute(GAME_DATA_PATH)
-	
-	var temp_data: Dictionary = {}
-	
-	if FileAccess.file_exists(GAME_DATA_PATH + "temp.dat"):
-		var file_read = FileAccess.open(GAME_DATA_PATH + "temp.dat", FileAccess.READ)
-		if !file_read:
-			return "error saving temp game data, couldn't open file"
-		
-		var read_data_byte = file_read.get_buffer(file_read.get_length())
-		temp_data = bytes_to_var(read_data_byte)
-		file_read.close()
-	
-	for key in save_data:
-		temp_data[key] = save_data[key]
-	
-	var file_write = FileAccess.open(GAME_DATA_PATH + "temp.dat", FileAccess.WRITE)
-	if !file_write:
-		return "error saving temp game data, couldn't create the file"
-	
-	var write_data_byte = var_to_bytes(temp_data)
-	file_write.store_buffer(write_data_byte)
-	file_write.close()
-	
-	return "saved temporary game data"
-
-
-func _load_temp() -> String:
-	if !FileAccess.file_exists(GAME_DATA_PATH + "temp.dat"):
-		return "error loading temp game data, file doesn't exist"
-	
-	var file_read = FileAccess.open(GAME_DATA_PATH + "temp.dat", FileAccess.READ)
-	if !file_read:
-		return "error loading temp game data, couldn't open file"
-	
-	return "loaded temporary game data"
+		Console.call_deferred("console_print", "game data: slot " + str(slot) + ", " + error)

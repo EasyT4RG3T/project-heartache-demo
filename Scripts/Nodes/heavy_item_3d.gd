@@ -6,9 +6,10 @@ const ITEM_DROP_VALID = preload("uid://dtutwt0pvs6xq")
 const ITEM_DROP_INVALID = preload("uid://ov8441f6kvfv")
 
 
-@export var mesh: MeshInstance3D
-@export var collision: CollisionShape3D
-var preview: MeshInstance3D
+var meshes: Array[MeshInstance3D]
+var collisions: Array[CollisionShape3D]
+
+var previews: Node3D = Node3D.new()
 
 var collision_query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
 
@@ -22,14 +23,8 @@ enum ItemState { OnGround, InHand }
 
 
 func _ready() -> void:
-	mesh.layers = 4
-	preview = mesh.duplicate()
-	preview.hide()
-	add_child(preview)
-	
-	collision_query.shape = collision.shape
-	
 	interacted.connect(_pick_up)
+	add_child(previews)
 
 
 func _pick_up(player: PlayerCharacter) -> void:
@@ -45,17 +40,30 @@ func _pick_up(player: PlayerCharacter) -> void:
 				player.add_thought("I can't carry this right now")
 				return
 	
+	meshes = []
+	collisions = []
+	
 	for child in get_children():
 		if child is HeavyItem3D:
 			player.add_thought("I can't carry it if it has another heavy object on top")
 			return
+		elif child is MeshInstance3D:
+			meshes.append(child)
+		elif child is CollisionShape3D:
+			collisions.append(child)
+	
+	for collision in collisions:
+		collision.disabled = true
+	
+	for mesh in meshes:
+		previews.add_child(mesh.duplicate())
+		
+		mesh.layers = 2
+		mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	
 	#if player.held_item:
 	#	player.held_item.put_to_inventory(player)
 	
-	collision.disabled = true
-	mesh.layers = 2
-	mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	reparent(player.hands)
 	global_position = player.hands.global_position
 	position = hand_offset
@@ -68,30 +76,41 @@ func drop(player: PlayerCharacter, ray_result: Dictionary) -> void:
 	var reason: String = _check_drop(player, ray_result)
 	
 	if reason == "":
-		collision.disabled = false
-		mesh.layers = 4
-		mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+		for collision in collisions:
+			collision.disabled = false
+		
+		for mesh in meshes:
+			mesh.layers = 1
+			mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+		
 		reparent(ray_result["collider"], false)
 		global_position = ray_result["position"] + rest_offset
 		global_rotation = rest_rot + Vector3(0, player.head.rotation.y, 0)
 		player.heavy_item = null
+		previews.queue_free()
+		collisions = []
+		meshes = []
 	else:
 		player.add_thought(reason)
 
 
 func show_preview(player: PlayerCharacter, ray_result: Dictionary) -> void:
-	preview.show()
-	preview.global_position = ray_result["position"] + rest_offset
-	preview.global_rotation = rest_rot + Vector3(0, player.head.rotation.y, 0)
+	previews.show()
+	previews.global_position = ray_result["position"] + rest_offset
+	previews.global_rotation = rest_rot + Vector3(0, player.head.rotation.y, 0)
 	
 	if _check_drop(player, ray_result) == "":
-		preview.material_override = ITEM_DROP_VALID
+		for child in previews.get_children():
+			if child == MeshInstance3D:
+				previews.material_override = ITEM_DROP_VALID
 	else:
-		preview.material_override = ITEM_DROP_INVALID
+		for child in previews.get_children():
+			if child == MeshInstance3D:
+				previews.material_override = ITEM_DROP_INVALID
 
 
 func hide_preview() -> void:
-	preview.hide()
+	previews.hide()
 
 
 func _check_drop(player: PlayerCharacter, ray_result: Dictionary) -> String:
@@ -112,3 +131,11 @@ func _check_stack(object: Node3D) -> bool:
 		if object.get_parent() is HeavyItem3D:
 			return false
 	return true
+
+
+func save(file: Dictionary) -> void:
+	pass
+
+
+func load_save(file: Dictionary) -> void:
+	pass

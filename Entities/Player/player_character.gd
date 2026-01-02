@@ -146,7 +146,6 @@ var heavy_item: HeavyItem3D = null:
 
 
 func _ready() -> void:
-	SaverLoader.save_requsted.connect(save)
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
@@ -501,26 +500,28 @@ func apply_settings() -> void:
 	mouse_sensitivity = SaverLoader.settings.sensitivity
 
 
-func save(file: Dictionary) -> void:
-	file["player"] = {
+func save() -> Dictionary:
+	var file = {
 		"position": global_position if current_movement_mode != MovementMode.VAULTING else vault_position,
 		"rotation": head.global_rotation,
 		"look_vector": look_vector,
 		"movement_mode": current_movement_mode,
 	}
 	
-	file["player"]["flashlight"] = {
+	file["flashlight"] = {
 		"disabled": flashlight.disabled,
 		"visible": flashlight.light.visible,
 	}
 	
 	if heavy_item:
-		file["player"]["heavy_item"] = {
+		file["heavy_item"] = {
 			"path": heavy_item.scene_file_path,
 		}
+	
+	return file
 
 
-func load(file: Dictionary) -> void:
+func load_save(file: Dictionary) -> void:
 	velocity = Vector3.ZERO
 	global_position = file["position"]
 	head.global_rotation = file["rotation"]
