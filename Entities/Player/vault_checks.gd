@@ -47,7 +47,6 @@ var debug: bool = false:
 				d_v_floor_mesh_3.queue_free()
 				d_v_floor_mesh_4.queue_free()
 				d_v_point_mesh.queue_free()
-				await get_tree().process_frame
 				d_crouch_mesh = null
 				d_player_mesh = null
 				d_v_check_mesh = null

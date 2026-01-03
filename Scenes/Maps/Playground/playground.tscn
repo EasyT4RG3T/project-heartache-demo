@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://clfnlnf15u3v"]
+[gd_scene load_steps=6 format=4 uid="uid://clfnlnf15u3v"]
 
 [ext_resource type="LightmapGIData" uid="uid://b6o2c15wlymkr" path="res://Scenes/Maps/Playground/playground.lmbake" id="1_2tufx"]
-[ext_resource type="Script" uid="uid://dp1su0e2nxtku" path="res://Scripts/Nodes/interactable.gd" id="2_oo8u7"]
-[ext_resource type="PackedScene" uid="uid://cylqjhsw0iwbo" path="res://Assets/Placeholder/test_cube.tscn" id="3_yeqys"]
+[ext_resource type="PackedScene" uid="uid://cfw6t2nflracl" path="res://Assets/Placeholder/test_cube.tscn" id="3_ukqwk"]
+[ext_resource type="PackedScene" uid="uid://cylqjhsw0iwbo" path="res://Assets/Placeholder/test_phys_cube.tscn" id="3_yeqys"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oo8u7"]
 data = PackedVector3Array(-25, -0.1, -25, -25, 0, -25, -25, -0.1, 25, -25, -0.1, -25, 25, -0.1, -25, -25, 0, -25, -25, 0, -25, 25, 0, -25, -1.5, 0, -5.5, -25, -0.1, -25, -25, -0.1, 25, 25, -0.1, -25, -25, 0, -25, -1.5, 0, -5.5, -1.5, 0, -4.5, -25, 0, -25, -1.5, 0, -4.5, 25, 0, 25, -25, -0.1, 25, -25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, 25, -25, 0, 25, -25, -0.1, 25, -25, 0, 25, 25, 0, 25, -25, 0, -25, 25, -0.1, -25, 25, 0, -25, 25, 0, -25, 1.5, 0, -5.5, -1.5, 0, -5.5, 25, 0, -25, 1.5, 0, -4.5, 1.5, 0, -5.5, 25, 0, -25, 25, 0, 25, 1.5, 0, -4.5, 25, -0.1, -25, 25, 0, 25, 25, 0, -25, 25, 0, 25, -1.5, 0, -4.5, 1.5, 0, -4.5, -25, -0.1, 25, 25, -0.1, 25, 25, -0.1, -25, -25, -0.1, 25, 25, 0, 25, 25, -0.1, 25, 25, -0.1, -25, 25, -0.1, 25, 25, 0, 25, -1.5, 1, -5.5, -1.5, 0, -4.5, -1.5, 0, -5.5, -1.5, 1, -5.5, -1.5, 0, -5.5, 1.5, 0, -5.5, -1.5, 1, -5.5, -1.5, 1, -4.5, -1.5, 0, -4.5, -1.5, 1, -4.5, 1.5, 1, -4.5, -1.5, 0, -4.5, -1.5, 1, -5.5, 1.5, 1, -4.5, -1.5, 1, -4.5, 1.5, 1, -4.5, 1.5, 0, -5.5, 1.5, 0, -4.5, 1.5, 1, -4.5, 1.5, 0, -4.5, -1.5, 0, -4.5, -1.5, 1, -5.5, 1.5, 0, -5.5, 1.5, 1, -5.5, 1.5, 1, -5.5, 1.5, 0, -5.5, 1.5, 1, -4.5, -1.5, 1, -5.5, 1.5, 1, -5.5, 1.5, 1, -4.5)
@@ -21,15 +21,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADIwc3MzL0AAMjBAADIwQAAAAAAAMjBAADIwc3MzL0AAMhBAADIwc3MzL0AAMjBAADIQc3MzL0AAMjBAADIwQAAAAAAAMjBAADIwQAAAAAAAMjBAADIQQAAAAAAAMjBAADAvwAAAAAAALDAAADIwc3MzL0AAMjBAADIwc3MzL0AAMhBAADIQc3MzL0AAMjBAADAvwAAAAAAAJDAAADIQQAAAAAAAMhBAADIwQAAAAAAAMhBAADIwQAAAAAAAMhBAADIwc3MzL0AAMhBAADIwQAAAAAAAMhBAADIQQAAAAAAAMhBAADIQQAAAAAAAMjBAADAPwAAAAAAALDAAADAPwAAAAAAAJDAAADIQc3MzL0AAMjBAADIQQAAAAAAAMhBAADIQQAAAAAAAMjBAADIQc3MzL0AAMhBAADIQc3MzL0AAMhBAADIQc3MzL0AAMhBAADAvwAAgD8AALDAAADAvwAAAAAAAJDAAADAvwAAAAAAALDAAADAvwAAgD8AALDAAADAvwAAAAAAALDAAADAPwAAAAAAALDAAADAvwAAgD8AAJDAAADAvwAAgD8AAJDAAADAPwAAgD8AAJDAAADAvwAAAAAAAJDAAADAvwAAgD8AALDAAADAPwAAgD8AAJDAAADAvwAAgD8AAJDAAADAPwAAgD8AAJDAAADAPwAAAAAAALDAAADAPwAAAAAAAJDAAADAPwAAAAAAAJDAAADAPwAAgD8AALDAAADAPwAAgD8AALDAAADAPwAAgD8AALDAAAAAgP9//n8AAACA/3/+fwAAAID/f/5//////wAA/z//////AAD/P/////8AAP8/AID/////AAAAgP////8AAACA/////wAAAIAAAP//AAAAgAAA//8AAACAAAD//wAAAID/////AAAAgP////8AAAAAAID/f/5/AID/////AAD/f/9/AAD/P/9//38AAP8//3//fwAA/z//////AAD/PwCA/////wAAAID/////AAD//wCA/3/+f///AID/f/5///8AgP9//n8AgAAA//8AAP9//38AAP8///8AgP9//n8AAACA/3/+fwAAAID/f/5/AAAAgP9//n//////AAD/P/////8AAP8//////wAA/z8AAACA/3/+f/9//38AAP8//3//fwAA/z//f/9/AAD/PwCA/////wAAAID/////AAAAgP////8AAP//AID/f/5///8AgP9//n///wCA/3/+f/9//38AAP8//////wAA/z///wCA/3/+fwCA/////wAA")
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yeqys"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ukqwk"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yeqys"]
-size = Vector3(0.2, 0.2, 0.2)
-
 [node name="Playground" type="Node3D"]
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
@@ -42,6 +33,7 @@ light_data = ExtResource("1_2tufx")
 [node name="Geometry" type="Node3D" parent="."]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry"]
+visible = false
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geometry/CSGCombiner3D"]
@@ -63,66 +55,61 @@ shape = SubResource("ConcavePolygonShape3D_oo8u7")
 mesh = SubResource("ArrayMesh_yeqys")
 skeleton = NodePath("../..")
 
-[node name="Node3D" type="Node3D" parent="Geometry"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0304561, 1.2519774, -4.923604)
+[node name="Physics" type="Node3D" parent="Geometry"]
 
-[node name="Interactable" type="StaticBody3D" parent="Geometry/Node3D"]
-script = ExtResource("2_oo8u7")
-metadata/_custom_type_script = "uid://dp1su0e2nxtku"
+[node name="RigidBody3D" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0675826, 1.8679185, -5.0757327)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Node3D/Interactable"]
-shape = SubResource("BoxShape3D_yeqys")
+[node name="RigidBody3D2" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(0.99784523, 0, -0.065612115, 0, 1, 0, 0.065612115, 0, 0.99784523, -2.820243, 2.9924264, -4.8687973)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Node3D/Interactable"]
-mesh = SubResource("BoxMesh_ukqwk")
+[node name="RigidBody3D3" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(0.98746616, 0, 0.15783063, 0, 1, 0, -0.15783063, 0, 0.98746616, -3.3892953, 3.957759, -5.1505156)
 
-[node name="Node3D2" type="Node3D" parent="Geometry"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55325174, 1.2519774, -4.923604)
+[node name="RigidBody3D4" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(0.9999823, 0, 0.0059340894, 0, 1, 0, -0.0059340894, 0, 0.9999823, -2.5126452, 8.179331, -5.1505156)
 
-[node name="Interactable" type="StaticBody3D" parent="Geometry/Node3D2"]
-script = ExtResource("2_oo8u7")
-interact_type = 1
-metadata/_custom_type_script = "uid://dp1su0e2nxtku"
+[node name="RigidBody3D5" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(0.9821693, 0, -0.18799846, 0, 1, 0, 0.18799846, 0, 0.9821693, -3.3482826, 9.229746, -5.1505156)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Node3D2/Interactable"]
-shape = SubResource("BoxShape3D_yeqys")
+[node name="RigidBody3D6" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(0.9821693, 0, -0.18799846, 0, 1, 0, 0.18799846, 0, 0.9821693, -3.060401, 10.131736, -5.4674473)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Node3D2/Interactable"]
-mesh = SubResource("BoxMesh_ukqwk")
+[node name="RigidBody3D7" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(0.64565754, 0, 0.763627, 0, 1, 0, -0.763627, 0, 0.64565754, -2.942812, 11.2614565, -5.244287)
 
-[node name="Node3D3" type="Node3D" parent="Geometry"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1745102, 1.2519774, -4.923604)
+[node name="RigidBody3D8" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(-0.36151066, 0, -0.932368, 0, 1, 0, 0.932368, 0, -0.36151066, -3.0799885, 14.236734, -5.2322893)
 
-[node name="Interactable" type="StaticBody3D" parent="Geometry/Node3D3"]
-script = ExtResource("2_oo8u7")
-interact_type = 2
-metadata/_custom_type_script = "uid://dp1su0e2nxtku"
+[node name="RigidBody3D9" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(-0.4219063, 0, -0.9066394, 0, 1, 0, 0.9066394, 0, -0.4219063, -3.3623445, 15.361242, -5.076487)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Node3D3/Interactable"]
-shape = SubResource("BoxShape3D_yeqys")
+[node name="RigidBody3D10" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(-0.20982333, 0, -0.9777393, 0, 1, 0, 0.9777393, 0, -0.20982333, -2.893961, 16.326576, -5.5052094)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Node3D3/Interactable"]
-mesh = SubResource("BoxMesh_ukqwk")
+[node name="RigidBody3D11" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(-0.35597152, 0, -0.9344967, 0, 1, 0, 0.9344967, 0, -0.35597152, -3.210879, 20.548147, -4.687849)
 
-[node name="HeavyItem3D" parent="Geometry" instance=ExtResource("3_yeqys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0178108, 0.4, -5.0042586)
-rest_rot = Vector3(0, 0, 0)
-hand_rot = Vector3(0, 0, 0)
-interact_type = 0
+[node name="RigidBody3D12" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(-0.5303484, 0, -0.84777975, 0, 1, 0, 0.84777975, 0, -0.5303484, -2.9087875, 21.598562, -5.4669704)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/HeavyItem3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4969221, 0)
-mesh = SubResource("BoxMesh_yeqys")
+[node name="RigidBody3D13" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(-0.5303484, 0, -0.84777975, 0, 1, 0, 0.84777975, 0, -0.5303484, -2.7173626, 22.500553, -5.0839844)
+
+[node name="RigidBody3D14" parent="Geometry/Physics" instance=ExtResource("3_yeqys")]
+transform = Transform3D(0.4785692, 0, -0.87804973, 0, 1, 0, 0.87804973, 0, 0.4785692, -2.9679399, 23.630272, -5.055023)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 layers = 3
 light_energy = 4.845
-light_size = 0.1
+light_size = 0.2
 shadow_enabled = true
-shadow_bias = 0.01
+shadow_bias = 0.015
 shadow_normal_bias = 2.0
 shadow_opacity = 0.9
-shadow_blur = 2.0
 shadow_caster_mask = 4294966273
 omni_range = 17.0
+
+[node name="StaticBody3D" parent="." instance=ExtResource("3_ukqwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1416252, 1.2499998, -5.0101414)

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_aq26j")
 msaa_2d = 2
-taa = false
+msaa_3d = 1
 ssao_quality = 1
 positional_shadow_size = 8192
 metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"

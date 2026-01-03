@@ -4,9 +4,9 @@ extends Resource
 @export var scaling_3d_mode: Viewport.Scaling3DMode = Viewport.SCALING_3D_MODE_BILINEAR
 @export_range(0.25, 2) var scaling_3d_scale: float = 1.0
 @export var msaa_2d: Viewport.MSAA = Viewport.MSAA_8X
-@export var msaa_3d: Viewport.MSAA = Viewport.MSAA_DISABLED
+@export var msaa_3d: Viewport.MSAA = Viewport.MSAA_4X
 @export var ssaa: Viewport.ScreenSpaceAA = Viewport.SCREEN_SPACE_AA_DISABLED
-@export var taa: bool = true
+@export var taa: bool = false
 @export var debanding: bool = false
 
 @export var tonemap_mode: Environment.ToneMapper = Environment.TONE_MAPPER_FILMIC
@@ -83,7 +83,7 @@ extends Resource
 
 @export var positional_shadow_size: int = 16384
 @export var positional_shadow_quality: RenderingServer.ShadowQuality = RenderingServer.SHADOW_QUALITY_HARD
-@export var positional_shadow_16bit: bool = false
+@export var positional_shadow_16bit: bool = true
 @export var positional_shadow_atlas0: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4
 @export var positional_shadow_atlas1: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4
 @export var positional_shadow_atlas2: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4

@@ -1,5 +1,5 @@
 class_name Interactable
-extends StaticBody3D
+extends Resource
 
 
 signal interacted(player)
@@ -11,6 +11,8 @@ enum InteractableType { PRESS, TAP, HOLD }
 
 var active: bool = true
 
+var is_interacted: bool = false
+
 
 func interact(player: PlayerCharacter):
 	match interact_type:
@@ -20,8 +22,10 @@ func interact(player: PlayerCharacter):
 			interacted.emit(player)
 		InteractableType.HOLD:
 			started_interacting.emit(player)
+			is_interacted = true
 
 
 func stop_interacting(player: PlayerCharacter):
-	if interact_type == InteractableType.HOLD:
+	if is_interacted and interact_type == InteractableType.HOLD:
+			is_interacted = false
 			stopped_interacting.emit(player)

@@ -1,25 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cylqjhsw0iwbo"]
+[gd_scene load_steps=4 format=3 uid="uid://cfw6t2nflracl"]
 
-[ext_resource type="Script" uid="uid://dikfhy8p3u7bc" path="res://Scripts/Nodes/heavy_item_3d.gd" id="1_cimlw"]
+[ext_resource type="Script" uid="uid://bfkhk86o5mvny" path="res://Assets/Placeholder/test_cube.gd" id="1_cimlw"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ukqwk"]
-size = Vector3(0.8, 0.8, 0.8)
+[sub_resource type="BoxShape3D" id="BoxShape3D_wx53c"]
+size = Vector3(0.5, 0.5, 0.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_rd3m0"]
-size = Vector3(0.8, 0.8, 0.8)
+[sub_resource type="BoxMesh" id="BoxMesh_cimlw"]
+size = Vector3(0.5, 0.5, 0.5)
 
-[node name="HeavyItem3D" type="StaticBody3D"]
+[node name="StaticBody3D" type="StaticBody3D"]
 script = ExtResource("1_cimlw")
-rest_offset = Vector3(0, 0.4, 0)
-rest_rot = null
-hand_offset = Vector3(0, -0.435, -0.845)
-hand_rot = null
-interact_type = null
-metadata/_custom_type_script = "uid://dikfhy8p3u7bc"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_ukqwk")
+shape = SubResource("BoxShape3D_wx53c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-gi_mode = 2
-mesh = SubResource("BoxMesh_rd3m0")
+mesh = SubResource("BoxMesh_cimlw")

@@ -101,15 +101,16 @@ var can_vault: bool = false:
 			#_raise_hands(false)
 var player_tween: Tween
 
-var interact_type: String = ""
-var interaction_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
-var interaction_ray_result: Dictionary:
+var interactable: Interactable:
 	set(value):
-		if value == interaction_ray_result: return
-		if value and value["collider"] is Interactable and value["collider"].active:
-			interaction_ray_result = value
+		if interactable:
+			interactable.stop_interacting(self)
+		
+		interactable = value
+		
+		if value:
 			player_hud.active = true
-			match value["collider"].interact_type:
+			match value.interact_type:
 				Interactable.InteractableType.PRESS:
 					player_hud.can_tap = false
 					player_hud.can_hold = false
@@ -122,27 +123,32 @@ var interaction_ray_result: Dictionary:
 					player_hud.can_tap = false
 					player_hud.can_hold = true
 					interact_type = "Hold"
+		
 		else:
-			interaction_ray_result = {}
 			player_hud.active = false
 			player_hud.can_tap = false
 			player_hud.can_hold = false
 			interact_type = ""
-var drop_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
-var drop_ray_result: Dictionary:
+
+var interact_type: String = ""
+var interaction_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+var interaction_ray_result: Dictionary:
 	set(value):
 		if value:
-			drop_ray_result = value
-		else:
-			drop_ray_result = {}
+			if interaction_ray_result:
+				if interaction_ray_result["collider"] == value["collider"]:
+					return
+			
+			if value["collider"].has_method("get_interactable"):
+				interactable = value["collider"].get_interactable()
+				interaction_ray_result = value
+				return
+		
+		interactable = null
+		interaction_ray_result = value
 
-var heavy_item: HeavyItem3D = null:
-	set(value):
-		heavy_item = value
-		if value is HeavyItem3D:
-			change_movement_mode(MovementMode.CARRYING)
-		else:
-			change_movement_mode(MovementMode.WALKING)
+var drop_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+var drop_ray_result: Dictionary
 
 
 func _ready() -> void:
@@ -214,12 +220,12 @@ func _handle_movement_input(event: InputEvent) -> void:
 
 func _handle_action_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		if interaction_ray_result:
-			interaction_ray_result["collider"].interact(self)
+		if interactable:
+			interactable.interact(self)
 	
 	if event.is_action_released("interact"):
-		if interaction_ray_result:
-			interaction_ray_result["collider"].stop_interacting(self)
+		if interactable:
+			interactable.stop_interacting(self)
 	
 	if event.is_action_pressed("flashlight"):
 		if !flashlight.disabled:
@@ -227,30 +233,30 @@ func _handle_action_input(event: InputEvent) -> void:
 				flashlight.switch()
 	
 	if event.is_action_pressed("drop"):
-		if heavy_item:
-			while Input.is_action_pressed("drop"):
-				drop_ray_query.from = head.global_position
-				drop_ray_query.to = head.global_position - main_camera.global_basis.z *\
-				clampf(abs(head.rotation.x) * 2, 1.2, 2)
-				drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
-				
-				if drop_ray_result:
-					heavy_item.show_preview(self, drop_ray_result)
-				else:
-					heavy_item.hide_preview()
-				
-				await get_tree().physics_frame
+		print("drop")
 	
 	if event.is_action_released("drop"):
-		if heavy_item:
-			heavy_item.hide_preview()
-			drop_ray_query.from = head.global_position
-			drop_ray_query.to = head.global_position - main_camera.global_basis.z *\
-			clampf(abs(head.rotation.x) * 2, 1.2, 2)
-			drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
-			
-			if drop_ray_result:
-				heavy_item.drop(self, drop_ray_result)
+		print("drop")
+	
+	if event.is_action_pressed("use_main"):
+		drop_ray_query.from = head.global_position
+		drop_ray_query.to = head.global_position - main_camera.global_basis.z * 100
+		drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
+		
+		if drop_ray_result and drop_ray_result["collider"] is RigidBody3D:
+			var body: RigidBody3D = drop_ray_result["collider"]
+			body.apply_impulse(-main_camera.global_basis.z * 10)
+	
+	if event.is_action_pressed("use_second"):
+		drop_ray_query.from = head.global_position
+		drop_ray_query.to = head.global_position - main_camera.global_basis.z * 100
+		drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
+		
+		if drop_ray_result and drop_ray_result["collider"] is RigidBody3D:
+			var body: RigidBody3D = drop_ray_result["collider"]
+			body.apply_impulse(main_camera.global_basis.z * 10)
+		else:
+			pass
 
 
 func change_movement_mode(mode: MovementMode) -> void:
@@ -513,11 +519,6 @@ func save() -> Dictionary:
 		"visible": flashlight.light.visible,
 	}
 	
-	if heavy_item:
-		file["heavy_item"] = {
-			"path": heavy_item.scene_file_path,
-		}
-	
 	return file
 
 
@@ -537,11 +538,3 @@ func load_save(file: Dictionary) -> void:
 	
 	flashlight.disabled = file["flashlight"]["disabled"]
 	flashlight.light.visible = file["flashlight"]["visible"]
-	
-	if heavy_item:
-		heavy_item.queue_free()
-		heavy_item = null
-	if file.has("heavy_item"):
-		var hv: HeavyItem3D = load(file["heavy_item"]["path"]).instantiate()
-		add_child(hv)
-		hv._pick_up(self)

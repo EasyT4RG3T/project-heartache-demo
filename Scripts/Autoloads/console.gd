@@ -566,6 +566,10 @@ var command_tree: Dictionary = {
 				RenderingServer.SHADOW_QUALITY_SOFT_ULTRA],
 				"get": [func(): return str(SaverLoader.graphics_settings.positional_shadow_quality)],
 			},
+			"bit": {
+				"16": [_command_graphics_positional_shadow_16_bit, true],
+				"32": [_command_graphics_positional_shadow_16_bit, false],
+			},
 		},
 	},
 	"game": {
@@ -1185,6 +1189,11 @@ func _command_graphics_positional_shadow_quality(value: RenderingServer.ShadowQu
 	SaverLoader.graphics_settings.positional_shadow_quality = value
 	RenderingServer.positional_soft_shadow_filter_set_quality(value)
 	return "set positional shadow quality to " + str(value)
+
+func _command_graphics_positional_shadow_16_bit(value: bool) -> String:
+	SaverLoader.graphics_settings.positional_shadow_16bit = value
+	get_viewport().positional_shadow_atlas_16_bits = value
+	return "set positional atlas 16 bits to " + str(value)
 
 func _command_game_save(value: int) -> String:
 	SaverLoader.save_game_data(value)

@@ -6,8 +6,9 @@
 script = ExtResource("1_s6e2t")
 scaling_3d_scale = 0.8
 msaa_2d = 0
-taa = false
+msaa_3d = 0
 ssao_quality = 0
+ssao_half_size = true
 directional_shadow_size = 1024
 positional_shadow_size = 1024
 metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"

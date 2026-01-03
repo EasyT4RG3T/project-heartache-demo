@@ -1,5 +1,5 @@
 class_name ShapeHelper
-extends Node
+extends Resource
 
 
 static func create_sphere_mesh(radius: float, color: Color, opacity: float) -> MeshInstance3D:
