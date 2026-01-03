@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cylqjhsw0iwbo"]
+[gd_scene load_steps=4 format=3 uid="uid://cylqjhsw0iwbo"]
+
+[ext_resource type="Script" uid="uid://07xri3gdevdi" path="res://Scripts/Nodes/dynamic_rigidbody3d.gd" id="1_v50fy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wx53c"]
 size = Vector3(0.8, 0.8, 0.8)
@@ -8,6 +10,8 @@ size = Vector3(0.8, 0.8, 0.8)
 
 [node name="RigidBody3D" type="RigidBody3D"]
 input_ray_pickable = false
+script = ExtResource("1_v50fy")
+metadata/_custom_type_script = "uid://07xri3gdevdi"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_wx53c")

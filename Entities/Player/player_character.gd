@@ -52,7 +52,7 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 @onready var main_camera: Camera3D = %MainCamera
 @onready var inventory_camera: Camera3D = %InventoryCamera
 @onready var inventory_sub_viewport: SubViewport = %InventorySubViewport
-@export var player_fov: float = 90
+var player_fov: float = 90
 var fov_tween: Tween
 func _change_fov_smooth(fov: float) -> void:
 	if fov_tween:
@@ -104,22 +104,23 @@ var player_tween: Tween
 var interactable: Interactable:
 	set(value):
 		if interactable:
-			interactable.stop_interacting(self)
+			interactable.stop_looking(self)
 		
 		interactable = value
 		
 		if value:
+			value.start_looking(self)
 			player_hud.active = true
-			match value.interact_type:
-				Interactable.InteractableType.PRESS:
+			match value.show_type:
+				Interactable.ShowType.PRESS:
 					player_hud.can_tap = false
 					player_hud.can_hold = false
 					interact_type = "Press"
-				Interactable.InteractableType.TAP:
+				Interactable.ShowType.TAP:
 					player_hud.can_hold = false
 					player_hud.can_tap = true
 					interact_type = "Tap"
-				Interactable.InteractableType.HOLD:
+				Interactable.ShowType.HOLD:
 					player_hud.can_tap = false
 					player_hud.can_hold = true
 					interact_type = "Hold"
@@ -152,11 +153,12 @@ var drop_ray_result: Dictionary
 
 
 func _ready() -> void:
+	apply_settings()
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
-	interaction_ray_query.collision_mask = 1
-	drop_ray_query.collision_mask = 1
+	interaction_ray_query.collision_mask = 3
+	drop_ray_query.collision_mask = 3
 	vault_checks.p = self
 
 
@@ -221,11 +223,11 @@ func _handle_movement_input(event: InputEvent) -> void:
 func _handle_action_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if interactable:
-			interactable.interact(self)
+			interactable.interact()
 	
 	if event.is_action_released("interact"):
 		if interactable:
-			interactable.stop_interacting(self)
+			interactable.stop_interacting()
 	
 	if event.is_action_pressed("flashlight"):
 		if !flashlight.disabled:
@@ -259,8 +261,9 @@ func _handle_action_input(event: InputEvent) -> void:
 			pass
 
 
-func change_movement_mode(mode: MovementMode) -> void:
-	exit_movement_mode(current_movement_mode)
+func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
+	if exit:
+		exit_movement_mode(current_movement_mode)
 	current_movement_mode = mode
 	match mode:
 		MovementMode.WALKING:
@@ -284,7 +287,7 @@ func change_movement_mode(mode: MovementMode) -> void:
 			can_vault = false
 			flashlight.turn_off()
 		MovementMode.VAULTING:
-			can_vault = false
+			body_collision.disabled = true
 
 
 func exit_movement_mode(mode: MovementMode) -> void:
@@ -293,6 +296,8 @@ func exit_movement_mode(mode: MovementMode) -> void:
 			body_collision.shape.height = player_collision_height
 			body_collision.position.y = player_collision_position.y
 			_move_head_smooth(player_head_position, 0.3)
+		MovementMode.VAULTING:
+			body_collision.disabled = false
 
 
 func change_movement_speed(speed: float) -> void:
@@ -456,22 +461,22 @@ func _vault_check() -> void:
 func _vault() -> void:
 	var pre_vault_movement_mode = current_movement_mode
 	if current_movement_mode != MovementMode.CROUCHING or vault_checks.vault_uncrouch_height == Vector3.ZERO:
-		current_movement_mode = MovementMode.VAULTING
+		change_movement_mode(MovementMode.VAULTING)
 		_move_player_smooth(vault_position, 0.4, func():
-			current_movement_mode = pre_vault_movement_mode)
+			change_movement_mode(pre_vault_movement_mode))
 		return
 	
-	current_movement_mode = MovementMode.VAULTING
+	change_movement_mode(MovementMode.VAULTING, false)
 	if vault_checks.vault_crouch_mid == Vector3.ZERO:
 		_move_player_smooth(global_position + vault_checks.vault_uncrouch_height, 0.2, func():
 			_move_player_smooth(vault_position, 0.4, func():
-				current_movement_mode = pre_vault_movement_mode))
+				change_movement_mode(pre_vault_movement_mode)))
 		return
 	
 	_move_player_smooth(global_position + vault_checks.vault_uncrouch_height, 0.2, func():
 		_move_player_smooth(vault_checks.vault_crouch_mid, 0.4, func():
 			_move_player_smooth(vault_position, 0.2, func():
-				current_movement_mode = pre_vault_movement_mode)))
+				change_movement_mode(pre_vault_movement_mode))))
 
 
 func _move_player_smooth(pos: Vector3, duration: float, on_complete: Callable = Callable()) -> void:

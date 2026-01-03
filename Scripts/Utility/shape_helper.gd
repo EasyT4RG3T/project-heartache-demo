@@ -99,26 +99,26 @@ static func create_cylinder_shape(radius: float, height: float) -> CylinderShape
 static func create_query_sphere(radius: float) -> PhysicsShapeQueryParameters3D:
 	var query = PhysicsShapeQueryParameters3D.new()
 	query.shape = create_sphere_shape(radius)
-	query.collision_mask = 1
+	query.collision_mask = 3
 	return query
 
 
 static func create_query_box(size: Vector3) -> PhysicsShapeQueryParameters3D:
 	var query = PhysicsShapeQueryParameters3D.new()
 	query.shape = create_box_shape(size)
-	query.collision_mask = 1
+	query.collision_mask = 3
 	return query
 
 
 static func create_query_capsule(radius: float, height: float) -> PhysicsShapeQueryParameters3D:
 	var query = PhysicsShapeQueryParameters3D.new()
 	query.shape = create_capsule_shape(radius, height)
-	query.collision_mask = 1
+	query.collision_mask = 3
 	return query
 
 
 static func create_query_cylinder(radius: float, height: float) -> PhysicsShapeQueryParameters3D:
 	var query = PhysicsShapeQueryParameters3D.new()
 	query.shape = create_cylinder_shape(radius, height)
-	query.collision_mask = 1
+	query.collision_mask = 3
 	return query

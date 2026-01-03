@@ -9,7 +9,8 @@ func get_interactable() -> Interactable:
 
 
 func _ready() -> void:
-	interactable.interact_type = Interactable.InteractableType.HOLD
+	interactable.show_type = Interactable.ShowType.PRESS
+	interactable.hold = true
 	interactable.interacted.connect(_test1)
 	interactable.started_interacting.connect(_test2)
 	interactable.stopped_interacting.connect(_test3)

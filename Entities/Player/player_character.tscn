@@ -25,7 +25,9 @@ shader_parameter/grain_intensity = 0.2
 shader_parameter/grain_blur_size = 5.0
 
 [node name="PlayerCharacter" type="CharacterBody3D" groups=["PlayerCharacter", "Save"]]
-collision_layer = 2
+collision_layer = 8
+collision_mask = 3
+platform_floor_layers = 4294967293
 script = ExtResource("1_12kfy")
 
 [node name="BodyCollision" type="CollisionShape3D" parent="."]

@@ -144,7 +144,8 @@ use_third={
 3d_render/layer_2="Inventory"
 3d_render/layer_3="Dynamic"
 3d_physics/layer_1="World"
-3d_physics/layer_2="Player"
+3d_physics/layer_2="Dynamic"
+3d_physics/layer_4="Player"
 
 [physics]
 
