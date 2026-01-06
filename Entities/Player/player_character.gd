@@ -115,26 +115,22 @@ var interactable: Interactable:
 				Interactable.ShowType.PRESS:
 					player_hud.can_tap = false
 					player_hud.can_hold = false
-					interact_type = "Press"
 				Interactable.ShowType.TAP:
 					player_hud.can_hold = false
 					player_hud.can_tap = true
-					interact_type = "Tap"
 				Interactable.ShowType.HOLD:
 					player_hud.can_tap = false
 					player_hud.can_hold = true
-					interact_type = "Hold"
 		
 		else:
 			player_hud.active = false
 			player_hud.can_tap = false
 			player_hud.can_hold = false
-			interact_type = ""
 
-var interact_type: String = ""
 var interaction_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var interaction_ray_result: Dictionary:
 	set(value):
+		if phys_object: return
 		if value:
 			if interaction_ray_result:
 				if interaction_ray_result["collider"] == value["collider"]:
@@ -148,18 +144,23 @@ var interaction_ray_result: Dictionary:
 		interactable = null
 		interaction_ray_result = value
 
-var drop_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
-var drop_ray_result: Dictionary
+var phys_wanted_position: Vector3 = Vector3.ZERO
+var phys_wanted_rotation: Basis = Basis()
+var phys_wanted_distance: float = 0.0:
+	set(value):
+		phys_wanted_distance = clampf(value, 1.0, 1.6)
+var phys_object: DynamicRigidBody3D
+var mid_phys_rotation: bool = false
 
 
 func _ready() -> void:
-	apply_settings()
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
 	interaction_ray_query.collision_mask = 3
-	drop_ray_query.collision_mask = 3
 	vault_checks.p = self
+	
+	apply_settings()
 
 
 func take_input(event: InputEvent) -> void:
@@ -171,17 +172,24 @@ func take_input(event: InputEvent) -> void:
 func _handle_camera_input(event: InputEvent) -> void:
 	if event is not InputEventMouseMotion: return
 	
-	var raw_input: Vector2 = event.relative * mouse_sensitivity * mouse_sensitivity_modifier
+	if !mid_phys_rotation:
+		var raw_input: Vector2 = event.relative * mouse_sensitivity * mouse_sensitivity_modifier
+		
+		look_vector -= raw_input
+		
+		look_vector.x = wrapf(look_vector.x, -PI, PI)
+		look_vector.y = clamp(look_vector.y, -PI / 2.2, PI / 2.2)
+		
+		var look_rotation_x = Quaternion(Vector3.UP, look_vector.x)
+		var look_rotation_y = Quaternion(Vector3.RIGHT, look_vector.y)
+		
+		head.quaternion = look_rotation_x * look_rotation_y
 	
-	look_vector -= raw_input
-	
-	look_vector.x = wrapf(look_vector.x, -PI, PI)
-	look_vector.y = clamp(look_vector.y, -PI / 2.2, PI / 2.2)
-	
-	var look_rotation_x = Quaternion(Vector3.UP, look_vector.x)
-	var look_rotation_y = Quaternion(Vector3.RIGHT, look_vector.y)
-	
-	head.quaternion = look_rotation_x * look_rotation_y
+	elif mid_phys_rotation:
+		var raw_input: Vector2 = event.relative * mouse_sensitivity * mouse_sensitivity_modifier
+		
+		phys_wanted_rotation = phys_wanted_rotation.rotated(Vector3.UP, raw_input.x)
+		phys_wanted_rotation = phys_wanted_rotation.rotated(head.global_basis.x, raw_input.y)
 
 
 func _handle_movement_input(event: InputEvent) -> void:
@@ -241,24 +249,22 @@ func _handle_action_input(event: InputEvent) -> void:
 		print("drop")
 	
 	if event.is_action_pressed("use_main"):
-		drop_ray_query.from = head.global_position
-		drop_ray_query.to = head.global_position - main_camera.global_basis.z * 100
-		drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
-		
-		if drop_ray_result and drop_ray_result["collider"] is RigidBody3D:
-			var body: RigidBody3D = drop_ray_result["collider"]
-			body.apply_impulse(-main_camera.global_basis.z * 10)
+		print("main")
 	
 	if event.is_action_pressed("use_second"):
-		drop_ray_query.from = head.global_position
-		drop_ray_query.to = head.global_position - main_camera.global_basis.z * 100
-		drop_ray_result = direct_space_state.intersect_ray((drop_ray_query))
-		
-		if drop_ray_result and drop_ray_result["collider"] is RigidBody3D:
-			var body: RigidBody3D = drop_ray_result["collider"]
-			body.apply_impulse(main_camera.global_basis.z * 10)
-		else:
-			pass
+		print("second")
+	
+	if event.is_action_pressed("use_third"):
+		mid_phys_rotation = true
+	
+	if event.is_action_released("use_third"):
+		mid_phys_rotation = false
+	
+	if event.is_action_pressed("third_push"):
+		phys_wanted_distance += 0.2
+	
+	if event.is_action_pressed("third_pull"):
+		phys_wanted_distance -= 0.2
 
 
 func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
@@ -331,6 +337,17 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	head_collision.position = head.position + Vector3(0, -0.35, 0)
 	dust_particles.global_position = main_camera.global_position - main_camera.global_basis.z * 2
+	
+	if phys_object:
+		phys_wanted_position = head.global_position - head.global_basis.z * phys_wanted_distance
+		var force: Vector3 = phys_wanted_position - phys_object.global_position
+		phys_object.linear_velocity = force * 10 * (1 + force.length())
+		
+		var rotation_diff: Vector3 = (phys_wanted_rotation * phys_object.global_basis.inverse()).get_euler()
+		var angle_error: float = (abs(rotation_diff.x) + abs(rotation_diff.y) + abs(rotation_diff.z)) / 3.0
+		var axis: Vector3 = rotation_diff.normalized()
+		
+		phys_object.angular_velocity = axis * angle_error * 100
 	
 	match current_movement_mode:
 		MovementMode.NONE:

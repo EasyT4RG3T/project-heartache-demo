@@ -178,6 +178,9 @@ func display_thought(thought: String, story: bool, time: float = 2.0) -> void:
 	if thought_tween:
 		thought_tween.kill()
 	
+	if !thought_timer.is_stopped():
+		thought_timer.stop()
+	
 	thought_label.text = thought
 	thought_tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT)
 	

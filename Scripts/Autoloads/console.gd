@@ -464,7 +464,7 @@ var command_tree: Dictionary = {
 				"get": [func(): return str(SaverLoader.graphics_settings.ssr_rougness_quality)],
 			},
 		},
-		"subsurface scattering": {
+		"subsurface_scattering": {
 			"quality": {
 				"disabled": [_command_graphics_sss_quality,
 				RenderingServer.SUB_SURFACE_SCATTERING_QUALITY_DISABLED],

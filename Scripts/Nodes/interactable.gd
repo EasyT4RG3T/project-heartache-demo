@@ -67,3 +67,4 @@ func stop_interacting() -> void:
 		interacted.emit(current_player)
 	elif is_interacting:
 		stopped_interacting.emit(current_player)
+	is_interacting = false

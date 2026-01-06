@@ -36,8 +36,3 @@ text = "Rot: "
 unique_name_in_owner = true
 layout_mode = 2
 text = "Vault: "
-
-[node name="InteractLabel" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Interact: "
