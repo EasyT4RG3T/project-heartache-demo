@@ -7,7 +7,7 @@ const player_collision_position: Vector3 = Vector3(0, 0.9, 0)
 const player_crouch_collision_height: float = 0.8
 const player_crouch_collision_position: Vector3 = Vector3(0, 0.4, 0)
 func _check_can_uncrouch() -> bool:
-	player_shape_query.transform.origin = global_position + player_collision_position
+	player_shape_query.transform.origin = global_position + player_collision_position + Vector3(0, 0.001, 0)
 	if direct_space_state.intersect_shape(player_shape_query, 1):
 		return false
 	else:

@@ -12,7 +12,7 @@ var debug: bool = false:
 				d_player_mesh = ShapeHelper.create_capsule_mesh(0.35, 1.8, Color.RED, 0.5)
 				p.add_child(d_player_mesh)
 				d_player_mesh.top_level = true
-				d_v_check_mesh = ShapeHelper.create_cylinder_mesh(0.15, 0.655, Color.DEEP_PINK, 0.5)
+				d_v_check_mesh = ShapeHelper.create_cylinder_mesh(0.15, 0.675, Color.DEEP_PINK, 0.5)
 				p.add_child(d_v_check_mesh)
 				d_v_check_mesh.top_level = true
 				d_v_height_mesh = ShapeHelper.create_sphere_mesh(0.35, Color.AQUA, 0.5)
@@ -73,8 +73,8 @@ var d_v_point_mesh: MeshInstance3D
 const vault_max_height: float = 1.36
 const vault_min_height: float = -0.21
 
-var vault_check_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_cylinder(0.15, 0.655)
-var vault_check_query_position: Vector3 = Vector3(0, 0.675, 0)
+var vault_check_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_cylinder(0.15, 0.675)
+var vault_check_query_position: Vector3 = Vector3(0, 0.685, 0)
 var vault_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var vault_height_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.35)
 var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.3)
