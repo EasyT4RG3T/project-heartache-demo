@@ -283,7 +283,7 @@ var command_tree: Dictionary = {
 			"max": [_command_graphics_3d_scale_mode, Viewport.SCALING_3D_MODE_MAX],
 			"get": [func(): return str(get_viewport().scaling_3d_mode)]
 		},
-		"3d_scale": [_command_graphics_3d_scale, _need_int,
+		"3d_scale": [_command_graphics_3d_scale, _need_float,
 		func(): return str(get_viewport().scaling_3d_scale)],
 		"anti_aliasing": {
 			"2d_msaa": {
@@ -305,7 +305,7 @@ var command_tree: Dictionary = {
 			"ssaa": {
 				"disabled": [_command_graphics_anti_aliasing_ssaa, Viewport.SCREEN_SPACE_AA_DISABLED],
 				"fxaa": [_command_graphics_anti_aliasing_ssaa, Viewport.SCREEN_SPACE_AA_FXAA],
-				"max": [_command_graphics_anti_aliasing_ssaa, Viewport.SCREEN_SPACE_AA_MAX],
+				"smaa": [_command_graphics_anti_aliasing_ssaa, Viewport.SCREEN_SPACE_AA_SMAA],
 				"get": [func(): return str(get_viewport().screen_space_aa)],
 			},
 			"taa": {

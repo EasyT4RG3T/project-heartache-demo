@@ -1,6 +1,10 @@
 extends StaticBody3D
 
 
+signal pressed
+signal depressed
+
+
 @onready var slider_3d: Slider3D = $Slider3D
 
 
@@ -16,7 +20,9 @@ func _ready() -> void:
 	interactable.hold = true
 	interactable.started_interacting.connect(slider_3d.interact)
 	interactable.started_interacting.connect(func(player: PlayerCharacter):
+		pressed.emit()
 		player.add_thought("Started Holding Button"))
 	interactable.stopped_interacting.connect(slider_3d.interact)
 	interactable.stopped_interacting.connect(func(player: PlayerCharacter):
+		depressed.emit()
 		player.add_thought("Stopped Holding Button"))

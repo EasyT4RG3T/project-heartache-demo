@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=4 uid="uid://b7h6oeomr51pw"]
+
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge3d.gd" id="1_r3htd"]
+[ext_resource type="Script" uid="uid://bttthvudf6cnb" path="res://Entities/Doors/Door01/door.gd" id="2_k6g58"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k6g58"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhs51"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_deebq"]
+size = Vector3(0.1, 0.1, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7odka"]
+data = PackedVector3Array(-0.6, 0, -0.1, -0.5, 0, 0.1, -0.5, 0, -0.1, -0.6, 0, -0.1, -0.5, 0, -0.1, -0.6, 2.1, -0.1, -0.6, 0, -0.1, -0.6, 2.1, -0.1, -0.6, 0, 0.1, -0.6, 0, -0.1, -0.6, 0, 0.1, -0.5, 0, 0.1, -0.6, 0, 0.1, -0.5, 2, 0.1, -0.5, 0, 0.1, -0.6, 2.1, -0.1, -0.5, 0, -0.1, -0.5, 2, -0.1, -0.6, 2.1, -0.1, -0.5, 2, -0.1, 0.6, 2.1, -0.1, -0.6, 0, 0.1, -0.6, 2.1, -0.1, -0.6, 2.1, 0.1, -0.6, 0, 0.1, -0.6, 2.1, 0.1, -0.5, 2, 0.1, -0.6, 2.1, -0.1, 0.6, 2.1, 0.1, -0.6, 2.1, 0.1, -0.6, 2.1, 0.1, 0.5, 2, 0.1, -0.5, 2, 0.1, 0.6, 0, -0.1, 0.5, 0, -0.1, 0.6, 0, 0.1, 0.6, 0, -0.1, 0.5, 2, -0.1, 0.5, 0, -0.1, 0.6, 0, 0.1, 0.5, 0, -0.1, 0.5, 0, 0.1, 0.6, 0, -0.1, 0.6, 0, 0.1, 0.6, 2.1, 0.1, 0.6, 0, 0.1, 0.5, 0, 0.1, 0.6, 2.1, 0.1, 0.6, 2.1, -0.1, -0.5, 2, -0.1, 0.5, 2, -0.1, -0.6, 2.1, -0.1, 0.6, 2.1, -0.1, 0.6, 2.1, 0.1, 0.6, 0, -0.1, 0.6, 2.1, -0.1, 0.5, 2, -0.1, 0.6, 0, -0.1, 0.6, 2.1, 0.1, 0.6, 2.1, -0.1, -0.6, 2.1, 0.1, 0.6, 2.1, 0.1, 0.5, 2, 0.1, 0.6, 2.1, 0.1, 0.5, 0, 0.1, 0.5, 2, 0.1, -0.5, 0, -0.1, -0.5, 0, 0.1, -0.5, 2, 0.1, -0.5, 0, -0.1, -0.5, 2, 0.1, -0.5, 2, -0.1, -0.5, 2, 0.1, 0.5, 2, 0.1, -0.5, 2, -0.1, 0.5, 2, -0.1, 0.5, 0, 0.1, 0.5, 0, -0.1, 0.5, 2, 0.1, 0.5, 2, -0.1, -0.5, 2, -0.1, 0.5, 0, 0.1, 0.5, 2, -0.1, 0.5, 2, 0.1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_81l42"]
+_surfaces = [{
+"aabb": AABB(-0.6, 0, -0.1, 1.2, 2.1, 0.2),
+"attribute_data": PackedByteArray("AACAPwAAAAAAAAAAraqqPQAAgD+tqqo9AACAPwAAAACqqmo/AAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAAACtqqo9AACAPwAAgD+qqmo/JQxDPaqqaj8AAIA/AACAPwAAgD+qqmo/AAAAAKqqaj8+z3M/AACAPwAAgD+qqmo/Ps9zPwAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAKqqaj8lDEM9AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAACtqqo9JQxDPaqqaj8lDEM9AACAPwAAgD8AAIA/qqpqPwAAAAAAAIA/AAAAAAAAAACtqqo9Ps9zP62qqj0AAAAAAAAAAAAAgD8AAIA/qqpqPwAAAACqqmo/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAgD+tqqo9AACAPwAAAAAAAAAAAAAAAAAAgD+qqmo/Ps9zP62qqj0+z3M/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAP62qqj0+z3M/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAAAAAAAAAK2qqj0lDEM9AAAAAAAAAACtqqo9AACAP62qqj0lDEM9AACAP6uqKj4AAIA/VVVVPwAAAABVVVU/AACAP6uqKj4AAAAAVVVVPwAAAACrqio+q6oqPgAAgD+rqio+AAAAAFVVVT8AAIA/AAAAAFVVVT8AAIA/q6oqPgAAgD9VVVU/q6oqPgAAAABVVVU/AAAAAFVVVT8AAIA/AACAP6uqKj4AAAAAVVVVPwAAAACrqio+"),
+"format": 34359738391,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("mpkZvwAAAADNzMy9AAAAvwAAAADNzMw9AAAAvwAAAADNzMy9mpkZvwAAAADNzMy9AAAAvwAAAADNzMy9mpkZv2ZmBkDNzMy9mpkZvwAAAADNzMy9mpkZv2ZmBkDNzMy9mpkZvwAAAADNzMw9mpkZvwAAAADNzMy9mpkZvwAAAADNzMw9AAAAvwAAAADNzMw9mpkZvwAAAADNzMw9AAAAvwAAAEDNzMw9AAAAvwAAAADNzMw9mpkZv2ZmBkDNzMy9AAAAvwAAAADNzMy9AAAAvwAAAEDNzMy9mpkZv2ZmBkDNzMy9AAAAvwAAAEDNzMy9mpkZP2ZmBkDNzMy9mpkZvwAAAADNzMw9mpkZv2ZmBkDNzMy9mpkZv2ZmBkDNzMw9mpkZvwAAAADNzMw9mpkZv2ZmBkDNzMw9AAAAvwAAAEDNzMw9mpkZv2ZmBkDNzMy9mpkZP2ZmBkDNzMw9mpkZv2ZmBkDNzMw9mpkZv2ZmBkDNzMw9AAAAPwAAAEDNzMw9AAAAvwAAAEDNzMw9mpkZPwAAAADNzMy9AAAAPwAAAADNzMy9mpkZPwAAAADNzMw9mpkZPwAAAADNzMy9AAAAPwAAAEDNzMy9AAAAPwAAAADNzMy9mpkZPwAAAADNzMw9AAAAPwAAAADNzMy9AAAAPwAAAADNzMw9mpkZPwAAAADNzMy9mpkZPwAAAADNzMw9mpkZP2ZmBkDNzMw9mpkZPwAAAADNzMw9AAAAPwAAAADNzMw9mpkZP2ZmBkDNzMw9mpkZP2ZmBkDNzMy9AAAAvwAAAEDNzMy9AAAAPwAAAEDNzMy9mpkZv2ZmBkDNzMy9mpkZP2ZmBkDNzMy9mpkZP2ZmBkDNzMw9mpkZPwAAAADNzMy9mpkZP2ZmBkDNzMy9AAAAPwAAAEDNzMy9mpkZPwAAAADNzMy9mpkZP2ZmBkDNzMw9mpkZP2ZmBkDNzMy9mpkZv2ZmBkDNzMw9mpkZP2ZmBkDNzMw9AAAAPwAAAEDNzMw9mpkZP2ZmBkDNzMw9AAAAPwAAAADNzMw9AAAAPwAAAEDNzMw9AAAAvwAAAADNzMy9AAAAvwAAAADNzMw9AAAAvwAAAEDNzMw9AAAAvwAAAADNzMy9AAAAvwAAAEDNzMw9AAAAvwAAAEDNzMy9AAAAvwAAAEDNzMw9AAAAPwAAAEDNzMw9AAAAvwAAAEDNzMy9AAAAPwAAAEDNzMy9AAAAPwAAAADNzMw9AAAAPwAAAADNzMy9AAAAPwAAAEDNzMw9AAAAPwAAAEDNzMy9AAAAvwAAAEDNzMy9AAAAPwAAAADNzMw9AAAAPwAAAEDNzMy9AAAAPwAAAEDNzMw9/38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//////wAA/z//////AAD/P/////8AAP8//////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8//38AAP//AAD/fwAA//8AAP9/AAD//wAA////f/9//n////9//3/+f////3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA/////wAA/z//////AAD/P/////8AAP8/////f/9//n////9//3/+f////3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9/AID///9//38AgP///3//fwCA////f/9/AID///9//38AgP///3//fwCA/38AAP//////fwAA//////9/AAD/////AAD/f/9/AIAAAP9//38AgAAA/3//fwCA/38AAP//////fwAA//////9/AAD/////AAD/f/9/AIAAAP9//38AgAAA/3//fwCA")
+}]
+
+[node name="Door01" type="StaticBody3D"]
+
+[node name="Hinge3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+script = ExtResource("1_r3htd")
+max_positive = 106.0
+max_negative = 106.0
+metadata/_custom_type_script = "uid://ejx8vfok1s3u"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Hinge3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+script = ExtResource("2_k6g58")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_k6g58")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_rhs51")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Hinge3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1, 0)
+mesh = SubResource("BoxMesh_deebq")
+skeleton = NodePath("")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+size = Vector3(1.2, 2.1, 0.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+operation = 2
+size = Vector3(1, 2, 0.3)
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_7odka")
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_81l42")

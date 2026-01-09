@@ -46,6 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Flashlight" parent="Head" instance=ExtResource("2_stcdd")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+top_level = true
 
 [node name="Hands" type="Node3D" parent="Head"]
 unique_name_in_owner = true

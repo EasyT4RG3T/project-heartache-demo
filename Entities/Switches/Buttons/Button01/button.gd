@@ -1,6 +1,9 @@
 extends StaticBody3D
 
 
+signal pressed
+
+
 @onready var slider_3d: Slider3D = $Slider3D
 
 
@@ -14,4 +17,5 @@ func get_interactable() -> Interactable:
 func _ready() -> void:
 	interactable.interacted.connect(slider_3d.interact)
 	interactable.interacted.connect(func(player: PlayerCharacter):
+		pressed.emit()
 		player.add_thought("Pressed Button"))

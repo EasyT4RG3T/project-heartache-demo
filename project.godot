@@ -24,6 +24,7 @@ InputManager="*res://Scripts/Autoloads/input_manager.gd"
 Console="*res://Scripts/Autoloads/console.tscn"
 SaverLoader="*res://Scripts/Autoloads/saverloader.gd"
 Game="*res://Scripts/Autoloads/game.gd"
+AudioManager="*res://Scripts/Autoloads/audio_manager.gd"
 
 [display]
 
@@ -170,7 +171,6 @@ common/physics_interpolation=true
 occlusion_culling/bvh_build_quality=1
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
-lights_and_shadows/positional_shadow/atlas_16_bits=false
 global_illumination/gi/use_half_resolution=true
 global_illumination/voxel_gi/quality=1
 environment/ssao/half_size=false

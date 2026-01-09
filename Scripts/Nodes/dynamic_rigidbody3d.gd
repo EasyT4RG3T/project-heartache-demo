@@ -2,26 +2,38 @@ class_name DynamicRigidBody3D
 extends RigidBody3D
 
 
+const THUMP = preload("uid://tbgl4aqox0xy")
+
+
+var collisions: Array = []
+
 var picked_up: bool = false
+
+
+func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+	var collision_count = state.get_contact_count()
+	var new_collisions: Array = []
+	if collision_count > 0:
+		for i in range(collision_count):
+			new_collisions.append(state.get_contact_collider_id(i))
+			if collisions.has(state.get_contact_collider_id(i)):
+				continue
+			
+			if state.get_contact_collider_object(i) is PlayerCharacter:
+				if global_position.y < state.get_contact_collider_object(i).global_position.y:
+					set_collision_mask_value(4, false)
+				else:
+					set_collision_mask_value(4, true)
+			
+			var collision_point = state.get_contact_local_position(i)
+			var collision_velocity = state.get_contact_local_velocity_at_position(i)
+			AudioManager.play_sound_at(THUMP, collision_point, collision_velocity.length() - 10)
+	collisions = new_collisions
 
 
 func _init() -> void:
 	collision_layer = 2
 	collision_mask = 35
-	
-	body_entered.connect(func(body: Node):
-		if picked_up: return
-		if body is PlayerCharacter:
-			if global_position.y < body.global_position.y:
-				set_collision_mask_value(4, false)
-			else:
-				set_collision_mask_value(4, true)
-			pass)
-	
-	body_exited.connect(func(body: Node):
-		if picked_up: return
-		if body is PlayerCharacter:
-			set_collision_mask_value(4, false))
 	
 	contact_monitor = true
 	max_contacts_reported = 1

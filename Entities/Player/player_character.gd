@@ -137,9 +137,11 @@ var interaction_ray_result: Dictionary:
 					return
 			
 			if value["collider"].has_method("get_interactable"):
-				interactable = value["collider"].get_interactable()
-				interaction_ray_result = value
-				return
+				var got_interactable: Interactable = value["collider"].get_interactable()
+				if got_interactable.active:
+					interactable = got_interactable
+					interaction_ray_result = value
+					return
 		
 		interactable = null
 		interaction_ray_result = value
@@ -322,7 +324,7 @@ func _process(delta: float) -> void:
 	
 	interaction_ray_result = direct_space_state.intersect_ray(interaction_ray_query)
 	
-	flashlight.global_position = head.global_position
+	flashlight.global_position = head.global_position + Vector3(0, -0.2, 0) - head.basis.x * 0.1
 	flashlight.global_rotation.x = lerpf(
 		flashlight.global_rotation.x,
 		head.global_rotation.x,

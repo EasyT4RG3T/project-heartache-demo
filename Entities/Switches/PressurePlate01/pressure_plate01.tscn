@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://nxphvxmglf72"]
+
+[ext_resource type="Script" uid="uid://bjhl03u1jsimb" path="res://Scripts/Nodes/slider3d.gd" id="1_1g5iy"]
+[ext_resource type="Script" uid="uid://ccd13y67wr5xi" path="res://Entities/Switches/PressurePlate01/pressure_plate.gd" id="1_vwpue"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vwpue"]
+size = Vector3(0.8, 0.05, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vqv3c"]
+size = Vector3(1, 0.05, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k66wv"]
+size = Vector3(1, 0.05, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0y2bq"]
+size = Vector3(0.8, 0.05, 0.8)
+
+[node name="PressurePlate01" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_vwpue")
+
+[node name="Slider3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.045)
+script = ExtResource("1_1g5iy")
+duration = 0.2
+slide_distance = -0.045
+metadata/_custom_type_script = "uid://bjhl03u1jsimb"
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Slider3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319313, 0.040957946)
+mesh = SubResource("BoxMesh_vwpue")
+
+[node name="BackplateMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319314, -0.005319314)
+mesh = SubResource("BoxMesh_vqv3c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319314, -0.005319314)
+shape = SubResource("BoxShape3D_k66wv")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319316, -0.030319314)
+collision_layer = 0
+collision_mask = 42
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07213563, 0)
+shape = SubResource("BoxShape3D_0y2bq")

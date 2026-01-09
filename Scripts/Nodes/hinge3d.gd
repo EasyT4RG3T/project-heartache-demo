@@ -70,6 +70,34 @@ func interact(player: PlayerCharacter) -> void:
 	_move_hinge()
 
 
+func force_open(dir: float = 0.0) -> void:
+	if !open:
+		if hinge_tween:
+			hinge_tween.kill()
+		
+		hinge_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		
+		if dir >= 0:
+			hinge_tween.tween_property(self, "open_progress", max_positive, duration)
+			opened_positive.emit()
+		else:
+			hinge_tween.tween_property(self, "open_progress", -max_negative, duration)
+			opened_negative.emit()
+		open = true
+
+
+func force_close() -> void:
+	if open:
+		if hinge_tween:
+			hinge_tween.kill()
+		
+		hinge_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		
+		hinge_tween.tween_property(self, "open_progress", 0, duration)
+		closed.emit()
+		open = false
+
+
 func _direction_check(player: PlayerCharacter) -> void:
 	if !open_positive:
 		direction = -1

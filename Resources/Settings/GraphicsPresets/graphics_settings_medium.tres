@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_aq26j")
-msaa_2d = 2
+msaa_2d = 1
 msaa_3d = 1
 ssao_quality = 1
 positional_shadow_size = 8192

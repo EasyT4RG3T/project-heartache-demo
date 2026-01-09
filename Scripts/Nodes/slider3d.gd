@@ -70,6 +70,34 @@ func interact(player: PlayerCharacter) -> void:
 	_slide()
 
 
+func force_open() -> void:
+	if !open:
+		if slide_tween:
+			slide_tween.kill()
+		
+		slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		
+		slide_tween.tween_property(self, "position", Vector3(0, 0, slide_distance), duration)
+		opened.emit()
+		open = true
+		if bounce:
+			if !bounce_timer.is_stopped():
+				bounce_timer.stop()
+			bounce_timer.start(bounce_delay)
+
+
+func force_close() -> void:
+	if open:
+		if slide_tween:
+			slide_tween.kill()
+		
+		slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		
+		slide_tween.tween_property(self, "position", Vector3(0, 0, 0), duration)
+		closed.emit()
+		open = false
+
+
 func _slide() -> void:
 	if !open:
 		if slide_tween:
