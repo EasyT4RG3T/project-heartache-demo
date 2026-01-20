@@ -2,8 +2,8 @@
 
 importer="2d_array_texture"
 type="CompressedTexture2DArray"
-uid="uid://cn044yid10uth"
-path.bptc="res://.godot/imported/playground.exr-b037d29cc6511f6ee2b1961edeae1fb3.bptc.ctexarray"
+uid="uid://d0ahhkabj5xgc"
+path.bptc="res://.godot/imported/playground_room.exr-61dfe743be7fb4aa95e05ddc944d5355.bptc.ctexarray"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/Maps/Playground/playground.exr"
-dest_files=["res://.godot/imported/playground.exr-b037d29cc6511f6ee2b1961edeae1fb3.bptc.ctexarray"]
+source_file="res://Scenes/Maps/Playground/playground_room.exr"
+dest_files=["res://.godot/imported/playground_room.exr-61dfe743be7fb4aa95e05ddc944d5355.bptc.ctexarray"]
 
 [params]
 

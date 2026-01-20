@@ -1,7 +1,6 @@
 class_name PlayerCharacter
 extends CharacterBody3D
 
-
 const player_collision_height: float = 1.8
 const player_collision_position: Vector3 = Vector3(0, 0.9, 0)
 const player_crouch_collision_height: float = 0.8
@@ -45,6 +44,7 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 		if on_complete.is_valid():
 			on_complete.call())
 
+@onready var pause_menu: Control = %PauseMenu
 @onready var player_hud: PlayerHUD = %PlayerHUD
 @onready var flashlight: Flashlight = %Flashlight
 @onready var hands: Node3D = %Hands
@@ -231,6 +231,9 @@ func _handle_movement_input(event: InputEvent) -> void:
 
 
 func _handle_action_input(event: InputEvent) -> void:
+	if event.is_action_pressed("escape"):
+		pause_menu.open()
+	
 	if event.is_action_pressed("interact"):
 		if interactable:
 			interactable.interact()

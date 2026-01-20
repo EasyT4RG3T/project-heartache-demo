@@ -1,5 +1,6 @@
 extends Node
 
+const main_menu: String = "res://Scenes/Menus/MainMenu/main_menu.tscn"
 
 var debug_overlay: DebugOverlay
 
@@ -12,12 +13,11 @@ func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
-func load_playground() -> void:
-	var playground = load("res://Scenes/Maps/Playground/playground.tscn")
-	playground = playground.instantiate()
-	Game.add_child(playground)
+func load_chunk(dir: String) -> void:
+	var chunk = load(dir)
+	chunk = chunk.instantiate()
+	Game.add_child(chunk)
 	load_player()
-	can_save = true
 
 
 func load_player() -> void:
@@ -28,6 +28,22 @@ func load_player() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 	InputManager.player_character = player
 	InputManager.player_character_input = true
+
+
+func load_main_menu() -> void:
+	if can_save:
+		SaverLoader.save_game_data(0)
+	
+	player_character = null
+	InputManager.player_character = null
+	InputManager.player_character_input = false
+	
+	for child in Game.get_children():
+		child.queue_free()
+	
+	var menu = load(main_menu)
+	menu = menu.instantiate()
+	get_tree().root.add_child(menu)
 
 
 func apply_settings_data() -> void:
@@ -112,7 +128,3 @@ func load_save(file: Dictionary) -> void:
 	# load some game stats
 	
 	player_character.load_save(file["player"])
-
-
-func load_chunk(file: Dictionary) -> void:
-	pass

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c28pkwyvm76o1"]
+[gd_scene load_steps=14 format=3 uid="uid://c28pkwyvm76o1"]
 
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
+[ext_resource type="PackedScene" uid="uid://babc4ssbcm5g7" path="res://Scenes/Menus/PauseMenu/pause_menu.tscn" id="2_seg3p"]
 [ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/flashlight.tscn" id="2_stcdd"]
 [ext_resource type="PackedScene" uid="uid://c0tamd213o31x" path="res://Entities/Player/player_hud.tscn" id="3_b2vmj"]
 [ext_resource type="Shader" uid="uid://bwrc3gdocmt4n" path="res://Assets/Shaders/skinamarink.gdshader" id="3_lobkq"]
@@ -29,6 +30,10 @@ collision_layer = 8
 collision_mask = 3
 platform_floor_layers = 4294967293
 script = ExtResource("1_12kfy")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_seg3p")]
+unique_name_in_owner = true
+z_index = 250
 
 [node name="BodyCollision" type="CollisionShape3D" parent="."]
 unique_name_in_owner = true
@@ -66,11 +71,10 @@ update_scale = false
 
 [node name="PlayerHUD" parent="Head/MainCamera" instance=ExtResource("3_b2vmj")]
 unique_name_in_owner = true
-z_index = -1
+z_index = 1
 
 [node name="Shader" type="ColorRect" parent="Head/MainCamera"]
 unique_name_in_owner = true
-z_index = -2
 material = SubResource("ShaderMaterial_b2vmj")
 anchors_preset = 15
 anchor_right = 1.0

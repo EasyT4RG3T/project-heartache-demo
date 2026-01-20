@@ -3,16 +3,15 @@
 [ext_resource type="Script" uid="uid://gsm72w8et18h" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_yo6co"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo6co"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.44313726, 0.44313726, 0.44313726, 0.6)
+content_margin_left = 5.0
+content_margin_top = 1.0
+content_margin_right = 5.0
+content_margin_bottom = 1.0
+bg_color = Color(0.25, 0.25, 0.25, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
-corner_detail = 5
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -39,17 +38,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -46.0
+offset_top = -37.0
+offset_right = 46.0
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlaygroundButton" type="Button" parent="VBoxContainer"]
+[node name="DemoButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
-text = "Playground"
+text = "Demo"
 
-[connection signal="pressed" from="VBoxContainer/PlaygroundButton" to="." method="_on_playground_button_pressed"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
+text = "Quit"
+
+[node name="ChunkButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
+text = "Load Chunk"
+
+[node name="MapSelect" type="OptionButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
