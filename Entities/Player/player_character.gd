@@ -61,7 +61,6 @@ func _change_fov_smooth(fov: float) -> void:
 	fov_tween.tween_property(main_camera, "fov", fov, 0.3)
 
 @onready var dust_particles: GPUParticles3D = %DustParticles
-@onready var dust_collider: GPUParticlesCollisionBox3D = %DustCollider
 
 
 var mouse_sensitivity: float = 10.0
@@ -148,9 +147,11 @@ var interaction_ray_result: Dictionary:
 
 var phys_wanted_position: Vector3 = Vector3.ZERO
 var phys_wanted_rotation: Basis = Basis()
+var phys_wanted_distance_max: float = 1.6
+var phys_wanted_distance_min: float = 1.0
 var phys_wanted_distance: float = 0.0:
 	set(value):
-		phys_wanted_distance = clampf(value, 1.0, 1.6)
+		phys_wanted_distance = clampf(value, phys_wanted_distance_min, phys_wanted_distance_max)
 var phys_object: DynamicRigidBody3D
 var mid_phys_rotation: bool = false
 
@@ -159,7 +160,7 @@ func _ready() -> void:
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
-	interaction_ray_query.collision_mask = 3
+	interaction_ray_query.collision_mask = 7
 	vault_checks.p = self
 	
 	apply_settings()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c28pkwyvm76o1"]
+[gd_scene load_steps=13 format=3 uid="uid://c28pkwyvm76o1"]
 
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
@@ -8,7 +8,6 @@
 [ext_resource type="Shader" uid="uid://bwrc3gdocmt4n" path="res://Assets/Shaders/skinamarink.gdshader" id="3_lobkq"]
 [ext_resource type="Script" uid="uid://cvox7ompr4c2t" path="res://Entities/Player/main_camera.gd" id="4_3xgjn"]
 [ext_resource type="PackedScene" uid="uid://y8bwsn68l4yx" path="res://Entities/Player/dust_particles.tscn" id="6_d821y"]
-[ext_resource type="PackedScene" uid="uid://cei20eyprbmtm" path="res://Entities/Player/dust_collider.tscn" id="7_3xgjn"]
 [ext_resource type="Environment" uid="uid://d2m0td6ed2a2t" path="res://Assets/Environments/stripped_environment.tres" id="7_4rt0j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lobkq"]
@@ -62,7 +61,7 @@ unique_name_in_owner = true
 cull_mask = 1047553
 environment = ExtResource("2_f477v")
 fov = 80.0
-far = 100.0
+far = 50.0
 script = ExtResource("4_3xgjn")
 
 [node name="RemoteInventoryCamera" type="RemoteTransform3D" parent="Head/MainCamera"]
@@ -114,7 +113,4 @@ fov = 60.0
 far = 2.0
 
 [node name="DustParticles" parent="Head/MainCamera" instance=ExtResource("6_d821y")]
-unique_name_in_owner = true
-
-[node name="DustCollider" parent="Head/MainCamera" instance=ExtResource("7_3xgjn")]
 unique_name_in_owner = true

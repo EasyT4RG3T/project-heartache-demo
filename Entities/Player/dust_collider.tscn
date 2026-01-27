@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://cei20eyprbmtm"]
-
-[node name="DustCollider" type="GPUParticlesCollisionBox3D"]
-size = Vector3(1, 1, 1)

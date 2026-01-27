@@ -14,6 +14,7 @@ script = ExtResource("1_v50fy")
 metadata/_custom_type_script = "uid://07xri3gdevdi"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = SubResource("BoxMesh_wx53c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

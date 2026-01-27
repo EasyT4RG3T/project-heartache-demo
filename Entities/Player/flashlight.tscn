@@ -8,7 +8,6 @@ script = ExtResource("1_j7gns")
 [node name="Light" type="SpotLight3D" parent="."]
 unique_name_in_owner = true
 visible = false
-light_energy = 2.0
 light_size = 0.2
 shadow_enabled = true
 shadow_bias = 0.01
@@ -16,5 +15,6 @@ shadow_normal_bias = 2.0
 shadow_opacity = 0.9
 shadow_caster_mask = 4294966273
 spot_range = 8.0
+spot_attenuation = 1.5
 spot_angle = 25.0
 spot_angle_attenuation = 1.5

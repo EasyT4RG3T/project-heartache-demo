@@ -45,6 +45,15 @@ folder_colors={
 
 PlayerCharacter=""
 Save=""
+DynamicLights=""
+StaticLights=""
+GlobalIllumination=""
+
+[importer_defaults]
+
+scene={
+&"meshes/light_baking": 2
+}
 
 [input]
 
@@ -161,7 +170,7 @@ escape={
 3d_render/layer_3="Dynamic"
 3d_physics/layer_1="World"
 3d_physics/layer_2="Dynamic"
-3d_physics/layer_3="Layer 3"
+3d_physics/layer_3="DynamicNoCol"
 3d_physics/layer_4="Player"
 3d_physics/layer_6="PickedUp"
 

@@ -529,6 +529,7 @@ var command_tree: Dictionary = {
 			return str(SaverLoader.graphics_settings.contrast)],
 		"saturation": [_command_graphics_saturation, _need_float, func():
 			return str(SaverLoader.graphics_settings.saturation)],
+		"dynamic_lights": _command_graphics_dynamic_lights,
 		"directional_shadow": {
 			"size": [_command_graphics_directional_shadow_size, _need_int, func():
 				return str(SaverLoader.graphics_settings.directional_shadow_size)],
@@ -602,6 +603,7 @@ var command_tree: Dictionary = {
 					return str(GameManager.debug_overlay.overlay_layer)
 				else:
 					return "0"],
+			"full_bright": _command_debug_full_bright,
 			"vault": _command_system_debug_vault,
 		},
 	}
@@ -1170,6 +1172,18 @@ func _command_graphics_saturation(value: float) -> String:
 		GameManager.player_character.main_camera.environment.adjustment_saturation = value
 	return "set saturation to " + str(value)
 
+func _command_graphics_dynamic_lights() -> String:
+	if SaverLoader.graphics_settings.dynamic_lights:
+		SaverLoader.graphics_settings.dynamic_lights = false
+		for light in get_tree().get_nodes_in_group("DynamicLights"):
+			light.hide()
+		return "turned dynamic lights off"
+	else:
+		SaverLoader.graphics_settings.dynamic_lights = true
+		for light in get_tree().get_nodes_in_group("DynamicLights"):
+			light.show()
+		return "turned dynamic lights on"
+
 func _command_graphics_directional_shadow_size(value: int) -> String:
 	SaverLoader.graphics_settings.positional_shadow_size = value
 	RenderingServer.directional_shadow_atlas_set_size(value, false)
@@ -1273,6 +1287,27 @@ func _command_system_quit() -> String:
 func _command_system_debug_overlay(value: int) -> String:
 	GameManager.set_debug_overlay(value)
 	return "set debug overlay to " + str(value)
+
+var previous_env: Environment
+var gis: Array = []
+func _command_debug_full_bright() -> String:
+	if !GameManager.player_character:
+		return "can't find player"
+	if !previous_env:
+		previous_env = GameManager.player_character.main_camera.environment
+		var env = load("res://Assets/Environments/bright_environment.tres")
+		GameManager.player_character.main_camera.environment = env
+		for gi in get_tree().get_nodes_in_group("GlobalIllumination"):
+			gis.append(gi)
+			gi.visible = false
+		return "full_bright on"
+	else:
+		GameManager.player_character.main_camera.environment = previous_env
+		previous_env = null
+		for gi in gis:
+			gi.visible = true
+			gis.erase(gi)
+		return "full_bright off"
 
 func _command_system_debug_vault() -> String:
 	if GameManager.player_character:

@@ -5,6 +5,12 @@ extends RigidBody3D
 const THUMP = preload("uid://tbgl4aqox0xy")
 
 
+@export var ignore_player: bool = false
+@export var default_distance: float = 1.6
+@export var max_distance: float = 1.6
+@export var min_distance: float = 1.0
+
+
 var collisions: Array = []
 
 var picked_up: bool = false
@@ -31,9 +37,12 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	collisions = new_collisions
 
 
-func _init() -> void:
-	collision_layer = 2
-	collision_mask = 35
+func _ready() -> void:
+	if ignore_player:
+		collision_layer = 4
+	else:
+		collision_layer = 2
+	collision_mask = 39
 	
 	contact_monitor = true
 	max_contacts_reported = 1
@@ -47,7 +56,11 @@ func switch_pick_up(player: PlayerCharacter) -> void:
 
 
 func pick_up(player: PlayerCharacter) -> void:
-	player.phys_wanted_distance = 1.2
+	var distance: float = player.main_camera.global_position.distance_to(global_position)
+	
+	player.phys_wanted_distance = distance
+	player.phys_wanted_distance_max = max_distance
+	player.phys_wanted_distance_min = min_distance
 	player.phys_wanted_rotation = global_basis
 	
 	player.phys_object = self
@@ -55,8 +68,10 @@ func pick_up(player: PlayerCharacter) -> void:
 	angular_damp = 50
 	
 	picked_up = true
-	collision_layer = 32
-	set_collision_mask_value(4, true)
+	
+	if !ignore_player:
+		collision_layer = 32
+		set_collision_mask_value(4, true)
 
 
 func put_down(player: PlayerCharacter) -> void:
@@ -65,5 +80,6 @@ func put_down(player: PlayerCharacter) -> void:
 	angular_damp = 0
 	
 	picked_up = false
-	collision_layer = 2
-	set_collision_mask_value(4, false)
+	if !ignore_player:
+		collision_layer = 2
+		set_collision_mask_value(4, false)
