@@ -82,7 +82,6 @@ func apply_graphics_settings_data() -> void:
 	)
 	
 	RenderingServer.environment_glow_set_use_bicubic_upscale(SaverLoader.graphics_settings.glow_upscale_mode)
-	RenderingServer.environment_set_ssr_roughness_quality(SaverLoader.graphics_settings.ssr_rougness_quality)
 	RenderingServer.sub_surface_scattering_set_quality(SaverLoader.graphics_settings.sss_quality)
 	
 	RenderingServer.environment_set_volumetric_fog_volume_size(

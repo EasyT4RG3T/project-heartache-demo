@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c28pkwyvm76o1"]
+[gd_scene format=3 uid="uid://c28pkwyvm76o1"]
 
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
@@ -24,39 +24,39 @@ shader_parameter/blur_size = 0.002
 shader_parameter/grain_intensity = 0.2
 shader_parameter/grain_blur_size = 5.0
 
-[node name="PlayerCharacter" type="CharacterBody3D" groups=["PlayerCharacter", "Save"]]
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=765852671 groups=["PlayerCharacter", "Save"]]
 collision_layer = 8
 collision_mask = 3
 platform_floor_layers = 4294967293
 script = ExtResource("1_12kfy")
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_seg3p")]
+[node name="PauseMenu" parent="." unique_id=1628321705 instance=ExtResource("2_seg3p")]
 unique_name_in_owner = true
 z_index = 250
 
-[node name="BodyCollision" type="CollisionShape3D" parent="."]
+[node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=168532631]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_lobkq")
 
-[node name="HeadCollision" type="CollisionShape3D" parent="."]
+[node name="HeadCollision" type="CollisionShape3D" parent="." unique_id=653929047]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 shape = SubResource("SphereShape3D_3xgjn")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=1612740848]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="Flashlight" parent="Head" instance=ExtResource("2_stcdd")]
+[node name="Flashlight" parent="Head" unique_id=1688126852 instance=ExtResource("2_stcdd")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 top_level = true
 
-[node name="Hands" type="Node3D" parent="Head"]
+[node name="Hands" type="Node3D" parent="Head" unique_id=98447189]
 unique_name_in_owner = true
 
-[node name="MainCamera" type="Camera3D" parent="Head"]
+[node name="MainCamera" type="Camera3D" parent="Head" unique_id=1704508663]
 unique_name_in_owner = true
 cull_mask = 1047553
 environment = ExtResource("2_f477v")
@@ -64,15 +64,15 @@ fov = 80.0
 far = 50.0
 script = ExtResource("4_3xgjn")
 
-[node name="RemoteInventoryCamera" type="RemoteTransform3D" parent="Head/MainCamera"]
+[node name="RemoteInventoryCamera" type="RemoteTransform3D" parent="Head/MainCamera" unique_id=760026479]
 remote_path = NodePath("../InventorySubViewportContainer/InventorySubViewport/InventoryCamera")
 update_scale = false
 
-[node name="PlayerHUD" parent="Head/MainCamera" instance=ExtResource("3_b2vmj")]
+[node name="PlayerHUD" parent="Head/MainCamera" unique_id=2020952220 instance=ExtResource("3_b2vmj")]
 unique_name_in_owner = true
 z_index = 1
 
-[node name="Shader" type="ColorRect" parent="Head/MainCamera"]
+[node name="Shader" type="ColorRect" parent="Head/MainCamera" unique_id=343303646]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_b2vmj")
 anchors_preset = 15
@@ -82,7 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="InventorySubViewportContainer" type="SubViewportContainer" parent="Head/MainCamera"]
+[node name="InventorySubViewportContainer" type="SubViewportContainer" parent="Head/MainCamera" unique_id=952440282]
 unique_name_in_owner = true
 z_index = -3
 anchors_preset = 15
@@ -92,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="InventorySubViewport" type="SubViewport" parent="Head/MainCamera/InventorySubViewportContainer"]
+[node name="InventorySubViewport" type="SubViewport" parent="Head/MainCamera/InventorySubViewportContainer" unique_id=16740146]
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
@@ -104,7 +104,7 @@ positional_shadow_atlas_quad_3 = 2
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="InventoryCamera" type="Camera3D" parent="Head/MainCamera/InventorySubViewportContainer/InventorySubViewport"]
+[node name="InventoryCamera" type="Camera3D" parent="Head/MainCamera/InventorySubViewportContainer/InventorySubViewport" unique_id=1668812067]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 cull_mask = 1047554
@@ -112,5 +112,5 @@ environment = ExtResource("7_4rt0j")
 fov = 60.0
 far = 2.0
 
-[node name="DustParticles" parent="Head/MainCamera" instance=ExtResource("6_d821y")]
+[node name="DustParticles" parent="Head/MainCamera" unique_id=1570257191 instance=ExtResource("6_d821y")]
 unique_name_in_owner = true

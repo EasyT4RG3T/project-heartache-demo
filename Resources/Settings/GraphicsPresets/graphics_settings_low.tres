@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GraphicsSettingsResource" load_steps=2 format=3 uid="uid://cutv363x14c4e"]
+[gd_resource type="Resource" script_class="GraphicsSettingsResource" format=3 uid="uid://cutv363x14c4e"]
 
 [ext_resource type="Script" uid="uid://b8mxsgo0ylr5i" path="res://Resources/Settings/graphics_settings_resource.gd" id="1_s6e2t"]
 
@@ -9,6 +9,7 @@ msaa_2d = 0
 msaa_3d = 0
 ssao_quality = 0
 ssao_half_size = true
+glow_enabled = false
 dynamic_lights = false
 directional_shadow_size = 1024
 positional_shadow_size = 2048
