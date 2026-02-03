@@ -6,19 +6,19 @@ var debug: bool = false:
 		debug = value
 		match value:
 			true:
-				d_crouch_mesh = ShapeHelper.create_capsule_mesh(0.35, 0.8, Color.RED, 0.5)
+				d_crouch_mesh = ShapeHelper.create_capsule_mesh(0.25, 0.8, Color.RED, 0.5)
 				p.add_child(d_crouch_mesh)
 				d_crouch_mesh.top_level = true
-				d_player_mesh = ShapeHelper.create_capsule_mesh(0.35, 1.8, Color.RED, 0.5)
+				d_player_mesh = ShapeHelper.create_capsule_mesh(0.25, 1.8, Color.RED, 0.5)
 				p.add_child(d_player_mesh)
 				d_player_mesh.top_level = true
 				d_v_check_mesh = ShapeHelper.create_cylinder_mesh(0.15, 0.675, Color.DEEP_PINK, 0.5)
 				p.add_child(d_v_check_mesh)
 				d_v_check_mesh.top_level = true
-				d_v_height_mesh = ShapeHelper.create_sphere_mesh(0.35, Color.AQUA, 0.5)
+				d_v_height_mesh = ShapeHelper.create_sphere_mesh(0.25, Color.AQUA, 0.5)
 				p.add_child(d_v_height_mesh)
 				d_v_height_mesh.top_level = true
-				d_v_height_floor_mesh = ShapeHelper.create_sphere_mesh(0.35, Color.SKY_BLUE, 0.5)
+				d_v_height_floor_mesh = ShapeHelper.create_sphere_mesh(0.25, Color.SKY_BLUE, 0.5)
 				p.add_child(d_v_height_floor_mesh)
 				d_v_height_floor_mesh.top_level = true
 				d_v_floor_mesh_1 = ShapeHelper.create_cylinder_mesh(0.01, 0.2, Color.BLUE, 0.5)
@@ -76,8 +76,8 @@ const vault_min_height: float = -0.21
 var vault_check_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_cylinder(0.15, 0.675)
 var vault_check_query_position: Vector3 = Vector3(0, 0.685, 0)
 var vault_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
-var vault_height_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.35)
-var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.3)
+var vault_height_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.25)
+var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.25)
 var vault_fit_query_position: Vector3 = Vector3(0, 1.55, 0)
 var vault_fit_queary_mid_position: Vector3 = Vector3(0, 1.05, 0)
 var vault_fit_query_crouch_position: Vector3 = Vector3(0, 0.55, 0)
@@ -92,7 +92,14 @@ const vault_distances: Dictionary = {
 }
 var vault_distance: float = vault_distances[p.MovementMode.WALKING]
 
-var vault_error: String = ""
+var vault_error: Dictionary = {
+	"can_vault": "",
+	"distance": "",
+	"type": "",
+	"error": "",
+}
+
+var vault_check_unsave_distance: Vector3
 
 var p: PlayerCharacter
 
@@ -106,36 +113,45 @@ func check() -> void:
 	var vault_check_result = p.direct_space_state.cast_motion(vault_check_query)
 	if !vault_check_result or vault_check_result[0] >= 1.0:
 		p.can_vault = false
-		vault_error = "nothing_to_vault"
+		vault_error["can_vault"] = "false"
+		vault_error["distance"] = "none"
+		vault_error["type"] = "none"
+		vault_error["error"] = "too_far_to_collide"
 		return
 	
 	if debug:
 		d_v_check_mesh.global_position = vault_check_query.transform.origin
 		d_v_check_mesh.global_position += vault_check_query.motion * vault_check_result[0]
 	
-	var vault_check_unsave_distance = vault_check_query.motion * vault_check_result[1]
+	vault_check_unsave_distance = vault_check_query.motion * vault_check_result[1]
 	
 	vault_check_query.transform.origin += vault_check_unsave_distance
 	
 	var collision_info = p.direct_space_state.get_rest_info(vault_check_query)
 	if !collision_info:
 		p.can_vault = false
-		vault_error = "didn't_get_starting_vault_point"
+		vault_error["can_vault"] = "false"
+		vault_error["error"] = "didnt_get_starting_vault_point"
 		return
 	
 	if abs(collision_info.normal.dot(Vector3.UP)) >= 0.7:
 		p.can_vault = false
-		vault_error = "too_steep"
+		vault_error["can_vault"] = "false"
+		vault_error["error"] = "too_steep"
 		return
 	
 	if vault_direction.dot(collision_info.normal) > -0.6:
 		p.can_vault = false
-		vault_error = "too_high_angle"
+		vault_error["can_vault"] = "false"
+		vault_error["error"] = "too_high_angle"
 		return
 	
+	vault_error["type"] = "normal"
 	if !_vault_end_point_set(collision_info.point, collision_info.normal):
+		vault_error["type"] = "forward"
 		if !_vault_end_point_set(p.global_position, -vault_direction * 2):
 			p.can_vault = false
+			vault_error["can_vault"] = "false"
 			return
 	
 	if debug:
@@ -145,14 +161,17 @@ func check() -> void:
 		p.MovementMode.CROUCHING:
 			if _vault_crouch_cast(p.vault_position):
 				p.can_vault = true
+				vault_error["can_vault"] = "true"
 				return
 		_:
 			if _vault_standing_cast(p.vault_position):
 				p.can_vault = true
+				vault_error["can_vault"] = "true"
 				return
 	
 	p.can_vault = false
-	vault_error = "something went wrong"
+	vault_error["can_vault"] = "false"
+	vault_error["error"] = "something_went_wrong"
 
 
 func _vault_end_point_set(point: Vector3, normal: Vector3) -> bool:
@@ -188,17 +207,23 @@ func _vault_end_point_set(point: Vector3, normal: Vector3) -> bool:
 	var vault_point_short: Vector3
 	
 	if !vault_point_result and !vault_point_short_result:
-		vault_error = "no_valid_vault_point"
+		vault_error["error"] = "no_valid_valut_point"
 		return false
 	
 	if !vault_point_result and vault_point_short_result:
+		vault_error["distance"] = "short"
 		vault_point_short = vault_point_short_result["position"]
+		
+		if vault_point_short.distance_to(p.global_position) < vault_check_unsave_distance.length():
+			vault_error["error"] = "vault_distance_too_short"
+			return false
 		
 		if !_vault_end_point_final(vault_point_short):
 			return false
 		return true
 	
 	if !vault_point_short_result and vault_point_result:
+		vault_error["distance"] = "far"
 		vault_point = vault_point_result["position"]
 		
 		if !_vault_end_point_final(vault_point):
@@ -206,31 +231,44 @@ func _vault_end_point_set(point: Vector3, normal: Vector3) -> bool:
 		return true
 	
 	vault_point_short = vault_point_short_result["position"]
+	
+	if vault_point_short.distance_to(p.global_position) < vault_check_unsave_distance.length():
+		vault_error["error"] = "vault_distance_too_short"
+		return false
+	
 	vault_point = vault_point_result["position"]
 	
 	if vault_point.y == vault_point_short.y:
 		if vault_point.y > p.global_position.y + 0.2:
+			vault_error["distance"] = "short"
 			if !_vault_end_point_final(vault_point_short):
+				vault_error["distance"] = "far"
 				if !_vault_end_point_final(vault_point):
 					return false
 				return true
 			return true
 		else:
+			vault_error["distance"] = "far"
 			if !_vault_end_point_final(vault_point):
+				vault_error["distance"] = "short"
 				if !_vault_end_point_final(vault_point_short):
 					return false
 				return true
 			return true
 	
 	elif vault_point.y < vault_point_short.y:
+		vault_error["distance"] = "far"
 		if !_vault_end_point_final(vault_point):
+			vault_error["distance"] = "short"
 			if !_vault_end_point_final(vault_point_short):
 				return false
 			return true
 		return true
 	
 	else:
+		vault_error["distance"] = "short"
 		if !_vault_end_point_final(vault_point_short):
+			vault_error["distance"] = "far"
 			if !_vault_end_point_final(vault_point):
 				return false
 			return true
@@ -291,20 +329,20 @@ func _vault_height_adjust(pos: Vector3) -> Vector3:
 	
 	pos = vault_height_query.transform.origin
 	pos += vault_height_query.motion * vault_height_result[0]
-	pos.y -= 0.35
+	pos.y -= 0.25
 	
 	return pos
 
 
 func _vault_end_point_final(point: Vector3) -> bool:
 	if !_vault_floor_check(point):
-		vault_error = "invalid_floor"
+		vault_error["error"] = "no_valid_floor"
 		return false
 	
 	point = _vault_height_adjust(point)
 	
 	if !_vault_end_fit_check(point):
-		vault_error = "no_space"
+		vault_error["error"] = "cant_fit"
 		return false
 	
 	p.vault_position = point
@@ -320,7 +358,7 @@ func _vault_standing_cast(vault_end_point: Vector3) -> bool:
 	
 	var vault_fit_result = p.direct_space_state.cast_motion(vault_fit_query)
 	if vault_fit_result[0] < 1:
-		vault_error = "can't_fit_through"
+		vault_error["error"] = "cant_fit_through"
 		return false
 	
 	p.vault_position = vault_end_point
@@ -354,7 +392,7 @@ func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 			
 			var vault_fit_up_result = p.direct_space_state.cast_motion(vault_fit_query)
 			if vault_fit_up_result[0] < 1:
-				vault_error = "can't_stand_up_to_vault_height"
+				vault_error["error"] = "cant_stand_up_to_vault_height"
 				return false
 			
 			p.vault_position = vault_end_point
@@ -394,11 +432,11 @@ func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 	
 	var vault_fit_uncrouch_direct_result = p.direct_space_state.cast_motion(vault_fit_query)
 	if vault_fit_uncrouch_direct_result[0] < 1:
-		vault_error = "can't_fit_through"
+		vault_error["error"] = "cant_fit_through"
 		return false
 	
 	if !p._check_can_uncrouch():
-		vault_error = "can't_stand_up"
+		vault_error["error"] = "cant_stand_up"
 		return false
 	
 	p.vault_position = vault_end_point

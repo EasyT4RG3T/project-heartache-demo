@@ -1,0 +1,143 @@
+{
+	"connections": [
+		{
+			"from": "perlin",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_906",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Godot/Godot 4 Standard",
+			"export_paths": {
+				"Blender": "/mnt/Mix/MaterialMaker/Meterials/Concrete",
+				"Godot/Godot 4 Standard": "/mnt/Mix/MaterialMaker/Meterials/Concrete"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 76.2300033569336,
+				"y": 76.2300033569336
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": true,
+				"metallic": 0.0,
+				"normal": 1.0,
+				"roughness": 0.6,
+				"size": 6.0,
+				"sss": 1.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "perlin",
+			"node_position": {
+				"x": -514.920043945312,
+				"y": 81.0700073242188
+			},
+			"parameters": {
+				"iterations": 5.0,
+				"persistence": 0.7,
+				"scale_x": 8.0,
+				"scale_y": 8.0
+			},
+			"seed_int": 0,
+			"type": "perlin"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -314.589996337891,
+				"y": 77.0700073242188
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.400000005960464,
+							"g": 0.400000005960464,
+							"pos": 0.0,
+							"r": 0.400000005960464
+						},
+						{
+							"a": 1.0,
+							"b": 0.620000004768372,
+							"g": 0.620000004768372,
+							"pos": 0.310876679002193,
+							"r": 0.620000004768372
+						},
+						{
+							"a": 1.0,
+							"b": 0.699999988079071,
+							"g": 0.699999988079071,
+							"pos": 1.0,
+							"r": 0.699999988079071
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": -150.926696777344,
+				"y": 168.623352050781
+			},
+			"parameters": {
+				"buffer": 1.0,
+				"param2": 0.0,
+				"size": 6,
+				"strength": 2.0
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

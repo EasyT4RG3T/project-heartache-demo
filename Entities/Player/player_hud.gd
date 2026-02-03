@@ -50,6 +50,8 @@ var active: bool = false:
 			await get_tree().process_frame
 			queue_redraw()
 
+var semi_active: bool = false
+
 var interact_tween: Tween
 var can_tap: bool = false:
 	set(value):
@@ -144,7 +146,8 @@ func _draw() -> void:
 
 func _draw_crosshair(center: Vector2) -> void:
 	draw_circle(center, crosshair_radius + 1, hud_color_secondary * Color(1, 1, 1, crosshair_opacity))
-	draw_circle(center, crosshair_radius, hud_color_primary * Color(1, 1, 1, crosshair_opacity))
+	if !semi_active:
+		draw_circle(center, crosshair_radius, hud_color_primary * Color(1, 1, 1, crosshair_opacity))
 
 
 func _draw_vault(center: Vector2) -> void:

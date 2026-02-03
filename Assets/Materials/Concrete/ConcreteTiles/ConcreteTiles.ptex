@@ -1,0 +1,208 @@
+{
+	"connections": [
+		{
+			"from": "perlin_2",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 0
+		},
+		{
+			"from": "invert",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 1
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "invert",
+			"to_port": 0
+		},
+		{
+			"from": "math",
+			"from_port": 0,
+			"to": "colorize_2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize_2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_906",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Godot/Godot 4 Standard",
+			"export_paths": {
+				"Blender": "/mnt/Mix/MaterialMaker/Meterials/Concrete",
+				"Godot/Godot 4 Standard": "/mnt/Mix/MaterialMaker/Meterials/Concrete"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 82.0959777832031,
+				"y": 151.516510009766
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": true,
+				"metallic": 0.0,
+				"normal": 1.0,
+				"roughness": 0.4,
+				"size": 6.0,
+				"sss": 1.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "bricks",
+			"node_position": {
+				"x": -594.862121582031,
+				"y": 314.318420410156
+			},
+			"parameters": {
+				"bevel": 0.0,
+				"columns": 2.0,
+				"corner": 0.3,
+				"mortar": 0.02,
+				"pattern": 0,
+				"repeat": 1.0,
+				"round": 0.0,
+				"row_offset": 0.0,
+				"rows": 2.0
+			},
+			"seed_int": 0,
+			"type": "bricks3"
+		},
+		{
+			"name": "perlin_2",
+			"node_position": {
+				"x": -601.862182617188,
+				"y": 174.818420410156
+			},
+			"parameters": {
+				"iterations": 5.0,
+				"persistence": 0.7,
+				"scale_x": 8.0,
+				"scale_y": 8.0
+			},
+			"seed_int": 0,
+			"type": "perlin"
+		},
+		{
+			"name": "math",
+			"node_position": {
+				"x": -242.86213684082,
+				"y": 151.318405151367
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0.0,
+				"default_in2": 0.0,
+				"op": 1
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "invert",
+			"node_position": {
+				"x": -381.862152099609,
+				"y": 316.318420410156
+			},
+			"parameters": {
+
+			},
+			"seed_int": 0,
+			"type": "invert"
+		},
+		{
+			"name": "colorize_2",
+			"node_position": {
+				"x": -87.3713607788086,
+				"y": 149.318405151367
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.300000011920929,
+							"g": 0.300000011920929,
+							"pos": 0.0,
+							"r": 0.300000011920929
+						},
+						{
+							"a": 1.0,
+							"b": 0.550000011920929,
+							"g": 0.550000011920929,
+							"pos": 0.405104252330044,
+							"r": 0.550000011920929
+						},
+						{
+							"a": 1.0,
+							"b": 0.699999988079071,
+							"g": 0.699999988079071,
+							"pos": 1.0,
+							"r": 0.699999988079071
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": -386.439361572266,
+				"y": 412.897308349609
+			},
+			"parameters": {
+				"buffer": 1.0,
+				"param2": 0.0,
+				"size": 6,
+				"strength": 1.0
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

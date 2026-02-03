@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://be8nto6fraipm"]
+[gd_scene format=3 uid="uid://be8nto6fraipm"]
 
 [ext_resource type="Script" uid="uid://7alvm4cbkvfg" path="res://Scenes/Menus/Debug/debug_overlay.gd" id="1_4vfu0"]
 
-[node name="DebugOverlay" type="Control"]
+[node name="DebugOverlay" type="Control" unique_id=1740358454]
 z_index = 250
 layout_mode = 3
 anchors_preset = 15
@@ -12,27 +12,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4vfu0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1279876603]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="FPSLabel" type="Label" parent="VBoxContainer"]
+[node name="FPSLabel" type="Label" parent="VBoxContainer" unique_id=63435916]
 unique_name_in_owner = true
 layout_mode = 2
 text = "FPS:"
 
-[node name="PositionLabel" type="Label" parent="VBoxContainer"]
+[node name="PositionLabel" type="Label" parent="VBoxContainer" unique_id=1136497162]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Pos: "
 
-[node name="RotationLabel" type="Label" parent="VBoxContainer"]
+[node name="RotationLabel" type="Label" parent="VBoxContainer" unique_id=2140270654]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Rot: "
 
-[node name="VaultsLabel" type="Label" parent="VBoxContainer"]
+[node name="VaultsLabel" type="Label" parent="VBoxContainer" unique_id=925656192]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Vault: "

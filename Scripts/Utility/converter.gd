@@ -4,7 +4,7 @@ extends EditorScript
 
 var types: Array[String] = ["StaticBody3D", "DynamicObject3D"]
 var type: String = ""
-var col: bool = true
+var use_col: String = ""
 var scenes: PackedStringArray = []
 var output: String = ""
 
@@ -29,13 +29,19 @@ func _select_type() -> void:
 	col_check_box.button_pressed = true
 	vbox.add_child(col_check_box)
 	
+	var col_option_button: OptionButton = OptionButton.new()
+	col_option_button.add_item("Convex")
+	col_option_button.add_item("Trimesh")
+	vbox.add_child(col_option_button)
+	
 	EditorInterface.get_base_control().add_child(type_select_dialog)
 	
 	type_select_dialog.popup_centered()
 	
 	type_select_dialog.confirmed.connect(func():
 		type = type_option_button.get_item_text(type_option_button.get_selected_id())
-		col = col_check_box.button_pressed
+		if col_check_box.button_pressed:
+			use_col = col_option_button.get_item_text(col_option_button.get_selected_id())
 		print("Type: ", type)
 		type_select_dialog.queue_free()
 		_select_input())
@@ -44,7 +50,7 @@ func _select_type() -> void:
 func _select_input() -> void:
 	var scenes_select_dialog = FileDialog.new()
 	scenes_select_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILES
-	scenes_select_dialog.filters = ["*.res"]
+	scenes_select_dialog.filters = ["*.glb"]
 	scenes_select_dialog.display_mode = FileDialog.DISPLAY_LIST
 	
 	EditorInterface.get_base_control().add_child(scenes_select_dialog)
@@ -99,24 +105,34 @@ func _convert() -> void:
 		
 		root.name = file_name
 		
-		var array_mesh: ArrayMesh = load(scene)
+		var loaded_scene: PackedScene = load(scene)
+		var inst_scene: Node3D = loaded_scene.instantiate()
 		
-		var mesh_instance: MeshInstance3D = MeshInstance3D.new()
-		mesh_instance.name = "MeshInstance3D"
-		mesh_instance.mesh = array_mesh
-		root.add_child(mesh_instance)
-		mesh_instance.owner = root
+		for mesh_instance: MeshInstance3D in inst_scene.find_children("*", "MeshInstance3D"):
+			mesh_instance.owner = null
+			mesh_instance.reparent(root, false)
+			mesh_instance.owner = root
+			
+			if root.is_class("RigidBody3D"):
+				mesh_instance.gi_mode = GeometryInstance3D.GI_MODE_DYNAMIC
+			
+			if use_col:
+				var shape: Shape3D
+				match use_col:
+					"Convex":
+						shape = mesh_instance.mesh.create_convex_shape()
+					"Trimesh":
+						shape = mesh_instance.mesh.create_trimesh_shape()
+					_:
+						print("ERROR: invalid collision")
+						return
+				var collision_shape: CollisionShape3D = CollisionShape3D.new()
+				collision_shape.name = "CollisionShape3D"
+				collision_shape.shape = shape
+				root.add_child(collision_shape)
+				collision_shape.owner = root
 		
-		if col:
-			var shape: Shape3D = mesh_instance.mesh.create_convex_shape()
-			var collision_shape: CollisionShape3D = CollisionShape3D.new()
-			collision_shape.name = "CollisionShape3D"
-			collision_shape.shape = shape
-			root.add_child(collision_shape)
-			collision_shape.owner = root
-		
-		if DirAccess.dir_exists_absolute(output + "/" + file_name + ".tscn"):
-			print("?")
+		inst_scene.queue_free()
 		
 		var new_pscene: PackedScene = PackedScene.new()
 		new_pscene.pack(root)

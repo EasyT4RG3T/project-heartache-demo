@@ -6,14 +6,17 @@ const THUMP = preload("uid://tbgl4aqox0xy")
 
 
 @export var ignore_player: bool = false
-@export var default_distance: float = 1.6
 @export var max_distance: float = 1.6
 @export var min_distance: float = 1.0
 
 
+var audio_grace: bool = false
+
 var collisions: Array = []
 
 var picked_up: bool = false
+
+var current_player: PlayerCharacter
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
@@ -33,7 +36,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			
 			var collision_point = state.get_contact_local_position(i)
 			var collision_velocity = state.get_contact_local_velocity_at_position(i)
-			AudioManager.play_sound_at(THUMP, collision_point, collision_velocity.length() - 10)
+			if audio_grace:
+				AudioManager.play_sound_at(THUMP, collision_point, collision_velocity.length() - 10)
 	collisions = new_collisions
 
 
@@ -46,6 +50,8 @@ func _ready() -> void:
 	
 	contact_monitor = true
 	max_contacts_reported = 1
+	
+	get_tree().create_timer(0.1).timeout.connect(func():audio_grace = true)
 
 
 func switch_pick_up(player: PlayerCharacter) -> void:
@@ -68,6 +74,7 @@ func pick_up(player: PlayerCharacter) -> void:
 	angular_damp = 50
 	
 	picked_up = true
+	current_player = player
 	
 	if !ignore_player:
 		collision_layer = 32
@@ -80,6 +87,8 @@ func put_down(player: PlayerCharacter) -> void:
 	angular_damp = 0
 	
 	picked_up = false
+	current_player = null
+	
 	if !ignore_player:
 		collision_layer = 2
 		set_collision_mask_value(4, false)

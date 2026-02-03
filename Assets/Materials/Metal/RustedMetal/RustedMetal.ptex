@@ -1,0 +1,232 @@
+{
+	"connections": [
+		{
+			"from": "fbm3",
+			"from_port": 0,
+			"to": "colorize_3",
+			"to_port": 0
+		},
+		{
+			"from": "colorize_4",
+			"from_port": 0,
+			"to": "invert_2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize_3",
+			"from_port": 0,
+			"to": "colorize_4",
+			"to_port": 0
+		},
+		{
+			"from": "colorize_3",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "invert_2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 1
+		},
+		{
+			"from": "colorize_4",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "colorize_4",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 5
+		},
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "invert_2",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_906",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Godot/Godot 4 Standard",
+			"export_paths": {
+				"Godot/Godot 4 Standard": "/mnt/Mix/MaterialMaker/Meterials/RustedMetal/RustedMetal"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": -22.423511505127,
+				"y": -5.93648767471313
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": false,
+				"metallic": 0.3,
+				"normal": 1.0,
+				"roughness": 0.8,
+				"size": 6.0,
+				"sss": 1.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "fbm3",
+			"node_position": {
+				"x": -774.856323242188,
+				"y": -3.21911573410034
+			},
+			"parameters": {
+				"folds": 0.0,
+				"iterations": 5.0,
+				"noise": 0.0,
+				"offset": 0.0,
+				"persistence": 0.89,
+				"scale_x": 6.0,
+				"scale_y": 6.0
+			},
+			"seed_int": 0,
+			"type": "fbm3"
+		},
+		{
+			"name": "colorize_3",
+			"node_position": {
+				"x": -494.248626708984,
+				"y": -5.09854459762573
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.902499973773956,
+							"g": 0.934958338737488,
+							"pos": 0.46398506455749,
+							"r": 0.949999988079071
+						},
+						{
+							"a": 1.0,
+							"b": 0.586499989032745,
+							"g": 0.718250036239624,
+							"pos": 0.5040613421957,
+							"r": 0.850000023841858
+						},
+						{
+							"a": 1.0,
+							"b": 0.182500004768372,
+							"g": 0.392375022172928,
+							"pos": 0.612839968149899,
+							"r": 0.730000019073486
+						},
+						{
+							"a": 1.0,
+							"b": 0.423529446125031,
+							"g": 0.633823573589325,
+							"pos": 0.839939321270426,
+							"r": 0.831372559070587
+						},
+						{
+							"a": 1.0,
+							"b": 0.282352924346924,
+							"g": 0.407352954149246,
+							"pos": 0.929826692770456,
+							"r": 0.549019634723663
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "invert_2",
+			"node_position": {
+				"x": -478.358032226562,
+				"y": 89.0890579223633
+			},
+			"parameters": {
+
+			},
+			"seed_int": 0,
+			"type": "invert"
+		},
+		{
+			"name": "colorize_4",
+			"node_position": {
+				"x": -489.002563476562,
+				"y": 170.7294921875
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 1.0,
+							"g": 1.0,
+							"pos": 0.768998007737953,
+							"r": 1.0
+						},
+						{
+							"a": 1.0,
+							"b": 0.0,
+							"g": 0.0,
+							"pos": 1.0,
+							"r": 0.0
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": -265.580718994141,
+				"y": 243.541595458984
+			},
+			"parameters": {
+				"buffer": 1.0,
+				"param2": 2,
+				"size": 6,
+				"strength": 0.15
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

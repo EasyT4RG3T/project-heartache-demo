@@ -1,0 +1,256 @@
+{
+	"connections": [
+		{
+			"from": "uniform",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 1
+		},
+		{
+			"from": "blend2",
+			"from_port": 0,
+			"to": "pixelize",
+			"to_port": 0
+		},
+		{
+			"from": "wavelet_noise2",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 0
+		},
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "pixelize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "invert",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "pixelize_3",
+			"to_port": 0
+		},
+		{
+			"from": "pixelize_3",
+			"from_port": 0,
+			"to": "invert",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "_Node_5890",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Godot/Godot 4",
+			"export_paths": {
+				"Godot/Godot 4": "/mnt/Mix/MaterialMaker/Meterials/MovingMeat/MovingMeat"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 738.799865722656,
+				"y": -34.6333389282227
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": false,
+				"metallic": 0.6,
+				"normal": 1.0,
+				"roughness": 0.6
+			},
+			"seed_int": 0,
+			"type": "material_dynamic"
+		},
+		{
+			"name": "wavelet_noise2",
+			"node_position": {
+				"x": -658.5,
+				"y": -11.5
+			},
+			"parameters": {
+				"frequency": 2.0,
+				"iterations": 4.0,
+				"offset": "$time * 0.05",
+				"persistence": 0.55,
+				"scale_x": 1.0,
+				"scale_y": 1.0,
+				"type": 0.0
+			},
+			"seed_int": 169917496,
+			"type": "wavelet_noise2"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": 506.562255859375,
+				"y": 58.9446411132812
+			},
+			"parameters": {
+				"buffer": 0.0,
+				"param2": 3.0,
+				"size": 6.0,
+				"strength": 1.49
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		},
+		{
+			"name": "pixelize",
+			"node_position": {
+				"x": 68.5,
+				"y": -31.7854671478271
+			},
+			"parameters": {
+				"c": 32.0,
+				"d": 0.5,
+				"t": 0.0,
+				"x": 64.0,
+				"y": 64.0
+			},
+			"seed_int": 0,
+			"type": "pixelize"
+		},
+		{
+			"name": "uniform",
+			"node_position": {
+				"x": -550.5,
+				"y": 236.5
+			},
+			"parameters": {
+				"color": {
+					"a": 1.0,
+					"b": 0.09375,
+					"g": 0.0,
+					"r": 1.0,
+					"type": "Color"
+				}
+			},
+			"seed_int": 0,
+			"type": "uniform"
+		},
+		{
+			"generic_size": 1,
+			"name": "blend2",
+			"node_position": {
+				"x": -176.5,
+				"y": -28.5
+			},
+			"parameters": {
+				"amount1": 0.5,
+				"blend_type1": 0.0
+			},
+			"seed_int": 0,
+			"type": "blend2"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -375.618713378906,
+				"y": -32.6851921081543
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.0,
+							"g": 0.0,
+							"pos": 0.0,
+							"r": 0.0
+						},
+						{
+							"a": 1.0,
+							"b": 0.568702280521393,
+							"g": 0.568702280521393,
+							"pos": 0.236641221374046,
+							"r": 0.568702280521393
+						},
+						{
+							"a": 1.0,
+							"b": 0.843654572963715,
+							"g": 0.843654572963715,
+							"pos": 0.549618320610687,
+							"r": 0.843654572963715
+						},
+						{
+							"a": 1.0,
+							"b": 1.0,
+							"g": 1.0,
+							"pos": 1.0,
+							"r": 1.0
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "invert",
+			"node_position": {
+				"x": 338.928955078125,
+				"y": 134.397598266602
+			},
+			"parameters": {
+
+			},
+			"seed_int": 0,
+			"type": "invert"
+		},
+		{
+			"name": "pixelize_3",
+			"node_position": {
+				"x": 81.3891677856445,
+				"y": 163.87678527832
+			},
+			"parameters": {
+				"c": 32.0,
+				"d": 0.5,
+				"t": 0.0,
+				"x": 64.0,
+				"y": 64.0
+			},
+			"seed_int": 0,
+			"type": "pixelize"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

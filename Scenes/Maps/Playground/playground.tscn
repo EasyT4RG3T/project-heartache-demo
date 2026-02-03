@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://clfnlnf15u3v"]
+[gd_scene format=4 uid="uid://clfnlnf15u3v"]
 
 [ext_resource type="LightmapGIData" uid="uid://b6o2c15wlymkr" path="res://Scenes/Maps/Playground/playground.lmbake" id="1_2tufx"]
 [ext_resource type="Script" uid="uid://b3vq85m084jmv" path="res://Scenes/Maps/Playground/playground.gd" id="1_wf0s2"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://cov4tr008m287" path="res://Entities/Doors/SlideDoor01/slide_door_interaction.gd" id="16_ok16f"]
 [ext_resource type="LightmapGIData" uid="uid://cpuyujvlivasm" path="res://Scenes/Maps/Playground/playground_maze.lmbake" id="17_ok16f"]
 [ext_resource type="LightmapGIData" uid="uid://dt2vnm1j0k4df" path="res://Scenes/Maps/Playground/playground_room.lmbake" id="18_8tqno"]
+[ext_resource type="PackedScene" uid="uid://bxaawgbj5ejsd" path="res://Assets/Scenes/Bathroom/DynamicObject3D/ToiletPaper01.tscn" id="19_tpm64"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ok16f"]
 data = PackedVector3Array(-11, -0.1, -25, -11, 0, -25, -11, -0.1, 25, -11, -0.1, -25, -11, -0.1, 25, -1.5, -0.1, -5.5, -11, -0.1, -25, 9, -0.1, -25, -11, 0, -25, -11, -0.1, -25, -1.395, -0.1, -5.5, 9, -0.1, -25, -11, -0.1, -25, -1.5, -0.1, -5.5, -1.395, -0.1, -5.5, -11, 0, -25, -1.5, 0, -5.5, -1.5, 0, -5.4275, -11, 0, -25, -1.395, 0, -5.5, -1.5, 0, -5.5, -11, 0, -25, -1.5, 0, -5.4275, -1.5, 0, -4.5725, -11, 0, -25, -1.5, 0, -4.5725, -1.5, 0, -4.5, -11, 0, -25, 1.395, 0, -5.5, -1.395, 0, -5.5, -11, 0, -25, 1.5, 0, -5.5, 1.395, 0, -5.5, -1.5, -0.1, -5.4275, -1.5, -0.1, -4.5725, -1.395, -0.1, -5.4275, -1.5, -0.1, -4.5725, -1.395, -0.1, -4.5725, -1.395, -0.1, -5.4275, -11, -0.1, 25, 9, -0.1, -25, -1.395, -0.1, -4.5, -1.395, 0, -5.4275, -1.395, 0, -4.5725, -1.5, 0, -5.4275, -1.395, 0, -4.5725, -1.5, 0, -4.5725, -1.5, 0, -5.4275, -11, 0, -25, -1.5, 0, -4.5, 9, 0, 25, -11, -0.1, 25, -11, 0, -25, -11, 0, 25, -11, -0.1, 25, -1.5, -0.1, -5.4275, -1.5, -0.1, -5.5, -11, -0.1, 25, -1.5, -0.1, -4.5725, -1.5, -0.1, -5.4275, -11, -0.1, 25, -1.5, -0.1, -4.5, -1.5, -0.1, -4.5725, -11, -0.1, 25, -1.395, -0.1, -4.5, -1.5, -0.1, -4.5, -11, 0, -25, 9, 0, 25, -11, 0, 25, -11, -0.1, 25, 1.395, -0.1, -5.4275, 1.395, -0.1, -5.5, -11, -0.1, 25, 1.395, -0.1, -4.5725, 1.395, -0.1, -5.4275, -11, -0.1, 25, 1.395, -0.1, -4.5, 1.395, -0.1, -4.5725, -11, -0.1, 25, 1.5, -0.1, -4.5, 1.395, -0.1, -4.5, -11, -0.1, 25, 1.999427, -0.1, 1.5, 1.5, -0.1, -4.5, -11, -0.1, 25, 2.9994268, -0.1, 1.5, 1.999427, -0.1, 1.5, -11, -0.1, 25, -11, 0, 25, 9, 0, 25, -11, 0, -25, 9, 0, -25, 1.5, 0, -5.5, -11, 0, -25, 9, -0.1, -25, 9, 0, -25, -11, -0.1, 25, 1.395, -0.1, -5.5, 9, -0.1, -25, -1.395, 0, -5.5, 1.395, 0, -5.5, -1.395, 0, -5.4275, -1.395, 0, -5.4275, 1.395, 0, -5.4275, -1.395, 0, -4.5725, -1.395, 0, -4.5725, 1.395, 0, -4.5725, -1.395, 0, -4.5, 1.395, -0.1, -5.4275, 1.395, -0.1, -4.5725, 1.5, -0.1, -5.4275, 1.5, -0.1, -5.4275, 1.395, -0.1, -4.5725, 1.5, -0.1, -4.5725, -1.395, 0, -5.4275, 1.395, 0, -5.5, 1.395, 0, -5.4275, -1.395, 0, -4.5725, 1.395, 0, -5.4275, 1.395, 0, -4.5725, -1.395, 0, -4.5, 1.395, 0, -4.5725, 1.395, 0, -4.5, -1.395, 0, -4.5, 1.395, 0, -4.5, 1.9994272, 0, -3.5, 1.395, 0, -5.4275, 1.5, 0, -5.4275, 1.5, 0, -4.5725, 1.395, 0, -5.4275, 1.5, 0, -4.5725, 1.395, 0, -4.5725, -1.395, 0, -4.5, 1.9994272, 0, -3.5, 1.999427, 0, 1.5, 9, -0.1, -25, -1.395, -0.1, -5.5, -1.395, -0.1, -5.4275, 9, -0.1, -25, -1.395, -0.1, -5.4275, -1.395, -0.1, -4.5725, 9, -0.1, -25, -1.395, -0.1, -4.5725, -1.395, -0.1, -4.5, 9, -0.1, -25, 1.395, -0.1, -5.5, 1.5, -0.1, -5.5, 1.5, -0.1, -5.5, 1.5, -0.1, -5.4275, 1.9994272, -0.1, -3.5, 1.5, -0.1, -4.5725, 1.9994272, -0.1, -3.5, 1.5, -0.1, -5.4275, 1.5, -0.1, -4.5725, 1.5, -0.1, -4.5, 1.9994272, -0.1, -3.5, 1.5, -0.1, -5.5, 1.9994272, -0.1, -3.5, 2.9994273, -0.1, -3.5, 1.5, -0.1, -4.5, 1.999427, -0.1, 1.5, 1.9994272, -0.1, -3.5, 1.395, 0, -4.5, 1.5, 0, -4.5, 1.9994272, 0, -3.5, 1.5, 0, -4.5725, 1.5, 0, -5.4275, 2.9994273, 0, -3.5, 1.5, 0, -4.5725, 2.9994273, 0, -3.5, 1.5, 0, -4.5, 1.5, 0, -4.5, 2.9994273, 0, -3.5, 1.9994272, 0, -3.5, 9, -0.1, -25, 1.5, -0.1, -5.5, 2.9994273, -0.1, -3.5, 9, 0, -25, 1.5, 0, -5.4275, 1.5, 0, -5.5, 9, 0, -25, 2.9994273, 0, -3.5, 1.5, 0, -5.4275, 9, 0, -25, 2.9994268, 0, 1.5, 2.9994273, 0, -3.5, 9, -0.1, -25, 9, 0, 25, 9, 0, -25, 9, -0.1, -25, 2.9994273, -0.1, -3.5, 9, -0.1, 25, 9, 0, 25, -1.5, 0, -4.5, -1.395, 0, -4.5, 9, 0, 25, -1.395, 0, -4.5, 1.999427, 0, 1.5, -11, -0.1, 25, 9, -0.1, 25, 2.9994268, -0.1, 1.5, -11, -0.1, 25, 9, 0, 25, 9, -0.1, 25, 9, -0.1, 25, 2.9994273, -0.1, -3.5, 2.9994268, -0.1, 1.5, 9, 0, 25, 1.999427, 0, 1.5, 2.9994268, 0, 1.5, 9, 0, -25, 9, 0, 25, 2.9994268, 0, 1.5, 9, -0.1, -25, 9, -0.1, 25, 9, 0, 25, -1.5, -0.18715084, -5.5, -1.395, -0.18715084, -5.4275, -1.395, -0.18715084, -5.5, -1.5, -0.18715084, -5.5, -1.395, -0.18715084, -5.5, -1.5, -0.1, -5.5, -1.395, -0.18715084, -5.5, -1.395, -0.18715084, -5.4275, -1.395, -0.1, -5.5, -1.5, -0.18715084, -5.5, -1.5, -0.1, -5.4275, -1.5, -0.18715084, -5.4275, -1.5, -0.18715084, -5.5, -1.5, -0.18715084, -5.4275, -1.395, -0.18715084, -5.4275, -1.5, -0.18715084, -5.4275, -1.395, -0.1, -5.4275, -1.395, -0.18715084, -5.4275, -1.5, -0.18715084, -4.5725, -1.5, -0.1, -4.5, -1.5, -0.18715084, -4.5, -1.5, -0.18715084, -4.5725, -1.5, -0.18715084, -4.5, -1.395, -0.18715084, -4.5725, -1.5, -0.18715084, -4.5, -1.395, -0.18715084, -4.5, -1.395, -0.18715084, -4.5725, -1.5, -0.18715084, -4.5725, -1.395, -0.18715084, -4.5725, -1.5, -0.1, -4.5725, -1.5, -0.18715084, -4.5, -1.395, -0.1, -4.5, -1.395, -0.18715084, -4.5, -1.395, -0.18715084, -4.5725, -1.395, -0.18715084, -4.5, -1.395, -0.1, -4.5725, -1.5, -0.18715084, -5.5, -1.5, -0.1, -5.5, -1.5, -0.1, -5.4275, -1.395, -0.18715084, -5.5, -1.395, -0.1, -5.5, -1.5, -0.1, -5.5, -1.5, -0.18715084, -5.4275, -1.5, -0.1, -5.4275, -1.395, -0.1, -5.4275, -1.395, -0.18715084, -5.4275, -1.395, -0.1, -5.4275, -1.395, -0.1, -5.5, -1.5, -0.18715084, -4.5725, -1.5, -0.1, -4.5725, -1.5, -0.1, -4.5, -1.5, -0.18715084, -4.5, -1.5, -0.1, -4.5, -1.395, -0.1, -4.5, -1.395, -0.18715084, -4.5725, -1.395, -0.1, -4.5725, -1.5, -0.1, -4.5725, -1.395, -0.18715084, -4.5, -1.395, -0.1, -4.5, -1.395, -0.1, -4.5725, -1.395, 1.0100538, -5.5, -1.5, 0, -5.5, -1.395, 0, -5.5, -1.395, 1.0100538, -5.5, -1.395, 0, -5.5, -1.395, 0, -5.4275, -1.5, 1.0100538, -5.4275, -1.5, 0, -5.4275, -1.5, 0, -5.5, -1.395, 1.0100538, -5.4275, -1.395, 0, -5.4275, -1.5, 0, -5.4275, -1.5, 1.0100538, -4.5725, -1.5, 0, -4.5, -1.5, 0, -4.5725, -1.5, 1.0100538, -4.5725, -1.5, 0, -4.5725, -1.395, 0, -4.5725, -1.395, 1.0100538, -4.5, -1.395, 0, -4.5, -1.5, 0, -4.5, -1.395, 1.0100538, -4.5725, -1.395, 0, -4.5725, -1.395, 0, -4.5, -1.5, 1.0100538, -5.4275, -1.395, 1.0100538, -5.4275, -1.5, 0, -5.4275, -1.395, 1.0100538, -5.5, -1.395, 0, -5.4275, -1.395, 1.0100538, -5.4275, -1.5, 1.0100538, -4.5725, -1.395, 0, -4.5725, -1.395, 1.0100538, -4.5725, -1.395, 1.0100538, -4.5725, -1.395, 0, -4.5, -1.395, 1.0100538, -4.5, -1.5, 1.0100538, -5.4275, -1.5, 0, -5.5, -1.5, 1.1128491, -5.5, -1.395, 1.0100538, -5.5, -1.5, 1.1128491, -5.5, -1.5, 0, -5.5, -1.5, 1.0100538, -4.5725, -1.5, 1.1128491, -4.5, -1.5, 0, -4.5, -1.395, 1.0100538, -4.5, -1.5, 0, -4.5, -1.5, 1.1128491, -4.5, -1.5, 1.0100538, -5.4275, -1.5, 1.0100538, -4.5725, -1.395, 1.0100538, -4.5725, -1.5, 1.0100538, -5.4275, -1.5, 1.1128491, -5.5, -1.5, 1.0100538, -4.5725, -1.5, 1.1128491, -5.5, -1.5, 1.1128491, -4.5, -1.5, 1.0100538, -4.5725, 1.395, -0.18715084, -5.5, 1.395, -0.18715084, -5.4275, 1.5, -0.18715084, -5.5, 1.395, -0.18715084, -5.5, 1.5, -0.18715084, -5.5, 1.395, -0.1, -5.5, 1.395, -0.18715084, -5.4275, 1.5, -0.18715084, -5.4275, 1.5, -0.18715084, -5.5, 1.395, -0.18715084, -5.5, 1.395, -0.1, -5.4275, 1.395, -0.18715084, -5.4275, 1.395, -0.18715084, -5.4275, 1.5, -0.1, -5.4275, 1.5, -0.18715084, -5.4275, 1.395, -0.18715084, -4.5725, 1.395, -0.18715084, -4.5, 1.5, -0.18715084, -4.5, 1.395, -0.18715084, -4.5725, 1.5, -0.18715084, -4.5, 1.5, -0.18715084, -4.5725, 1.395, -0.18715084, -4.5725, 1.395, -0.1, -4.5, 1.395, -0.18715084, -4.5, 1.395, -0.18715084, -4.5725, 1.5, -0.18715084, -4.5725, 1.395, -0.1, -4.5725, 1.395, -0.18715084, -4.5, 1.5, -0.1, -4.5, 1.5, -0.18715084, -4.5, 1.395, -0.18715084, -5.5, 1.395, -0.1, -5.5, 1.395, -0.1, -5.4275, 1.5, -0.18715084, -5.5, 1.5, -0.1, -5.5, 1.395, -0.1, -5.5, 1.395, -0.18715084, -5.4275, 1.395, -0.1, -5.4275, 1.5, -0.1, -5.4275, 1.395, -0.18715084, -4.5725, 1.395, -0.1, -4.5725, 1.395, -0.1, -4.5, 1.395, -0.18715084, -4.5, 1.395, -0.1, -4.5, 1.5, -0.1, -4.5, 1.5, -0.18715084, -4.5725, 1.5, -0.1, -4.5725, 1.395, -0.1, -4.5725, 1.9994272, -0.70947266, -3.5, 2.9994273, -0.70947266, -3.5, 1.9994272, -0.1, -3.5, 1.9994272, -0.70947266, -3.5, 1.999427, -0.1, 1.5, 1.999427, -0.70947266, 1.5, 1.9994272, -0.70947266, -3.5, 2.9994268, -0.70947266, 1.5, 2.9994273, -0.70947266, -3.5, 1.9994272, -0.70947266, -3.5, 1.999427, -0.70947266, 1.5, 2.9994268, -0.70947266, 1.5, 2.9994273, -0.70947266, -3.5, 2.9994273, -0.1, -3.5, 1.9994272, -0.1, -3.5, 1.9994272, -0.70947266, -3.5, 1.9994272, -0.1, -3.5, 1.999427, -0.1, 1.5, 2.9994273, -0.70947266, -3.5, 2.9994268, -0.70947266, 1.5, 2.9994273, -0.1, -3.5, 2.9994268, -0.70947266, 1.5, 2.9994268, -0.1, 1.5, 2.9994273, -0.1, -3.5, 1.5, -0.18715084, -5.5, 1.5, -0.18715084, -5.4275, 1.5, -0.1, -5.5, 1.5, -0.18715084, -4.5725, 1.5, -0.18715084, -4.5, 1.5, -0.1, -4.5725, 1.5, -0.18715084, -5.4275, 1.5, -0.1, -5.4275, 1.5, -0.1, -5.5, 1.5, -0.18715084, -4.5, 1.5, -0.1, -4.5, 1.5, -0.1, -4.5725, 1.395, 1.0100538, -5.5, 1.395, 0, -5.5, 1.5, 0, -5.5, 1.395, 1.0100538, -5.4275, 1.395, 0, -5.4275, 1.395, 0, -5.5, 1.5, 1.0100538, -5.4275, 1.5, 0, -5.4275, 1.395, 0, -5.4275, 1.395, 1.0100538, -4.5, 1.395, 0, -4.5, 1.395, 0, -4.5725, 1.395, 1.0100538, -4.5725, 1.395, 0, -4.5725, 1.5, 0, -4.5725, 1.395, 1.0100538, -4.5, 1.5, 0, -4.5, 1.395, 0, -4.5, 1.395, 1.0100538, -5.5, 1.395, 1.0100538, -5.4275, 1.395, 0, -5.5, 1.395, 1.0100538, -5.4275, 1.5, 1.0100538, -5.4275, 1.395, 0, -5.4275, 1.395, 1.0100538, -4.5725, 1.395, 1.0100538, -4.5, 1.395, 0, -4.5725, 1.395, 1.0100538, -4.5725, 1.5, 0, -4.5725, 1.5, 1.0100538, -4.5725, -1.395, 1.0100538, -5.5, -1.395, 1.0100538, -5.4275, 1.395, 1.0100538, -5.5, -1.5, 1.0100538, -5.4275, 1.5, 1.0100538, -4.5725, -1.395, 1.0100538, -5.4275, -1.5, 1.0100538, -5.4275, -1.395, 1.0100538, -4.5725, 1.395, 1.0100538, -4.5725, -1.395, 1.0100538, -4.5725, -1.395, 1.0100538, -4.5, 1.395, 1.0100538, -4.5725, -1.395, 1.0100538, -5.5, 1.5, 1.1128491, -5.5, -1.5, 1.1128491, -5.5, -1.5, 1.1128491, -5.5, 1.5, 1.1128491, -4.5, -1.5, 1.1128491, -4.5, -1.395, 1.0100538, -4.5, -1.5, 1.1128491, -4.5, 1.395, 1.0100538, -4.5, 1.395, 1.0100538, -5.5, 1.5, 0, -5.5, 1.5, 1.1128491, -5.5, 1.395, 1.0100538, -4.5, 1.5, 1.1128491, -4.5, 1.5, 0, -4.5, -1.395, 1.0100538, -5.4275, 1.395, 1.0100538, -5.4275, 1.395, 1.0100538, -5.5, -1.395, 1.0100538, -5.4275, 1.5, 1.0100538, -4.5725, 1.395, 1.0100538, -5.4275, -1.5, 1.0100538, -5.4275, 1.395, 1.0100538, -4.5725, 1.5, 1.0100538, -4.5725, -1.395, 1.0100538, -4.5, 1.395, 1.0100538, -4.5, 1.395, 1.0100538, -4.5725, -1.395, 1.0100538, -5.5, 1.395, 1.0100538, -5.5, 1.5, 1.1128491, -5.5, -1.5, 1.1128491, -5.5, 1.5, 1.1128491, -5.5, 1.5, 1.1128491, -4.5, -1.5, 1.1128491, -4.5, 1.5, 1.1128491, -4.5, 1.395, 1.0100538, -4.5, 1.395, 1.0100538, -5.4275, 1.5, 1.0100538, -4.5725, 1.5, 1.0100538, -5.4275, 1.5, 1.0100538, -5.4275, 1.5, 0, -5.5, 1.5, 0, -5.4275, 1.5, 1.0100538, -4.5725, 1.5, 0, -4.5725, 1.5, 0, -4.5, 1.5, 1.0100538, -5.4275, 1.5, 1.1128491, -5.5, 1.5, 0, -5.5, 1.5, 1.0100538, -4.5725, 1.5, 0, -4.5, 1.5, 1.1128491, -4.5, 1.5, 1.0100538, -5.4275, 1.5, 1.0100538, -4.5725, 1.5, 1.1128491, -4.5, 1.5, 1.0100538, -5.4275, 1.5, 1.1128491, -4.5, 1.5, 1.1128491, -5.5, 1.9994272, 3, -3.5, 1.9994272, 0, -3.5, 2.9994273, 0, -3.5, 1.999427, 3, 1.5, 1.999427, 0, 1.5, 1.9994272, 0, -3.5, 2.9994273, 3, -3.5, 2.9994273, 0, -3.5, 2.9994268, 0, 1.5, 1.999427, -0.70947266, 1.5, 2.9994268, -0.1, 1.5, 2.9994268, -0.70947266, 1.5, 1.999427, -0.70947266, 1.5, 1.999427, -0.1, 1.5, 2.9994268, -0.1, 1.5, 2.9994268, 3, 1.5, 2.9994268, 0, 1.5, 1.999427, 0, 1.5, 1.9994272, 3, -3.5, 2.9994273, 0, -3.5, 2.9994273, 3, -3.5, 1.9994272, 3, -3.5, 1.999427, 3, 1.5, 1.9994272, 0, -3.5, 2.9994273, 3, -3.5, 2.9994268, 0, 1.5, 2.9994268, 3, 1.5, 1.9994272, 3, -3.5, 2.9994273, 3, -3.5, 1.999427, 3, 1.5, 2.9994273, 3, -3.5, 2.9994268, 3, 1.5, 1.999427, 3, 1.5, 1.999427, 3, 1.5, 2.9994268, 3, 1.5, 1.999427, 0, 1.5)
@@ -364,14 +365,14 @@ bottom_radius = 0.2
 height = 0.235
 radial_segments = 8
 
-[node name="Playground" type="Node3D"]
+[node name="Playground" type="Node3D" unique_id=477752844]
 script = ExtResource("1_wf0s2")
 
-[node name="Geometry" type="Node3D" parent="."]
+[node name="Geometry" type="Node3D" parent="." unique_id=1178906116]
 
-[node name="Center" type="Node3D" parent="Geometry"]
+[node name="Center" type="Node3D" parent="Geometry" unique_id=929834797]
 
-[node name="CenterLightmapGI" type="LightmapGI" parent="Geometry/Center"]
+[node name="CenterLightmapGI" type="LightmapGI" parent="Geometry/Center" unique_id=1909518410]
 quality = 2
 supersampling = true
 bounce_indirect_energy = 2.0
@@ -379,113 +380,113 @@ environment_mode = 0
 generate_probes_subdiv = 3
 light_data = ExtResource("1_2tufx")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center" unique_id=1438739496]
 visible = false
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D" unique_id=819668430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.05, 0)
 size = Vector3(20, 0.1, 50)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center/CSGCombiner3D"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center/CSGCombiner3D" unique_id=32295411]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D" unique_id=1821634856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46284914, -5)
 size = Vector3(3, 1.3, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D" unique_id=1123831800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41005373, -5)
 operation = 2
 size = Vector3(3, 1.2, 0.855)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D" unique_id=1188479510]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41005373, -5)
 operation = 2
 size = Vector3(2.79, 1.2, 1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Center/CSGCombiner3D/CSGCombiner3D" unique_id=766170000]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.499427, 1.1452637, -1)
 size = Vector3(5, 3.7094727, 1)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center" unique_id=1258513749]
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/StaticBody3D" unique_id=882294489]
 shape = SubResource("ConcavePolygonShape3D_ok16f")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/StaticBody3D" unique_id=1133692842]
 mesh = SubResource("ArrayMesh_8tqno")
 skeleton = NodePath("../..")
 
-[node name="Physics" type="Node3D" parent="Geometry/Center"]
+[node name="Physics" type="Node3D" parent="Geometry/Center" unique_id=1070631142]
 
-[node name="RigidBody3D" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D" parent="Geometry/Center/Physics" unique_id=469970476 instance=ExtResource("3_yeqys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0675826, 1.8679185, -5.0757327)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D2" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D2" parent="Geometry/Center/Physics" unique_id=2027215305 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.99784523, 0, -0.065612115, 0, 1, 0, 0.065612115, 0, 0.99784523, -2.820243, 2.9924264, -4.8687973)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D3" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D3" parent="Geometry/Center/Physics" unique_id=1115722833 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.98746616, 0, 0.15783063, 0, 1, 0, -0.15783063, 0, 0.98746616, -3.3892953, 3.957759, -5.1505156)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D4" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D4" parent="Geometry/Center/Physics" unique_id=1622929924 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.9999823, 0, 0.0059340894, 0, 1, 0, -0.0059340894, 0, 0.9999823, -2.5126452, 8.179331, -5.1505156)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D5" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D5" parent="Geometry/Center/Physics" unique_id=568805786 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.9821693, 0, -0.18799846, 0, 1, 0, 0.18799846, 0, 0.9821693, -3.3482826, 9.229746, -5.1505156)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D6" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D6" parent="Geometry/Center/Physics" unique_id=2145482208 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.9821693, 0, -0.18799846, 0, 1, 0, 0.18799846, 0, 0.9821693, -3.060401, 10.131736, -5.4674473)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D7" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D7" parent="Geometry/Center/Physics" unique_id=1298284531 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.64565754, 0, 0.763627, 0, 1, 0, -0.763627, 0, 0.64565754, -2.942812, 11.2614565, -5.244287)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D8" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D8" parent="Geometry/Center/Physics" unique_id=1190075029 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.36151066, 0, -0.932368, 0, 1, 0, 0.932368, 0, -0.36151066, -3.0799885, 14.236734, -5.2322893)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D9" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D9" parent="Geometry/Center/Physics" unique_id=521354895 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.4219063, 0, -0.9066394, 0, 1, 0, 0.9066394, 0, -0.4219063, -3.3623445, 15.361242, -5.076487)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D10" parent="Geometry/Center/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D10" parent="Geometry/Center/Physics" unique_id=1463770601 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.20982333, 0, -0.9777393, 0, 1, 0, 0.9777393, 0, -0.20982333, -2.893961, 16.326576, -5.5052094)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="Switches" type="Node3D" parent="Geometry/Center"]
+[node name="Switches" type="Node3D" parent="Geometry/Center" unique_id=217491195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.500573, 0, 0)
 
-[node name="Button01" type="StaticBody3D" parent="Geometry/Center/Switches"]
+[node name="Button01" type="StaticBody3D" parent="Geometry/Center/Switches" unique_id=165019774]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.476, 1.6, -2.849905)
 script = ExtResource("3_pc5gh")
 
-[node name="Slider3D" type="Node3D" parent="Geometry/Center/Switches/Button01"]
+[node name="Slider3D" type="Node3D" parent="Geometry/Center/Switches/Button01" unique_id=363055449]
 script = ExtResource("4_6vsca")
 duration = 0.2
 bounce = true
@@ -493,49 +494,49 @@ bounce_delay = 0.2
 slide_distance = -0.02
 metadata/_custom_type_script = "uid://bjhl03u1jsimb"
 
-[node name="ButtonMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Button01/Slider3D"]
+[node name="ButtonMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Button01/Slider3D" unique_id=611779469]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.037586562)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("CylinderMesh_5tt0r")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/Button01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/Button01" unique_id=565309845]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.6234369e-09, 0.037139893)
 shape = SubResource("CylinderShape3D_gue5r")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Button01"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Button01" unique_id=310091366]
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_eojtq")
 
-[node name="HoldButton01" type="StaticBody3D" parent="Geometry/Center/Switches"]
+[node name="HoldButton01" type="StaticBody3D" parent="Geometry/Center/Switches" unique_id=1783447866]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.476, 1.6, -2.3990383)
 script = ExtResource("7_gyytt")
 
-[node name="Slider3D" type="Node3D" parent="Geometry/Center/Switches/HoldButton01"]
+[node name="Slider3D" type="Node3D" parent="Geometry/Center/Switches/HoldButton01" unique_id=1867635657]
 script = ExtResource("4_6vsca")
 duration = 0.2
 slide_distance = -0.02
 metadata/_custom_type_script = "uid://bjhl03u1jsimb"
 
-[node name="ButtonMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldButton01/Slider3D"]
+[node name="ButtonMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldButton01/Slider3D" unique_id=1438630792]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.038)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("CylinderMesh_46y4m")
 skeleton = NodePath("../../BackplateMesh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/HoldButton01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/HoldButton01" unique_id=2013910334]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.03671425)
 shape = SubResource("CylinderShape3D_sb301")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldButton01"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldButton01" unique_id=2146328515]
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_u6oef")
 
-[node name="Lever01" type="StaticBody3D" parent="Geometry/Center/Switches"]
+[node name="Lever01" type="StaticBody3D" parent="Geometry/Center/Switches" unique_id=1819402871]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 4.476, 1.6, -1.9689647)
 script = ExtResource("8_ecguh")
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Switches/Lever01"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Switches/Lever01" unique_id=1044659994]
 script = ExtResource("9_ok16f")
 open_positive = false
 duration = 0.2
@@ -543,33 +544,33 @@ max_positive = 0.0
 max_negative = 90.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01/Hinge3D"]
+[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01/Hinge3D" unique_id=96059965]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 2.6865725e-16, 1, 0.07203721, 1.3517827e-08, 0.07589761)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("CylinderMesh_lksms")
 
-[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01/Hinge3D"]
+[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01/Hinge3D" unique_id=1071637482]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, -0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01/Hinge3D"]
+[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01/Hinge3D" unique_id=632487843]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, 0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/Lever01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/Lever01" unique_id=260671260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039428715)
 shape = SubResource("BoxShape3D_6gf4t")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/Lever01" unique_id=2079164220]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_ol0bu")
 
-[node name="HoldLever01" type="StaticBody3D" parent="Geometry/Center/Switches"]
+[node name="HoldLever01" type="StaticBody3D" parent="Geometry/Center/Switches" unique_id=717369212]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 4.476, 1.6, -1.5378692)
 script = ExtResource("10_8tqno")
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Switches/HoldLever01"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Switches/HoldLever01" unique_id=1897253378]
 script = ExtResource("9_ok16f")
 open_positive = false
 duration = 0.2
@@ -577,33 +578,33 @@ max_positive = 0.0
 max_negative = 90.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01/Hinge3D"]
+[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01/Hinge3D" unique_id=415260820]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07203721, 1.3517827e-08, 0.07589761)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("CylinderMesh_6q1hh")
 
-[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01/Hinge3D"]
+[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01/Hinge3D" unique_id=1952500961]
 transform = Transform3D(0.70710677, 1.2802769e-08, 0.70710677, 1.2802769e-08, 1, -3.090862e-08, -0.70710677, 3.090862e-08, 0.70710677, 0.037, -0.06, 0.04)
 mesh = SubResource("BoxMesh_ylfus")
 
-[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01/Hinge3D"]
+[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01/Hinge3D" unique_id=2007710288]
 transform = Transform3D(0.70710677, 1.2802769e-08, 0.70710677, 1.2802769e-08, 1, -3.090862e-08, -0.70710677, 3.090862e-08, 0.70710677, 0.037000008, 0.060072575, 0.04)
 mesh = SubResource("BoxMesh_ylfus")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/HoldLever01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/HoldLever01" unique_id=1310356158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039428715)
 shape = SubResource("BoxShape3D_kxxqp")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/HoldLever01" unique_id=98799735]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_kxxqp")
 
-[node name="BrokenLever01" type="StaticBody3D" parent="Geometry/Center/Switches"]
+[node name="BrokenLever01" type="StaticBody3D" parent="Geometry/Center/Switches" unique_id=54527282]
 transform = Transform3D(3.5527137e-15, 4.371139e-08, -1, 1, -4.371139e-08, -3.5527137e-15, -4.3711392e-08, -1, -4.371139e-08, 4.476, 1.6, -1.1331341)
 script = ExtResource("11_6vsca")
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Switches/BrokenLever01"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Switches/BrokenLever01" unique_id=373978835]
 script = ExtResource("9_ok16f")
 open_positive = false
 duration = 0.2
@@ -611,190 +612,190 @@ max_positive = 0.0
 max_negative = 90.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01/Hinge3D"]
+[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01/Hinge3D" unique_id=612424992]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07203721, 1.3517827e-08, 0.07589761)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("CylinderMesh_d6sq0")
 
-[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01/Hinge3D"]
+[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01/Hinge3D" unique_id=2097826749]
 transform = Transform3D(0.70710677, 1.2802769e-08, 0.70710677, 1.2802769e-08, 1, -3.090862e-08, -0.70710677, 3.090862e-08, 0.70710677, 0.037, -0.06, 0.04)
 mesh = SubResource("BoxMesh_t8gdu")
 
-[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01/Hinge3D"]
+[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01/Hinge3D" unique_id=887599158]
 transform = Transform3D(0.70710677, 1.2802769e-08, 0.70710677, 1.2802769e-08, 1, -3.090862e-08, -0.70710677, 3.090862e-08, 0.70710677, 0.037, 0.06, 0.04)
 mesh = SubResource("BoxMesh_t8gdu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/BrokenLever01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/BrokenLever01" unique_id=1321637081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039428715)
 shape = SubResource("BoxShape3D_ff7q3")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/BrokenLever01" unique_id=1014469680]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_v837m")
 
-[node name="PressurePlate01" type="StaticBody3D" parent="Geometry/Center/Switches"]
+[node name="PressurePlate01" type="StaticBody3D" parent="Geometry/Center/Switches" unique_id=274994315]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.001546, 0.03032027, 2.51892)
 script = ExtResource("11_tpm64")
 
-[node name="Slider3D" type="Node3D" parent="Geometry/Center/Switches/PressurePlate01"]
+[node name="Slider3D" type="Node3D" parent="Geometry/Center/Switches/PressurePlate01" unique_id=248422213]
 script = ExtResource("4_6vsca")
 duration = 0.2
 slide_distance = -0.045
 metadata/_custom_type_script = "uid://bjhl03u1jsimb"
 
-[node name="PlateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/PressurePlate01/Slider3D"]
+[node name="PlateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/PressurePlate01/Slider3D" unique_id=2093091893]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319313, 0.040957946)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_vwpue")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/PressurePlate01"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Center/Switches/PressurePlate01" unique_id=1402292564]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319314, -0.005319314)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_vqv3c")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/PressurePlate01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/PressurePlate01" unique_id=186063441]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319314, -0.005319314)
 shape = SubResource("BoxShape3D_k66wv")
 
-[node name="Area3D" type="Area3D" parent="Geometry/Center/Switches/PressurePlate01"]
+[node name="Area3D" type="Area3D" parent="Geometry/Center/Switches/PressurePlate01" unique_id=2066627326]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.030319316, -0.030319314)
 collision_layer = 0
 collision_mask = 42
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/PressurePlate01/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Switches/PressurePlate01/Area3D" unique_id=457552612]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07213563, 0)
 shape = SubResource("BoxShape3D_0y2bq")
 
-[node name="Doors" type="Node3D" parent="Geometry/Center"]
+[node name="Doors" type="Node3D" parent="Geometry/Center" unique_id=369423372]
 
-[node name="Door01" type="StaticBody3D" parent="Geometry/Center/Doors"]
+[node name="Door01" type="StaticBody3D" parent="Geometry/Center/Doors" unique_id=1277718314]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 4)
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Doors/Door01"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Center/Doors/Door01" unique_id=245213157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 script = ExtResource("9_ok16f")
 max_positive = 106.0
 max_negative = 106.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center/Doors/Door01/Hinge3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center/Doors/Door01/Hinge3D" unique_id=1334399962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 script = ExtResource("14_1sa4x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/Door01/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/Door01/Hinge3D/StaticBody3D" unique_id=63240759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_k6g58")
 skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/Door01/Hinge3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/Door01/Hinge3D/StaticBody3D" unique_id=1490335271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_rhs51")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Center/Doors/Door01/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Center/Doors/Door01/Hinge3D/StaticBody3D" unique_id=710221039]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_deebq")
 skeleton = NodePath("")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center/Doors/Door01"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center/Doors/Door01" unique_id=1160041819]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Center/Doors/Door01/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Center/Doors/Door01/CSGCombiner3D" unique_id=1043486534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 size = Vector3(1.2, 2.1, 0.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Center/Doors/Door01/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Center/Doors/Door01/CSGCombiner3D" unique_id=1233679374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 operation = 2
 size = Vector3(1, 2, 0.3)
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/Door01"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/Door01" unique_id=1901225627]
 shape = SubResource("ConcavePolygonShape3D_7odka")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/Door01"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/Door01" unique_id=212129466]
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("ArrayMesh_81l42")
 
-[node name="SlideDoor01" type="StaticBody3D" parent="Geometry/Center/Doors"]
+[node name="SlideDoor01" type="StaticBody3D" parent="Geometry/Center/Doors" unique_id=2112997981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9999999, 0, 4)
 script = ExtResource("15_ecguh")
 
-[node name="Node3D" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01"]
+[node name="Node3D" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01" unique_id=1180324545]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Slider3D" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D"]
+[node name="Slider3D" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D" unique_id=946652884]
 script = ExtResource("4_6vsca")
 duration = 0.4
 slide_distance = 0.45
 metadata/_custom_type_script = "uid://bjhl03u1jsimb"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D/Slider3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D/Slider3D" unique_id=1281922029]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("16_ok16f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D/Slider3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D/Slider3D/StaticBody3D" unique_id=1491020124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1, 0)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_lv3cb")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D/Slider3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D/Slider3D/StaticBody3D" unique_id=995636923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1, 0)
 shape = SubResource("BoxShape3D_k6qon")
 
-[node name="Node3D2" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01"]
+[node name="Node3D2" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01" unique_id=360613437]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Slider3D2" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2"]
+[node name="Slider3D2" type="Node3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2" unique_id=657376293]
 script = ExtResource("4_6vsca")
 duration = 0.4
 slide_distance = 0.45
 metadata/_custom_type_script = "uid://bjhl03u1jsimb"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2/Slider3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2/Slider3D2" unique_id=897026825]
 transform = Transform3D(-2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, -2.9802322e-08, 0, 0, 0)
 script = ExtResource("16_ok16f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2/Slider3D2/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2/Slider3D2/StaticBody3D" unique_id=389095924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_lv3cb")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2/Slider3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/SlideDoor01/Node3D2/Slider3D2/StaticBody3D" unique_id=6346152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
 shape = SubResource("BoxShape3D_k6qon")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center/Doors/SlideDoor01"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Center/Doors/SlideDoor01" unique_id=1901025923]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Center/Doors/SlideDoor01/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Center/Doors/SlideDoor01/CSGCombiner3D" unique_id=1812877164]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 size = Vector3(1.2, 2.1, 0.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Center/Doors/SlideDoor01/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Center/Doors/SlideDoor01/CSGCombiner3D" unique_id=1586175147]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 operation = 2
 size = Vector3(1, 2, 0.3)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Center/Doors/SlideDoor01/CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Center/Doors/SlideDoor01/CSGCombiner3D" unique_id=1190531034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 operation = 2
 size = Vector3(1.4, 2, 0.1)
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/SlideDoor01"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Center/Doors/SlideDoor01" unique_id=1252180176]
 shape = SubResource("ConcavePolygonShape3D_o8qfa")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/SlideDoor01"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Center/Doors/SlideDoor01" unique_id=483400223]
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("ArrayMesh_6n377")
 
-[node name="Storage" type="Node3D" parent="Geometry/Center"]
+[node name="Storage" type="Node3D" parent="Geometry/Center" unique_id=877350765]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Geometry/Center"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Geometry/Center" unique_id=566786586]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.2106411, 3.8128242, -0.81625897)
 light_energy = 2.0
 light_size = 0.2
@@ -808,7 +809,7 @@ distance_fade_shadow = 10.0
 spot_range = 7.848082
 spot_angle = 71.74056
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Geometry/Center"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Geometry/Center" unique_id=692654217]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.2106411, 3.8128242, 9.258923)
 light_energy = 2.0
 light_size = 0.2
@@ -822,9 +823,21 @@ distance_fade_shadow = 10.0
 spot_range = 7.848082
 spot_angle = 71.74056
 
-[node name="Maze" type="Node3D" parent="Geometry"]
+[node name="ToiletPaper01" parent="Geometry/Center" unique_id=1872499276 instance=ExtResource("19_tpm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3177198, 1.1128491, -4.737021)
 
-[node name="MazeLightmapGI" type="LightmapGI" parent="Geometry/Maze"]
+[node name="ToiletPaper02" parent="Geometry/Center" unique_id=222907677 instance=ExtResource("19_tpm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1990397, 1.1128491, -4.777288)
+
+[node name="ToiletPaper03" parent="Geometry/Center" unique_id=951762040 instance=ExtResource("19_tpm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2165797, 1.1128492, -4.646946)
+
+[node name="ToiletPaper04" parent="Geometry/Center" unique_id=392226881 instance=ExtResource("19_tpm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2436184, 1.2128491, -4.723793)
+
+[node name="Maze" type="Node3D" parent="Geometry" unique_id=1414931978]
+
+[node name="MazeLightmapGI" type="LightmapGI" parent="Geometry/Maze" unique_id=2002018488]
 visible = false
 quality = 2
 supersampling = true
@@ -833,72 +846,72 @@ environment_mode = 0
 generate_probes_subdiv = 3
 light_data = ExtResource("17_ok16f")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Maze"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Maze" unique_id=1366526830]
 visible = false
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=1403332066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.203952, 1.5, -6.8637695)
 size = Vector3(1, 4, 10.727539)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=2067678263]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.992039, 1.5, 1.1362305)
 size = Vector3(1, 4, 12.842773)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=1019282909]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.818089, 1.5, -1.8637695)
 size = Vector3(1, 4, 6.0856934)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=414820218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.203953, 1.5, -5.5)
 size = Vector3(1, 4, 8)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=180274734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.203953, 1.5, -7.0532227)
 size = Vector3(1, 4, 11.106445)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=117505959]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.658905, 1.5, -12.5)
 size = Vector3(1, 4, 11.958008)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=1418462119]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -29.195103, 1.5, -1.9709063)
 size = Vector3(1, 4, 10.727539)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=1351970386]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.067173, 1.5, 9.029096)
 size = Vector3(1, 4, 21.74121)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=1527471605]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -28.006613, 1.5, 5.066862)
 size = Vector3(1, 4, 8.758057)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D11" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=1996705369]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.14219, 1.5, 5.066862)
 size = Vector3(1, 4, 8.758057)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=68538240]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -34.831333, 1.5, 3.484048)
 size = Vector3(1, 4, 11.958008)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D"]
+[node name="CSGBox3D12" type="CSGBox3D" parent="Geometry/Maze/CSGCombiner3D" unique_id=630883356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, -0.05, 0)
 size = Vector3(29, 0.1, 50)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Maze"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Maze" unique_id=1637865173]
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Maze/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Maze/StaticBody3D" unique_id=331769776]
 shape = SubResource("ConcavePolygonShape3D_8tqno")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Maze/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Maze/StaticBody3D" unique_id=840702917]
 mesh = SubResource("ArrayMesh_tpm64")
 skeleton = NodePath("../..")
 
-[node name="MazeLever" type="StaticBody3D" parent="Geometry/Maze"]
+[node name="MazeLever" type="StaticBody3D" parent="Geometry/Maze" unique_id=1009389754]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, -12.6775055, 1.6, -1.9689647)
 script = ExtResource("8_ecguh")
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Maze/MazeLever"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Maze/MazeLever" unique_id=1572548950]
 script = ExtResource("9_ok16f")
 open_positive = false
 duration = 0.2
@@ -906,59 +919,59 @@ max_positive = 0.0
 max_negative = 90.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Maze/MazeLever/Hinge3D"]
+[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Maze/MazeLever/Hinge3D" unique_id=1106642121]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 2.6865725e-16, 1, 0.07203721, 1.3517827e-08, 0.07589761)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("CylinderMesh_lksms")
 
-[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Maze/MazeLever/Hinge3D"]
+[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Maze/MazeLever/Hinge3D" unique_id=592307857]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, -0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Maze/MazeLever/Hinge3D"]
+[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Maze/MazeLever/Hinge3D" unique_id=328097146]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, 0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Maze/MazeLever"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Maze/MazeLever" unique_id=355547347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039428715)
 shape = SubResource("BoxShape3D_6gf4t")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Maze/MazeLever"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Maze/MazeLever" unique_id=214914440]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_ol0bu")
 
-[node name="Physics" type="Node3D" parent="Geometry/Maze"]
+[node name="Physics" type="Node3D" parent="Geometry/Maze" unique_id=1980427720]
 
-[node name="RigidBody3D11" parent="Geometry/Maze/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D11" parent="Geometry/Maze/Physics" unique_id=915858249 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.35597152, 0, -0.9344967, 0, 1, 0, 0.9344967, 0, -0.35597152, -20.912237, 3.9481711, 4.67536)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D12" parent="Geometry/Maze/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D12" parent="Geometry/Maze/Physics" unique_id=55173525 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.5303484, 0, -0.84777975, 0, 1, 0, 0.84777975, 0, -0.5303484, -20.610146, 4.998586, 3.8962388)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D13" parent="Geometry/Maze/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D13" parent="Geometry/Maze/Physics" unique_id=2047116247 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.5303484, 0, -0.84777975, 0, 1, 0, 0.84777975, 0, -0.5303484, -20.302355, 5.900577, 4.531281)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D14" parent="Geometry/Maze/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D14" parent="Geometry/Maze/Physics" unique_id=890167870 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.4785692, 0, -0.87804973, 0, 1, 0, 0.87804973, 0, 0.4785692, -20.669298, 7.030296, 4.308186)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="MazeLights" type="Node3D" parent="Geometry/Maze"]
+[node name="MazeLights" type="Node3D" parent="Geometry/Maze" unique_id=544936299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.364628, 5.1548624, 0)
 visible = false
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Geometry/Maze/MazeLights"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Geometry/Maze/MazeLights" unique_id=1331334972]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.148964, -1.9007158, -0.22552139)
 light_energy = 2.0
 light_size = 0.06
@@ -971,7 +984,7 @@ distance_fade_shadow = 10.0
 spot_range = 4.9331326
 spot_angle = 71.74056
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Geometry/Maze/MazeLights"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Geometry/Maze/MazeLights" unique_id=1016290860]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.7546396, -1.9007168, -5.7452445)
 light_energy = 2.0
 light_size = 0.1
@@ -984,7 +997,7 @@ distance_fade_shadow = 10.0
 spot_range = 4.5479565
 spot_angle = 71.74056
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Geometry/Maze/MazeLights"]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Geometry/Maze/MazeLights" unique_id=684308539]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.1926537, -1.9007163, -6.8556113)
 light_energy = 2.0
 light_size = 0.1
@@ -997,7 +1010,7 @@ distance_fade_shadow = 10.0
 spot_range = 6.4353213
 spot_angle = 71.74056
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Geometry/Maze/MazeLights"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Geometry/Maze/MazeLights" unique_id=575235898]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.4657288, -1.9007163, 4.8300185)
 light_energy = 2.0
 light_size = 0.1
@@ -1010,7 +1023,7 @@ distance_fade_shadow = 10.0
 spot_range = 5.3339286
 spot_angle = 71.74056
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Geometry/Maze/MazeLights"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Geometry/Maze/MazeLights" unique_id=1958917651]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.4653835, -1.9007163, 4.8300185)
 light_energy = 2.0
 light_size = 0.1
@@ -1023,7 +1036,7 @@ distance_fade_shadow = 10.0
 spot_range = 5.5409727
 spot_angle = 71.74056
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Geometry/Maze/MazeLights"]
+[node name="SpotLight3D6" type="SpotLight3D" parent="Geometry/Maze/MazeLights" unique_id=291592581]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9.115444, -1.9007163, 3.8870115)
 light_energy = 2.0
 light_size = 0.1
@@ -1036,9 +1049,9 @@ distance_fade_shadow = 10.0
 spot_range = 5.5799503
 spot_angle = 71.74056
 
-[node name="Room" type="Node3D" parent="Geometry"]
+[node name="Room" type="Node3D" parent="Geometry" unique_id=1872615992]
 
-[node name="LightmapGI" type="LightmapGI" parent="Geometry/Room"]
+[node name="LightmapGI" type="LightmapGI" parent="Geometry/Room" unique_id=1038073813]
 visible = false
 quality = 2
 supersampling = true
@@ -1047,360 +1060,360 @@ environment_mode = 0
 generate_probes_subdiv = 0
 light_data = ExtResource("18_8tqno")
 
-[node name="LightmapProbe" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=76653267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 0.688118, -2.8452158)
 
-[node name="LightmapProbe2" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe2" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=987215192]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 0.688118, -2.8452158)
 
-[node name="LightmapProbe3" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe3" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=771084929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 0.688118, -2.8452158)
 
-[node name="LightmapProbe4" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe4" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=792902616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 0.688118, -1.2841778)
 
-[node name="LightmapProbe5" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe5" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1520127239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 0.688118, -1.2841778)
 
-[node name="LightmapProbe6" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe6" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1157270940]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 0.688118, -1.2841778)
 
-[node name="LightmapProbe7" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe7" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1880711247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 0.688118, -0.0046082735)
 
-[node name="LightmapProbe8" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe8" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=855313035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 0.688118, -0.0046082735)
 
-[node name="LightmapProbe9" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe9" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=129890507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 0.688118, -0.0046082735)
 
-[node name="LightmapProbe10" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe10" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=702931589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 0.688118, 1.7295057)
 
-[node name="LightmapProbe11" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe11" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=851473084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 0.688118, 1.7295057)
 
-[node name="LightmapProbe12" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe12" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1632542040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 0.688118, 1.7295057)
 
-[node name="LightmapProbe13" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe13" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=85544680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 0.688118, 3.3085783)
 
-[node name="LightmapProbe14" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe14" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=157426418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 0.688118, 2.8266015)
 
-[node name="LightmapProbe15" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe15" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=384783794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 0.688118, 3.3085783)
 
-[node name="LightmapProbe16" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe16" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=96551]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 0.688118, 5.0312557)
 
-[node name="LightmapProbe17" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe17" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=984263507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 0.688118, 5.0312557)
 
-[node name="LightmapProbe18" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe18" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=392776884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.96805, 0.688118, 5.0312557)
 
-[node name="LightmapProbe19" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe19" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=618585982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.475342, 0.688118, 5.0312557)
 
-[node name="LightmapProbe20" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe20" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=2011615337]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.96805, 0.688118, 3.9407635)
 
-[node name="LightmapProbe21" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe21" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1093894894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.475342, 0.688118, 3.9407635)
 
-[node name="LightmapProbe23" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe23" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=437250682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.85272, 0.688118, 5.0312557)
 
-[node name="LightmapProbe25" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe25" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=782567736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.85272, 0.688118, 3.9407635)
 
-[node name="LightmapProbe26" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe26" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=450550186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.715799, 0.688118, 5.0312557)
 
-[node name="LightmapProbe27" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe27" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=415006620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.588284, 0.688118, 5.0312557)
 
-[node name="LightmapProbe28" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe28" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=718841744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.715799, 0.688118, 3.376771)
 
-[node name="LightmapProbe30" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe30" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=2018480484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.160911, 0.688118, 5.0312557)
 
-[node name="LightmapProbe31" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe31" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=151228077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.160911, 0.688118, 3.376771)
 
-[node name="LightmapProbe29" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe29" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1996562747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.588284, 0.688118, 3.376771)
 
-[node name="LightmapProbe22" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe22" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=66923836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 2.3098936, -2.8452158)
 
-[node name="LightmapProbe24" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe24" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1727050989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 2.3098936, -2.8452158)
 
-[node name="LightmapProbe32" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe32" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1772742556]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 2.3098936, -2.8452158)
 
-[node name="LightmapProbe33" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe33" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=937036402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 2.3098936, -1.2841778)
 
-[node name="LightmapProbe34" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe34" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1996256409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 2.3098936, -1.2841778)
 
-[node name="LightmapProbe35" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe35" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=802885244]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 2.3098936, -1.2841778)
 
-[node name="LightmapProbe36" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe36" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1541920808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 2.3098936, -0.0046082735)
 
-[node name="LightmapProbe37" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe37" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1404556007]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 2.3098936, -0.0046082735)
 
-[node name="LightmapProbe38" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe38" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=721800711]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 2.3098936, -0.0046082735)
 
-[node name="LightmapProbe39" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe39" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=552862994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 2.3098936, 1.7295057)
 
-[node name="LightmapProbe40" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe40" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1942142396]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 2.3098936, 1.7295057)
 
-[node name="LightmapProbe41" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe41" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=265180721]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 2.3098936, 1.7295057)
 
-[node name="LightmapProbe42" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe42" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=2145647304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 2.3098936, 3.3085783)
 
-[node name="LightmapProbe43" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe43" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=344981019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.787386, 2.3098936, 2.8266015)
 
-[node name="LightmapProbe44" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe44" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=304087972]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 2.3098936, 3.3085783)
 
-[node name="LightmapProbe45" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe45" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=336448471]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.179693, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe46" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe46" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1110363611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.052177, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe47" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe47" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1778075442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.96805, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe48" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe48" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=627238251]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.475342, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe49" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe49" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=241855346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.96805, 2.3098936, 3.9407635)
 
-[node name="LightmapProbe50" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe50" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1876658342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.475342, 2.3098936, 3.9407635)
 
-[node name="LightmapProbe51" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe51" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1945222925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.85272, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe52" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe52" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1645086635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.85272, 2.3098936, 3.9407635)
 
-[node name="LightmapProbe53" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe53" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1629571958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.715799, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe54" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe54" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1319768996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.588284, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe55" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe55" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1190470643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.715799, 2.3098936, 3.376771)
 
-[node name="LightmapProbe56" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe56" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=82139514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.160911, 2.3098936, 5.0312557)
 
-[node name="LightmapProbe57" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe57" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=1345000012]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.160911, 2.3098936, 3.376771)
 
-[node name="LightmapProbe58" type="LightmapProbe" parent="Geometry/Room/LightmapGI"]
+[node name="LightmapProbe58" type="LightmapProbe" parent="Geometry/Room/LightmapGI" unique_id=187553261]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.588284, 2.3098936, 3.376771)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room" unique_id=1074165988]
 visible = false
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D"]
+[node name="CSGBox3D12" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D" unique_id=1432889265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, -0.05, 0)
 size = Vector3(29, 0.1, 50)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/CSGCombiner3D"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/CSGCombiner3D" unique_id=643445818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=1710878659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6027832, 1.5, -0.5)
 size = Vector3(0.2055664, 4, 8)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=524784260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6030884, 1.5, 4)
 size = Vector3(0.20617676, 4, 5)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=1211289392]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.5, -3.602295)
 size = Vector3(0.20458984, 4, 7)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=1903359400]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, 1.5, 5.605896)
 size = Vector3(0.21179199, 4, 16)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=245456393]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -2.6030273, 1.5, -0.50000006)
 size = Vector3(0.20605469, 4, 8)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=631985122]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 1.5, 3.399414)
 size = Vector3(0.20117188, 4, 7)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=19612975]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 1.5, 2.3986816)
 size = Vector3(0.20263672, 4, 6)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=88222230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7308836, 1, 4)
 operation = 2
 size = Vector3(1, 2.2, 1.2)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=1726406070]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3969116, 1.5, 4)
 size = Vector3(0.20617676, 4, 5)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D" unique_id=1032250522]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2691154, 1, 4.506357)
 operation = 2
 size = Vector3(1, 2.2, 1.2)
 
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Geometry/Room/CSGCombiner3D"]
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Geometry/Room/CSGCombiner3D" unique_id=366918930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D2"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D2" unique_id=1330043846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005065918, 3.3940082, 1.0305328)
 size = Vector3(5.382202, 0.2, 9.362701)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D2"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D2" unique_id=2015907768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.191475, 3.3940082, 4.014702)
 size = Vector3(4.979187, 0.2, 3.3943634)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D2"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/CSGCombiner3D/CSGCombiner3D2" unique_id=1695062774]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.061823, 3.3940082, 4.521984)
 size = Vector3(4.886566, 0.2, 2.379799)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room" unique_id=1314664190]
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/StaticBody3D" unique_id=1948920311]
 shape = SubResource("ConcavePolygonShape3D_tpm64")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/StaticBody3D" unique_id=1882170710]
 mesh = SubResource("ArrayMesh_hbvls")
 skeleton = NodePath("../..")
 
-[node name="Doors" type="Node3D" parent="Geometry/Room"]
+[node name="Doors" type="Node3D" parent="Geometry/Room" unique_id=1816628109]
 
-[node name="Door01" type="StaticBody3D" parent="Geometry/Room/Doors"]
+[node name="Door01" type="StaticBody3D" parent="Geometry/Room/Doors" unique_id=2092215171]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 13.398883, 0, 4)
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door01"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door01" unique_id=152446254]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 script = ExtResource("9_ok16f")
 max_positive = 106.0
 max_negative = 106.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door01/Hinge3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door01/Hinge3D" unique_id=1225748223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 script = ExtResource("14_1sa4x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door01/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door01/Hinge3D/StaticBody3D" unique_id=1680646171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_k6g58")
 skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door01/Hinge3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door01/Hinge3D/StaticBody3D" unique_id=1139720660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_rhs51")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door01/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door01/Hinge3D/StaticBody3D" unique_id=300200715]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_deebq")
 skeleton = NodePath("")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/Doors/Door01"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/Doors/Door01" unique_id=972846658]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Doors/Door01/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Doors/Door01/CSGCombiner3D" unique_id=832746839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 size = Vector3(1.2, 2.1, 0.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Doors/Door01/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Doors/Door01/CSGCombiner3D" unique_id=519818082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 operation = 2
 size = Vector3(1, 2, 0.3)
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door01"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door01" unique_id=1025156683]
 shape = SubResource("ConcavePolygonShape3D_7odka")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door01"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door01" unique_id=463525442]
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("ArrayMesh_81l42")
 
-[node name="Door02" type="StaticBody3D" parent="Geometry/Room/Doors"]
+[node name="Door02" type="StaticBody3D" parent="Geometry/Room/Doors" unique_id=1737375174]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 28.395, 0, 4.506)
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door02"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door02" unique_id=1606422690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 script = ExtResource("9_ok16f")
 max_positive = 106.0
 max_negative = 106.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door02/Hinge3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door02/Hinge3D" unique_id=1028493085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 script = ExtResource("14_1sa4x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door02/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door02/Hinge3D/StaticBody3D" unique_id=56450699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_k6g58")
 skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door02/Hinge3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door02/Hinge3D/StaticBody3D" unique_id=1461881091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_rhs51")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door02/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door02/Hinge3D/StaticBody3D" unique_id=592178739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_deebq")
 skeleton = NodePath("")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/Doors/Door02"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/Doors/Door02" unique_id=427448407]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Doors/Door02/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Doors/Door02/CSGCombiner3D" unique_id=823965919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 size = Vector3(1.2, 2.1, 0.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Doors/Door02/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Doors/Door02/CSGCombiner3D" unique_id=1448316205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 operation = 2
 size = Vector3(1, 2, 0.3)
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door02"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door02" unique_id=928731494]
 shape = SubResource("ConcavePolygonShape3D_7odka")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door02"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door02" unique_id=1579193469]
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("ArrayMesh_81l42")
 
-[node name="Door03" type="Node3D" parent="Geometry/Room/Doors"]
+[node name="Door03" type="Node3D" parent="Geometry/Room/Doors" unique_id=1836791540]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 18.941053, 0.030810714, -1.7019047)
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door03"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door03" unique_id=1705266442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 script = ExtResource("9_ok16f")
 open_negative = false
@@ -1408,30 +1421,30 @@ max_positive = 120.0
 max_negative = 106.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door03/Hinge3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door03/Hinge3D" unique_id=1825447127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4598106, 0, 0)
 script = ExtResource("14_1sa4x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door03/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door03/Hinge3D/StaticBody3D" unique_id=1332804197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_8tqno")
 skeleton = NodePath("../../../../Door03")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door03/Hinge3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door03/Hinge3D/StaticBody3D" unique_id=502386460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_tpm64")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door03/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door03/Hinge3D/StaticBody3D" unique_id=1539868306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_deebq")
 skeleton = NodePath("")
 
-[node name="Door04" type="Node3D" parent="Geometry/Room/Doors"]
+[node name="Door04" type="Node3D" parent="Geometry/Room/Doors" unique_id=616262824]
 transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, 18.941053, 0.030810714, -0.90521985)
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door04"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Doors/Door04" unique_id=631439255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 script = ExtResource("9_ok16f")
 open_positive = false
@@ -1439,280 +1452,280 @@ max_positive = 106.0
 max_negative = 120.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door04/Hinge3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Doors/Door04/Hinge3D" unique_id=233640696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4598106, 0, 0)
 script = ExtResource("14_1sa4x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door04/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Doors/Door04/Hinge3D/StaticBody3D" unique_id=2086178321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("BoxMesh_hbvls")
 skeleton = NodePath("../../../../Door03")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door04/Hinge3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Doors/Door04/Hinge3D/StaticBody3D" unique_id=418482271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_s862i")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door04/Hinge3D/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Doors/Door04/Hinge3D/StaticBody3D" unique_id=235860014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_deebq")
 skeleton = NodePath("")
 
-[node name="Physics" type="Node3D" parent="Geometry/Room"]
+[node name="Physics" type="Node3D" parent="Geometry/Room" unique_id=487640671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.171389, 0, 0)
 
-[node name="RigidBody3D11" parent="Geometry/Room/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D11" parent="Geometry/Room/Physics" unique_id=359804596 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.35597152, 0, -0.9344967, 0, 1, 0, 0.9344967, 0, -0.35597152, -3.265154, 0.43674868, 3.1340086)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D12" parent="Geometry/Room/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D12" parent="Geometry/Room/Physics" unique_id=1986157880 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.6580851, 0, 0.7529435, 0, 1, 0, -0.7529435, 0, -0.6580851, -0.7665272, 0.7375449, 3.319589)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D13" parent="Geometry/Room/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D13" parent="Geometry/Room/Physics" unique_id=1714776358 instance=ExtResource("3_yeqys")]
 transform = Transform3D(-0.5303484, 0, -0.84777975, 0, 1, 0, 0.84777975, 0, -0.5303484, -0.7957859, 1.6458302, 3.323528)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="RigidBody3D14" parent="Geometry/Room/Physics" instance=ExtResource("3_yeqys")]
+[node name="RigidBody3D14" parent="Geometry/Room/Physics" unique_id=487452540 instance=ExtResource("3_yeqys")]
 transform = Transform3D(0.4785692, 0, -0.87804973, 0, 1, 0, 0.87804973, 0, 0.4785692, -1.8733959, 0.6120368, 3.2679386)
 collision_layer = 2
 collision_mask = 43
 mass = 2.0
 
-[node name="Furniture" type="Node3D" parent="Geometry/Room"]
+[node name="Furniture" type="Node3D" parent="Geometry/Room" unique_id=1920734313]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/Furniture"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Geometry/Room/Furniture" unique_id=118218738]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D" unique_id=1225174048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3482723, 0.20654297, 0)
 size = Vector3(0.305, 0.413, 1.6)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D" unique_id=1743323856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3482723, 0.6925874, -0.9893669)
 size = Vector3(0.305, 1.3850889, 0.38056642)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D" unique_id=903834684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3482723, 0.6925874, 0.98563457)
 size = Vector3(0.305, 1.3850889, 0.38056642)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture" unique_id=2031741741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.443821, 0.85667443, 0)
 visible = false
 size = Vector3(0.037, 0.808956, 1.5)
 
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Geometry/Room/Furniture"]
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Geometry/Room/Furniture" unique_id=2141398297]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2" unique_id=556541704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18774414, 0.20483398, 0)
 size = Vector3(0.625, 0.41, 2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2" unique_id=1121149393]
 transform = Transform3D(-0.25881904, -0.9659258, 0, 0.9659258, -0.25881904, 0, 0, 0, 1, -0.11830902, 0.359645, 0)
 size = Vector3(0.9520273, 0.221, 2)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2" unique_id=200226958]
 transform = Transform3D(1.13133405e-08, 4.2221963e-08, -1.0000001, 0.96592593, -0.25881907, 0, -0.25881904, -0.9659258, -4.371139e-08, 0.11616135, 0.2973296, -1)
 size = Vector3(0.8234863, 0.2211914, 0.5644531)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D2" unique_id=1067473298]
 transform = Transform3D(1.13133405e-08, 4.2221963e-08, 1.0000001, 0.96592593, -0.25881907, 0, 0.25881904, 0.9659258, -4.371139e-08, 0.107372284, 0.2973296, 1)
 size = Vector3(0.8234863, 0.2211914, 0.58203125)
 
-[node name="CSGCombiner3D5" type="CSGCombiner3D" parent="Geometry/Room/Furniture"]
+[node name="CSGCombiner3D5" type="CSGCombiner3D" parent="Geometry/Room/Furniture" unique_id=913140918]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 1.8608456, 0, -2.9973004)
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5" unique_id=1140873760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18774414, 0.20483398, 0)
 size = Vector3(0.625, 0.41, 0.675)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5" unique_id=1265996612]
 transform = Transform3D(-0.25881904, -0.9659258, 0, 0.9659258, -0.25881904, 0, 0, 0, 1, -0.11830902, 0.359645, 0)
 size = Vector3(0.952, 0.221, 0.87)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5" unique_id=696665602]
 transform = Transform3D(1.13133405e-08, 4.2221963e-08, -1.0000001, 0.96592593, -0.25881907, 0, -0.25881904, -0.9659258, -4.371139e-08, 0.11616135, 0.2973296, -0.37095594)
 size = Vector3(0.8234863, 0.2211914, 0.5644531)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D5" unique_id=603283577]
 transform = Transform3D(1.13133405e-08, 4.2221963e-08, 1.0000001, 0.96592593, -0.25881907, 0, 0.25881904, 0.9659258, -4.371139e-08, 0.107372284, 0.2973296, 0.36947632)
 size = Vector3(0.8234863, 0.2211914, 0.58203125)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture" unique_id=978722708]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1915989, -0.111816406, 0)
 visible = false
 size = Vector3(0.5860596, 0.7763672, 1)
 
-[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="Geometry/Room/Furniture"]
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="Geometry/Room/Furniture" unique_id=1684251185]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.011383, 0, 0)
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D3"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D3" unique_id=187021979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25024414, 1.0997925, -1.3336003)
 size = Vector3(0.49951172, 2.199585, 2)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D3/CSGBox3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D3/CSGBox3D" unique_id=1751769120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074790955, -0.061065674, 0.016540527)
 operation = 2
 size = Vector3(0.4008789, 1.9891968, 1.7745361)
 
-[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="Geometry/Room/Furniture"]
+[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="Geometry/Room/Furniture" unique_id=643497947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 visible = false
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geometry/Room/Furniture/CSGCombiner3D4"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geometry/Room/Furniture/CSGCombiner3D4" unique_id=1854940875]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6524658, 0)
 radius = 0.05
 height = 1.3049316
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geometry/Room/Furniture/CSGCombiner3D4"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geometry/Room/Furniture/CSGCombiner3D4" unique_id=108017370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5367514, 0)
 radius = 0.315
 height = 0.48999023
 cone = true
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture" unique_id=2056850346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10669708, 0.39508057, -3.227877)
 visible = false
 size = Vector3(1.4389648, 0.79016113, 0.5522461)
 
-[node name="CSGCombiner3D6" type="CSGCombiner3D" parent="Geometry/Room/Furniture"]
+[node name="CSGCombiner3D6" type="CSGCombiner3D" parent="Geometry/Room/Furniture" unique_id=79696265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5491905, 0, 2.78482)
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=1013799273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4638672, 1, 0.33007813)
 size = Vector3(0.072265625, 2, 0.33984375)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=650365714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5361328, 1, 0.33007813)
 size = Vector3(0.072265625, 2, 0.33984375)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=2033712901]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.036132813, 0.32158315, 0.33007813)
 size = Vector3(0.072265625, 1, 0.33984375)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=194729986]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.036132813, 0.6557598, 0.33007813)
 size = Vector3(0.072265625, 1, 0.33984375)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=1096284190]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.036132813, 0.9810245, 0.33007813)
 size = Vector3(0.072265625, 1, 0.33984375)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=1546731351]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.036132813, 1.3281381, 0.33007813)
 size = Vector3(0.072265625, 1, 0.33984375)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=1231250876]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.036132813, 1.6488827, 0.33007813)
 size = Vector3(0.072265625, 1, 0.33984375)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/Room/Furniture/CSGCombiner3D6" unique_id=1483592746]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.036132813, 1.9735442, 0.33007813)
 size = Vector3(0.072265625, 1, 0.33984375)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Furniture"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Room/Furniture" unique_id=1555283778]
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=116309757]
 shape = SubResource("ConcavePolygonShape3D_hbvls")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=2057128259]
 mesh = SubResource("ArrayMesh_s862i")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=554944665]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.443821, 0.85667443, 0)
 shape = SubResource("ConcavePolygonShape3D_mnd1b")
 
-[node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=1947826717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.443821, 0.85667443, 0)
 mesh = SubResource("ArrayMesh_gxbyo")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D3" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D3" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=1212698184]
 shape = SubResource("ConcavePolygonShape3D_57nov")
 
-[node name="CSGBakedMeshInstance3D3" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D3" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=40683280]
 mesh = SubResource("ArrayMesh_jyibj")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D4" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D4" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=915836225]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 1.8608456, 0, -2.9973004)
 shape = SubResource("ConcavePolygonShape3D_7m6df")
 
-[node name="CSGBakedMeshInstance3D4" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D4" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=953642373]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 1.8608456, 0, -2.9973004)
 mesh = SubResource("ArrayMesh_3v42i")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D5" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D5" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=471152483]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1915989, -0.111816406, 0)
 shape = SubResource("ConcavePolygonShape3D_ssq3b")
 
-[node name="CSGBakedMeshInstance3D5" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D5" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=1621931438]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1915989, -0.111816406, 0)
 mesh = SubResource("ArrayMesh_7ka4d")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D6" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D6" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=272512998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.011383, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_iqpl3")
 
-[node name="CSGBakedMeshInstance3D6" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D6" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=2033469097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.011383, 0, 0)
 mesh = SubResource("ArrayMesh_jb13q")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D7" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D7" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=847164731]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 shape = SubResource("ConcavePolygonShape3D_dhsu4")
 
-[node name="CSGBakedMeshInstance3D7" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D7" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=1589633658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 mesh = SubResource("ArrayMesh_3lk4t")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D8" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D8" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=406629833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10669708, 0.39508057, -3.227877)
 shape = SubResource("ConcavePolygonShape3D_umvm4")
 
-[node name="CSGBakedMeshInstance3D8" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D8" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=1004142684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10669708, 0.39508057, -3.227877)
 mesh = SubResource("ArrayMesh_17ixs")
 skeleton = NodePath("../..")
 
-[node name="CSGBakedCollisionShape3D9" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedCollisionShape3D9" type="CollisionShape3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=1440790344]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5491905, 0, 2.78482)
 shape = SubResource("ConcavePolygonShape3D_8xqqm")
 
-[node name="CSGBakedMeshInstance3D9" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="CSGBakedMeshInstance3D9" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=59389978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5491905, 0, 2.78482)
 mesh = SubResource("ArrayMesh_u42tr")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/Room/Furniture/StaticBody3D" unique_id=1788928938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7191887, 2.4092584, 5.643528)
 mesh = SubResource("CylinderMesh_fxrya")
 skeleton = NodePath("../..")
 
-[node name="Switches" type="Node3D" parent="Geometry/Room"]
+[node name="Switches" type="Node3D" parent="Geometry/Room" unique_id=233097088]
 
-[node name="Lever01" type="StaticBody3D" parent="Geometry/Room/Switches"]
+[node name="Lever01" type="StaticBody3D" parent="Geometry/Room/Switches" unique_id=1755317081]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 13.526549, 1.6, 4.9106665)
 script = ExtResource("8_ecguh")
 
-[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Switches/Lever01"]
+[node name="Hinge3D" type="Node3D" parent="Geometry/Room/Switches/Lever01" unique_id=2007069077]
 script = ExtResource("9_ok16f")
 open_positive = false
 duration = 0.2
@@ -1720,67 +1733,67 @@ max_positive = 0.0
 max_negative = 90.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01/Hinge3D"]
+[node name="LeverMesh" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01/Hinge3D" unique_id=1291672073]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 2.6865725e-16, 1, 0.07203721, 1.3517827e-08, 0.07589761)
 material_override = ExtResource("5_wf0s2")
 mesh = SubResource("CylinderMesh_lksms")
 
-[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01/Hinge3D"]
+[node name="LeverMesh2" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01/Hinge3D" unique_id=1103610942]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, -0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01/Hinge3D"]
+[node name="LeverMesh3" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01/Hinge3D" unique_id=718752138]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, 0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Switches/Lever01"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Room/Switches/Lever01" unique_id=1491578241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039428715)
 shape = SubResource("BoxShape3D_6gf4t")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01"]
+[node name="BackplateMesh" type="MeshInstance3D" parent="Geometry/Room/Switches/Lever01" unique_id=2099910368]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("6_1sa4x")
 mesh = SubResource("BoxMesh_ol0bu")
 
-[node name="Lights" type="Node3D" parent="Geometry/Room"]
+[node name="Lights" type="Node3D" parent="Geometry/Room" unique_id=279418631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.988346, 0, 0)
 visible = false
 
-[node name="Static" type="Node3D" parent="Geometry/Room/Lights"]
+[node name="Static" type="Node3D" parent="Geometry/Room/Lights" unique_id=1720128756]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Geometry/Room/Lights/Static"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Geometry/Room/Lights/Static" unique_id=2127004549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9517021, 2.9661798, 0)
 light_color = Color(1, 0.986, 0.94, 1)
 light_bake_mode = 1
 omni_range = 4.416156
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Geometry/Room/Lights/Static"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Geometry/Room/Lights/Static" unique_id=956225922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.885561, 2.9661803, 4.0753846)
 light_color = Color(1, 0.986, 0.94, 1)
 light_bake_mode = 1
 omni_range = 3.831
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Geometry/Room/Lights/Static"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Geometry/Room/Lights/Static" unique_id=1247630664]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7005615, 2.9661803, 4.403746)
 light_color = Color(1, 0.986, 0.94, 1)
 light_bake_mode = 1
 omni_range = 3.831
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Geometry/Room/Lights/Static"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Geometry/Room/Lights/Static" unique_id=1050882726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29232597, 2.4683952, 5.424128)
 light_color = Color(1, 0.986, 0.94, 1)
 light_energy = 0.5
 light_bake_mode = 1
 omni_range = 3.831
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Geometry/Room/Lights/Static"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Geometry/Room/Lights/Static" unique_id=1212088543]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99716187, 1.444099, -2.9864504)
 light_color = Color(1, 0.94133335, 0.84000003, 1)
 light_energy = 0.29
 
-[node name="Dynamic" type="Node3D" parent="Geometry/Room/Lights"]
+[node name="Dynamic" type="Node3D" parent="Geometry/Room/Lights" unique_id=999279743]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic" unique_id=903998997]
 transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 0.95223236, 2.9641948, 0)
 light_color = Color(1, 0.986, 0.94, 1)
 light_size = 0.2
@@ -1792,7 +1805,7 @@ shadow_blur = 1.5
 spot_range = 4.57
 spot_angle = 80.0
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic"]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic" unique_id=286634190]
 transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, -3.8917465, 2.9641948, 4.0827074)
 light_color = Color(1, 0.986, 0.94, 1)
 light_size = 0.2
@@ -1804,7 +1817,7 @@ shadow_blur = 1.5
 spot_range = 3.86
 spot_angle = 80.0
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic" unique_id=3028330]
 transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 5.7020283, 2.9641948, 4.403387)
 light_color = Color(1, 0.986, 0.94, 1)
 light_size = 0.2
@@ -1816,7 +1829,7 @@ shadow_blur = 1.5
 spot_range = 3.705
 spot_angle = 80.0
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic" unique_id=57106503]
 transform = Transform3D(-1, -2.6054018e-15, -8.742278e-08, 8.742278e-08, -2.9802322e-08, -1, 0, -1, 2.9802322e-08, 0.2896824, 2.4949698, 5.4250884)
 light_color = Color(1, 0.986, 0.94, 1)
 light_energy = 0.165
@@ -1829,7 +1842,7 @@ shadow_blur = 1.5
 spot_range = 3.705
 spot_angle = 80.0
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Geometry/Room/Lights/Dynamic" unique_id=816973234]
 transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, -0.97011185, 1.5293566, -2.9760158)
 light_color = Color(1, 0.94133335, 0.84000003, 1)
 light_energy = 0.475

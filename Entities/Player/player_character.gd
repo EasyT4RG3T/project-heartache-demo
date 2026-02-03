@@ -19,12 +19,13 @@ const player_head_position: Vector3 = Vector3(0, 1.7, 0)
 const player_crouch_head_position: Vector3 = Vector3(0, 0.7, 0)
 
 var direct_space_state: PhysicsDirectSpaceState3D
-var player_shape_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.35, 1.8)
-var player_crouch_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.35, 0.8)
+var player_shape_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 1.8)
+var player_crouch_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 0.8)
 
 
 @onready var body_collision: CollisionShape3D = %BodyCollision
 @onready var head_collision: CollisionShape3D = %HeadCollision
+const head_collision_position: Vector3 = Vector3(0, -0.15, 0)
 @onready var head: Node3D = %Head
 var head_tween: Tween
 func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Callable()) -> void:
@@ -110,6 +111,8 @@ var interactable: Interactable:
 		if value:
 			value.start_looking(self)
 			player_hud.active = true
+			player_hud.semi_active = value.semi_active
+			player_hud.queue_redraw()
 			match value.show_type:
 				Interactable.ShowType.PRESS:
 					player_hud.can_tap = false
@@ -341,7 +344,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	head_collision.position = head.position + Vector3(0, -0.35, 0)
+	head_collision.position = head.position + head_collision_position
 	dust_particles.global_position = main_camera.global_position - main_camera.global_basis.z * 2
 	
 	if phys_object:

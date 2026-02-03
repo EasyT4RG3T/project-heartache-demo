@@ -1,0 +1,55 @@
+[gd_scene format=4 uid="uid://b1v8l5kn5x308"]
+
+[ext_resource type="Script" uid="uid://dc7xxn1bn3bjy" path="res://Scripts/Nodes/wettable_object3d.gd" id="1_e372a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tkfg"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gxvwi"]
+_surfaces = [{
+"aabb": AABB(-0.02234346, 0, -0.022343451, 0.044686913, 0.1, 0.044686913),
+"format": 34359742465,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABQAAAAIABAAGAAEAAAAHAAQAAQAGAAgAAQAIAAMABAAJAAYABQAKAAAAAAAKAAcABAAHAAsABAALAAkACwAHAAMACwADAAgABwAMAAMABwAKAAwAAgADAAwADQALAAgACQALAA0ABQANAAoACQANAAUACgANAA4ADQAIAA4ACgAOAAwABgAOAAgABQACAA8ADwACAAwACQAFAA8ADwAMAA4ACQAPAAYABgAPAA4A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("GrqavM3MzD0SLgA8HKIXPM3MzD2iCbc8nAm3vM3MzD0aohc8HKIXPAAAAACdCbc8Ey4APM3MzD0fupo8GC4AvM3MzD0Xupq8ngm3PM3MzD0eohe8Ey4APAAAAAAbupo8mQm3PAAAAAAiohe8G7qaPM3MzD0ULgC8H7qavAAAAAAULgA8F7qaPAAAAAAYLgC8ogm3vAAAAAAcohc8Ei4AvAAAAAAaupq8GqIXvAAAAACdCbe8IaIXvM3MzD2ZCbe8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m5pt1"]
+resource_name = "ToiletPaper03_ToiletPaper03"
+lightmap_size_hint = Vector2i(14, 10)
+_surfaces = [{
+"aabb": AABB(-0.02234346, 0, -0.022343451, 0.044686913, 0.1, 0.044686913),
+"attribute_data": PackedByteArray("uR4FPoK5TD9TZqc+A3psPQRzmT5SuF4/SZKkPpqZGT65HgU+grlMP0qSpD7NzEw9BHOZPlK4Xj9SZqc+Ta4RPvcZTT6uRyE/iFDGPgN6bD2kcL0+fkYzP5IkyT6amRk+9xlNPq5HIT+SJMk+zcxMPaRwvT5+RjM/iVDGPk2uET6kcL0+fkYzPyVJEj2amVk/fkYzP65HIT+1bds9MzNzP1G4Xj9+RjM/JUkSPTMzcz/3GU0+rkchP7dt2z2amVk/BHOZPlK4Xj+3bRs/mplZP1G4Xj9+RjM/27YtPzMzcz+CuUw/UrheP7dtGz8zM3M/pHC9Pn5GMz/bti0/mplZP61HIT+CuUw/kh3QPU2uET5+RjM/rkchP7Jt2z3NzEw9rUchP4K5TD+3bds9mpkZPn5GMz+uRyE/jh3QPQN6bD2CuUw/UrheP27pKD1NrhE+UbheP35GMz8nSRI9zcxMPYK5TD9SuF4/JUkSPZqZGT5RuF4/fkYzP3LpKD0Demw9uR4FPoK5TD9u23Y/mpkZPoK5TD9SuF4/SZJkP83MTD2tRyE/grlMP27bdj/NzEw9BHOZPlK4Xj9JkmQ/mpkZPrkeBT6CuUw/t20bP83MDD+CuUw/UrheP9u2LT9mZuY+BHOZPlK4Xj/bti0/zcwMP61HIT+CuUw/t20bP2Zm5j73GU0+rkchP0mSpD4zM3M/rUchP4K5TD+SJMk+mplZP35GMz+uRyE/kiTJPjMzcz+5HgU+grlMP0mSpD6amVk/9xlNPq5HIT8lSRI9zcwMP61HIT+CuUw/t23bPWZm5j65HgU+grlMP7Jt2z3NzAw/fkYzP65HIT8lSRI9ZmbmPqRwvT5+RjM/kiTJPmZm5j5+RjM/rkchP0mSpD7NzAw/9xlNPq5HIT9JkqQ+ZmbmPlG4Xj9+RjM/kiTJPs3MDD8Ec5k+UrheP9u2LT+amRk+UbheP35GMz+3bRs/0MxMPaRwvT5+RjM/27YtP83MTD2CuUw/UrheP7dtGz+amRk+"),
+"format": 34359742519,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABAACAAYAAwAHAAUABwAEAAYABwAGAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAQABIAEwAVABEAFAASABYAEwAXABUAFwAUABYAFwAWABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_4tkfg"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("GrqavM3MzD0SLgA8HKIXPM3MzD2iCbc8nAm3vM3MzD0aohc8Ey4APM3MzD0fupo8GC4AvM3MzD0Xupq8ngm3PM3MzD0eohe8IaIXvM3MzD2ZCbe8G7qaPM3MzD0ULgC8ngm3PM3MzD0eohe8GqIXvAAAAACdCbe8mQm3PAAAAAAiohe8IaIXvM3MzD2ZCbe8HKIXPM3MzD2iCbc8mQm3PAAAAAAiohe8HKIXPAAAAACdCbc8ngm3PM3MzD0eohe8H7qavAAAAAAULgA8GqIXvAAAAACdCbe8ogm3vAAAAAAcohc8Ei4AvAAAAAAaupq8Ey4APAAAAAAbupo8mQm3PAAAAAAiohe8HKIXPAAAAACdCbc8F7qaPAAAAAAYLgC8nAm3vM3MzD0aohc8HKIXPAAAAACdCbc8ogm3vAAAAAAcohc8HKIXPM3MzD2iCbc8GrqavM3MzD0SLgA8Ey4APAAAAAAbupo8Ey4APM3MzD0fupo8H7qavAAAAAAULgA8IaIXvM3MzD2ZCbe8ogm3vAAAAAAcohc8GqIXvAAAAACdCbe8nAm3vM3MzD0aohc8GC4AvM3MzD0Xupq8H7qavAAAAAAULgA8GrqavM3MzD0SLgA8Ei4AvAAAAAAaupq8G7qaPM3MzD0ULgC8Ei4AvAAAAAAaupq8GC4AvM3MzD0Xupq8F7qaPAAAAAAYLgC8Ey4APM3MzD0fupo8F7qaPAAAAAAYLgC8G7qaPM3MzD0ULgC8Ey4APAAAAAAbupo8/3///////7//f///////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v///gdr/fwCA//+B2v9/AID//4Ha/38AgP//gdr/fwCAgdr/f/9/AICB2v9//38AgIHa/3//fwCAgdr/f/9/AID/fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/gVr/f/9//n+BWv9//3/+f4Fa/3//f/5/gVr/f/9//n///4Ha/38AgP//gdr/fwCA//+B2v9/AID//4Ha/38AgAAAfaX/f/5/AAB9pf9//n8AAH2l/3/+fwAAfaX/f/5/gdr/f/9/AICB2v9//38AgIHa/3//fwCAgdr/f/9/AICBWv9//3/+f4Fa/3//f/5/gVr/f/9//n+BWv9//3/+fwAAfaX/f/5/AAB9pf9//n8AAH2l/3/+fwAAfaX/f/5/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gxvwi")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dqwel"]
+points = PackedVector3Array(-0.02234346, 0, 0.009251455, -0.009255829, 0, -0.022343451, 0.0092514455, 0, 0.022339089, 0.0092514455, 0.1, 0.022343462, -0.02234346, 0.1, 0.009251455, -0.009255829, 0.1, -0.022343451, 0.022343453, 0.1, -0.00925582, 0.02233908, 0, -0.00925582)
+
+[node name="ToiletPaper03" type="RigidBody3D" unique_id=1880965664]
+continuous_cd = true
+script = ExtResource("1_e372a")
+swap = "res://Assets/Scenes/Bathroom/DynamicObject3D/WetToiletPaper03.tscn"
+ignore_player = true
+min_distance = 0.4
+metadata/_custom_type_script = "uid://dc7xxn1bn3bjy"
+
+[node name="ToiletPaper03" type="MeshInstance3D" parent="." unique_id=782615557]
+gi_mode = 2
+mesh = SubResource("ArrayMesh_m5pt1")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1753167508]
+shape = SubResource("ConvexPolygonShape3D_dqwel")

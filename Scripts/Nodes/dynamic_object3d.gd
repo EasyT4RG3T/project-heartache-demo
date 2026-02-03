@@ -12,6 +12,7 @@ func get_interactable() -> Interactable:
 func _ready() -> void:
 	super()
 	interactable.show_type = Interactable.ShowType.PRESS
+	interactable.semi_active = true
 	interactable.interacted.connect(func(player:PlayerCharacter):
 		if picked_up:
 			put_down(player)

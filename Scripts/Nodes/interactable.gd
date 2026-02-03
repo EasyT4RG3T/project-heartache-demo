@@ -10,6 +10,7 @@ enum ShowType { PRESS, TAP, HOLD }
 @export var show_type: ShowType = ShowType.PRESS
 
 var active: bool = true
+var semi_active: bool = false
 
 @export var hold_time: float = 0.2
 var hold: bool = false:
