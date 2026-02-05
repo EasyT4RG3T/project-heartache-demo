@@ -77,7 +77,7 @@ var vault_check_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_
 var vault_check_query_position: Vector3 = Vector3(0, 0.685, 0)
 var vault_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var vault_height_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.25)
-var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.25)
+var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.249)
 var vault_fit_query_position: Vector3 = Vector3(0, 1.55, 0)
 var vault_fit_queary_mid_position: Vector3 = Vector3(0, 1.05, 0)
 var vault_fit_query_crouch_position: Vector3 = Vector3(0, 0.55, 0)
@@ -303,11 +303,11 @@ func _vault_end_fit_check(check_pos: Vector3) -> bool:
 	match p.current_movement_mode:
 		p.MovementMode.CROUCHING:
 			p.player_crouch_query.transform.origin = check_pos + p.player_crouch_collision_position
-			if p.direct_space_state.intersect_shape(p.player_crouch_query, 1):
+			if p.direct_space_state.get_rest_info(p.player_crouch_query):
 				return false
 		_:
 			p.player_shape_query.transform.origin = check_pos + p.player_collision_position
-			if p.direct_space_state.intersect_shape(p.player_shape_query, 1):
+			if p.direct_space_state.get_rest_info(p.player_shape_query):
 				return false
 	return true
 
@@ -369,17 +369,18 @@ func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 	if debug:
 		d_crouch_mesh.global_position = vault_end_point + p.player_crouch_collision_position
 	
-	vault_fit_query.transform.origin = p.global_position + vault_fit_query_crouch_position
-	vault_fit_query.motion = vault_end_point - p.global_position
+	#vault_fit_query.transform.origin = p.global_position + vault_fit_query_crouch_position
+	#vault_fit_query.motion = vault_end_point - p.global_position
+	#
+	#var vault_fit_direct_result = p.direct_space_state.cast_motion(vault_fit_query)
+	#if vault_fit_direct_result[0] >= 1:
+	#	p.vault_position = vault_end_point
+	#	vault_uncrouch_height = Vector3.ZERO
+	#	vault_crouch_mid = Vector3.ZERO
+	#	vault_error["type"] = "crouch_direct"
+	#	return true
 	
-	var vault_fit_direct_result = p.direct_space_state.cast_motion(vault_fit_query)
-	if vault_fit_direct_result[0] >= 1:
-		p.vault_position = vault_end_point
-		vault_uncrouch_height = Vector3.ZERO
-		vault_crouch_mid = Vector3.ZERO
-		return true
-	
-	if vault_end_point.y > p.global_position.y:
+	if vault_end_point.y - p.global_position.y > 0.25:
 		var uncrouch_pos := Vector3(p.global_position.x, vault_end_point.y, p.global_position.z)
 		
 		vault_fit_query.transform.origin = uncrouch_pos + vault_fit_query_crouch_position
@@ -398,6 +399,7 @@ func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 			p.vault_position = vault_end_point
 			vault_uncrouch_height = vault_fit_query.motion
 			vault_crouch_mid = Vector3.ZERO
+			vault_error["type"] = "crouch_up"
 			return true
 	
 	vault_fit_query.transform.origin = p.global_position + vault_fit_queary_mid_position
@@ -421,6 +423,7 @@ func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 				p.global_position.y + vault_uncrouch_height.y,
 				vault_end_point.z
 			)
+			vault_error["type"] = "crouch_mid_uncrouch"
 			return true
 	
 	vault_fit_query.transform.origin = p.global_position + vault_fit_query_position
@@ -447,4 +450,5 @@ func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 		vault_end_point.z
 	)
 	
+	vault_error["type"] = "crouch_stand_up"
 	return true

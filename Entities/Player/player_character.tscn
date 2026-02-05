@@ -15,7 +15,7 @@ radius = 0.25
 height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3xgjn"]
-radius = 0.25
+radius = 0.2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2vmj"]
 shader = ExtResource("3_lobkq")
@@ -96,7 +96,6 @@ mouse_filter = 2
 unique_name_in_owner = true
 transparent_bg = true
 handle_input_locally = false
-anisotropic_filtering_level = 0
 fsr_sharpness = 0.0
 positional_shadow_atlas_16_bits = false
 positional_shadow_atlas_quad_2 = 2

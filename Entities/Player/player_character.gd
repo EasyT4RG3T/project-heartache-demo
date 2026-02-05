@@ -14,13 +14,19 @@ func _check_can_uncrouch() -> bool:
 		if direct_space_state.intersect_shape(player_crouch_query, 1):
 			return false
 		return true
+const player_crawl_collision_height: float = 0.48
+const player_crawl_collision_position: Vector3 = Vector3(0, 0.25, 0)
+var crawl_cooldown: Timer = Timer.new()
+var crawl_cooldown_time: float = 0.4
 
 const player_head_position: Vector3 = Vector3(0, 1.7, 0)
 const player_crouch_head_position: Vector3 = Vector3(0, 0.7, 0)
+const player_crawl_head_position: Vector3 = Vector3(0, 0.4, 0)
 
 var direct_space_state: PhysicsDirectSpaceState3D
 var player_shape_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 1.8)
 var player_crouch_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 0.8)
+var player_crawl_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 0.5)
 
 
 @onready var body_collision: CollisionShape3D = %BodyCollision
@@ -55,11 +61,11 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 @onready var inventory_sub_viewport: SubViewport = %InventorySubViewport
 var player_fov: float = 90
 var fov_tween: Tween
-func _change_fov_smooth(fov: float) -> void:
+func _change_fov_smooth(fov: float, duration: float = 0.3) -> void:
 	if fov_tween:
 		fov_tween.kill()
 	fov_tween = create_tween().set_ease(Tween.EASE_IN).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	fov_tween.tween_property(main_camera, "fov", fov, 0.3)
+	fov_tween.tween_property(main_camera, "fov", fov, duration)
 
 @onready var dust_particles: GPUParticles3D = %DustParticles
 
@@ -72,13 +78,14 @@ var movement_acceleration: float = 20.0
 var movement_vector: Vector2 = Vector2.ZERO
 var movement_vector_fly: float = 0.0
 var wanted_movement_direction: Vector2 = Vector2.ZERO
-enum MovementMode { NONE, FLY, WALKING, SPRINTING, CROUCHING, CARRYING, VAULTING }
+enum MovementMode { NONE, FLY, WALKING, SPRINTING, CROUCHING, CRAWL, CARRYING, VAULTING}
 var movement_speeds: Dictionary[MovementMode, float] = {
 	MovementMode.NONE: 0,
 	MovementMode.FLY: 5,
 	MovementMode.WALKING: 2,
 	MovementMode.SPRINTING: 3.5,
 	MovementMode.CROUCHING: 1,
+	MovementMode.CRAWL: 0.8,
 	MovementMode.CARRYING: 1.5,
 	MovementMode.VAULTING: 0,
 }
@@ -155,7 +162,11 @@ var phys_wanted_distance_min: float = 1.0
 var phys_wanted_distance: float = 0.0:
 	set(value):
 		phys_wanted_distance = clampf(value, phys_wanted_distance_min, phys_wanted_distance_max)
-var phys_object: DynamicRigidBody3D
+var phys_object: DynamicRigidBody3D:
+	set(value):
+		phys_object = value
+		if value and value.mass >= 2 and current_movement_mode == MovementMode.SPRINTING:
+			change_movement_mode(MovementMode.WALKING)
 var mid_phys_rotation: bool = false
 
 
@@ -165,6 +176,9 @@ func _ready() -> void:
 	_update_sub_viewport()
 	interaction_ray_query.collision_mask = 7
 	vault_checks.p = self
+	
+	add_child(crawl_cooldown)
+	crawl_cooldown.one_shot = true
 	
 	apply_settings()
 
@@ -296,6 +310,15 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 			body_collision.position = player_crouch_collision_position
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
 			_move_head_smooth(player_crouch_head_position, 0.3)
+		MovementMode.CRAWL:
+			change_movement_speed(movement_speeds[MovementMode.CRAWL])
+			_change_fov_smooth(player_fov - 20, 0.1)
+			body_collision.shape.height = player_crawl_collision_height
+			body_collision.position = player_crawl_collision_position
+			_move_head_smooth(player_crawl_head_position, 0.1)
+			can_vault = false
+			await get_tree().process_frame
+			can_vault = false
 		MovementMode.CARRYING:
 			change_movement_speed(movement_speeds[MovementMode.CARRYING])
 			_change_fov_smooth(player_fov - 5)
@@ -371,7 +394,11 @@ func _physics_process(delta: float) -> void:
 			_vault_check()
 		MovementMode.CROUCHING:
 			_on_ground_movement(delta)
+			_crawl_check()
 			_vault_check()
+		MovementMode.CRAWL:
+			_on_ground_movement(delta)
+			_uncrawl_check()
 		MovementMode.CARRYING:
 			_on_ground_movement(delta)
 		MovementMode.VAULTING:
@@ -476,6 +503,51 @@ func _step_check() -> void:
 			if !direct_space_state.intersect_shape(player_shape_query, 1):
 				position = step_position
 				break
+
+
+func _crawl_check() -> void:
+	player_crouch_query.transform.origin = global_position + player_crouch_collision_position + Vector3(
+		-wanted_movement_direction.x * 0.02,
+		0,
+		-wanted_movement_direction.y * 0.02)
+	player_crouch_query.motion = Vector3(
+		wanted_movement_direction.x * 0.07,
+		0,
+		wanted_movement_direction.y * 0.07)
+	var crawl_check_result = direct_space_state.cast_motion(player_crouch_query)
+	
+	if crawl_check_result[0] == 1.0:
+		return
+	
+	player_crawl_query.transform.origin = global_position + player_crawl_collision_position + Vector3(
+		-wanted_movement_direction.x * 0.02,
+		0,
+		-wanted_movement_direction.y * 0.02)
+	player_crawl_query.motion = Vector3(
+		wanted_movement_direction.x * 0.22,
+		0,
+		wanted_movement_direction.y * 0.22)
+	var crawl_confirm_result = direct_space_state.cast_motion(player_crawl_query)
+	
+	if crawl_confirm_result[0] != 1.0:
+		return
+	
+	crawl_cooldown.start(crawl_cooldown_time)
+	
+	change_movement_mode(MovementMode.CRAWL)
+
+
+func _uncrawl_check() -> void:
+	if crawl_cooldown.time_left > 0.0: return
+	
+	player_crouch_query.transform.origin = global_position \
+										 + player_crouch_collision_position \
+										 + Vector3(0, 0.01, 0)
+	var uncrawl_result = direct_space_state.get_rest_info(player_crouch_query)
+	
+	if uncrawl_result: return
+	
+	change_movement_mode(MovementMode.CROUCHING)
 
 
 func _vault_check() -> void:

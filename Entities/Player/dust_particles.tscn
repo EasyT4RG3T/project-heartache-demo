@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://y8bwsn68l4yx"]
+[gd_scene format=3 uid="uid://y8bwsn68l4yx"]
 
 [ext_resource type="Shader" uid="uid://u1td265tgmiy" path="res://Assets/Shaders/dustparticles.gdshader" id="1_nii2x"]
 
@@ -29,7 +29,7 @@ shader = ExtResource("1_nii2x")
 material = SubResource("ShaderMaterial_nii2x")
 size = Vector2(0.005, 0.005)
 
-[node name="DustParticles" type="GPUParticles3D"]
+[node name="DustParticles" type="GPUParticles3D" unique_id=599818280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 top_level = true
 amount = 64

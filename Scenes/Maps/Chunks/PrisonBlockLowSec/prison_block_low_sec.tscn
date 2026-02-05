@@ -3,19 +3,14 @@
 [ext_resource type="LightmapGIData" uid="uid://bbi11wsnse24i" path="res://Scenes/Maps/Chunks/PrisonBlockLowSec/prison_block_low_sec.lmbake" id="1_foxtq"]
 [ext_resource type="PackedScene" uid="uid://d0rgyvxe34ba0" path="res://Scenes/Maps/Chunks/PrisonBlockLowSec/PrisonBlockLowSec.glb" id="2_5j0ws"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dyi6r0woiqfy3" path="res://Scenes/Maps/Chunks/PrisonBlockLowSec/prison_block_low_sec.occ" id="2_asgqg"]
-[ext_resource type="PackedScene" uid="uid://ch46fd8usmh08" path="res://Assets/Scenes/Bathroom/StaticBody3D/Sink01.tscn" id="5_asgqg"]
-[ext_resource type="PackedScene" uid="uid://543x422k5akt" path="res://Assets/Scenes/Bathroom/StaticBody3D/Toilet01.tscn" id="5_o0s1p"]
-[ext_resource type="PackedScene" uid="uid://b1v8l5kn5x308" path="res://Assets/Scenes/Bathroom/DynamicObject3D/ToiletPaper03.tscn" id="6_g4ibd"]
+[ext_resource type="PackedScene" uid="uid://ch46fd8usmh08" path="res://Assets/Scenes/Bathroom/Sinks/StaticBodies3D/Sink01.tscn" id="5_asgqg"]
+[ext_resource type="PackedScene" uid="uid://543x422k5akt" path="res://Assets/Scenes/Bathroom/Toilets/StaticBody3D/Toilet01.tscn" id="5_o0s1p"]
+[ext_resource type="PackedScene" uid="uid://b1v8l5kn5x308" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper03.tscn" id="6_g4ibd"]
 [ext_resource type="Material" path="res://Assets/Materials/Water/StillWater/StillWater.tres" id="6_q5vw5"]
-[ext_resource type="PackedScene" uid="uid://dbetu7vofnlc6" path="res://Assets/Scenes/Bathroom/DynamicObject3D/ToiletPaper02.tscn" id="7_35oj4"]
+[ext_resource type="PackedScene" uid="uid://dbetu7vofnlc6" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper02.tscn" id="7_35oj4"]
 [ext_resource type="Script" uid="uid://csvt28n3c5lft" path="res://Scripts/Nodes/water.gd" id="7_i2lk4"]
-[ext_resource type="PackedScene" uid="uid://bxaawgbj5ejsd" path="res://Assets/Scenes/Bathroom/DynamicObject3D/ToiletPaper01.tscn" id="8_f4phc"]
-[ext_resource type="Texture2D" uid="uid://dujibsd5vkfam" path="res://Assets/Materials/Blood/SmallBloodSplatter/SmallBloodSplatter_albedo.png" id="10_i2lk4"]
-[ext_resource type="Texture2D" uid="uid://boe8sxqscp5og" path="res://Assets/Materials/Blood/SmallBloodSplatter/SmallBloodSplatter_orm.png" id="11_ndu8s"]
-[ext_resource type="Texture2D" uid="uid://daht31yxc0lus" path="res://Assets/Materials/Blood/BloodSplatter/BloodSplatter_albedo.png" id="12_a70r8"]
-[ext_resource type="Texture2D" uid="uid://d2k8wbsthnnao" path="res://Assets/Materials/Blood/BloodSplatter/BloodSplatter_orm.png" id="13_lsyox"]
-[ext_resource type="Texture2D" uid="uid://dyxq8llc826a5" path="res://Assets/Materials/Blood/BigBloodSplatter/BigBloodSplatter_albedo.png" id="14_g5plr"]
-[ext_resource type="Texture2D" uid="uid://ufabhq8nh3q3" path="res://Assets/Materials/Blood/BigBloodSplatter/BigBloodSplatter_orm.png" id="15_n3fkx"]
+[ext_resource type="PackedScene" uid="uid://bxaawgbj5ejsd" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper01.tscn" id="8_f4phc"]
+[ext_resource type="PackedScene" uid="uid://dviwbqvhyq5is" path="res://Assets/Scenes/Trash/RazorBlade01.glb" id="8_xsm68"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_foxtq"]
 data = PackedVector3Array(-0.4, -0.25, 0.95, -0.4, -0.25, -0.95, -0.4, 0.25, -0.95, 0.4, -0.25, -0.95, -0.4, -0.25, -0.95, -0.4, -0.25, 0.95, -0.4, 0.25, -0.95, -0.4, -0.25, -0.95, 0.4, -0.25, -0.95, -0.4, 0.25, -0.95, -0.4, 0.25, 0.95, -0.4, -0.25, 0.95, -0.4, -0.25, 0.95, -0.4, 0.25, 0.95, 0.4, 0.25, 0.95, 0.4, 0.25, 0.95, -0.4, 0.25, 0.95, -0.4, 0.25, -0.95, -0.4, -0.25, 0.95, 0.4, -0.25, 0.95, 0.4, -0.25, -0.95, 0.4, 0.25, 0.95, 0.4, -0.25, 0.95, -0.4, -0.25, 0.95, 0.4, -0.25, -0.95, 0.4, -0.25, 0.95, 0.4, 0.25, 0.95, 0.4, -0.25, -0.95, 0.4, 0.25, -0.95, -0.4, 0.25, -0.95, -0.4, 0.25, -0.95, 0.4, 0.25, -0.95, 0.4, 0.25, 0.95, 0.4, 0.25, 0.95, 0.4, 0.25, -0.95, 0.4, -0.25, -0.95)
@@ -964,6 +959,9 @@ metadata/_custom_type_script = "uid://csvt28n3c5lft"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012283325, 0.4590912, 0.056518555)
 shape = SubResource("BoxShape3D_ndu8s")
 
+[node name="RazorBlade012" parent="Assets/Static" unique_id=661575054 instance=ExtResource("8_xsm68")]
+transform = Transform3D(0.42189044, 0, -0.90664685, 0, 1, 0, 0.90664685, 0, 0.42189044, 1.1734487, 1.0007502, -1.6008971)
+
 [node name="Dynamic" type="Node3D" parent="Assets" unique_id=1878516401]
 
 [node name="ToiletPaper03" parent="Assets/Dynamic" unique_id=1228194593 instance=ExtResource("6_g4ibd")]
@@ -983,27 +981,3 @@ transform = Transform3D(0.8930025, 0, 0.4500517, 0, 1, 0, -0.4500517, 0, 0.89300
 
 [node name="ToiletPaper06" parent="Assets/Dynamic" unique_id=1851318793 instance=ExtResource("8_f4phc")]
 transform = Transform3D(0.8904909, 0, -0.45500103, 0, 1, 0, 0.45500103, 0, 0.8904909, 0.82011914, 0.10197946, -2.4356575)
-
-[node name="Decal" type="Decal" parent="." unique_id=1032810803]
-transform = Transform3D(0.8016609, 0, 0.59777904, 0, 1, 0, -0.59777904, 0, 0.8016609, -0.5436164, 0.08699936, -1.8241596)
-size = Vector3(0.5, 0.5, 0.5)
-texture_albedo = ExtResource("10_i2lk4")
-texture_orm = ExtResource("11_ndu8s")
-
-[node name="Decal2" type="Decal" parent="." unique_id=1946744482]
-transform = Transform3D(0.53351116, 0, -0.845793, 0, 1, 0, 0.845793, 0, 0.53351116, -0.22849876, 0.08699924, -2.0368319)
-size = Vector3(0.5, 0.5, 0.5)
-texture_albedo = ExtResource("12_a70r8")
-texture_orm = ExtResource("13_lsyox")
-
-[node name="Decal4" type="Decal" parent="." unique_id=1211606246]
-transform = Transform3D(0.5841363, 0, -0.8116556, 0, 1, 0, 0.8116556, 0, 0.5841363, -0.22876197, 0.08699918, -1.6777833)
-size = Vector3(0.5, 0.5, 0.5)
-texture_albedo = ExtResource("12_a70r8")
-texture_orm = ExtResource("13_lsyox")
-
-[node name="Decal3" type="Decal" parent="." unique_id=412578171]
-transform = Transform3D(0.5140204, -0.85777795, 0, 0.85777795, 0.5140204, 0, 0, 0, 1, -0.027510561, 0.16896053, -1.85573)
-size = Vector3(0.5, 0.26489258, 0.5)
-texture_albedo = ExtResource("14_g5plr")
-texture_orm = ExtResource("15_n3fkx")
