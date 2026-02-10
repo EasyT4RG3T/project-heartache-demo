@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cs175s8oj6wrn"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1b4q2xx6rqej" path="res://Assets/Scenes/Bathroom/Sinks/Sink03.obj" id="1_lsi4v"]
+
+[node name="Sink03" type="MeshInstance3D" unique_id=1267941892]
+mesh = ExtResource("1_lsi4v")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bise7ahe2ds2r"]
+
+[ext_resource type="Material" uid="uid://b6ouv4k1wq74h" path="res://Assets/Scenes/Bathroom/ToiletPapers/WetToiletPaper.tres" id="1_fs44k"]
+[ext_resource type="ArrayMesh" uid="uid://ckkk8h85e44mn" path="res://Assets/Scenes/Bathroom/ToiletPapers/WetToiletPaper01.obj" id="1_l54nu"]
+
+[node name="WetToiletPaper01" type="MeshInstance3D" unique_id=36358025]
+material_override = ExtResource("1_fs44k")
+mesh = ExtResource("1_l54nu")

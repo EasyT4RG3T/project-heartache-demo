@@ -9,6 +9,7 @@ func get_interactable() -> Interactable:
 
 
 func _ready() -> void:
+	super()
 	interactable.show_type = Interactable.ShowType.PRESS
 	interactable.hold = true
 	interactable.interacted.connect(func(player:PlayerCharacter):

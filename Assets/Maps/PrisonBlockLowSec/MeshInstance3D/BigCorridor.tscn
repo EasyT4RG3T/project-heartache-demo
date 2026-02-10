@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdyeaa0a852te"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqu634o7ard3j" path="res://Assets/Maps/PrisonBlockLowSec/BigCorridor.obj" id="1_8vg0p"]
+
+[node name="BigCorridor" type="MeshInstance3D" unique_id=1317174800]
+mesh = ExtResource("1_8vg0p")

@@ -1,14 +1,11 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=2]
-[ext_resource path="ScrachedGlass_albedo.png" type="Texture" id=1]
-[ext_resource path="ScrachedGlass_orm.png" type="Texture" id=2]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cs7ey0qq2xn1c"]
+
+[ext_resource type="Texture2D" uid="uid://o5yj5yjfilsw" path="res://Assets/Materials/Glass/ScrachedGlass/ScrachedGlass_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://gcmm44kn2mu2" path="res://Assets/Materials/Glass/ScrachedGlass/ScrachedGlass_orm.png" id="2"]
+
 [resource]
-albedo_color = Color(1.0, 1.0, 1.0, 1.0)
-albedo_texture = ExtResource( 1 )
-metallic = 0.0
-roughness = 1.0
-roughness_texture = ExtResource( 2 )
-roughness_texture_channel = 1
 transparency = 1
-
-
-
+albedo_texture = ExtResource("1")
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+texture_filter = 2

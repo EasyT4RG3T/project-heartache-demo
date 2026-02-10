@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bdf4iajbpofpi"]
+
+[ext_resource type="Texture2D" uid="uid://ioi5jmfy2ig0" path="res://Assets/Materials/Bricks/CrackedGrayBricks/CrackedGrayBricks_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://7ol0aqq5rut4" path="res://Assets/Materials/Bricks/CrackedGrayBricks/CrackedGrayBricks_normal.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+normal_enabled = true
+normal_texture = ExtResource("3")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

@@ -635,7 +635,6 @@ func _need_vector3(tokens: PackedStringArray) -> Array:
 
 
 func _command_run() -> String:
-	
 	return "run"
 
 func _command_settings_save() -> String:

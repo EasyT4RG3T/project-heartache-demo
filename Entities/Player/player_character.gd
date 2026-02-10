@@ -56,6 +56,8 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 @onready var flashlight: Flashlight = %Flashlight
 @onready var hands: Node3D = %Hands
 
+@onready var raytraced_audio_listener: RaytracedAudioListener = %RaytracedAudioListener
+
 @onready var main_camera: Camera3D = %MainCamera
 @onready var inventory_camera: Camera3D = %InventoryCamera
 @onready var inventory_sub_viewport: SubViewport = %InventorySubViewport
@@ -334,6 +336,8 @@ func exit_movement_mode(mode: MovementMode) -> void:
 			body_collision.shape.height = player_collision_height
 			body_collision.position.y = player_collision_position.y
 			_move_head_smooth(player_head_position, 0.3)
+		MovementMode.CRAWL:
+			body_collision.shape.radius = 0.25
 		MovementMode.VAULTING:
 			body_collision.disabled = false
 
@@ -369,6 +373,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	head_collision.position = head.position + head_collision_position
 	dust_particles.global_position = main_camera.global_position - main_camera.global_basis.z * 2
+	raytraced_audio_listener.update()
 	
 	if phys_object:
 		phys_wanted_position = head.global_position - head.global_basis.z * phys_wanted_distance
@@ -605,7 +610,7 @@ func add_thought(thought: String, story: bool = false, time: float = 2.0) -> voi
 
 func apply_settings() -> void:
 	player_fov = SaverLoader.settings.fov
-	main_camera.fov = player_fov
+	main_camera.fov = clamp(player_fov, 50, 120)
 	mouse_sensitivity = SaverLoader.settings.sensitivity
 
 

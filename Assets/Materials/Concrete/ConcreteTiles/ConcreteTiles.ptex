@@ -73,7 +73,7 @@
 				"ao": 1.0,
 				"depth_scale": 0.5,
 				"emission_energy": 1.0,
-				"flags_transparent": true,
+				"flags_transparent": false,
 				"metallic": 0.0,
 				"normal": 1.0,
 				"roughness": 0.4,
@@ -94,7 +94,7 @@
 				"columns": 2.0,
 				"corner": 0.3,
 				"mortar": 0.02,
-				"pattern": 0,
+				"pattern": 0.0,
 				"repeat": 1.0,
 				"round": 0.0,
 				"row_offset": 0.0,
@@ -128,7 +128,7 @@
 				"clamp": false,
 				"default_in1": 0.0,
 				"default_in2": 0.0,
-				"op": 1
+				"op": 1.0
 			},
 			"seed_int": 0,
 			"type": "math"
@@ -192,7 +192,7 @@
 			"parameters": {
 				"buffer": 1.0,
 				"param2": 0.0,
-				"size": 6,
+				"size": 6.0,
 				"strength": 1.0
 			},
 			"seed_int": 0,

@@ -9,6 +9,8 @@ const THUMP = preload("uid://tbgl4aqox0xy")
 @export var max_distance: float = 1.6
 @export var min_distance: float = 1.0
 
+@export var collision_sound: String = ""
+
 
 var audio_grace: bool = false
 
@@ -36,8 +38,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			
 			var collision_point = state.get_contact_local_position(i)
 			var collision_velocity = state.get_contact_local_velocity_at_position(i)
-			if audio_grace:
-				AudioManager.play_sound_at(THUMP, collision_point, collision_velocity.length() - 10)
+			if audio_grace and collision_velocity.length() > 2:
+				var loudness = clamp(collision_velocity.length() - 32, -30, 0)
+				AudioManager.play_uid_sound_at(collision_sound, collision_point, loudness)
 	collisions = new_collisions
 
 
@@ -51,7 +54,7 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 1
 	
-	get_tree().create_timer(0.1).timeout.connect(func():audio_grace = true)
+	get_tree().create_timer(0.1).timeout.connect(func(): audio_grace = true)
 
 
 func switch_pick_up(player: PlayerCharacter) -> void:

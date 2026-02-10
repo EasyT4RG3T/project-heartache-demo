@@ -1,16 +1,14 @@
 [gd_scene format=4 uid="uid://cxen7otwqul1c"]
 
 [ext_resource type="LightmapGIData" uid="uid://bbi11wsnse24i" path="res://Scenes/Maps/Chunks/PrisonBlockLowSec/prison_block_low_sec.lmbake" id="1_foxtq"]
-[ext_resource type="PackedScene" uid="uid://d0rgyvxe34ba0" path="res://Scenes/Maps/Chunks/PrisonBlockLowSec/PrisonBlockLowSec.glb" id="2_5j0ws"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dyi6r0woiqfy3" path="res://Scenes/Maps/Chunks/PrisonBlockLowSec/prison_block_low_sec.occ" id="2_asgqg"]
-[ext_resource type="PackedScene" uid="uid://ch46fd8usmh08" path="res://Assets/Scenes/Bathroom/Sinks/StaticBodies3D/Sink01.tscn" id="5_asgqg"]
-[ext_resource type="PackedScene" uid="uid://543x422k5akt" path="res://Assets/Scenes/Bathroom/Toilets/StaticBody3D/Toilet01.tscn" id="5_o0s1p"]
-[ext_resource type="PackedScene" uid="uid://b1v8l5kn5x308" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper03.tscn" id="6_g4ibd"]
-[ext_resource type="Material" path="res://Assets/Materials/Water/StillWater/StillWater.tres" id="6_q5vw5"]
-[ext_resource type="PackedScene" uid="uid://dbetu7vofnlc6" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper02.tscn" id="7_35oj4"]
-[ext_resource type="Script" uid="uid://csvt28n3c5lft" path="res://Scripts/Nodes/water.gd" id="7_i2lk4"]
-[ext_resource type="PackedScene" uid="uid://bxaawgbj5ejsd" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper01.tscn" id="8_f4phc"]
-[ext_resource type="PackedScene" uid="uid://dviwbqvhyq5is" path="res://Assets/Scenes/Trash/RazorBlade01.glb" id="8_xsm68"]
+[ext_resource type="PackedScene" uid="uid://srsmluxfv671" path="res://Assets/Maps/PrisonBlockLowSec/StaticBody3D/PrisonBlockLowSec.tscn" id="3_asgqg"]
+[ext_resource type="PackedScene" uid="uid://2nn6kk6x78le" path="res://Assets/Scenes/Bathroom/Toilets/StaticBody3D/Toilet01.tscn" id="4_5j0ws"]
+[ext_resource type="PackedScene" uid="uid://h0k3rquynjii" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper02.tscn" id="5_3jscx"]
+[ext_resource type="Material" path="res://Assets/Materials/Water/StillWater/StillWater.tres" id="6_g4ibd"]
+[ext_resource type="PackedScene" uid="uid://cionbrhsgw8tn" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaperRoll.tscn" id="6_o0s1p"]
+[ext_resource type="PackedScene" uid="uid://bocif7t18dc1p" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper01.tscn" id="7_g4ibd"]
+[ext_resource type="Script" uid="uid://csvt28n3c5lft" path="res://Scripts/Nodes/water.gd" id="8_o0s1p"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_foxtq"]
 data = PackedVector3Array(-0.4, -0.25, 0.95, -0.4, -0.25, -0.95, -0.4, 0.25, -0.95, 0.4, -0.25, -0.95, -0.4, -0.25, -0.95, -0.4, -0.25, 0.95, -0.4, 0.25, -0.95, -0.4, -0.25, -0.95, 0.4, -0.25, -0.95, -0.4, 0.25, -0.95, -0.4, 0.25, 0.95, -0.4, -0.25, 0.95, -0.4, -0.25, 0.95, -0.4, 0.25, 0.95, 0.4, 0.25, 0.95, 0.4, 0.25, 0.95, -0.4, 0.25, 0.95, -0.4, 0.25, -0.95, -0.4, -0.25, 0.95, 0.4, -0.25, 0.95, 0.4, -0.25, -0.95, 0.4, 0.25, 0.95, 0.4, -0.25, 0.95, -0.4, -0.25, 0.95, 0.4, -0.25, -0.95, 0.4, -0.25, 0.95, 0.4, 0.25, 0.95, 0.4, -0.25, -0.95, 0.4, 0.25, -0.95, -0.4, 0.25, -0.95, -0.4, 0.25, -0.95, 0.4, 0.25, -0.95, 0.4, 0.25, 0.95, 0.4, 0.25, 0.95, 0.4, 0.25, -0.95, 0.4, -0.25, -0.95)
@@ -63,11 +61,11 @@ _surfaces = [{
 "vertex_data": PackedByteArray("mFYcPjBT4j/6+BbAgZhPPjBT4j/FyhPAtV+APjBT4j/FyhPAmFYcPjBT4j/08a2/mFYcPjBT4j/6+BbAmFYcPjCz6j/6+BbAmFYcPjBT4j/08a2/gZhPPjBT4j/57RDAtV+APjBT4j/57RDAmFYcPjBT4j/6+BbATGvOPjBT4j/6+BbAmFYcPjCz6j/6+BbATGvOPjBT4j/6+BbAgZhPPjBT4j9aWLS/gZhPPjBT4j/0Ebq/mFYcPjCz6j/08a2/TGvOPjBT4j/08a2/mFYcPjCz6j/6+BbATGvOPjCz6j/08a2/mFYcPjCz6j/08a2/mFYcPjBT4j/08a2/mFYcPjCz6j/08a2/TGvOPjCz6j/08a2/TGvOPjCz6j/6+BbATGvOPjCz6j/6+BbATGvOPjBT4j/6+BbATGvOPjCz6j/08a2/TGvOPjCz6j/6+BbAtV+APjBT4j/0Ebq/tV+APjBT4j9aWLS/TGvOPjBT4j/08a2/TGvOPjBT4j/08a2/gZhPPtqz3D/HxRPAgZhPPhAS1z/57RDAgZhPPhAS1z/HxRPAgZhPPhAS1z/0Ebq/gZhPPtqz3D/57RDAgZhPPhAS1z9aWLS/tV+APhAS1z/HxRPAtV+APtqz3D/57RDAtV+APtqz3D/HxRPAgZhPPhAS1z/0Ebq/tV+APhAS1z/57RDAgZhPPhAS1z/57RDAtV+APhAS1z/57RDAtV+APtqz3D9aWLS/tV+APtqz3D/0Ebq/tV+APtqz3D/0Ebq/gZhPPtqz3D/57RDAtV+APtqz3D/57RDAgZhPPtqz3D/0Ebq/gZhPPtqz3D9aWLS/tV+APhAS1z/0Ebq/tV+APhAS1z/0Ebq/gZhPPhAS1z9aWLS/tV+APtqz3D9aWLS/tV+APhAS1z9aWLS/gZhPPtqz3D9aWLS/tV+APhAS1z9aWLS/gZhPPtqz3D/0Ebq/gZhPPtqz3D/0Ebq/gZhPPjBT4j9aWLS/gZhPPtqz3D9aWLS/gZhPPjBT4j/0Ebq/gZhPPg8S1z/0Ebq/gZhPPg8S1z9aWLS/tV+APg8S1z/0Ebq/tV+APg8S1z9aWLS/tV+APtqz3D/0Ebq/gZhPPjBT4j/0Ebq/gZhPPtqz3D/0Ebq/gZhPPjBT4j9aWLS/tV+APjBT4j9aWLS/gZhPPtqz3D9aWLS/tV+APtqz3D9aWLS/tV+APjBT4j/0Ebq/tV+APtqz3D9aWLS/tV+APjBT4j/0Ebq/tV+APtqz3D/0Ebq/tV+APjBT4j9aWLS/gZhPPg8S1z/FyhPAgZhPPjBT4j/FyhPAgZhPPtqz3D/HxRPAgZhPPjBT4j/57RDAgZhPPtqz3D/57RDAtV+APg8S1z/FyhPAgZhPPhAS1z/HxRPAgZhPPg8S1z/57RDAgZhPPg8S1z/57RDAtV+APg8S1z/57RDAtV+APhAS1z/HxRPAgZhPPg8S1z/FyhPAtV+APg8S1z/FyhPAgZhPPjBT4j/FyhPAgZhPPjBT4j/57RDAtV+APjBT4j/57RDAgZhPPtqz3D/57RDAtV+APjBT4j/FyhPAtV+APtqz3D/57RDAtV+APg8S1z/FyhPAtV+APtqz3D/HxRPAtV+APjBT4j/FyhPAtV+APtqz3D/57RDAtV+APjBT4j/57RDAAIAAAP//AAAAgAAA//8AAACAAAD//wAAAIAAAP//AAAAAACA/3/+fwAAAID/f/5/AAAAgP9//n8AgAAA//8AAACAAAD//wAA/////wAA/z//////AAD/P/////8AAP8/AIAAAP//AAAAgAAA//8AAACAAAD//wAAAAAAgP9//n8AgAAA//8AAACA/////wAAAID/////AAAAgP////8AAP9//38AAP8//3//fwAA/z//f/9/AAD/P/////8AAP8/AID/////AAD//wCA/3/+f///AID/f/5///8AgP9//n8AgAAA//8AAACAAAD//wAA/3//fwAA/z///wCA/3/+fwAAAID/f/5/AAAAgP9//n8AAACA/3/+fwAAAID/f/5/AAAAgP9//n8AAACA/3/+f///AID/f/5///8AgP9//n///wCA/3/+fwCAAAD//wAAAIAAAP//AAAAgAAA//8AAP//AID/f/5///8AgP9//n///wCA/3/+fwCA/////wAAAID/////AAAAgP////8AAAAAAID/f/5/AAAAgP9//n8AgAAA//8AAP//AID/f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//fwAA/z///wCA/3/+fwCA/////wAAAAAAgP9//n8AAACA/3/+fwAAAID/f/5/AAAAgP9//n8AgAAA//8AAACAAAD//wAAAIAAAP//AAAAgAAA//8AAP////8AAP8//////wAA/z//////AAD/P/9//38AAP8//3//fwAA/z//f/9/AAD/P/9//38AAP8//////wAA/z///wCA/3/+f///AID/f/5///8AgP9//n///wCA/3/+fwAAAID/f/5/AAAAgP9//n8AAACA/3/+fwAAAID/f/5/AAAAgP9//n8AgAAA/v8AAACAAAD+/wAAAIAAAP7/AAAAgAAA/v8AAACAAAD+/wAAAIAAAP7/AAD/////AAD/P/////8AAP8//////wAA/z//f/9/AAD/P/9//38AAP8//3//fwAA/z//////AAD/P/9//38AAP8///8AgP9//n///wCA/3/+f///AID/f/5///8AgP9//n///wCA/3/+fw==")
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4ibd"]
+size = Vector3(0.19871521, 0.09615326, 0.32385254)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_35oj4"]
 size = Vector2(0.2, 0.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ndu8s"]
-size = Vector3(0.22358704, 0.07077026, 0.39379883)
 
 [node name="PrisonBlockLowSec" type="Node3D" unique_id=1311521136]
 
@@ -609,7 +607,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31575817, 2.754566, -7.389
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0046296, 1.351656, -2.5911205)
 occluder = ExtResource("2_asgqg")
 
-[node name="PrisonBlockLowSec" parent="Map" unique_id=1572690115 instance=ExtResource("2_5j0ws")]
+[node name="PrisonBlockLowSec" parent="Map" unique_id=739988717 instance=ExtResource("3_asgqg")]
 
 [node name="Lights" type="Node3D" parent="." unique_id=1120045510]
 
@@ -931,53 +929,48 @@ size = Vector3(0.2, 0.80029297, 0.03)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23504089, 1.234374, -2.0400426)
 size = Vector3(0.2, 0.80029297, 0.03)
 
-[node name="Sink01" parent="Assets/Static" unique_id=357081177 instance=ExtResource("5_asgqg")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.99103546, 0, -1.4729697)
+[node name="Toilet01" parent="Assets/Static" unique_id=392055388 instance=ExtResource("4_5j0ws")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5295853, -1.1920929e-07, -2.047678)
 
-[node name="Toilet01" parent="Assets/Static" unique_id=2034439930 instance=ExtResource("5_o0s1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5463622, 0, -2.0528095)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Assets/Static/Toilet01" unique_id=1251569859]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002, 0.492, -0.02)
-material_override = ExtResource("6_q5vw5")
-gi_mode = 2
-mesh = SubResource("PlaneMesh_35oj4")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets/Static/Toilet01" unique_id=1391564702]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002, 0.492, 0.18)
-material_override = ExtResource("6_q5vw5")
-gi_mode = 2
-mesh = SubResource("PlaneMesh_35oj4")
-skeleton = NodePath("../../../..")
-
-[node name="Water" type="Area3D" parent="Assets/Static/Toilet01" unique_id=829304932]
-script = ExtResource("7_i2lk4")
+[node name="Water" type="Area3D" parent="Assets/Static/Toilet01" unique_id=1173827940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024012327, 0.3462601, -0.03314829)
+script = ExtResource("8_o0s1p")
 metadata/_custom_type_script = "uid://csvt28n3c5lft"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/Static/Toilet01/Water" unique_id=497035936]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012283325, 0.4590912, 0.056518555)
-shape = SubResource("BoxShape3D_ndu8s")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/Static/Toilet01/Water" unique_id=1935214821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030288696, 0.04809189, 0.0803833)
+shape = SubResource("BoxShape3D_g4ibd")
 
-[node name="RazorBlade012" parent="Assets/Static" unique_id=661575054 instance=ExtResource("8_xsm68")]
-transform = Transform3D(0.42189044, 0, -0.90664685, 0, 1, 0, 0.90664685, 0, 0.42189044, 1.1734487, 1.0007502, -1.6008971)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Assets/Static/Toilet01" unique_id=1434013714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, -0.037110806)
+material_override = ExtResource("6_g4ibd")
+mesh = SubResource("PlaneMesh_35oj4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets/Static/Toilet01" unique_id=1350844939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, 0.16288924)
+material_override = ExtResource("6_g4ibd")
+mesh = SubResource("PlaneMesh_35oj4")
 
 [node name="Dynamic" type="Node3D" parent="Assets" unique_id=1878516401]
 
-[node name="ToiletPaper03" parent="Assets/Dynamic" unique_id=1228194593 instance=ExtResource("6_g4ibd")]
-transform = Transform3D(0.9060273, 0, -0.42321926, 0, 1, 0, 0.42321926, 0, 0.9060273, 0.5054519, 0.62808186, -2.4232388)
+[node name="ToiletPaper02" parent="Assets/Dynamic" unique_id=317045736 instance=ExtResource("5_3jscx")]
+transform = Transform3D(0.89596, 0, 0.44413486, 0, 1, 0, -0.44413486, 0, 0.89596, 0.56884944, 0.6807767, -2.435336)
 
-[node name="ToiletPaper02" parent="Assets/Dynamic" unique_id=1361855856 instance=ExtResource("7_35oj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.576952, 0.6279052, -2.4448488)
+[node name="ToiletPaperRoll" parent="Assets/Dynamic" unique_id=1719439508 instance=ExtResource("6_o0s1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49704838, 0.68083113, -2.4199953)
 
-[node name="ToiletPaper01" parent="Assets/Dynamic" unique_id=1872499276 instance=ExtResource("8_f4phc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7569444, 0, -2.428601)
+[node name="ToiletPaper01" parent="Assets/Dynamic" unique_id=1458748424 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7887921, 0.05980593, -2.4380016)
 
-[node name="ToiletPaper04" parent="Assets/Dynamic" unique_id=1610562840 instance=ExtResource("8_f4phc")]
-transform = Transform3D(0.99739563, 0, 0.072124146, 0, 1, 0, -0.072124146, 0, 0.99739563, 0.87694836, -5.9604645e-08, -2.4525466)
+[node name="ToiletPaper03" parent="Assets/Dynamic" unique_id=1123176124 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89993757, 0.05980587, -2.4438734)
 
-[node name="ToiletPaper05" parent="Assets/Dynamic" unique_id=1540069130 instance=ExtResource("8_f4phc")]
-transform = Transform3D(0.8930025, 0, 0.4500517, 0, 1, 0, -0.4500517, 0, 0.8930025, 0.9874241, -5.9604645e-08, -2.3942904)
+[node name="ToiletPaper04" parent="Assets/Dynamic" unique_id=1736512463 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85233223, 0.05980599, -2.351845)
 
-[node name="ToiletPaper06" parent="Assets/Dynamic" unique_id=1851318793 instance=ExtResource("8_f4phc")]
-transform = Transform3D(0.8904909, 0, -0.45500103, 0, 1, 0, 0.45500103, 0, 0.8904909, 0.82011914, 0.10197946, -2.4356575)
+[node name="ToiletPaper05" parent="Assets/Dynamic" unique_id=2018236103 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83252984, 0.15980601, -2.4296424)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=931193974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32594118, 0.97149867, 1.2130951)
+aabb = AABB(-0.2034656, -0.17421027, -0.27194867, 0.4069312, 0.34842053, 0.54389733)

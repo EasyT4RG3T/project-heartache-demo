@@ -1,0 +1,7 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://b6ouv4k1wq74h"]
+
+[ext_resource type="Texture2D" uid="uid://dbrcgals34qql" path="res://Assets/Scenes/Bathroom/ToiletPapers/WetToiletPaper_albedo.png" id="1_7gx7l"]
+
+[resource]
+albedo_texture = ExtResource("1_7gx7l")
+texture_filter = 2

@@ -13,7 +13,7 @@ func _ready() -> void:
 func wet() -> void:
 	if !swap: return
 	
-	var pscene: PackedScene = load(swap)
+	var pscene: PackedScene = load(ResourceUID.uid_to_path(swap))
 	var scene: DynamicRigidBody3D = pscene.instantiate()
 	
 	add_sibling(scene)

@@ -1,0 +1,255 @@
+{
+	"connections": [
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 5
+		},
+		{
+			"from": "uniform_greyscale_3",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 1
+		},
+		{
+			"from": "perlin",
+			"from_port": 0,
+			"to": "gaussian_blur",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "combine",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_greyscale_3",
+			"from_port": 0,
+			"to": "combine",
+			"to_port": 2
+		},
+		{
+			"from": "combine",
+			"from_port": 0,
+			"to": "export_2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "export",
+			"to_port": 0
+		},
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "combine",
+			"to_port": 1
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@Node@906",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_last_target": "Godot/Godot 4 ORM",
+			"export_paths": {
+				"Godot/Godot 4 ORM": "/mnt/Mix/MaterialMaker/Meterials/Porcelain/Porcelain"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 0.0,
+				"y": 0.0
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": false,
+				"metallic": 0.94,
+				"normal": 1.0,
+				"roughness": 1.0,
+				"size": 6,
+				"sss": 1.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "perlin",
+			"node_position": {
+				"x": -741.5,
+				"y": 0.5
+			},
+			"parameters": {
+				"iterations": 3.0,
+				"persistence": 0.5,
+				"scale_x": 10.0,
+				"scale_y": 10.0
+			},
+			"seed_int": 0,
+			"type": "perlin"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -279.5,
+				"y": -2.5
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.879999995231628,
+							"g": 0.879999995231628,
+							"pos": 0.0,
+							"r": 0.879999995231628
+						},
+						{
+							"a": 1.0,
+							"b": 0.970000028610229,
+							"g": 0.970000028610229,
+							"pos": 1.0,
+							"r": 0.970000028610229
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "uniform_greyscale",
+			"node_position": {
+				"x": -517.5,
+				"y": 171.5
+			},
+			"parameters": {
+				"color": 1.0
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "uniform_greyscale_3",
+			"node_position": {
+				"x": -516.715087890625,
+				"y": 421.851135253906
+			},
+			"parameters": {
+				"color": 0.0
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "gaussian_blur",
+			"node_position": {
+				"x": -524.5,
+				"y": -1.5
+			},
+			"parameters": {
+				"param0": 9.0,
+				"param1": 50.0,
+				"param2": 0.0,
+				"param3": false
+			},
+			"seed_int": 0,
+			"type": "gaussian_blur"
+		},
+		{
+			"name": "export",
+			"node_position": {
+				"x": 58.5,
+				"y": 304.5
+			},
+			"parameters": {
+				"format": 0,
+				"size": 6,
+				"suffix": "albedo"
+			},
+			"seed_int": 0,
+			"type": "export"
+		},
+		{
+			"name": "export_2",
+			"node_position": {
+				"x": 60.5,
+				"y": 435.5
+			},
+			"parameters": {
+				"format": 0,
+				"size": 6,
+				"suffix": "orm"
+			},
+			"seed_int": 0,
+			"type": "export"
+		},
+		{
+			"name": "combine",
+			"node_position": {
+				"x": -181.198532104492,
+				"y": 436.284912109375
+			},
+			"parameters": {
+
+			},
+			"seed_int": 0,
+			"type": "combine"
+		},
+		{
+			"name": "image",
+			"node_position": {
+				"x": -495.755310058594,
+				"y": 247.437393188477
+			},
+			"parameters": {
+				"clamp": false,
+				"fix_ar": false,
+				"image": "/home/easy/Downloads/Porcelain001_1K-JPG/Porcelain001_1K-JPG_Roughness.jpg"
+			},
+			"seed_int": 0,
+			"type": "image"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

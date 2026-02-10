@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dtn66pwr0dum3"]
+
+[ext_resource type="Texture2D" uid="uid://kycfgugvf7t3" path="res://Assets/Placeholder/normaltest_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bmohhimleueat" path="res://Assets/Placeholder/normaltest_normal.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+metallic = 1.0
+roughness = 0.44
+normal_enabled = true
+normal_texture = ExtResource("3")
+uv1_scale = Vector3(5, 5, 5)

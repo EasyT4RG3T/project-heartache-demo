@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0fe72j4qxput"]
+
+[ext_resource type="ArrayMesh" uid="uid://cahprbuwxe6i5" path="res://Assets/Scenes/Bathroom/Toilets/Toilet02Lid.obj" id="1_olk0f"]
+
+[node name="Toilet02Lid" type="MeshInstance3D" unique_id=1442046435]
+mesh = ExtResource("1_olk0f")

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/flashlight.tscn" id="2_stcdd"]
 [ext_resource type="PackedScene" uid="uid://c0tamd213o31x" path="res://Entities/Player/player_hud.tscn" id="3_b2vmj"]
 [ext_resource type="Shader" uid="uid://bwrc3gdocmt4n" path="res://Assets/Shaders/skinamarink.gdshader" id="3_lobkq"]
+[ext_resource type="Script" uid="uid://bjpmu5sklv5h8" path="res://addons/raytraced_audio/raytraced_audio_listener.gd" id="3_seg3p"]
 [ext_resource type="Script" uid="uid://cvox7ompr4c2t" path="res://Entities/Player/main_camera.gd" id="4_3xgjn"]
 [ext_resource type="PackedScene" uid="uid://y8bwsn68l4yx" path="res://Entities/Player/dust_particles.tscn" id="6_d821y"]
 [ext_resource type="Environment" uid="uid://d2m0td6ed2a2t" path="res://Assets/Environments/stripped_environment.tres" id="7_4rt0j"]
@@ -47,6 +48,14 @@ shape = SubResource("SphereShape3D_3xgjn")
 [node name="Head" type="Node3D" parent="." unique_id=1612740848]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="RaytracedAudioListener" type="AudioListener3D" parent="Head" unique_id=1307621807]
+unique_name_in_owner = true
+current = true
+script = ExtResource("3_seg3p")
+auto_update = false
+rays_count = 32
+metadata/_custom_type_script = "uid://bjpmu5sklv5h8"
 
 [node name="Flashlight" parent="Head" unique_id=1688126852 instance=ExtResource("2_stcdd")]
 unique_name_in_owner = true

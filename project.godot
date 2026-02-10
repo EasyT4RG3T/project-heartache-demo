@@ -21,6 +21,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=144
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ddud0m5r4yr7q"
+
 [autoload]
 
 GameManager="*res://Scripts/Autoloads/game_manager.gd"
@@ -34,6 +38,10 @@ AudioManager="*res://Scripts/Autoloads/audio_manager.gd"
 
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/raytraced_audio/plugin.cfg")
 
 [file_customization]
 
@@ -188,6 +196,11 @@ escape={
 common/physics_jitter_fix=0.0
 3d/physics_engine="Jolt Physics"
 common/physics_interpolation=true
+
+[raytraced_audio]
+
+reverb_bus=&"RaytracedReverb"
+ambient_bus=&"RaytracedAmbient"
 
 [rendering]
 

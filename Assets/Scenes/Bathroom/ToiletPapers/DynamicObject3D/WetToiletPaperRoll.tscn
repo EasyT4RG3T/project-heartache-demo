@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bxyb6b842wqf0"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object3d.gd" id="1_pe5ro"]
+[ext_resource type="PackedScene" uid="uid://con7fces8rvgg" path="res://Assets/Scenes/Bathroom/ToiletPapers/MeshInstance3D/WetToiletPaperRoll.tscn" id="2_q2jsd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q2jsd"]
+points = PackedVector3Array(0.010106066, 0.063948706, 0.025811287, 0.02234055, 0.1, -0.009256725, 0.009254327, 0.1, 0.022341726, -0.022343313, 0.1, 0.009250736, -0.024144, 0.06861785, 0.0093355905, -0.020797223, 0.032400157, 0.011192938, -0.022343313, 0, 0.009250736, 0.009254327, 0, 0.022341726, 0.02234055, 0, -0.009256725, -0.009257094, 0.1, -0.022343, 0.023145998, 0.033760767, -0.01315998, -0.011580858, 0.06742365, -0.019962393, -0.009257094, 0, -0.022343)
+
+[node name="WetToiletPaperRoll" type="RigidBody3D" unique_id=263505694]
+mass = 0.2
+continuous_cd = true
+script = ExtResource("1_pe5ro")
+ignore_player = true
+min_distance = 0.4
+collision_sound = "uid://bjosf5qkbjxi1"
+
+[node name="WetToiletPaperRoll" parent="." unique_id=536290126 instance=ExtResource("2_q2jsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=90191470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("ConvexPolygonShape3D_q2jsd")
