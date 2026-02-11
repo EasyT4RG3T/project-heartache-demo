@@ -1,5 +1,9 @@
 extends Node
 
+
+signal PlayerSetUp
+
+
 const main_menu: String = "res://Scenes/Menus/MainMenu/main_menu.tscn"
 
 var debug_overlay: DebugOverlay
@@ -28,6 +32,7 @@ func load_player() -> void:
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 	InputManager.player_character = player
 	InputManager.player_character_input = true
+	PlayerSetUp.emit()
 
 
 func load_main_menu() -> void:

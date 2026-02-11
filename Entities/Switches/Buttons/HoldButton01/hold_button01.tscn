@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2jlmyt0tqax7"]
+[gd_scene format=3 uid="uid://c2jlmyt0tqax7"]
 
 [ext_resource type="Script" uid="uid://b017htuu4p8i2" path="res://Entities/Switches/Buttons/HoldButton01/hold_button.gd" id="1_e6xgf"]
-[ext_resource type="Script" uid="uid://bjhl03u1jsimb" path="res://Scripts/Nodes/slider3d.gd" id="1_khefo"]
+[ext_resource type="Script" uid="uid://bjhl03u1jsimb" path="res://Scripts/Nodes/slider_3d.gd" id="1_khefo"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_46y4m"]
 top_radius = 0.05

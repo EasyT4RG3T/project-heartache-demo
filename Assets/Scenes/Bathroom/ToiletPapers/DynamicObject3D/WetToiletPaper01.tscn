@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhe1skpist22y"]
 
-[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object3d.gd" id="1_ms0oq"]
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_ms0oq"]
 [ext_resource type="PackedScene" uid="uid://bise7ahe2ds2r" path="res://Assets/Scenes/Bathroom/ToiletPapers/MeshInstance3D/WetToiletPaper01.tscn" id="2_p7vgb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p7vgb"]

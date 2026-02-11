@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://djkma6igur8lj"]
+[gd_scene format=3 uid="uid://djkma6igur8lj"]
 
-[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge3d.gd" id="1_6q1hh"]
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="1_6q1hh"]
 [ext_resource type="Script" uid="uid://clcf2pwgsl03l" path="res://Entities/Switches/Levers/HoldLever01/hold_lever.gd" id="1_ylfus"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6q1hh"]

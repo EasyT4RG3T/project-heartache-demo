@@ -188,8 +188,10 @@ escape={
 3d_physics/layer_2="Dynamic"
 3d_physics/layer_3="DynamicNoCol"
 3d_physics/layer_4="Player"
+3d_physics/layer_5="OnScreen"
 3d_physics/layer_6="PickedUp"
 3d_physics/layer_7="Wettable"
+3d_physics/layer_8="NoPlayer"
 
 [physics]
 

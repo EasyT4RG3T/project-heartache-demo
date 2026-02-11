@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cionbrhsgw8tn"]
 
-[ext_resource type="Script" uid="uid://dc7xxn1bn3bjy" path="res://Scripts/Nodes/wettable_object3d.gd" id="1_b5mih"]
+[ext_resource type="Script" uid="uid://dc7xxn1bn3bjy" path="res://Scripts/Nodes/wettable_object_3d.gd" id="1_b5mih"]
 [ext_resource type="PackedScene" uid="uid://cqceo4uhvjwgm" path="res://Assets/Scenes/Bathroom/ToiletPapers/MeshInstance3D/ToiletPaperRoll.tscn" id="2_50rxm"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_apqlr"]

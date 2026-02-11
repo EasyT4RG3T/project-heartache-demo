@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddntw541mfnjw"]
+[gd_scene format=3 uid="uid://ddntw541mfnjw"]
 
-[ext_resource type="Script" uid="uid://bjhl03u1jsimb" path="res://Scripts/Nodes/slider3d.gd" id="1_ndi2r"]
+[ext_resource type="Script" uid="uid://bjhl03u1jsimb" path="res://Scripts/Nodes/slider_3d.gd" id="1_ndi2r"]
 [ext_resource type="Script" uid="uid://cq0h0s0b840df" path="res://Entities/Switches/Buttons/Button01/button.gd" id="1_v7mjo"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5tt0r"]

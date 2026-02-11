@@ -1,8 +1,35 @@
 extends Camera3D
 
 
+var center_ray: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+var direct_space: PhysicsDirectSpaceState3D
+
+var collider: OnCenterScreenNotifier3D:
+	set(value):
+		if value == collider: return
+		if collider is OnCenterScreenNotifier3D:
+			collider.exit_center()
+		if value is OnCenterScreenNotifier3D:
+			value.enter_center()
+		collider = value
+
+
 func _ready() -> void:
+	direct_space = get_world_3d().direct_space_state
 	apply_settings()
+	center_ray.collision_mask = 16
+	center_ray.hit_from_inside = true
+
+
+func _process(_delta: float) -> void:
+	center_ray.from = global_position
+	center_ray.to = global_position + (-global_basis.z * 100)
+	
+	var center_ray_result = direct_space.intersect_ray(center_ray)
+	if center_ray_result:
+		collider = center_ray_result["collider"]
+	else:
+		collider = null
 
 
 func apply_settings() -> void:

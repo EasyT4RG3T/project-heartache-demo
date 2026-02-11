@@ -104,6 +104,11 @@ var vault_check_unsave_distance: Vector3
 var p: PlayerCharacter
 
 
+func _ready() -> void:
+	vault_check_query.collision_mask = 131
+	vault_fit_query.collision_mask = 131
+
+
 func check() -> void:
 	var vault_direction: Vector3 = Vector3.FORWARD.rotated(Vector3.UP, p.head.rotation.y)
 	
@@ -132,6 +137,12 @@ func check() -> void:
 		p.can_vault = false
 		vault_error["can_vault"] = "false"
 		vault_error["error"] = "didnt_get_starting_vault_point"
+		return
+	
+	if instance_from_id(collision_info["collider_id"]).collision_layer == 128:
+		p.can_vault = false
+		vault_error["can_vault"] = "false"
+		vault_error["error"] = "no_vault_allowed"
 		return
 	
 	if abs(collision_info.normal.dot(Vector3.UP)) >= 0.7:

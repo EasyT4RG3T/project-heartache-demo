@@ -27,7 +27,7 @@ shader_parameter/grain_blur_size = 5.0
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=765852671 groups=["PlayerCharacter", "Save"]]
 collision_layer = 8
-collision_mask = 3
+collision_mask = 131
 platform_floor_layers = 4294967293
 script = ExtResource("1_12kfy")
 
@@ -69,6 +69,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 cull_mask = 1047553
 environment = ExtResource("2_f477v")
+current = true
 fov = 80.0
 far = 50.0
 script = ExtResource("4_3xgjn")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://bfxng5owl3h4"]
+[gd_scene format=4 uid="uid://bfxng5owl3h4"]
 
-[ext_resource type="Script" uid="uid://bjhl03u1jsimb" path="res://Scripts/Nodes/slider3d.gd" id="1_gwxcs"]
+[ext_resource type="Script" uid="uid://bjhl03u1jsimb" path="res://Scripts/Nodes/slider_3d.gd" id="1_gwxcs"]
 [ext_resource type="Script" uid="uid://dr7y0ld6ui5n1" path="res://Entities/Doors/SlideDoor01/slide_door.gd" id="1_k6qon"]
 [ext_resource type="Script" uid="uid://cov4tr008m287" path="res://Entities/Doors/SlideDoor01/slide_door_interaction.gd" id="3_o8qfa"]
 

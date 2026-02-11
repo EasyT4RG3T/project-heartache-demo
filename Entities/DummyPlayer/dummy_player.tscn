@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d4kvwarvn1dgn"]
+
+[ext_resource type="Script" uid="uid://24800rm1q32c" path="res://Entities/DummyPlayer/dummy_player.gd" id="1_wsrj2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_np8it"]
+radius = 0.25
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsrj2"]
+transparency = 1
+albedo_color = Color(0.9, 0, 0.7500001, 0.09803922)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uh14l"]
+radius = 0.25
+height = 0.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p7p3f"]
+radius = 0.25
+height = 0.5
+
+[node name="DummyPlayer" type="Node3D" unique_id=813126692]
+script = ExtResource("1_wsrj2")
+
+[node name="Camera3DStanding" type="Camera3D" parent="." unique_id=1382769553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+fov = 80.0
+far = 50.0
+
+[node name="Camera3DCrouching" type="Camera3D" parent="." unique_id=727587102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+fov = 80.0
+far = 50.0
+
+[node name="Camera3DCrawling" type="Camera3D" parent="." unique_id=1795194804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+fov = 80.0
+far = 50.0
+
+[node name="MeshStanding" type="MeshInstance3D" parent="." unique_id=1839034033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("CapsuleMesh_np8it")
+surface_material_override/0 = SubResource("StandardMaterial3D_wsrj2")
+
+[node name="MeshCrouching" type="MeshInstance3D" parent="." unique_id=1458375954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("CapsuleMesh_uh14l")
+surface_material_override/0 = SubResource("StandardMaterial3D_wsrj2")
+
+[node name="MeshCrawling" type="MeshInstance3D" parent="." unique_id=948840046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("CapsuleMesh_p7p3f")
+surface_material_override/0 = SubResource("StandardMaterial3D_wsrj2")

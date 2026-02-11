@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://b7h6oeomr51pw"]
+[gd_scene format=4 uid="uid://b7h6oeomr51pw"]
 
-[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge3d.gd" id="1_r3htd"]
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="1_r3htd"]
 [ext_resource type="Script" uid="uid://bttthvudf6cnb" path="res://Entities/Doors/Door01/door.gd" id="2_k6g58"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_k6g58"]

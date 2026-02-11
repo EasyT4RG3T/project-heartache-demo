@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cralm3aptvr1y"]
 
 [ext_resource type="Material" uid="uid://cq7u268rull7y" path="res://Assets/Placeholder/Materials/gray.tres" id="1_gc1gg"]
+[ext_resource type="Script" uid="uid://bupj3m1c7wjcn" path="res://Scenes/Maps/Dev/Gym/gym.gd" id="1_igepr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_igepr"]
 size = Vector2(100, 100)
@@ -8,6 +9,7 @@ size = Vector2(100, 100)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jgxid"]
 
 [node name="Gym" type="Node3D" unique_id=605852668]
+script = ExtResource("1_igepr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1980240037]
 transform = Transform3D(0.84612596, -0.44192117, 0.29795408, -0.3172985, 0.031514455, 0.9478019, -0.4282436, -0.89650005, -0.11355574, 0, 3, 0)

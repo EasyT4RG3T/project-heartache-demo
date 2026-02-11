@@ -80,7 +80,7 @@ var movement_acceleration: float = 20.0
 var movement_vector: Vector2 = Vector2.ZERO
 var movement_vector_fly: float = 0.0
 var wanted_movement_direction: Vector2 = Vector2.ZERO
-enum MovementMode { NONE, FLY, WALKING, SPRINTING, CROUCHING, CRAWL, CARRYING, VAULTING}
+enum MovementMode { NONE, FLY, WALKING, SPRINTING, CROUCHING, CRAWL, CARRYING, VAULTING, CUTSCENE}
 var movement_speeds: Dictionary[MovementMode, float] = {
 	MovementMode.NONE: 0,
 	MovementMode.FLY: 5,
@@ -178,9 +178,11 @@ func _ready() -> void:
 	_update_sub_viewport()
 	interaction_ray_query.collision_mask = 7
 	vault_checks.p = self
+	vault_checks._ready()
 	
 	add_child(crawl_cooldown)
 	crawl_cooldown.one_shot = true
+	player_crawl_query.collision_mask = 131
 	
 	apply_settings()
 

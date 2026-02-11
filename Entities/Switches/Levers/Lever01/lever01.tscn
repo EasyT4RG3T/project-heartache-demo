@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvit1vq3v110v"]
+[gd_scene format=3 uid="uid://dvit1vq3v110v"]
 
 [ext_resource type="Script" uid="uid://b2tukkbnf0206" path="res://Entities/Switches/Levers/Lever01/lever.gd" id="1_4pebu"]
-[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge3d.gd" id="1_lksms"]
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="1_lksms"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lksms"]
 top_radius = 0.02
