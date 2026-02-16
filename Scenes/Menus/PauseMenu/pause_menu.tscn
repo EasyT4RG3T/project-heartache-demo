@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://babc4ssbcm5g7"]
+[gd_scene format=3 uid="uid://babc4ssbcm5g7"]
 
 [ext_resource type="Script" uid="uid://bkie0xk6gol6t" path="res://Scenes/Menus/PauseMenu/pause_menu.gd" id="1_xybiy"]
 
-[node name="PauseMenu" type="Control"]
+[node name="PauseMenu" type="Control" unique_id=1819213750]
 z_index = 2
 layout_mode = 3
 anchors_preset = 15
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xybiy")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1079292935]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.14509805)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=921290260]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,17 +35,17 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1552178793]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Resume"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=259251765]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Settings"
 
-[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1450678308]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Main Menu"

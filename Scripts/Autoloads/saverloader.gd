@@ -24,6 +24,10 @@ var GRAPHICS_SETTINGS_PATH = GAME_PATH + "graphics_settings.json"
 var GAME_DATA_PATH = GAME_PATH + "saves/"
 
 
+var can_save: int = 0
+var current_slot: int = 1
+
+
 func save_settings() -> void:
 	_queue_function(_save_settings_data)
 
@@ -43,18 +47,42 @@ func erase_graphics_settings() -> void:
 	_queue_function(_erase_graphics_settings_data)
 
 func save_game_data(slot: int) -> void:
+	if can_save <= 0:
+		Console.console_print(str("[color=red]can_save == ", can_save, "[/color]"))
+		return
+	if slot <= 0:
+		Console.console_print("[color=red]Invalid Slot[/color]")
 	var save_data: Dictionary = {}
 	GameManager.save(save_data)
 	_queue_function(_save_game_data, [slot, save_data])
 
 func load_game_data(slot: int) -> void:
+	if slot <= 0:
+		Console.console_print("[color=red]Invalid Slot[/color]")
 	_queue_function(_load_game_data, slot)
-
-func load_chunk_data(slot: int, chunk: String) -> void:
-	_queue_function(_load_chunk_data, [slot, chunk])
 
 func erase_game_data(slot: int) -> void:
 	_queue_function(_erase_game_data, slot)
+
+func save_chunk_data(chunk: Node) -> void:
+	var save_data: Dictionary = {}
+	Game.save_chunk(chunk)
+	_queue_function(_save_chunk_data, [ResourceUID.path_to_uid(chunk.scene_file_path), save_data])
+
+func load_chunk_data(chunk_uid: String) -> void:
+	_queue_function(_load_chunk_data, chunk_uid)
+
+func thread_load(path: String) -> Resource:
+	ResourceLoader.load_threaded_request(path)
+	
+	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		await get_tree().physics_frame
+	
+	if ResourceLoader.load_threaded_get_status(path) != ResourceLoader.THREAD_LOAD_LOADED:
+		print("coudlnt load resource")
+		return
+	
+	return ResourceLoader.load_threaded_get(path)
 
 
 func _init() -> void:
@@ -269,10 +297,49 @@ func _save_game_data(data: Array) -> void:
 		game_data = bytes_to_var(read_data_byte)
 		file_read.close()
 	
+	if !game_data.has("game"):
+		game_data["game"] = {}
+	if !game_data["game"].has("current_chunks_uid"):
+		game_data["game"]["current_chunks_uid"] = {}
+	if !game_data["game"].has("chunks"):
+		game_data["game"]["chunks"] = {}
+	
+	var temp_data: Dictionary = {}
+	
+	if FileAccess.file_exists(GAME_DATA_PATH + "0"):
+		var file_read = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.READ)
+		if !file_read:
+			Console.call_deferred("console_print", "game temp data: couldn't open file")
+			return
+		
+		var read_data_byte = file_read.get_buffer(file_read.get_length())
+		temp_data = bytes_to_var(read_data_byte)
+		file_read.close()
+		
+		var error = DirAccess.remove_absolute(GAME_DATA_PATH + "0")
+		if error == OK:
+			Console.call_deferred("console_print", "temp game data deleted")
+		else:
+			Console.call_deferred("console_print", "temp game data: " + error)
+	
+	if !temp_data.has("game"):
+		temp_data["game"] = {}
+	if !temp_data["game"].has("current_chunks_uid"):
+		temp_data["game"]["current_chunks_uid"] = {}
+	if !temp_data["game"].has("chunks"):
+		temp_data["game"]["chunks"] = {}
+	
+	for chunk in temp_data["game"]["chunks"]:
+		game_data["game"]["chunks"][chunk] = temp_data["game"]["chunks"][chunk]
+	
 	var save_data: Dictionary = data[1]
 	
-	for key in save_data:
-		game_data[key] = save_data[key]
+	game_data["player"] = save_data["player"]
+	
+	game_data["game"]["current_chunks_uid"] = save_data["game"]["current_chunks_uid"]
+	
+	for chunk in save_data["game"]["chunks"]:
+		game_data["game"]["chunks"][chunk] = save_data["game"]["chunks"][chunk]
 	
 	var file_write = FileAccess.open(GAME_DATA_PATH + str(slot), FileAccess.WRITE)
 	if !file_write:
@@ -284,10 +351,9 @@ func _save_game_data(data: Array) -> void:
 	file_write.close()
 	
 	Console.call_deferred("console_print", "game data: saved in slot " + str(slot))
-	return
 
 
-func _load_game_data(slot: int) -> void:
+func _load_game_data(slot: int = 0) -> void:
 	if !FileAccess.file_exists(GAME_DATA_PATH + str(slot)):
 		Console.call_deferred("console_print", "game data: file doesn't exist")
 		return
@@ -306,11 +372,10 @@ func _load_game_data(slot: int) -> void:
 	GameManager.call_deferred("load_save", game_data)
 	
 	Console.call_deferred("console_print", "game data: loaded from slot " + str(slot))
-	return
-
-
-func _load_chunk_data(slot: int, chunk: String) -> void:
-	print(slot, chunk)
+	
+	current_slot = slot
+	
+	clear_temp()
 
 
 func _erase_game_data(slot) -> void:
@@ -322,3 +387,97 @@ func _erase_game_data(slot) -> void:
 		Console.call_deferred("console_print", "game data: deleted slot " + str(slot))
 	else:
 		Console.call_deferred("console_print", "game data: slot " + str(slot) + ", " + error)
+
+
+func _save_chunk_data(data: Array) -> void:
+	var uid: String = data[0]
+	if not DirAccess.dir_exists_absolute(GAME_DATA_PATH):
+		DirAccess.make_dir_recursive_absolute(GAME_DATA_PATH)
+	
+	var game_data: Dictionary = {}
+	
+	if FileAccess.file_exists(GAME_DATA_PATH + "0"):
+		var file_read = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.READ)
+		if !file_read:
+			Console.call_deferred("console_print", "chunk game data: couldn't open file")
+			return
+		
+		var read_data_byte = file_read.get_buffer(file_read.get_length())
+		game_data = bytes_to_var(read_data_byte)
+		file_read.close()
+	
+	var save_data: Dictionary = data[1]
+	
+	if !game_data.has("game"):
+		game_data["game"] = {}
+	if !game_data["game"].has("chunks"):
+		game_data["chunks"] = {}
+	game_data["game"]["chunks"][uid] = save_data[uid]
+	
+	var file_write = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.WRITE)
+	if !file_write:
+		Console.call_deferred("console_print", "chunk game data: couldn't create the file")
+		return
+	
+	var write_data_byte = var_to_bytes(game_data)
+	file_write.store_buffer(write_data_byte)
+	file_write.close()
+	
+	Console.call_deferred("console_print", "chunk game data: saved")
+
+
+func _load_chunk_data(chunk_uid: String) -> void:
+	var game_data = {}
+	
+	if FileAccess.file_exists(GAME_DATA_PATH + "0"):
+		var file_read = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.READ)
+		if !file_read:
+			Console.call_deferred("console_print", "chunk game data: couldn't open file")
+			return
+		
+		var read_data_byte = file_read.get_buffer(file_read.get_length())
+		game_data = bytes_to_var(read_data_byte)
+		file_read.close()
+	
+	if game_data.has("game"):
+		if game_data["game"].has("chunks"):
+			if game_data["game"]["chunks"].has(chunk_uid):
+				Game.call_deferred("load_chunk", chunk_uid, game_data["game"]["chunks"][chunk_uid])
+				return
+	
+	if FileAccess.file_exists(GAME_DATA_PATH + str(current_slot)):
+		var file_read = FileAccess.open(GAME_DATA_PATH + str(current_slot), FileAccess.READ)
+		if !file_read:
+			Console.call_deferred("console_print", "game data: couldn't open file")
+			return
+		
+		var read_data_byte = file_read.get_buffer(file_read.get_length())
+		game_data = bytes_to_var(read_data_byte)
+		file_read.close()
+	
+	if game_data.has("game"):
+		if game_data["game"].has("chunks"):
+			if game_data["game"]["chunks"].has(chunk_uid):
+				Game.call_deferred("load_chunk", chunk_uid, game_data["game"]["chunks"][chunk_uid])
+				return
+	
+	Game.call_deferred("load_chunk", chunk_uid)
+
+
+func clear_temp() -> void:
+	if !FileAccess.file_exists(GAME_DATA_PATH + "0"):
+		return
+	var error = DirAccess.remove_absolute(GAME_DATA_PATH + "0")
+	if error == OK:
+		Console.call_deferred("console_print", "temp game data deleted")
+	else:
+		Console.call_deferred("console_print", "temp game data: " + error)
+
+
+func _override_dic_deep(old: Dictionary, new: Dictionary) -> Dictionary:
+	for key in new:
+		if old.has(key) and key is Dictionary:
+			old[key] = _override_dic_deep(old[key], new[key])
+		old[key] = new[key]
+	
+	return old

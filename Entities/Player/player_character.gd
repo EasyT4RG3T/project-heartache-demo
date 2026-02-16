@@ -360,7 +360,8 @@ func _process(delta: float) -> void:
 	
 	interaction_ray_result = direct_space_state.intersect_ray(interaction_ray_query)
 	
-	flashlight.global_position = head.global_position + Vector3(0, -0.2, 0) - head.basis.x * 0.1
+	flashlight.global_position = head.global_position - head.basis.y * 0.2 - head.basis.x * 0.1
+	
 	flashlight.global_rotation.x = lerpf(
 		flashlight.global_rotation.x,
 		head.global_rotation.x,
@@ -622,6 +623,7 @@ func save() -> Dictionary:
 		"rotation": head.global_rotation,
 		"look_vector": look_vector,
 		"movement_mode": current_movement_mode,
+		"fog_density": main_camera.environment.volumetric_fog_density
 	}
 	
 	file["flashlight"] = {
@@ -637,14 +639,25 @@ func load_save(file: Dictionary) -> void:
 	global_position = file["position"]
 	head.global_rotation = file["rotation"]
 	look_vector = file["look_vector"]
-	if file["movement_mode"] == MovementMode.CROUCHING:
-		current_movement_mode = MovementMode.CROUCHING
-		current_movement_speed = movement_speeds[MovementMode.CROUCHING]
-		main_camera.fov = player_fov - 10
-		body_collision.shape.height = player_crouch_collision_height
-		body_collision.position = player_crouch_collision_position
-		vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
-		head.position = player_crouch_head_position
+	match file["movement_mode"]:
+		MovementMode.CROUCHING:
+			current_movement_mode = MovementMode.CROUCHING
+			current_movement_speed = movement_speeds[MovementMode.CROUCHING]
+			main_camera.fov = player_fov - 10
+			body_collision.shape.height = player_crouch_collision_height
+			body_collision.position = player_crouch_collision_position
+			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
+			head.position = player_crouch_head_position
+		MovementMode.CRAWL:
+			current_movement_mode = MovementMode.CRAWL
+			current_movement_speed = movement_speeds[MovementMode.CRAWL]
+			main_camera.fov = player_fov - 20
+			body_collision.shape.height = player_crawl_collision_height
+			body_collision.position = player_crawl_collision_position
+			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
+			head.position = player_crawl_head_position
+	
+	main_camera.environment.volumetric_fog_density = file["fog_density"]
 	
 	flashlight.disabled = file["flashlight"]["disabled"]
 	flashlight.light.visible = file["flashlight"]["visible"]

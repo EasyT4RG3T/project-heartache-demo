@@ -17,7 +17,7 @@ var collider: OnCenterScreenNotifier3D:
 func _ready() -> void:
 	direct_space = get_world_3d().direct_space_state
 	apply_settings()
-	center_ray.collision_mask = 16
+	center_ray.collision_mask = 17
 	center_ray.hit_from_inside = true
 
 
@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 	center_ray.to = global_position + (-global_basis.z * 100)
 	
 	var center_ray_result = direct_space.intersect_ray(center_ray)
-	if center_ray_result:
+	if center_ray_result and center_ray_result["collider"].get_collision_layer_value(5) == true:
 		collider = center_ray_result["collider"]
 	else:
 		collider = null

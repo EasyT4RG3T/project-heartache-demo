@@ -17,11 +17,11 @@ size = Vector3(0.2, 0.18, 0.103)
 [sub_resource type="BoxMesh" id="BoxMesh_kxxqp"]
 size = Vector3(0.2, 0.3, 0.05)
 
-[node name="HoldLever01" type="StaticBody3D"]
+[node name="HoldLever01" type="StaticBody3D" unique_id=1122692912]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_ylfus")
 
-[node name="Hinge3D" type="Node3D" parent="."]
+[node name="Hinge3D" type="Node3D" parent="." unique_id=1608772205]
 script = ExtResource("1_6q1hh")
 open_positive = false
 duration = 0.2
@@ -29,22 +29,22 @@ max_positive = 0.0
 max_negative = 90.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="LeverMesh" type="MeshInstance3D" parent="Hinge3D"]
+[node name="LeverMesh" type="MeshInstance3D" parent="Hinge3D" unique_id=481568819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07203721, 1.3517827e-08, 0.07589761)
 mesh = SubResource("CylinderMesh_6q1hh")
 
-[node name="LeverMesh2" type="MeshInstance3D" parent="Hinge3D"]
+[node name="LeverMesh2" type="MeshInstance3D" parent="Hinge3D" unique_id=891195973]
 transform = Transform3D(0.70710677, 1.2802769e-08, 0.70710677, 1.2802769e-08, 1, -3.090862e-08, -0.70710677, 3.090862e-08, 0.70710677, 0.037, -0.06, 0.04)
 mesh = SubResource("BoxMesh_ylfus")
 
-[node name="LeverMesh3" type="MeshInstance3D" parent="Hinge3D"]
+[node name="LeverMesh3" type="MeshInstance3D" parent="Hinge3D" unique_id=1035833859]
 transform = Transform3D(0.70710677, 1.2802769e-08, 0.70710677, 1.2802769e-08, 1, -3.090862e-08, -0.70710677, 3.090862e-08, 0.70710677, 0.037000008, 0.060072575, 0.04)
 mesh = SubResource("BoxMesh_ylfus")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=105821962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039428715)
 shape = SubResource("BoxShape3D_kxxqp")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="."]
+[node name="BackplateMesh" type="MeshInstance3D" parent="." unique_id=1608615361]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_kxxqp")

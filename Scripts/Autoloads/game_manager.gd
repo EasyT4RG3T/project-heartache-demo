@@ -4,51 +4,55 @@ extends Node
 signal PlayerSetUp
 
 
-const main_menu: String = "res://Scenes/Menus/MainMenu/main_menu.tscn"
+const main_menu_uid: String = "uid://evmnqmy0k477"
 
 var debug_overlay: DebugOverlay
 
+var player_character_uid: String = "uid://c28pkwyvm76o1"
 var player_character: PlayerCharacter
-
-var can_save: bool = false
 
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
-func load_chunk(dir: String) -> void:
-	var chunk = load(dir)
-	chunk = chunk.instantiate()
-	Game.add_child(chunk)
-	load_player()
-
-
 func load_player() -> void:
-	var player = load("res://Entities/Player/player_character.tscn")
+	var player = load(ResourceUID.uid_to_path(player_character_uid))
 	player = player.instantiate()
 	Game.add_child(player)
 	player_character = player
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 	InputManager.player_character = player
 	InputManager.player_character_input = true
+	player_character.main_camera.make_current()
 	PlayerSetUp.emit()
+	
+	
+	
+	SaverLoader.can_save += 1
 
 
 func load_main_menu() -> void:
-	if can_save:
-		SaverLoader.save_game_data(0)
-	
 	player_character = null
 	InputManager.player_character = null
-	InputManager.player_character_input = false
 	
-	for child in Game.get_children():
-		child.queue_free()
+	Game.clear()
 	
-	var menu = load(main_menu)
+	var menu = load(ResourceUID.uid_to_path(main_menu_uid))
 	menu = menu.instantiate()
 	get_tree().root.add_child(menu)
+
+
+func set_debug_overlay(value: int) -> void:
+	if value >= 1:
+		if !debug_overlay:
+			debug_overlay = load("uid://be8nto6fraipm").instantiate()
+			add_child(debug_overlay)
+		debug_overlay.overlay_layer = value
+	else:
+		debug_overlay.queue_free()
+		await get_tree().process_frame
+		debug_overlay = null
 
 
 func apply_settings_data() -> void:
@@ -110,25 +114,29 @@ func apply_graphics_settings_data() -> void:
 		player_character.main_camera.apply_settings()
 
 
-func set_debug_overlay(value: int) -> void:
-	if value >= 1:
-		if !debug_overlay:
-			debug_overlay = load("uid://be8nto6fraipm").instantiate()
-			add_child(debug_overlay)
-		debug_overlay.overlay_layer = value
-	else:
-		debug_overlay.queue_free()
-		await get_tree().process_frame
-		debug_overlay = null
+func new_game() -> void:
+	SaverLoader.clear_temp()
+	var pscene: PackedScene = load("res://Scenes/Maps/Chunks/PrisonBlockLowSec/prison_block_low_sec.tscn")
+	var map: Node = pscene.instantiate()
+	Game.add_child(map)
+	load_player()
 
 
 func save(file: Dictionary) -> void:
-	# save some game stats
-	
 	file["player"] = player_character.save()
+	file["game"] = Game.save()
 
 
 func load_save(file: Dictionary) -> void:
-	# load some game stats
+	player_character = null
+	InputManager.player_character = null
+	InputManager.player_character_input = false
 	
+	Game.clear()
+	
+	await get_tree().process_frame
+	
+	Game.load_save(file["game"])
+	
+	load_player()
 	player_character.load_save(file["player"])

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2jnuqrfca4a8"]
 
-[ext_resource type="ArrayMesh" uid="uid://bheavnu54aeu5" path="res://Assets/Maps/PrisonBlockLowSec/Cell01.obj" id="1_p2md8"]
+[ext_resource type="ArrayMesh" uid="uid://bm06w7gxbdgkl" path="res://Assets/Maps/PrisonBlockLowSec/Cell01.obj" id="1_p2md8"]
 
 [node name="Cell01" type="MeshInstance3D" unique_id=1060297870]
 mesh = ExtResource("1_p2md8")

@@ -2,6 +2,7 @@ extends Control
 
 
 @onready var demo_button: Button = %DemoButton
+@onready var continue_button: Button = %ContinueButton
 @onready var settings_button: Button = %SettingsButton
 @onready var quit_button: Button = %QuitButton
 @onready var chunk_button: Button = %ChunkButton
@@ -13,8 +14,16 @@ var maps: Dictionary = {}
 
 func _ready() -> void:
 	_setup_map_select("res://Scenes/Maps/")
+	demo_button.pressed.connect(func():
+		GameManager.new_game()
+		self.queue_free())
+	continue_button.pressed.connect(func():
+		SaverLoader.load_game_data(1)
+		self.queue_free())
 	chunk_button.pressed.connect(func():
-		GameManager.load_chunk(maps[str(map_select.get_selected_id())])
+		var map = ResourceUID.path_to_uid(maps[str(map_select.get_selected_id())])
+		GameManager.load_chunk(map)
+		GameManager.load_player()
 		self.queue_free())
 	quit_button.pressed.connect(func(): get_tree().quit.call_deferred())
 

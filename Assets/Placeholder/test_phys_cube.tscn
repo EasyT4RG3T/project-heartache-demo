@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cylqjhsw0iwbo"]
+[gd_scene format=3 uid="uid://cylqjhsw0iwbo"]
 
 [ext_resource type="Script" uid="uid://balow1d56ym5d" path="res://Assets/Placeholder/test_phys_cube.gd" id="1_v50fy"]
 
@@ -8,14 +8,14 @@ size = Vector3(0.8, 0.8, 0.8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cimlw"]
 size = Vector3(0.8, 0.8, 0.8)
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1635720156]
 input_ray_pickable = false
 script = ExtResource("1_v50fy")
 metadata/_custom_type_script = "uid://07xri3gdevdi"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=41715729]
 gi_mode = 2
 mesh = SubResource("BoxMesh_wx53c")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=985053488]
 shape = SubResource("BoxShape3D_cimlw")

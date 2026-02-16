@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8tkwovpcmrta"]
+[gd_scene format=3 uid="uid://b8tkwovpcmrta"]
 
 [ext_resource type="Script" uid="uid://wcbk1gsr8ak7" path="res://Entities/Player/flashlight.gd" id="1_j7gns"]
 
-[node name="Flashlight" type="Node3D"]
+[node name="Flashlight" type="Node3D" unique_id=1417213788]
 script = ExtResource("1_j7gns")
 
-[node name="Light" type="SpotLight3D" parent="."]
+[node name="Light" type="SpotLight3D" parent="." unique_id=988323481]
 unique_name_in_owner = true
 visible = false
 light_size = 0.2

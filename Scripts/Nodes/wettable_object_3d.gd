@@ -26,3 +26,17 @@ func wet() -> void:
 		current_player.interactable = scene.interactable
 	
 	queue_free()
+
+
+func save() -> Dictionary:
+	var data = super()
+	
+	data["swap"] = swap
+	
+	return data
+
+
+func load_save(data: Dictionary) -> void:
+	super(data)
+	
+	swap = data["swap"]

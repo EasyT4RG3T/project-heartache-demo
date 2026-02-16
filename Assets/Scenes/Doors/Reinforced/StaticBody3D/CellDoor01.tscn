@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bqd826p1gj86c"]
+
+[ext_resource type="PackedScene" uid="uid://dyoboyjrln1sc" path="res://Assets/Scenes/Doors/Reinforced/MeshInstance3D/CellDoor01.tscn" id="1_gyq8b"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5pwet"]
+points = PackedVector3Array(-0.5, 0, -0.06, 0.5, 0, -0.06, -0.5, 0, 0.060000006, -0.5, 2, -0.06, 0.5, 0, 0.060000006, 0.5, 2, -0.06, -0.5, 2, 0.060000006, 0.5, 2, 0.060000006)
+
+[node name="CellDoor01" type="StaticBody3D" unique_id=103864254]
+
+[node name="CellDoor01" parent="." unique_id=81080853 instance=ExtResource("1_gyq8b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1606668415]
+shape = SubResource("ConvexPolygonShape3D_5pwet")

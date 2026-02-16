@@ -68,9 +68,9 @@ extends Resource
 @export var fog_depth_begin: float = 10.0
 @export var fog_depth_end: float = 50.0
 
-@export var volumetric_fog_enabled: bool = false
-@export var volumetric_fog_volume_size: int = 64
-@export var volumetric_fog_volume_depth: int = 64
+@export var volumetric_fog_enabled: bool = true
+@export var volumetric_fog_volume_size: int = 128
+@export var volumetric_fog_volume_depth: int = 128
 @export var volumetric_fog_volume_use_filter: bool = false
 
 @export var brightness: float = 1.0

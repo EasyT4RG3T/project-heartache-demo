@@ -1,0 +1,8 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://dteq7fwhj85ju"]
+
+[ext_resource type="Texture2D" uid="uid://dhousu0n202xp" path="res://Assets/Materials/Metal/WhiteMetal/WhiteMetal_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://da0ahcbaof65y" path="res://Assets/Materials/Metal/WhiteMetal/WhiteMetal_orm.png" id="2"]
+
+[resource]
+albedo_texture = ExtResource("1")
+orm_texture = ExtResource("2")

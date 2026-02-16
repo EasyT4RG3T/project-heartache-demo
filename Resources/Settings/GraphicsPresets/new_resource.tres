@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GraphicsSettingsResource" load_steps=2 format=3 uid="uid://b1jvwhit3o0bc"]
+[gd_resource type="Resource" script_class="GraphicsSettingsResource" format=3 uid="uid://b1jvwhit3o0bc"]
 
 [ext_resource type="Script" uid="uid://b8mxsgo0ylr5i" path="res://Resources/Settings/graphics_settings_resource.gd" id="1_nf3fo"]
 
@@ -6,7 +6,6 @@
 script = ExtResource("1_nf3fo")
 scaling_3d_scale = 0.8
 msaa_2d = 0
-taa = false
 ssao_quality = 0
 directional_shadow_size = 1024
 positional_shadow_size = 1024

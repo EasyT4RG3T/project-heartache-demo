@@ -17,11 +17,11 @@ size = Vector3(0.2, 0.18, 0.103)
 [sub_resource type="BoxMesh" id="BoxMesh_ol0bu"]
 size = Vector3(0.2, 0.3, 0.05)
 
-[node name="Lever01" type="StaticBody3D"]
+[node name="Lever01" type="StaticBody3D" unique_id=394596397]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_4pebu")
 
-[node name="Hinge3D" type="Node3D" parent="."]
+[node name="Hinge3D" type="Node3D" parent="." unique_id=248631439]
 script = ExtResource("1_lksms")
 open_positive = false
 duration = 0.2
@@ -29,22 +29,22 @@ max_positive = 0.0
 max_negative = 90.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
-[node name="LeverMesh" type="MeshInstance3D" parent="Hinge3D"]
+[node name="LeverMesh" type="MeshInstance3D" parent="Hinge3D" unique_id=1005199723]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 2.6865725e-16, 1, 0.07203721, 1.3517827e-08, 0.07589761)
 mesh = SubResource("CylinderMesh_lksms")
 
-[node name="LeverMesh2" type="MeshInstance3D" parent="Hinge3D"]
+[node name="LeverMesh2" type="MeshInstance3D" parent="Hinge3D" unique_id=843065074]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, -0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="LeverMesh3" type="MeshInstance3D" parent="Hinge3D"]
+[node name="LeverMesh3" type="MeshInstance3D" parent="Hinge3D" unique_id=611829946]
 transform = Transform3D(-4.3711385e-08, 0.70710677, 0.70710677, -1, -3.0908616e-08, -3.090862e-08, -1.6420284e-15, -0.70710677, 0.70710677, 0.037, 0.06, 0.04)
 mesh = SubResource("BoxMesh_4pebu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=918542952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039428715)
 shape = SubResource("BoxShape3D_6gf4t")
 
-[node name="BackplateMesh" type="MeshInstance3D" parent="."]
+[node name="BackplateMesh" type="MeshInstance3D" parent="." unique_id=1635721444]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_ol0bu")

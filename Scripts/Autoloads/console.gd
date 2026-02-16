@@ -522,6 +522,11 @@ var command_tree: Dictionary = {
 				"off": [_command_graphics_volumetric_fog_use_filter, false],
 				"get": [func(): return str(SaverLoader.graphics_settings.volumetric_fog_volume_use_filter)],
 			},
+			"density": [_command_graphics_volumetric_fog_density, _need_float, func():
+				if GameManager.player_character:
+					return GameManager.player_character.main_camera.environment.volumetric_fog_density
+				else:
+					return "no player"],
 		},
 		"brightness": [_command_graphics_brightness, _need_float, func():
 			return str(SaverLoader.graphics_settings.brightness)],
@@ -1153,6 +1158,11 @@ func _command_graphics_volumetric_fog_use_filter(value: bool) -> String:
 	RenderingServer.environment_set_volumetric_fog_filter_active(value)
 	return "set volumetric fog use filter to " + str(value)
 
+func _command_graphics_volumetric_fog_density(value: float) -> String:
+	if GameManager.player_character:
+		GameManager.player_character.main_camera.environment.volumetric_fog_density = value
+	return "set fog density to " + str(value)
+
 func _command_graphics_brightness(value: float) -> String:
 	SaverLoader.graphics_settings.brightness = value
 	if GameManager.player_character:
@@ -1287,12 +1297,14 @@ func _command_system_debug_overlay(value: int) -> String:
 	GameManager.set_debug_overlay(value)
 	return "set debug overlay to " + str(value)
 
+var full_bright: bool = false
 var previous_env: Environment
 var gis: Array = []
 func _command_debug_full_bright() -> String:
 	if !GameManager.player_character:
 		return "can't find player"
-	if !previous_env:
+	if !full_bright:
+		full_bright = true
 		previous_env = GameManager.player_character.main_camera.environment
 		var env = load("res://Assets/Environments/bright_environment.tres")
 		GameManager.player_character.main_camera.environment = env
@@ -1301,6 +1313,7 @@ func _command_debug_full_bright() -> String:
 			gi.visible = false
 		return "full_bright on"
 	else:
+		full_bright = false
 		GameManager.player_character.main_camera.environment = previous_env
 		previous_env = null
 		for gi in gis:

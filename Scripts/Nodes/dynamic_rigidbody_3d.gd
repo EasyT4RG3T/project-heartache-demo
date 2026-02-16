@@ -2,9 +2,6 @@ class_name DynamicRigidBody3D
 extends RigidBody3D
 
 
-const THUMP = preload("uid://tbgl4aqox0xy")
-
-
 @export var ignore_player: bool = false
 @export var max_distance: float = 1.6
 @export var min_distance: float = 1.0
@@ -95,3 +92,26 @@ func put_down(player: PlayerCharacter) -> void:
 	if !ignore_player:
 		collision_layer = 2
 		set_collision_mask_value(4, false)
+
+
+func save() -> Dictionary:
+	var data: Dictionary = {
+		"pos": global_position,
+		"rot": global_rotation,
+		"mass": mass,
+		"ignore_player": ignore_player,
+		"max_distance": max_distance,
+		"min_distance": min_distance,
+		"collision_sound": collision_sound,
+	}
+	return data
+
+
+func load_save(data: Dictionary) -> void:
+	global_position = data["pos"]
+	global_rotation = data["rot"]
+	mass = data["mass"]
+	ignore_player = data["ignore_player"]
+	max_distance = data["max_distance"]
+	min_distance = data["min_distance"]
+	collision_sound = data["collision_sound"]

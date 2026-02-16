@@ -10,6 +10,8 @@ signal center_exited
 @export var distance: float = 0.0
 
 
+var disabled: bool = false
+
 var is_on_center: bool = false
 var is_on_center_plus: bool = false
 
@@ -20,6 +22,9 @@ func _ready() -> void:
 
 
 func enter_center() -> void:
+	if disabled:
+		return
+	
 	is_on_center = true
 	center_entered.emit()
 	if distance <= 0.0:
@@ -35,6 +40,9 @@ func enter_center() -> void:
 
 
 func exit_center() -> void:
+	if disabled:
+		return
+	
 	center_exited.emit()
 	is_on_center = false
 	is_on_center_plus = false

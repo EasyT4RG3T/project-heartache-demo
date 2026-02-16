@@ -24,74 +24,72 @@ _surfaces = [{
 "vertex_data": PackedByteArray("mpkZvwAAAADNzMy9mpkZvwAAAADNzEy9AAAAvwAAAADNzMy9mpkZvwAAAADNzEy9AAAAvwAAAADNzEy9AAAAvwAAAADNzMy9mpkZvwAAAADNzMy9AAAAvwAAAADNzMy9mpkZv2ZmBkDNzMy9mpkZvwAAAADNzMy9mpkZvwAAAEDNzEy9mpkZvwAAAADNzEy9mpkZvwAAAADNzEw9AAAAvwAAAADNzMw9AAAAvwAAAADNzEw9mpkZvwAAAADNzMw9AAAAvwAAAADNzMw9mpkZvwAAAADNzEw9mpkZvwAAAADNzMw9mpkZvwAAAADNzEw9mpkZv2ZmBkDNzMw9mpkZvwAAAADNzMw9AAAAvwAAAEDNzMw9AAAAvwAAAADNzMw9mpkZv2ZmBkDNzMy9AAAAvwAAAADNzMy9AAAAvwAAAEDNzMy9mpkZvwAAAADNzMy9mpkZv2ZmBkDNzMy9mpkZvwAAAEDNzEy9mpkZv2ZmBkDNzMy9mpkZvwAAAEDNzEw9mpkZvwAAAEDNzEy9mpkZv2ZmBkDNzMy9AAAAvwAAAEDNzMy9mpkZP2ZmBkDNzMy9mpkZv2ZmBkDNzMw9mpkZvwAAAADNzEw9mpkZvwAAAEDNzEw9mpkZvwAAAADNzMw9mpkZv2ZmBkDNzMw9AAAAvwAAAEDNzMw9mpkZv2ZmBkDNzMy9mpkZv2ZmBkDNzMw9mpkZvwAAAEDNzEw9mpkZv2ZmBkDNzMy9mpkZP2ZmBkDNzMw9mpkZv2ZmBkDNzMw9mpkZv2ZmBkDNzMw9AAAAPwAAAEDNzMw9AAAAvwAAAEDNzMw9mpkZPwAAAADNzMy9AAAAPwAAAADNzMy9mpkZPwAAAADNzEy9AAAAPwAAAADNzMy9AAAAPwAAAADNzEy9mpkZPwAAAADNzEy9mpkZPwAAAADNzMy9AAAAPwAAAEDNzMy9AAAAPwAAAADNzMy9mpkZPwAAAADNzMy9mpkZPwAAAADNzEy9mpkZP2ZmBkDNzMy9mpkZPwAAAADNzEw9AAAAPwAAAADNzEw9AAAAPwAAAADNzMw9mpkZPwAAAADNzMw9mpkZPwAAAADNzEw9AAAAPwAAAADNzMw9mpkZPwAAAADNzMw9mpkZPwAAAEDNzEw9mpkZPwAAAADNzEw9mpkZPwAAAADNzMw9AAAAPwAAAADNzMw9mpkZP2ZmBkDNzMw9mpkZP2ZmBkDNzMy9AAAAvwAAAEDNzMy9AAAAPwAAAEDNzMy9mpkZv2ZmBkDNzMy9mpkZP2ZmBkDNzMy9mpkZP2ZmBkDNzMw9mpkZPwAAAADNzMy9mpkZP2ZmBkDNzMy9AAAAPwAAAEDNzMy9mpkZP2ZmBkDNzMy9mpkZPwAAAADNzEy9mpkZPwAAAEDNzEy9mpkZP2ZmBkDNzMy9mpkZPwAAAEDNzEy9mpkZP2ZmBkDNzMw9mpkZv2ZmBkDNzMw9mpkZP2ZmBkDNzMw9AAAAPwAAAEDNzMw9mpkZPwAAAADNzMw9mpkZP2ZmBkDNzMw9mpkZPwAAAEDNzEw9mpkZP2ZmBkDNzMw9AAAAPwAAAADNzMw9AAAAPwAAAEDNzMw9mpkZP2ZmBkDNzMw9mpkZPwAAAEDNzEy9mpkZPwAAAEDNzEw9AAAAvwAAAEDNzEy9AAAAvwAAAADNzMy9AAAAvwAAAADNzEy9AAAAvwAAAEDNzMw9AAAAvwAAAADNzEw9AAAAvwAAAADNzMw9AAAAvwAAAEDNzEy9AAAAvwAAAEDNzMy9AAAAvwAAAADNzMy9AAAAvwAAAEDNzEy9AAAAPwAAAEDNzMw9AAAAvwAAAEDNzMy9AAAAvwAAAEDNzEw9AAAAvwAAAADNzEw9AAAAvwAAAEDNzMw9AAAAvwAAAEDNzEy9AAAAvwAAAEDNzEw9AAAAPwAAAEDNzMw9AAAAvwAAAEDNzEw9AAAAvwAAAEDNzMw9AAAAPwAAAEDNzMw9AAAAPwAAAEDNzMy9AAAAPwAAAADNzEy9AAAAPwAAAADNzMy9AAAAPwAAAEDNzEw9AAAAPwAAAADNzMw9AAAAPwAAAADNzEw9AAAAPwAAAEDNzEy9AAAAPwAAAEDNzMy9AAAAvwAAAEDNzMy9AAAAPwAAAEDNzEy9AAAAvwAAAEDNzMy9AAAAPwAAAEDNzEw9AAAAPwAAAEDNzEy9AAAAPwAAAADNzEy9AAAAPwAAAEDNzMy9AAAAPwAAAEDNzEw9AAAAvwAAAEDNzMy9AAAAPwAAAEDNzMw9AAAAPwAAAEDNzEw9AAAAPwAAAEDNzMw9AAAAPwAAAADNzMw9mpkZvwAAAADNzEy9mpkZvwAAAEDNzEy9AAAAvwAAAADNzEy9AAAAvwAAAEDNzEw9mpkZvwAAAADNzEw9AAAAvwAAAADNzEw9AAAAvwAAAEDNzEy9AAAAvwAAAADNzEy9mpkZvwAAAEDNzEy9AAAAvwAAAEDNzEy9mpkZvwAAAEDNzEy9mpkZvwAAAEDNzEw9AAAAvwAAAEDNzEw9mpkZvwAAAEDNzEw9mpkZvwAAAADNzEw9AAAAvwAAAEDNzEy9mpkZvwAAAEDNzEw9AAAAvwAAAEDNzEw9AAAAPwAAAEDNzEy9mpkZPwAAAADNzEy9AAAAPwAAAADNzEy9mpkZPwAAAADNzEw9mpkZPwAAAEDNzEw9AAAAPwAAAADNzEw9AAAAPwAAAEDNzEy9mpkZPwAAAEDNzEy9mpkZPwAAAADNzEy9AAAAPwAAAEDNzEy9AAAAPwAAAEDNzEw9mpkZPwAAAEDNzEy9AAAAPwAAAEDNzEw9AAAAPwAAAADNzEw9mpkZPwAAAEDNzEw9AAAAPwAAAEDNzEw9mpkZPwAAAEDNzEw9mpkZPwAAAEDNzEy9/38AAP//AAD/fwAA//8AAP9/AAD//wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAAAAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//////AAD/f/////8AAP9//////wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8//38AAP//AAD/fwAA//8AAP9/AAD//wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/////f/9//n////9//3/+f////3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA////f/9//n////9//3/+f////3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA/////wAA/z//////AAD/P/////8AAP8/////f/9//n////9//3/+f////3//f/5/////f/9//n////9//3/+f////3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5/////f/9/AID///9//38AgP///3//fwCA////f/9/AID///9//38AgP///3//fwCA////f/9/AID///9//38AgP///3//fwCA/38AAP//////fwAA//////9/AAD/////////f/9/AID///9//38AgP///3//fwCA/38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD/////AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD/////AAD/f/9/AIAAAP9//38AgAAA/3//fwCA/38AAP//////fwAA//////9/AAD/////AAD/f/9/AIAAAP9//38AgAAA/3//fwCA/3//fwAA/7//f/9/AAD/v/9//38AAP+//////wAA/7//////AAD/v/////8AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+//38AAP//////fwAA//////9/AAD//////////wAA/7//////AAD/v/////8AAP+//38AAP//////fwAA//////9/AAD//////3//fwAA/7//f/9/AAD/v/9//38AAP+//////wAA/7//////AAD/v/////8AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+//38AAP//////fwAA//////9/AAD//////////wAA/7//////AAD/v/////8AAP+//38AAP//////fwAA//////9/AAD/////")
 }]
 
-[node name="SlideDoor01" type="StaticBody3D"]
+[node name="SlideDoor01" type="StaticBody3D" unique_id=1887068473]
 script = ExtResource("1_k6qon")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=1146357402]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Slider3D" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.45)
+[node name="Slider3D" type="Node3D" parent="Node3D" unique_id=1464688324]
 script = ExtResource("1_gwxcs")
 duration = 0.4
 slide_distance = 0.45
 metadata/_custom_type_script = "uid://bjhl03u1jsimb"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Slider3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Slider3D" unique_id=874479401]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("3_o8qfa")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Slider3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Slider3D/StaticBody3D" unique_id=1075528674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1, 0)
 mesh = SubResource("BoxMesh_lv3cb")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Slider3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Slider3D/StaticBody3D" unique_id=964860609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1, 0)
 shape = SubResource("BoxShape3D_k6qon")
 
-[node name="Node3D2" type="Node3D" parent="."]
+[node name="Node3D2" type="Node3D" parent="." unique_id=185169239]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Slider3D2" type="Node3D" parent="Node3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.45)
+[node name="Slider3D2" type="Node3D" parent="Node3D2" unique_id=215207636]
 script = ExtResource("1_gwxcs")
 duration = 0.4
 slide_distance = 0.45
 metadata/_custom_type_script = "uid://bjhl03u1jsimb"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D2/Slider3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D2/Slider3D2" unique_id=370935459]
 transform = Transform3D(-2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, -2.9802322e-08, 0, 0, 0)
 script = ExtResource("3_o8qfa")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/Slider3D2/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2/Slider3D2/StaticBody3D" unique_id=1007004051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
 mesh = SubResource("BoxMesh_lv3cb")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/Slider3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/Slider3D2/StaticBody3D" unique_id=731357110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
 shape = SubResource("BoxShape3D_k6qon")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=481146610]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=956215153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 size = Vector3(1.2, 2.1, 0.2)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=410009811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 operation = 2
 size = Vector3(1, 2, 0.3)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1579598667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 operation = 2
 size = Vector3(1.4, 2, 0.1)
 
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="." unique_id=1333172707]
 shape = SubResource("ConcavePolygonShape3D_o8qfa")
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=1383629919]
 mesh = SubResource("ArrayMesh_6n377")

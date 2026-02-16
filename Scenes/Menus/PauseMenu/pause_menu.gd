@@ -22,6 +22,7 @@ func _ready() -> void:
 	hide()
 	resume_button.pressed.connect(func(): close())
 	main_menu_button.pressed.connect(func():
+		SaverLoader.save_game_data(1)
 		get_tree().paused = false
 		GameManager.load_main_menu())
 
