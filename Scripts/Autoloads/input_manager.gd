@@ -6,7 +6,6 @@ var menu: Node
 var inventory: Node
 
 var console_input: bool = false
-var menu_input: bool = false
 var inventory_input: bool = false
 var player_character_input: bool = false:
 	set(value):
@@ -31,7 +30,7 @@ func _input(event: InputEvent) -> void:
 		Console.take_input(event)
 		return
 	
-	if menu_input and menu:
+	if menu:
 		menu.take_input(event)
 		return
 	

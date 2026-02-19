@@ -6,6 +6,7 @@ extends Control
 @onready var position_label: Label = %PositionLabel
 @onready var rotation_label: Label = %RotationLabel
 @onready var vaults_label: Label = %VaultsLabel
+@onready var save_label: Label = $VBoxContainer/SaveLabel
 
 
 var overlay_layer: int = 0:
@@ -21,15 +22,16 @@ var overlay_layer: int = 0:
 			rotation_label.show()
 			vaults_label.show()
 		if value < 3:
-			pass
+			save_label.hide()
 		if value >= 3:
-			pass
+			save_label.show()
 
 
 func _ready() -> void:
 	position_label.hide()
 	rotation_label.hide()
 	vaults_label.hide()
+	save_label.hide()
 
 
 func _process(_delta: float) -> void:
@@ -42,4 +44,4 @@ func _process(_delta: float) -> void:
 			rotation_label.text = "Rot: " + str(GameManager.player_character.head.global_rotation)
 	
 	if overlay_layer >= 3:
-		pass
+		save_label.text = "SaveBlockers: " + str(SaverLoader.can_save)

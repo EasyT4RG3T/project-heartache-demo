@@ -21,7 +21,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.14509805)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=921290260]
+[node name="Menu" type="VBoxContainer" parent="." unique_id=921290260]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,17 +36,27 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1552178793]
+[node name="ResumeButton" type="Button" parent="Menu" unique_id=1552178793]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Resume"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=259251765]
+[node name="SettingsButton" type="Button" parent="Menu" unique_id=259251765]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Settings"
 
-[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1450678308]
+[node name="SaveButton" type="Button" parent="Menu" unique_id=1231604014]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save Game"
+
+[node name="LoadButton" type="Button" parent="Menu" unique_id=140991975]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Load Game"
+
+[node name="MainMenuButton" type="Button" parent="Menu" unique_id=1450678308]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Main Menu"

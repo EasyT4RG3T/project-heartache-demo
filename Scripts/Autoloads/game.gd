@@ -39,7 +39,7 @@ func save() -> Dictionary:
 
 func load_save(data: Dictionary) -> void:
 	for current_chunk_uid in data["current_chunks_uid"]:
-		load_chunk(current_chunk_uid, data["chunks"][current_chunk_uid])
+		await load_chunk(current_chunk_uid, data["chunks"][current_chunk_uid])
 
 
 func save_chunk(chunk: Node) -> Dictionary:
@@ -51,9 +51,7 @@ func save_chunk(chunk: Node) -> Dictionary:
 
 
 func load_chunk(chunk_uid: String, data: Dictionary = {}) -> void:
-	var full_path = ResourceUID.uid_to_path(chunk_uid)
-	
-	var chunk_pscene: PackedScene = await SaverLoader.thread_load(full_path)
+	var chunk_pscene: PackedScene = await SaverLoader.thread_load(chunk_uid)
 	assert(chunk_pscene != null, "Couldn't load chunk")
 	
 	var chunk = chunk_pscene.instantiate()

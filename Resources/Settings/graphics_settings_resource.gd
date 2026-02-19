@@ -89,3 +89,5 @@ extends Resource
 @export var positional_shadow_atlas1: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4
 @export var positional_shadow_atlas2: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4
 @export var positional_shadow_atlas3: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4
+
+@export var reduce_particles: bool = false

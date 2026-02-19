@@ -18,6 +18,25 @@ const player_crawl_collision_height: float = 0.48
 const player_crawl_collision_position: Vector3 = Vector3(0, 0.25, 0)
 var crawl_cooldown: Timer = Timer.new()
 var crawl_cooldown_time: float = 0.4
+var crawl_debug: bool = false:
+	set(value):
+		crawl_debug = value
+		match value:
+			true:
+				d_crouch_query = ShapeHelper.create_capsule_mesh(0.25, 0.8, Color.DARK_RED, 0.5)
+				add_child(d_crouch_query)
+				d_crouch_query.top_level = true
+				d_crawl_query = ShapeHelper.create_capsule_mesh(0.25, 0.498, Color.DEEP_PINK, 0.5)
+				add_child(d_crawl_query)
+				d_crawl_query.top_level = true
+			false:
+				d_crouch_query.queue_free()
+				d_crawl_query.queue_free()
+				d_crouch_query = null
+				d_crawl_query = null
+
+var d_crouch_query = MeshInstance3D
+var d_crawl_query = MeshInstance3D
 
 const player_head_position: Vector3 = Vector3(0, 1.7, 0)
 const player_crouch_head_position: Vector3 = Vector3(0, 0.7, 0)
@@ -26,7 +45,8 @@ const player_crawl_head_position: Vector3 = Vector3(0, 0.4, 0)
 var direct_space_state: PhysicsDirectSpaceState3D
 var player_shape_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 1.8)
 var player_crouch_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 0.8)
-var player_crawl_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 0.5)
+var player_crawl_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 0.498)
+var player_crawl_ceiling_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 
 
 @onready var body_collision: CollisionShape3D = %BodyCollision
@@ -68,6 +88,7 @@ func _change_fov_smooth(fov: float, duration: float = 0.3) -> void:
 		fov_tween.kill()
 	fov_tween = create_tween().set_ease(Tween.EASE_IN).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	fov_tween.tween_property(main_camera, "fov", fov, duration)
+@onready var shader: ColorRect = %Shader
 
 @onready var dust_particles: GPUParticles3D = %DustParticles
 
@@ -185,6 +206,7 @@ func _ready() -> void:
 	player_crawl_query.collision_mask = 131
 	
 	apply_settings()
+	apply_graphics_settings()
 
 
 func take_input(event: InputEvent) -> void:
@@ -524,6 +546,10 @@ func _crawl_check() -> void:
 		wanted_movement_direction.y * 0.07)
 	var crawl_check_result = direct_space_state.cast_motion(player_crouch_query)
 	
+	if crawl_debug:
+		d_crouch_query.global_position = player_crouch_query.transform.origin\
+		+ (player_crouch_query.motion * crawl_check_result[0])
+	
 	if crawl_check_result[0] == 1.0:
 		return
 	
@@ -532,12 +558,23 @@ func _crawl_check() -> void:
 		0,
 		-wanted_movement_direction.y * 0.02)
 	player_crawl_query.motion = Vector3(
-		wanted_movement_direction.x * 0.22,
+		wanted_movement_direction.x * 0.52,
 		0,
-		wanted_movement_direction.y * 0.22)
+		wanted_movement_direction.y * 0.52)
 	var crawl_confirm_result = direct_space_state.cast_motion(player_crawl_query)
 	
+	if crawl_debug:
+		d_crawl_query.global_position = player_crawl_query.transform.origin\
+		+ (player_crawl_query.motion * crawl_confirm_result[0])
+	
 	if crawl_confirm_result[0] != 1.0:
+		return
+	
+	player_crawl_ceiling_query.from = player_crawl_query.transform.origin + player_crawl_query.motion
+	player_crawl_ceiling_query.to = player_crawl_ceiling_query.from + Vector3(0, 0.5, 0)
+	var crawl_ceiling_result = direct_space_state.intersect_ray(player_crawl_ceiling_query)
+	
+	if !crawl_ceiling_result.has("collider"):
 		return
 	
 	crawl_cooldown.start(crawl_cooldown_time)
@@ -613,8 +650,24 @@ func add_thought(thought: String, story: bool = false, time: float = 2.0) -> voi
 
 func apply_settings() -> void:
 	player_fov = SaverLoader.settings.fov
+	match current_movement_mode:
+		MovementMode.SPRINTING:
+			player_fov += 10
+		MovementMode.CROUCHING:
+			player_fov -= 10
+		MovementMode.CRAWL:
+			player_fov -= 20
 	main_camera.fov = clamp(player_fov, 50, 120)
 	mouse_sensitivity = SaverLoader.settings.sensitivity
+	shader.material.set_shader_parameter("static_enabled", SaverLoader.settings.static_shader)
+	
+	player_hud.apply_settings()
+	main_camera.apply_settings()
+
+
+func apply_graphics_settings() -> void:
+	dust_particles.emitting = false if SaverLoader.graphics_settings.reduce_particles else true
+	main_camera.apply_graphics_settings()
 
 
 func save() -> Dictionary:

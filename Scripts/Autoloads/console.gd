@@ -254,7 +254,7 @@ var command_tree: Dictionary = {
 			"mailbox": [_command_settings_vsync, DisplayServer.VSYNC_MAILBOX],
 			"get": [func(): return str(DisplayServer.window_get_vsync_mode())],
 		},
-		"fov": [_command_settings_fov, _need_float, func(): return SaverLoader.settings.fov],
+		"fov": [_command_settings_fov, _need_int, func(): return SaverLoader.settings.fov],
 		"window_mode": {
 			"ex_fullscreen": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN],
 			"fullscreen": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_FULLSCREEN],
@@ -577,11 +577,15 @@ var command_tree: Dictionary = {
 				"32": [_command_graphics_positional_shadow_16_bit, false],
 			},
 		},
+		"reduce_particles": {
+			"true": [_command_graphics_reduce_particles, true],
+			"false": [_command_graphics_reduce_particles, false],
+		},
 	},
 	"game": {
-		"save": [_command_game_save, _need_int, "slot"],
-		"load": [_command_game_load, _need_int, "slot"],
-		"erase": [_command_game_erase, _need_int, "slot"],
+		"save": [_command_game_save, _need_string, "slot"],
+		"load": [_command_game_load, _need_string, "slot"],
+		"erase": [_command_game_erase, _need_string, "slot"],
 	},
 	"player": {
 		"fly": _command_player_fly,
@@ -610,6 +614,7 @@ var command_tree: Dictionary = {
 					return "0"],
 			"full_bright": _command_debug_full_bright,
 			"vault": _command_system_debug_vault,
+			"crawl": _command_system_debug_crawl,
 		},
 	}
 }
@@ -637,6 +642,12 @@ func _need_vector3(tokens: PackedStringArray) -> Array:
 	
 	var vec = Vector3(tokens[0].to_float(),tokens[1].to_float(),tokens[2].to_float())
 	return [true, vec]
+
+func _need_string(tokens: PackedStringArray) -> Array:
+	if tokens[0].is_empty():
+		return [false, "[color=red]needs string[/color]"]
+	else:
+		return [true, tokens[0]]
 
 
 func _command_run() -> String:
@@ -1218,17 +1229,23 @@ func _command_graphics_positional_shadow_16_bit(value: bool) -> String:
 	get_viewport().positional_shadow_atlas_16_bits = value
 	return "set positional atlas 16 bits to " + str(value)
 
-func _command_game_save(value: int) -> String:
+func _command_graphics_reduce_particles(value: bool) -> String:
+	SaverLoader.graphics_settings.reduce_particles = value
+	if GameManager.player_character:
+		GameManager.player_character.dust_particles.emitting = false if value else true
+	return "set reduce particles to: " + str(value)
+
+func _command_game_save(value: String) -> String:
 	SaverLoader.save_game_data(value)
-	return "saving game in slot " + str(value)
+	return "saving game in slot: " + value
 
-func _command_game_load(value: int) -> String:
+func _command_game_load(value: String) -> String:
 	SaverLoader.load_game_data(value)
-	return "loading game from slot " + str(value)
+	return "loading game from slot: " + value
 
-func _command_game_erase(value: int) -> String:
+func _command_game_erase(value: String) -> String:
 	SaverLoader.erase_game_data(value)
-	return "erasing game data from slot " + str(value)
+	return "erasing game data from slot: " + value
 
 func _command_player_fly() -> String:
 	var player = GameManager.player_character
@@ -1325,8 +1342,18 @@ func _command_system_debug_vault() -> String:
 	if GameManager.player_character:
 		if GameManager.player_character.vault_checks.debug:
 			GameManager.player_character.vault_checks.debug = false
-			return "turend vault debug off"
+			return "turned vault debug off"
 		else:
 			GameManager.player_character.vault_checks.debug = true
 			return "turned vault debug on"
+	return "couldn't find player"
+
+func _command_system_debug_crawl() -> String:
+	if GameManager.player_character:
+		if GameManager.player_character.crawl_debug:
+			GameManager.player_character.crawl_debug = false
+			return "turned crawl debug off"
+		else:
+			GameManager.player_character.crawl_debug = true
+			return "turned crawl debug on"
 	return "couldn't find player"

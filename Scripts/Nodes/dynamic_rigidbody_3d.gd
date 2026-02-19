@@ -98,6 +98,8 @@ func save() -> Dictionary:
 	var data: Dictionary = {
 		"pos": global_position,
 		"rot": global_rotation,
+		"linear_velocity": linear_velocity,
+		"angular_velocity": angular_velocity,
 		"mass": mass,
 		"ignore_player": ignore_player,
 		"max_distance": max_distance,
@@ -110,6 +112,8 @@ func save() -> Dictionary:
 func load_save(data: Dictionary) -> void:
 	global_position = data["pos"]
 	global_rotation = data["rot"]
+	linear_velocity = data["linear_velocity"]
+	angular_velocity = data["angular_velocity"]
 	mass = data["mass"]
 	ignore_player = data["ignore_player"]
 	max_distance = data["max_distance"]

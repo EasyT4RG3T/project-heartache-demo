@@ -1,15 +1,19 @@
 extends Node
 
 
-signal PlayerSetUp
+signal GameFullyLoaded
 
 
 const main_menu_uid: String = "uid://evmnqmy0k477"
+const new_game_uid: String = "uid://cxen7otwqul1c"
+const debug_uid: String = "uid://be8nto6fraipm"
 
 var debug_overlay: DebugOverlay
 
 var player_character_uid: String = "uid://c28pkwyvm76o1"
 var player_character: PlayerCharacter
+
+var is_new_game: bool = false
 
 
 func _init() -> void:
@@ -17,7 +21,7 @@ func _init() -> void:
 
 
 func load_player() -> void:
-	var player = load(ResourceUID.uid_to_path(player_character_uid))
+	var player = load(player_character_uid)
 	player = player.instantiate()
 	Game.add_child(player)
 	player_character = player
@@ -25,28 +29,26 @@ func load_player() -> void:
 	InputManager.player_character = player
 	InputManager.player_character_input = true
 	player_character.main_camera.make_current()
-	PlayerSetUp.emit()
-	
-	
-	
-	SaverLoader.can_save += 1
 
 
 func load_main_menu() -> void:
+	SaverLoader.can_save = 1
 	player_character = null
 	InputManager.player_character = null
 	
 	Game.clear()
 	
-	var menu = load(ResourceUID.uid_to_path(main_menu_uid))
+	await get_tree().process_frame
+	
+	var menu = load(main_menu_uid)
 	menu = menu.instantiate()
-	get_tree().root.add_child(menu)
+	Game.add_child(menu)
 
 
 func set_debug_overlay(value: int) -> void:
 	if value >= 1:
 		if !debug_overlay:
-			debug_overlay = load("uid://be8nto6fraipm").instantiate()
+			debug_overlay = load(debug_uid).instantiate()
 			add_child(debug_overlay)
 		debug_overlay.overlay_layer = value
 	else:
@@ -56,9 +58,14 @@ func set_debug_overlay(value: int) -> void:
 
 
 func apply_settings_data() -> void:
+	SaverLoader.current_slot = SaverLoader.settings.last_save
+	
 	DisplayServer.window_set_vsync_mode(SaverLoader.settings.vsync)
 	Engine.max_fps = SaverLoader.settings.max_fps
-	DisplayServer.window_set_mode(SaverLoader.settings.window_mode)
+	print(SaverLoader.settings.window_mode)
+	print(DisplayServer.window_get_mode())
+	if SaverLoader.settings.window_mode != DisplayServer.window_get_mode():
+		DisplayServer.window_set_mode(SaverLoader.settings.window_mode)
 	
 	if player_character:
 		player_character.apply_settings()
@@ -111,15 +118,35 @@ func apply_graphics_settings_data() -> void:
 	get_viewport().positional_shadow_atlas_quad_3 = SaverLoader.graphics_settings.positional_shadow_atlas3
 	
 	if player_character:
-		player_character.main_camera.apply_settings()
+		player_character.apply_graphics_settings()
 
 
 func new_game() -> void:
+	Game.clear()
+	
+	await get_tree().process_frame
+	
 	SaverLoader.clear_temp()
-	var pscene: PackedScene = load("res://Scenes/Maps/Chunks/PrisonBlockLowSec/prison_block_low_sec.tscn")
-	var map: Node = pscene.instantiate()
-	Game.add_child(map)
+	await Game.load_chunk(new_game_uid)
 	load_player()
+	await get_tree().process_frame
+	
+	var int_files: Array[int] = []
+	for file: String in DirAccess.get_files_at(SaverLoader.GAME_DATA_PATH):
+		if file.is_valid_int():
+			if !int_files.has(file.to_int()):
+				int_files.append(file.to_int())
+	var current_try: int = 0
+	for i in int_files.size():
+		if int_files.has(i):
+			current_try += 1
+		else:
+			break
+	SaverLoader.current_slot = str(current_try)
+	
+	is_new_game = true
+	SaverLoader.can_save = 0
+	GameFullyLoaded.emit()
 
 
 func save(file: Dictionary) -> void:
@@ -136,7 +163,10 @@ func load_save(file: Dictionary) -> void:
 	
 	await get_tree().process_frame
 	
-	Game.load_save(file["game"])
+	await Game.load_save(file["game"])
 	
 	load_player()
 	player_character.load_save(file["player"])
+	await get_tree().process_frame
+	SaverLoader.can_save = 0
+	GameFullyLoaded.emit()

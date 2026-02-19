@@ -6,6 +6,7 @@ uniform float threshold : hint_range(0.0, 1.0) = 0.4;
 uniform float blur_size : hint_range(0.0, 0.02) = 0.002;
 uniform float grain_intensity : hint_range(0.0, 0.5) = 0.2;
 uniform float grain_blur_size : hint_range(0.0, 100.0) = 5.0;
+uniform bool static_enabled = true;
 
 float hash(vec2 p) {
     p = fract(p * vec2(123.34, 456.21));
@@ -43,26 +44,28 @@ void fragment() {
 		}
 		final_color = (count > 0) ? (blur_sum / float(count)) : color;
 		
-		float breath = sin(TIME * 0.6) * 0.008 * darkness_factor;
-		final_color.rgb += breath;
-		
-		float grain_blur = 0.0;
-		int grain_samples = 0;
-		
-		float grain_scale = 1.0 + hash(UV * 0.5) * 4.0;
-		
-		for (int x = -1; x <= 1; x++) {
-			for (int y = -1; y <= 1; y++) {
-				vec2 grain_uv = UV + vec2(float(x), float(y)) * grain_blur_size * grain_scale;
-				grain_blur += hash(grain_uv * TIME);
-				grain_samples++;
+		if (static_enabled) {
+			float breath = sin(TIME * 0.6) * 0.008 * darkness_factor;
+			final_color.rgb += breath;
+			
+			float grain_blur = 0.0;
+			int grain_samples = 0;
+			
+			float grain_scale = 1.0 + hash(UV * 0.5) * 4.0;
+			
+			for (int x = -1; x <= 1; x++) {
+				for (int y = -1; y <= 1; y++) {
+					vec2 grain_uv = UV + vec2(float(x), float(y)) * grain_blur_size * grain_scale;
+					grain_blur += hash(grain_uv * TIME);
+					grain_samples++;
+				}
 			}
-		}
-		
-		float grain = (grain_blur / float(grain_samples)) * 2.0 - 1.0;
-		float grain_scaled = grain_intensity * pow(darkness_factor, 4.0);
+			
+			float grain = (grain_blur / float(grain_samples)) * 2.0 - 1.0;
+			float grain_scaled = grain_intensity * pow(darkness_factor, 4.0);
 		
 		final_color.rgb += grain * grain_scaled;
+		}
 	}
 	COLOR = final_color;
 }

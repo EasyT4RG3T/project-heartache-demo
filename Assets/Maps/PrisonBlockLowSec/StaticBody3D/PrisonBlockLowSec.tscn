@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://8eysg77a35o3" path="res://Assets/Maps/PrisonBlockLowSec/CollisionShape3D/Colliison.tscn" id="1_41a5h"]
 [ext_resource type="PackedScene" uid="uid://cdyeaa0a852te" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/BigCorridor.tscn" id="2_xti7j"]
 [ext_resource type="PackedScene" uid="uid://2jnuqrfca4a8" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Cell01.tscn" id="3_4nvct"]
+[ext_resource type="Material" uid="uid://c17r34jfc25gs" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="4_4nvct"]
 [ext_resource type="PackedScene" uid="uid://cpf7i3qt70j2x" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Cell02.tscn" id="4_yt0xv"]
 [ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="5_4nvct"]
 [ext_resource type="PackedScene" uid="uid://dciio14f02h86" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Corridor.tscn" id="5_htbf6"]
@@ -21,9 +22,9 @@
 [node name="BigCorridor" parent="." unique_id=1317174800 instance=ExtResource("2_xti7j")]
 
 [node name="Cell01" parent="." unique_id=1060297870 instance=ExtResource("3_4nvct")]
-surface_material_override/0 = ExtResource("5_4nvct")
+surface_material_override/0 = ExtResource("4_4nvct")
 surface_material_override/1 = ExtResource("5_4nvct")
-surface_material_override/2 = ExtResource("5_4nvct")
+surface_material_override/2 = ExtResource("4_4nvct")
 
 [node name="Cell02" parent="." unique_id=788804862 instance=ExtResource("4_yt0xv")]
 

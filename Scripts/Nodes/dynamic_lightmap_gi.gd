@@ -3,7 +3,11 @@ class_name DynamicLightmapGI
 extends LightmapGI
 
 
-var disabled: bool = false
+var disabled: bool = false:
+	set(value):
+		disabled = value
+		if Console.full_bright:
+			hide()
 
 
 func _init() -> void:

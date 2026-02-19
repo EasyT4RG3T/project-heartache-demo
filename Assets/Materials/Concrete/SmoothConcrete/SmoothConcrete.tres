@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://c17r34jfc25gs"]
+
+[ext_resource type="Texture2D" uid="uid://dpf2t4s3gpyxc" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bbolnay3jls2v" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete_normal.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+normal_enabled = true
+normal_texture = ExtResource("3")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

@@ -11,5 +11,18 @@ func _ready() -> void:
 		look_cutscene.look(double_bed_event.global_position, 1.0)
 		double_bed_event.disabled = true)
 	
-	await GameManager.PlayerSetUp
-	cutscenes.play("WakeUp")
+	GameManager.GameFullyLoaded.connect(func():
+		if GameManager.is_new_game:
+			cutscenes.play("WakeUp")
+			GameManager.is_new_game = false)
+
+
+func save() -> Dictionary:
+	var data: Dictionary = {
+	}
+	
+	return data
+
+
+func load_save(data: Dictionary) -> void:
+	pass

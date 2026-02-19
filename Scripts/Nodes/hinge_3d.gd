@@ -136,3 +136,49 @@ func _move_hinge() -> void:
 		hinge_tween.tween_property(self, "open_progress", 0, duration)
 		closed.emit()
 		open = false
+
+
+func save() -> Dictionary:
+	var data: Dictionary = {
+		"open_positive": open_positive,
+		"open_negative": open_negative,
+		"duration": duration,
+		"locked": locked,
+		"locked_message": locked_message,
+		"auto_unlock": auto_unlock,
+		"id": id,
+		"max_positive": max_positive,
+		"max_negative": max_negative,
+		"open_progress": open_progress,
+		"open": open,
+	}
+	if hinge_tween and hinge_tween.is_running():
+		data["mid_move"] = direction
+	
+	return data
+
+
+func load_save(data: Dictionary) -> void:
+	open_positive = data["open_positive"]
+	open_negative = data["open_negative"]
+	duration = data["duration"]
+	locked = data["locked"]
+	locked_message = data["locked_message"]
+	auto_unlock = data["auto_unlock"]
+	id = data["id"]
+	max_positive = data["max_positive"]
+	max_negative = data["max_negative"]
+	open_progress = data["open_progress"]
+	open = data["open"]
+	if data.has("mid_move"):
+		direction = data["mid_move"]
+		if hinge_tween:
+			hinge_tween.kill()
+		hinge_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		if open:
+			if direction >= 0:
+				hinge_tween.tween_property(self, "open_progress", max_positive, duration)
+			else:
+				hinge_tween.tween_property(self, "open_progress", -max_negative, duration)
+		else:
+			hinge_tween.tween_property(self, "open_progress", 0, duration)

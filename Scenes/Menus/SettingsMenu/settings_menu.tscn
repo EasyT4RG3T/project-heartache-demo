@@ -1,0 +1,304 @@
+[gd_scene format=3 uid="uid://0ogoc8tlkqfx"]
+
+[ext_resource type="Script" uid="uid://hu58gbk5v88e" path="res://Scenes/Menus/SettingsMenu/settings_menu.gd" id="1_28f3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28f3a"]
+
+[node name="SettingsMenu" type="Control" unique_id=9753515]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28f3a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=884414208]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.02
+anchor_right = 0.99
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=2034174625]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+use_hidden_tabs_for_min_size = true
+
+[node name="Game" type="Control" parent="VBoxContainer/TabContainer" unique_id=1903188767]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game" unique_id=1619355220]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.02
+anchor_right = 0.99
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer" unique_id=929111394]
+layout_mode = 2
+
+[node name="Sensitivity" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=481809331]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SensitivityLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/Sensitivity" unique_id=477023963]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sensitivity: "
+
+[node name="SensitivityHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/Sensitivity" unique_id=143839029]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 1
+value = 44.0
+
+[node name="SensitivityLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/Sensitivity" unique_id=1002233105]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+placeholder_text = "10.0"
+max_length = 5
+emoji_menu_enabled = false
+
+[node name="MaxFPS" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=1953163965]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MaxFPSLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/MaxFPS" unique_id=743733625]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Max FPS: "
+
+[node name="MaxFPSLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/MaxFPS" unique_id=309487146]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "144"
+max_length = 3
+emoji_menu_enabled = false
+
+[node name="Vsync" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=1052086985]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/Vsync" unique_id=675641329]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Vsync: "
+
+[node name="VsyncCheckButton" type="CheckButton" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/Vsync" unique_id=2117993101]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FOV" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=583921946]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FOVLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/FOV" unique_id=569326268]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FOV: "
+
+[node name="FOVLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/FOV" unique_id=522737261]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "90"
+max_length = 3
+emoji_menu_enabled = false
+
+[node name="DynamicFOV" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=1025576516]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DynamicFOVLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/DynamicFOV" unique_id=1855653171]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dynamic FOV: "
+
+[node name="DynamicFOVCheckButton" type="CheckButton" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/DynamicFOV" unique_id=595645713]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="WindowMode" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=300169575]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="WindowModeLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/WindowMode" unique_id=246813979]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Window: "
+
+[node name="WindowModeOptionButton" type="OptionButton" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/WindowMode" unique_id=2050443446]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Maximized"
+popup/item_1/id = 1
+popup/item_2/text = "FullScreen"
+popup/item_2/id = 2
+popup/item_3/text = "Exclusive"
+popup/item_3/id = 3
+
+[node name="HUDSize" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=1584160800]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HUDSizeLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/HUDSize" unique_id=471057746]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HUD Size: "
+
+[node name="HUDSizeLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/HUDSize" unique_id=50821913]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "1.0"
+max_length = 5
+emoji_menu_enabled = false
+
+[node name="StaticShader" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=1776141098]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StaticShaderLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/StaticShader" unique_id=1503541691]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Static Shader: "
+
+[node name="StaticShaderCheckButton" type="CheckButton" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/StaticShader" unique_id=1741189154]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Controls" type="Control" parent="VBoxContainer/TabContainer" unique_id=301911203]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Controls" unique_id=1347040904]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.02
+anchor_right = 0.99
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Controls/HBoxContainer" unique_id=1034304312]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Controls/HBoxContainer/VBoxContainer" unique_id=1704674256]
+layout_mode = 2
+text = "WIP"
+
+[node name="Graphics" type="Control" parent="VBoxContainer/TabContainer" unique_id=453174472]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Graphics" unique_id=2075984919]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.02
+anchor_right = 0.99
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer" unique_id=1661953874]
+layout_mode = 2
+
+[node name="Preset" type="HBoxContainer" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer" unique_id=109745169]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PresetLabel" type="Label" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Preset" unique_id=398482334]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Preset: "
+
+[node name="PresetButtonLow" type="Button" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Preset" unique_id=821637260]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Low"
+
+[node name="PresetButtonMedium" type="Button" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Preset" unique_id=595858269]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Medium"
+
+[node name="PresetButtonHigh" type="Button" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Preset" unique_id=1676864449]
+unique_name_in_owner = true
+layout_mode = 2
+text = "High"
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer" unique_id=182927638]
+layout_mode = 2
+text = "advanced graphics settings currently only
+available through the console"
+
+[node name="Sound" type="Control" parent="VBoxContainer/TabContainer" unique_id=1538599151]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound" unique_id=208744509]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.02
+anchor_right = 0.99
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer" unique_id=1918639223]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer" unique_id=114010262]
+layout_mode = 2
+text = "WIP"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1034284252]
+layout_mode = 2
+alignment = 2
+
+[node name="DefaultButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1207665116]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Default"
+
+[node name="RevertButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1813996617]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Revert"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1160937485]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_28f3a")
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=450701738]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save"
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1417704512]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Return"

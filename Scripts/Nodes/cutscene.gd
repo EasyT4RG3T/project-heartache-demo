@@ -30,12 +30,6 @@ func _ready() -> void:
 	animation_started.connect(_set_up_anim)
 	
 	animation_finished.connect(_exit_anim)
-	
-	if GameManager.player_character:
-		player = GameManager.player_character
-	else:
-		await GameManager.PlayerSetUp
-		player = GameManager.player_character
 
 
 func _set_up_anim(anim_name: StringName) -> void:
@@ -43,7 +37,7 @@ func _set_up_anim(anim_name: StringName) -> void:
 	
 	if set_up: return
 	
-	SaverLoader.can_save -= 1
+	player = GameManager.player_character
 	
 	pause()
 	get_animation(anim_name).track_set_key_value(0, 0, player.head.global_position)
@@ -59,6 +53,7 @@ func _play_anim() -> void:
 	player.main_camera.reparent(player_anim, false)
 	player.current_movement_mode = PlayerCharacter.MovementMode.CUTSCENE
 	InputManager.player_character_input = false
+	SaverLoader.can_save += 1
 	play()
 
 
@@ -110,4 +105,4 @@ func _exit_anim(anim_name: StringName) -> void:
 	player.look_vector.y = player.head.global_rotation.x
 	InputManager.player_character_input = true
 	set_up = false
-	SaverLoader.can_save += 1
+	SaverLoader.can_save -= 1

@@ -46,3 +46,17 @@ func exit_center() -> void:
 	center_exited.emit()
 	is_on_center = false
 	is_on_center_plus = false
+
+
+func save() -> Dictionary:
+	var data: Dictionary = {
+		"disabled": disabled,
+		"distance": distance,
+	}
+	
+	return data
+
+
+func load_save(data: Dictionary) -> void:
+	disabled = data["disabled"]
+	distance = data["distance"]

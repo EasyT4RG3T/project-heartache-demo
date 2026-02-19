@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://d4kvwarvn1dgn" path="res://Entities/DummyPlayer/dummy_player.tscn" id="16_i2lk4"]
 [ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="20_n3fkx"]
 [ext_resource type="PackedScene" uid="uid://c4txkcgwbvtui" path="res://Assets/Scenes/Doors/Reinforced/Interactable/CellDoor01.tscn" id="21_n3fkx"]
+[ext_resource type="PackedScene" uid="uid://dy3if2wtq4ton" path="res://Assets/Scenes/Misc/Keys/MeshInstance3D/Key01.tscn" id="22_pqhed"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
 size = Vector3(1.0236816, 3.0178223, 0.8113861)
@@ -99,7 +100,6 @@ size = Vector2(0.2, 0.2)
 script = ExtResource("1_ndu8s")
 
 [node name="DynamicLightmapGI" type="LightmapGI" parent="." unique_id=882856525]
-visible = false
 quality = 2
 supersampling = true
 use_texture_for_bounces = false
@@ -924,5 +924,8 @@ metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 [node name="CellDoor01" parent="Assets/Doors/Cell01Door/Hinge3D" unique_id=1958345647 node_paths=PackedStringArray("to_interact") instance=ExtResource("21_n3fkx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.049517393)
 to_interact = NodePath("..")
+
+[node name="Key01" parent="." unique_id=1068120065 instance=ExtResource("22_pqhed")]
+transform = Transform3D(0.8696845, 0, 0.49360797, 0, 1, 0, -0.49360797, 0, 0.8696845, 0.9410371, 1, -1.403835)
 
 [editable path="Events/Cutscenes/Player/DummyPlayer"]

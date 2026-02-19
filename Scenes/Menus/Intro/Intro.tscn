@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bk6rwqeytisu1"]
+
+[ext_resource type="Script" uid="uid://f2k43ifglu36" path="res://Scenes/Menus/Intro/intro.gd" id="1_2h0vi"]
+
+[node name="Intro" type="Control" unique_id=708625349]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2h0vi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2143486061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Intro" type="Control" parent="." unique_id=1808803421]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Intro" unique_id=1064985788]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -57.0
+offset_right = 177.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Intro/VBoxContainer" unique_id=588260062]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "(gamenamehere:))"
+
+[node name="Label2" type="Label" parent="Intro/VBoxContainer" unique_id=1607986952]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "-by-"
+
+[node name="Label3" type="Label" parent="Intro/VBoxContainer" unique_id=1959198212]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "EasyT4RG3T"
+
+[node name="Warnings" type="Control" parent="." unique_id=248495003]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Warnings" unique_id=952248234]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -11.5
+offset_right = 56.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Warnings here"

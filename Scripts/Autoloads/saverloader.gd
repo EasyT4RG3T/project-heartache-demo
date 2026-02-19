@@ -1,14 +1,11 @@
 extends Node
 
 
-const GAME_VERSION: int = 1
 const SETTINGS_VERSION: int = 1
+const accept_menu_uid: String = "uid://dckjpcj38rsvw"
 
 var settings: SettingsResource
 var graphics_settings: GraphicsSettingsResource
-var GRAPHICS_SETTINGS_HIGH: GraphicsSettingsResource
-var GRAPHICS_SETTINGS_LOW: GraphicsSettingsResource
-var GRAPHICS_SETTINGS_MEDIUM: GraphicsSettingsResource
 
 
 var load_thread: Thread = Thread.new()
@@ -24,8 +21,11 @@ var GRAPHICS_SETTINGS_PATH = GAME_PATH + "graphics_settings.json"
 var GAME_DATA_PATH = GAME_PATH + "saves/"
 
 
-var can_save: int = 0
-var current_slot: int = 1
+var can_save: int = 1
+var current_slot: String = "0":
+	set(value):
+		current_slot = value
+		settings.last_save = value
 
 
 func save_settings() -> void:
@@ -46,22 +46,22 @@ func load_graphics_settings(preset: int) -> void:
 func erase_graphics_settings() -> void:
 	_queue_function(_erase_graphics_settings_data)
 
-func save_game_data(slot: int) -> void:
-	if can_save <= 0:
-		Console.console_print(str("[color=red]can_save == ", can_save, "[/color]"))
+func save_game_data(slot: String) -> void:
+	if can_save > 0:
+		Console.console_print(str("[color=red]actions blocking saving: ", can_save, "[/color]"))
 		return
-	if slot <= 0:
+	if slot == "temp":
 		Console.console_print("[color=red]Invalid Slot[/color]")
 	var save_data: Dictionary = {}
 	GameManager.save(save_data)
 	_queue_function(_save_game_data, [slot, save_data])
 
-func load_game_data(slot: int) -> void:
-	if slot <= 0:
+func load_game_data(slot: String) -> void:
+	if slot == "temp":
 		Console.console_print("[color=red]Invalid Slot[/color]")
 	_queue_function(_load_game_data, slot)
 
-func erase_game_data(slot: int) -> void:
+func erase_game_data(slot: String) -> void:
 	_queue_function(_erase_game_data, slot)
 
 func save_chunk_data(chunk: Node) -> void:
@@ -79,7 +79,7 @@ func thread_load(path: String) -> Resource:
 		await get_tree().physics_frame
 	
 	if ResourceLoader.load_threaded_get_status(path) != ResourceLoader.THREAD_LOAD_LOADED:
-		print("coudlnt load resource")
+		print("couldn't load resource")
 		return
 	
 	return ResourceLoader.load_threaded_get(path)
@@ -280,15 +280,15 @@ func _resource_from_dict(dictionary: Dictionary, resource: Resource) -> void:
 
 
 func _save_game_data(data: Array) -> void:
-	var slot: int = data[0]
+	var slot: String = data[0]
 	
 	if not DirAccess.dir_exists_absolute(GAME_DATA_PATH):
 		DirAccess.make_dir_recursive_absolute(GAME_DATA_PATH)
 	
 	var game_data: Dictionary = {}
 	
-	if FileAccess.file_exists(GAME_DATA_PATH + str(slot)):
-		var file_read = FileAccess.open(GAME_DATA_PATH + str(slot), FileAccess.READ)
+	if FileAccess.file_exists(GAME_DATA_PATH + slot):
+		var file_read = FileAccess.open(GAME_DATA_PATH + slot, FileAccess.READ)
 		if !file_read:
 			Console.call_deferred("console_print", "game data: couldn't open file")
 			return
@@ -306,8 +306,8 @@ func _save_game_data(data: Array) -> void:
 	
 	var temp_data: Dictionary = {}
 	
-	if FileAccess.file_exists(GAME_DATA_PATH + "0"):
-		var file_read = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.READ)
+	if FileAccess.file_exists(GAME_DATA_PATH + "temp"):
+		var file_read = FileAccess.open(GAME_DATA_PATH + "temp", FileAccess.READ)
 		if !file_read:
 			Console.call_deferred("console_print", "game temp data: couldn't open file")
 			return
@@ -316,7 +316,7 @@ func _save_game_data(data: Array) -> void:
 		temp_data = bytes_to_var(read_data_byte)
 		file_read.close()
 		
-		var error = DirAccess.remove_absolute(GAME_DATA_PATH + "0")
+		var error = DirAccess.remove_absolute(GAME_DATA_PATH + "temp")
 		if error == OK:
 			Console.call_deferred("console_print", "temp game data deleted")
 		else:
@@ -341,7 +341,13 @@ func _save_game_data(data: Array) -> void:
 	for chunk in save_data["game"]["chunks"]:
 		game_data["game"]["chunks"][chunk] = save_data["game"]["chunks"][chunk]
 	
-	var file_write = FileAccess.open(GAME_DATA_PATH + str(slot), FileAccess.WRITE)
+	game_data["system"] = {
+		"datetime": Time.get_datetime_string_from_system(false, true),
+	}
+	if !game_data["system"].has("version"):
+		game_data["system"]["version"] = ProjectSettings.get_setting("application/config/version")
+	
+	var file_write = FileAccess.open(GAME_DATA_PATH + slot, FileAccess.WRITE)
 	if !file_write:
 		Console.call_deferred("console_print", "game data: couldn't create the file")
 		return
@@ -350,15 +356,17 @@ func _save_game_data(data: Array) -> void:
 	file_write.store_buffer(write_data_byte)
 	file_write.close()
 	
-	Console.call_deferred("console_print", "game data: saved in slot " + str(slot))
+	Console.call_deferred("console_print", "game data: saved in slot " + slot)
+	
+	current_slot = slot
 
 
-func _load_game_data(slot: int = 0) -> void:
-	if !FileAccess.file_exists(GAME_DATA_PATH + str(slot)):
+func _load_game_data(slot: String) -> void:
+	if !FileAccess.file_exists(GAME_DATA_PATH + slot):
 		Console.call_deferred("console_print", "game data: file doesn't exist")
 		return
 	
-	var file_read = FileAccess.open(GAME_DATA_PATH + str(slot), FileAccess.READ)
+	var file_read = FileAccess.open(GAME_DATA_PATH + slot, FileAccess.READ)
 	if !file_read:
 		Console.call_deferred("console_print", "game data: couldn't open file")
 		return
@@ -369,24 +377,48 @@ func _load_game_data(slot: int = 0) -> void:
 	game_data = bytes_to_var(read_data_byte)
 	file_read.close()
 	
+	if game_data["system"]["version"] != ProjectSettings.get_setting("application/config/version"):
+		call_deferred("_load_version_alert", game_data, slot)
+		return
+	
 	GameManager.call_deferred("load_save", game_data)
 	
-	Console.call_deferred("console_print", "game data: loaded from slot " + str(slot))
+	Console.call_deferred("console_print", "game data: loaded from slot " + slot)
 	
 	current_slot = slot
 	
 	clear_temp()
 
 
-func _erase_game_data(slot) -> void:
-	if !FileAccess.file_exists(GAME_DATA_PATH + str(slot)):
-		Console.call_deferred("console_print", "game data: slot " + str(slot) + ", file not found")
+func _load_version_alert(game_data: Dictionary, slot: String) -> void:
+	var previous_menu = InputManager.menu
+	var accept_menu_packed: PackedScene = load(accept_menu_uid)
+	var accept_menu: AcceptMenu = accept_menu_packed.instantiate()
+	accept_menu.message = "Loading a save from a different game version/nAre you sure you want to continue?"
+	accept_menu.accept_text = "Yes, load anyway"
+	accept_menu.cancel_text = "No, abort"
+	get_tree().root.add_child(accept_menu)
+	accept_menu.accepted.connect(func():
+		accept_menu.queue_free()
+		GameManager.load_save(game_data)
+		Console.console_print("game data: different version loaded from slot " + slot)
+		current_slot = slot
+		clear_temp())
+	accept_menu.cancelled.connect(func():
+		accept_menu.queue_free()
+		InputManager.menu = previous_menu)
+	InputManager.menu = accept_menu
+
+
+func _erase_game_data(slot: String) -> void:
+	if !FileAccess.file_exists(GAME_DATA_PATH + slot):
+		Console.call_deferred("console_print", "game data: slot " + slot + ", file not found")
 	
-	var error = DirAccess.remove_absolute(GAME_DATA_PATH + str(slot))
+	var error = DirAccess.remove_absolute(GAME_DATA_PATH + slot)
 	if error == OK:
-		Console.call_deferred("console_print", "game data: deleted slot " + str(slot))
+		Console.call_deferred("console_print", "game data: deleted slot " + slot)
 	else:
-		Console.call_deferred("console_print", "game data: slot " + str(slot) + ", " + error)
+		Console.call_deferred("console_print", "game data: slot " + slot + ", " + error)
 
 
 func _save_chunk_data(data: Array) -> void:
@@ -396,8 +428,8 @@ func _save_chunk_data(data: Array) -> void:
 	
 	var game_data: Dictionary = {}
 	
-	if FileAccess.file_exists(GAME_DATA_PATH + "0"):
-		var file_read = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.READ)
+	if FileAccess.file_exists(GAME_DATA_PATH + "temp"):
+		var file_read = FileAccess.open(GAME_DATA_PATH + "temp", FileAccess.READ)
 		if !file_read:
 			Console.call_deferred("console_print", "chunk game data: couldn't open file")
 			return
@@ -414,7 +446,7 @@ func _save_chunk_data(data: Array) -> void:
 		game_data["chunks"] = {}
 	game_data["game"]["chunks"][uid] = save_data[uid]
 	
-	var file_write = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.WRITE)
+	var file_write = FileAccess.open(GAME_DATA_PATH + "temp", FileAccess.WRITE)
 	if !file_write:
 		Console.call_deferred("console_print", "chunk game data: couldn't create the file")
 		return
@@ -429,8 +461,8 @@ func _save_chunk_data(data: Array) -> void:
 func _load_chunk_data(chunk_uid: String) -> void:
 	var game_data = {}
 	
-	if FileAccess.file_exists(GAME_DATA_PATH + "0"):
-		var file_read = FileAccess.open(GAME_DATA_PATH + "0", FileAccess.READ)
+	if FileAccess.file_exists(GAME_DATA_PATH + "temp"):
+		var file_read = FileAccess.open(GAME_DATA_PATH + "temp", FileAccess.READ)
 		if !file_read:
 			Console.call_deferred("console_print", "chunk game data: couldn't open file")
 			return
@@ -445,8 +477,8 @@ func _load_chunk_data(chunk_uid: String) -> void:
 				Game.call_deferred("load_chunk", chunk_uid, game_data["game"]["chunks"][chunk_uid])
 				return
 	
-	if FileAccess.file_exists(GAME_DATA_PATH + str(current_slot)):
-		var file_read = FileAccess.open(GAME_DATA_PATH + str(current_slot), FileAccess.READ)
+	if FileAccess.file_exists(GAME_DATA_PATH + current_slot):
+		var file_read = FileAccess.open(GAME_DATA_PATH + current_slot, FileAccess.READ)
 		if !file_read:
 			Console.call_deferred("console_print", "game data: couldn't open file")
 			return
@@ -465,9 +497,9 @@ func _load_chunk_data(chunk_uid: String) -> void:
 
 
 func clear_temp() -> void:
-	if !FileAccess.file_exists(GAME_DATA_PATH + "0"):
+	if !FileAccess.file_exists(GAME_DATA_PATH + "temp"):
 		return
-	var error = DirAccess.remove_absolute(GAME_DATA_PATH + "0")
+	var error = DirAccess.remove_absolute(GAME_DATA_PATH + "temp")
 	if error == OK:
 		Console.call_deferred("console_print", "temp game data deleted")
 	else:

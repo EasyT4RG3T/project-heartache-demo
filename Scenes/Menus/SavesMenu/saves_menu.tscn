@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cs7mrt6rnpmfp"]
+
+[ext_resource type="Script" uid="uid://cmbm3vjo67ov2" path="res://Scenes/Menus/SavesMenu/saves_menu.gd" id="1_2lfah"]
+
+[node name="SavesMenu" type="Control" unique_id=401584636]
+z_index = -1
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2lfah")
+
+[node name="ReturnButton" type="Button" parent="." unique_id=632148969]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -15.5
+offset_right = 31.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return"

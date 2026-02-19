@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dy3if2wtq4ton"]
+
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="1_2htsv"]
+[ext_resource type="ArrayMesh" uid="uid://o4eybd7n72k2" path="res://Assets/Scenes/Misc/Keys/Key01.obj" id="1_mutxj"]
+
+[node name="Key01" type="MeshInstance3D" unique_id=1068120065]
+material_override = ExtResource("1_2htsv")
+mesh = ExtResource("1_mutxj")

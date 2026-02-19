@@ -24,6 +24,7 @@ shader_parameter/threshold = 0.4
 shader_parameter/blur_size = 0.002
 shader_parameter/grain_intensity = 0.2
 shader_parameter/grain_blur_size = 5.0
+shader_parameter/static_enabled = true
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=765852671 groups=["PlayerCharacter", "Save"]]
 collision_layer = 8

@@ -1,0 +1,141 @@
+{
+	"connections": [
+		{
+			"from": "perlin",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@Node@1647",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 0.0,
+				"y": 0.0
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": true,
+				"metallic": 0.0,
+				"normal": 1.0,
+				"roughness": 0.6,
+				"size": 11,
+				"sss": 1.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "perlin",
+			"node_position": {
+				"x": -615.774475097656,
+				"y": 50.1488800048828
+			},
+			"parameters": {
+				"iterations": 5.0,
+				"persistence": 0.7,
+				"scale_x": 8.0,
+				"scale_y": 8.0
+			},
+			"seed_int": 3231187456,
+			"type": "perlin"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -415.444458007812,
+				"y": 46.1488800048828
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.709999978542328,
+							"g": 0.709999978542328,
+							"pos": 0.0,
+							"r": 0.709999978542328
+						},
+						{
+							"a": 1.0,
+							"b": 0.620000004768372,
+							"g": 0.620000004768372,
+							"pos": 0.310876686154431,
+							"r": 0.620000004768372
+						},
+						{
+							"a": 1.0,
+							"b": 0.699999988079071,
+							"g": 0.699999988079071,
+							"pos": 1.0,
+							"r": 0.699999988079071
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": -251.781127929688,
+				"y": 137.702224731445
+			},
+			"parameters": {
+				"buffer": 1.0,
+				"param2": 0.0,
+				"size": 6.0,
+				"strength": 2.0
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

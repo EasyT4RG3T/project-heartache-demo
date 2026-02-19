@@ -36,3 +36,10 @@ text = "Rot: "
 unique_name_in_owner = true
 layout_mode = 2
 text = "Vault: "
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1537419268]
+layout_mode = 2
+
+[node name="SaveLabel" type="Label" parent="VBoxContainer" unique_id=1773884307]
+layout_mode = 2
+text = "SaveBlockers: "
