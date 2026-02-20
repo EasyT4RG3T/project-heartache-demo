@@ -16,5 +16,5 @@ func _init() -> void:
 
 func _ready() -> void:
 	if !Engine.is_editor_hint():
-		if SaverLoader.graphics_settings.dynamic_lights == false:
-			hide()
+		if SaverLoader.graphics_settings.smooth_lights == false:
+			light_size = 0

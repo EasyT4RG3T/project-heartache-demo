@@ -77,7 +77,7 @@ extends Resource
 @export var contrast: float = 1.1
 @export var saturation: float = 0.9
 
-@export var dynamic_lights: bool = true
+@export var smooth_lights: bool = true
 
 @export var directional_shadow_size: int = 4096
 @export var directional_shadow_quality: RenderingServer.ShadowQuality = RenderingServer.SHADOW_QUALITY_HARD

@@ -1,4 +1,4 @@
-[gd_resource type="ORMMaterial3D" format=3 uid="uid://bdf4iajbpofpi"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccgk0xxvw6kbf"]
 
 [ext_resource type="Texture2D" uid="uid://ioi5jmfy2ig0" path="res://Assets/Materials/Bricks/CrackedGrayBricks/CrackedGrayBricks_albedo.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://7ol0aqq5rut4" path="res://Assets/Materials/Bricks/CrackedGrayBricks/CrackedGrayBricks_normal.png" id="3"]

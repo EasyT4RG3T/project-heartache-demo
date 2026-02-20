@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://6866daivj5dj"]
+
+[ext_resource type="Texture2D" uid="uid://bn28vpnsn6f0s" path="res://Assets/Materials/Metal/MetalMesh/MetalMesh_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ci4m4nh4h5x6a" path="res://Assets/Materials/Metal/MetalMesh/MetalMesh_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dp15cxx6gejco" path="res://Assets/Materials/Metal/MetalMesh/MetalMesh_normal.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+orm_texture = ExtResource("2")
+normal_enabled = true
+normal_texture = ExtResource("3")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

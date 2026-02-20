@@ -1,0 +1,420 @@
+[gd_scene format=3 uid="uid://cralm3aptvr1y"]
+
+[ext_resource type="Material" uid="uid://cq7u268rull7y" path="res://Assets/Placeholder/Materials/gray.tres" id="1_gc1gg"]
+[ext_resource type="Script" uid="uid://bupj3m1c7wjcn" path="res://Scenes/Dev/Gym/gym.gd" id="1_igepr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igepr"]
+size = Vector2(100, 100)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jgxid"]
+
+[node name="Gym" type="Node3D" unique_id=605852668]
+script = ExtResource("1_igepr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1980240037]
+transform = Transform3D(0.84612596, -0.44192117, 0.29795408, -0.3172985, 0.031514455, 0.9478019, -0.4282436, -0.89650005, -0.11355574, 0, 3, 0)
+light_color = Color(0.96, 0.97, 1, 1)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=956017743]
+transform = Transform3D(0.79774046, -0.5216845, -0.30241606, 0.3103625, -0.07476369, 0.94767386, -0.51699656, -0.8498564, 0.10226929, 0, 3, 0)
+light_color = Color(1, 0.94, 0.94, 1)
+light_energy = 0.5
+
+[node name="FloorStaticBody3D" type="StaticBody3D" parent="." unique_id=1682652607]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorStaticBody3D" unique_id=1131258022]
+material_override = ExtResource("1_gc1gg")
+mesh = SubResource("PlaneMesh_igepr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorStaticBody3D" unique_id=1620709105]
+shape = SubResource("WorldBoundaryShape3D_jgxid")
+
+[node name="Vault" type="Node3D" parent="." unique_id=760102218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="VaultOver" type="CSGCombiner3D" parent="Vault" unique_id=276896025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 9)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Vault/VaultOver" unique_id=1417350701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 2)
+size = Vector3(0.1, 0.25, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Vault/VaultOver" unique_id=510015416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 1)
+size = Vector3(0.1, 0.5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Vault/VaultOver" unique_id=1780621452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+size = Vector3(0.1, 0.75, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Vault/VaultOver" unique_id=1858437378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
+size = Vector3(0.1, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Vault/VaultOver" unique_id=735247630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, -2)
+size = Vector3(0.1, 1.25, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Vault/VaultOver" unique_id=69383019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -3)
+size = Vector3(0.1, 1.5, 1)
+
+[node name="Label3D" type="Label3D" parent="Vault/VaultOver" unique_id=378856509]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.49, 0.15846825, 2)
+text = "-0.25m-"
+
+[node name="Label3D2" type="Label3D" parent="Vault/VaultOver" unique_id=1855330560]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.49, 0.15846825, 1)
+text = "-0.50m-"
+
+[node name="Label3D3" type="Label3D" parent="Vault/VaultOver" unique_id=1480867730]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.49, 0.15846825, 0)
+text = "-0.75m-"
+
+[node name="Label3D4" type="Label3D" parent="Vault/VaultOver" unique_id=343737332]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.49, 0.15846825, -1)
+text = "-1.00m-"
+
+[node name="Label3D5" type="Label3D" parent="Vault/VaultOver" unique_id=1251577300]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.49, 0.15846825, -2)
+text = "-1.25m-"
+
+[node name="Label3D6" type="Label3D" parent="Vault/VaultOver" unique_id=1082035950]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.49, 0.15846825, -3)
+text = "-1.50m-"
+
+[node name="VaultOn" type="CSGCombiner3D" parent="Vault" unique_id=1076241531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 9)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Vault/VaultOn" unique_id=1998581758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 2)
+size = Vector3(1, 0.25, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Vault/VaultOn" unique_id=1417337627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 1)
+size = Vector3(1, 0.5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Vault/VaultOn" unique_id=1079835818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+size = Vector3(1, 0.75, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Vault/VaultOn" unique_id=1951530250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Vault/VaultOn" unique_id=2145273911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, -2)
+size = Vector3(1, 1.25, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Vault/VaultOn" unique_id=74261962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -3)
+size = Vector3(1, 1.5, 1)
+
+[node name="Label3D" type="Label3D" parent="Vault/VaultOn" unique_id=1126429845]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.051, 0.15846825, 2)
+text = "-0.25m-"
+
+[node name="Label3D2" type="Label3D" parent="Vault/VaultOn" unique_id=854245794]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.051, 0.15846825, 1)
+text = "-0.50m-"
+
+[node name="Label3D3" type="Label3D" parent="Vault/VaultOn" unique_id=252153751]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.051, 0.15846825, 0)
+text = "-0.75m-"
+
+[node name="Label3D4" type="Label3D" parent="Vault/VaultOn" unique_id=1418778547]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.051, 0.15846825, -1)
+text = "-1.00m-"
+
+[node name="Label3D5" type="Label3D" parent="Vault/VaultOn" unique_id=1036002691]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.051, 0.15846825, -2)
+text = "-1.25m-"
+
+[node name="Label3D6" type="Label3D" parent="Vault/VaultOn" unique_id=979679782]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.051, 0.15846825, -3)
+text = "-1.50m-"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Vault" unique_id=757313513]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, -6, 0.37059045, 8.584963)
+use_collision = true
+size = Vector3(1, 1, 8)
+
+[node name="Label3D" type="Label3D" parent="Vault" unique_id=1952209222]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.941, 2, 8)
+text = "Vault Test"
+
+[node name="Crouch" type="Node3D" parent="." unique_id=1242958227]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Crouch" unique_id=2031393593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 3)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Crouch/CSGCombiner3D" unique_id=1853025110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Crouch/CSGCombiner3D" unique_id=151443689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Crouch/CSGCombiner3D" unique_id=16739529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Crouch/CSGCombiner3D" unique_id=1759778975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Crouch/CSGCombiner3D" unique_id=1426827970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -4)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Crouch/CSGCombiner3D" unique_id=1088441544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
+
+[node name="Label3D" type="Label3D" parent="Crouch/CSGCombiner3D" unique_id=833723694]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.51, -0.1, 0)
+text = "-0.25m-"
+
+[node name="Label3D2" type="Label3D" parent="Crouch/CSGCombiner3D" unique_id=515578012]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.51, 0.15, -1)
+text = "-0.50m-"
+
+[node name="Label3D3" type="Label3D" parent="Crouch/CSGCombiner3D" unique_id=31079502]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.51, 0.4, -2)
+text = "-0.75m-"
+
+[node name="Label3D4" type="Label3D" parent="Crouch/CSGCombiner3D" unique_id=1137229495]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.51, 0.65, -3)
+text = "-1.00m-"
+
+[node name="Label3D5" type="Label3D" parent="Crouch/CSGCombiner3D" unique_id=322722536]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.51, 0.9, -4)
+text = "-1.25m-"
+
+[node name="Label3D6" type="Label3D" parent="Crouch/CSGCombiner3D" unique_id=1262267101]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.51, 1.15, -5)
+text = "-1.50m-"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Crouch" unique_id=423756605]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, -5, 1.3705904, 0.5849629)
+use_collision = true
+size = Vector3(1, 1, 8)
+
+[node name="Label3D" type="Label3D" parent="Crouch" unique_id=1647701160]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4992113, 1.6243849, 0)
+text = "Crouch and Crawl Test"
+
+[node name="Vault_Crouch" type="Node3D" parent="." unique_id=464382177]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Vault_Crouch" unique_id=1490362933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -3)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1973696448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 3.5)
+size = Vector3(1, 1, 8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=845205693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.75, 7)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=806350080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 6)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1738143262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.25, 5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1381153783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, 4)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=663459527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.75, 3)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1415699966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 2)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=2100243398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.25, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=624724470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 0)
+
+[node name="Label3D" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1885915120]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 1.4033095, 7)
+text = "-0.25m-"
+
+[node name="Label3D2" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=339533509]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 1.6533095, 6)
+text = "-0.50m-"
+
+[node name="Label3D3" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1150159003]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 1.9033095, 5)
+text = "-0.75m-"
+
+[node name="Label3D4" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1213555462]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 2.1533093, 4)
+text = "-1.00m-"
+
+[node name="Label3D5" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=534487253]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 2.4033093, 3)
+text = "-1.25m-"
+
+[node name="Label3D6" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=2098257099]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 2.6533096, 2)
+text = "-1.50m-"
+
+[node name="Label3D9" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=5872676]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 2.9033093, 1)
+text = "-1.75m-"
+
+[node name="Label3D10" type="Label3D" parent="Vault_Crouch/CSGCombiner3D" unique_id=1828599060]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5100002, 3.1533093, 0)
+text = "-2.00m-"
+
+[node name="Label3D" type="Label3D" parent="Vault_Crouch" unique_id=1671801795]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.4992113, 2.8735049, 0)
+text = "Crouch and Vault Up Test"
+
+[node name="Width" type="Node3D" parent="." unique_id=1752591526]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1, 0, -5)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Width" unique_id=1316096370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=2018153307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=2091373082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=5070501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=2069052161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1.9)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=1260512003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=165094292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1.8)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=1786637447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=707187534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 1.7)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=1052785641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=9914419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1.6)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=1825893451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=1225889734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 1.5)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=1279231505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Width/CSGCombiner3D" unique_id=659803060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 1.4)
+size = Vector3(1, 2, 1)
+
+[node name="Label3D" type="Label3D" parent="Width/CSGCombiner3D" unique_id=1537516912]
+transform = Transform3D(4.7563677e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, 4.7563677e-08, 0.05100012, 1.8688922, 0.69504535)
+text = "-1.00m-"
+
+[node name="Label3D2" type="Label3D" parent="Width/CSGCombiner3D" unique_id=1779028952]
+transform = Transform3D(4.7563677e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, 4.7563677e-08, 1.0510001, 1.8688922, 0.69504535)
+text = "-0.90m-"
+
+[node name="Label3D3" type="Label3D" parent="Width/CSGCombiner3D" unique_id=1834266277]
+transform = Transform3D(4.7563677e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, 4.7563677e-08, 2.051, 1.8688922, 0.69504535)
+text = "-0.80m-"
+
+[node name="Label3D4" type="Label3D" parent="Width/CSGCombiner3D" unique_id=1031818800]
+transform = Transform3D(4.7563677e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, 4.7563677e-08, 3.051, 1.8688922, 0.69504535)
+text = "-0.70m-"
+
+[node name="Label3D5" type="Label3D" parent="Width/CSGCombiner3D" unique_id=1680165614]
+transform = Transform3D(4.7563677e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, 4.7563677e-08, 4.0510006, 1.8688922, 0.69504535)
+text = "-0.60m-"
+
+[node name="Label3D6" type="Label3D" parent="Width/CSGCombiner3D" unique_id=485232950]
+transform = Transform3D(4.7563677e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, 4.7563677e-08, 5.0510006, 1.8688922, 0.69504535)
+text = "-0.50m-"
+
+[node name="Label3D7" type="Label3D" parent="Width/CSGCombiner3D" unique_id=974468280]
+transform = Transform3D(4.7563677e-08, 0, -0.63, 0, 0.63, 0, 0.63, 0, 4.7563677e-08, 6.0510006, 1.8688922, 0.69504535)
+text = "-0.40m-"
+
+[node name="Label3D" type="Label3D" parent="Width" unique_id=1343017101]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.498059, 1.5169849, -0.00476864)
+text = "Width Test"
+
+[node name="Height" type="Node3D" parent="." unique_id=1102672435]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Height" unique_id=522492635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -9)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Height/CSGCombiner3D" unique_id=1805871057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Height/CSGCombiner3D" unique_id=2008578446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.95, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Height/CSGCombiner3D" unique_id=717362069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.9, 0)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Height/CSGCombiner3D" unique_id=1452349049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.85, 0)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Height/CSGCombiner3D" unique_id=1400628210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.8, 0)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Height/CSGCombiner3D" unique_id=668568131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.7, 0)
+
+[node name="Label3D" type="Label3D" parent="Height/CSGCombiner3D" unique_id=127327278]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, -0.34193993, 1.4965782, -0.0047683716)
+text = "-2.00m-"
+
+[node name="Label3D2" type="Label3D" parent="Height/CSGCombiner3D" unique_id=187060168]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, -1.3419399, 1.4483356, -0.0047683716)
+text = "-1.95m-"
+
+[node name="Label3D3" type="Label3D" parent="Height/CSGCombiner3D" unique_id=323911084]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, -2.34194, 1.3997269, -0.0047683716)
+text = "-1.90m-"
+
+[node name="Label3D4" type="Label3D" parent="Height/CSGCombiner3D" unique_id=452348634]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, -3.34194, 1.34812, -0.0047683716)
+text = "-1.85m-"
+
+[node name="Label3D5" type="Label3D" parent="Height/CSGCombiner3D" unique_id=1078182145]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, -4.34194, 1.2982895, -0.0047683716)
+text = "-1.80m-"
+
+[node name="Label3D6" type="Label3D" parent="Height/CSGCombiner3D" unique_id=1132010249]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, -5.34194, 1.195709, -0.0047683716)
+text = "-1.75m-"
+
+[node name="Label3D" type="Label3D" parent="Height" unique_id=2045303568]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4908106, 2.1856232, -9.004768)
+text = "Height Test"

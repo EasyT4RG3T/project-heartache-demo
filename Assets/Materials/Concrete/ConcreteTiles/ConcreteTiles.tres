@@ -7,8 +7,8 @@
 albedo_texture = ExtResource("1")
 roughness = 0.4
 normal_enabled = true
-normal_scale = 0.45
+normal_scale = -0.45
 normal_texture = ExtResource("3")
-uv1_scale = Vector3(20, 20, 20)
+uv1_scale = Vector3(10, 10, 10)
 texture_filter = 2
 fov_override = 46.5

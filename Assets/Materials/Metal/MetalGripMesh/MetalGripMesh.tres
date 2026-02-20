@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://rr3q5qpcxr4n"]
+
+[ext_resource type="Texture2D" uid="uid://b6a77hoq5slwh" path="res://Assets/Materials/Metal/MetalGripMesh/MetalGripMesh_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c6f2r3suyfubo" path="res://Assets/Materials/Metal/MetalGripMesh/MetalGripMesh_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://drj2pub43iq3b" path="res://Assets/Materials/Metal/MetalGripMesh/MetalGripMesh_normal.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+orm_texture = ExtResource("2")
+normal_enabled = true
+normal_texture = ExtResource("3")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbara2nlg7q65"]
+
+[ext_resource type="ArrayMesh" uid="uid://upr7pgacpkay" path="res://Assets/Scenes/Doors/Reinforced/CellDoor01Flap.obj" id="1_g26ji"]
+
+[node name="CellDoor01Flap" type="MeshInstance3D" unique_id=37243409]
+mesh = ExtResource("1_g26ji")

@@ -1,9 +1,0 @@
-[gd_resource type="ORMMaterial3D" format=3 uid="uid://ce33y0wxvy63d"]
-
-[ext_resource type="Texture2D" uid="uid://mc70emlqgjmj" path="res://Assets/Materials/Bricks/GrayBricks/RedBricks_albedo.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://lccjc26moubu" path="res://Assets/Materials/Bricks/GrayBricks/RedBricks_normal.png" id="3"]
-
-[resource]
-albedo_texture = ExtResource("1")
-normal_enabled = true
-normal_texture = ExtResource("3")

@@ -1,0 +1,1243 @@
+[gd_scene format=3 uid="uid://cxen7otwqul1c"]
+
+[ext_resource type="Script" uid="uid://iw6q1cfqjafk" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.gd" id="1_ndu8s"]
+[ext_resource type="ArrayOccluder3D" uid="uid://jky03lonjbcn" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.occ" id="2_asgqg"]
+[ext_resource type="LightmapGIData" uid="uid://dn6k0bwvvt0sv" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.lmbake" id="2_yxwtw"]
+[ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="3_lsyox"]
+[ext_resource type="PackedScene" uid="uid://2nn6kk6x78le" path="res://Assets/Scenes/Bathroom/Toilets/StaticBody3D/Toilet01.tscn" id="4_5j0ws"]
+[ext_resource type="PackedScene" uid="uid://bxbm1g12msndm" path="res://Assets/Scenes/Bathroom/Sinks/StaticBody3D/Sink01.tscn" id="4_35oj4"]
+[ext_resource type="Script" uid="uid://dqps237qckyge" path="res://Scripts/Nodes/on_center_screen_notifier_3d.gd" id="4_xsm68"]
+[ext_resource type="PackedScene" uid="uid://h0k3rquynjii" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper02.tscn" id="5_3jscx"]
+[ext_resource type="Material" uid="uid://dysdim7lyvac" path="res://Assets/Materials/Water/StillWater/StillWater.tres" id="6_g4ibd"]
+[ext_resource type="PackedScene" uid="uid://cionbrhsgw8tn" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaperRoll.tscn" id="6_o0s1p"]
+[ext_resource type="PackedScene" uid="uid://bocif7t18dc1p" path="res://Assets/Scenes/Bathroom/ToiletPapers/DynamicObject3D/ToiletPaper01.tscn" id="7_g4ibd"]
+[ext_resource type="Script" uid="uid://csvt28n3c5lft" path="res://Scripts/Nodes/water.gd" id="8_o0s1p"]
+[ext_resource type="PackedScene" uid="uid://cmj0lq5ulm8cx" path="res://Assets/Scenes/Dormitory/Beds/StaticBody3D/DoubleDeckerBed01.tscn" id="9_80v68"]
+[ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="10_c5cvx"]
+[ext_resource type="PackedScene" uid="uid://dbr4cptcnrkkb" path="res://Assets/Scenes/Dormitory/Beds/StaticBody3D/Matress01.tscn" id="10_llel7"]
+[ext_resource type="Script" uid="uid://cmv4qm8gcm4fc" path="res://Scripts/Nodes/dynamic_spotlight_3d.gd" id="11_gbybj"]
+[ext_resource type="PackedScene" uid="uid://bixqb3cncgkq3" path="res://Assets/Scenes/Dormitory/Beds/StaticBody3D/Matress02.tscn" id="11_q5vw5"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="12_fse7r"]
+[ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="13_yxwtw"]
+[ext_resource type="Script" uid="uid://c6k6l4h73v30" path="res://Scripts/Nodes/cutscene.gd" id="15_q5vw5"]
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="20_n3fkx"]
+[ext_resource type="PackedScene" uid="uid://c4txkcgwbvtui" path="res://Assets/Scenes/Doors/Reinforced/Interactable/CellDoor01.tscn" id="21_n3fkx"]
+[ext_resource type="PackedScene" uid="uid://dy3if2wtq4ton" path="res://Assets/Scenes/Misc/Keys/MeshInstance3D/Key01.tscn" id="22_pqhed"]
+[ext_resource type="PackedScene" uid="uid://bbara2nlg7q65" path="res://Assets/Scenes/Doors/Reinforced/MeshInstance3D/CellDoor01Flap.tscn" id="24_c88tj"]
+[ext_resource type="PackedScene" uid="uid://cdyeaa0a852te" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/BigCorridor.tscn" id="26_aj3dw"]
+[ext_resource type="PackedScene" uid="uid://2jnuqrfca4a8" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Cell01.tscn" id="26_kraa6"]
+[ext_resource type="PackedScene" uid="uid://8eysg77a35o3" path="res://Assets/Maps/PrisonBlockLowSec/CollisionShape3D/Colliison.tscn" id="26_uytdt"]
+[ext_resource type="PackedScene" uid="uid://cpf7i3qt70j2x" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Cell02.tscn" id="28_kraa6"]
+[ext_resource type="Material" uid="uid://41krkpsxqiid" path="res://Assets/Materials/Concrete/ConcreteTiles/ConcreteTiles.tres" id="31_fse7r"]
+[ext_resource type="PackedScene" uid="uid://dciio14f02h86" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Corridor.tscn" id="31_x1slx"]
+[ext_resource type="Material" uid="uid://tqnokcoc3b06" path="res://Assets/Materials/Bricks/GrayBricks/GrayBricks.tres" id="32_yxwtw"]
+[ext_resource type="PackedScene" uid="uid://d056oev732af8" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell01.tscn" id="34_yxwtw"]
+[ext_resource type="PackedScene" uid="uid://bqd826p1gj86c" path="res://Assets/Scenes/Doors/Reinforced/StaticBody3D/CellDoor01.tscn" id="35_mo6mc"]
+[ext_resource type="PackedScene" uid="uid://flphe8lx7pn" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell02.tscn" id="35_sng3i"]
+[ext_resource type="PackedScene" uid="uid://dwkvyoaxem15g" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell03.tscn" id="36_mo6mc"]
+[ext_resource type="PackedScene" uid="uid://c0osck7pnvb6l" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell04.tscn" id="37_gvj80"]
+[ext_resource type="PackedScene" uid="uid://ceq148cvan2pn" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell05.tscn" id="38_ha6ix"]
+[ext_resource type="PackedScene" uid="uid://ia4jk3evnw5n" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Janitor.tscn" id="39_8o612"]
+[ext_resource type="PackedScene" uid="uid://b6yalyiyrsfin" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/SecurityCorridor.tscn" id="40_cjxge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
+size = Vector3(1.0236816, 3.0178223, 0.8113861)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4ibd"]
+size = Vector3(0.19871521, 0.09615326, 0.32385254)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_35oj4"]
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="Animation" id="Animation_ndu8s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.3424103, 0.8604666, 0.9991046)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i2lk4"]
+resource_name = "WakeUp"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3, 3.5000002, 4, 4.5, 5.0000005, 5.266667, 6),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-0.81158847, 1.0998875, 0.88625884), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(0, 1.7, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3, 3.5000002, 4, 4.5, 5.0000005, 5.266667, 6),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.34147888, -1.6179014, -0.103105165), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.29021418, -0.1796255, 0.12487688), Vector3(-0.55433404, 0, 0), Vector3(-0.55433404, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ndu8s"]
+_data = {
+&"RESET": SubResource("Animation_ndu8s"),
+&"WakeUp": SubResource("Animation_i2lk4")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llel7"]
+size = Vector3(1.82, 0.8149414, 1)
+
+[node name="PrisonBlockLowSec" type="Node3D" unique_id=1311521136]
+script = ExtResource("1_ndu8s")
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="." unique_id=1218854735]
+quality = 2
+supersampling = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_yxwtw")
+script = ExtResource("3_lsyox")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1434613764]
+layers = 3
+occluder = ExtResource("2_asgqg")
+bake_mask = 4294966304
+
+[node name="MapCollision" type="StaticBody3D" parent="." unique_id=64841536]
+
+[node name="Colliison" parent="MapCollision" unique_id=1698050138 instance=ExtResource("26_uytdt")]
+
+[node name="BigCorridor" type="Node3D" parent="." unique_id=1862610280]
+
+[node name="BigCorridor" parent="BigCorridor" unique_id=1317174800 instance=ExtResource("26_aj3dw")]
+layers = 33
+
+[node name="Cell01" type="Node3D" parent="." unique_id=380742129]
+
+[node name="Cell01" parent="Cell01" unique_id=1060297870 instance=ExtResource("26_kraa6")]
+layers = 33
+surface_material_override/0 = ExtResource("12_fse7r")
+surface_material_override/1 = ExtResource("13_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+
+[node name="InvisWalls" type="StaticBody3D" parent="Cell01" unique_id=884240659]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/InvisWalls" unique_id=35676874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7046529, 1.5093869, -2.103753)
+shape = SubResource("BoxShape3D_35oj4")
+debug_color = Color(0.59777147, 0.9190778, 1, 0.41960785)
+
+[node name="Lights" type="Node3D" parent="Cell01" unique_id=269570896]
+
+[node name="Static" type="Node3D" parent="Cell01/Lights" unique_id=318318221]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="Cell01/Lights/Static" unique_id=2104195222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30796272, 2.8596194, 0.0018693805)
+light_energy = 2.0
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="Cell01/Lights/Static" unique_id=579396699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0753424, 1.9162016, -1.5526588)
+light_energy = 0.7
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Dynamic" type="Node3D" parent="Cell01/Lights" unique_id=1003110686]
+
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="Cell01/Lights/Dynamic" unique_id=178616270]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.308, 3, 0)
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 5.0
+shadow_blur = 1.5
+spot_range = 4.03
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Cell01/Lights/Dynamic" unique_id=51939877]
+transform = Transform3D(0.25881904, -3.239805e-08, 0.9659258, -0.9659258, -4.222196e-08, 0.25881904, 3.239805e-08, -1, -4.222196e-08, 1.098371, 1.9162016, -1.5526588)
+light_energy = 0.4
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 2.0
+shadow_blur = 1.5
+spot_range = 2.3
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="Probes" type="Node3D" parent="Cell01/Lights" unique_id=1588941529]
+
+[node name="LightmapProbe" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1019779098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5751969, 0.7376826, 1.2886221)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=67450006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9456289, 0.21620393, 1.2828616)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=573599423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6087536, 0.6992564, -0.18463147)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1979100734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26945746, 0.22207212, 1.2951467)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=866314247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26945746, 0.19536918, -0.18463147)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1810581012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9456289, 0.21620393, -0.1750158)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1354036132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93134403, 0.26379323, -1.9757161)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=827223007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5186145, 0.2440663, -2.247771)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1506853084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23732336, 0.2440663, -2.247771)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=2022048080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5751969, 2.7135158, 1.2886221)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1101936348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9456289, 2.7135158, 1.2828616)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=246550552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6087536, 2.7135158, -0.18463147)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1496997989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26945746, 2.7135158, 1.2951467)
+
+[node name="LightmapProbe14" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1604957333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26945746, 2.7135158, -0.18463147)
+
+[node name="LightmapProbe15" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=927949009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9456289, 2.7135158, -0.1750158)
+
+[node name="LightmapProbe16" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=887768443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73074985, 2.7135158, -2.2536035)
+
+[node name="LightmapProbe21" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=236161390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5751969, 1.7238146, 1.2886221)
+
+[node name="LightmapProbe22" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1434724180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9456289, 1.4698601, 1.2828616)
+
+[node name="LightmapProbe23" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=474733945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6087536, 1.6971306, -0.18463147)
+
+[node name="LightmapProbe24" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1323268102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26945746, 1.4698601, 1.2951467)
+
+[node name="LightmapProbe25" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=20630742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26945746, 1.4698601, -0.18463147)
+
+[node name="LightmapProbe28" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1845206807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9051757, 0.19536918, -1.3517737)
+
+[node name="LightmapProbe29" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1773291113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9051757, 2.7135158, -1.3517737)
+
+[node name="LightmapProbe30" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1856729605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9051757, 1.4698601, -1.3517737)
+
+[node name="LightmapProbe26" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1356470250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9456289, 1.4698601, -0.1750158)
+
+[node name="LightmapProbe27" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=2136133091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73074985, 1.4698601, -2.2536035)
+
+[node name="LightmapProbe31" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1285222674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73074985, 0.26379323, -1.070457)
+
+[node name="LightmapProbe32" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1730981952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73074985, 2.7135158, -1.070457)
+
+[node name="LightmapProbe33" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=473084993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73074985, 1.4698601, -1.070457)
+
+[node name="LightmapProbe17" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=729510422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5731221, 2.71358, -2.247771)
+
+[node name="LightmapProbe18" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1357991690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23732336, 2.71358, -2.247771)
+
+[node name="LightmapProbe19" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1648597833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5731221, 1.4654633, -2.247771)
+
+[node name="LightmapProbe20" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1412098894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23732336, 1.4654633, -2.247771)
+
+[node name="Assets" type="Node3D" parent="Cell01" unique_id=2066019778]
+
+[node name="Static" type="Node3D" parent="Cell01/Assets" unique_id=811916263]
+
+[node name="Sink01" parent="Cell01/Assets/Static" unique_id=1830610057 instance=ExtResource("4_35oj4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.98985976, 0, -1.5755014)
+
+[node name="Toilet01" parent="Cell01/Assets/Static" unique_id=392055388 instance=ExtResource("4_5j0ws")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5295853, -1.1920929e-07, -2.047678)
+
+[node name="Water" type="Area3D" parent="Cell01/Assets/Static/Toilet01" unique_id=1173827940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024012327, 0.3462601, -0.03314829)
+script = ExtResource("8_o0s1p")
+metadata/_custom_type_script = "uid://csvt28n3c5lft"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Assets/Static/Toilet01/Water" unique_id=1935214821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030288696, 0.04809189, 0.0803833)
+shape = SubResource("BoxShape3D_g4ibd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cell01/Assets/Static/Toilet01" unique_id=1434013714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, -0.037110806)
+material_override = ExtResource("6_g4ibd")
+mesh = SubResource("PlaneMesh_35oj4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cell01/Assets/Static/Toilet01" unique_id=1350844939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, 0.16288924)
+material_override = ExtResource("6_g4ibd")
+mesh = SubResource("PlaneMesh_35oj4")
+
+[node name="DoubleDeckerBed01" parent="Cell01/Assets/Static" unique_id=1926602958 instance=ExtResource("9_80v68")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.8026215, 0, 0.9950241)
+
+[node name="Matress01" parent="Cell01/Assets/Static/DoubleDeckerBed01" unique_id=1798941714 instance=ExtResource("10_llel7")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.029531538, 0.50000024, 0.03543973)
+
+[node name="Matress02" parent="Cell01/Assets/Static/DoubleDeckerBed01" unique_id=1430283237 instance=ExtResource("11_q5vw5")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.023378909, 1.4999998, -0.9479354)
+
+[node name="Dynamic" type="Node3D" parent="Cell01/Assets" unique_id=1878516401]
+
+[node name="ToiletPaper02" parent="Cell01/Assets/Dynamic" unique_id=317045736 instance=ExtResource("5_3jscx")]
+transform = Transform3D(0.89596, 0, 0.44413486, 0, 1, 0, -0.44413486, 0, 0.89596, 0.56884944, 0.6807767, -2.435336)
+
+[node name="ToiletPaperRoll" parent="Cell01/Assets/Dynamic" unique_id=1719439508 instance=ExtResource("6_o0s1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49704838, 0.68083113, -2.4199953)
+
+[node name="ToiletPaper01" parent="Cell01/Assets/Dynamic" unique_id=1458748424 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7887921, 0.05980593, -2.4380016)
+
+[node name="ToiletPaper03" parent="Cell01/Assets/Dynamic" unique_id=1123176124 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89993757, 0.05980587, -2.4438734)
+
+[node name="ToiletPaper04" parent="Cell01/Assets/Dynamic" unique_id=1736512463 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85233223, 0.05980599, -2.351845)
+
+[node name="ToiletPaper05" parent="Cell01/Assets/Dynamic" unique_id=2018236103 instance=ExtResource("7_g4ibd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83252984, 0.15980601, -2.4296424)
+
+[node name="Doors" type="Node3D" parent="Cell01/Assets" unique_id=2103858565]
+
+[node name="Cell01Door" type="Node3D" parent="Cell01/Assets/Doors" unique_id=579679484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, -2.6517398)
+
+[node name="Cell01DoorHinge3D" type="Node3D" parent="Cell01/Assets/Doors/Cell01Door" unique_id=1819964010]
+script = ExtResource("20_n3fkx")
+open_negative = false
+duration = 1.6
+max_negative = 0.0
+metadata/_custom_type_script = "uid://ejx8vfok1s3u"
+
+[node name="CellDoor01" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D" unique_id=1958345647 node_paths=PackedStringArray("to_interact") instance=ExtResource("21_n3fkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.049517393)
+to_interact = NodePath("..")
+
+[node name="CellDoor01Flap" type="Node3D" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/CellDoor01" unique_id=366360979]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.12612975, 0.48781288, 0.044706583)
+
+[node name="CellDoor01FlapHinge3D" type="Node3D" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/CellDoor01/CellDoor01Flap" unique_id=530306991]
+transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, 0, 0, 0)
+script = ExtResource("20_n3fkx")
+open_positive = false
+open_progress = -165.0
+metadata/_custom_type_script = "uid://ejx8vfok1s3u"
+
+[node name="CellDoor01Flap" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/CellDoor01/CellDoor01Flap/CellDoor01FlapHinge3D" unique_id=37243409 instance=ExtResource("24_c88tj")]
+transform = Transform3D(-4.3711392e-08, 1, 0, -1, -4.3711385e-08, 1.7763568e-15, -1.7763568e-15, 0, 1, -0.4879228, 0.12577742, -0.05955696)
+
+[node name="Events" type="Node3D" parent="Cell01" unique_id=1640541678]
+
+[node name="Cutscenes" type="AnimationPlayer" parent="Cell01/Events" unique_id=500231388 node_paths=PackedStringArray("player_anim")]
+unique_name_in_owner = true
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_ndu8s")
+script = ExtResource("15_q5vw5")
+player_anim = NodePath("Player")
+exit_modes = Dictionary[String, int]({
+"RESET": 0,
+"WakeUp": 2
+})
+metadata/_custom_type_script = "uid://c6k6l4h73v30"
+
+[node name="Player" type="Node3D" parent="Cell01/Events/Cutscenes" unique_id=2110128382]
+unique_name_in_owner = true
+transform = Transform3D(0.9999994, 0, 0, 0, 0.99999946, 0, 0, 0, 0.9999999, -1.3424103, 0.8604666, 0.9991046)
+
+[node name="DoubleBedEvent" type="StaticBody3D" parent="Cell01/Events" unique_id=930565913]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775949, 1.8409398, 1.1298797)
+script = ExtResource("4_xsm68")
+metadata/_custom_type_script = "uid://dqps237qckyge"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Events/DoubleBedEvent" unique_id=1687100543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0925293, -0.07488036)
+shape = SubResource("BoxShape3D_llel7")
+
+[node name="KeyEvent" type="Node3D" parent="Cell01/Events" unique_id=1042713027]
+
+[node name="Key01" parent="Cell01/Events/KeyEvent" unique_id=1068120065 instance=ExtResource("22_pqhed")]
+transform = Transform3D(0.8696845, 0, 0.49360797, 0, 1, 0, -0.49360797, 0, 0.8696845, -0.9005222, -0.0019390136, -1.9652284)
+
+[node name="DynamicSpotLight3D3" type="SpotLight3D" parent="Cell01/Events/KeyEvent" unique_id=638532212]
+transform = Transform3D(0.8299445, -0.31771082, -0.45853242, -0.04853179, -0.8599755, 0.50802255, -0.5557309, -0.3993771, -0.72915095, -0.9611127, 0.04997556, -2.0606244)
+light_energy = 0.005
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 1.5
+spot_range = 1.1754061
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Cell01/Events/KeyEvent" unique_id=648673728]
+transform = Transform3D(-1, 2.4957222e-15, -8.742278e-08, -5.940984e-08, 0.7336113, 0.67956936, 6.413434e-08, 0.67956936, -0.7336113, -0.9014234, 0.9285475, -3.0513506)
+light_energy = 0.2
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 1.5
+spot_range = 2.975
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="Cell02" type="Node3D" parent="." unique_id=1686302145]
+
+[node name="Cell02" parent="Cell02" unique_id=788804862 instance=ExtResource("28_kraa6")]
+layers = 33
+surface_material_override/0 = ExtResource("12_fse7r")
+surface_material_override/1 = ExtResource("13_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+
+[node name="Lights" type="Node3D" parent="Cell02" unique_id=729034654]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.781037, 0, -4.498037)
+
+[node name="Static" type="Node3D" parent="Cell02/Lights" unique_id=371370280]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="Cell02/Lights/Static" unique_id=888503748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30796272, 2.8596194, 0.0018693805)
+light_energy = 2.0
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="Cell02/Lights/Static" unique_id=65251106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0753424, 1.9162016, -1.5526588)
+light_energy = 0.7
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Dynamic" type="Node3D" parent="Cell02/Lights" unique_id=2018646908]
+
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="Cell02/Lights/Dynamic" unique_id=237581292]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.308, 3, 0)
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 5.0
+shadow_blur = 1.5
+spot_range = 4.03
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Cell02/Lights/Dynamic" unique_id=659798835]
+transform = Transform3D(0.25881904, -3.239805e-08, 0.9659258, -0.9659258, -4.222196e-08, 0.25881904, 3.239805e-08, -1, -4.222196e-08, 1.098371, 1.9162016, -1.5526588)
+light_energy = 0.4
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 2.0
+shadow_blur = 1.5
+spot_range = 2.3
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="Probes" type="Node3D" parent="Cell02/Lights" unique_id=1612718688]
+
+[node name="LightmapProbe" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1519846280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5570657, 0.7376826, 1.292582)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=77390919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9637599, 0.21620393, 1.2868218)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1563963771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5906227, 0.6992564, -0.18067169)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=337120744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25132656, 0.22207212, 1.2991061)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1394989639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25132656, 0.19536918, -0.18067169)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1345593497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9637599, 0.21620393, -0.1710558)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=242311057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9494753, 0.26379323, -1.9717562)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1541718290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5004838, 0.2440663, -2.2438111)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1807635881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21919203, 0.2440663, -2.2438111)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=882339660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5570657, 2.7135158, 1.292582)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=143213965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9637599, 2.7135158, 1.2868218)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=491347903]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5906227, 2.7135158, -0.18067169)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1163862694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25132656, 2.7135158, 1.2991061)
+
+[node name="LightmapProbe14" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1693776351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25132656, 2.7135158, -0.18067169)
+
+[node name="LightmapProbe15" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=917806367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9637599, 2.7135158, -0.1710558)
+
+[node name="LightmapProbe16" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=446269905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74888086, 2.7135158, -2.2496436)
+
+[node name="LightmapProbe21" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=835656417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5570657, 1.7238146, 1.292582)
+
+[node name="LightmapProbe22" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1689371630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9637599, 1.4698601, 1.2868218)
+
+[node name="LightmapProbe23" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=139703611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5906227, 1.6971306, -0.18067169)
+
+[node name="LightmapProbe24" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=489863320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25132656, 1.4698601, 1.2991061)
+
+[node name="LightmapProbe25" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=506129646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25132656, 1.4698601, -0.18067169)
+
+[node name="LightmapProbe28" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=802216259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88704467, 0.19536918, -1.3478141)
+
+[node name="LightmapProbe29" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1238431219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88704467, 2.7135158, -1.3478141)
+
+[node name="LightmapProbe30" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=2015906661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88704467, 1.4698601, -1.3478141)
+
+[node name="LightmapProbe26" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1237604168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9637599, 1.4698601, -0.1710558)
+
+[node name="LightmapProbe27" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1505509640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74888086, 1.4698601, -2.2496436)
+
+[node name="LightmapProbe31" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1689019432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74888086, 0.26379323, -1.0664973)
+
+[node name="LightmapProbe32" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1073207536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74888086, 2.7135158, -1.0664973)
+
+[node name="LightmapProbe33" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=63078373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74888086, 1.4698601, -1.0664973)
+
+[node name="LightmapProbe17" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1289968744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5549912, 2.71358, -2.2438111)
+
+[node name="LightmapProbe18" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1196165108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21919203, 2.71358, -2.2438111)
+
+[node name="LightmapProbe19" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=351875462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5549912, 1.4654633, -2.2438111)
+
+[node name="LightmapProbe20" type="LightmapProbe" parent="Cell02/Lights/Probes" unique_id=1111784811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21919203, 1.4654633, -2.2438111)
+
+[node name="Assets" type="Node3D" parent="Cell02" unique_id=1218806485]
+
+[node name="Static" type="Node3D" parent="Cell02/Assets" unique_id=1687866530]
+
+[node name="Sink01" parent="Cell02/Assets/Static" unique_id=903814460 instance=ExtResource("4_35oj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21984, 0, -5.493876)
+
+[node name="Toilet02" parent="Cell02/Assets/Static" unique_id=1714322184 instance=ExtResource("4_5j0ws")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.7476635, -1.1920929e-07, -5.0336018)
+
+[node name="Water" type="Area3D" parent="Cell02/Assets/Static/Toilet02" unique_id=1233260135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0024012327, 0.3462601, -0.03314829)
+script = ExtResource("8_o0s1p")
+metadata/_custom_type_script = "uid://csvt28n3c5lft"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell02/Assets/Static/Toilet02/Water" unique_id=768405197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030288696, 0.04809189, 0.0803833)
+shape = SubResource("BoxShape3D_g4ibd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cell02/Assets/Static/Toilet02" unique_id=1993070012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, -0.037110806)
+material_override = ExtResource("6_g4ibd")
+mesh = SubResource("PlaneMesh_35oj4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cell02/Assets/Static/Toilet02" unique_id=1446581662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, 0.16288924)
+material_override = ExtResource("6_g4ibd")
+mesh = SubResource("PlaneMesh_35oj4")
+
+[node name="DoubleDeckerBed01" parent="Cell02/Assets/Static" unique_id=94470871 instance=ExtResource("9_80v68")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.7903657, 0, -3.701395)
+
+[node name="Matress01" parent="Cell02/Assets/Static/DoubleDeckerBed01" unique_id=1511796195 instance=ExtResource("10_llel7")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.029531538, 0.50000024, 0.03543973)
+
+[node name="Matress02" parent="Cell02/Assets/Static/DoubleDeckerBed01" unique_id=1736913899 instance=ExtResource("10_llel7")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.029531479, 1.4966142, 0.03543949)
+
+[node name="Corridor" type="Node3D" parent="." unique_id=63834878]
+
+[node name="Corridor" parent="Corridor" unique_id=2028724056 instance=ExtResource("31_x1slx")]
+layers = 33
+surface_material_override/0 = ExtResource("31_fse7r")
+surface_material_override/1 = ExtResource("32_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+surface_material_override/3 = ExtResource("13_yxwtw")
+
+[node name="Lights" type="Node3D" parent="Corridor" unique_id=981602414]
+
+[node name="Static" type="Node3D" parent="Corridor/Lights" unique_id=987179391]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=111651026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1978245, 2.8756404, -3.6015704)
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D5" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=384799613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1978245, 2.8756404, -6.78935)
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=395143515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87660134, 2.8756404, -3.6015704)
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D3" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=55971946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1244593, 2.8756404, -3.6015704)
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D4" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=2080742515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2922235, 2.8756404, -3.6015704)
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Dynamic" type="Node3D" parent="Corridor/Lights" unique_id=1185081177]
+
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=264913391]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.1978245, 2.9723516, -3.6015704)
+light_energy = 0.2
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 4.0
+shadow_blur = 1.5
+spot_range = 3.575
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="DynamicSpotLight3D5" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=206559951]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.1978245, 2.9723516, -6.78935)
+light_energy = 0.2
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 4.0
+shadow_blur = 1.5
+spot_range = 3.575
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=1461988685]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.87660134, 2.9723516, -3.6015704)
+light_energy = 0.2
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 4.0
+shadow_blur = 1.5
+spot_range = 3.575
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="DynamicSpotLight3D3" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=340168677]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.1244593, 2.9723516, -3.6015704)
+light_energy = 0.2
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 4.0
+shadow_blur = 1.5
+spot_range = 3.575
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="DynamicSpotLight3D4" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=105422644]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.2922235, 2.9723516, -3.6015704)
+light_energy = 0.2
+light_size = 0.2
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 4.0
+shadow_blur = 1.5
+spot_range = 3.575
+spot_angle = 80.0
+script = ExtResource("11_gbybj")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="Probes" type="Node3D" parent="Corridor/Lights" unique_id=58536088]
+
+[node name="LightmapProbe" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1183787035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 0.25991708, -2.9209151)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1079904841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 0.25991708, -4.2872925)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=2146414284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 1.3951182, -2.9209151)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1674701809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 1.3951182, -4.2872925)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=782570617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 2.7488945, -2.9209151)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=948641703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 2.7488945, -4.2872925)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1556322789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 0.76443446, -3.583513)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=212020668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.465231, 2.069702, -3.583513)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=2086694069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 0.25991708, -2.9209151)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1869038819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 0.25991708, -4.2872925)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1965488523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 1.3951182, -2.9209151)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1417236690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 1.3951182, -4.2872925)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1022996918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 2.7488945, -2.9209151)
+
+[node name="LightmapProbe14" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=11210150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 2.7488945, -4.2872925)
+
+[node name="LightmapProbe15" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1417602086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 0.76443446, -3.583513)
+
+[node name="LightmapProbe16" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=356564169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.789701, 2.069702, -3.583513)
+
+[node name="LightmapProbe17" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1493896623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 0.25991708, -2.9209151)
+
+[node name="LightmapProbe18" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=961685772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 0.25991708, -4.2872925)
+
+[node name="LightmapProbe19" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=607987599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 1.3951182, -2.9209151)
+
+[node name="LightmapProbe20" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=2114298157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 1.3951182, -4.2872925)
+
+[node name="LightmapProbe21" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=469681078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 2.7488945, -2.9209151)
+
+[node name="LightmapProbe22" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=232631258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 2.7488945, -4.2872925)
+
+[node name="LightmapProbe23" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1944079109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 0.76443446, -3.583513)
+
+[node name="LightmapProbe24" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=404854478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6809909, 2.069702, -3.583513)
+
+[node name="LightmapProbe33" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1741064187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 0.25991708, -2.9209151)
+
+[node name="LightmapProbe34" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1155479893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 0.25991708, -4.2872925)
+
+[node name="LightmapProbe35" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=749466999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 1.3951182, -2.9209151)
+
+[node name="LightmapProbe36" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1541732060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 1.3951182, -4.2872925)
+
+[node name="LightmapProbe37" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=157960755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 2.7488945, -2.9209151)
+
+[node name="LightmapProbe38" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=63790931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 2.7488945, -4.2872925)
+
+[node name="LightmapProbe39" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=944681267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 0.76443446, -3.583513)
+
+[node name="LightmapProbe40" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1040643684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8608475, 2.069702, -3.583513)
+
+[node name="LightmapProbe25" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=899060944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 0.25991708, -2.9209151)
+
+[node name="LightmapProbe26" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=2093956117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 0.25991708, -4.2872925)
+
+[node name="LightmapProbe27" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=2059279090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 1.3951182, -2.9209151)
+
+[node name="LightmapProbe28" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1670618634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 1.3951182, -4.2872925)
+
+[node name="LightmapProbe29" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1369372525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 2.7488945, -2.9209151)
+
+[node name="LightmapProbe67" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1946923739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8188586, 0.25991708, -2.9209151)
+
+[node name="LightmapProbe68" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1644913285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8188586, 1.3951182, -2.9209151)
+
+[node name="LightmapProbe69" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1702399834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8188586, 2.7488945, -2.9209151)
+
+[node name="LightmapProbe30" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=166384873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 2.7488945, -4.2872925)
+
+[node name="LightmapProbe31" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1293788143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 0.76443446, -3.583513)
+
+[node name="LightmapProbe66" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1734176569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0717154, 0.76443446, -3.583513)
+
+[node name="LightmapProbe32" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=200890647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76683724, 2.069702, -3.583513)
+
+[node name="LightmapProbe65" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=253645052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0261989, 2.069702, -3.583513)
+
+[node name="LightmapProbe41" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=189044331]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 0.25991702, -5.061805)
+
+[node name="LightmapProbe42" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=679222044]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 0.25991702, -5.061805)
+
+[node name="LightmapProbe43" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=495949211]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 1.3951182, -5.061805)
+
+[node name="LightmapProbe44" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=2060515711]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 1.3951182, -5.061805)
+
+[node name="LightmapProbe45" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=512011766]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 2.7488945, -5.061805)
+
+[node name="LightmapProbe46" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1877127006]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 2.7488945, -5.061805)
+
+[node name="LightmapProbe47" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1354483897]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.224346, 0.76443446, -5.061805)
+
+[node name="LightmapProbe48" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1607904119]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.224346, 2.069702, -5.061805)
+
+[node name="LightmapProbe49" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=947536950]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 0.25991702, -6.7473817)
+
+[node name="LightmapProbe50" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1545702749]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 0.25991702, -6.7473817)
+
+[node name="LightmapProbe51" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=936592834]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 1.3951182, -6.7473817)
+
+[node name="LightmapProbe52" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1420443469]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 1.3951182, -6.7473817)
+
+[node name="LightmapProbe53" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1942258262]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 2.7488945, -6.7473817)
+
+[node name="LightmapProbe54" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=861317943]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 2.7488945, -6.7473817)
+
+[node name="LightmapProbe55" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1196251456]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.224346, 0.76443446, -6.7473817)
+
+[node name="LightmapProbe56" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1670704260]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.224346, 2.069702, -6.7473817)
+
+[node name="LightmapProbe57" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1115717503]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 0.25991702, -8.363633)
+
+[node name="LightmapProbe58" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=342222081]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 0.25991702, -8.363633)
+
+[node name="LightmapProbe59" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1816432405]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 1.3951182, -8.363633)
+
+[node name="LightmapProbe60" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=728294437]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 1.3951182, -8.363633)
+
+[node name="LightmapProbe61" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=93776793]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8869438, 2.7488945, -8.363633)
+
+[node name="LightmapProbe62" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1760995310]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5205665, 2.7488945, -8.363633)
+
+[node name="LightmapProbe63" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1210118094]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.224346, 0.76443446, -8.363633)
+
+[node name="LightmapProbe64" type="LightmapProbe" parent="Corridor/Lights/Probes" unique_id=1850992596]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.224346, 2.069702, -8.363633)
+
+[node name="Assets" type="Node3D" parent="Corridor" unique_id=1859725912]
+
+[node name="FakeCell01" type="Node3D" parent="." unique_id=1074104884]
+
+[node name="FakeCell01" parent="FakeCell01" unique_id=113100354 instance=ExtResource("34_yxwtw")]
+surface_material_override/0 = ExtResource("12_fse7r")
+surface_material_override/1 = ExtResource("13_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+
+[node name="Lights" type="Node3D" parent="FakeCell01" unique_id=1892191401]
+
+[node name="Static" type="Node3D" parent="FakeCell01/Lights" unique_id=1203810816]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell01/Lights/Static" unique_id=647345866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="FakeCell01" unique_id=765099154]
+
+[node name="CellDoor01" parent="FakeCell01/Assets" unique_id=103864254 instance=ExtResource("35_mo6mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1017027, 0, -2.6255884)
+
+[node name="CellDoor01Flap" parent="FakeCell01/Assets/CellDoor01" unique_id=1632199957 instance=ExtResource("24_c88tj")]
+
+[node name="FakeCell02" type="Node3D" parent="." unique_id=1376976655]
+
+[node name="FakeCell02" parent="FakeCell02" unique_id=2119124001 instance=ExtResource("35_sng3i")]
+surface_material_override/0 = ExtResource("12_fse7r")
+surface_material_override/1 = ExtResource("13_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+
+[node name="Lights" type="Node3D" parent="FakeCell02" unique_id=1795938272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1962245, 0, 0)
+
+[node name="Static" type="Node3D" parent="FakeCell02/Lights" unique_id=441700855]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell02/Lights/Static" unique_id=750225964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="FakeCell02" unique_id=1073490745]
+
+[node name="CellDoor01" parent="FakeCell02/Assets" unique_id=1354479777 instance=ExtResource("35_mo6mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.29946, 0, -2.6255884)
+
+[node name="CellDoor01Flap" parent="FakeCell02/Assets/CellDoor01" unique_id=1894523660 instance=ExtResource("24_c88tj")]
+
+[node name="FakeCell03" type="Node3D" parent="." unique_id=1026454723]
+
+[node name="FakeCell03" parent="FakeCell03" unique_id=844170827 instance=ExtResource("36_mo6mc")]
+surface_material_override/0 = ExtResource("12_fse7r")
+surface_material_override/1 = ExtResource("13_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+
+[node name="Lights" type="Node3D" parent="FakeCell03" unique_id=1155186900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4147, 0, 0)
+
+[node name="Static" type="Node3D" parent="FakeCell03/Lights" unique_id=1187380298]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell03/Lights/Static" unique_id=319531489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="FakeCell03" unique_id=65315602]
+
+[node name="CellDoor01" parent="FakeCell03/Assets" unique_id=1095071219 instance=ExtResource("35_mo6mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2998128, 0, -2.6255884)
+
+[node name="CellDoor01Flap" parent="FakeCell03/Assets/CellDoor01" unique_id=374693891 instance=ExtResource("24_c88tj")]
+
+[node name="FakeCell04" type="Node3D" parent="." unique_id=70928119]
+
+[node name="FakeCell04" parent="FakeCell04" unique_id=1572078907 instance=ExtResource("37_gvj80")]
+surface_material_override/0 = ExtResource("12_fse7r")
+surface_material_override/1 = ExtResource("13_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+
+[node name="Lights" type="Node3D" parent="FakeCell04" unique_id=884185896]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.7756224, 0, -10.927139)
+
+[node name="Static" type="Node3D" parent="FakeCell04/Lights" unique_id=1327973681]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell04/Lights/Static" unique_id=1460051265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="FakeCell04" unique_id=988574374]
+
+[node name="CellDoor01" parent="FakeCell04/Assets" unique_id=555997731 instance=ExtResource("35_mo6mc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.189653, -2.3841858e-07, -6.8014493)
+
+[node name="CellDoor01Flap" parent="FakeCell04/Assets/CellDoor01" unique_id=1445360344 instance=ExtResource("24_c88tj")]
+
+[node name="FakeCell05" type="Node3D" parent="." unique_id=602358942]
+
+[node name="FakeCell05" parent="FakeCell05" unique_id=1747464441 instance=ExtResource("38_ha6ix")]
+surface_material_override/0 = ExtResource("12_fse7r")
+surface_material_override/1 = ExtResource("13_yxwtw")
+surface_material_override/2 = ExtResource("12_fse7r")
+
+[node name="Lights" type="Node3D" parent="FakeCell05" unique_id=1480414736]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.7756224, 0, -14.09643)
+
+[node name="Static" type="Node3D" parent="FakeCell05/Lights" unique_id=703066208]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell05/Lights/Static" unique_id=717414194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+light_energy = 5.0
+light_bake_mode = 1
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="FakeCell05" unique_id=457451771]
+
+[node name="CellDoor01" parent="FakeCell05/Assets" unique_id=1885207609 instance=ExtResource("35_mo6mc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.189653, -2.3841858e-07, -9.99977)
+
+[node name="CellDoor01Flap" parent="FakeCell05/Assets/CellDoor01" unique_id=764825047 instance=ExtResource("24_c88tj")]
+
+[node name="Janitor" type="Node3D" parent="." unique_id=778305958]
+
+[node name="Janitor" parent="Janitor" unique_id=361007546 instance=ExtResource("39_8o612")]
+layers = 33
+
+[node name="Lights" type="Node3D" parent="Janitor" unique_id=1174905357]
+
+[node name="Probes" type="Node3D" parent="Janitor/Lights" unique_id=1699378854]
+
+[node name="LightmapProbe" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=1996482484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31369328, 0.21714315, -6.113174)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=1961703722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 0.21714315, -6.113174)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=959381075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 0.21714315, -8.685623)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=1175178019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31575817, 0.21714315, -8.685623)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=950023930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 0.21714315, -7.38953)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=2034117088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31575817, 0.21714315, -7.38953)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=1974434191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31369328, 1.5083349, -6.113174)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=2061778473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 1.5083349, -6.113174)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=828958725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 1.5083349, -8.685623)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=491454177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31575817, 1.5083349, -8.685623)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=831195886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 1.5083349, -7.38953)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=214288257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31575817, 1.5083349, -7.38953)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=1951223156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31369328, 2.754566, -6.113174)
+
+[node name="LightmapProbe14" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=88414271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 2.754566, -6.113174)
+
+[node name="LightmapProbe15" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=515427044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 2.754566, -8.685623)
+
+[node name="LightmapProbe16" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=1382513543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31575817, 2.754566, -8.685623)
+
+[node name="LightmapProbe17" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=767000975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6868546, 2.754566, -7.38953)
+
+[node name="LightmapProbe18" type="LightmapProbe" parent="Janitor/Lights/Probes" unique_id=13039990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31575817, 2.754566, -7.38953)
+
+[node name="SecurityCorridor" type="Node3D" parent="." unique_id=1898180137]
+
+[node name="SecurityCorridor" parent="SecurityCorridor" unique_id=1300467112 instance=ExtResource("40_cjxge")]
+layers = 33
+
+[node name="Lights" type="Node3D" parent="SecurityCorridor" unique_id=1346898573]
+
+[node name="Probes" type="Node3D" parent="SecurityCorridor/Lights" unique_id=1923553793]
+
+[node name="LightmapProbe" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=1684630723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588325, 0.22463372, -5.2310557)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=616107399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0136315, 0.22463372, -5.2310557)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=1282807693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6293612, 0.22463372, -5.2310557)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=503337825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6293612, 0.22463372, -6.5367303)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=943270230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.153137, 0.22463372, -5.2310557)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=1182610491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.606248, 0.22463372, -5.2310557)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=1874077659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1070223, 0.22463372, -5.2310557)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=560168393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588325, 0.22463372, -6.5101027)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=298159811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588325, 0.22463372, -7.949791)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=1849577472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588325, 1.6135288, -5.2310557)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=2140049002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0136315, 1.6135288, -5.2310557)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=160444424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6293612, 1.6135288, -5.2310557)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=1258645607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6293612, 1.6135288, -6.5367303)
+
+[node name="LightmapProbe14" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=1934709412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.153137, 1.6135288, -5.2310557)
+
+[node name="LightmapProbe15" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=730074272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.606248, 1.6135288, -5.2310557)
+
+[node name="LightmapProbe16" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=2145712585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1070223, 1.6135288, -5.2310557)
+
+[node name="LightmapProbe17" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=730035395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588325, 1.6135288, -6.5101027)
+
+[node name="LightmapProbe18" type="LightmapProbe" parent="SecurityCorridor/Lights/Probes" unique_id=511773675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588325, 1.6135288, -7.949791)

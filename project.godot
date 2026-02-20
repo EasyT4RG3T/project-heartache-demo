@@ -190,6 +190,7 @@ enter={
 3d_render/layer_1="Main"
 3d_render/layer_2="Inventory"
 3d_render/layer_3="Dynamic"
+3d_render/layer_6="Occlude"
 3d_physics/layer_1="World"
 3d_physics/layer_2="Dynamic"
 3d_physics/layer_3="DynamicNoCol"

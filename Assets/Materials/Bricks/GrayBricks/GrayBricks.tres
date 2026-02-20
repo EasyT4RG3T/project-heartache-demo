@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tqnokcoc3b06"]
+
+[ext_resource type="Texture2D" uid="uid://c18bivc4o5rar" path="res://Assets/Materials/Bricks/GrayBricks/GrayBricks_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bmf4a4fml448p" path="res://Assets/Materials/Bricks/GrayBricks/GrayBricks_normal.png" id="3"]
+
+[resource]
+albedo_texture = ExtResource("1")
+normal_enabled = true
+normal_texture = ExtResource("3")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

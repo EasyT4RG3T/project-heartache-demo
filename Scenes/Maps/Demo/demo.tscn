@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cxq0umdetodsv"]
-
-[ext_resource type="PackedScene" uid="uid://cxen7otwqul1c" path="res://Scenes/Maps/Chunks/PrisonBlockLowSec/prison_block_low_sec.tscn" id="1_hsvoh"]
-
-[node name="Demo" type="Node3D" unique_id=1634516533]
-
-[node name="PrisonBlockLowSec" parent="." unique_id=1833843993 instance=ExtResource("1_hsvoh")]

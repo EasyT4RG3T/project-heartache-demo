@@ -1,4 +1,4 @@
-[gd_resource type="ORMMaterial3D" format=3 uid="uid://dwvins40v7nin"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dx4dmu0h8yihy"]
 
 [ext_resource type="Texture2D" uid="uid://dxxsqwl6ihy3c" path="res://Assets/Materials/Bricks/MossGrayBricks/MossGrayBricks_albedo.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://p5gdgqr8x7p3" path="res://Assets/Materials/Bricks/MossGrayBricks/MossGrayBricks_normal.png" id="3"]
@@ -7,3 +7,5 @@
 albedo_texture = ExtResource("1")
 normal_enabled = true
 normal_texture = ExtResource("3")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

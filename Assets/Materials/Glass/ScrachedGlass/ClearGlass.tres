@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://xrsq1a7588cw"]
+
+[ext_resource type="Texture2D" uid="uid://doqrc0nmx3yav" path="res://Assets/Materials/Glass/ScrachedGlass/ClearGlass_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bfkqdne1yjxh7" path="res://Assets/Materials/Glass/ScrachedGlass/ClearGlass_orm.png" id="2"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1")
+orm_texture = ExtResource("2")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

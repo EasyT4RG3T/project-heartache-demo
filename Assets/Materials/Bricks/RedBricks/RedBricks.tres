@@ -1,4 +1,4 @@
-[gd_resource type="ORMMaterial3D" format=3 uid="uid://cniy3mg4l1lmq"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbre1pvewrnlh"]
 
 [ext_resource type="Texture2D" uid="uid://c45q8l85bicsp" path="res://Assets/Materials/Bricks/RedBricks/RedBricks_albedo.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://blfdxpxyy22ji" path="res://Assets/Materials/Bricks/RedBricks/RedBricks_normal.png" id="3"]
