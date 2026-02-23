@@ -1,30 +1,159 @@
 [gd_scene format=3 uid="uid://cs7mrt6rnpmfp"]
 
 [ext_resource type="Script" uid="uid://cmbm3vjo67ov2" path="res://Scenes/Menus/SavesMenu/saves_menu.gd" id="1_2lfah"]
+[ext_resource type="Texture2D" uid="uid://ftpoq4r7duys" path="res://Assets/Placeholder/ss.png" id="2_0cgkm"]
 
-[node name="SavesMenu" type="Control" unique_id=401584636]
-z_index = -1
-z_as_relative = false
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cgkm"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="SavesMenu" type="Control" unique_id=401584636 groups=["Menu"]]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2lfah")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=199789476]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2lfah")
+theme_override_constants/separation = 15
+alignment = 1
 
-[node name="ReturnButton" type="Button" parent="." unique_id=632148969]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=1652758998]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = -15.5
-offset_right = 31.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(0, 103)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/scrollbar_h_separation = 5
+horizontal_scroll_mode = 0
+
+[node name="SavesVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=1039697149]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 8
+
+[node name="NewSaveButton" type="Button" parent="HBoxContainer/ScrollContainer/SavesVBoxContainer" unique_id=1019978047]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/line_spacing = -5
+text = "|                                |
+|                                |
+|       New Save       |
+|                                |
+|                                |"
+autowrap_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1616671707]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=1345464172]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cgkm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer" unique_id=990913243]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SelectedTexture" type="TextureRect" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1506786688]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 144)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_0cgkm")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SelectedName" type="LineEdit" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1140202832]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save Name"
+placeholder_text = "Save Name"
+alignment = 1
+max_length = 16
+emoji_menu_enabled = false
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1907884177]
+layout_mode = 2
+
+[node name="SelectedDescription" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1460385873]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 3
+text = "DESCRIPTION
+hjdashghskjghksjpipigsjgknsajklgn;ko
+jjjjjdsnguirdjugkuiuiuiituitituiut iueirahguihbnriuedbog
+fdsghuidhgbiundiugbiag'dahbuirag
+agjrfduoisghiug
+gauidghbiuhaprgihrudigniuan"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=337921055]
+layout_mode = 2
+
+[node name="SelectedVersion" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1276859817]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "version 0.0.1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=899935032]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="DeleteButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=870880282]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DELETE"
+
+[node name="LoadButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=205183247]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LOAD"
+
+[node name="SaveButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=730066193]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SAVE"
+
+[node name="ReturnButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=632148969]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 text = "Return"

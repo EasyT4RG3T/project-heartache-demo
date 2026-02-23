@@ -1,6 +1,9 @@
 extends Node3D
 
 
+var story_description: String = "I had that nightmare again.\nWhen will it stop."
+
+
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	child_entered_tree.connect(func(node: Node):
@@ -23,6 +26,10 @@ func clear() -> void:
 func save() -> Dictionary:
 	var data: Dictionary = {}
 	
+	data["data"] = {
+		"story_description": story_description,
+	}
+	
 	var current_chunks: Array[String] = []
 	for current_chunk: Node in get_chunks():
 		current_chunks.append(ResourceUID.path_to_uid(current_chunk.scene_file_path))
@@ -38,6 +45,8 @@ func save() -> Dictionary:
 
 
 func load_save(data: Dictionary) -> void:
+	story_description = data["data"]["story_description"]
+	
 	for current_chunk_uid in data["current_chunks_uid"]:
 		await load_chunk(current_chunk_uid, data["chunks"][current_chunk_uid])
 

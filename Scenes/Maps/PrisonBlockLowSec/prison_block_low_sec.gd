@@ -7,6 +7,7 @@ extends Node3D
 
 func _ready() -> void:
 	double_bed_event.center_entered.connect(func():
+		GameManager.player_character.add_thought("I never got a cellmate", true, 2.0, 0.5, 0.5)
 		var look_cut: LookCutscene = LookCutscene.new()
 		add_child(look_cut)
 		look_cut.look(double_bed_event.global_position, 1.0)
@@ -18,6 +19,10 @@ func _ready() -> void:
 		if GameManager.is_new_game:
 			cutscenes.play("WakeUp")
 			GameManager.is_new_game = false)
+
+
+func animation_thought(thought: String, story: bool = false, time: float = 2.0, fade_in: float = 0.2, fade_out: float = 0.2) -> void:
+	GameManager.player_character.add_thought(thought, story, time, fade_in, fade_out)
 
 
 func save() -> Dictionary:

@@ -78,7 +78,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_i2lk4"]
 resource_name = "WakeUp"
-length = 6.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -86,10 +86,10 @@ tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3, 3.5000002, 4, 4.5, 5.0000005, 5.266667, 6),
-"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3.0000002, 4, 5, 5.5000005, 6, 6.5, 7.0000005, 7.266667, 7.9999995),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-0.81158847, 1.0998875, 0.88625884), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(0, 1.7, 0)]
+"values": [Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-0.81158847, 1.0998875, 0.88625884), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(0, 1.7, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -98,10 +98,24 @@ tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3, 3.5000002, 4, 4.5, 5.0000005, 5.266667, 6),
-"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3.0000002, 4, 5, 5.5000005, 6, 6.5, 7.0000005, 7.266667, 7.9999995),
+"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.34147888, -1.6179014, -0.103105165), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.29021418, -0.1796255, 0.12487688), Vector3(-0.55433404, 0, 0), Vector3(-0.55433404, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.34147888, -1.6179014, -0.103105165), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.34147888, -1.6179014, -0.103105165), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.29021418, -0.1796255, 0.12487688), Vector3(-0.55433404, 0, 0), Vector3(-0.55433404, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["It's that nightmare again", true, 2.5, 0.5, 0.5],
+"method": &"animation_thought"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ndu8s"]
@@ -341,10 +355,12 @@ mesh = SubResource("PlaneMesh_35oj4")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.8026215, 0, 0.9950241)
 
 [node name="Matress01" parent="Cell01/Assets/Static/DoubleDeckerBed01" unique_id=1798941714 instance=ExtResource("10_llel7")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.029531538, 0.50000024, 0.03543973)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.005186856, 0.55859816, 0.004255295)
+collision_layer = 4
 
 [node name="Matress02" parent="Cell01/Assets/Static/DoubleDeckerBed01" unique_id=1430283237 instance=ExtResource("11_q5vw5")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.023378909, 1.4999998, -0.9479354)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0.00096583366, 1.5585977, -0.9479354)
+collision_layer = 4
 
 [node name="Dynamic" type="Node3D" parent="Cell01/Assets" unique_id=1878516401]
 
@@ -415,7 +431,7 @@ transform = Transform3D(0.9999994, 0, 0, 0, 0.99999946, 0, 0, 0, 0.9999999, -1.3
 
 [node name="DoubleBedEvent" type="StaticBody3D" parent="Cell01/Events" unique_id=930565913]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775949, 1.8409398, 1.1298797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775949, 1.8882108, 1.1298797)
 script = ExtResource("4_xsm68")
 metadata/_custom_type_script = "uid://dqps237qckyge"
 
@@ -429,7 +445,7 @@ shape = SubResource("BoxShape3D_llel7")
 transform = Transform3D(0.8696845, 0, 0.49360797, 0, 1, 0, -0.49360797, 0, 0.8696845, -0.9005222, -0.0019390136, -1.9652284)
 
 [node name="DynamicSpotLight3D3" type="SpotLight3D" parent="Cell01/Events/KeyEvent" unique_id=638532212]
-transform = Transform3D(0.8299445, -0.31771082, -0.45853242, -0.04853179, -0.8599755, 0.50802255, -0.5557309, -0.3993771, -0.72915095, -0.9611127, 0.04997556, -2.0606244)
+transform = Transform3D(0.82284516, -0.3227596, -0.46770948, -0.04746475, -0.85920715, 0.5094214, -0.56628, -0.39697522, -0.7223141, -0.95839804, 0.04997555, -2.0602562)
 light_energy = 0.005
 light_size = 0.2
 light_bake_mode = 0
@@ -437,7 +453,7 @@ shadow_enabled = true
 shadow_bias = 0.01
 shadow_blur = 1.5
 spot_range = 1.1754061
-spot_angle = 80.0
+spot_angle = 10.25
 script = ExtResource("11_gbybj")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
@@ -450,7 +466,7 @@ shadow_enabled = true
 shadow_bias = 0.01
 shadow_blur = 1.5
 spot_range = 2.975
-spot_angle = 80.0
+spot_angle = 25.0
 script = ExtResource("11_gbybj")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
@@ -646,10 +662,12 @@ mesh = SubResource("PlaneMesh_35oj4")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.7903657, 0, -3.701395)
 
 [node name="Matress01" parent="Cell02/Assets/Static/DoubleDeckerBed01" unique_id=1511796195 instance=ExtResource("10_llel7")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.029531538, 0.50000024, 0.03543973)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030417442, 0.55859816, 0.011360168)
+collision_layer = 4
 
 [node name="Matress02" parent="Cell02/Assets/Static/DoubleDeckerBed01" unique_id=1736913899 instance=ExtResource("10_llel7")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.029531479, 1.4966142, 0.03543949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030417442, 1.5552121, 0.01135993)
+collision_layer = 4
 
 [node name="Corridor" type="Node3D" parent="." unique_id=63834878]
 

@@ -46,15 +46,10 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Settings"
 
-[node name="SaveButton" type="Button" parent="Menu" unique_id=1231604014]
+[node name="SavesButton" type="Button" parent="Menu" unique_id=140991975]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Save Game"
-
-[node name="LoadButton" type="Button" parent="Menu" unique_id=140991975]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Load Game"
+text = "Saves"
 
 [node name="MainMenuButton" type="Button" parent="Menu" unique_id=1450678308]
 unique_name_in_owner = true

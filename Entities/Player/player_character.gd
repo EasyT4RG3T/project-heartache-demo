@@ -210,6 +210,10 @@ func _ready() -> void:
 
 
 func take_input(event: InputEvent) -> void:
+	if DisplayServer.mouse_get_mode() != DisplayServer.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseButton:
+			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
+		return
 	_handle_camera_input(event)
 	_handle_movement_input(event)
 	_handle_action_input(event)
@@ -298,10 +302,10 @@ func _handle_action_input(event: InputEvent) -> void:
 		print("drop")
 	
 	if event.is_action_pressed("use_main"):
-		print("main")
+		pass
 	
 	if event.is_action_pressed("use_second"):
-		print("second")
+		pass
 	
 	if event.is_action_pressed("use_third"):
 		mid_phys_rotation = true
@@ -644,8 +648,8 @@ func _update_sub_viewport() -> void:
 	inventory_sub_viewport.size = get_window().size
 
 
-func add_thought(thought: String, story: bool = false, time: float = 2.0) -> void:
-	player_hud.display_thought(thought, story, time)
+func add_thought(thought: String, story: bool = false, time: float = 2.0, fade_in: float = 0.2, fade_out: float = 0.2) -> void:
+	player_hud.display_thought(thought, story, time, fade_in, fade_out)
 
 
 func apply_settings() -> void:

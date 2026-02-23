@@ -62,8 +62,6 @@ func apply_settings_data() -> void:
 	
 	DisplayServer.window_set_vsync_mode(SaverLoader.settings.vsync)
 	Engine.max_fps = SaverLoader.settings.max_fps
-	print(SaverLoader.settings.window_mode)
-	print(DisplayServer.window_get_mode())
 	if SaverLoader.settings.window_mode != DisplayServer.window_get_mode():
 		DisplayServer.window_set_mode(SaverLoader.settings.window_mode)
 	
@@ -133,6 +131,10 @@ func new_game() -> void:
 	
 	var int_files: Array[int] = []
 	for file: String in DirAccess.get_files_at(SaverLoader.GAME_DATA_PATH):
+		if !file.begins_with("Save_"):
+			continue
+		file = file.trim_prefix("Save_")
+		file = file.trim_suffix(".dat")
 		if file.is_valid_int():
 			if !int_files.has(file.to_int()):
 				int_files.append(file.to_int())
@@ -142,7 +144,7 @@ func new_game() -> void:
 			current_try += 1
 		else:
 			break
-	SaverLoader.current_slot = str(current_try)
+	SaverLoader.current_slot = "Save_" + str(current_try)
 	
 	is_new_game = true
 	SaverLoader.can_save = 0

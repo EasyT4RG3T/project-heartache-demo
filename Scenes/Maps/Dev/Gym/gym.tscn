@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cralm3aptvr1y"]
 
 [ext_resource type="Material" uid="uid://cq7u268rull7y" path="res://Assets/Placeholder/Materials/gray.tres" id="1_gc1gg"]
-[ext_resource type="Script" uid="uid://bupj3m1c7wjcn" path="res://Scenes/Dev/Gym/gym.gd" id="1_igepr"]
+[ext_resource type="Script" uid="uid://bupj3m1c7wjcn" path="res://Scenes/Maps/Dev/Gym/gym.gd" id="1_igepr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_igepr"]
 size = Vector2(100, 100)

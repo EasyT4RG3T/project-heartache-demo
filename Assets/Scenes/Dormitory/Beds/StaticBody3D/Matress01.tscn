@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dbr4cptcnrkkb"]
 
 [ext_resource type="PackedScene" uid="uid://bu21010p8o00b" path="res://Assets/Scenes/Dormitory/Beds/MeshInstance3D/Matress01.tscn" id="1_y2dqv"]
-[ext_resource type="Material" uid="uid://dbv6risj1gvcu" path="res://Assets/Materials/Fabrics/CushionGrid/GridCoushion.tres" id="2_y2dqv"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ernm5"]
 points = PackedVector3Array(0.474907, 0.1, 0.75992566, 0.4192982, 0.1, 0.89420515, 0.474907, 0, 0.75992566, 0.474907, 0.1, -0.7601116, 0.2849256, 0.1, 0.949814, 0.4192982, 0, 0.89420515, 0.474907, 0, -0.7601116, 0.4192982, 0.1, -0.8943911, 0.2849256, 0, 0.949814, -0.2850186, 0.1, 0.949814, 0.4192982, 0, -0.8943911, 0.2849256, 0.1, -0.95, -0.2850186, 0, 0.949814, -0.41939116, 0.1, 0.89420515, 0.2849256, 0, -0.95, -0.2850186, 0.1, -0.95, -0.41939116, 0, 0.89420515, -0.475, 0.1, 0.75992566, -0.2850186, 0, -0.95, -0.41939116, 0.1, -0.8943911, -0.475, 0, 0.75992566, -0.475, 0.1, -0.7601116, -0.41939116, 0, -0.8943911, -0.475, 0, -0.7601116)
@@ -9,7 +8,6 @@ points = PackedVector3Array(0.474907, 0.1, 0.75992566, 0.4192982, 0.1, 0.8942051
 [node name="Matress01" type="StaticBody3D" unique_id=1798941714]
 
 [node name="Matress01" parent="." unique_id=1061595153 instance=ExtResource("1_y2dqv")]
-surface_material_override/0 = ExtResource("2_y2dqv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=196364048]
 shape = SubResource("ConvexPolygonShape3D_ernm5")

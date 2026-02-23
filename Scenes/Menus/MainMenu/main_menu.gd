@@ -36,11 +36,11 @@ func _setup_start() -> void:
 	start_new_game_button.pressed.connect(func():
 		GameManager.new_game())
 	
-	if !FileAccess.file_exists(SaverLoader.GAME_DATA_PATH + SaverLoader.current_slot):
+	if !FileAccess.file_exists(SaverLoader.GAME_DATA_PATH + SaverLoader.current_slot + ".dat"):
 		start_continue_button.hide()
 	
 	start_continue_button.pressed.connect(func():
-		if !FileAccess.file_exists(SaverLoader.GAME_DATA_PATH + SaverLoader.current_slot):
+		if !FileAccess.file_exists(SaverLoader.GAME_DATA_PATH + SaverLoader.current_slot + ".dat"):
 			return
 		SaverLoader.load_game_data(SaverLoader.current_slot))
 	

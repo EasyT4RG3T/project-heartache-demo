@@ -13,7 +13,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[node name="MainMenu" type="Control" unique_id=760916766]
+[node name="MainMenu" type="Control" unique_id=760916766 groups=["Menu"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

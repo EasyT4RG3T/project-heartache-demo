@@ -4,8 +4,7 @@ extends Control
 @onready var menu: VBoxContainer = %Menu
 @onready var resume_button: Button = %ResumeButton
 @onready var settings_button: Button = %SettingsButton
-@onready var save_button: Button = %SaveButton
-@onready var load_button: Button = %LoadButton
+@onready var saves_button: Button = %SavesButton
 @onready var main_menu_button: Button = %MainMenuButton
 
 const settings_menu_uid: String = "uid://0ogoc8tlkqfx"
@@ -37,22 +36,7 @@ func _ready() -> void:
 			menu.show()
 			InputManager.menu = self))
 	
-	save_button.pressed.connect(func():
-		if SaverLoader.can_save > 0:
-			var accept_menu_packed: PackedScene = load(accept_menu_uid)
-			var accept_menu: AcceptMenu = accept_menu_packed.instantiate()
-			accept_menu.message = "Cannot save at this moment"
-			accept_menu.accept_text = "Okay"
-			accept_menu.cancel_button = false
-			add_child(accept_menu)
-			accept_menu.accepted.connect(func():
-				accept_menu.queue_free()
-				InputManager.menu = self)
-			InputManager.menu = accept_menu
-			return
-		SaverLoader.save_game_data(SaverLoader.current_slot))
-	
-	load_button.pressed.connect(func():
+	saves_button.pressed.connect(func():
 		var saves_menu_packed: PackedScene = load(saves_menu_uid)
 		var saves_menu: Node = saves_menu_packed.instantiate()
 		add_child(saves_menu)

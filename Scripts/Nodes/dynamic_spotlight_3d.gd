@@ -3,7 +3,7 @@ class_name DynamicSpotLight3D
 extends SpotLight3D
 
 
-func _init() -> void:
+@export_tool_button("Set up") var set_up: Callable = func():
 	if Engine.is_editor_hint():
 		spot_angle = 80
 		light_bake_mode = Light3D.BAKE_DISABLED

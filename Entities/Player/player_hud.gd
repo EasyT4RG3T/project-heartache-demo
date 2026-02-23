@@ -133,7 +133,6 @@ func _ready() -> void:
 	thought_label.modulate.a = 0.0
 	add_child(thought_timer)
 	thought_timer.one_shot = true
-	thought_timer.timeout.connect(_hide_thought)
 
 
 func _draw() -> void:
@@ -174,7 +173,7 @@ func _draw_interact(center: Vector2) -> void:
 	)
 
 
-func display_thought(thought: String, story: bool, time: float = 2.0) -> void:
+func display_thought(thought: String, story: bool, time: float = 2.0, fade_in: float = 0.2, fade_out: float = 0.2) -> void:
 	if current_thougt_story and !story:
 		return
 	
@@ -183,23 +182,26 @@ func display_thought(thought: String, story: bool, time: float = 2.0) -> void:
 	
 	if !thought_timer.is_stopped():
 		thought_timer.stop()
+		if thought_timer.timeout.is_connected(_hide_thought):
+			thought_timer.timeout.disconnect(_hide_thought)
 	
 	thought_label.text = thought
 	thought_tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT)
 	
-	thought_tween.tween_property(thought_label, "modulate:a", hud_opacity_active, default_tween_time)
+	thought_tween.tween_property(thought_label, "modulate:a", hud_opacity_active, fade_in)
 	thought_tween.finished.connect(func():
-		thought_timer.start(time))
+		thought_timer.start(time)
+		thought_timer.timeout.connect(_hide_thought.bind(fade_out), CONNECT_ONE_SHOT))
 
 
-func _hide_thought() -> void:
+func _hide_thought(fade_out: float = 0.2) -> void:
 	current_thougt_story = false
 	if thought_tween:
 		thought_tween.kill()
 	
 	thought_tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT)
 	
-	thought_tween.tween_property(thought_label, "modulate:a", 0.0, default_tween_time)
+	thought_tween.tween_property(thought_label, "modulate:a", 0.0, fade_out)
 
 
 func apply_settings() -> void:

@@ -5,13 +5,19 @@ extends Node3D
 @onready var light: SpotLight3D = %Light
 
 
-var disabled: bool = false
+var disabled: bool = true:
+	set(value):
+		disabled = value
+		if value == true:
+			light.hide()
 
 var batteries: Array[float] = []
 var current_battery: float = 0.0
 
 
 func switch() -> void:
+	if disabled:
+		return
 	if light.visible:
 		turn_off()
 	else:
@@ -19,8 +25,12 @@ func switch() -> void:
 
 
 func turn_on() -> void:
+	if disabled:
+		return
 	light.show()
 
 
 func turn_off() -> void:
+	if disabled:
+		return
 	light.hide()
