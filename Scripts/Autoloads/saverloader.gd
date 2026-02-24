@@ -1,6 +1,8 @@
 extends Node
 
 
+signal GameSaved
+
 const SETTINGS_VERSION: int = 1
 const accept_menu_uid: String = "uid://dckjpcj38rsvw"
 
@@ -374,8 +376,7 @@ func _save_game_data(data: Array) -> void:
 	file_write.close()
 	
 	Console.call_deferred("console_print", "game data: saved in slot " + slot)
-	
-	current_slot = slot
+	call_deferred("emit_signal", "GameSaved")
 
 
 func _load_game_data(slot: String) -> void:

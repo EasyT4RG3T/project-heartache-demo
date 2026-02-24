@@ -13,6 +13,7 @@ extends Control
 @onready var save_button: Button = %SaveButton
 @onready var return_button: Button = %ReturnButton
 
+var accept_menu_uid: String = "uid://dckjpcj38rsvw"
 
 var current_selection: String = "":
 	set(value):
@@ -26,7 +27,6 @@ var current_selection: String = "":
 			load_button.show()
 			save_button.show()
 var saves: Dictionary = {}
-var buttons: Array = []
 
 
 func take_input(event: InputEvent) -> void:
@@ -48,23 +48,51 @@ func _ready() -> void:
 		queue_free())
 	
 	delete_button.pressed.connect(func():
-		SaverLoader.erase_game_data(current_selection)
-		saves[current_selection]["button"].queue_free()
-		saves.erase(current_selection))
+		var accept_menu: AcceptMenu = load(accept_menu_uid).instantiate()
+		accept_menu.message = "Are you sure you want to/nDELETE this save file?"
+		accept_menu.accept_text = "Yes"
+		accept_menu.cancel_text = "No"
+		add_child(accept_menu)
+		
+		accept_menu.accepted.connect(func():
+			delete_button.hide()
+			load_button.hide()
+			save_button.hide()
+			SaverLoader.erase_game_data(current_selection)
+			saves[current_selection]["button"].queue_free()
+			saves.erase(current_selection)
+			accept_menu.queue_free())
+		
+		accept_menu.cancelled.connect(func():
+			accept_menu.queue_free()))
 	
 	load_button.pressed.connect(func():
 		SaverLoader.load_game_data(current_selection))
 	
 	save_button.pressed.connect(func():
+		if current_selection != SaverLoader.current_slot:
+			var accept_menu: AcceptMenu = load(accept_menu_uid).instantiate()
+			accept_menu.message = "Override save file?"
+			accept_menu.accept_text = "Yes"
+			accept_menu.cancel_text = "No"
+			add_child(accept_menu)
+			
+			accept_menu.accepted.connect(func():
+				SaverLoader.save_game_data(current_selection)
+				accept_menu.queue_free())
+			accept_menu.cancelled.connect(func():
+				accept_menu.queue_free())
+			
+			return
 		SaverLoader.save_game_data(current_selection))
 	
 	new_save_button.pressed.connect(func():
 		if SaverLoader.can_save > 0: return
 		var int_files: Array[int] = []
 		for file: String in saves:
-			if !file.begins_with("Save_"):
+			if !file.begins_with(current_selection):
 				continue
-			file = file.trim_prefix("Save_")
+			file = file.trim_prefix(current_selection)
 			if file.is_valid_int():
 				if !int_files.has(file.to_int()):
 					int_files.append(file.to_int())
@@ -74,38 +102,45 @@ func _ready() -> void:
 				current_try += 1
 			else:
 				break
-		SaverLoader.current_slot = "Save_" + str(current_try)
-		var bton = _create_button(SaverLoader.current_slot, Time.get_datetime_string_from_system(false, true),\
-					   ProjectSettings.get_setting("application/config/version"))
-		saves_v_box_container.add_child(bton)
-		SaverLoader.save_game_data(SaverLoader.current_slot))
+		var full_slot: String = SaverLoader.current_slot + str(current_try)
+		saves[full_slot] = {
+			"datetime" = Time.get_datetime_string_from_system(false, true),
+			"version" = ProjectSettings.get_setting("application/config/version"),
+			"story_description" = Game.story_description,
+		}
+		var button = _create_button(
+			full_slot,
+			Time.get_datetime_string_from_system(false, true),
+			ProjectSettings.get_setting("application/config/version")
+		)
+		saves[full_slot]["button"] = button
+		SaverLoader.save_game_data(full_slot))
+	
+	selected_name.text_submitted.connect(func(new_text: String):
+		if saves.has(new_text):
+			selected_name.text = current_selection
+			return
+		DirAccess.rename_absolute(SaverLoader.GAME_DATA_PATH + current_selection + ".dat",\
+		SaverLoader.GAME_DATA_PATH + new_text + ".dat")
+		DirAccess.rename_absolute(SaverLoader.GAME_DATA_PATH + current_selection + ".png",\
+		SaverLoader.GAME_DATA_PATH + new_text + ".png")
+		if SaverLoader.current_slot == current_selection:
+			SaverLoader.current_slot = current_selection
+		saves[current_selection]["button"].queue_free()
+		saves[current_selection]["button"] = _create_button(
+			new_text,
+			saves[current_selection]["datetime"],
+			saves[current_selection]["version"],
+		)
+		saves[new_text] = saves[current_selection]
+		saves.erase(current_selection)
+		current_selection = new_text)
+	
 	if SaverLoader.can_save > 0:
 		new_save_button.disabled = true
 		save_button.disabled = true
 	
 	_update_list()
-
-#self.hide()
-#await RenderingServer.frame_post_draw
-#var image: Image = get_viewport().get_texture().get_image()
-#self.show()
-#image.resize(256, 144)
-#image.save_png(OS.get_data_dir() + "/project_heartache/ss.png")
-#)
-
-#if SaverLoader.can_save > 0:
-#			var accept_menu_packed: PackedScene = load(accept_menu_uid)
-#			var accept_menu: AcceptMenu = accept_menu_packed.instantiate()
-#			accept_menu.message = "Cannot save at this moment"
-#			accept_menu.accept_text = "Okay"
-#			accept_menu.cancel_button = false
-#			add_child(accept_menu)
-#			accept_menu.accepted.connect(func():
-#				accept_menu.queue_free()
-#				InputManager.menu = self)
-#			InputManager.menu = accept_menu
-#			return
-#		SaverLoader.save_game_data(SaverLoader.current_slot)
 
 
 func _update_list() -> void:
@@ -123,16 +158,18 @@ func _update_list() -> void:
 		var read_data_byte = file_read.get_buffer(file_read.get_length())
 		var game_data = bytes_to_var(read_data_byte)
 		file_read.close()
+		
 		saves[file_path] = {
 			"datetime" = game_data["system"]["datetime"],
 			"version" = game_data["system"]["version"],
-			"story_description" = game_data["game"]["data"]["story_description"]
+			"story_description" = game_data["game"]["data"]["story_description"],
 		}
-	
-	for save_name in saves:
-		var button = _create_button(save_name, saves[save_name]["datetime"], saves[save_name]["version"])
-		saves_v_box_container.add_child(button)
-		saves["button"] = button
+		var button = _create_button(
+			file_path,
+			game_data["system"]["datetime"],
+			game_data["system"]["version"]
+		)
+		saves[file_path]["button"] = button
 
 
 func _save_select(save_name: String) -> void:
@@ -157,5 +194,22 @@ func _create_button(save_name: String, date: String, version: String) -> Button:
 				  date + "\n-----------------------------\n" +\
 				  version
 	button.pressed.connect(_save_select.bind(save_name))
-	buttons.append(button)
+	saves_v_box_container.add_child(button)
+	
+	var children = saves_v_box_container.get_children()
+	for child in children:
+		if child.name == "NewSaveButton":
+			children.erase(child)
+	children.sort_custom(func(a: Button, b: Button) -> bool:
+		var save_a = a.text.get_slice("\n", 0)
+		var save_b = b.text.get_slice("\n", 0)
+		
+		var datetime_a = saves[save_a]["datetime"]
+		var datetime_b = saves[save_b]["datetime"]
+		
+		return datetime_a > datetime_b)
+	
+	for child in children:
+		saves_v_box_container.move_child(child, -1)
+	
 	return button

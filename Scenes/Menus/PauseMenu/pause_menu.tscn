@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkie0xk6gol6t" path="res://Scenes/Menus/PauseMenu/pause_menu.gd" id="1_xybiy"]
 
-[node name="PauseMenu" type="Control" unique_id=1819213750]
+[node name="PauseMenu" type="Control" unique_id=1819213750 groups=["Menu"]]
 z_index = 2
 layout_mode = 3
 anchors_preset = 15

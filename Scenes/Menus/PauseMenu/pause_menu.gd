@@ -63,6 +63,7 @@ func _ready() -> void:
 			InputManager.menu = accept_menu
 			return
 		SaverLoader.save_game_data(SaverLoader.current_slot)
+		await SaverLoader.GameSaved
 		get_tree().paused = false
 		GameManager.load_main_menu())
 

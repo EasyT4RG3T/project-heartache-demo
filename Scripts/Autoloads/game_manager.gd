@@ -171,4 +171,5 @@ func load_save(file: Dictionary) -> void:
 	player_character.load_save(file["player"])
 	await get_tree().process_frame
 	SaverLoader.can_save = 0
+	get_tree().paused = false
 	GameFullyLoaded.emit()

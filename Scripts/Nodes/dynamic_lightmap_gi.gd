@@ -21,6 +21,7 @@ func _init() -> void:
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
 	if Console.full_bright:
 		Console.gis.append(self)
 		hide()
