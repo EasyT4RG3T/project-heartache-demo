@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://3j0thglcqkoq"]
+
+[ext_resource type="ArrayMesh" uid="uid://t18l6ncoi744" path="res://Assets/Scenes/Bathroom/Cleanware/CleaningSpray/CleningSpray.obj" id="1_cbcq3"]
+
+[node name="MeshCleningSpray" type="MeshInstance3D" unique_id=1571887964]
+mesh = ExtResource("1_cbcq3")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3vpvtn7s5t4m"
-path.bptc="res://.godot/imported/ToiletPaper_albedo.png-9e2082623d769475b46465f862d2213b.bptc.ctex"
+uid="uid://dm0t5hwqsbg0p"
+path.s3tc="res://.godot/imported/ToiletPaper_albedo.png-9e2082623d769475b46465f862d2213b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,12 +12,12 @@ metadata={
 [deps]
 
 source_file="res://Assets/Scenes/Bathroom/ToiletPapers/ToiletPaper_albedo.png"
-dest_files=["res://.godot/imported/ToiletPaper_albedo.png-9e2082623d769475b46465f862d2213b.bptc.ctex"]
+dest_files=["res://.godot/imported/ToiletPaper_albedo.png-9e2082623d769475b46465f862d2213b.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

@@ -381,7 +381,7 @@ func change_movement_speed(speed: float) -> void:
 
 func _process(delta: float) -> void:
 	interaction_ray_query.from = main_camera.global_position
-	interaction_ray_query.to = head.global_position - main_camera.global_basis.z *\
+	interaction_ray_query.to = main_camera.global_position - main_camera.global_basis.z *\
 		clampf(abs(head.rotation.x) * 2, 1.2, 1.6)
 	
 	interaction_ray_result = direct_space_state.intersect_ray(interaction_ray_query)

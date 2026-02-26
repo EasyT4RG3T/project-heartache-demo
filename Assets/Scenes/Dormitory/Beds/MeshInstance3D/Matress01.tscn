@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bu21010p8o00b"]
-
-[ext_resource type="ArrayMesh" uid="uid://5u6prx6l44ag" path="res://Assets/Scenes/Dormitory/Beds/Matress01.obj" id="1_vs31e"]
-[ext_resource type="Material" uid="uid://dbv6risj1gvcu" path="res://Assets/Materials/Fabrics/CushionGrid/GridCoushion.tres" id="2_j7p0l"]
-
-[node name="Matress01" type="MeshInstance3D" unique_id=1061595153]
-mesh = ExtResource("1_vs31e")
-surface_material_override/0 = ExtResource("2_j7p0l")

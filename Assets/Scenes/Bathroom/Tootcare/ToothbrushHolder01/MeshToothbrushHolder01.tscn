@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3d3g6a3budlx"]
+
+[ext_resource type="ArrayMesh" uid="uid://bbj0j0r8qubom" path="res://Assets/Scenes/Bathroom/Tootcare/ToothbrushHolder01/ToothbrushHolder01.obj" id="1_hu0ix"]
+
+[node name="MeshToothbrushHolder01" type="MeshInstance3D" unique_id=144647628]
+mesh = ExtResource("1_hu0ix")

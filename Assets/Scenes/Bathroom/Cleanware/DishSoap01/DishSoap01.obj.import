@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cct71f1aqccks"
+path="res://.godot/imported/DishSoap01.obj-e72e15a424be16d349446e451d36359b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DishSoap01.obj-e72e15a424be16d349446e451d36359b.mesh"]
+
+source_file="res://Assets/Scenes/Bathroom/Cleanware/DishSoap01/DishSoap01.obj"
+dest_files=["res://.godot/imported/DishSoap01.obj-e72e15a424be16d349446e451d36359b.mesh", "res://.godot/imported/DishSoap01.obj-e72e15a424be16d349446e451d36359b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

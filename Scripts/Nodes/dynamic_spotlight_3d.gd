@@ -3,6 +3,9 @@ class_name DynamicSpotLight3D
 extends SpotLight3D
 
 
+var default_light_size: float = 0.2
+
+
 @export_tool_button("Set up") var set_up: Callable = func():
 	if Engine.is_editor_hint():
 		spot_angle = 80
@@ -16,5 +19,7 @@ extends SpotLight3D
 
 func _ready() -> void:
 	if !Engine.is_editor_hint():
+		default_light_size = light_size
 		if SaverLoader.graphics_settings.smooth_lights == false:
 			light_size = 0
+		add_to_group("DynamicLights")

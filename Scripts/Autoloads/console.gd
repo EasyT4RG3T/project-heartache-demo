@@ -258,6 +258,7 @@ var command_tree: Dictionary = {
 		"window_mode": {
 			"ex_fullscreen": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN],
 			"fullscreen": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_FULLSCREEN],
+			"borderless": [_command_settings_window_mode_borderless],
 			"maximized": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_MAXIMIZED],
 			"windowed": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_WINDOWED],
 			"minimized": [_command_settings_window_mode, DisplayServer.WINDOW_MODE_MINIMIZED],
@@ -687,6 +688,13 @@ func _command_settings_window_mode(value: DisplayServer.WindowMode) -> String:
 	SaverLoader.settings.window_mode = value
 	DisplayServer.window_set_mode(value)
 	return "set window mode to " + str(value)
+
+func _command_settings_window_mode_borderless() -> String:
+	if DisplayServer.window_get_flag(DisplayServer.WINDOW_FLAG_BORDERLESS):
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+	else:
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+	return "set borderless to " + str(DisplayServer.window_get_flag(DisplayServer.WINDOW_FLAG_BORDERLESS))
 
 func _command_settings_sensitivity(value: float) -> String:
 	SaverLoader.settings.sensitivity = value

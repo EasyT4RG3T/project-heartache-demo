@@ -3,6 +3,7 @@ extends Control
 
 
 @onready var thought_label: RichTextLabel = %ThoughtLabel
+@onready var dialogue_container: VBoxContainer = %DialogueContainer
 
 
 @export var hud_color_primary: Color = Color.GRAY
@@ -12,6 +13,8 @@ extends Control
 @export var hud_opacity_inactive: float = 0.0
 @export var thought_text_offset: float = 10.0
 @export var thought_text_size: float = 16
+
+enum Characters { CUSTOM, PLAYER, HARUKA }
 
 var hud_size: float = 1.0
 
@@ -202,6 +205,49 @@ func _hide_thought(fade_out: float = 0.2) -> void:
 	thought_tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT)
 	
 	thought_tween.tween_property(thought_label, "modulate:a", 0.0, fade_out)
+
+
+func add_dialogue(character: Characters, text: String, time: float = 0) -> RichTextLabel:
+	var new_dialogue: RichTextLabel = RichTextLabel.new()
+	new_dialogue.bbcode_enabled = true
+	new_dialogue.fit_content = true
+	new_dialogue.scroll_active = false
+	new_dialogue.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var font_size = int(thought_text_size * hud_size)
+	new_dialogue.add_theme_font_size_override("normal_font_size", font_size)
+	new_dialogue.add_theme_font_size_override("bold_font_size", font_size)
+	new_dialogue.add_theme_font_size_override("italics_font_size", font_size)
+	new_dialogue.add_theme_font_size_override("bold_italics_font_size", font_size)
+	new_dialogue.add_theme_font_size_override("mono_font_size", font_size)
+	
+	match character:
+		Characters.CUSTOM:
+			new_dialogue.text = "[b]???:[/b] "
+		Characters.PLAYER:
+			new_dialogue.text = "[b][color=blue]You:[/color][/b] "
+		Characters.HARUKA:
+			new_dialogue.text = "[b][color=pink]Haruka(遥):[/color][/b] "
+	
+	new_dialogue.text += text
+	
+	new_dialogue.add_theme_color_override("default_color", Color.TRANSPARENT)
+	
+	dialogue_container.add_child(new_dialogue)
+	if time > 0:
+		get_tree().create_timer(time).timeout.connect(remove_dialogue.bind(new_dialogue))
+	var dialogue_tween: Tween
+	dialogue_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	dialogue_tween.tween_property(new_dialogue, "theme_override_colors/default_color", Color.WHITE, 0.2)
+	
+	return new_dialogue
+
+
+func remove_dialogue(dialogue: RichTextLabel) -> void:
+	var dialogue_tween: Tween
+	dialogue_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	dialogue_tween.tween_property(dialogue, "theme_override_colors/default_color", Color.TRANSPARENT, 0.2)
+	dialogue_tween.finished.connect(func():
+		dialogue.queue_free())
 
 
 func apply_settings() -> void:

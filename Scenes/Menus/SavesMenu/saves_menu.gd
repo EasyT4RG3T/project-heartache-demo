@@ -90,9 +90,9 @@ func _ready() -> void:
 		if SaverLoader.can_save > 0: return
 		var int_files: Array[int] = []
 		for file: String in saves:
-			if !file.begins_with(current_selection):
+			if !file.begins_with(SaverLoader.current_slot + "_"):
 				continue
-			file = file.trim_prefix(current_selection)
+			file = file.trim_prefix(SaverLoader.current_slot + "_")
 			if file.is_valid_int():
 				if !int_files.has(file.to_int()):
 					int_files.append(file.to_int())
@@ -102,7 +102,7 @@ func _ready() -> void:
 				current_try += 1
 			else:
 				break
-		var full_slot: String = SaverLoader.current_slot + str(current_try)
+		var full_slot: String = SaverLoader.current_slot + "_" + str(current_try)
 		saves[full_slot] = {
 			"datetime" = Time.get_datetime_string_from_system(false, true),
 			"version" = ProjectSettings.get_setting("application/config/version"),

@@ -39,5 +39,6 @@ func load_save(data: Dictionary) -> void:
 
 
 func _notification(what: int) -> void:
+	if Engine.is_editor_hint(): return
 	if what == NOTIFICATION_PREDELETE and Console.full_bright:
 		Console.gis.erase(self)

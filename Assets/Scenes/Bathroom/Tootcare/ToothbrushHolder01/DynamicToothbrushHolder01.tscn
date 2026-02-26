@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ypqvycri57f7"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_xlqji"]
+[ext_resource type="PackedScene" uid="uid://b3d3g6a3budlx" path="res://Assets/Scenes/Bathroom/Tootcare/ToothbrushHolder01/MeshToothbrushHolder01.tscn" id="2_m223t"]
+[ext_resource type="ArrayMesh" uid="uid://bbj0j0r8qubom" path="res://Assets/Scenes/Bathroom/Tootcare/ToothbrushHolder01/ToothbrushHolder01.obj" id="3_pl011"]
+
+[node name="DynamicToothbrushHolder01" type="RigidBody3D" unique_id=969198374]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_xlqji")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshToothbrushHolder01" type="MeshInstance3D" parent="." unique_id=144647628 instance=ExtResource("2_m223t")]
+gi_mode = 2
+mesh = ExtResource("3_pl011")

@@ -46,7 +46,17 @@ func _convert() -> void:
 		var output: String = texture_group[0].get_slice("_", 0)
 		print(texture_group[0].get_slice("_", 0))
 		
-		var material: ORMMaterial3D = ORMMaterial3D.new()
+		var material
+		var do_orm_texture: bool = false
+		for texture in texture_group:
+			var texture_name: String = texture.get_file().get_basename()
+			if texture_name.get_slice("_", 1) == "orm":
+				do_orm_texture = true
+		
+		if do_orm_texture:
+			material = ORMMaterial3D.new()
+		else:
+			material = StandardMaterial3D.new()
 		material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS
 		
 		for texture_path in texture_group:
@@ -60,6 +70,12 @@ func _convert() -> void:
 					material.albedo_texture = texture
 				"orm":
 					material.orm_texture = texture
+				"metallic":
+					material.metallic_texture = texture
+				"roughness":
+					material.roughness_texture = texture
+				"ao":
+					material.ao_texture = texture
 				"emission":
 					material.emission_enabled = true
 					material.emission_texture = texture

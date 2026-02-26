@@ -62,6 +62,7 @@ func apply_settings_data() -> void:
 	
 	DisplayServer.window_set_vsync_mode(SaverLoader.settings.vsync)
 	Engine.max_fps = SaverLoader.settings.max_fps
+	
 	if SaverLoader.settings.window_mode != DisplayServer.window_get_mode():
 		DisplayServer.window_set_mode(SaverLoader.settings.window_mode)
 	
@@ -115,6 +116,14 @@ func apply_graphics_settings_data() -> void:
 	get_viewport().positional_shadow_atlas_quad_2 = SaverLoader.graphics_settings.positional_shadow_atlas2
 	get_viewport().positional_shadow_atlas_quad_3 = SaverLoader.graphics_settings.positional_shadow_atlas3
 	
+	if SaverLoader.dynamic_lights_changed:
+		for dynamic_light: DynamicSpotLight3D in get_tree().get_nodes_in_group("DynamicLights"):
+			if SaverLoader.graphics_settings.smooth_lights:
+				dynamic_light.light_size = dynamic_light.default_light_size
+			else:
+				dynamic_light.light_size = 0
+		SaverLoader.dynamic_lights_changed = false
+	
 	if player_character:
 		player_character.apply_graphics_settings()
 
@@ -128,23 +137,6 @@ func new_game() -> void:
 	await Game.load_chunk(new_game_uid)
 	load_player()
 	await get_tree().process_frame
-	
-	var int_files: Array[int] = []
-	for file: String in DirAccess.get_files_at(SaverLoader.GAME_DATA_PATH):
-		if !file.begins_with("Save_"):
-			continue
-		file = file.trim_prefix("Save_")
-		file = file.trim_suffix(".dat")
-		if file.is_valid_int():
-			if !int_files.has(file.to_int()):
-				int_files.append(file.to_int())
-	var current_try: int = 0
-	for i in int_files.size():
-		if int_files.has(i):
-			current_try += 1
-		else:
-			break
-	SaverLoader.current_slot = "Save_" + str(current_try)
 	
 	is_new_game = true
 	SaverLoader.can_save = 0

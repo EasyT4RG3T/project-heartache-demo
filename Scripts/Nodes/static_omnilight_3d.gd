@@ -8,3 +8,8 @@ func _init():
 		light_bake_mode = Light3D.BAKE_STATIC
 		omni_range = 1.0
 		add_to_group("StaticLights")
+
+
+func _ready() -> void:
+	if !Engine.is_editor_hint():
+		add_to_group("StaticLights")

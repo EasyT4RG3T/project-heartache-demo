@@ -82,6 +82,7 @@ update_scale = false
 [node name="PlayerHUD" parent="Head/MainCamera" unique_id=2020952220 instance=ExtResource("3_b2vmj")]
 unique_name_in_owner = true
 z_index = 1
+anchors_preset = 15
 
 [node name="Shader" type="ColorRect" parent="Head/MainCamera" unique_id=343303646]
 unique_name_in_owner = true

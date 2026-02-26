@@ -10,6 +10,7 @@ const graphics_high: String = "uid://cn4cbbs6h71o1"
 @onready var return_button: Button = %ReturnButton
 @onready var default_button: Button = %DefaultButton
 @onready var revert_button: Button = %RevertButton
+@onready var files_button: Button = %FilesButton
 
 var temp_settings: SettingsResource = SaverLoader.settings.duplicate(true)
 var temp_graphics_settings: GraphicsSettingsResource = SaverLoader.graphics_settings.duplicate(true)
@@ -57,16 +58,15 @@ var window_mode: DisplayServer.WindowMode = DisplayServer.window_get_mode():
 	set(value):
 		window_mode = value
 		temp_settings.window_mode = value
-		print(value)
 		match value:
 			DisplayServer.WindowMode.WINDOW_MODE_WINDOWED:
 				%WindowModeOptionButton.selected = 0
 			DisplayServer.WindowMode.WINDOW_MODE_MAXIMIZED:
 				%WindowModeOptionButton.selected = 1
 			DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN:
-				%WindowModeOptionButton.selected = 2
-			DisplayServer.WindowMode.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 				%WindowModeOptionButton.selected = 3
+			DisplayServer.WindowMode.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+				%WindowModeOptionButton.selected = 4
 		unsaved = true
 var hud_size: float = temp_settings.hud_size:
 	set(value):
@@ -89,7 +89,7 @@ var preset: GraphicsSettingsResource = null:
 		_set_all_settings(true)
 		unsaved = true
 		changed_graphics = true
-
+		SaverLoader.dynamic_lights_changed = true
 
 var unsaved: bool = false:
 	set(value):
@@ -128,6 +128,10 @@ func _ready() -> void:
 	
 	revert_button.pressed.connect(func():
 		_revert_settings())
+	
+	files_button.pressed.connect(func():
+		OS.shell_show_in_file_manager(SaverLoader.GAME_PATH, true)
+		DirAccess.open(SaverLoader.GAME_PATH))
 
 
 func _set_up_game() -> void:

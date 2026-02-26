@@ -151,9 +151,9 @@ popup/item_0/text = "Windowed"
 popup/item_0/id = 0
 popup/item_1/text = "Maximized"
 popup/item_1/id = 1
-popup/item_2/text = "FullScreen"
+popup/item_2/text = "Borderless"
 popup/item_2/id = 2
-popup/item_3/text = "Exclusive"
+popup/item_3/text = "FullScreen"
 popup/item_3/id = 3
 
 [node name="HUDSize" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=1584160800]
@@ -279,6 +279,16 @@ text = "WIP"
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1034284252]
 layout_mode = 2
 alignment = 2
+
+[node name="FilesButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1936006641]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Game Data Folder"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1360819182]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_28f3a")
 
 [node name="DefaultButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1207665116]
 unique_name_in_owner = true

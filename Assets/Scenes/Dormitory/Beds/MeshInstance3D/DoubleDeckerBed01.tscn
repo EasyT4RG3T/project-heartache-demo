@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cbp0xtn5woame"]
-
-[ext_resource type="ArrayMesh" uid="uid://wue4t1h4ggrx" path="res://Assets/Scenes/Dormitory/Beds/DoubleDeckerBed01.obj" id="1_8fach"]
-[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_d4ely"]
-
-[node name="DoubleDeckerBed01" type="MeshInstance3D" unique_id=1262166518]
-mesh = ExtResource("1_8fach")
-surface_material_override/0 = ExtResource("2_d4ely")

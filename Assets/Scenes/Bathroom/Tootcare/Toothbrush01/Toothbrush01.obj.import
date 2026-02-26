@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs5lpsnavj2ts"
+path="res://.godot/imported/Toothbrush01.obj-4d97dcd14d7490392a381d5a0cc95748.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Toothbrush01.obj-4d97dcd14d7490392a381d5a0cc95748.mesh"]
+
+source_file="res://Assets/Scenes/Bathroom/Tootcare/Toothbrush01/Toothbrush01.obj"
+dest_files=["res://.godot/imported/Toothbrush01.obj-4d97dcd14d7490392a381d5a0cc95748.mesh", "res://.godot/imported/Toothbrush01.obj-4d97dcd14d7490392a381d5a0cc95748.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

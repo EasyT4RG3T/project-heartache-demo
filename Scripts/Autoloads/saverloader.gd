@@ -1,6 +1,7 @@
 extends Node
 
 
+@warning_ignore("unused_signal")
 signal GameSaved
 
 const SETTINGS_VERSION: int = 1
@@ -8,7 +9,7 @@ const accept_menu_uid: String = "uid://dckjpcj38rsvw"
 
 var settings: SettingsResource
 var graphics_settings: GraphicsSettingsResource
-
+var dynamic_lights_changed: bool = false
 
 var load_thread: Thread = Thread.new()
 

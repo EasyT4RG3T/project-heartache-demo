@@ -34,7 +34,43 @@ func _ready() -> void:
 
 func _setup_start() -> void:
 	start_new_game_button.pressed.connect(func():
-		GameManager.new_game())
+		var name_input_menu: AcceptMenu = load(accept_menu_uid).instantiate()
+		
+		var int_files: Array[int] = []
+		for file: String in DirAccess.get_files_at(SaverLoader.GAME_DATA_PATH):
+			if !file.begins_with("NewGame"):
+				continue
+			file = file.trim_prefix("NewGame")
+			file = file.trim_suffix(".dat")
+			if file.is_valid_int():
+				if !int_files.has(file.to_int()):
+					int_files.append(file.to_int())
+		var current_try: int = 0
+		for i in int_files.size():
+			if int_files.has(i):
+				current_try += 1
+			else:
+				break
+		var new_slot: String = "NewGame" + str(current_try)
+		
+		name_input_menu.editable = true
+		name_input_menu.message = ""
+		name_input_menu.placeholder_message = new_slot
+		name_input_menu.accept_text = "Start"
+		name_input_menu.cancel_text = "Return"
+		
+		name_input_menu.accepted.connect(func():
+			if name_input_menu.line_edit.text.is_empty():
+				SaverLoader.current_slot = name_input_menu.line_edit.placeholder_text
+			else:
+				SaverLoader.current_slot = name_input_menu.line_edit.text
+			GameManager.new_game())
+		name_input_menu.cancelled.connect(func():
+			name_input_menu.queue_free()
+			InputManager.menu = self)
+		
+		add_child(name_input_menu)
+		InputManager.menu = name_input_menu)
 	
 	if !FileAccess.file_exists(SaverLoader.GAME_DATA_PATH + SaverLoader.current_slot + ".dat"):
 		start_continue_button.hide()

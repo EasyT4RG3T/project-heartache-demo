@@ -1,13 +1,17 @@
 extends Node3D
 
 
-var story_description: String = "I had that nightmare again.\nWhen will it stop."
+var story_description: String = "I had that nightmare again."
 
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	child_entered_tree.connect(func(node: Node):
 		node.process_mode = Node.PROCESS_MODE_PAUSABLE)
+
+
+func character_say(character: PlayerHUD.Characters, text: String, time: float = 0) -> RichTextLabel:
+	return GameManager.player_character.player_hud.add_dialogue(character, text, time)
 
 
 func get_chunks() -> Array:

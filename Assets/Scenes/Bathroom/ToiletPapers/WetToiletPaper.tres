@@ -1,6 +1,6 @@
-[gd_resource type="ORMMaterial3D" format=3 uid="uid://b6ouv4k1wq74h"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsohgf7rnpga7"]
 
-[ext_resource type="Texture2D" uid="uid://dbrcgals34qql" path="res://Assets/Scenes/Bathroom/ToiletPapers/WetToiletPaper_albedo.png" id="1_7gx7l"]
+[ext_resource type="Texture2D" uid="uid://bwdymauejm0uw" path="res://Assets/Scenes/Bathroom/ToiletPapers/WetToiletPaper_albedo.png" id="1_7gx7l"]
 
 [resource]
 albedo_texture = ExtResource("1_7gx7l")
