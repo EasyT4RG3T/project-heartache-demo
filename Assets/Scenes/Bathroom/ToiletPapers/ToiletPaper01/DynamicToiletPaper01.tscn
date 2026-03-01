@@ -18,7 +18,9 @@ collision_sound = "uid://btseqceidxkvx"
 metadata/_custom_type_script = "uid://dc7xxn1bn3bjy"
 
 [node name="MeshToiletPaper01" parent="." unique_id=113112114 instance=ExtResource("2_75dry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
 gi_mode = 2
 
 [node name="@CollisionShape3D@107804" type="CollisionShape3D" parent="." unique_id=954479985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
 shape = SubResource("ConvexPolygonShape3D_l7hkb")

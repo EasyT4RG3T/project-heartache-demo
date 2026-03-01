@@ -41,5 +41,11 @@ text = "Vault: "
 layout_mode = 2
 
 [node name="SaveLabel" type="Label" parent="VBoxContainer" unique_id=1773884307]
+unique_name_in_owner = true
 layout_mode = 2
 text = "SaveBlockers: "
+
+[node name="LightCountLabel" type="Label" parent="VBoxContainer" unique_id=755774924]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LightCount: "

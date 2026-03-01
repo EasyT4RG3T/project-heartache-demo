@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_sdm4l"]
 [ext_resource type="PackedScene" uid="uid://bddi0gxk2i3ci" path="res://Assets/Scenes/Bathroom/Tootcare/Toothbrush01/MeshToothbrush01.tscn" id="2_86e1g"]
-[ext_resource type="ArrayMesh" uid="uid://bs5lpsnavj2ts" path="res://Assets/Scenes/Bathroom/Tootcare/Toothbrush01/Toothbrush01.obj" id="3_j8hdk"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_72ro0"]
-points = PackedVector3Array(-0.0137574645, -6.2e-05, 0.05040572, -0.013877, 3.9896047e-05, -0.08777822, -0.011002711, 3.9896047e-05, -0.11853, 0.013754749, -6.2e-05, 0.05040572, -0.0137574645, -6.2e-05, 0.12073899, -0.013877, 0.014566875, -0.08777822, 0.010999995, 3.9896047e-05, -0.11853, -0.011002711, 0.014566875, -0.11853, 0.013877, 3.9896047e-05, -0.08777822, 0.013754749, -6.2e-05, 0.12073899, -0.0137574645, 0.016384022, 0.12073899, -0.0137574645, 0.016384022, 0.05040572, -0.011222765, 0.034637, 0.052818082, 0.010999995, 0.014566875, -0.11853, 0.013877, 0.014566875, -0.08777822, 0.013754749, 0.016384022, 0.12073899, -0.011222765, 0.034637, 0.11832663, 0.01122005, 0.034637, 0.052818082, 0.013754749, 0.016384022, 0.05040572, 0.01122005, 0.034637, 0.11832663)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m4hhi"]
+points = PackedVector3Array(-0.0076634143, -3.5e-05, 0.028078496, -0.00773, 2.1763895e-05, -0.048897564, -0.0061289156, 2.1763895e-05, -0.066028, 0.007661901, -3.5e-05, 0.028078496, -0.0076634143, -3.5e-05, 0.067258, -0.00773, 0.008114403, -0.048897564, 0.0061274017, 2.1763895e-05, -0.066028, -0.0061289156, 0.008114403, -0.066028, 0.0077299993, 2.1763895e-05, -0.048897564, 0.007661901, -3.5e-05, 0.067258, -0.0076634143, 0.0091285845, 0.067258, -0.0076634143, 0.0091285845, 0.028078496, -0.006251494, 0.019295, 0.029422313, 0.0061274017, 0.008114403, -0.066028, 0.0077299993, 0.008114403, -0.048897564, 0.007661901, 0.0091285845, 0.067258, -0.006251494, 0.019295, 0.065914184, 0.0062499805, 0.019295, 0.029422313, 0.007661901, 0.0091285845, 0.028078496, 0.0062499805, 0.019295, 0.065914184)
 
 [node name="DynamicToothbrush01" type="RigidBody3D" unique_id=1463747931]
 mass = 0.4
@@ -15,9 +14,8 @@ ignore_player = true
 max_distance = 1.2
 min_distance = 0.4
 
-[node name="MeshToothbrush01" type="MeshInstance3D" parent="." unique_id=1514491885 instance=ExtResource("2_86e1g")]
+[node name="MeshToothbrush01" parent="." unique_id=1514491885 instance=ExtResource("2_86e1g")]
 gi_mode = 2
-mesh = ExtResource("3_j8hdk")
 
-[node name="@CollisionShape3D@155544" type="CollisionShape3D" parent="." unique_id=1847710467]
-shape = SubResource("ConvexPolygonShape3D_72ro0")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2104032033]
+shape = SubResource("ConvexPolygonShape3D_m4hhi")

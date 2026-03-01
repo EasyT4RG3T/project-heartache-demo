@@ -106,6 +106,8 @@ var p: PlayerCharacter
 
 func _ready() -> void:
 	vault_check_query.collision_mask = 131
+	vault_ray_query.collision_mask = 131
+	vault_height_query.collision_mask = 131
 	vault_fit_query.collision_mask = 131
 
 
@@ -182,7 +184,6 @@ func check() -> void:
 	
 	p.can_vault = false
 	vault_error["can_vault"] = "false"
-	vault_error["error"] = "something_went_wrong"
 
 
 func _vault_end_point_set(point: Vector3, normal: Vector3) -> bool:
@@ -380,16 +381,14 @@ func _vault_crouch_cast(vault_end_point: Vector3) -> bool:
 	if debug:
 		d_crouch_mesh.global_position = vault_end_point + p.player_crouch_collision_position
 	
-	#vault_fit_query.transform.origin = p.global_position + vault_fit_query_crouch_position
-	#vault_fit_query.motion = vault_end_point - p.global_position
-	#
-	#var vault_fit_direct_result = p.direct_space_state.cast_motion(vault_fit_query)
-	#if vault_fit_direct_result[0] >= 1:
-	#	p.vault_position = vault_end_point
-	#	vault_uncrouch_height = Vector3.ZERO
-	#	vault_crouch_mid = Vector3.ZERO
-	#	vault_error["type"] = "crouch_direct"
-	#	return true
+	vault_fit_query.transform.origin = p.global_position + vault_fit_query_crouch_position
+	vault_fit_query.motion = vault_end_point - p.global_position
+	
+	var vault_fit_direct_result = p.direct_space_state.cast_motion(vault_fit_query)
+	if vault_fit_direct_result[0] >= 1:
+		vault_error["error"] = "nothing_to_crouch_vault"
+		return false
+		
 	
 	if vault_end_point.y - p.global_position.y > 0.25:
 		var uncrouch_pos := Vector3(p.global_position.x, vault_end_point.y, p.global_position.z)

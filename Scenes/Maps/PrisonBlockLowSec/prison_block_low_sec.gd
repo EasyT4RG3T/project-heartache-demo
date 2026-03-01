@@ -1,25 +1,32 @@
 extends Node3D
 
 
-@onready var double_bed_event: OnCenterScreenNotifier3D = %DoubleBedEvent
 @onready var cutscenes: Cutscene = %Cutscenes
+
+enum Event { INIT, SETUP, TRIGGER, DISABLE }
+
+var key_event_happened: bool = false
+var double_bed_event_happened: bool = false:
+	set(value):
+		double_bed_event_happened = value
+		if toilet_paper_event_happened and !key_event_happened:
+			key_event(Event.SETUP)
+var toilet_paper_event_happened: bool = false:
+	set(value):
+		toilet_paper_event_happened = value
+		if double_bed_event_happened and !key_event_happened:
+			key_event(Event.SETUP)
 
 
 func _ready() -> void:
-	double_bed_event.center_entered.connect(func():
-		get_tree().create_timer(1.0).timeout.connect(func():
-			Game.character_say(PlayerHUD.Characters.PLAYER, "I never got a cellmate", 3.0))
-		var look_cut: LookCutscene = LookCutscene.new()
-		add_child(look_cut)
-		look_cut.look(double_bed_event.global_position, 1.0)
-		look_cut.animation_finished.connect(func():
-			look_cut.queue_free())
-		double_bed_event.disabled = true)
-	
 	GameManager.GameFullyLoaded.connect(func():
 		if GameManager.is_new_game:
 			cutscenes.play("WakeUp")
 			GameManager.is_new_game = false)
+	
+	double_bed_event(Event.SETUP)
+	toilet_paper_event(Event.SETUP)
+	key_event(Event.INIT)
 
 
 func animation_signal(animation: String) -> void:
@@ -30,15 +37,80 @@ func animation_signal(animation: String) -> void:
 				"It's that nightmare again.",
 				4
 			)
+		"KeyPickUp01":
+			%KeyHighlightSpot.out_of_area = true
+		"KeyPickUp02":
+			%KeyEvent.queue_free()
+			%Cell01DoorHinge3D.force_open(1)
+
+
+func double_bed_event(event: Event) -> void:
+	match event:
+		Event.SETUP:
+			%DoubleBedEvent.center_entered.connect(double_bed_event.bind(Event.TRIGGER))
+		Event.TRIGGER:
+			get_tree().create_timer(1.0).timeout.connect(func():
+				Game.character_say(PlayerHUD.Characters.PLAYER, "I wish they'd give me a cellmate", 3.0))
+			var look_cut: LookCutscene = LookCutscene.new()
+			add_child(look_cut)
+			look_cut.look(%DoubleBedEvent.global_position, 3.0)
+			look_cut.animation_finished.connect(func():
+				double_bed_event_happened = true
+				look_cut.queue_free(),
+				CONNECT_ONE_SHOT)
+			double_bed_event(Event.DISABLE)
+		Event.DISABLE:
+			%DoubleBedEvent.disabled = true
+
+
+func toilet_paper_event(event: Event) -> void:
+	match event:
+		Event.SETUP:
+			%ToiletPaperEventOnScreen.screen_entered_plus.connect(toilet_paper_event.bind(Event.TRIGGER))
+		Event.TRIGGER:
+			var look_cut: LookCutscene = LookCutscene.new()
+			add_child(look_cut)
+			look_cut.animation_finished.connect(func():
+				toilet_paper_event_happened = true
+				look_cut.queue_free(),
+				CONNECT_ONE_SHOT)
+			look_cut.look($Cell01/Assets/Static/StaticToilet01.global_position + Vector3(0, 0.5, -0.2), 1.0)
+			Game.character_say(PlayerHUD.Characters.PLAYER, "Dammit", 2.0)
+			for child in %ToiletPaperEvent.get_children():
+				if child is RigidBody3D:
+					child.apply_impulse(Vector3(0, 0, 0.7))
+			toilet_paper_event(Event.DISABLE)
+		Event.DISABLE:
+			%ToiletPaperEventOnScreen.disabled = true
+
+
+func key_event(event: Event) -> void:
+	match event:
+		Event.INIT:
+			%KeyEvent.hide()
+			%CellDoor01FlapHinge3D.open_progress = 0.0
+		Event.SETUP:
+			%KeyEvent.show()
+			%CellDoor01FlapHinge3D.open_progress = -165.0
+			var key_interactable: Interactable = %KeyInteract.get_interactable()
+			key_interactable.interacted.connect(func(_player: PlayerCharacter):
+				key_event(Event.TRIGGER),
+				CONNECT_ONE_SHOT)
+		Event.TRIGGER:
+			key_event_happened = true
+			cutscenes.play("KeyPickUp")
 
 
 func save() -> Dictionary:
 	var data: Dictionary = {
-		
+		"key_event_happened": key_event_happened,
+		"double_bed_event_happened": double_bed_event_happened,
+		"toilet_paper_event_happened": toilet_paper_event_happened,
 	}
-	
 	return data
 
 
 func load_save(data: Dictionary) -> void:
-	pass
+	key_event_happened = data["key_event_happened"]
+	double_bed_event_happened = data["double_bed_event_happened"]
+	toilet_paper_event_happened = data["toilet_paper_event_happened"]

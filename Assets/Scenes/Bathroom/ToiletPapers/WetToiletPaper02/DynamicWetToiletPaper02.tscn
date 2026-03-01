@@ -16,7 +16,9 @@ min_distance = 0.4
 collision_sound = "uid://c112yt83638su"
 
 [node name="MeshWetToiletPaper02" parent="." unique_id=1855912447 instance=ExtResource("2_upa5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
 gi_mode = 2
 
 [node name="@CollisionShape3D@108460" type="CollisionShape3D" parent="." unique_id=1411940081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
 shape = SubResource("ConvexPolygonShape3D_a8vow")

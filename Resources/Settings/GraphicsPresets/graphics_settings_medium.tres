@@ -10,5 +10,6 @@ ssao_quality = 1
 volumetric_fog_enabled = false
 volumetric_fog_volume_size = 64
 volumetric_fog_volume_depth = 64
-positional_shadow_size = 8192
+positional_shadow_size = 4096
+positional_shadow_quality = 2
 metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"

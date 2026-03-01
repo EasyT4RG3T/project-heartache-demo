@@ -6,7 +6,10 @@ extends Control
 @onready var position_label: Label = %PositionLabel
 @onready var rotation_label: Label = %RotationLabel
 @onready var vaults_label: Label = %VaultsLabel
-@onready var save_label: Label = $VBoxContainer/SaveLabel
+@onready var save_label: Label = %SaveLabel
+@onready var light_count_label: Label = %LightCountLabel
+
+var light_count: int = 0
 
 
 var overlay_layer: int = 0:
@@ -23,8 +26,16 @@ var overlay_layer: int = 0:
 			vaults_label.show()
 		if value < 3:
 			save_label.hide()
+			light_count_label.hide()
 		if value >= 3:
 			save_label.show()
+			light_count_label.show()
+			while light_count_label.visible:
+				light_count = 0
+				for light in get_tree().get_nodes_in_group("DynamicLights"):
+					if light.visible:
+						light_count += 1
+				await get_tree().create_timer(1).timeout
 
 
 func _ready() -> void:
@@ -32,6 +43,7 @@ func _ready() -> void:
 	rotation_label.hide()
 	vaults_label.hide()
 	save_label.hide()
+	light_count_label.hide()
 
 
 func _process(_delta: float) -> void:
@@ -45,3 +57,4 @@ func _process(_delta: float) -> void:
 	
 	if overlay_layer >= 3:
 		save_label.text = "SaveBlockers: " + str(SaverLoader.can_save)
+		light_count_label.text = "LightCount: " + str(light_count)

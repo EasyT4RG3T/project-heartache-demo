@@ -136,6 +136,8 @@ func _thread_worker() -> void:
 		while function_queue.size() > 0 and not stop_thread:
 			var function = function_queue.pop_front()
 			_process_function(function)
+		
+		OS.delay_msec(16)
 
 
 func _process_function(function: Dictionary) -> void:

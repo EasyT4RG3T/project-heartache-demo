@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c3i8trq5r272i"]
+
+[ext_resource type="ArrayMesh" uid="uid://n157bj588lmq" path="res://Assets/Scenes/Trash/TrashCans/TrashCan02/TrashCan02.obj" id="1_gmjkx"]
+[ext_resource type="Material" uid="uid://dofmirwawvy76" path="res://Assets/Scenes/Trash/TrashCans/TrashCan02/TrashCan02.tres" id="2_ork22"]
+
+[node name="MeshTrashCan02" type="MeshInstance3D" unique_id=688037887]
+mesh = ExtResource("1_gmjkx")
+surface_material_override/0 = ExtResource("2_ork22")

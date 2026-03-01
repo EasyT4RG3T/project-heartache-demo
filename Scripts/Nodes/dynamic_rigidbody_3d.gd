@@ -52,7 +52,7 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 1
 	
-	get_tree().create_timer(0.1).timeout.connect(func(): audio_grace = true)
+	get_tree().create_timer(0.1).timeout.connect(func(): audio_grace = true, CONNECT_ONE_SHOT)
 
 
 func switch_pick_up(player: PlayerCharacter) -> void:

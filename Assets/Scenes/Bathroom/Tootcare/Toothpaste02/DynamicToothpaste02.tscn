@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_rmuii"]
 [ext_resource type="PackedScene" uid="uid://wrnhde8lcn0w" path="res://Assets/Scenes/Bathroom/Tootcare/Toothpaste02/MeshToothpaste02.tscn" id="2_37wuq"]
-[ext_resource type="ArrayMesh" uid="uid://dqj4c723qr3d7" path="res://Assets/Scenes/Bathroom/Tootcare/Toothpaste02/Toothpaste02.obj" id="3_6s3qj"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ndvk0"]
-points = PackedVector3Array(-0.031988, 0.238853, 0.0012393724, -0.02152364, 0.22716285, 0.006645998, 0, 0.22727975, 0.0076352227, 0.031988, 0.238853, 0.0012393724, 0, 0.2261575, -0.0024616923, -0.02152364, 0.2262744, -0.0014724676, 0, 0.032989584, -0.02904, -0.020534191, 0.032989584, -0.02053494, -0.020534191, 0, -0.02053494, -0.029044703, 0, 0, -0.020534191, 0, 0.020529257, -0.020534191, 0.032989584, 0.020529257, 0, 0.032989584, 0.02904, 0.021517377, 0.22716285, 0.006645998, 0.02903844, 0, 0, 0.020527929, 0, -0.02053494, 0.020527929, 0.032989584, -0.02053494, 0.021517377, 0.2262744, -0.0014724676, 0.020527929, 0.032989584, 0.020529257, 0.020527929, 0, 0.020529257, 0, 0, -0.02904, 0, 0, 0.02904)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ub20p"]
+points = PackedVector3Array(-0.015994, 0.119426, 0.0006196862, -0.01076182, 0.11358095, 0.003322999, 0, 0.1136394, 0.0038176114, 0.015994, 0.119426, 0.0006196862, 0, 0.113078274, -0.0012308462, -0.01076182, 0.11313672, -0.0007362338, 0, 0.016494723, -0.01452, -0.010267096, 0.016494723, -0.01026747, -0.010267096, 0, -0.01026747, -0.014522351, 0, 0, -0.010267096, 0, 0.010264629, -0.010267096, 0.016494723, 0.010264629, 0, 0.016494723, 0.01452, 0.010758689, 0.11358095, 0.003322999, 0.01451922, 0, 0, 0.0102639645, 0, -0.01026747, 0.0102639645, 0.016494723, -0.01026747, 0.010758689, 0.11313672, -0.0007362338, 0.0102639645, 0.016494723, 0.010264629, 0.0102639645, 0, 0.010264629, 0, 0, -0.01452, 0, 0, 0.01452)
 
 [node name="DynamicToothpaste02" type="RigidBody3D" unique_id=1082808367]
 mass = 0.4
@@ -15,9 +14,10 @@ ignore_player = true
 max_distance = 1.2
 min_distance = 0.4
 
-[node name="MeshToothpaste02" type="MeshInstance3D" parent="." unique_id=104432259 instance=ExtResource("2_37wuq")]
+[node name="MeshToothpaste02" parent="." unique_id=104432259 instance=ExtResource("2_37wuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.057478614, 0)
 gi_mode = 2
-mesh = ExtResource("3_6s3qj")
 
-[node name="@CollisionShape3D@156035" type="CollisionShape3D" parent="." unique_id=1127366433]
-shape = SubResource("ConvexPolygonShape3D_ndvk0")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=398246761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.057478614, 0)
+shape = SubResource("ConvexPolygonShape3D_ub20p")

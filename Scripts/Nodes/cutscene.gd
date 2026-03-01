@@ -43,6 +43,9 @@ func _set_up_anim(anim_name: StringName) -> void:
 	get_animation(anim_name).track_set_key_value(0, 0, player.head.global_position)
 	get_animation(anim_name).track_set_key_value(1, 0, player.head.global_rotation)
 	
+	player_anim.global_position = player.head.global_position
+	player_anim.global_rotation = player.head.global_rotation
+	
 	player._change_fov_smooth(80, get_animation(anim_name).track_get_key_time(0, 1))
 	
 	set_up = true
@@ -50,18 +53,24 @@ func _set_up_anim(anim_name: StringName) -> void:
 
 
 func _play_anim() -> void:
-	player.main_camera.reparent(player_anim, false)
+	#player.main_camera.reparent(player_anim, false)
 	player.current_movement_mode = PlayerCharacter.MovementMode.CUTSCENE
 	InputManager.player_character_input = false
 	SaverLoader.can_save += 1
 	play()
+	while is_playing():
+		player.main_camera.global_position = player_anim.global_position
+		player.main_camera.global_rotation = player_anim.global_rotation
+		await get_tree().process_frame
 
 
 func _exit_anim(anim_name: StringName) -> void:
-	player.main_camera.reparent(player.head, false)
+	#player.main_camera.reparent(player.head, false)
 	player.current_movement_mode = exit_modes[anim_name]
 	var last_pos_key = get_animation(anim_name).track_get_key_count(0) - 1
 	var last_rot_key = get_animation(anim_name).track_get_key_count(1) - 1
+	player.main_camera.position = Vector3.ZERO
+	player.main_camera.rotation = Vector3.ZERO
 	match exit_modes[anim_name]:
 		PlayerCharacter.MovementMode.WALKING:
 			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.7, 0)

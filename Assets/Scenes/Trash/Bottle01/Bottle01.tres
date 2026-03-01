@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://j7215ukkr4r0"]
+
+[ext_resource type="Texture2D" uid="uid://oj7qa04dnc32" path="res://Assets/Scenes/Trash/Bottle01/Bottle01_albedo.png" id="1_ntfgo"]
+
+[resource]
+albedo_texture = ExtResource("1_ntfgo")
+roughness = 0.5
+texture_filter = 2

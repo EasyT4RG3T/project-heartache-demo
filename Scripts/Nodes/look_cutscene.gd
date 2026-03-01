@@ -21,7 +21,7 @@ func look(look_pos: Vector3, duration: float = 0.0) -> void:
 	
 	look_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_ease(Tween.EASE_OUT)
 	look_tween.tween_property(GameManager.player_character.head, "global_basis", global_basis, 1.0)
-	look_tween.finished.connect(func():
+	look_tween.tween_callback(func():
 		if duration > 0.0:
 			await get_tree().create_timer(duration).timeout
 		var vector: Vector3 = global_basis.get_euler()

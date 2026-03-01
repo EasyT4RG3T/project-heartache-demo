@@ -136,10 +136,16 @@ func _ready() -> void:
 	thought_label.modulate.a = 0.0
 	add_child(thought_timer)
 	thought_timer.one_shot = true
+	
+	offset_left = 15
+	offset_top = 15
+	offset_right = -15
+	offset_bottom = -15
 
 
 func _draw() -> void:
 	var center = get_viewport().get_visible_rect().size / 2
+	center -= Vector2(15, 15)
 	
 	_draw_crosshair(center)
 	_draw_vault(center)

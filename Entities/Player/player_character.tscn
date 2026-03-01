@@ -34,6 +34,7 @@ script = ExtResource("1_12kfy")
 
 [node name="PauseMenu" parent="." unique_id=1628321705 instance=ExtResource("2_seg3p")]
 unique_name_in_owner = true
+visible = false
 z_index = 250
 
 [node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=168532631]
@@ -68,7 +69,7 @@ unique_name_in_owner = true
 
 [node name="MainCamera" type="Camera3D" parent="Head" unique_id=1704508663]
 unique_name_in_owner = true
-cull_mask = 1047553
+cull_mask = 1025
 environment = ExtResource("2_f477v")
 current = true
 fov = 80.0
@@ -83,6 +84,10 @@ update_scale = false
 unique_name_in_owner = true
 z_index = 1
 anchors_preset = 15
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="Shader" type="ColorRect" parent="Head/MainCamera" unique_id=343303646]
 unique_name_in_owner = true
@@ -118,7 +123,7 @@ render_target_update_mode = 4
 [node name="InventoryCamera" type="Camera3D" parent="Head/MainCamera/InventorySubViewportContainer/InventorySubViewport" unique_id=1668812067]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
-cull_mask = 1047554
+cull_mask = 2
 environment = ExtResource("7_4rt0j")
 fov = 60.0
 far = 1.0

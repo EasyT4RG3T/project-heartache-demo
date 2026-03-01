@@ -108,12 +108,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 3
-text = "DESCRIPTION
-hjdashghskjghksjpipigsjgknsajklgn;ko
-jjjjjdsnguirdjugkuiuiuiituitituiut iueirahguihbnriuedbog
-fdsghuidhgbiundiugbiag'dahbuirag
-agjrfduoisghiug
-gauidghbiuhaprgihrudigniuan"
+text = "DESCRIPTION"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -125,7 +120,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-text = "version 0.0.1"
+text = "version"
 horizontal_alignment = 2
 vertical_alignment = 1
 

@@ -63,11 +63,12 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 	
 	if head_tween:
 		head_tween.kill()
+		head_tween = null
 	
 	head_tween = create_tween().set_ease(Tween.EASE_IN_OUT)\
 	.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	head_tween.tween_property(head, "position", pos, duration)
-	head_tween.finished.connect(func():
+	head_tween.tween_callback(func():
 		if on_complete.is_valid():
 			on_complete.call())
 
@@ -86,6 +87,7 @@ var fov_tween: Tween
 func _change_fov_smooth(fov: float, duration: float = 0.3) -> void:
 	if fov_tween:
 		fov_tween.kill()
+		fov_tween = null
 	fov_tween = create_tween().set_ease(Tween.EASE_IN).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	fov_tween.tween_property(main_camera, "fov", fov, duration)
 @onready var shader: ColorRect = %Shader
@@ -198,12 +200,15 @@ func _ready() -> void:
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
 	interaction_ray_query.collision_mask = 7
+	add_child(vault_checks)
 	vault_checks.p = self
-	vault_checks._ready()
 	
 	add_child(crawl_cooldown)
 	crawl_cooldown.one_shot = true
 	player_crawl_query.collision_mask = 131
+	
+	inventory_camera.hide()
+	inventory_camera.show()
 	
 	apply_settings()
 	apply_graphics_settings()
@@ -373,6 +378,7 @@ func exit_movement_mode(mode: MovementMode) -> void:
 func change_movement_speed(speed: float) -> void:
 	if movement_speed_tween:
 		movement_speed_tween.kill()
+		movement_speed_tween = null
 	
 	movement_speed_tween = create_tween().set_ease(Tween.EASE_OUT)\
 	.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
@@ -639,7 +645,7 @@ func _move_player_smooth(pos: Vector3, duration: float, on_complete: Callable = 
 	player_tween = create_tween().set_ease(Tween.EASE_IN_OUT)\
 	.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	player_tween.tween_property(self, "global_position", pos, duration)
-	player_tween.finished.connect(func():
+	player_tween.tween_callback(func():
 		if on_complete.is_valid():
 			on_complete.call())
 

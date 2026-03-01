@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cab4jtqqq3xg3"]
+
+[ext_resource type="Texture2D" uid="uid://e85lveg7y4i5" path="res://Assets/Materials/Noise/SlightNoise/SlightNoise_albedo.png" id="1"]
+
+[resource]
+albedo_texture = ExtResource("1")
+uv1_scale = Vector3(5, 5, 5)
+texture_filter = 2

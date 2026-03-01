@@ -41,7 +41,7 @@ extends Resource
 @export var ssil_fadeout_from: float = 50.0
 @export var ssil_fadeout_to: float = 300.0
 
-@export var glow_enabled: bool = true
+@export var glow_enabled: bool = false
 @export var glow_levels: Array[float] = [0.0, 0.8, 0.4, 0.1, 1.0, 0.0, 0.0]
 @export var glow_upscale_mode: bool = false
 @export var glow_normalized: bool = false
@@ -82,8 +82,8 @@ extends Resource
 @export var directional_shadow_size: int = 4096
 @export var directional_shadow_quality: RenderingServer.ShadowQuality = RenderingServer.SHADOW_QUALITY_HARD
 
-@export var positional_shadow_size: int = 16384
-@export var positional_shadow_quality: RenderingServer.ShadowQuality = RenderingServer.SHADOW_QUALITY_HARD
+@export var positional_shadow_size: int = 8192
+@export var positional_shadow_quality: RenderingServer.ShadowQuality = RenderingServer.SHADOW_QUALITY_SOFT_MEDIUM
 @export var positional_shadow_16bit: bool = true
 @export var positional_shadow_atlas0: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4
 @export var positional_shadow_atlas1: Viewport.PositionalShadowAtlasQuadrantSubdiv = Viewport.PositionalShadowAtlasQuadrantSubdiv.SHADOW_ATLAS_QUADRANT_SUBDIV_4

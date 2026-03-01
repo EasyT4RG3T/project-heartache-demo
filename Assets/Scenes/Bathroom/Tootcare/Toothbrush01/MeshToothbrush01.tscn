@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bddi0gxk2i3ci"]
 
 [ext_resource type="ArrayMesh" uid="uid://bs5lpsnavj2ts" path="res://Assets/Scenes/Bathroom/Tootcare/Toothbrush01/Toothbrush01.obj" id="1_fjeyg"]
+[ext_resource type="Material" uid="uid://coed3bffbpfet" path="res://Assets/Scenes/Bathroom/Tootcare/Toothbrush01/Toothbrush01.tres" id="2_be4a5"]
 
 [node name="MeshToothbrush01" type="MeshInstance3D" unique_id=1514491885]
 mesh = ExtResource("1_fjeyg")
+surface_material_override/0 = ExtResource("2_be4a5")

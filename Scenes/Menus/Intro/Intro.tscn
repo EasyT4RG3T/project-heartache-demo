@@ -22,6 +22,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Intro" type="Control" parent="." unique_id=1808803421]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,11 +49,13 @@ offset_right = 177.0
 offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = -4
 
 [node name="Label" type="Label" parent="Intro/VBoxContainer" unique_id=588260062]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "(gamenamehere:))"
+theme_override_font_sizes/font_size = 50
+text = "HeartStuck"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Intro/VBoxContainer" unique_id=1607986952]
 layout_mode = 2
@@ -68,6 +71,7 @@ text = "EasyT4RG3T"
 
 [node name="Warnings" type="Control" parent="." unique_id=248495003]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

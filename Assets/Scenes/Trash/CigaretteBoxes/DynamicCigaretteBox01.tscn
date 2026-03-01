@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://br8np0a7lbv8g"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_ijatl"]
+[ext_resource type="PackedScene" uid="uid://cskkld4ieh0m8" path="res://Assets/Scenes/Trash/CigaretteBoxes/MeshCigaretteBox01.tscn" id="2_ri6pt"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0wgxu"]
+points = PackedVector3Array(-0.027783, 0, -0.011184, -0.027783, 0, 0.011183999, -0.027783, 0.069337, -0.011184, 0.027783, 0, -0.011184, 0.027783, 0, 0.011183999, -0.027783, 0.069337, 0.011183999, 0.027783, 0.069337, -0.011184, 0.027783, 0.069337, 0.011183999)
+
+[node name="DynamicCigaretteBox01" type="RigidBody3D" unique_id=7758160]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_ijatl")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshCigaretteBox01" parent="." unique_id=1016977139 instance=ExtResource("2_ri6pt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03485223, 0)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=46176106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03485223, 0)
+shape = SubResource("ConvexPolygonShape3D_0wgxu")

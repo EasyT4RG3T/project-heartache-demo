@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://uxeponejyhfo"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_y7xd1"]
+[ext_resource type="PackedScene" uid="uid://cx5bujq01joiq" path="res://Assets/Scenes/Trash/Bottle01/MeshBottle01.tscn" id="2_kxj5a"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_aok5x"]
+points = PackedVector3Array(-0.033926, 0.007101581, 0, -0.03220579, 0, 0, -0.023996599, 0.007101581, 0.02398996, -0.033926, 0.109364346, 0, -0.023996599, 0.007101581, -0.023996599, -0.022774521, 0, -0.022774521, -0.022774521, 0, 0.02276788, 0, 0.007101581, 0.033926, -0.023996599, 0.109364346, 0.02398996, 0, 0, 0.032199148, -0.023996599, 0.109364346, -0.023996599, -0.013017807, 0.22322999, 0, 0, 0.007101581, -0.033926, 0, 0, -0.03220579, 0.02398996, 0.007101581, 0.02398996, 0, 0.109364346, 0.033926, 0, 0.22322999, 0.013011165, -0.009205449, 0.22322999, 0.009198807, 0.02276788, 0, 0.02276788, 0, 0.109364346, -0.033926, -0.009205449, 0.22322999, -0.009205449, 0, 0.22322999, -0.013017807, 0.02398996, 0.007101581, -0.023996599, 0.02276788, 0, -0.022774521, 0.032199148, 0, 0, 0.033926, 0.007101581, 0, 0.02398996, 0.109364346, 0.02398996, 0.009198807, 0.22322999, 0.009198807, 0.02398996, 0.109364346, -0.023996599, 0.009198807, 0.22322999, -0.009205449, 0.033926, 0.109364346, 0, 0.013011165, 0.22322999, 0)
+
+[node name="DynamicBottle01" type="RigidBody3D" unique_id=663455289]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_y7xd1")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshBottle01" parent="." unique_id=408019786 instance=ExtResource("2_kxj5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+gi_mode = 2
+
+[node name="@CollisionShape3D@33427" type="CollisionShape3D" parent="." unique_id=1192530322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("ConvexPolygonShape3D_aok5x")

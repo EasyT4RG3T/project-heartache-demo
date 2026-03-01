@@ -535,7 +535,7 @@ var command_tree: Dictionary = {
 			return str(SaverLoader.graphics_settings.contrast)],
 		"saturation": [_command_graphics_saturation, _need_float, func():
 			return str(SaverLoader.graphics_settings.saturation)],
-		"dynamic_lights": _command_graphics_dynamic_lights,
+		"smooth_lights": _command_graphics_smooth_lights,
 		"directional_shadow": {
 			"size": [_command_graphics_directional_shadow_size, _need_int, func():
 				return str(SaverLoader.graphics_settings.directional_shadow_size)],
@@ -1201,17 +1201,17 @@ func _command_graphics_saturation(value: float) -> String:
 		GameManager.player_character.main_camera.environment.adjustment_saturation = value
 	return "set saturation to " + str(value)
 
-func _command_graphics_dynamic_lights() -> String:
-	if SaverLoader.graphics_settings.dynamic_lights:
-		SaverLoader.graphics_settings.dynamic_lights = false
+func _command_graphics_smooth_lights() -> String:
+	if SaverLoader.graphics_settings.smooth_lights:
+		SaverLoader.graphics_settings.smooth_lights = false
 		for light in get_tree().get_nodes_in_group("DynamicLights"):
-			light.hide()
-		return "turned dynamic lights off"
+			light.light_size = 0
+		return "turned smooth lights off"
 	else:
-		SaverLoader.graphics_settings.dynamic_lights = true
+		SaverLoader.graphics_settings.smooth_lights = true
 		for light in get_tree().get_nodes_in_group("DynamicLights"):
-			light.show()
-		return "turned dynamic lights on"
+			light.light_size = light.default_light_size
+		return "turned smooth lights on"
 
 func _command_graphics_directional_shadow_size(value: int) -> String:
 	SaverLoader.graphics_settings.positional_shadow_size = value
