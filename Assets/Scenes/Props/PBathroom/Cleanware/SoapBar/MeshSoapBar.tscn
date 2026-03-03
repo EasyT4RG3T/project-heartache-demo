@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d4adigyyt1jn3"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2wg8tlfiwu0a" path="res://Assets/Scenes/Props/PBathroom/Cleanware/SoapBar/SoapBar.obj" id="1_mor0b"]
+
+[node name="MeshSoapBar" type="MeshInstance3D" unique_id=1742101398]
+mesh = ExtResource("1_mor0b")

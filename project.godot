@@ -68,6 +68,7 @@ wavefront_obj={
 &"generate_lightmap_uv2": true
 }
 texture={
+&"detect_3d/compress_to": 0,
 &"mipmaps/generate": true
 }
 

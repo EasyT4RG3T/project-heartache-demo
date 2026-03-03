@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b7qlbecd1lalt"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_cjqy4"]
+[ext_resource type="PackedScene" uid="uid://rxlsj8fpjdur" path="res://Assets/Scenes/Props/PKitchen/Utensils/PlasticCup/MeshPlasticCup.tscn" id="2_cohkc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k44vb"]
+points = PackedVector3Array(-0.045698, 0.10897709, 0, -0.03231425, 0.10897709, 0.032305297, -0.031822197, 0.10999999, 0.031813253, -0.04500018, 0.10999999, 0, -0.031822197, 0.10999999, -0.031822197, -0.03231425, 0.10897709, -0.03231425, -0.023689957, 0, -0.023689957, -0.033495165, 0, 0, -0.023689957, 0, 0.023681011, 0, 0.10897709, 0.045698, 0, 0.10999999, 0.044991236, 0, 0.10999999, -0.04500018, 0, 0.10897709, -0.045698, 0, 0, -0.033495165, 0, 0, 0.03348622, 0.032305297, 0.10897709, 0.032305297, 0.031813253, 0.10999999, 0.031813253, 0.023681011, 0, 0.023681011, 0.031813253, 0.10999999, -0.031822197, 0.032305297, 0.10897709, -0.03231425, 0.023681011, 0, -0.023689957, 0.045698, 0.10897709, 0, 0.044991236, 0.10999999, 0, 0.03348622, 0, 0)
+
+[node name="DynamicPlasticCup" type="RigidBody3D" unique_id=1020628902]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_cjqy4")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshPlasticCup" parent="." unique_id=2046180498 instance=ExtResource("2_cohkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.055876035, 0)
+gi_mode = 2
+
+[node name="@CollisionShape3D@59376" type="CollisionShape3D" parent="." unique_id=851801155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.055876035, 0)
+shape = SubResource("ConvexPolygonShape3D_k44vb")

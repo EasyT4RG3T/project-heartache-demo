@@ -23,7 +23,9 @@ func _ready() -> void:
 		if GameManager.is_new_game:
 			cutscenes.play("WakeUp")
 			GameManager.is_new_game = false)
-	
+
+
+func first_setup() -> void:
 	double_bed_event(Event.SETUP)
 	toilet_paper_event(Event.SETUP)
 	key_event(Event.INIT)
@@ -49,8 +51,8 @@ func double_bed_event(event: Event) -> void:
 		Event.SETUP:
 			%DoubleBedEvent.center_entered.connect(double_bed_event.bind(Event.TRIGGER))
 		Event.TRIGGER:
-			get_tree().create_timer(1.0).timeout.connect(func():
-				Game.character_say(PlayerHUD.Characters.PLAYER, "I wish they'd give me a cellmate", 3.0))
+			get_tree().create_timer(0.5).timeout.connect(func():
+				Game.character_say(PlayerHUD.Characters.PLAYER, "I wish they'd give me a cellmate", 2.5))
 			var look_cut: LookCutscene = LookCutscene.new()
 			add_child(look_cut)
 			look_cut.look(%DoubleBedEvent.global_position, 3.0)
@@ -90,12 +92,25 @@ func key_event(event: Event) -> void:
 			%KeyEvent.hide()
 			%CellDoor01FlapHinge3D.open_progress = 0.0
 		Event.SETUP:
+			while !GameManager.player_character:
+				await get_tree().process_frame
 			%KeyEvent.show()
-			%CellDoor01FlapHinge3D.open_progress = -165.0
+			
 			var key_interactable: Interactable = %KeyInteract.get_interactable()
 			key_interactable.interacted.connect(func(_player: PlayerCharacter):
 				key_event(Event.TRIGGER),
 				CONNECT_ONE_SHOT)
+			GameManager.player_character.player_hud.add_dialogue(
+				PlayerHUD.Characters.CUSTOM,
+				"Wanna get out of here?",
+				3.5
+			)
+			await get_tree().process_frame
+			%CellDoor01FlapHinge3D.open_progress = -165.0
+			await get_tree().create_timer(0.2).timeout
+			if !%KeyEvent.visible:
+				%KeyEvent.show()
+			AudioManager.play_uid_sound_at("uid://epskxdoj4off", Vector3(-0.9, 0.0, -2.0), 0.0, 1.5)
 		Event.TRIGGER:
 			key_event_happened = true
 			cutscenes.play("KeyPickUp")
@@ -113,4 +128,8 @@ func save() -> Dictionary:
 func load_save(data: Dictionary) -> void:
 	key_event_happened = data["key_event_happened"]
 	double_bed_event_happened = data["double_bed_event_happened"]
+	if !double_bed_event_happened:
+		double_bed_event(Event.SETUP)
 	toilet_paper_event_happened = data["toilet_paper_event_happened"]
+	if !toilet_paper_event_happened:
+		toilet_paper_event(Event.SETUP)

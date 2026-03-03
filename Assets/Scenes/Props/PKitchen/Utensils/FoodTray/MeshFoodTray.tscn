@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2wgoniymdbe2"]
+
+[ext_resource type="ArrayMesh" uid="uid://5hnt2mj8ejoy" path="res://Assets/Scenes/Props/PKitchen/Utensils/FoodTray/FoodTray.obj" id="1_v12f3"]
+[ext_resource type="Material" uid="uid://bpkb6g3u86ixu" path="res://Assets/Materials/Plastic/BluePlastic/BluePlastic.tres" id="2_bvcvs"]
+
+[node name="MeshFoodTray" type="MeshInstance3D" unique_id=425616727]
+mesh = ExtResource("1_v12f3")
+surface_material_override/0 = ExtResource("2_bvcvs")

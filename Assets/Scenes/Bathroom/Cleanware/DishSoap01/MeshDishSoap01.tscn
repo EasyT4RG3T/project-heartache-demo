@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://byjr040dls64"]
-
-[ext_resource type="ArrayMesh" uid="uid://cct71f1aqccks" path="res://Assets/Scenes/Bathroom/Cleanware/DishSoap01/DishSoap01.obj" id="1_tb33h"]
-
-[node name="MeshDishSoap01" type="MeshInstance3D" unique_id=2037398500]
-mesh = ExtResource("1_tb33h")

@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c45q8l85bicsp"
-path.s3tc="res://.godot/imported/RedBricks_albedo.png-bf7f679b9dfc1b355c3dd479b32c1846.s3tc.ctex"
+path="res://.godot/imported/RedBricks_albedo.png-bf7f679b9dfc1b355c3dd479b32c1846.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Bricks/RedBricks/RedBricks_albedo.png"
-dest_files=["res://.godot/imported/RedBricks_albedo.png-bf7f679b9dfc1b355c3dd479b32c1846.s3tc.ctex"]
+dest_files=["res://.godot/imported/RedBricks_albedo.png-bf7f679b9dfc1b355c3dd479b32c1846.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

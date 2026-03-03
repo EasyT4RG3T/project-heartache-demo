@@ -70,7 +70,10 @@ func load_chunk(chunk_uid: String, data: Dictionary = {}) -> void:
 	var chunk = chunk_pscene.instantiate()
 	add_child(chunk)
 	
-	if data.is_empty(): return
+	if data.is_empty():
+		if chunk.has_method("first_setup"):
+			chunk.first_setup()
+		return
 	
 	load_deep(chunk, data)
 
@@ -101,9 +104,11 @@ func save_deep(node: Node) -> Dictionary:
 	return data
 
 
-func load_deep(node: Node, data: Dictionary) -> void:
+func load_deep(node: Node, data: Dictionary, used: Array = []) -> void:
 	if data.has("Data") and node.has_method("load_save"):
 		node.load_save(data["Data"])
+		if !used.has(node):
+			used.append(node)
 	
 	if data.has("Children"):
 		var children_key: Dictionary = {}
@@ -117,8 +122,6 @@ func load_deep(node: Node, data: Dictionary) -> void:
 			if !children_key.has(child_key):
 				children_key[child_key] = []
 			children_key[child_key].append(child)
-		
-		var used_children: Array = []
 		
 		for key in data["Children"]:
 			var child_data = data["Children"][key]
@@ -142,13 +145,13 @@ func load_deep(node: Node, data: Dictionary) -> void:
 							node.add_child(child_node)
 							child_node.owner = node.owner
 					if child_node:
-						used_children.append(child_node)
-						load_deep(child_node, child_data[i])
+						used.append(child_node)
+						load_deep(child_node, child_data[i], used)
 			else:
 				var child_node: Node
 				if matching_children.size() > 0:
 					child_node = matching_children[0]
-					used_children.append(child_node)
+					used.append(child_node)
 				else:
 					var path: String = ResourceUID.uid_to_path(key)
 					if path:
@@ -162,9 +165,26 @@ func load_deep(node: Node, data: Dictionary) -> void:
 						node.add_child(child_node)
 						child_node.owner = node.owner
 				if child_node:
-					used_children.append(child_node)
-					load_deep(child_node, child_data)
+					used.append(child_node)
+					load_deep(child_node, child_data, used)
 		
-		for child in node.get_children():
-			if !used_children.has(child) and child.has_method("save"):
-				child.queue_free()
+		#for child in node.get_children():
+		#	if !used.has(child) and child.has_method("save"):
+		#		child.queue_free()
+	
+	
+	if node.has_method("save") and !used.has(node):
+		node.queue_free()
+	for child in node.get_children():
+		load_deep(child, {}, used)
+	
+	#for child in node.get_children():
+	#	print("CURRENT NODE: ", child)
+	#	if child.has_method("save"):
+	#		print("HAS SAVE")
+	#	if used.has(child):
+	#		print("DATA: ", used.find(child))
+	#	if child.has_method("save") and !used.has(child):
+	#		child.queue_free()
+	#	for schild in child.get_children():
+	#		load_deep(schild, {}, used)

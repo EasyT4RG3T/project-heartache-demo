@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6f2r3suyfubo"
-path.s3tc="res://.godot/imported/MetalGripMesh_orm.png-bd88f512c6f14dae298c38a88cbf85ac.s3tc.ctex"
+path="res://.godot/imported/MetalGripMesh_orm.png-bd88f512c6f14dae298c38a88cbf85ac.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Metal/MetalGripMesh/MetalGripMesh_orm.png"
-dest_files=["res://.godot/imported/MetalGripMesh_orm.png-bd88f512c6f14dae298c38a88cbf85ac.s3tc.ctex"]
+dest_files=["res://.godot/imported/MetalGripMesh_orm.png-bd88f512c6f14dae298c38a88cbf85ac.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

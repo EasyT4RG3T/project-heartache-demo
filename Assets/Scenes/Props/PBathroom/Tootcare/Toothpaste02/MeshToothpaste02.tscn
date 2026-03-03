@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://wrnhde8lcn0w"]
+
+[ext_resource type="ArrayMesh" uid="uid://dqj4c723qr3d7" path="res://Assets/Scenes/Props/PBathroom/Tootcare/Toothpaste02/Toothpaste02.obj" id="1_xpkl0"]
+[ext_resource type="Material" uid="uid://jqqq83sl8lhh" path="res://Assets/Scenes/Props/PBathroom/Tootcare/Toothpaste.tres" id="2_qwehl"]
+
+[node name="MeshToothpaste02" type="MeshInstance3D" unique_id=104432259]
+mesh = ExtResource("1_xpkl0")
+surface_material_override/0 = ExtResource("2_qwehl")

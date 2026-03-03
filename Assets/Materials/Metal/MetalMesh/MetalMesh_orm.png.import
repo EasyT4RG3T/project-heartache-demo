@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci4m4nh4h5x6a"
-path.s3tc="res://.godot/imported/MetalMesh_orm.png-371c4f9d4bc5dfca1acb3bf9c3e2bcd2.s3tc.ctex"
+path="res://.godot/imported/MetalMesh_orm.png-371c4f9d4bc5dfca1acb3bf9c3e2bcd2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Metal/MetalMesh/MetalMesh_orm.png"
-dest_files=["res://.godot/imported/MetalMesh_orm.png-371c4f9d4bc5dfca1acb3bf9c3e2bcd2.s3tc.ctex"]
+dest_files=["res://.godot/imported/MetalMesh_orm.png-371c4f9d4bc5dfca1acb3bf9c3e2bcd2.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

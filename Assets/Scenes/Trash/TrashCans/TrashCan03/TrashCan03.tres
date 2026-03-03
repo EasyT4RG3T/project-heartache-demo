@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1u7bvx15eng8"]
-
-[ext_resource type="Texture2D" uid="uid://ddsmykq3k46uk" path="res://Assets/Scenes/Trash/TrashCans/TrashCan03/TrashCan03_albedo.png" id="1_7jdgp"]
-[ext_resource type="Texture2D" uid="uid://chs0l8tekonej" path="res://Assets/Scenes/Trash/TrashCans/TrashCan03/TrashCan03_roughness.png" id="2_bbrg1"]
-
-[resource]
-albedo_texture = ExtResource("1_7jdgp")
-roughness_texture = ExtResource("2_bbrg1")
-texture_filter = 2

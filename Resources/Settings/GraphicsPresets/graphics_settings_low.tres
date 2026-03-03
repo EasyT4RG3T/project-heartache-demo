@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_s6e2t")
-scaling_3d_scale = 0.8
+scaling_3d_scale = 0.6699999999999999
 msaa_2d = 0
 msaa_3d = 0
 ssao_quality = 0
@@ -15,6 +15,6 @@ volumetric_fog_volume_depth = 64
 smooth_lights = false
 directional_shadow_size = 1024
 positional_shadow_size = 2048
-positional_shadow_quality = 0
+positional_shadow_quality = 1
 reduce_particles = true
 metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"

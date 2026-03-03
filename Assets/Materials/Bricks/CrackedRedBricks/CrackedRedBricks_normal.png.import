@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvxydjscl1162"
-path.s3tc="res://.godot/imported/CrackedRedBricks_normal.png-46ba4af993eea03f937fe1c37fb6221e.s3tc.ctex"
+path="res://.godot/imported/CrackedRedBricks_normal.png-46ba4af993eea03f937fe1c37fb6221e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Bricks/CrackedRedBricks/CrackedRedBricks_normal.png"
-dest_files=["res://.godot/imported/CrackedRedBricks_normal.png-46ba4af993eea03f937fe1c37fb6221e.s3tc.ctex"]
+dest_files=["res://.godot/imported/CrackedRedBricks_normal.png-46ba4af993eea03f937fe1c37fb6221e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

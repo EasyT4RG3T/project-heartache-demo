@@ -89,7 +89,47 @@ var preset: GraphicsSettingsResource = null:
 		_set_all_settings(true)
 		unsaved = true
 		changed_graphics = true
-		SaverLoader.dynamic_lights_changed = true
+
+var master_volume: float = temp_settings.master_volume:
+	set(value):
+		value = clamp(value, 0.0, 1.0)
+		master_volume = value
+		temp_settings.master_volume = value
+		%MasterHSlider.value = value
+		%MasterLineEdit.text = str(int(value  * 100))
+		unsaved = true
+var sfx_volume: float = temp_settings.sfx_volume:
+	set(value):
+		value = clamp(value, 0.0, 100.0)
+		sfx_volume = value
+		temp_settings.sfx_volume = value
+		%SFXHSlider.value = value
+		%SFXLineEdit.text = str(int(value  * 100))
+		unsaved = true
+var dialogue_volume: float = temp_settings.dialogue_volume:
+	set(value):
+		value = clamp(value, 0.0, 100.0)
+		dialogue_volume = value
+		temp_settings.dialogue_volume = value
+		%DialogueHSlider.value = value
+		%DialogueLineEdit.text = str(int(value  * 100))
+		unsaved = true
+var ambient_volume: float = temp_settings.ambient_volume:
+	set(value):
+		value = clamp(value, 0.0, 100.0)
+		ambient_volume = value
+		temp_settings.ambient_volume = value
+		%AmbientHSlider.value = value
+		%AmbientLineEdit.text = str(int(value  * 100))
+		unsaved = true
+var music_volume: float = temp_settings.music_volume:
+	set(value):
+		value = clamp(value, 0.0, 100.0)
+		music_volume = value
+		temp_settings.music_volume = value
+		%MusicHSlider.value = value
+		%MusicLineEdit.text = str(int(value  * 100))
+		unsaved = true
 
 var unsaved: bool = false:
 	set(value):
@@ -121,6 +161,15 @@ func _ready() -> void:
 			return_button.text = "Return unsaved"
 			leave_unsaved = true
 		else:
+			if %Game.visible:
+				SaverLoader.settings.last_opened_settings_tab = 0
+			elif %Controls.visible:
+				SaverLoader.settings.last_opened_settings_tab = 1
+			elif %Graphics.visible:
+				SaverLoader.settings.last_opened_settings_tab = 2
+			elif %Sound.visible:
+				SaverLoader.settings.last_opened_settings_tab = 3
+			
 			queue_free())
 	
 	default_button.pressed.connect(func():
@@ -132,6 +181,18 @@ func _ready() -> void:
 	files_button.pressed.connect(func():
 		OS.shell_show_in_file_manager(SaverLoader.GAME_PATH, true)
 		DirAccess.open(SaverLoader.GAME_PATH))
+	
+	match temp_settings.last_opened_settings_tab:
+		0:
+			%Game.show()
+		1:
+			%Controls.show()
+		2:
+			%Graphics.show()
+		3:
+			%Sound.show()
+		_:
+			%Game.show()
 
 
 func _set_up_game() -> void:
@@ -223,7 +284,55 @@ func _set_up_graphics() -> void:
 
 
 func _set_up_sound() -> void:
-	pass
+	%MasterHSlider.value = temp_settings.master_volume
+	%MasterHSlider.value_changed.connect(func(value: float):
+		master_volume = value)
+	%MasterLineEdit.text = str(int(temp_settings.master_volume * 100))
+	%MasterLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%MasterLineEdit.text.is_valid_int():
+			%MasterLineEdit.text = str(int(temp_settings.master_volume * 100))
+		master_volume = %MasterLineEdit.text.to_float() * 0.01)
+	
+	%SFXHSlider.value = temp_settings.sfx_volume
+	%SFXHSlider.value_changed.connect(func(value: float):
+		sfx_volume = value)
+	%SFXLineEdit.text = str(int(temp_settings.sfx_volume * 100))
+	%SFXLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%SFXLineEdit.text.is_valid_int():
+			%SFXLineEdit.text = str(int(temp_settings.sfx_volume * 100))
+		sfx_volume = %SFXLineEdit.text.to_float() * 0.01)
+	
+	%DialogueHSlider.value = temp_settings.dialogue_volume
+	%DialogueHSlider.value_changed.connect(func(value: float):
+		dialogue_volume = value)
+	%DialogueLineEdit.text = str(int(temp_settings.dialogue_volume * 100))
+	%DialogueLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%DialogueLineEdit.text.is_valid_int():
+			%DialogueLineEdit.text = str(int(temp_settings.dialogue_volume * 100))
+		dialogue_volume = %DialogueLineEdit.text.to_float() * 0.01)
+	
+	%AmbientHSlider.value = temp_settings.ambient_volume
+	%AmbientHSlider.value_changed.connect(func(value: float):
+		ambient_volume = value)
+	%AmbientLineEdit.text = str(int(temp_settings.ambient_volume))
+	%AmbientLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%AmbientLineEdit.text.is_valid_int():
+			%AmbientLineEdit.text = str(int(temp_settings.ambient_volume))
+		ambient_volume = %AmbientLineEdit.text.to_float() * 0.01)
+	
+	%MusicHSlider.value = temp_settings.music_volume
+	%MusicHSlider.value_changed.connect(func(value: float):
+		music_volume = value)
+	%MusicLineEdit.text = str(int(temp_settings.music_volume * 100))
+	%MusicLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%MusicLineEdit.text.is_valid_int():
+			%MusicLineEdit.text = str(int(temp_settings.music_volume * 100))
+		music_volume = %MusicLineEdit.text.to_float() * 0.01)
 
 
 func _default_settings() -> void:
@@ -248,6 +357,8 @@ func _set_all_settings(graphics: bool = false) -> void:
 	window_mode = temp_settings.window_mode
 	hud_size = temp_settings.hud_size
 	static_shader = temp_settings.static_shader
+	
+	master_volume = temp_settings.master_volume
 	
 	if !graphics: return
 	

@@ -17,4 +17,6 @@ extends OmniLight3D
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
+	hide()
+	
 	add_to_group("StaticLights")

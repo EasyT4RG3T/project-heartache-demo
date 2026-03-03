@@ -3,17 +3,24 @@ class_name DynamicSpotLight3D
 extends SpotLight3D
 
 
-var default_light_size: float = 0.2
-var default_light_energy: float = 1.0
 var out_of_area: bool = false:
 	set(value):
 		out_of_area = value
 		if value:
 			hide()
+		elif blinking > 1:
+			show()
 
 @export var cull_distance: float = 10.0
 @export var area: Area3D
 
+@export var blink_out: float = 0.0
+@export var blink_out_rand: float = 0.0
+@export var blink_in: float = 0.1
+@export var blink_in_rand: float = 0.0
+
+var blink_timer: Timer
+var blinking: int = 0
 
 @export_tool_button("Set up") var set_up: Callable = func():
 	if Engine.is_editor_hint():
@@ -32,12 +39,7 @@ var out_of_area: bool = false:
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
-	default_light_size = light_size
-	default_light_energy = light_energy
-	if SaverLoader.graphics_settings.smooth_lights == false:
-		light_size = 0
 	add_to_group("DynamicLights")
-	
 	if area:
 		area.collision_layer = 8
 		area.collision_mask = 8
@@ -49,6 +51,56 @@ func _ready() -> void:
 			out_of_area = true)
 		if !area.has_overlapping_bodies():
 			out_of_area = true
+	
+	if blink_out > 0.0:
+		blink()
+
+
+func blink():
+	if !blink_timer:
+		blink_timer = Timer.new()
+		add_child(blink_timer)
+	
+	if visible:
+		_blink_out()
+	else:
+		_blink_in()
+
+
+func blink_stop(on: bool):
+	blinking = 0
+	if blink_timer:
+		blink_timer.stop()
+		blink_timer.queue_free()
+	if out_of_area: return
+	if on:
+		show()
+	else:
+		hide()
+
+
+func _blink_in() -> void:
+	if !out_of_area:
+		show()
+	blinking = 1
+	var blink_out_time = blink_out
+	if blink_out_rand > 0.0:
+		blink_out_time = randf_range(blink_out, blink_out_rand)
+	blink_timer.start(blink_out_time)
+	await blink_timer.timeout
+	_blink_out()
+
+
+func _blink_out() -> void:
+	if !out_of_area:
+		hide()
+	blinking = -1
+	var blink_in_time = blink_in
+	if blink_in_rand > 0.0:
+		blink_in_time = randf_range(blink_in, blink_in_rand)
+	blink_timer.start(blink_in_time)
+	await blink_timer.timeout
+	_blink_in()
 
 
 func _physics_process(_delta: float) -> void:
@@ -64,21 +116,7 @@ func _physics_process(_delta: float) -> void:
 		var dot: float = vector.normalized().dot(GameManager.player_character.head.basis.z)
 		if visible and dot > 0:
 			hide()
-		elif !visible and dot < 0:
+		elif !visible and dot < 0 and blinking >= 0:
 			show()
-	elif !visible:
+	elif !visible and blinking >= 0:
 		show()
-	
-	if SaverLoader.graphics_settings.smooth_lights == false: return
-	
-	if distance > 10.0:
-		light_size = 0
-	elif distance > 7.0:
-		light_size = default_light_size * 0.3
-		light_energy = default_light_energy * 0.90
-	elif distance > 5.0:
-		light_size = default_light_size * 0.6
-		light_energy = default_light_energy * 0.93
-	else:
-		light_size = default_light_size
-		light_energy = default_light_energy

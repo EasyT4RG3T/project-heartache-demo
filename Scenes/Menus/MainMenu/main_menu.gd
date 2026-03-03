@@ -37,14 +37,15 @@ func _setup_start() -> void:
 		var name_input_menu: AcceptMenu = load(accept_menu_uid).instantiate()
 		
 		var int_files: Array[int] = []
-		for file: String in DirAccess.get_files_at(SaverLoader.GAME_DATA_PATH):
-			if !file.begins_with("NewGame"):
-				continue
-			file = file.trim_prefix("NewGame")
-			file = file.trim_suffix(".dat")
-			if file.is_valid_int():
-				if !int_files.has(file.to_int()):
-					int_files.append(file.to_int())
+		if DirAccess.dir_exists_absolute(SaverLoader.GAME_DATA_PATH):
+			for file: String in DirAccess.get_files_at(SaverLoader.GAME_DATA_PATH):
+				if !file.begins_with("NewGame"):
+					continue
+				file = file.trim_prefix("NewGame")
+				file = file.trim_suffix(".dat")
+				if file.is_valid_int():
+					if !int_files.has(file.to_int()):
+						int_files.append(file.to_int())
 		var current_try: int = 0
 		for i in int_files.size():
 			if int_files.has(i):

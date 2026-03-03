@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://uk17d5n0426u"
+path="res://.godot/imported/Matress02.obj-72cb8a0034004becb965628b3ed4d4b4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Matress02.obj-72cb8a0034004becb965628b3ed4d4b4.mesh"]
+
+source_file="res://Assets/Scenes/Furniture/FDormitory/Beds/Matress02/Matress02.obj"
+dest_files=["res://.godot/imported/Matress02.obj-72cb8a0034004becb965628b3ed4d4b4.mesh", "res://.godot/imported/Matress02.obj-72cb8a0034004becb965628b3ed4d4b4.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

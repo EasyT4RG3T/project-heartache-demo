@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt5puhehtbmjc"
-path.s3tc="res://.godot/imported/GridCoushion_normal.png-d9371db4dfe41b4d542d94893e194036.s3tc.ctex"
+path="res://.godot/imported/GridCoushion_normal.png-d9371db4dfe41b4d542d94893e194036.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Fabrics/CushionGrid/GridCoushion_normal.png"
-dest_files=["res://.godot/imported/GridCoushion_normal.png-d9371db4dfe41b4d542d94893e194036.s3tc.ctex"]
+dest_files=["res://.godot/imported/GridCoushion_normal.png-d9371db4dfe41b4d542d94893e194036.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

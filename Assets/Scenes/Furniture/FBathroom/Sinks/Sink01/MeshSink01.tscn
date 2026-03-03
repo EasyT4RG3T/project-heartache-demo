@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://chqarow2ffulp"]
+
+[ext_resource type="ArrayMesh" uid="uid://ce246bf5r702f" path="res://Assets/Scenes/Furniture/FBathroom/Sinks/Sink01/Sink01.obj" id="1_n88sb"]
+[ext_resource type="Material" uid="uid://bq41d7qh3t8uu" path="res://Assets/Materials/Porcelain/Porcelain.tres" id="2_7akem"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="3_utw7l"]
+
+[node name="MeshSink01" type="MeshInstance3D" unique_id=247016037]
+mesh = ExtResource("1_n88sb")
+surface_material_override/0 = ExtResource("2_7akem")
+surface_material_override/1 = ExtResource("3_utw7l")

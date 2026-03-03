@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvqkd3ga7npef"
-path.s3tc="res://.godot/imported/Metal_albedo.png-2a3eb8aafdd6b5d415d1026ad06a60cb.s3tc.ctex"
+path="res://.godot/imported/Metal_albedo.png-2a3eb8aafdd6b5d415d1026ad06a60cb.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Metal/Metal/Metal_albedo.png"
-dest_files=["res://.godot/imported/Metal_albedo.png-2a3eb8aafdd6b5d415d1026ad06a60cb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Metal_albedo.png-2a3eb8aafdd6b5d415d1026ad06a60cb.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

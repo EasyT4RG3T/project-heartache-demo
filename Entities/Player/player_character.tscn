@@ -57,6 +57,7 @@ current = true
 script = ExtResource("3_seg3p")
 auto_update = false
 rays_count = 32
+echo_room_size_multiplier = 4.0
 metadata/_custom_type_script = "uid://bjpmu5sklv5h8"
 
 [node name="Flashlight" parent="Head" unique_id=1688126852 instance=ExtResource("2_stcdd")]

@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://t0ki01aucpwi"]
-
-[ext_resource type="Texture2D" uid="uid://dd2l8vf3pxovt" path="res://Assets/Scenes/Bathroom/Tootcare/ToothbrushHolder01/ToothbrushHolder01_albedo.png" id="1_os8rx"]
-
-[resource]
-albedo_texture = ExtResource("1_os8rx")
-texture_filter = 2

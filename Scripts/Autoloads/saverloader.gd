@@ -9,7 +9,6 @@ const accept_menu_uid: String = "uid://dckjpcj38rsvw"
 
 var settings: SettingsResource
 var graphics_settings: GraphicsSettingsResource
-var dynamic_lights_changed: bool = false
 
 var load_thread: Thread = Thread.new()
 
@@ -66,6 +65,8 @@ func save_game_data(slot: String) -> void:
 	for menu in hidden_menus:
 		menu.show()
 	image.resize(256, 144)
+	if !DirAccess.dir_exists_absolute(GAME_DATA_PATH):
+		DirAccess.make_dir_absolute(GAME_DATA_PATH)
 	image.save_png(GAME_DATA_PATH + slot + ".png")
 	var save_data: Dictionary = {}
 	GameManager.save(save_data)

@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cskkld4ieh0m8"]
-
-[ext_resource type="ArrayMesh" uid="uid://bf6f28a5dvio7" path="res://Assets/Scenes/Trash/CigaretteBoxes/CigaretteBox01.obj" id="1_7u6p2"]
-[ext_resource type="Material" uid="uid://cbj4fqdckk85g" path="res://Assets/Scenes/Trash/CigaretteBoxes/CigaretteBox01.tres" id="2_f34ta"]
-
-[node name="MeshCigaretteBox01" type="MeshInstance3D" unique_id=1016977139]
-mesh = ExtResource("1_7u6p2")
-surface_material_override/0 = ExtResource("2_f34ta")

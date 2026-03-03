@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwnoosv1vkca6"
+path="res://.godot/imported/Sink03.obj-3289796c6cbf7c4694c2061bea29f6fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sink03.obj-3289796c6cbf7c4694c2061bea29f6fc.mesh"]
+
+source_file="res://Assets/Scenes/Furniture/FBathroom/Sinks/Sink03/Sink03.obj"
+dest_files=["res://.godot/imported/Sink03.obj-3289796c6cbf7c4694c2061bea29f6fc.mesh", "res://.godot/imported/Sink03.obj-3289796c6cbf7c4694c2061bea29f6fc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

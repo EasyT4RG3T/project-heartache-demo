@@ -8,6 +8,7 @@ extends RigidBody3D
 
 @export var collision_sound: String = ""
 
+const default_collision_sound: String = "uid://tbgl4aqox0xy"
 
 var audio_grace: bool = false
 
@@ -39,6 +40,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 				var loudness = clamp(collision_velocity.length() - 32, -30, 0)
 				if collision_sound:
 					AudioManager.play_uid_sound_at(collision_sound, collision_point, loudness)
+				else:
+					AudioManager.play_uid_sound_at(default_collision_sound, collision_point, loudness)
 	collisions = new_collisions
 
 

@@ -20,6 +20,14 @@ func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
+func screenshot(ss_name: String) -> void:
+	await RenderingServer.frame_post_draw
+	var image: Image = get_viewport().get_texture().get_image()
+	if !DirAccess.dir_exists_absolute(SaverLoader.GAME_PATH + "/screenshots"):
+		DirAccess.make_dir_absolute(SaverLoader.GAME_PATH + "/screenshots")
+	image.save_png(SaverLoader.GAME_PATH + "/screenshots/" + ss_name + ".png")
+
+
 func load_player() -> void:
 	var player = load(player_character_uid)
 	player = player.instantiate()
@@ -65,6 +73,12 @@ func apply_settings_data() -> void:
 	
 	if SaverLoader.settings.window_mode != DisplayServer.window_get_mode():
 		DisplayServer.window_set_mode(SaverLoader.settings.window_mode)
+	
+	AudioServer.set_bus_volume_db(0, linear_to_db(SaverLoader.settings.master_volume))
+	AudioServer.set_bus_volume_db(1, linear_to_db(SaverLoader.settings.sfx_volume))
+	AudioServer.set_bus_volume_db(2, linear_to_db(SaverLoader.settings.dialogue_volume))
+	AudioServer.set_bus_volume_db(3, linear_to_db(SaverLoader.settings.ambient_volume))
+	AudioServer.set_bus_volume_db(4, linear_to_db(SaverLoader.settings.music_volume))
 	
 	if player_character:
 		player_character.apply_settings()
@@ -115,14 +129,6 @@ func apply_graphics_settings_data() -> void:
 	get_viewport().positional_shadow_atlas_quad_1 = SaverLoader.graphics_settings.positional_shadow_atlas1
 	get_viewport().positional_shadow_atlas_quad_2 = SaverLoader.graphics_settings.positional_shadow_atlas2
 	get_viewport().positional_shadow_atlas_quad_3 = SaverLoader.graphics_settings.positional_shadow_atlas3
-	
-	if SaverLoader.dynamic_lights_changed:
-		for dynamic_light: DynamicSpotLight3D in get_tree().get_nodes_in_group("DynamicLights"):
-			if SaverLoader.graphics_settings.smooth_lights:
-				dynamic_light.light_size = dynamic_light.default_light_size
-			else:
-				dynamic_light.light_size = 0
-		SaverLoader.dynamic_lights_changed = false
 	
 	if player_character:
 		player_character.apply_graphics_settings()

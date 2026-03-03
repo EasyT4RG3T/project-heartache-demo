@@ -22,8 +22,13 @@ extends Resource
 ## Audio ##
 
 @export var master_volume: float = 100.0
+@export var sfx_volume: float = 100.0
+@export var dialogue_volume: float = 100.0
+@export var ambient_volume: float = 100.0
+@export var music_volume: float = 100.0
 
 
 ## Save ##
 
 @export var last_save: String = "0"
+@export var last_opened_settings_tab: int = 0

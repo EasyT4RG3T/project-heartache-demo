@@ -1202,16 +1202,7 @@ func _command_graphics_saturation(value: float) -> String:
 	return "set saturation to " + str(value)
 
 func _command_graphics_smooth_lights() -> String:
-	if SaverLoader.graphics_settings.smooth_lights:
-		SaverLoader.graphics_settings.smooth_lights = false
-		for light in get_tree().get_nodes_in_group("DynamicLights"):
-			light.light_size = 0
-		return "turned smooth lights off"
-	else:
-		SaverLoader.graphics_settings.smooth_lights = true
-		for light in get_tree().get_nodes_in_group("DynamicLights"):
-			light.light_size = light.default_light_size
-		return "turned smooth lights on"
+	return "discontinued"
 
 func _command_graphics_directional_shadow_size(value: int) -> String:
 	SaverLoader.graphics_settings.positional_shadow_size = value

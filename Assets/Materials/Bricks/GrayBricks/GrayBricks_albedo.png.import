@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c18bivc4o5rar"
-path.s3tc="res://.godot/imported/GrayBricks_albedo.png-1c6dec28729a2fdd1a9a92ccffd583be.s3tc.ctex"
+path="res://.godot/imported/GrayBricks_albedo.png-1c6dec28729a2fdd1a9a92ccffd583be.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Materials/Bricks/GrayBricks/GrayBricks_albedo.png"
-dest_files=["res://.godot/imported/GrayBricks_albedo.png-1c6dec28729a2fdd1a9a92ccffd583be.s3tc.ctex"]
+dest_files=["res://.godot/imported/GrayBricks_albedo.png-1c6dec28729a2fdd1a9a92ccffd583be.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
