@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c5rpyq0k8o0f7"]
+
+[ext_resource type="ArrayMesh" uid="uid://b17fq25w8xrnj" path="res://Assets/Scenes/Props/Trash/NewsPapers02/NewsPaper02.obj" id="1_lk18r"]
+[ext_resource type="Material" uid="uid://bkw3u3retgddy" path="res://Assets/Scenes/Props/Trash/NewsPapers02/NewsPaper02.tres" id="2_35hei"]
+
+[node name="MeshNewsPaper02" type="MeshInstance3D" unique_id=93815626]
+mesh = ExtResource("1_lk18r")
+surface_material_override/0 = ExtResource("2_35hei")

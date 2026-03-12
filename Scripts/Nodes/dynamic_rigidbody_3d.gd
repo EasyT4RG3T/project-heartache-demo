@@ -39,9 +39,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			if audio_grace and collision_velocity.length() > 2:
 				var loudness = clamp(collision_velocity.length() - 32, -30, 0)
 				if collision_sound:
-					AudioManager.play_uid_sound_at(collision_sound, collision_point, loudness)
+					AudioManager.play_uid_sound_at("SFX" ,collision_sound, collision_point, loudness)
 				else:
-					AudioManager.play_uid_sound_at(default_collision_sound, collision_point, loudness)
+					AudioManager.play_uid_sound_at("SFX" ,default_collision_sound, collision_point, loudness)
 	collisions = new_collisions
 
 

@@ -10,67 +10,92 @@
 [ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="10_c5cvx"]
 [ext_resource type="Script" uid="uid://cmv4qm8gcm4fc" path="res://Scripts/Nodes/dynamic_spotlight_3d.gd" id="11_gbybj"]
 [ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="12_fse7r"]
-[ext_resource type="PackedScene" uid="uid://x7d4aqmbywtc" path="res://Assets/Scenes/Furniture/FBathroom/Sinks/Sink01/StaticSink01.tscn" id="12_l4scn"]
-[ext_resource type="PackedScene" uid="uid://bepr6ff7t004x" path="res://Assets/Scenes/Furniture/FBathroom/Toilets/Toilet01/StaticToilet01.tscn" id="13_bicbo"]
+[ext_resource type="PackedScene" uid="uid://x7d4aqmbywtc" path="res://Assets/Scenes/Furniture/Bathroom/Sinks/Sink01/StaticSink01.tscn" id="12_l4scn"]
+[ext_resource type="PackedScene" uid="uid://bepr6ff7t004x" path="res://Assets/Scenes/Furniture/Bathroom/Toilets/Toilet01/StaticToilet01.tscn" id="13_bicbo"]
 [ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="13_yxwtw"]
 [ext_resource type="Script" uid="uid://c6k6l4h73v30" path="res://Scripts/Nodes/cutscene.gd" id="15_q5vw5"]
-[ext_resource type="PackedScene" uid="uid://c8kvj7pe8k7rf" path="res://Assets/Scenes/Furniture/FDormitory/Beds/DoubleDeckerBed01/StaticDoubleDeckerBed01.tscn" id="16_3u5ng"]
-[ext_resource type="PackedScene" uid="uid://b5nkr7ac05tt3" path="res://Assets/Scenes/Furniture/FDormitory/Beds/Matress01/StaticMatress01.tscn" id="17_rjwt6"]
-[ext_resource type="PackedScene" uid="uid://dxkc2bmku0med" path="res://Assets/Scenes/Furniture/FDormitory/Beds/Matress02/StaticMatress02.tscn" id="18_1y3rs"]
-[ext_resource type="PackedScene" uid="uid://kdlqfy0rjsev" path="res://Assets/Scenes/Props/PBathroom/ToiletPapers/ToiletPaper02/DynamicToiletPaper02.tscn" id="19_1mivf"]
-[ext_resource type="PackedScene" uid="uid://beaxqi7h2sjqk" path="res://Assets/Scenes/Furniture/FDormitory/Desks/CheapDesk/StaticCheapDesk.tscn" id="19_o83bg"]
+[ext_resource type="PackedScene" uid="uid://c8kvj7pe8k7rf" path="res://Assets/Scenes/Furniture/Dormitory/Beds/DoubleDeckerBed01/StaticDoubleDeckerBed01.tscn" id="16_3u5ng"]
+[ext_resource type="PackedScene" uid="uid://b5nkr7ac05tt3" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Matress01/StaticMatress01.tscn" id="17_rjwt6"]
+[ext_resource type="PackedScene" uid="uid://dxkc2bmku0med" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Matress02/StaticMatress02.tscn" id="18_1y3rs"]
+[ext_resource type="PackedScene" uid="uid://kdlqfy0rjsev" path="res://Assets/Scenes/Props/Bathroom/ToiletPapers/ToiletPaper02/DynamicToiletPaper02.tscn" id="19_1mivf"]
+[ext_resource type="PackedScene" uid="uid://beaxqi7h2sjqk" path="res://Assets/Scenes/Furniture/Dormitory/Desks/CheapDesk/StaticCheapDesk.tscn" id="19_o83bg"]
 [ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="20_n3fkx"]
-[ext_resource type="PackedScene" uid="uid://ikyd56ugg1ih" path="res://Assets/Scenes/Furniture/FDoors/Reinforced/CellDoor01/StaticCellDoor01.tscn" id="20_ylyy8"]
-[ext_resource type="PackedScene" uid="uid://b8ry3pgojopyu" path="res://Assets/Scenes/Furniture/FTrash/TrashCanFull02/StaticTrashCanFull02.tscn" id="21_7k6yf"]
-[ext_resource type="PackedScene" uid="uid://bldjqon1070cl" path="res://Assets/Scenes/Furniture/FDoors/Reinforced/CellDoor01/MeshCellDoor01Flap.tscn" id="21_h8gwk"]
-[ext_resource type="PackedScene" uid="uid://b08btvrv03lng" path="res://Assets/Scenes/Props/PDecorations/Books/Book03/StaticBook03.tscn" id="22_5ocwt"]
-[ext_resource type="PackedScene" uid="uid://p6se47afbw5x" path="res://Assets/Scenes/Props/PDecorations/Books/Book04/DynamicBook04.tscn" id="23_3chxh"]
-[ext_resource type="PackedScene" uid="uid://wrnhde8lcn0w" path="res://Assets/Scenes/Props/PBathroom/Tootcare/Toothpaste02/MeshToothpaste02.tscn" id="23_y7jsn"]
-[ext_resource type="PackedScene" uid="uid://ckpuiw51v3677" path="res://Assets/Scenes/Props/PKeys/Key01/MeshKey01.tscn" id="24_amldx"]
-[ext_resource type="PackedScene" uid="uid://cix0b5xqjdlrj" path="res://Assets/Scenes/Props/PBathroom/Cleanware/SoapBarHolder/StaticSoapBarHolder.tscn" id="25_pfi4x"]
+[ext_resource type="PackedScene" uid="uid://ikyd56ugg1ih" path="res://Assets/Scenes/Furniture/Doors/Reinforced/CellDoor01/StaticCellDoor01.tscn" id="20_ylyy8"]
+[ext_resource type="PackedScene" uid="uid://b8ry3pgojopyu" path="res://Assets/Scenes/Furniture/Trash/TrashCanFull02/StaticTrashCanFull02.tscn" id="21_7k6yf"]
+[ext_resource type="PackedScene" uid="uid://bldjqon1070cl" path="res://Assets/Scenes/Furniture/Doors/Reinforced/CellDoor01/MeshCellDoor01Flap.tscn" id="21_h8gwk"]
+[ext_resource type="PackedScene" uid="uid://b08btvrv03lng" path="res://Assets/Scenes/Props/Decorations/Books/Book03/StaticBook03.tscn" id="22_5ocwt"]
+[ext_resource type="PackedScene" uid="uid://p6se47afbw5x" path="res://Assets/Scenes/Props/Decorations/Books/Book04/DynamicBook04.tscn" id="23_3chxh"]
+[ext_resource type="PackedScene" uid="uid://be6h4l67ik3su" path="res://Assets/Scenes/Props/Decorations/Photos/StandingFrame/StaticStandingFrame.tscn" id="23_colw2"]
+[ext_resource type="PackedScene" uid="uid://d1so8kmycr4nh" path="res://Assets/Scenes/Furniture/Dormitory/Chairs/Stool/StaticStool.tscn" id="23_ju711"]
+[ext_resource type="PackedScene" uid="uid://wrnhde8lcn0w" path="res://Assets/Scenes/Props/Bathroom/Tootcare/Toothpaste02/MeshToothpaste02.tscn" id="23_y7jsn"]
+[ext_resource type="PackedScene" uid="uid://ckpuiw51v3677" path="res://Assets/Scenes/Props/Keys/Key01/MeshKey01.tscn" id="24_amldx"]
+[ext_resource type="PackedScene" uid="uid://bcy6xeau0816g" path="res://Assets/Scenes/Props/Lights/Desk/StaticFlatDeskLamp.tscn" id="24_csg3t"]
+[ext_resource type="PackedScene" uid="uid://cix0b5xqjdlrj" path="res://Assets/Scenes/Props/Bathroom/Cleanware/SoapBarHolder/StaticSoapBarHolder.tscn" id="25_pfi4x"]
 [ext_resource type="Script" uid="uid://bd7sxtcw6gfaq" path="res://Scenes/Maps/PrisonBlockLowSec/key_interact.gd" id="26_1mivf"]
-[ext_resource type="PackedScene" uid="uid://bobblgukya4qi" path="res://Assets/Scenes/Furniture/FDormitory/Cabinets/CheapCabinet/InteractableCheapCabinet.tscn" id="26_4xmcm"]
+[ext_resource type="PackedScene" uid="uid://bobblgukya4qi" path="res://Assets/Scenes/Furniture/Dormitory/Cabinets/CheapCabinet/InteractableCheapCabinet.tscn" id="26_4xmcm"]
 [ext_resource type="PackedScene" uid="uid://cdyeaa0a852te" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/BigCorridor.tscn" id="26_aj3dw"]
 [ext_resource type="PackedScene" uid="uid://2jnuqrfca4a8" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Cell01.tscn" id="26_kraa6"]
 [ext_resource type="PackedScene" uid="uid://8eysg77a35o3" path="res://Assets/Maps/PrisonBlockLowSec/CollisionShape3D/Colliison.tscn" id="26_uytdt"]
 [ext_resource type="Script" uid="uid://bpy5q0ccwpl1e" path="res://Scripts/Nodes/on_screen_notifier_3d.gd" id="27_88rhs"]
-[ext_resource type="PackedScene" uid="uid://ypqvycri57f7" path="res://Assets/Scenes/Props/PBathroom/Tootcare/ToothbrushHolder01/DynamicToothbrushHolder01.tscn" id="27_p7852"]
-[ext_resource type="PackedScene" uid="uid://cetljfqxhfp82" path="res://Assets/Scenes/Props/PBathroom/Tootcare/Toothbrush01/DynamicToothbrush01.tscn" id="28_5ocwt"]
+[ext_resource type="Texture2D" uid="uid://i1ynqd8vhwsi" path="res://Assets/Textures/Gross/GrossSmear/GrossSmearWideR.png" id="27_cctlo"]
+[ext_resource type="PackedScene" uid="uid://ypqvycri57f7" path="res://Assets/Scenes/Props/Bathroom/Tootcare/ToothbrushHolder01/DynamicToothbrushHolder01.tscn" id="27_p7852"]
+[ext_resource type="PackedScene" uid="uid://cetljfqxhfp82" path="res://Assets/Scenes/Props/Bathroom/Tootcare/Toothbrush01/DynamicToothbrush01.tscn" id="28_5ocwt"]
+[ext_resource type="Texture2D" uid="uid://cjurtbrhwlrda" path="res://Assets/Textures/Gross/GrossSmear/GrossSmearWide.png" id="28_g642e"]
 [ext_resource type="PackedScene" uid="uid://cpf7i3qt70j2x" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Cell02.tscn" id="28_kraa6"]
-[ext_resource type="PackedScene" uid="uid://bfg2h380msc2n" path="res://Assets/Scenes/Props/PTrash/NewsPapers01/MeshNewsPaper01.tscn" id="29_1y3rs"]
-[ext_resource type="PackedScene" uid="uid://cewfbartl1esb" path="res://Assets/Scenes/Props/PBathroom/Tootcare/Toothpaste01/DynamicToothpaste01.tscn" id="29_b6esg"]
-[ext_resource type="PackedScene" uid="uid://c5rpyq0k8o0f7" path="res://Assets/Scenes/Props/PTrash/NewsPapers02/MeshNewsPaper02.tscn" id="30_ylyy8"]
+[ext_resource type="PackedScene" uid="uid://bfg2h380msc2n" path="res://Assets/Scenes/Props/Trash/NewsPapers01/MeshNewsPaper01.tscn" id="29_1y3rs"]
+[ext_resource type="PackedScene" uid="uid://cewfbartl1esb" path="res://Assets/Scenes/Props/Bathroom/Tootcare/Toothpaste01/DynamicToothpaste01.tscn" id="29_b6esg"]
+[ext_resource type="Texture2D" uid="uid://cyduok84badme" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearWideL.png" id="29_so7ro"]
+[ext_resource type="Texture2D" uid="uid://b2704u5knln28" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearWide.png" id="30_3h8dq"]
+[ext_resource type="PackedScene" uid="uid://b7l6l5acu4p6h" path="res://Assets/Scenes/Props/Bathroom/ToiletBrush/StaticToiletBrushHolder.tscn" id="30_mdtin"]
+[ext_resource type="PackedScene" uid="uid://cuxy3vyys86ie" path="res://Assets/Scenes/Props/Bathroom/ToiletPapers/ToiletPaperRoll/StaticToiletPaperRoll.tscn" id="30_pckie"]
+[ext_resource type="PackedScene" uid="uid://c5rpyq0k8o0f7" path="res://Assets/Scenes/Props/Trash/NewsPapers02/MeshNewsPaper02.tscn" id="30_ylyy8"]
+[ext_resource type="PackedScene" uid="uid://ce6v3qy1apl6q" path="res://Assets/Scenes/Furniture/Dormitory/Cabinets/ShoesCabinet/InteractableShoesCabinet.tscn" id="31_38ymw"]
 [ext_resource type="Material" uid="uid://41krkpsxqiid" path="res://Assets/Materials/Concrete/ConcreteTiles/ConcreteTiles.tres" id="31_fse7r"]
-[ext_resource type="PackedScene" uid="uid://uxeponejyhfo" path="res://Assets/Scenes/Props/PTrash/Bottle01/DynamicBottle01.tscn" id="31_h8gwk"]
+[ext_resource type="PackedScene" uid="uid://uxeponejyhfo" path="res://Assets/Scenes/Props/Trash/Bottle01/DynamicBottle01.tscn" id="31_h8gwk"]
+[ext_resource type="Texture2D" uid="uid://b160qf881csru" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrow.png" id="31_lqqcv"]
+[ext_resource type="PackedScene" uid="uid://qs0y58k0dr18" path="res://Assets/Scenes/Props/Bathroom/Tootcare/Toothpaste02/StaticToothpaste02.tscn" id="31_nw5rh"]
 [ext_resource type="PackedScene" uid="uid://dciio14f02h86" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Corridor.tscn" id="31_x1slx"]
-[ext_resource type="PackedScene" uid="uid://wx8dgmje0l0k" path="res://Assets/Scenes/Props/PBathroom/Cleanware/SoapBar/DynamicSoapBar.tscn" id="32_862hu"]
+[ext_resource type="Texture2D" uid="uid://dtrvtkdr4bojt" path="res://Assets/Textures/Dirt/DirtBig.png" id="32_3wdts"]
+[ext_resource type="PackedScene" uid="uid://wx8dgmje0l0k" path="res://Assets/Scenes/Props/Bathroom/Cleanware/SoapBar/DynamicSoapBar.tscn" id="32_862hu"]
 [ext_resource type="Material" uid="uid://tqnokcoc3b06" path="res://Assets/Materials/Bricks/GrayBricks/GrayBricks.tres" id="32_yxwtw"]
-[ext_resource type="PackedScene" uid="uid://b7qlbecd1lalt" path="res://Assets/Scenes/Props/PKitchen/Utensils/PlasticCup/DynamicPlasticCup.tscn" id="33_66hdq"]
-[ext_resource type="PackedScene" uid="uid://cxaks8yaxskm3" path="res://Assets/Scenes/Props/PTrash/Cigarettes/DynamicCigarette01.tscn" id="33_h8gwk"]
-[ext_resource type="PackedScene" uid="uid://cl0f15jmdc0ql" path="res://Assets/Scenes/Props/PKitchen/Utensils/PlasticCupCrumpled/DynamicPlasticCupCrumpled.tscn" id="34_4xmcm"]
-[ext_resource type="PackedScene" uid="uid://crtaqr638t54c" path="res://Assets/Scenes/Props/PTrash/Cigarettes/DynamicCigarette02.tscn" id="34_amldx"]
+[ext_resource type="Texture2D" uid="uid://dr1uwe35k570q" path="res://Assets/Textures/Gross/GrossSmear/GrossSmearWideL.png" id="33_3wdts"]
+[ext_resource type="PackedScene" uid="uid://b7qlbecd1lalt" path="res://Assets/Scenes/Props/Kitchen/Utensils/PlasticCup/DynamicPlasticCup.tscn" id="33_66hdq"]
+[ext_resource type="PackedScene" uid="uid://cxaks8yaxskm3" path="res://Assets/Scenes/Props/Trash/Cigarettes/DynamicCigarette01.tscn" id="33_h8gwk"]
+[ext_resource type="PackedScene" uid="uid://cl0f15jmdc0ql" path="res://Assets/Scenes/Props/Kitchen/Utensils/PlasticCupCrumpled/DynamicPlasticCupCrumpled.tscn" id="34_4xmcm"]
+[ext_resource type="PackedScene" uid="uid://crtaqr638t54c" path="res://Assets/Scenes/Props/Trash/Cigarettes/DynamicCigarette02.tscn" id="34_amldx"]
 [ext_resource type="PackedScene" uid="uid://d056oev732af8" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell01.tscn" id="34_yxwtw"]
-[ext_resource type="PackedScene" uid="uid://bnogaeb61pvhw" path="res://Assets/Scenes/Props/PBathroom/Tootcare/Toothpaste02/DynamicToothpaste02.tscn" id="35_34wlf"]
 [ext_resource type="PackedScene" uid="uid://flphe8lx7pn" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell02.tscn" id="35_sng3i"]
+[ext_resource type="PackedScene" uid="uid://dwjss63qlmj4n" path="res://Assets/Scenes/Props/Bathroom/ToiletPapers/ToiletPaper01/DynamicToiletPaper01.tscn" id="36_33dgr"]
 [ext_resource type="PackedScene" uid="uid://dwkvyoaxem15g" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell03.tscn" id="36_mo6mc"]
-[ext_resource type="PackedScene" uid="uid://c5tu4vi0j143d" path="res://Assets/Scenes/Props/PBathroom/Cleanware/LaundryDetergent01/DynamicLaundryDetergent01.tscn" id="36_sg5pw"]
-[ext_resource type="PackedScene" uid="uid://covj3dhtcfcb7" path="res://Assets/Scenes/Props/PBathroom/Cleanware/DishSoap01/DynamicDishSoap01.tscn" id="37_34wlf"]
+[ext_resource type="PackedScene" uid="uid://c5tu4vi0j143d" path="res://Assets/Scenes/Props/Bathroom/Cleanware/LaundryDetergent01/DynamicLaundryDetergent01.tscn" id="36_sg5pw"]
+[ext_resource type="PackedScene" uid="uid://covj3dhtcfcb7" path="res://Assets/Scenes/Props/Bathroom/Cleanware/DishSoap01/DynamicDishSoap01.tscn" id="37_34wlf"]
+[ext_resource type="PackedScene" uid="uid://dkco4kuxu3r57" path="res://Assets/Scenes/Props/Bathroom/ToiletPapers/ToiletPaperRoll/DynamicToiletPaperRoll.tscn" id="37_apxlb"]
 [ext_resource type="PackedScene" uid="uid://c0osck7pnvb6l" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell04.tscn" id="37_gvj80"]
 [ext_resource type="PackedScene" uid="uid://ceq148cvan2pn" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell05.tscn" id="38_ha6ix"]
-[ext_resource type="PackedScene" uid="uid://dblkffd3ew5c6" path="res://Assets/Scenes/Props/PBathroom/Cleanware/CleaningSpray/DynamicCleningSpray.tscn" id="38_m62eo"]
+[ext_resource type="PackedScene" uid="uid://dblkffd3ew5c6" path="res://Assets/Scenes/Props/Bathroom/Cleanware/CleaningSpray/DynamicCleningSpray.tscn" id="38_m62eo"]
 [ext_resource type="PackedScene" uid="uid://ia4jk3evnw5n" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Janitor.tscn" id="39_8o612"]
-[ext_resource type="PackedScene" uid="uid://ccbr6rgcdf6ek" path="res://Assets/Scenes/Props/PTrash/CigaretteBoxes/DynamicCigaretteBox02.tscn" id="39_amldx"]
+[ext_resource type="PackedScene" uid="uid://ccbr6rgcdf6ek" path="res://Assets/Scenes/Props/Trash/CigaretteBoxes/DynamicCigaretteBox02.tscn" id="39_amldx"]
 [ext_resource type="PackedScene" uid="uid://b6yalyiyrsfin" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/SecurityCorridor.tscn" id="40_cjxge"]
-[ext_resource type="PackedScene" uid="uid://didi6ndltsbr3" path="res://Assets/Scenes/Props/PKitchen/Utensils/FoodTray/StaticFoodTray.tscn" id="46_n6xt3"]
-[ext_resource type="PackedScene" uid="uid://nkfwxf6idurk" path="res://Assets/Scenes/Props/PDecorations/Books/Book03/DynamicBook03.tscn" id="48_3chxh"]
-[ext_resource type="PackedScene" uid="uid://biv8i87g08u4g" path="res://Assets/Scenes/Props/PDecorations/Books/Book01/DynamicBook01.tscn" id="49_7k6yf"]
+[ext_resource type="PackedScene" uid="uid://didi6ndltsbr3" path="res://Assets/Scenes/Props/Kitchen/Utensils/FoodTray/StaticFoodTray.tscn" id="46_n6xt3"]
+[ext_resource type="PackedScene" uid="uid://nkfwxf6idurk" path="res://Assets/Scenes/Props/Decorations/Books/Book03/DynamicBook03.tscn" id="48_3chxh"]
+[ext_resource type="PackedScene" uid="uid://biv8i87g08u4g" path="res://Assets/Scenes/Props/Decorations/Books/Book01/DynamicBook01.tscn" id="49_7k6yf"]
+[ext_resource type="PackedScene" uid="uid://bvda7sckl13lm" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Shoes/DynamicShoeL.tscn" id="58_vav7n"]
+[ext_resource type="PackedScene" uid="uid://c8sjm6x8xpw1u" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Shoes/DynamicShoeR.tscn" id="59_eusce"]
+[ext_resource type="PackedScene" uid="uid://bdwr78t54g3ow" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Boots/DynamicBootL.tscn" id="60_nywor"]
+[ext_resource type="PackedScene" uid="uid://cfue66kax2gwv" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Boots/DynamicBootR.tscn" id="61_qkk5q"]
 [ext_resource type="Material" uid="uid://bpkb6g3u86ixu" path="res://Assets/Materials/Plastic/BluePlastic/BluePlastic.tres" id="65_m62eo"]
+[ext_resource type="PackedScene" uid="uid://i4k60m55kpjo" path="res://Assets/Scenes/Props/Bathroom/ToiletBrush/StaticToiletBrush.tscn" id="81_pckie"]
+[ext_resource type="PackedScene" uid="uid://dslcymxarobuh" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Sneakers/DynamicSneakerL.tscn" id="82_nw5rh"]
+[ext_resource type="PackedScene" uid="uid://f3eq6qps6u8e" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Sneakers/DynamicSneakerR.tscn" id="83_6uvc4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
 size = Vector3(1.0236816, 3.0178223, 0.8113861)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vyebq"]
 size = Vector3(1.973877, 0.140625, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csg3t"]
+size = Vector3(1.0463867, 1.8896484, 0.6176758)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7jsn"]
 size = Vector3(4.5756836, 2.8741455, 5.897949)
@@ -335,31 +360,37 @@ debug_color = Color(0.59777147, 0.9190778, 1, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8009033, 1.5927812, 1)
 shape = SubResource("BoxShape3D_vyebq")
 
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cell01/InvisWalls" unique_id=1263900709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6786809, 1.6902565, 1.1978033)
+shape = SubResource("BoxShape3D_csg3t")
+
 [node name="Lights" type="Node3D" parent="Cell01" unique_id=269570896]
 
 [node name="Static" type="Node3D" parent="Cell01/Lights" unique_id=318318221]
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="Cell01/Lights/Static" unique_id=2104195222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30796272, 2.8596194, 0.0018693805)
+visible = false
 light_color = Color(1, 0.97333336, 0.92, 1)
-light_energy = 2.0
+light_energy = 1.8
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="Cell01/Lights/Static" unique_id=579396699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0753424, 1.9162016, -1.5526588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0753424, 1.9162016, -1.4526588)
+visible = false
 light_color = Color(1, 0.97333336, 0.92, 1)
-light_energy = 0.7
+light_energy = 0.3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 1.7
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -372,9 +403,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1233808, 1.4875596, -1.490
 shape = SubResource("BoxShape3D_y7jsn")
 
 [node name="LampDynamicSpotLight3D3" type="SpotLight3D" parent="Cell01/Lights/Dynamic" unique_id=2107974454 node_paths=PackedStringArray("area")]
-transform = Transform3D(0.70710677, -0.68301266, 0.18301271, -2.9802322e-08, 0.258819, 0.9659258, -0.70710677, -0.68301266, 0.18301266, 0.98189116, 1.0595835, 1.2223544)
+transform = Transform3D(0.7071068, -0.6830127, 0.18301272, -2.9802326e-08, 0.25881904, 0.9659259, -0.7071068, -0.6830127, 0.18301268, 1.0152558, 0.9904276, 1.2552333)
 light_color = Color(1, 0.825, 0.7, 1)
-light_energy = 0.25
+light_energy = 0.4
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.005
@@ -392,21 +423,22 @@ area = NodePath("../Area3D2")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
 [node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Cell01/Lights/Dynamic" unique_id=51939877 node_paths=PackedStringArray("area")]
-transform = Transform3D(0.25881904, -3.239805e-08, 0.9659258, -0.9659258, -4.222196e-08, 0.25881904, 3.239805e-08, -1, -4.222196e-08, 1.098371, 1.9162016, -1.5526588)
+transform = Transform3D(0.3420202, -2.8594886e-08, 0.93969274, -0.93969274, -4.4884967e-08, 0.3420202, 3.2398056e-08, -1, -4.2221956e-08, 1.098371, 1.9162016, -1.4526588)
 light_color = Color(1, 0.97333336, 0.92, 1)
-light_energy = 0.4
+light_energy = 0.5
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 3.0
-shadow_opacity = 0.7
+shadow_opacity = 0.8
 shadow_blur = 2.0
 distance_fade_enabled = true
 distance_fade_begin = 2.0
 distance_fade_shadow = 3.0
 distance_fade_length = 2.0
-spot_range = 2.3
+spot_range = 2.4
 spot_angle = 80.0
+spot_angle_attenuation = 1.6245056
 script = ExtResource("11_gbybj")
 cull_distance = 4.0
 area = NodePath("../Area3D2")
@@ -425,11 +457,12 @@ shape = SubResource("BoxShape3D_oix7g")
 [node name="DynamicSpotLight3D" type="SpotLight3D" parent="Cell01/Lights/Dynamic" unique_id=178616270 node_paths=PackedStringArray("area")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.308, 3, 0)
 light_color = Color(1, 0.97333336, 0.92, 1)
+light_energy = 0.7
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 5.0
-shadow_opacity = 0.8
+shadow_opacity = 0.85
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
@@ -440,12 +473,38 @@ cull_distance = 7.0
 area = NodePath("../Area3D")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
+[node name="Probes" type="Node3D" parent="Cell01/Lights" unique_id=333577636]
+
+[node name="LightmapProbe" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1065638185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.703, 0.3, -1.57)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=134396496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.703, 1.6911615, -1.57)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1961596199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.703, 0.3, 0.9484135)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1474533790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2810986, 0.3, -0.5915118)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=110840930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2810986, 1.6911615, -0.5915118)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=592891534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7167783, 0.3, 1.0673878)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="Cell01/Lights/Probes" unique_id=1958438468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1606812, 0.3, -2.01)
+
 [node name="Assets" type="Node3D" parent="Cell01" unique_id=2066019778]
 
 [node name="Static" type="Node3D" parent="Cell01/Assets" unique_id=811916263]
 
 [node name="StaticSink01" parent="Cell01/Assets/Static" unique_id=1188964413 instance=ExtResource("12_l4scn")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.98985976, 0, -1.5755014)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.98985976, 0, -1.5231076)
+
+[node name="StaticSoapBarHolder" parent="Cell01/Assets/Static/StaticSink01" unique_id=382027965 instance=ExtResource("25_pfi4x")]
+transform = Transform3D(0.10274041, 0, 0.9947082, 0, 1, 0, -0.9947082, 0, 0.10274041, 0.13108194, 0.9999885, -0.17404795)
 
 [node name="StaticToilet01" parent="Cell01/Assets/Static" unique_id=419973264 instance=ExtResource("13_bicbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5295853, -1.1920929e-07, -2.047678)
@@ -499,23 +558,29 @@ transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.965
 [node name="MeshNewsPaper03" parent="Cell01/Assets/Static/StaticCheapDesk" unique_id=928372587 instance=ExtResource("29_1y3rs")]
 transform = Transform3D(0.99488616, 0, 0.10100421, 0, 1, 0, -0.10100421, 0, 0.99488616, -0.29400873, 0.751257, -0.020980597)
 
+[node name="StaticStandingFrame" parent="Cell01/Assets/Static/StaticCheapDesk" unique_id=94241534 instance=ExtResource("23_colw2")]
+transform = Transform3D(-0.9848077, 0, -0.17364828, 0, 1, 0, 0.17364828, 0, -0.9848077, 0.2632746, 0.74, 0.14309585)
+
+[node name="StaticFlatDeskLamp" parent="Cell01/Assets/Static/StaticCheapDesk" unique_id=1360255404 instance=ExtResource("24_csg3t")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0.38802683, 0.7475, 0.13741767)
+
+[node name="StaticStool" parent="Cell01/Assets/Static" unique_id=217622578 instance=ExtResource("23_ju711")]
+transform = Transform3D(0.8703729, 0, -0.49239317, 0, 1, 0, 0.49239317, 0, 0.8703729, 0.9580618, -1.1920929e-07, 0.5650539)
+
 [node name="StaticTrashCanFull02" parent="Cell01/Assets/Static" unique_id=1864656286 instance=ExtResource("21_7k6yf")]
 transform = Transform3D(-0.07027884, 0, 0.99752736, 0, 1, 0, -0.99752736, 0, -0.07027884, 1.0514905, -2.3841858e-07, -0.11991799)
 
 [node name="StaticBook03" parent="Cell01/Assets/Static/StaticTrashCanFull02" unique_id=1317993750 instance=ExtResource("22_5ocwt")]
-transform = Transform3D(0.5918163, -0.7538619, -0.28538707, 1.4901161e-08, 0.35404626, -0.93522805, 0.80607283, 0.55348295, 0.20953031, 0.1005318, 0.49457163, -0.036583662)
+transform = Transform3D(0.5385529, -0.70667, -0.19666767, 1.4901161e-08, 0.24398255, -0.8766827, 0.7335262, 0.51883525, 0.14439285, 0.10053176, 0.4974844, -0.0365839)
 
 [node name="MeshNewsPaper01" parent="Cell01/Assets/Static/StaticTrashCanFull02" unique_id=661447551 instance=ExtResource("29_1y3rs")]
-transform = Transform3D(0.98046106, 0.13943061, -0.13876331, -0.14897653, 0.9869627, -0.06091566, 0.12846069, 0.08039789, 0.98845035, -0.08882442, 0.51965344, -0.032345176)
+transform = Transform3D(0.80531794, 0.13964441, -0.1121924, -0.13440019, 0.8126351, 0.04675107, 0.11842431, -0.027358502, 0.8159974, -0.10147095, 0.5134756, -0.005477667)
 
 [node name="MeshNewsPaper02" parent="Cell01/Assets/Static/StaticTrashCanFull02/MeshNewsPaper01" unique_id=37674544 instance=ExtResource("29_1y3rs")]
 transform = Transform3D(0.20064619, -0.9796618, 0.0019667745, -0.9796616, -0.20064957, -0.001702698, 0.0020627046, -0.0015851259, -0.9999964, -0.084331974, -0.09946367, 0.00023138523)
 
 [node name="MeshToothpaste02" parent="Cell01/Assets/Static/StaticTrashCanFull02" unique_id=104432259 instance=ExtResource("23_y7jsn")]
-transform = Transform3D(-0.55964476, -0.81389093, -0.15613592, -0.22837293, -0.029649645, 0.97312254, -0.79664445, 0.5802603, -0.1692771, 0.0068876, 0.5343294, -0.08027202)
-
-[node name="StaticSoapBarHolder" parent="Cell01/Assets/Static" unique_id=382027965 instance=ExtResource("25_pfi4x")]
-transform = Transform3D(0.9947082, 0, -0.10274045, 0, 1, 0, 0.10274045, 0, 0.9947082, 1.1639078, 0.9999885, -1.4441813)
+transform = Transform3D(-0.5596447, -0.8254194, -0.07402417, -0.22837293, 0.06774047, 0.9712146, -0.79664433, 0.56044036, -0.22641382, 0.0068876, 0.51468784, -0.08027202)
 
 [node name="StaticCheapCabinet" parent="Cell01/Assets/Static" unique_id=1794680113 instance=ExtResource("26_4xmcm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9740251, 0, -2.2928536)
@@ -525,30 +590,108 @@ transform = Transform3D(0.9833502, 0, 0.18172067, 0, 1, 0, -0.18172067, 0, 0.983
 max_positive = 93.8
 open_progress = 10.470000000000027
 
+[node name="StaticToiletPaperRoll" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=348262508 instance=ExtResource("30_pckie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012107611, 0.67990005, -0.1333139)
+
+[node name="StaticToiletPaperRoll2" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=1832253507 instance=ExtResource("30_pckie")]
+transform = Transform3D(0.7224605, 0, -0.6914122, 0, 1, 0, 0.6914122, 0, 0.7224605, 0.17560965, 0.6799, -0.1713562)
+
+[node name="StaticToiletPaperRoll3" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=913173970 instance=ExtResource("30_pckie")]
+transform = Transform3D(0.9106376, 0.0003699411, 0.4132058, 0.4129307, 0.035682432, -0.91006327, -0.015080859, 0.99936336, 0.032341015, 0.03494829, 0.70274335, -0.17865777)
+
+[node name="StaticToothpaste02" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=13479442 instance=ExtResource("31_nw5rh")]
+transform = Transform3D(0.5939318, -0.7885553, -0.15945375, 0.07748697, -0.14120731, 0.9869429, -0.8007751, -0.5985323, -0.022764748, 0.1568653, 0.70574254, -0.080596685)
+
+[node name="StaticToothpaste03" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=55884826 instance=ExtResource("31_nw5rh")]
+transform = Transform3D(0.925117, 0.3775303, 0.04036638, -9.294458e-09, -0.1063162, 0.9943324, 0.3796822, -0.9198738, -0.09835492, 0.118768156, 0.69340724, -0.039185286)
+
+[node name="StaticToothpaste04" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=951323905 instance=ExtResource("31_nw5rh")]
+transform = Transform3D(-0.6423865, -0.7620373, -0.08147825, -1.605321e-08, -0.106315605, 0.99433243, -0.7663808, 0.6387457, 0.068295695, 0.13010103, 0.69317347, -0.16334915)
+
 [node name="MeshNewsPaper01" parent="Cell01/Assets/Static" unique_id=912482257 instance=ExtResource("29_1y3rs")]
 transform = Transform3D(0.10963018, -0.9939724, 0, 0.9939724, 0.10963018, 0, 0, 0, 1, 0.763295, 0.111285746, -2.2611759)
+
+[node name="StaticToiletBrushHolder" parent="Cell01/Assets/Static" unique_id=230288076 instance=ExtResource("30_mdtin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29316765, 0, -2.3050714)
+
+[node name="StaticToiletBrush" parent="Cell01/Assets/Static/StaticToiletBrushHolder" unique_id=1719845113 instance=ExtResource("81_pckie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005789995, 0.0076000094, 0.0003066063)
+
+[node name="InteractableShoesCabinet" parent="Cell01/Assets/Static" unique_id=2005309264 instance=ExtResource("31_38ymw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5984828, 0, -1.9848094)
+
+[node name="Decals" type="Node3D" parent="Cell01/Assets" unique_id=2092472773]
+
+[node name="Floor" type="Node3D" parent="Cell01/Assets/Decals" unique_id=257132087]
+
+[node name="Decal" type="Decal" parent="Cell01/Assets/Decals/Floor" unique_id=1908071579]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.70073366, 0, 0.003444612)
+size = Vector3(1, 0.001, 1)
+texture_albedo = ExtResource("27_cctlo")
+
+[node name="Decal2" type="Decal" parent="Cell01/Assets/Decals/Floor" unique_id=829878296]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.70073366, 0, 1.0034447)
+size = Vector3(1, 0.001, 1)
+texture_albedo = ExtResource("28_g642e")
+
+[node name="Decal3" type="Decal" parent="Cell01/Assets/Decals/Floor" unique_id=2142680089]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.7000741, -1.1920929e-07, -0.99640524)
+size = Vector3(1, 0.001, 1)
+texture_albedo = ExtResource("29_so7ro")
+
+[node name="Decal4" type="Decal" parent="Cell01/Assets/Decals/Floor" unique_id=420827981]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.7000741, -1.1920929e-07, -1.9964052)
+size = Vector3(1, 0.001, 1)
+texture_albedo = ExtResource("30_3h8dq")
+
+[node name="Decal5" type="Decal" parent="Cell01/Assets/Decals/Floor" unique_id=297660699]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.8006612, 0, -0.51888454)
+size = Vector3(2, 0.001, 2)
+texture_albedo = ExtResource("31_lqqcv")
+
+[node name="Decal6" type="Decal" parent="Cell01/Assets/Decals/Floor" unique_id=568136725]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.42381945, 0, 0.60867333)
+size = Vector3(1, 0.001, 1)
+texture_albedo = ExtResource("32_3wdts")
+
+[node name="Walls" type="Node3D" parent="Cell01/Assets/Decals" unique_id=1839191896]
+
+[node name="Decal" type="Decal" parent="Cell01/Assets/Decals/Walls" unique_id=797510207]
+transform = Transform3D(-1, 0, 8.742278e-08, -8.742278e-08, -4.371139e-08, -1, 3.821371e-15, -1, 4.371139e-08, -0.92297614, 1.5834854, 1.5004047)
+size = Vector3(2, 0.001, 2)
+texture_albedo = ExtResource("31_lqqcv")
+
+[node name="Decal2" type="Decal" parent="Cell01/Assets/Decals/Walls" unique_id=279147113]
+transform = Transform3D(-1, 0, 8.742278e-08, -8.742278e-08, -4.371139e-08, -1, 3.821371e-15, -1, 4.371139e-08, -1.3006967, 2.0834854, 1.5004047)
+size = Vector3(1, 0.001, 1)
+texture_albedo = ExtResource("29_so7ro")
+
+[node name="Decal3" type="Decal" parent="Cell01/Assets/Decals/Walls" unique_id=324698381]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.20012197, 0.5, -2.0005903)
+size = Vector3(1, 0.001, 1)
+texture_albedo = ExtResource("33_3wdts")
 
 [node name="Dynamic" type="Node3D" parent="Cell01/Assets" unique_id=1878516401]
 
 [node name="Bathroom" type="Node3D" parent="Cell01/Assets/Dynamic" unique_id=1064748902]
 
 [node name="DynamicToothbrushHolder01" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=969198374 instance=ExtResource("27_p7852")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1693125, 1.0413605, -1.6903074)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1645323, 1.0413605, -1.6571817)
 
 [node name="DynamicToothbrush01" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1463747931 instance=ExtResource("28_5ocwt")]
-transform = Transform3D(-0.74026906, -0.66934896, -0.063033424, 0.020989653, -0.11672029, 0.992943, -0.67198265, 0.73372155, 0.10045376, 1.160945, 1.0639924, -1.6867218)
+transform = Transform3D(-0.74026906, -0.66934896, -0.063033424, 0.020989653, -0.11672029, 0.992943, -0.67198265, 0.73372155, 0.10045376, 1.1561649, 1.0639924, -1.6535962)
 
 [node name="DynamicToothpaste01" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=280398662 instance=ExtResource("29_b6esg")]
-transform = Transform3D(0.5930395, 0, 0.80517334, 0, 1, 0, -0.80517334, 0, 0.5930395, 1.1830932, 1.059657, -1.6796309)
+transform = Transform3D(0.5930395, 0, 0.80517334, 0, 1, 0, -0.80517334, 0, 0.5930395, 1.178313, 1.059657, -1.6465052)
 
 [node name="DynamicSoapBar" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=168733316 instance=ExtResource("32_862hu")]
-transform = Transform3D(0.99287844, 0, -0.11913182, 0, 1, 0, 0.11913182, 0, 0.99287844, 1.1640314, 1.0049884, -1.4425452)
+transform = Transform3D(0.99287844, 0, -0.11913182, 0, 1, 0, 0.11913182, 0, 0.99287844, 1.1640314, 1.0049884, -1.3901514)
 
 [node name="DynamicLaundryDetergent01" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1853887981 instance=ExtResource("36_sg5pw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1176764, 0.17352298, -2.2360098)
 
 [node name="DynamicLaundryDetergent02" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=322951897 instance=ExtResource("36_sg5pw")]
-transform = Transform3D(0.8935987, 0, -0.44886678, 0, 1, 0, 0.44886678, 0, 0.8935987, 1.085277, 0.17352298, -2.3669598)
+transform = Transform3D(0.89194757, 0, 0.45213896, 0, 1, 0, -0.45213896, 0, 0.89194757, 1.1459937, 0.13077785, -1.6191008)
 
 [node name="DynamicDishSoap01" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1151820247 instance=ExtResource("37_34wlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8295811, 0.12588492, -2.279797)
@@ -568,14 +711,32 @@ transform = Transform3D(0.8556083, 0.51734734, 0.016918095, 0, -0.032684147, 0.9
 [node name="DynamicPlasticCup4" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1020628902 instance=ExtResource("33_66hdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0763905, 0.73577595, -2.2667203)
 
-[node name="DynamicToothpaste03" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1082808367 instance=ExtResource("35_34wlf")]
-transform = Transform3D(0.92511696, 0.37753037, 0.040366355, 0, -0.106316164, 0.9943325, 0.3796822, -0.91987383, -0.09835488, 1.1144898, 0.6871781, -2.384848)
+[node name="DynamicDishSoap03" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=684819403 instance=ExtResource("37_34wlf")]
+transform = Transform3D(0.8943417, 0, 0.4473845, 0, 1, 0, -0.4473845, 0, 0.8943417, 1.1481946, 0.08060227, -1.4163262)
 
-[node name="DynamicToothpaste04" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=251227359 instance=ExtResource("35_34wlf")]
-transform = Transform3D(-0.6423864, -0.76203746, -0.081478685, -3.4463297e-09, -0.10631616, 0.99433243, -0.7663808, 0.63874555, 0.06829605, 1.0606018, 0.6871781, -2.4198275)
+[node name="DynamicCleningSpray3" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=559148886 instance=ExtResource("38_m62eo")]
+transform = Transform3D(-0.94155294, 0, 0.3368651, 0, 1, 0, -0.3368651, 0, -0.94155294, 1.1166238, 0.07580406, -1.5010452)
 
-[node name="DynamicToothpaste05" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=38385964 instance=ExtResource("35_34wlf")]
-transform = Transform3D(0.59393173, -0.78855515, -0.15945429, 0.07748723, -0.14120775, 0.9869429, -0.80077505, -0.5985327, -0.022764826, 1.0856289, 0.69757086, -2.4077837)
+[node name="DynamicToiletPaper01" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=495493773 instance=ExtResource("36_33dgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87115, 0.085199855, -2.3984604)
+
+[node name="DynamicToiletPaper02" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=858507740 instance=ExtResource("36_33dgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.881845, 0.18519987, -2.4101086)
+
+[node name="DynamicToiletPaper03" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1473212892 instance=ExtResource("36_33dgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9724528, 0.085199885, -2.414512)
+
+[node name="DynamicToiletPaperRoll" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1828224178 instance=ExtResource("37_apxlb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4851669, 0.66719645, -2.4634037)
+
+[node name="DynamicToiletPaper04" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1546548945 instance=ExtResource("36_33dgr")]
+transform = Transform3D(0.90903986, 0, -0.4167092, 0, 1, 0, 0.4167092, 0, 0.90903986, 0.27297232, 0.04000003, -2.0890923)
+
+[node name="DynamicToiletPaper05" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=1086853829 instance=ExtResource("36_33dgr")]
+transform = Transform3D(0.94274044, 0, 0.33352712, 0, 1, 0, -0.33352712, 0, 0.94274044, 0.2775247, 0.04000003, -1.9760532)
+
+[node name="DynamicToiletPaper06" parent="Cell01/Assets/Dynamic/Bathroom" unique_id=147887550 instance=ExtResource("36_33dgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27875495, 0.14000002, -2.020067)
 
 [node name="Dormitory" type="Node3D" parent="Cell01/Assets/Dynamic" unique_id=1673641559]
 
@@ -601,13 +762,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2793557, 0.7958761, 1.38409
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0.89840937, 0.038268205, -0.3139987)
 
 [node name="DynamicPlasticCup3" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=1681897512 instance=ExtResource("33_66hdq")]
-transform = Transform3D(0.9104889, 0.41197997, 0.03581175, 0, 0.08659938, -0.9962432, -0.41353354, 0.9070684, 0.07884777, 0.97980666, 0.02747402, -0.34713975)
+transform = Transform3D(0.9104889, 0.41197997, 0.03581175, 0, 0.08659938, -0.9962432, -0.41353354, 0.9070684, 0.07884777, 0.97980666, 0.036539543, -0.34713975)
 
 [node name="DynamicPlasticCupCrumpled3" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=651388472 instance=ExtResource("34_4xmcm")]
-transform = Transform3D(0.119294986, -0.5507838, -0.82607865, 0.9773384, 0.211683, 3.7252903e-09, 0.1748668, -0.80735844, 0.5635549, 0.9755973, 0.03316272, 1.0999424)
+transform = Transform3D(0.049783286, -0.5613517, -0.8260786, 0.99609053, 0.08833793, 1.8626451e-09, 0.07297409, -0.8228492, 0.5635549, 0.97597206, 0.037148748, 1.1004919)
 
 [node name="DynamicPlasticCupCrumpled4" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=112403868 instance=ExtResource("34_4xmcm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94101226, 0.0382681, 1.1950935)
+
+[node name="DynamicSneakerL" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=497560071 instance=ExtResource("82_nw5rh")]
+transform = Transform3D(0.77802396, 0, 0.62823474, 0, 1, 0, -0.62823474, 0, 0.77802396, -1.1174183, 0.05346112, 0.5590789)
+
+[node name="DynamicSneakerR" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=25935883 instance=ExtResource("83_6uvc4")]
+transform = Transform3D(0.9119412, 0, 0.410321, 0, 1, 0, -0.410321, 0, 0.9119412, 0.051792502, 0.05346106, 0.6753739)
+
+[node name="Wardrobe" type="Node3D" parent="Cell01/Assets/Dynamic" unique_id=544808722]
+
+[node name="DynamicShoeL" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=593451303 instance=ExtResource("58_vav7n")]
+transform = Transform3D(0.9955702, 0, 0.09402143, 0, 1, 0, -0.09402143, 0, 0.9955702, -1.6003796, 0.58266896, -1.8031365)
+
+[node name="DynamicShoeR" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=943249053 instance=ExtResource("59_eusce")]
+transform = Transform3D(0.807743, 0, -0.5895347, 0, 1, 0, 0.5895347, 0, 0.807743, -1.6004013, 0.58266896, -1.6237739)
+
+[node name="DynamicBootL" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=424193899 instance=ExtResource("60_nywor")]
+transform = Transform3D(0.9961428, 0, 0.08774688, 0, 1, 0, -0.08774688, 0, 0.9961428, -1.5899686, 0.588758, -2.3196971)
+
+[node name="DynamicBootR" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=57295369 instance=ExtResource("61_qkk5q")]
+transform = Transform3D(0.94049585, -0.3398051, 1.4853352e-08, 0, -4.371139e-08, -1, 0.3398051, 0.94049585, -4.111038e-08, -1.572426, 0.583758, -2.133168)
 
 [node name="Doors" type="Node3D" parent="Cell01/Assets" unique_id=2103858565]
 
@@ -625,6 +806,9 @@ metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 [node name="StaticCellDoor01" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D" unique_id=114386097 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.049517393)
 
+[node name="MeshCellDoor01" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/StaticCellDoor01" index="0" unique_id=1995039359]
+gi_mode = 2
+
 [node name="CellDoor01Flap" type="Node3D" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/StaticCellDoor01" unique_id=366360979]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.12612975, 0.48781288, 0.044706583)
 
@@ -638,6 +822,7 @@ metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 
 [node name="MeshCellDoor01Flap" parent="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/StaticCellDoor01/CellDoor01Flap/CellDoor01FlapHinge3D" unique_id=457494418 instance=ExtResource("21_h8gwk")]
 transform = Transform3D(-4.371139e-08, 1, -7.764702e-23, -1, -4.371139e-08, -1.7763568e-15, -1.7763568e-15, -6.3108872e-30, 1, -0.4879228, 0.12577742, -0.05955696)
+gi_mode = 2
 
 [node name="Events" type="Node3D" parent="Cell01" unique_id=1640541678]
 
@@ -676,29 +861,28 @@ transform = Transform3D(0.8696845, 0, 0.49360797, 0, 0.99999994, 0, -0.49360797,
 
 [node name="KeyHighlightSpot" type="SpotLight3D" parent="Cell01/Events/KeyEvent" unique_id=638532212]
 unique_name_in_owner = true
-transform = Transform3D(0.82284516, -0.3227596, -0.46770948, -0.04746475, -0.85920715, 0.5094214, -0.56628, -0.39697522, -0.7223141, -0.95839804, 0.04997555, -2.0602562)
-light_energy = 0.005
-light_size = 0.2
+transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, -0.9032478, 0.050425075, -1.9685305)
+light_energy = 0.03
 light_bake_mode = 0
 shadow_bias = 0.01
 shadow_blur = 1.5
-spot_range = 1.1754061
-spot_angle = 10.25
+spot_range = 0.105
+spot_attenuation = 2.0
+spot_angle = 10.5
 script = ExtResource("11_gbybj")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
 [node name="ThroughDoorRaySpot" type="SpotLight3D" parent="Cell01/Events/KeyEvent" unique_id=648673728]
 unique_name_in_owner = true
-transform = Transform3D(-1, 2.4957222e-15, -8.742278e-08, -5.940984e-08, 0.7336113, 0.67956936, 6.413434e-08, 0.67956936, -0.7336113, -0.9014234, 0.9285475, -3.0513506)
+transform = Transform3D(-1, 2.4957222e-15, -8.742278e-08, -5.940984e-08, 0.7336113, 0.67956936, 6.413434e-08, 0.67956936, -0.7336113, -0.9014234, 0.9293661, -3.0513506)
 light_color = Color(1, 0.9666667, 0.95, 1)
 light_energy = 0.2
-light_size = 0.2
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
-shadow_blur = 1.5
+shadow_blur = 10.0
 spot_range = 2.975
-spot_angle = 25.0
+spot_angle = 20.75
 script = ExtResource("11_gbybj")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
@@ -747,25 +931,27 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.78
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="Cell02/Lights/Static" unique_id=888503748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30796272, 2.8596194, 0.0018693805)
+visible = false
 light_color = Color(1, 0.97333336, 0.92, 1)
-light_energy = 2.0
+light_energy = 1.8
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="Cell02/Lights/Static" unique_id=65251106]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0753424, 1.9162016, -1.5526588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0753441, 1.9162016, -1.5603347)
+visible = false
 light_color = Color(1, 0.97333336, 0.92, 1)
-light_energy = 0.7
+light_energy = 0.3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 1.7
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -782,20 +968,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.244566, 1.4581841, -1.51096
 shape = SubResource("BoxShape3D_v6eyr")
 
 [node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Cell02/Lights/Dynamic" unique_id=659798835 node_paths=PackedStringArray("area")]
-transform = Transform3D(0.25881904, -3.239805e-08, 0.9659258, -0.9659258, -4.222196e-08, 0.25881904, 3.239805e-08, -1, -4.222196e-08, 1.098371, 1.9162016, -1.5526588)
+transform = Transform3D(0.25881907, -3.239805e-08, 0.9659258, -0.9659259, -4.222196e-08, 0.25881907, 3.2398052e-08, -1, -4.222196e-08, 1.0983729, 1.9162016, -1.5603347)
 light_color = Color(1, 0.97333336, 0.92, 1)
-light_energy = 0.4
+light_energy = 0.5
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 3.0
+shadow_opacity = 0.8
 shadow_blur = 2.0
 distance_fade_enabled = true
 distance_fade_begin = 2.0
 distance_fade_shadow = 3.0
 distance_fade_length = 2.0
-spot_range = 2.3
+spot_range = 2.4
 spot_angle = 80.0
+spot_angle_attenuation = 1.6245056
 script = ExtResource("11_gbybj")
 cull_distance = 4.0
 area = NodePath("../Area3D")
@@ -804,11 +992,12 @@ metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 [node name="DynamicSpotLight3D3" type="SpotLight3D" parent="Cell02/Lights/Dynamic" unique_id=237581292 node_paths=PackedStringArray("area")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.3080001, 3, 0)
 light_color = Color(1, 0.97333336, 0.92, 1)
+light_energy = 0.7
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 5.0
-shadow_opacity = 0.8
+shadow_opacity = 0.85
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
@@ -824,7 +1013,7 @@ metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 [node name="Static" type="Node3D" parent="Cell02/Assets" unique_id=1687866530]
 
 [node name="StaticSink01" parent="Cell02/Assets/Static" unique_id=292820318 instance=ExtResource("12_l4scn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21984, 0, -5.493876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.272034, 0, -5.493876)
 
 [node name="StaticToilet01" parent="Cell02/Assets/Static" unique_id=807955983 instance=ExtResource("13_bicbo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.7476635, -1.1920929e-07, -5.0336018)
@@ -872,49 +1061,53 @@ surface_material_override/3 = ExtResource("13_yxwtw")
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=111651026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1978245, 2.8756404, -3.6015704)
+visible = false
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 1.5
+light_energy = 0.4
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.8
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=384799613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1978245, 2.8756404, -6.78935)
+visible = false
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 1.5
+light_energy = 0.4
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.8
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=395143515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87660134, 2.8756404, -3.6015704)
+visible = false
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 1.5
+light_energy = 0.4
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.8
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D4" type="OmniLight3D" parent="Corridor/Lights/Static" unique_id=2080742515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2922235, 2.8756404, -3.6015704)
+visible = false
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 1.5
+light_energy = 0.4
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.8
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -923,15 +1116,16 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="DynamicSpotLight3D" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=264913391]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.1978245, 2.9723516, -3.6015704)
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 0.3
+light_energy = 0.2
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 4.0
+shadow_blur = 0.8
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-spot_range = 3.975
+spot_range = 3.9
 spot_angle = 80.0
 script = ExtResource("11_gbybj")
 cull_distance = 5.0
@@ -946,15 +1140,16 @@ shape = SubResource("BoxShape3D_3chxh")
 [node name="DynamicSpotLight3D5" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=206559951 node_paths=PackedStringArray("area")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.1978245, 2.9723516, -6.78935)
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 0.3
+light_energy = 0.2
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 4.0
+shadow_blur = 0.8
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-spot_range = 3.975
+spot_range = 3.9
 spot_angle = 80.0
 script = ExtResource("11_gbybj")
 cull_distance = 5.0
@@ -964,15 +1159,16 @@ metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 [node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=1461988685]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.87660134, 2.9723516, -3.6015704)
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 0.3
+light_energy = 0.2
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 4.0
+shadow_blur = 0.8
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-spot_range = 3.975
+spot_range = 3.9
 spot_angle = 80.0
 script = ExtResource("11_gbybj")
 cull_distance = 5.0
@@ -987,15 +1183,16 @@ shape = SubResource("BoxShape3D_7k6yf")
 [node name="DynamicSpotLight3D4" type="SpotLight3D" parent="Corridor/Lights/Dynamic" unique_id=105422644 node_paths=PackedStringArray("area")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.2922235, 2.9723516, -3.6015704)
 light_color = Color(1, 0.925, 0.85, 1)
-light_energy = 0.3
+light_energy = 0.2
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 4.0
+shadow_blur = 0.8
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-spot_range = 3.975
+spot_range = 3.9
 spot_angle = 80.0
 script = ExtResource("11_gbybj")
 cull_distance = 5.0
@@ -1062,13 +1259,14 @@ surface_material_override/2 = ExtResource("12_fse7r")
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell01/Lights/Static" unique_id=647345866]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+visible = false
 light_color = Color(1, 0.95, 0.9, 1)
-light_energy = 5.0
+light_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -1093,13 +1291,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1962245, 0, 0)
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell02/Lights/Static" unique_id=750225964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+visible = false
 light_color = Color(1, 0.95, 0.9, 1)
-light_energy = 5.0
+light_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -1124,13 +1323,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4147, 0, 0)
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell03/Lights/Static" unique_id=319531489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+visible = false
 light_color = Color(1, 0.95, 0.9, 1)
-light_energy = 5.0
+light_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -1155,13 +1355,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.77
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell04/Lights/Static" unique_id=1460051265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+visible = false
 light_color = Color(1, 0.95, 0.9, 1)
-light_energy = 5.0
+light_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -1186,13 +1387,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.77
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell05/Lights/Static" unique_id=717414194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
+visible = false
 light_color = Color(1, 0.95, 0.9, 1)
-light_energy = 5.0
+light_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 1.0
+omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -1226,40 +1428,6 @@ size = Vector3(1.2, 2.2, 0.2)
 [node name="CSGBox3D2" type="CSGBox3D" parent="BLOCKOUT" unique_id=1128361667]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.493598, 1.4954712, -3.6072953)
 size = Vector3(1.9172485, 3.1909423, 0.2)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="BLOCKOUT" unique_id=201320419]
-transform = Transform3D(0.9659258, 0.04044806, 0.2556389, 0, 0.9877129, -0.15627931, -0.25881904, 0.1509542, 0.95405734, 0.8896573, 0.79910254, 1.3038086)
-size = Vector3(0.08, 0.12, 0.015)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="BLOCKOUT/CSGBox3D3" unique_id=464864336]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0.023434758)
-size = Vector3(0.02, 0.12, 0.01)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="BLOCKOUT" unique_id=1551772819]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95690376, 0.2, 0.55938166)
-use_collision = true
-radius = 0.15
-height = 0.4
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="BLOCKOUT" unique_id=1769641957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.081, 0.75, 1.322)
-radius = 0.05
-height = 0.015
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="BLOCKOUT/CSGCylinder3D2" unique_id=1511293544]
-transform = Transform3D(0.68301266, 0.18301271, -0.70710677, -0.25881904, 0.9659258, 0, 0.68301266, 0.18301271, 0.70710677, -0.100000024, 0.30709374, -0.100000024)
-radius = 0.04
-height = 0.01
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="BLOCKOUT/CSGCylinder3D2" unique_id=298750343]
-transform = Transform3D(0.64085644, -0.29883623, -0.70710677, 0.42261827, 0.90630776, 0, 0.64085644, -0.29883623, 0.70710677, -0.013352156, 0.15345722, -0.06058383)
-radius = 0.005
-height = 0.325
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="BLOCKOUT/CSGCylinder3D2" unique_id=1972639640]
-transform = Transform3D(0.64085644, -0.29883623, -0.70710677, 0.42261827, 0.90630776, 0, 0.64085644, -0.29883623, 0.70710677, -0.061609745, 0.15345722, -0.01244235)
-radius = 0.005
-height = 0.325
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="BLOCKOUT" unique_id=1070160323]
 transform = Transform3D(-1, 0, 8.742278e-08, 6.181724e-08, 0.70710677, 0.70710677, -6.181724e-08, 0.70710677, -0.70710677, 0.1830703, 0.4158587, 0.9004333)
@@ -1305,4 +1473,44 @@ transform = Transform3D(-4.371139e-08, -1, 0, 0.9980486, -4.362609e-08, 0.062442
 material_override = ExtResource("65_m62eo")
 mesh = SubResource("PlaneMesh_m62eo")
 
+[node name="CSGBox3D5" type="CSGBox3D" parent="BLOCKOUT" unique_id=282113511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09788087, 1.7, -1.9829594)
+size = Vector3(0.2, 0.03, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="BLOCKOUT/CSGBox3D5" unique_id=420689308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, -1, 0.40709805)
+polygon = PackedVector2Array(0.3015766, -0.04252851, 0.4357704, 0.9362924, 0.5703107, 0.939697, 0.58996296, -0.041757703)
+depth = 0.05
+
+[node name="CSGPolygon3D5" type="CSGPolygon3D" parent="BLOCKOUT/CSGBox3D5" unique_id=1634505453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, -1, -0.054317474)
+polygon = PackedVector2Array(0.3015766, -0.04252851, 0.4357704, 0.9362924, 0.5703107, 0.939697, 0.58996296, -0.041757703)
+depth = 0.05
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="BLOCKOUT/CSGBox3D5" unique_id=1985466332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, -1, 0.31724823)
+polygon = PackedVector2Array(0.32881993, -0.044603705, 0.35217857, 0.7903881, 0.41149887, 0.94358385, 0.55658066, 0.94894195, 0.59976304, 0.81182504, 0.6042644, -0.040382862)
+depth = 0.05
+
+[node name="CSGPolygon3D7" type="CSGPolygon3D" parent="BLOCKOUT/CSGBox3D5" unique_id=182104226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, -1, -0.3212614)
+polygon = PackedVector2Array(0.32881993, -0.044603705, 0.35217857, 0.7903881, 0.41149887, 0.94358385, 0.55658066, 0.94894195, 0.59976304, 0.81182504, 0.6042644, -0.040382862)
+depth = 0.05
+
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="BLOCKOUT/CSGBox3D5" unique_id=396272956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, -1, 0.06678617)
+polygon = PackedVector2Array(0.32881993, -0.044603705, 0.35217857, 0.7903881, 0.41149887, 0.94358385, 0.55658066, 0.94894195, 0.59976304, 0.81182504, 0.6042644, -0.040382862)
+depth = 0.05
+
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="BLOCKOUT/CSGBox3D5" unique_id=949097093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, -1, 0.19196248)
+polygon = PackedVector2Array(0.32406244, -0.046862543, 0.3774668, 0.6903776, 0.34811652, 0.9316044, 0.60930884, 0.9345257, 0.57893324, 0.6815126, 0.58064216, -0.03563845)
+depth = 0.05
+
+[node name="CSGPolygon3D6" type="CSGPolygon3D" parent="BLOCKOUT/CSGBox3D5" unique_id=1204702873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49999997, -1, -0.16067886)
+polygon = PackedVector2Array(0.32406244, -0.046862543, 0.3774668, 0.6903776, 0.34811652, 0.9316044, 0.60930884, 0.9345257, 0.57893324, 0.6815126, 0.58064216, -0.03563845)
+depth = 0.05
+
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
+[editable path="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/StaticCellDoor01"]

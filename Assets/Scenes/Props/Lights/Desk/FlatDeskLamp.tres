@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://w3ycex3f5hap"]
+
+[ext_resource type="Texture2D" uid="uid://ch7vj88m3brdb" path="res://Assets/Scenes/Props/Lights/Desk/FlatDeskLamp_albedo.png" id="1_pgjqm"]
+
+[resource]
+albedo_texture = ExtResource("1_pgjqm")
+metallic = 0.3
+roughness = 0.5
+texture_filter = 2

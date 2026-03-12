@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://kqo55j0gam7t"]
-
-[ext_resource type="ArrayMesh" uid="uid://fk0eqqdiqqad" path="res://Assets/Scenes/Props/PBathroom/Cleanware/LaundryDetergent01/LaundryDetergent01.obj" id="1_u5lo5"]
-
-[node name="MeshLaundryDetergent01" type="MeshInstance3D" unique_id=184212215]
-mesh = ExtResource("1_u5lo5")

@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bq6x6bsudg5em"]
-
-[ext_resource type="ArrayMesh" uid="uid://pxdyta1b1rdp" path="res://Assets/Scenes/Furniture/FDoors/Reinforced/CellDoor01/CellDoor01.obj" id="1_siekj"]
-
-[node name="MeshCellDoor01" type="MeshInstance3D" unique_id=1995039359]
-mesh = ExtResource("1_siekj")

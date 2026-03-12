@@ -110,7 +110,7 @@ func key_event(event: Event) -> void:
 			await get_tree().create_timer(0.2).timeout
 			if !%KeyEvent.visible:
 				%KeyEvent.show()
-			AudioManager.play_uid_sound_at("uid://epskxdoj4off", Vector3(-0.9, 0.0, -2.0), 0.0, 1.5)
+			AudioManager.play_uid_sound_at("SFX" ,"uid://epskxdoj4off", Vector3(-0.9, 0.0, -2.0), 0.0, 1.5)
 		Event.TRIGGER:
 			key_event_happened = true
 			cutscenes.play("KeyPickUp")

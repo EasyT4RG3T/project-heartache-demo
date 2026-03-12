@@ -280,66 +280,49 @@ theme_override_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer" unique_id=243128241]
 layout_mode = 2
-theme_override_constants/separation = 80
+theme_override_constants/separation = 18
 
-[node name="Labels" type="Control" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1693996762]
+[node name="Labels" type="VBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=29674581]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="MasterLabel" type="Label" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Labels" unique_id=114010262]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 4.0
-offset_top = 12.0
-offset_right = 59.0
-offset_bottom = 35.0
+layout_mode = 2
 text = "Master"
 
 [node name="SFXLabel" type="Label" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Labels" unique_id=1108266328]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 4.0
-offset_top = 51.0
-offset_right = 32.0
-offset_bottom = 74.0
-size_flags_horizontal = 4
+layout_mode = 2
+size_flags_vertical = 1
 text = "SFX"
 
 [node name="DialogueLabel" type="Label" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Labels" unique_id=744783254]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 4.0
-offset_top = 90.00001
-offset_right = 72.0
-offset_bottom = 113.00001
+layout_mode = 2
 text = "Dialogue"
 
 [node name="AmbientLabel" type="Label" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Labels" unique_id=1024939899]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 4.0
-offset_top = 129.0
-offset_right = 70.0
-offset_bottom = 152.0
+layout_mode = 2
 text = "Ambient"
 
 [node name="MusicLabel" type="Label" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Labels" unique_id=1022346663]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 4.0
-offset_top = 168.0
-offset_right = 50.0
-offset_bottom = 191.0
+layout_mode = 2
 text = "Music"
 
-[node name="Sliders" type="Control" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1677248453]
+[node name="MenusLabel" type="Label" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Labels" unique_id=1789136890]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Menus"
+
+[node name="Sliders" type="VBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=909684903]
 layout_mode = 2
 
 [node name="Master" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders" unique_id=633329596]
 unique_name_in_owner = true
-layout_mode = 0
-offset_top = 8.0
-offset_right = 344.0
-offset_bottom = 39.0
+layout_mode = 2
 
 [node name="MasterHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/Master" unique_id=1388438719]
 unique_name_in_owner = true
@@ -359,10 +342,7 @@ emoji_menu_enabled = false
 
 [node name="SFX" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders" unique_id=1985266297]
 unique_name_in_owner = true
-layout_mode = 0
-offset_top = 47.0
-offset_right = 344.0
-offset_bottom = 78.0
+layout_mode = 2
 
 [node name="SFXHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/SFX" unique_id=98927029]
 unique_name_in_owner = true
@@ -382,10 +362,7 @@ emoji_menu_enabled = false
 
 [node name="Dialogue" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders" unique_id=1080840765]
 unique_name_in_owner = true
-layout_mode = 0
-offset_top = 86.00001
-offset_right = 344.0
-offset_bottom = 117.00001
+layout_mode = 2
 
 [node name="DialogueHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/Dialogue" unique_id=1203046377]
 unique_name_in_owner = true
@@ -405,10 +382,7 @@ emoji_menu_enabled = false
 
 [node name="Ambient" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders" unique_id=460183220]
 unique_name_in_owner = true
-layout_mode = 0
-offset_top = 125.00001
-offset_right = 344.0
-offset_bottom = 156.0
+layout_mode = 2
 
 [node name="AmbientHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/Ambient" unique_id=655036677]
 unique_name_in_owner = true
@@ -428,10 +402,7 @@ emoji_menu_enabled = false
 
 [node name="Music" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders" unique_id=667675776]
 unique_name_in_owner = true
-layout_mode = 0
-offset_top = 164.0
-offset_right = 344.0
-offset_bottom = 195.0
+layout_mode = 2
 
 [node name="MusicHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/Music" unique_id=1788646055]
 unique_name_in_owner = true
@@ -442,6 +413,26 @@ max_value = 1.0
 step = 0.01
 
 [node name="MusicLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/Music" unique_id=471193803]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+emoji_menu_enabled = false
+
+[node name="Menus" type="HBoxContainer" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders" unique_id=1700392430]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MenusHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/Menus" unique_id=1795864071]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="MenusLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Sound/HBoxContainer/VBoxContainer/HBoxContainer/Sliders/Menus" unique_id=1540612714]
 unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "100"

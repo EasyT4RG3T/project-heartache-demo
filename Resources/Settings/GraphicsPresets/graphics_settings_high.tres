@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_myh8i")
-scaling_3d_scale = 0.85
+glow_enabled = true
+glow_bloom = 0.3
 metadata/_custom_type_script = "uid://b8mxsgo0ylr5i"

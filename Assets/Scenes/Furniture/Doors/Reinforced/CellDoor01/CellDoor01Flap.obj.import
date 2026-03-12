@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyq48der3yr8n"
+path="res://.godot/imported/CellDoor01Flap.obj-833978162324e0b315d74cc29be3084e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CellDoor01Flap.obj-833978162324e0b315d74cc29be3084e.mesh"]
+
+source_file="res://Assets/Scenes/Furniture/Doors/Reinforced/CellDoor01/CellDoor01Flap.obj"
+dest_files=["res://.godot/imported/CellDoor01Flap.obj-833978162324e0b315d74cc29be3084e.mesh", "res://.godot/imported/CellDoor01Flap.obj-833978162324e0b315d74cc29be3084e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

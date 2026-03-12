@@ -1,5 +1,8 @@
 extends Control
 
+
+const MENU_BUTTON_SOUND = preload("uid://dyf7ad2tflj7r")
+
 @onready var start: Control = %Start
 
 @onready var start_new_game_button: Button = %NewGameButton
@@ -65,6 +68,7 @@ func _setup_start() -> void:
 				SaverLoader.current_slot = name_input_menu.line_edit.placeholder_text
 			else:
 				SaverLoader.current_slot = name_input_menu.line_edit.text
+			AudioManager.play_sound("Menus", MENU_BUTTON_SOUND, 0.0, 1.0)
 			GameManager.new_game())
 		name_input_menu.cancelled.connect(func():
 			name_input_menu.queue_free()
@@ -100,6 +104,7 @@ func _setup_start() -> void:
 			InputManager.menu = self))
 	
 	start_chunk_button.pressed.connect(func():
+		start_chunk_button.disabled = true
 		var map = ResourceUID.path_to_uid(maps[str(start_map_select.get_selected_id())])
 		await Game.load_chunk(map)
 		GameManager.load_player()
@@ -113,6 +118,8 @@ func _setup_start() -> void:
 		accept_menu.cancel_text = "No"
 		add_child(accept_menu)
 		accept_menu.accepted.connect(func():
+			AudioManager.play_sound("Menus", MENU_BUTTON_SOUND, 0.2, 0.6)
+			await get_tree().create_timer(1.0).timeout
 			get_tree().quit())
 		accept_menu.cancelled.connect(func():
 			accept_menu.queue_free()

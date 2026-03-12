@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bf76c5g3knha"]
+
+[ext_resource type="Texture2D" uid="uid://cqbmdc2ytr0pk" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Boots/Boot_albedo.png" id="1_byv70"]
+
+[resource]
+albedo_color = Color(0.9, 0.9, 0.9, 1)
+albedo_texture = ExtResource("1_byv70")
+texture_filter = 2

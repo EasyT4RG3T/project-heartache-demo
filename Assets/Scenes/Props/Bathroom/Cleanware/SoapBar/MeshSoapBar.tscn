@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d4adigyyt1jn3"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2wg8tlfiwu0a" path="res://Assets/Scenes/Props/Bathroom/Cleanware/SoapBar/SoapBar.obj" id="1_mor0b"]
+[ext_resource type="Material" uid="uid://cfhnafymak22t" path="res://Assets/Scenes/Props/Bathroom/Cleanware/SoapBar/SoupBar.tres" id="2_2xo5n"]
+
+[node name="MeshSoapBar" type="MeshInstance3D" unique_id=1742101398]
+mesh = ExtResource("1_mor0b")
+surface_material_override/0 = ExtResource("2_2xo5n")

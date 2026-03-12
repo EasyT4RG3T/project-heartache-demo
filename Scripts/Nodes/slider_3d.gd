@@ -11,8 +11,6 @@ signal closed
 @export var locked: bool = false
 @export var locked_message: String = "Locked"
 @export var id: int = 0
-@export var bounce: bool = false
-@export var bounce_delay: float = 1.0
 @export var slide_distance: float = 1.0:
 	set(value):
 		slide_distance = value
@@ -26,22 +24,8 @@ signal closed
 		position.z = slide_distance
 @export var slide_progress: float = 0.0:
 	set(value):
-		if slide_distance >= 0:
-			value = clamp(value, 0, slide_distance)
-			slide_progress = value
-			if slide_progress > (slide_distance * 0.5):
-				open = true
-			else:
-				open = false
-		
-		else:
-			value = clamp(value, slide_distance, 0)
-			slide_progress = value
-			if slide_progress < (slide_distance * 0.5):
-				open = true
-			else:
-				open = false
-		
+		value = clamp(value, 0, slide_distance)
+		slide_progress = value
 		if !is_node_ready(): return
 		position.z = slide_progress
 @export var open: bool = false
@@ -50,15 +34,11 @@ signal closed
 
 
 var slide_tween: Tween 
-var bounce_timer: Timer
+var left_duration: float = 0.0
 
 
 func _ready() -> void:
 	position.z = slide_progress
-	if bounce:
-		bounce_timer = Timer.new()
-		add_child(bounce_timer)
-		bounce_timer.timeout.connect(_bounce)
 
 
 func interact(player: PlayerCharacter) -> void:
@@ -77,13 +57,9 @@ func force_open() -> void:
 		
 		slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		
-		slide_tween.tween_property(self, "position", Vector3(0, 0, slide_distance), duration)
+		slide_tween.tween_property(self, "slide_progress", slide_distance, duration)
 		opened.emit()
 		open = true
-		if bounce:
-			if !bounce_timer.is_stopped():
-				bounce_timer.stop()
-			bounce_timer.start(bounce_delay)
 
 
 func force_close() -> void:
@@ -93,7 +69,7 @@ func force_close() -> void:
 		
 		slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		
-		slide_tween.tween_property(self, "position", Vector3(0, 0, 0), duration)
+		slide_tween.tween_property(self, "slide_progress", 0, duration)
 		closed.emit()
 		open = false
 
@@ -105,30 +81,56 @@ func _slide() -> void:
 		
 		slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		
-		slide_tween.tween_property(self, "position", Vector3(0, 0, slide_distance), duration)
+		left_duration = duration * ((slide_distance - slide_progress) / slide_distance)
+		
+		slide_tween.tween_property(self, "slide_progress", slide_distance, left_duration)
 		opened.emit()
 		open = true
-		if bounce:
-			if !bounce_timer.is_stopped():
-				bounce_timer.stop()
-			bounce_timer.start(bounce_delay)
 	
-	elif !bounce:
+	else:
 		if slide_tween:
 			slide_tween.kill()
 		
 		slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		
-		slide_tween.tween_property(self, "position", Vector3(0, 0, 0), duration)
+		left_duration = duration * (slide_progress / slide_distance)
+		
+		slide_tween.tween_property(self, "slide_progress", 0, duration)
 		closed.emit()
 		open = false
 
 
-func _bounce() -> void:
-	if slide_tween:
-		slide_tween.kill()
-	
-	slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	slide_tween.tween_property(self, "position", Vector3(0, 0, 0), duration)
-	closed.emit()
-	open = false
+func save() -> Dictionary:
+	var data: Dictionary = {
+		"duration": duration,
+		"locked": locked,
+		"locked_message": locked_message,
+		"id": id,
+		"slide_distance": slide_distance,
+		"slide_progress": slide_progress,
+		"open": open,
+		"mid_move": false,
+	}
+	if slide_tween and slide_tween.is_running():
+		data["mid_move"] = true
+	return data
+
+
+func load_save(data: Dictionary) -> void:
+	duration = data["duration"]
+	locked = data["locked"]
+	locked_message = data["locked_message"]
+	id = data["id"]
+	slide_distance = data["slide_distance"]
+	slide_progress = data["slide_progress"]
+	open = data["open"]
+	if data["mid_move"]:
+		if slide_tween:
+			slide_tween.kill()
+		slide_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+		if open:
+			left_duration = duration * ((slide_distance - slide_progress) / slide_distance)
+			slide_tween.tween_property(self, "slide_progress", slide_distance, left_duration)
+		else:
+			left_duration = duration * (slide_progress / slide_distance)
+			slide_tween.tween_property(self, "slide_progress", 0, duration)

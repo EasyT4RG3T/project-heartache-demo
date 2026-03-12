@@ -30,6 +30,10 @@ SaverLoader="*res://Scripts/Autoloads/saverloader.gd"
 Game="*res://Scripts/Autoloads/game.gd"
 AudioManager="*res://Scripts/Autoloads/audio_manager.gd"
 
+[debug]
+
+settings/physics_interpolation/enable_warnings=false
+
 [display]
 
 window/stretch/aspect="expand"
@@ -37,7 +41,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/raytraced_audio/plugin.cfg")
+enabled=PackedStringArray("res://addons/converter/plugin.cfg", "res://addons/raytraced_audio/plugin.cfg")
 
 [file_customization]
 
@@ -209,6 +213,8 @@ enter={
 
 common/physics_jitter_fix=0.0
 3d/physics_engine="Jolt Physics"
+jolt_physics_3d/simulation/continuous_cd_movement_threshold=0.5
+jolt_physics_3d/simulation/continuous_cd_max_penetration=0.1
 common/physics_interpolation=true
 
 [raytraced_audio]
@@ -228,6 +234,8 @@ environment/ssao/half_size=false
 environment/ssao/blur_passes=0
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 textures/decals/filter=2
+environment/glow/upscale_mode=0
+lightmapping/probe_capture/update_speed=10.0
 occlusion_culling/use_occlusion_culling=true
 lights_and_shadows/positional_shadow/atlas_size=8192
 lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv=2

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cbkebh6ehoq4t"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ra702"]
+points = PackedVector3Array(-0.021566406, 0.106711, 0.049766913, -0.023154937, 0.106711, -0.044842616, -0.14191912, 0.07684738, 0.04726257, -0.143912, 0, 0.04726257, 0.15115, 0, 0.052280992, 0.14895494, 0.044643972, 0.052280992, -0.14191912, 0.07684738, -0.047269, 0.14574899, 0.044643972, -0.042396743, -0.143912, 0, -0.047269, 0.14791517, 0, -0.042396743, 0.0020015836, 0, -0.044842616)
+
+[node name="ColSneakerL-col" type="CollisionShape3D" unique_id=195423922]
+shape = SubResource("ConvexPolygonShape3D_ra702")

@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxi0a72g1bajl"]
-
-[ext_resource type="Texture2D" uid="uid://cpo202mrlro67" path="res://Assets/Scenes/Props/PTrash/NewsPapers01/NewsPaper01_albedo.png" id="1_hpdcg"]
-
-[resource]
-albedo_texture = ExtResource("1_hpdcg")
-texture_filter = 2

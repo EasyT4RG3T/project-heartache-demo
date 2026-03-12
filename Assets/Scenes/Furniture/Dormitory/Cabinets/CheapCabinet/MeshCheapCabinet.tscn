@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dyb1bp3ciawxy"]
+
+[ext_resource type="ArrayMesh" uid="uid://dfmaucyiea4m0" path="res://Assets/Scenes/Furniture/Dormitory/Cabinets/CheapCabinet/CheapCabinet.obj" id="1_brfkl"]
+[ext_resource type="Material" uid="uid://dkjhst50pxw4o" path="res://Assets/Scenes/Furniture/Dormitory/Cabinets/CheapCabinet/CheapCabinet.tres" id="2_k8dgy"]
+
+[node name="MeshCheapCabinet" type="MeshInstance3D" unique_id=1469321502]
+mesh = ExtResource("1_brfkl")
+surface_material_override/0 = ExtResource("2_k8dgy")

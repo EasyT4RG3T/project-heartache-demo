@@ -1,6 +1,8 @@
 extends Control
 
 
+const MENU_BUTTON_SOUND = preload("uid://dyf7ad2tflj7r")
+
 const graphics_low: String = "uid://cutv363x14c4e"
 const graphics_medium: String = "uid://cr40bmj55qsks"
 const graphics_high: String = "uid://cn4cbbs6h71o1"
@@ -96,7 +98,7 @@ var master_volume: float = temp_settings.master_volume:
 		master_volume = value
 		temp_settings.master_volume = value
 		%MasterHSlider.value = value
-		%MasterLineEdit.text = str(int(value  * 100))
+		%MasterLineEdit.text = str(int(value * 100))
 		unsaved = true
 var sfx_volume: float = temp_settings.sfx_volume:
 	set(value):
@@ -104,7 +106,7 @@ var sfx_volume: float = temp_settings.sfx_volume:
 		sfx_volume = value
 		temp_settings.sfx_volume = value
 		%SFXHSlider.value = value
-		%SFXLineEdit.text = str(int(value  * 100))
+		%SFXLineEdit.text = str(int(value * 100))
 		unsaved = true
 var dialogue_volume: float = temp_settings.dialogue_volume:
 	set(value):
@@ -112,7 +114,7 @@ var dialogue_volume: float = temp_settings.dialogue_volume:
 		dialogue_volume = value
 		temp_settings.dialogue_volume = value
 		%DialogueHSlider.value = value
-		%DialogueLineEdit.text = str(int(value  * 100))
+		%DialogueLineEdit.text = str(int(value * 100))
 		unsaved = true
 var ambient_volume: float = temp_settings.ambient_volume:
 	set(value):
@@ -120,7 +122,7 @@ var ambient_volume: float = temp_settings.ambient_volume:
 		ambient_volume = value
 		temp_settings.ambient_volume = value
 		%AmbientHSlider.value = value
-		%AmbientLineEdit.text = str(int(value  * 100))
+		%AmbientLineEdit.text = str(int(value * 100))
 		unsaved = true
 var music_volume: float = temp_settings.music_volume:
 	set(value):
@@ -128,9 +130,16 @@ var music_volume: float = temp_settings.music_volume:
 		music_volume = value
 		temp_settings.music_volume = value
 		%MusicHSlider.value = value
-		%MusicLineEdit.text = str(int(value  * 100))
+		%MusicLineEdit.text = str(int(value * 100))
 		unsaved = true
-
+var menus_volume: float = temp_settings.menus_volume:
+	set(value):
+		value = clamp(value, 0.0, 100.0)
+		menus_volume = value
+		temp_settings.menus_volume = value
+		%MenusHSlider.value = value
+		%MenusLineEdit.text = str(int(value * 100))
+		unsaved = true
 var unsaved: bool = false:
 	set(value):
 		unsaved = value
@@ -154,6 +163,7 @@ func _ready() -> void:
 	_set_up_sound()
 	
 	save_button.pressed.connect(func():
+		AudioManager.play_sound("Menus", MENU_BUTTON_SOUND, 0.0, 1.2)
 		_save_settings())
 	
 	return_button.pressed.connect(func():
@@ -317,11 +327,11 @@ func _set_up_sound() -> void:
 	%AmbientHSlider.value = temp_settings.ambient_volume
 	%AmbientHSlider.value_changed.connect(func(value: float):
 		ambient_volume = value)
-	%AmbientLineEdit.text = str(int(temp_settings.ambient_volume))
+	%AmbientLineEdit.text = str(int(temp_settings.ambient_volume * 100))
 	%AmbientLineEdit.editing_toggled.connect(func(editing: bool):
 		if editing: return
 		if !%AmbientLineEdit.text.is_valid_int():
-			%AmbientLineEdit.text = str(int(temp_settings.ambient_volume))
+			%AmbientLineEdit.text = str(int(temp_settings.ambient_volume * 100))
 		ambient_volume = %AmbientLineEdit.text.to_float() * 0.01)
 	
 	%MusicHSlider.value = temp_settings.music_volume
@@ -333,6 +343,16 @@ func _set_up_sound() -> void:
 		if !%MusicLineEdit.text.is_valid_int():
 			%MusicLineEdit.text = str(int(temp_settings.music_volume * 100))
 		music_volume = %MusicLineEdit.text.to_float() * 0.01)
+	
+	%MenusHSlider.value = temp_settings.menus_volume
+	%MenusHSlider.value_changed.connect(func(value: float):
+		menus_volume = value)
+	%MenusLineEdit.text = str(int(temp_settings.menus_volume * 100))
+	%MenusLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%MenusLineEdit.text.is_valid_int():
+			%MenusLineEdit.text = str(int(temp_settings.menus_volume * 100))
+		menus_volume = %MenusLineEdit.text.to_float() * 0.01)
 
 
 func _default_settings() -> void:
@@ -359,6 +379,11 @@ func _set_all_settings(graphics: bool = false) -> void:
 	static_shader = temp_settings.static_shader
 	
 	master_volume = temp_settings.master_volume
+	sfx_volume = temp_settings.sfx_volume
+	dialogue_volume = temp_settings.dialogue_volume
+	ambient_volume = temp_settings.ambient_volume
+	music_volume = temp_settings.music_volume
+	menus_volume = temp_settings.menus_volume
 	
 	if !graphics: return
 	

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxaks8yaxskm3"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_vulsp"]
+[ext_resource type="PackedScene" uid="uid://bctu1ah3ype80" path="res://Assets/Scenes/Props/Trash/Cigarettes/MeshCigarette01.tscn" id="2_howl4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n8sc5"]
+points = PackedVector3Array(0.005, 0.01, 0.033, 0.005, 0, 0.033, 0.005, 0.01, -0.033, -0.005, 0.01, 0.033, -0.005, 0, 0.033, 0.005, 0, -0.033, -0.005, 0.01, -0.033, -0.005, 0, -0.033)
+
+[node name="DynamicCigarette01" type="RigidBody3D" unique_id=436209573]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_vulsp")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshCigarette01" parent="." unique_id=176722139 instance=ExtResource("2_howl4")]
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=748004658]
+shape = SubResource("ConvexPolygonShape3D_n8sc5")

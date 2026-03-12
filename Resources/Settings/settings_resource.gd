@@ -26,6 +26,7 @@ extends Resource
 @export var dialogue_volume: float = 100.0
 @export var ambient_volume: float = 100.0
 @export var music_volume: float = 100.0
+@export var menus_volume: float = 100.0
 
 
 ## Save ##

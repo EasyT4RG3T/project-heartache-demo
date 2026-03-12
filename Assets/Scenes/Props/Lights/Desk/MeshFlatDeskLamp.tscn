@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c88mjcp0hgvcn"]
+
+[ext_resource type="ArrayMesh" uid="uid://cwse22eccj3s7" path="res://Assets/Scenes/Props/Lights/Desk/FlatDeskLamp.obj" id="1_8qfww"]
+[ext_resource type="Material" uid="uid://w3ycex3f5hap" path="res://Assets/Scenes/Props/Lights/Desk/FlatDeskLamp.tres" id="2_243cl"]
+[ext_resource type="Material" uid="uid://c3exb48g5dfjw" path="res://Assets/Materials/Light/Warm/WarmLight.tres" id="3_oolea"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ogwxf"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.01
+radial_segments = 8
+rings = 0
+
+[node name="MeshFlatDeskLamp" type="MeshInstance3D" unique_id=2090924396]
+mesh = ExtResource("1_8qfww")
+surface_material_override/0 = ExtResource("2_243cl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1290690054]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0.2475777, 0.09127165)
+mesh = SubResource("CylinderMesh_ogwxf")
+surface_material_override/0 = ExtResource("3_oolea")

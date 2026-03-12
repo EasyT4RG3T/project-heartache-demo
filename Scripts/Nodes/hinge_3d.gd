@@ -52,6 +52,7 @@ enum AUnlock { NONE, POSITIVE, NEGATIVE }
 var static_direction: Vector3 = Vector3.ZERO
 var direction: float = 0.0
 var hinge_tween: Tween
+var left_duration: float = 0.0
 
 
 func _ready() -> void:
@@ -126,14 +127,20 @@ func _move_hinge() -> void:
 	
 	if !open:
 		if direction >= 0:
-			hinge_tween.tween_property(self, "open_progress", max_positive, duration)
+			left_duration = duration * ((max_positive - open_progress) / max_positive)
+			hinge_tween.tween_property(self, "open_progress", max_positive, left_duration)
 			opened_positive.emit()
 		else:
-			hinge_tween.tween_property(self, "open_progress", -max_negative, duration)
+			left_duration = duration * ((-max_negative - open_progress) / -max_negative)
+			hinge_tween.tween_property(self, "open_progress", -max_negative, left_duration)
 			opened_negative.emit()
 		open = true
 	else:
-		hinge_tween.tween_property(self, "open_progress", 0, duration)
+		if open_progress > 0:
+			left_duration = duration * (open_progress / max_positive)
+		else:
+			left_duration = duration * (open_progress / -max_negative)
+		hinge_tween.tween_property(self, "open_progress", 0, left_duration)
 		closed.emit()
 		open = false
 
@@ -177,8 +184,14 @@ func load_save(data: Dictionary) -> void:
 		hinge_tween = create_tween().set_ease(Tween.EASE_OUT).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		if open:
 			if direction >= 0:
-				hinge_tween.tween_property(self, "open_progress", max_positive, duration)
+				left_duration = duration * ((max_positive - open_progress) / max_positive)
+				hinge_tween.tween_property(self, "open_progress", max_positive, left_duration)
 			else:
-				hinge_tween.tween_property(self, "open_progress", -max_negative, duration)
+				left_duration = duration * ((-max_negative - open_progress) / -max_negative)
+				hinge_tween.tween_property(self, "open_progress", -max_negative, left_duration)
 		else:
-			hinge_tween.tween_property(self, "open_progress", 0, duration)
+			if open_progress > 0:
+				left_duration = duration * (open_progress / max_positive)
+			else:
+				left_duration = duration * (open_progress / -max_negative)
+			hinge_tween.tween_property(self, "open_progress", 0, left_duration)

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cujiafp0gsosk"]
+
+[ext_resource type="Texture2D" uid="uid://ve5m3uoi7ym4" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Shoes/Shoe_albedo.png" id="1_kdg6y"]
+
+[resource]
+albedo_texture = ExtResource("1_kdg6y")
+metallic_specular = 0.65
+roughness = 0.7
+texture_filter = 2

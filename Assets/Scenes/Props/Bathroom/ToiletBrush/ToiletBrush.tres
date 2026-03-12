@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bstj7lj6c423m"]
+
+[ext_resource type="Texture2D" uid="uid://buvny558qh2nt" path="res://Assets/Scenes/Props/Bathroom/ToiletBrush/ToiletBrush_albedo.png" id="1_eb5ru"]
+[ext_resource type="Texture2D" uid="uid://c1nlbaa2xnoyw" path="res://Assets/Scenes/Props/Bathroom/ToiletBrush/ToiletBrush_roughness.png" id="2_uwjsd"]
+
+[resource]
+albedo_texture = ExtResource("1_eb5ru")
+metallic = 0.2
+roughness_texture = ExtResource("2_uwjsd")
+texture_filter = 2

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d22tj0ro20ipj"]
+
+[ext_resource type="Texture2D" uid="uid://vodc7v5imbt6" path="res://Assets/Scenes/Props/Decorations/Photos/StandingFrame/StandingFrame_albedo.png" id="1_t6c5e"]
+
+[resource]
+albedo_texture = ExtResource("1_t6c5e")
+texture_filter = 2

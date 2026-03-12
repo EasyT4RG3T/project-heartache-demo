@@ -41,13 +41,13 @@ extends Resource
 @export var ssil_fadeout_from: float = 50.0
 @export var ssil_fadeout_to: float = 300.0
 
-@export var glow_enabled: bool = false
+@export var glow_enabled: bool = true
 @export var glow_levels: Array[float] = [0.0, 0.8, 0.4, 0.1, 1.0, 0.0, 0.0]
 @export var glow_upscale_mode: bool = false
 @export var glow_normalized: bool = false
 @export var glow_intensity: float = 0.3
 @export var glow_strength: float = 1.0
-@export var glow_bloom: float = 0.0
+@export var glow_bloom: float = 0.3
 @export var glow_blend_mode: Environment.GlowBlendMode = Environment.GLOW_BLEND_MODE_SCREEN
 
 @export var ssr_enabled: bool = false

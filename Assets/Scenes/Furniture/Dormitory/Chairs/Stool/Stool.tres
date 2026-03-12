@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cu52nkqfyt60c"]
+
+[ext_resource type="Texture2D" uid="uid://dsw2oh08qxfx7" path="res://Assets/Scenes/Furniture/Dormitory/Chairs/Stool/Stool_albedo.png" id="1_wapsb"]
+[ext_resource type="Texture2D" uid="uid://c71t0mm218mdc" path="res://Assets/Scenes/Furniture/Dormitory/Chairs/Stool/Stool_roughness.png" id="2_37c2q"]
+
+[resource]
+albedo_texture = ExtResource("1_wapsb")
+roughness_texture = ExtResource("2_37c2q")
+texture_filter = 2
