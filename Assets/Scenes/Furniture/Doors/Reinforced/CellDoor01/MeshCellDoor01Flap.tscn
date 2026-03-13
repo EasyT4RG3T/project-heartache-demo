@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bldjqon1070cl"]
 
 [ext_resource type="ArrayMesh" uid="uid://dyq48der3yr8n" path="res://Assets/Scenes/Furniture/Doors/Reinforced/CellDoor01/CellDoor01Flap.obj" id="1_ronr8"]
-[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_dxr0t"]
+[ext_resource type="Material" uid="uid://tgfju1otef43" path="res://Assets/Scenes/Furniture/Doors/Reinforced/CellDoor01/CellDoor01.tres" id="2_ccons"]
 
 [node name="MeshCellDoor01Flap" type="MeshInstance3D" unique_id=457494418]
 mesh = ExtResource("1_ronr8")
-surface_material_override/0 = ExtResource("2_dxr0t")
+surface_material_override/0 = ExtResource("2_ccons")

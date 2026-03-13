@@ -8,16 +8,18 @@ extends AnimationPlayer
 
 @export var player_anim: Node3D
 
-@export var exit_modes: Dictionary[String, PlayerCharacter.MovementMode]
+@export var setup: Dictionary[String, Dictionary]
 @export_tool_button("Refresh Animation List") var refresh: Callable = func():
 	for anim in get_animation_list():
-		if exit_modes.has(anim):
-			temp_exit_modes[anim] = exit_modes[anim]
+		if setup.has(anim):
+			temp_setup[anim] = setup[anim]
 		else:
-			temp_exit_modes[anim] = PlayerCharacter.MovementMode.WALKING
-	exit_modes.clear()
-	exit_modes = temp_exit_modes
-var temp_exit_modes: Dictionary[String, PlayerCharacter.MovementMode]
+			temp_setup[anim] = {}
+			temp_setup[anim]["EnterAngle"] = +1
+			temp_setup[anim]["ExitMode"] = PlayerCharacter.MovementMode.WALKING
+	setup.clear()
+	setup = temp_setup
+var temp_setup: Dictionary[String, Dictionary]
 
 var player: PlayerCharacter
 
@@ -40,14 +42,16 @@ func _set_up_anim(anim_name: StringName) -> void:
 	player = GameManager.player_character
 	
 	pause()
+	var adjusted_player_rotation: Vector3 = player.head.global_rotation
+	if setup[anim_name]["EnterAngle"] > 0 and adjusted_player_rotation.y < 0:
+		adjusted_player_rotation.y += TAU
+	elif setup[anim_name]["EnterAngle"] < 0 and adjusted_player_rotation.y > 0:
+		adjusted_player_rotation.y -= TAU
 	get_animation(anim_name).track_set_key_value(0, 0, player.head.global_position)
-	get_animation(anim_name).track_set_key_value(1, 0, player.head.global_rotation)
-	
+	get_animation(anim_name).track_set_key_value(1, 0, adjusted_player_rotation)
 	player_anim.global_position = player.head.global_position
-	player_anim.global_rotation = player.head.global_rotation
-	
+	player_anim.global_rotation = adjusted_player_rotation
 	player._change_fov_smooth(80, get_animation(anim_name).track_get_key_time(0, 1))
-	
 	set_up = true
 	_play_anim()
 
@@ -64,10 +68,10 @@ func _play_anim() -> void:
 
 
 func _exit_anim(anim_name: StringName) -> void:
-	player.current_movement_mode = exit_modes[anim_name]
+	player.current_movement_mode = setup[anim_name]["ExitMode"]
 	var last_pos_key = get_animation(anim_name).track_get_key_count(0) - 1
 	var last_rot_key = get_animation(anim_name).track_get_key_count(1) - 1
-	match exit_modes[anim_name]:
+	match setup[anim_name]["ExitMode"]:
 		PlayerCharacter.MovementMode.WALKING:
 			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.7, 0)
 			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)

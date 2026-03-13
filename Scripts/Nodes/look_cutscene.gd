@@ -9,7 +9,7 @@ signal animation_finished
 var look_tween: Tween
 
 
-func look(look_pos: Vector3, duration: float = 0.0) -> void:
+func look(look_pos: Vector3, speed: float = 1.0, duration: float = 0.0) -> void:
 	animation_started.emit()
 	SaverLoader.can_save -= 1
 	InputManager.player_character_input = false
@@ -20,7 +20,7 @@ func look(look_pos: Vector3, duration: float = 0.0) -> void:
 		look_tween.kill()
 	
 	look_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_ease(Tween.EASE_OUT)
-	look_tween.tween_property(GameManager.player_character.head, "global_basis", global_basis, 1.0)
+	look_tween.tween_property(GameManager.player_character.head, "global_basis", global_basis, speed)
 	look_tween.tween_callback(func():
 		if duration > 0.0:
 			await get_tree().create_timer(duration).timeout

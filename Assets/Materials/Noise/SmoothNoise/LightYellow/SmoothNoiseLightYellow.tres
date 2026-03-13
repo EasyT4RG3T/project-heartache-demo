@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn0i2onsiteug"]
+
+[ext_resource type="Texture2D" uid="uid://bes0pdroadntl" path="res://Assets/Materials/Noise/SmoothNoise/SmoothNoise_albedo.png" id="1_shdaj"]
+
+[resource]
+albedo_color = Color(0.92, 0.9095733, 0.8832, 1)
+albedo_texture = ExtResource("1_shdaj")
+texture_filter = 2

@@ -27,11 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://p6se47afbw5x" path="res://Assets/Scenes/Props/Decorations/Books/Book04/DynamicBook04.tscn" id="23_3chxh"]
 [ext_resource type="PackedScene" uid="uid://be6h4l67ik3su" path="res://Assets/Scenes/Props/Decorations/Photos/StandingFrame/StaticStandingFrame.tscn" id="23_colw2"]
 [ext_resource type="PackedScene" uid="uid://d1so8kmycr4nh" path="res://Assets/Scenes/Furniture/Dormitory/Chairs/Stool/StaticStool.tscn" id="23_ju711"]
+[ext_resource type="PackedScene" uid="uid://bfrptftxp5wf6" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Pillow03/StaticPillow03.tscn" id="23_jw84x"]
 [ext_resource type="PackedScene" uid="uid://wrnhde8lcn0w" path="res://Assets/Scenes/Props/Bathroom/Tootcare/Toothpaste02/MeshToothpaste02.tscn" id="23_y7jsn"]
 [ext_resource type="PackedScene" uid="uid://ckpuiw51v3677" path="res://Assets/Scenes/Props/Keys/Key01/MeshKey01.tscn" id="24_amldx"]
 [ext_resource type="PackedScene" uid="uid://bcy6xeau0816g" path="res://Assets/Scenes/Props/Lights/Desk/StaticFlatDeskLamp.tscn" id="24_csg3t"]
 [ext_resource type="PackedScene" uid="uid://cix0b5xqjdlrj" path="res://Assets/Scenes/Props/Bathroom/Cleanware/SoapBarHolder/StaticSoapBarHolder.tscn" id="25_pfi4x"]
-[ext_resource type="Script" uid="uid://bd7sxtcw6gfaq" path="res://Scenes/Maps/PrisonBlockLowSec/key_interact.gd" id="26_1mivf"]
 [ext_resource type="PackedScene" uid="uid://bobblgukya4qi" path="res://Assets/Scenes/Furniture/Dormitory/Cabinets/CheapCabinet/InteractableCheapCabinet.tscn" id="26_4xmcm"]
 [ext_resource type="PackedScene" uid="uid://cdyeaa0a852te" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/BigCorridor.tscn" id="26_aj3dw"]
 [ext_resource type="PackedScene" uid="uid://2jnuqrfca4a8" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Cell01.tscn" id="26_kraa6"]
@@ -56,14 +56,18 @@
 [ext_resource type="PackedScene" uid="uid://qs0y58k0dr18" path="res://Assets/Scenes/Props/Bathroom/Tootcare/Toothpaste02/StaticToothpaste02.tscn" id="31_nw5rh"]
 [ext_resource type="PackedScene" uid="uid://dciio14f02h86" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Corridor.tscn" id="31_x1slx"]
 [ext_resource type="Texture2D" uid="uid://dtrvtkdr4bojt" path="res://Assets/Textures/Dirt/DirtBig.png" id="32_3wdts"]
+[ext_resource type="PackedScene" uid="uid://b7u5lkit7xhc2" path="res://Assets/Scenes/Props/Bathroom/Towels/StaticFoldedTowel.tscn" id="32_5xl1e"]
 [ext_resource type="PackedScene" uid="uid://wx8dgmje0l0k" path="res://Assets/Scenes/Props/Bathroom/Cleanware/SoapBar/DynamicSoapBar.tscn" id="32_862hu"]
 [ext_resource type="Material" uid="uid://tqnokcoc3b06" path="res://Assets/Materials/Bricks/GrayBricks/GrayBricks.tres" id="32_yxwtw"]
 [ext_resource type="Texture2D" uid="uid://dr1uwe35k570q" path="res://Assets/Textures/Gross/GrossSmear/GrossSmearWideL.png" id="33_3wdts"]
 [ext_resource type="PackedScene" uid="uid://b7qlbecd1lalt" path="res://Assets/Scenes/Props/Kitchen/Utensils/PlasticCup/DynamicPlasticCup.tscn" id="33_66hdq"]
+[ext_resource type="Material" uid="uid://okwahheu26bs" path="res://Assets/Scenes/Props/Bathroom/Towels/FoldedTowel02.tres" id="33_badwn"]
 [ext_resource type="PackedScene" uid="uid://cxaks8yaxskm3" path="res://Assets/Scenes/Props/Trash/Cigarettes/DynamicCigarette01.tscn" id="33_h8gwk"]
 [ext_resource type="PackedScene" uid="uid://cl0f15jmdc0ql" path="res://Assets/Scenes/Props/Kitchen/Utensils/PlasticCupCrumpled/DynamicPlasticCupCrumpled.tscn" id="34_4xmcm"]
 [ext_resource type="PackedScene" uid="uid://crtaqr638t54c" path="res://Assets/Scenes/Props/Trash/Cigarettes/DynamicCigarette02.tscn" id="34_amldx"]
+[ext_resource type="PackedScene" uid="uid://chpryxbrfo43m" path="res://Assets/Scenes/Props/Bathroom/Towels/StaticFoldedSmallTowel.tscn" id="34_ho4kq"]
 [ext_resource type="PackedScene" uid="uid://d056oev732af8" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell01.tscn" id="34_yxwtw"]
+[ext_resource type="Material" uid="uid://dnqishwq6yp8q" path="res://Assets/Scenes/Props/Bathroom/Towels/FoldedSmallTowel01.tres" id="35_4sofw"]
 [ext_resource type="PackedScene" uid="uid://flphe8lx7pn" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell02.tscn" id="35_sng3i"]
 [ext_resource type="PackedScene" uid="uid://dwjss63qlmj4n" path="res://Assets/Scenes/Props/Bathroom/ToiletPapers/ToiletPaper01/DynamicToiletPaper01.tscn" id="36_33dgr"]
 [ext_resource type="PackedScene" uid="uid://dwkvyoaxem15g" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/FakeCell03.tscn" id="36_mo6mc"]
@@ -75,7 +79,11 @@
 [ext_resource type="PackedScene" uid="uid://dblkffd3ew5c6" path="res://Assets/Scenes/Props/Bathroom/Cleanware/CleaningSpray/DynamicCleningSpray.tscn" id="38_m62eo"]
 [ext_resource type="PackedScene" uid="uid://ia4jk3evnw5n" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/Janitor.tscn" id="39_8o612"]
 [ext_resource type="PackedScene" uid="uid://ccbr6rgcdf6ek" path="res://Assets/Scenes/Props/Trash/CigaretteBoxes/DynamicCigaretteBox02.tscn" id="39_amldx"]
+[ext_resource type="PackedScene" uid="uid://i46eunf7joea" path="res://Assets/Scenes/Props/Bathroom/Towels/MeshFoldedTowel.tscn" id="39_ho4kq"]
+[ext_resource type="Material" uid="uid://cmxcxqty3l4bs" path="res://Assets/Scenes/Props/Bathroom/Towels/FoldedTowel01.tres" id="39_yatlx"]
 [ext_resource type="PackedScene" uid="uid://b6yalyiyrsfin" path="res://Assets/Maps/PrisonBlockLowSec/MeshInstance3D/SecurityCorridor.tscn" id="40_cjxge"]
+[ext_resource type="Material" uid="uid://durgscxap4fi0" path="res://Assets/Scenes/Props/Bathroom/Towels/FoldedSmallTowel02.tres" id="40_mnx6g"]
+[ext_resource type="PackedScene" uid="uid://jgiy3skn5yyk" path="res://Assets/Scenes/Props/Bathroom/Towels/MeshFoldedSmallTowel.tscn" id="41_4sofw"]
 [ext_resource type="PackedScene" uid="uid://didi6ndltsbr3" path="res://Assets/Scenes/Props/Kitchen/Utensils/FoodTray/StaticFoodTray.tscn" id="46_n6xt3"]
 [ext_resource type="PackedScene" uid="uid://nkfwxf6idurk" path="res://Assets/Scenes/Props/Decorations/Books/Book03/DynamicBook03.tscn" id="48_3chxh"]
 [ext_resource type="PackedScene" uid="uid://biv8i87g08u4g" path="res://Assets/Scenes/Props/Decorations/Books/Book01/DynamicBook01.tscn" id="49_7k6yf"]
@@ -84,9 +92,15 @@
 [ext_resource type="PackedScene" uid="uid://bdwr78t54g3ow" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Boots/DynamicBootL.tscn" id="60_nywor"]
 [ext_resource type="PackedScene" uid="uid://cfue66kax2gwv" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Boots/DynamicBootR.tscn" id="61_qkk5q"]
 [ext_resource type="Material" uid="uid://bpkb6g3u86ixu" path="res://Assets/Materials/Plastic/BluePlastic/BluePlastic.tres" id="65_m62eo"]
+[ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="81_4sofw"]
 [ext_resource type="PackedScene" uid="uid://i4k60m55kpjo" path="res://Assets/Scenes/Props/Bathroom/ToiletBrush/StaticToiletBrush.tscn" id="81_pckie"]
+[ext_resource type="Texture2D" uid="uid://culfmh3cpnaxf" path="res://Assets/Textures/Pictures/Parents.png" id="81_yatlx"]
 [ext_resource type="PackedScene" uid="uid://dslcymxarobuh" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Sneakers/DynamicSneakerL.tscn" id="82_nw5rh"]
 [ext_resource type="PackedScene" uid="uid://f3eq6qps6u8e" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Sneakers/DynamicSneakerR.tscn" id="83_6uvc4"]
+[ext_resource type="PackedScene" uid="uid://cupms33codepa" path="res://Assets/Scenes/Furniture/Dormitory/Shelfs/Wall/StaticWallBookShelf.tscn" id="88_qkk5q"]
+[ext_resource type="PackedScene" uid="uid://b0vraigtgqns" path="res://Assets/Scenes/Props/Decorations/Books/Book02/DynamicBook02.tscn" id="89_n0al7"]
+[ext_resource type="PackedScene" uid="uid://ce0a7as346bsp" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Blanket03/StaticBlanket03.tscn" id="99_yatlx"]
+[ext_resource type="PackedScene" uid="uid://cx1vqr0ol80el" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Pillow02/StaticPillow02.tscn" id="100_mnx6g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
 size = Vector3(1.0236816, 3.0178223, 0.8113861)
@@ -111,6 +125,12 @@ size = Vector3(0.19871521, 0.09615326, 0.32385254)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_35oj4"]
 size = Vector2(0.2, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_okppq"]
+data = PackedVector3Array(0.13509999, 0.049999997, -0.1364, -0.13849999, 0.095, -0.14999999, -0.13509999, 0.049999997, -0.1364, 0.13849999, 0.095, -0.14999999, -0.13849999, 0.095, -0.14999999, 0.13509999, 0.049999997, -0.1364, -0.13849999, 0.03, 0.14999999, 0.13849999, 0.005, 0.125, -0.13849999, 0.005, 0.125, 0.13849999, 0.03, 0.14999999, 0.13849999, 0.005, 0.125, -0.13849999, 0.03, 0.14999999, 0.13849999, 0.07, 0.14999999, -0.13849999, 0.095, 0.125, 0.13849999, 0.095, 0.125, -0.13849999, 0.07, 0.14999999, -0.13849999, 0.095, 0.125, 0.13849999, 0.07, 0.14999999, -0.13849999, 0.005, 0.125, 0.13849999, 0.005, -0.14999999, -0.13849999, 0.005, -0.14999999, 0.13849999, 0.005, 0.125, 0.13849999, 0.005, -0.14999999, -0.13849999, 0.005, 0.125, -0.13849999, 0.095, 0.125, -0.13849999, 0.03, 0.14999999, -0.13509999, 0.049999997, 0.1217, -0.13849999, 0.03, 0.14999999, 0.13849999, 0.07, 0.14999999, 0.13849999, 0.03, 0.14999999, -0.13849999, 0.07, 0.14999999, 0.13849999, 0.07, 0.14999999, -0.13849999, 0.03, 0.14999999, 0.13849999, 0.095, 0.125, -0.13849999, 0.095, -0.14999999, 0.13849999, 0.095, -0.14999999, -0.13849999, 0.095, 0.125, -0.13849999, 0.095, -0.14999999, 0.13849999, 0.095, 0.125, 0.13849999, 0.07, 0.14999999, 0.13509999, 0.049999997, 0.1217, 0.13849999, 0.03, 0.14999999, 0.13849999, 0.095, 0.125, 0.13509999, 0.049999997, -0.1364, 0.13509999, 0.049999997, 0.1217, 0.13849999, 0.095, -0.14999999, 0.13509999, 0.049999997, -0.1364, 0.13849999, 0.095, 0.125, -0.13849999, 0.095, 0.125, -0.13509999, 0.049999997, -0.1364, -0.13849999, 0.095, -0.14999999, -0.13509999, 0.049999997, 0.1217, -0.13509999, 0.049999997, -0.1364, -0.13849999, 0.095, 0.125, -0.13509999, 0.049999997, -0.1364, -0.13849999, 0.005, 0.125, -0.13849999, 0.005, -0.14999999, -0.13509999, 0.049999997, 0.1217, -0.13849999, 0.005, 0.125, -0.13509999, 0.049999997, -0.1364, 0.13849999, 0.005, 0.125, 0.13509999, 0.049999997, -0.1364, 0.13849999, 0.005, -0.14999999, 0.13509999, 0.049999997, 0.1217, 0.13509999, 0.049999997, -0.1364, 0.13849999, 0.005, 0.125, 0.13849999, 0.005, -0.14999999, -0.13509999, 0.049999997, -0.1364, -0.13849999, 0.005, -0.14999999, 0.13509999, 0.049999997, -0.1364, -0.13509999, 0.049999997, -0.1364, 0.13849999, 0.005, -0.14999999, -0.13849999, 0.005, 0.125, -0.13509999, 0.049999997, 0.1217, -0.13849999, 0.03, 0.14999999, -0.13849999, 0.07, 0.14999999, -0.13849999, 0.03, 0.14999999, -0.13849999, 0.095, 0.125, 0.13849999, 0.005, 0.125, 0.13849999, 0.03, 0.14999999, 0.13509999, 0.049999997, 0.1217, 0.13849999, 0.095, 0.125, 0.13509999, 0.049999997, 0.1217, 0.13849999, 0.07, 0.14999999)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1jmrt"]
+data = PackedVector3Array(0.137, 0.024999999, -0.1398, -0.13849999, 0.0475, -0.14999999, -0.137, 0.024999999, -0.1398, 0.13849999, 0.0475, -0.14999999, -0.13849999, 0.0475, -0.14999999, 0.137, 0.024999999, -0.1398, -0.13849999, 0.0175, 0.14999999, 0.13849999, 0.0025, 0.13499999, -0.13849999, 0.0025, 0.13499999, 0.13849999, 0.0175, 0.14999999, 0.13849999, 0.0025, 0.13499999, -0.13849999, 0.0175, 0.14999999, 0.13849999, 0.0325, 0.14999999, -0.13849999, 0.0475, 0.13499999, 0.13849999, 0.0475, 0.13499999, -0.13849999, 0.0325, 0.14999999, -0.13849999, 0.0475, 0.13499999, 0.13849999, 0.0325, 0.14999999, -0.13849999, 0.0025, 0.13499999, 0.13849999, 0.0025, -0.14999999, -0.13849999, 0.0025, -0.14999999, 0.13849999, 0.0025, 0.13499999, 0.13849999, 0.0025, -0.14999999, -0.13849999, 0.0025, 0.13499999, -0.13849999, 0.0475, 0.13499999, -0.13849999, 0.0175, 0.14999999, -0.137, 0.024999999, 0.1335, -0.13849999, 0.0175, 0.14999999, 0.13849999, 0.0325, 0.14999999, 0.13849999, 0.0175, 0.14999999, -0.13849999, 0.0325, 0.14999999, 0.13849999, 0.0325, 0.14999999, -0.13849999, 0.0175, 0.14999999, 0.13849999, 0.0475, 0.13499999, -0.13849999, 0.0475, -0.14999999, 0.13849999, 0.0475, -0.14999999, -0.13849999, 0.0475, 0.13499999, -0.13849999, 0.0475, -0.14999999, 0.13849999, 0.0475, 0.13499999, 0.13849999, 0.0325, 0.14999999, 0.137, 0.024999999, 0.1335, 0.13849999, 0.0175, 0.14999999, 0.13849999, 0.0475, 0.13499999, 0.137, 0.024999999, -0.1398, 0.137, 0.024999999, 0.1335, 0.13849999, 0.0475, -0.14999999, 0.137, 0.024999999, -0.1398, 0.13849999, 0.0475, 0.13499999, -0.13849999, 0.0475, 0.13499999, -0.137, 0.024999999, -0.1398, -0.13849999, 0.0475, -0.14999999, -0.137, 0.024999999, 0.1335, -0.137, 0.024999999, -0.1398, -0.13849999, 0.0475, 0.13499999, -0.137, 0.024999999, -0.1398, -0.13849999, 0.0025, 0.13499999, -0.13849999, 0.0025, -0.14999999, -0.137, 0.024999999, 0.1335, -0.13849999, 0.0025, 0.13499999, -0.137, 0.024999999, -0.1398, 0.13849999, 0.0025, 0.13499999, 0.137, 0.024999999, -0.1398, 0.13849999, 0.0025, -0.14999999, 0.137, 0.024999999, 0.1335, 0.137, 0.024999999, -0.1398, 0.13849999, 0.0025, 0.13499999, 0.13849999, 0.0025, -0.14999999, -0.137, 0.024999999, -0.1398, -0.13849999, 0.0025, -0.14999999, 0.137, 0.024999999, -0.1398, -0.137, 0.024999999, -0.1398, 0.13849999, 0.0025, -0.14999999, -0.13849999, 0.0025, 0.13499999, -0.137, 0.024999999, 0.1335, -0.13849999, 0.0175, 0.14999999, -0.13849999, 0.0325, 0.14999999, -0.13849999, 0.0175, 0.14999999, -0.13849999, 0.0475, 0.13499999, 0.13849999, 0.0025, 0.13499999, 0.13849999, 0.0175, 0.14999999, 0.137, 0.024999999, 0.1335, 0.13849999, 0.0475, 0.13499999, 0.137, 0.024999999, 0.1335, 0.13849999, 0.0325, 0.14999999)
 
 [sub_resource type="Animation" id="Animation_1mivf"]
 resource_name = "KeyPickUp"
@@ -181,6 +201,78 @@ tracks/4/keys = {
 "values": [Vector3(0, 0.5162335, 0), Vector3(-0.52643967, -1.1172267, 1.4807135), Vector3(-0.52643967, -1.1172268, 1.4807135), Vector3(-0.5264397, -0.7679341, 1.4807135), Vector3(-0.5264397, -0.767934, 1.4807135)]
 }
 
+[sub_resource type="Animation" id="Animation_mnx6g"]
+resource_name = "PictureInspect"
+length = 9.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.5333333, 2.5, 8.166667, 9),
+"transitions": PackedFloat32Array(1, 0.6597531, 0.81225246, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.530036, 1.7, 0.5743648), Vector3(0.530036, 1.7, 0.5743648), Vector3(0.80185145, 1.2718797, 0.5849171), Vector3(0.7748265, 1.1670029, 0.6736314), Vector3(0.7748265, 1.1670029, 0.6736314), Vector3(0.530036, 1.7, 0.5743648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.5333333, 2.5, 8.166667, 9),
+"transitions": PackedFloat32Array(1, 0.6597531, 0.81225246, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.79761547, 3.3161256, 0), Vector3(-0.79761547, 3.3161256, 0), Vector3(-0.10995574, 3.1939526, 0.12740904), Vector3(-0.24695602, 2.9995434, 0.0694899), Vector3(-0.24695602, 2.9995434, 0.0694899), Vector3(-0.79761547, 3.3161256, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.8, 2.7333333, 7.533334, 8.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.9557981, 0.74, 1.3272198), Vector3(0.9557981, 0.74, 1.3272198), Vector3(0.78960234, 0.9429665, 1.0724032), Vector3(0.7553451, 1.0022748, 0.88514066), Vector3(0.75425607, 1.0050395, 0.8823932), Vector3(0.9557981, 0.74, 1.3272198)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.8, 2.7333333, 7.533334, 8.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.3161256, 0), Vector3(0, 3.3161256, 0), Vector3(-0.15009831, 3.169518, 0.03141593), Vector3(-0.14508635, 3.0172715, 0.051671397), Vector3(-0.14390871, 2.994957, 0.028547693), Vector3(0, 3.3161256, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5333333, 3.6333334, 8.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["PictureInspect01"],
+"method": &"animation_signal"
+}, {
+"args": ["PictureInspect02"],
+"method": &"animation_signal"
+}, {
+"args": ["PictureInspect03"],
+"method": &"animation_signal"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_ndu8s"]
 length = 0.001
 tracks/0/type = "value"
@@ -231,6 +323,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0.5162335, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.9557981, 0.74, 1.3272198)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.9670596, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_i2lk4"]
 resource_name = "WakeUp"
@@ -277,6 +393,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ndu8s"]
 _data = {
 &"KeyPickUp": SubResource("Animation_1mivf"),
+&"PictureInspect": SubResource("Animation_mnx6g"),
 &"RESET": SubResource("Animation_ndu8s"),
 &"WakeUp": SubResource("Animation_i2lk4")
 }
@@ -289,6 +406,18 @@ size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mr04o"]
 size = Vector3(0.92370605, 1.4655151, 1.6129761)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnx6g"]
+albedo_texture = ExtResource("81_yatlx")
+roughness = 0.2
+texture_filter = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_jw84x"]
+material = SubResource("StandardMaterial3D_mnx6g")
+size = Vector2(0.07, 0.11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ho4kq"]
+size = Vector3(0.4104576, 0.26715088, 0.4019165)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n6xt3"]
 size = Vector3(1.7799683, 2.883789, 11.38501)
@@ -406,6 +535,7 @@ shape = SubResource("BoxShape3D_y7jsn")
 transform = Transform3D(0.7071068, -0.6830127, 0.18301272, -2.9802326e-08, 0.25881904, 0.9659259, -0.7071068, -0.6830127, 0.18301268, 1.0152558, 0.9904276, 1.2552333)
 light_color = Color(1, 0.825, 0.7, 1)
 light_energy = 0.4
+light_volumetric_fog_energy = 4.0
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.005
@@ -543,6 +673,15 @@ transform = Transform3D(0.7624651, 0, -0.6470294, 0, 1, 0, 0.6470294, 0, 0.76246
 [node name="StaticFoodTray6" parent="Cell01/Assets/Static/StaticDoubleDeckerBed01" unique_id=1710343822 instance=ExtResource("46_n6xt3")]
 transform = Transform3D(0.3781963, 0, -0.92572534, 0, 1, 0, 0.92572534, 0, 0.3781963, -0.1927486, 1.577589, 0.6840171)
 
+[node name="StaticBlanket03" parent="Cell01/Assets/Static/StaticDoubleDeckerBed01" unique_id=866370628 instance=ExtResource("99_yatlx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03273821, 0.55509704, -0.027223289)
+
+[node name="StaticPillow02" parent="Cell01/Assets/Static/StaticDoubleDeckerBed01" unique_id=517976141 instance=ExtResource("100_mnx6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011692584, 0.6732872, -0.6970579)
+
+[node name="StaticPillow03" parent="Cell01/Assets/Static/StaticDoubleDeckerBed01" unique_id=1694631945 instance=ExtResource("23_jw84x")]
+transform = Transform3D(0.85504764, 0, -0.51854944, 0, 1, 0, 0.51854944, 0, 0.85504764, -0.27369398, 1.6609169, -0.6173486)
+
 [node name="StaticCheapDesk" parent="Cell01/Assets/Static" unique_id=1198558147 instance=ExtResource("19_o83bg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6925235, 0, 1.184124)
 
@@ -557,9 +696,6 @@ transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.965
 
 [node name="MeshNewsPaper03" parent="Cell01/Assets/Static/StaticCheapDesk" unique_id=928372587 instance=ExtResource("29_1y3rs")]
 transform = Transform3D(0.99488616, 0, 0.10100421, 0, 1, 0, -0.10100421, 0, 0.99488616, -0.29400873, 0.751257, -0.020980597)
-
-[node name="StaticStandingFrame" parent="Cell01/Assets/Static/StaticCheapDesk" unique_id=94241534 instance=ExtResource("23_colw2")]
-transform = Transform3D(-0.9848077, 0, -0.17364828, 0, 1, 0, 0.17364828, 0, -0.9848077, 0.2632746, 0.74, 0.14309585)
 
 [node name="StaticFlatDeskLamp" parent="Cell01/Assets/Static/StaticCheapDesk" unique_id=1360255404 instance=ExtResource("24_csg3t")]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0.38802683, 0.7475, 0.13741767)
@@ -608,6 +744,18 @@ transform = Transform3D(0.925117, 0.3775303, 0.04036638, -9.294458e-09, -0.10631
 [node name="StaticToothpaste04" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=951323905 instance=ExtResource("31_nw5rh")]
 transform = Transform3D(-0.6423865, -0.7620373, -0.08147825, -1.605321e-08, -0.106315605, 0.99433243, -0.7663808, 0.6387457, 0.068295695, 0.13010103, 0.69317347, -0.16334915)
 
+[node name="StaticFoldedTowel" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=1031327047 instance=ExtResource("32_5xl1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023927689, 0.42620012, 0.007633209)
+
+[node name="MeshFoldedTowel" parent="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel" index="0" unique_id=1180831224]
+surface_material_override/0 = ExtResource("33_badwn")
+
+[node name="StaticFoldedSmallTowel" parent="Cell01/Assets/Static/StaticCheapCabinet" unique_id=1617055167 instance=ExtResource("34_ho4kq")]
+transform = Transform3D(0.9984641, 0, 0.055403274, 0, 1, 0, -0.055403274, 0, 0.9984641, -0.01348871, 0.5212001, -0.010243416)
+
+[node name="MeshFoldedSmallTowel" parent="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedSmallTowel" index="0" unique_id=1116078367]
+surface_material_override/0 = ExtResource("35_4sofw")
+
 [node name="MeshNewsPaper01" parent="Cell01/Assets/Static" unique_id=912482257 instance=ExtResource("29_1y3rs")]
 transform = Transform3D(0.10963018, -0.9939724, 0, 0.9939724, 0.10963018, 0, 0, 0, 1, 0.763295, 0.111285746, -2.2611759)
 
@@ -619,6 +767,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005789995, 0.0076000094, 
 
 [node name="InteractableShoesCabinet" parent="Cell01/Assets/Static" unique_id=2005309264 instance=ExtResource("31_38ymw")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5984828, 0, -1.9848094)
+
+[node name="@CollisionShape3D@42054" type="CollisionShape3D" parent="Cell01/Assets/Static/InteractableShoesCabinet/StaticShoesCabinet/StaticShoesCabinetDrawer2" parent_id_path=PackedInt32Array(2005309264, 649694295) index="3" unique_id=1320940540]
+transform = Transform3D(-0.9992056, 0, 0.03985285, 0, 1, 0, -0.03985285, 0, -0.9992056, 0.2813624, 0.07702832, 0.010932803)
+shape = SubResource("ConcavePolygonShape3D_okppq")
+
+[node name="@CollisionShape3D@42053" type="CollisionShape3D" parent="Cell01/Assets/Static/InteractableShoesCabinet/StaticShoesCabinet/StaticShoesCabinetDrawer2" parent_id_path=PackedInt32Array(2005309264, 649694295) index="4" unique_id=96144275]
+transform = Transform3D(0.67596203, 0, -0.44082227, 0, 0.807, 0, 0.44082227, 0, 0.67596203, -0.28073537, 0.078673616, 0.01093936)
+shape = SubResource("ConcavePolygonShape3D_1jmrt")
+
+[node name="MeshFoldedTowel" parent="Cell01/Assets/Static/InteractableShoesCabinet/StaticShoesCabinet/StaticShoesCabinetDrawer2" parent_id_path=PackedInt32Array(2005309264, 649694295) index="5" unique_id=294897654 instance=ExtResource("39_ho4kq")]
+transform = Transform3D(-0.9992056, 0, 0.03985285, 0, 1, 0, -0.03985285, 0, -0.9992056, 0.2813624, 0.07702832, 0.010932803)
+gi_mode = 2
+surface_material_override/0 = ExtResource("39_yatlx")
+
+[node name="MeshFoldedSmallTowel" parent="Cell01/Assets/Static/InteractableShoesCabinet/StaticShoesCabinet/StaticShoesCabinetDrawer2" parent_id_path=PackedInt32Array(2005309264, 649694295) index="6" unique_id=511353095 instance=ExtResource("41_4sofw")]
+transform = Transform3D(0.67596203, 0, -0.44082227, 0, 0.807, 0, 0.44082227, 0, 0.67596203, -0.28073537, 0.078673616, 0.01093936)
+gi_mode = 2
+surface_material_override/0 = ExtResource("40_mnx6g")
+
+[node name="StaticWallBookShelf" parent="Cell01/Assets/Static" unique_id=950407555 instance=ExtResource("88_qkk5q")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0.021221612, 0.9997748, 9.276261e-10, -0.9997748, 0.021221612, -4.3701544e-08, -1.725714, 1.6288954, -1.060575)
 
 [node name="Decals" type="Node3D" parent="Cell01/Assets" unique_id=2092472773]
 
@@ -741,16 +910,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27875495, 0.14000002, -2.02
 [node name="Dormitory" type="Node3D" parent="Cell01/Assets/Dynamic" unique_id=1673641559]
 
 [node name="DynamicBook03" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=2048826487 instance=ExtResource("48_3chxh")]
-transform = Transform3D(0.09717678, -0.95019615, -0.29611447, -0.0074415095, 0.2968206, -0.95490426, 0.99523914, 0.09499799, 0.021773148, -1.1487786, 1.7151388, 1.2229022)
+transform = Transform3D(-0.17149827, -0.94116086, -0.29121223, -0.00744149, 0.29682064, -0.9549044, 0.9851563, -0.16159746, -0.0579079, -0.9857179, 1.7151388, 0.97341114)
 
 [node name="DynamicBook01" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=2066645951 instance=ExtResource("49_7k6yf")]
-transform = Transform3D(1, 0, 0, 0, 0.7401829, -0.6724056, 0, 0.6724056, 0.7401829, -1.0489336, 1.7370539, 1.4151427)
+transform = Transform3D(1, 0, 0, 0, 0.7401829, -0.6724056, 0, 0.6724056, 0.7401829, -0.8457356, 1.7370539, 1.4151427)
 
 [node name="DynamicBook04" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=1031545888 instance=ExtResource("23_3chxh")]
-transform = Transform3D(0.8073622, 0, -0.59005624, 0, 1, 0, 0.59005624, 0, 0.8073622, -1.3186187, 1.6760188, 1.1674744)
+transform = Transform3D(0.62097, 0, -0.7838343, 0, 1, 0, 0.7838343, 0, 0.62097, -1.1346513, 1.6760188, 0.87473613)
 
 [node name="DynamicPlasticCup" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=791454175 instance=ExtResource("33_66hdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028588288, 1.6434575, 1.2018266)
+
+[node name="DynamicPlasticCup4" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=1771719883 instance=ExtResource("33_66hdq")]
+transform = Transform3D(0.9721331, 0, 0.23442957, 0, 1, 0, -0.23442957, 0, 0.9721331, -1.7349163, 1.710844, -1.3655571)
 
 [node name="DynamicPlasticCupCrumpled" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=656262282 instance=ExtResource("34_4xmcm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07154434, 1.6266159, 1.207472)
@@ -776,6 +948,18 @@ transform = Transform3D(0.77802396, 0, 0.62823474, 0, 1, 0, -0.62823474, 0, 0.77
 [node name="DynamicSneakerR" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=25935883 instance=ExtResource("83_6uvc4")]
 transform = Transform3D(0.9119412, 0, 0.410321, 0, 1, 0, -0.410321, 0, 0.9119412, 0.051792502, 0.05346106, 0.6753739)
 
+[node name="DynamicBook02" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=1071873156 instance=ExtResource("89_n0al7")]
+transform = Transform3D(-1, 2.3952302e-09, -8.738996e-08, 0, 0.9996246, 0.02739824, 8.742278e-08, 0.02739824, -0.9996246, -1.7189068, 1.7432684, -0.7102249)
+
+[node name="DynamicBook05" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=475544961 instance=ExtResource("49_7k6yf")]
+transform = Transform3D(-1, -2.3952302e-09, 8.738996e-08, 5.4497287e-09, 0.9959725, 0.08965917, -8.725275e-08, 0.08965917, -0.9959725, -1.7229068, 1.7278982, -0.76178396)
+
+[node name="DynamicBook06" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=1598863962 instance=ExtResource("48_3chxh")]
+transform = Transform3D(-1, -2.3952302e-09, 8.738996e-08, 9.320243e-09, 0.99100655, 0.13381323, -8.692454e-08, 0.13381323, -0.99100655, -1.7213336, 1.7462244, -0.82233065)
+
+[node name="DynamicBook07" parent="Cell01/Assets/Dynamic/Dormitory" unique_id=1107410745 instance=ExtResource("89_n0al7")]
+transform = Transform3D(-1, 0, 8.742278e-08, 7.8065334e-08, 0.4501296, 0.8929633, -3.9351576e-08, 0.8929633, -0.4501296, -1.7175088, 1.712626, -0.960999)
+
 [node name="Wardrobe" type="Node3D" parent="Cell01/Assets/Dynamic" unique_id=544808722]
 
 [node name="DynamicShoeL" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=593451303 instance=ExtResource("58_vav7n")]
@@ -789,6 +973,12 @@ transform = Transform3D(0.9961428, 0, 0.08774688, 0, 1, 0, -0.08774688, 0, 0.996
 
 [node name="DynamicBootR" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=57295369 instance=ExtResource("61_qkk5q")]
 transform = Transform3D(0.94049585, -0.3398051, 1.4853352e-08, 0, -4.371139e-08, -1, 0.3398051, 0.94049585, -4.111038e-08, -1.572426, 0.583758, -2.133168)
+
+[node name="DynamicSneakerL" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=1190800338 instance=ExtResource("82_nw5rh")]
+transform = Transform3D(0.80872965, 0, 0.58818054, 0, 1, 0, -0.58818054, 0, 0.80872965, -1.6212082, 0.13366899, -2.2864947)
+
+[node name="DynamicSneakerR" parent="Cell01/Assets/Dynamic/Wardrobe" unique_id=826335647 instance=ExtResource("83_6uvc4")]
+transform = Transform3D(0.3659003, -0.9306541, 3.7252903e-08, 0, -4.371139e-08, -1, 0.93065417, 0.36590034, -1.6283762e-15, -1.6385684, 0.13366899, -1.7408231)
 
 [node name="Doors" type="Node3D" parent="Cell01/Assets" unique_id=2103858565]
 
@@ -832,16 +1022,29 @@ root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_ndu8s")
 script = ExtResource("15_q5vw5")
 player_anim = NodePath("Player")
-exit_modes = Dictionary[String, int]({
-"KeyPickUp": 2,
-"RESET": 0,
-"WakeUp": 2
+setup = Dictionary[String, Dictionary]({
+"KeyPickUp": {
+"EnterAngle": 0,
+"ExitMode": 2
+},
+"PictureInspect": {
+"EnterAngle": 1,
+"ExitMode": 2
+},
+"RESET": {
+"EnterAngle": 1,
+"ExitMode": 2
+},
+"WakeUp": {
+"EnterAngle": 1,
+"ExitMode": 2
+}
 })
 metadata/_custom_type_script = "uid://c6k6l4h73v30"
 
 [node name="Player" type="Node3D" parent="Cell01/Events/Cutscenes" unique_id=2110128382]
 unique_name_in_owner = true
-transform = Transform3D(0.99999976, 0, 0, 0, 0.9999993, 0, 0, 0, 0.9999996, -1.3424103, 0.8604666, 0.9991046)
+transform = Transform3D(0.9999997, 0, 0, 0, 0.99999905, 0, 0, 0, 0.9999995, -1.3424103, 0.8604666, 0.9991046)
 
 [node name="DoubleBedEvent" type="StaticBody3D" parent="Cell01/Events" unique_id=930565913]
 unique_name_in_owner = true
@@ -877,6 +1080,7 @@ unique_name_in_owner = true
 transform = Transform3D(-1, 2.4957222e-15, -8.742278e-08, -5.940984e-08, 0.7336113, 0.67956936, 6.413434e-08, 0.67956936, -0.7336113, -0.9014234, 0.9293661, -3.0513506)
 light_color = Color(1, 0.9666667, 0.95, 1)
 light_energy = 0.2
+light_volumetric_fog_energy = 10.0
 light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.01
@@ -886,10 +1090,11 @@ spot_angle = 20.75
 script = ExtResource("11_gbybj")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
-[node name="KeyInteract" type="StaticBody3D" parent="Cell01/Events/KeyEvent" unique_id=1981281685]
+[node name="KeyInteract" type="StaticBody3D" parent="Cell01/Events/KeyEvent" unique_id=662087129]
 unique_name_in_owner = true
 collision_layer = 4
-script = ExtResource("26_1mivf")
+script = ExtResource("81_4sofw")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Events/KeyEvent/KeyInteract" unique_id=1672291285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90661407, -2.3841858e-07, -1.9835942)
@@ -915,6 +1120,39 @@ shape = SubResource("BoxShape3D_mr04o")
 
 [node name="DynamicToiletPaper02Event" parent="Cell01/Events/ToiletPaperEvent" unique_id=1636605517 instance=ExtResource("19_1mivf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5691111, 0.66844857, -2.4141219)
+
+[node name="PictureEvent" type="Node3D" parent="Cell01/Events" unique_id=1911511740]
+unique_name_in_owner = true
+
+[node name="FamilyPicture" parent="Cell01/Events/PictureEvent" unique_id=94241534 instance=ExtResource("23_colw2")]
+unique_name_in_owner = true
+transform = Transform3D(-0.9848077, 0, -0.1736483, 0, 1, 0, 0.1736483, 0, -0.9848077, 0.9557981, 0.74, 1.3272198)
+
+[node name="MeshStandingFrame" parent="Cell01/Events/PictureEvent/FamilyPicture" index="0" unique_id=627653287]
+gi_mode = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cell01/Events/PictureEvent/FamilyPicture" unique_id=2092660064]
+transform = Transform3D(1, -7.450581e-09, 0, 0, 0.98480767, 0.17364818, 0, -0.1736481, 0.9848077, 0.00085526705, 0.06063895, 0.011071045)
+gi_mode = 2
+mesh = SubResource("QuadMesh_jw84x")
+
+[node name="PictureInteract" type="StaticBody3D" parent="Cell01/Events/PictureEvent" unique_id=194334338]
+unique_name_in_owner = true
+script = ExtResource("81_4sofw")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Events/PictureEvent/PictureInteract" unique_id=95601032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92932814, 0.8936312, 1.2716242)
+shape = SubResource("BoxShape3D_ho4kq")
+
+[node name="PictureSpotLight" type="SpotLight3D" parent="Cell01/Events/PictureEvent" unique_id=1937438660]
+unique_name_in_owner = true
+transform = Transform3D(-0.9659258, 2.9802322e-08, -0.25881913, -0.08557326, 0.9437606, 0.31936377, 0.24426329, 0.3306297, -0.9116027, 0.5806985, 1.2963494, 0.52933985)
+visible = false
+light_color = Color(1, 0.9066667, 0.8, 1)
+light_energy = 0.445
+spot_range = 0.885
+spot_angle_attenuation = 3.0
 
 [node name="Cell02" type="Node3D" parent="." unique_id=1686302145]
 
@@ -1429,25 +1667,6 @@ size = Vector3(1.2, 2.2, 0.2)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.493598, 1.4954712, -3.6072953)
 size = Vector3(1.9172485, 3.1909423, 0.2)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="BLOCKOUT" unique_id=1070160323]
-transform = Transform3D(-1, 0, 8.742278e-08, 6.181724e-08, 0.70710677, 0.70710677, -6.181724e-08, 0.70710677, -0.70710677, 0.1830703, 0.4158587, 0.9004333)
-polygon = PackedVector2Array(0.34826055, 0.60430694, 0.63894063, 0.74675596, 0.9778382, 0.75250924, 1.3578712, 0.62509763, 1.2392217, 0.42789638, 0.8901502, 0.38179946, 0.53388476, 0.4573455, 0.45309022, 0.36042583, 0.04502867, 0.26699352, 0.15966925, 0.6900586)
-depth = 0.19
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="BLOCKOUT/CSGPolygon3D" unique_id=426117801]
-transform = Transform3D(0.4999999, -0.6123724, 0.61237246, 0.6123726, 0.75000024, 0.25000006, -0.6123725, 0.2500001, 0.75, 0.4149146, -0.2103715, 0.21037143)
-polygon = PackedVector2Array(0.101035714, 0.47746673, 0.30519938, 0.5734416, 0.5028127, 0.72473395, 0.5942165, 0.5991317, 0.52102524, 0.35038605, 0.32453907, 0.38808718, 0.13554734, 0.3174561)
-depth = 0.2
-
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="BLOCKOUT/CSGPolygon3D" unique_id=1536978780]
-transform = Transform3D(1, -6.181724e-08, -2.5605537e-08, 6.181724e-08, 0.70710677, 0.70710677, -2.5605546e-08, -0.70710677, 0.70710677, -0.78244567, 0.2656088, 0.32058805)
-polygon = PackedVector2Array(0.810635, 0.02228427, 0.8436646, 0.2506045, 0.8147018, 0.59547794, 1.1467649, 0.5933999, 0.9805102, 0.21687746, 0.9714254, -0.005986631)
-depth = 0.25
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="BLOCKOUT" unique_id=662601341]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5468644, 0.7320016, 1.0521731)
-size = Vector3(0.3, 0.15, 0.5)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BLOCKOUT" unique_id=2117908046]
 transform = Transform3D(-4.371139e-08, -1, 0, 0.9956274, -4.352026e-08, -0.093413256, 0.093413256, -4.083223e-09, 0.9956274, 1.1924274, 1.5808347, 0.6769882)
 material_override = ExtResource("65_m62eo")
@@ -1513,4 +1732,8 @@ polygon = PackedVector2Array(0.32406244, -0.046862543, 0.3774668, 0.6903776, 0.3
 depth = 0.05
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
+[editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]
+[editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedSmallTowel"]
+[editable path="Cell01/Assets/Static/InteractableShoesCabinet"]
 [editable path="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/StaticCellDoor01"]
+[editable path="Cell01/Events/PictureEvent/FamilyPicture"]

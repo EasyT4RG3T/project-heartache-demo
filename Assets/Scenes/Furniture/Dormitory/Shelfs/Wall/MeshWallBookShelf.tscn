@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://g5xnw3yiebpc"]
+
+[ext_resource type="ArrayMesh" uid="uid://dh3ohkgnrh6lb" path="res://Assets/Scenes/Furniture/Dormitory/Shelfs/Wall/WallBookShelf.obj" id="1_e1i4l"]
+[ext_resource type="Material" uid="uid://cht5ppt0aqapc" path="res://Assets/Scenes/Furniture/Dormitory/Shelfs/Wall/WallBookShelf.tres" id="2_4hy4j"]
+
+[node name="MeshWallBookShelf" type="MeshInstance3D" unique_id=1973589966]
+mesh = ExtResource("1_e1i4l")
+surface_material_override/0 = ExtResource("2_4hy4j")

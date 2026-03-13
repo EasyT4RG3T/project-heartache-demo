@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://i46eunf7joea"]
+
+[ext_resource type="ArrayMesh" uid="uid://jk0vmgb5qkhf" path="res://Assets/Scenes/Props/Bathroom/Towels/FoldedTowel.obj" id="1_bnamh"]
+
+[node name="MeshFoldedTowel" type="MeshInstance3D" unique_id=1180831224]
+mesh = ExtResource("1_bnamh")

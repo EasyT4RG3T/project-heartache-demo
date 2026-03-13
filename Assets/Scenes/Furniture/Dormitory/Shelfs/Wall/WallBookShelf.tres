@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cht5ppt0aqapc"]
+
+[ext_resource type="Texture2D" uid="uid://cxt0wsdyypycj" path="res://Assets/Scenes/Furniture/Dormitory/Shelfs/Wall/WallBookShelf_albedo.png" id="1_8hxke"]
+[ext_resource type="Texture2D" uid="uid://cl3o1nxe8882b" path="res://Assets/Scenes/Furniture/Dormitory/Shelfs/Wall/WallBookShelf_roughness.png" id="2_r7ei0"]
+
+[resource]
+albedo_texture = ExtResource("1_8hxke")
+roughness_texture = ExtResource("2_r7ei0")
+texture_filter = 2

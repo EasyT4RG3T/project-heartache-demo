@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://gppeh4aootya"]
+
+[ext_resource type="Texture2D" uid="uid://bh8tf8deh2se0" path="res://Assets/Scenes/Props/Bathroom/Towels/FoldedTowel03_albedo.png" id="1_iy4go"]
+
+[resource]
+albedo_texture = ExtResource("1_iy4go")
+texture_filter = 2
