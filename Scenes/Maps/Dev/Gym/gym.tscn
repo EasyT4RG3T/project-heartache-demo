@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cralm3aptvr1y"]
+[gd_scene format=4 uid="uid://cralm3aptvr1y"]
 
 [ext_resource type="Material" uid="uid://cq7u268rull7y" path="res://Assets/Placeholder/Materials/gray.tres" id="1_gc1gg"]
 [ext_resource type="Script" uid="uid://bupj3m1c7wjcn" path="res://Scenes/Maps/Dev/Gym/gym.gd" id="1_igepr"]
@@ -7,6 +7,17 @@
 size = Vector2(100, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jgxid"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_igepr"]
+_surfaces = [{
+"aabb": AABB(-51, -1, -51, 102, 102, 102),
+"attribute_data": PackedByteArray("AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAAAAAAAAgD8AAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAA"),
+"format": 34359738391,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("AABMwgAAgL8AAEzCAABMwgAAykIAAEzCAABMwgAAgL8AAExCAABMwgAAgL8AAEzCAABMwgAAgL8AAExCAABMQgAAgL8AAEzCAABMwgAAgL8AAEzCAABMQgAAgL8AAEzCAABMwgAAykIAAEzCAABMwgAAgL8AAExCAABMwgAAykIAAEzCAABMwgAAykIAAExCAABMwgAAgL8AAExCAABMwgAAykIAAExCAABMQgAAykIAAExCAABMwgAAykIAAEzCAABMQgAAykIAAExCAABMwgAAykIAAExCAABMwgAAgL8AAExCAABMQgAAgL8AAExCAABMQgAAgL8AAEzCAABMwgAAgL8AAExCAABMQgAAykIAAExCAABMQgAAgL8AAExCAABMQgAAgL8AAEzCAABMQgAAgL8AAExCAABMQgAAykIAAExCAABMwgAAykIAAEzCAABMQgAAgL8AAEzCAABMQgAAykIAAEzCAABMwgAAykIAAEzCAABMQgAAykIAAEzCAABMQgAAykIAAExCAABMQgAAgL8AAEzCAABMQgAAykIAAExCAABMQgAAykIAAEzCAABIwgAAAAAAAEjCAABIwgAAAAAAAEhCAABIwgAAyEIAAEjCAABIwgAAAAAAAEjCAABIQgAAAAAAAEjCAABIwgAAAAAAAEhCAABIwgAAAAAAAEjCAABIwgAAyEIAAEjCAABIQgAAAAAAAEjCAABIwgAAAAAAAEhCAABIwgAAyEIAAEhCAABIwgAAyEIAAEjCAABIwgAAAAAAAEhCAABIQgAAyEIAAEhCAABIwgAAyEIAAEhCAABIwgAAyEIAAEjCAABIwgAAyEIAAEhCAABIQgAAyEIAAEhCAABIwgAAAAAAAEhCAABIQgAAAAAAAEjCAABIQgAAAAAAAEhCAABIwgAAAAAAAEhCAABIQgAAAAAAAEhCAABIQgAAyEIAAEhCAABIQgAAAAAAAEjCAABIQgAAyEIAAEhCAABIQgAAAAAAAEhCAABIwgAAyEIAAEjCAABIQgAAyEIAAEjCAABIQgAAAAAAAEjCAABIwgAAyEIAAEjCAABIQgAAyEIAAEhCAABIQgAAyEIAAEjCAABIQgAAAAAAAEjCAABIQgAAyEIAAEjCAABIQgAAyEIAAEhCAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/////f/9/AID///9//38AgP///3//fwCA/3//////////f/////////9//////////3//fwAA/7//f/9/AAD/v/9//38AAP+/////f/9/AID///9//38AgP///3//fwCA/////wAA/7//////AAD/v/////8AAP+//38AAP//////fwAA//////9/AAD//////3//////////f/////////9//////////////wAA/7//////AAD/v/////8AAP+/AAD/f/9/AIAAAP9//38AgAAA/3//fwCA/3//fwAA/7//f/9/AAD/v/9//38AAP+//38AAP//////fwAA//////9/AAD/////AAD/f/9/AIAAAP9//38AgAAA/3//fwCA")
+}]
 
 [node name="Gym" type="Node3D" unique_id=605852668]
 script = ExtResource("1_igepr")
@@ -23,12 +34,28 @@ light_energy = 0.5
 [node name="FloorStaticBody3D" type="StaticBody3D" parent="." unique_id=1682652607]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FloorStaticBody3D" unique_id=1131258022]
+visible = false
 material_override = ExtResource("1_gc1gg")
 mesh = SubResource("PlaneMesh_igepr")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorStaticBody3D" unique_id=1620709105]
 shape = SubResource("WorldBoundaryShape3D_jgxid")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="FloorStaticBody3D" unique_id=800138160]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="FloorStaticBody3D/CSGCombiner3D" unique_id=1123083159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+size = Vector3(102, 102, 102)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="FloorStaticBody3D/CSGCombiner3D" unique_id=1158341438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+operation = 2
+size = Vector3(100, 100, 100)
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="FloorStaticBody3D" unique_id=1097401015]
+mesh = SubResource("ArrayMesh_igepr")
 
 [node name="Vault" type="Node3D" parent="." unique_id=760102218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)

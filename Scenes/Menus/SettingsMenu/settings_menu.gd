@@ -77,6 +77,12 @@ var hud_size: float = temp_settings.hud_size:
 		temp_settings.hud_size = value
 		%HUDSizeLineEdit.text = str(value)
 		unsaved = true
+var head_bob: bool = temp_settings.head_bob:
+	set(value):
+		head_bob = value
+		temp_settings.head_bob = value
+		%HeadBobCheckButton.button_pressed = value
+		unsaved = true
 var static_shader: bool = temp_settings.static_shader:
 	set(value):
 		static_shader = value
@@ -275,6 +281,9 @@ func _set_up_game() -> void:
 		if !%HUDSizeLineEdit.text.is_valid_float():
 			%HUDSizeLineEdit.text = str(hud_size)
 		hud_size = %HUDSizeLineEdit.text.to_float())
+	%HeadBobCheckButton.button_pressed = temp_settings.head_bob
+	%HeadBobCheckButton.pressed.connect(func():
+		head_bob = %HeadBobCheckButton.button_pressed)
 	%StaticShaderCheckButton.button_pressed = temp_settings.static_shader
 	%StaticShaderCheckButton.pressed.connect(func():
 		static_shader = %StaticShaderCheckButton.button_pressed)
@@ -376,6 +385,7 @@ func _set_all_settings(graphics: bool = false) -> void:
 	dynamic_fov = temp_settings.dynamic_fov
 	window_mode = temp_settings.window_mode
 	hud_size = temp_settings.hud_size
+	head_bob = temp_settings.head_bob
 	static_shader = temp_settings.static_shader
 	
 	master_volume = temp_settings.master_volume

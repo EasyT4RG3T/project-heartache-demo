@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://03epcc7x4tum"]
 
 [ext_resource type="ArrayMesh" uid="uid://birksx1x76nbw" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Pillow02/Pillow02.obj" id="1_qvmou"]
-[ext_resource type="Material" uid="uid://cn0i2onsiteug" path="res://Assets/Materials/Noise/SmoothNoise/LightYellow/SmoothNoiseLightYellow.tres" id="2_fbev5"]
+[ext_resource type="Material" uid="uid://d0pjaa6j7pjqm" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Pillow02/Pillow02.tres" id="2_fbev5"]
 
 [node name="MeshPillow02" type="MeshInstance3D" unique_id=617823504]
 mesh = ExtResource("1_qvmou")

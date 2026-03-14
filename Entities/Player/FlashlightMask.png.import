@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buj1ale3lv14t"
-path="res://.godot/imported/test.png-1f5238c66a58f5a2594b0fb71d006942.ctex"
+uid="uid://bijdbbevq0ttv"
+path="res://.godot/imported/FlashlightMask.png-5e7e46df9ca711bf750e2f45ab208dc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder/test.png"
-dest_files=["res://.godot/imported/test.png-1f5238c66a58f5a2594b0fb71d006942.ctex"]
+source_file="res://Entities/Player/FlashlightMask.png"
+dest_files=["res://.godot/imported/FlashlightMask.png-5e7e46df9ca711bf750e2f45ab208dc2.ctex"]
 
 [params]
 

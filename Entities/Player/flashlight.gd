@@ -15,6 +15,11 @@ var batteries: Array[float] = []
 var current_battery: float = 0.0
 
 
+func _ready() -> void:
+	if disabled:
+		light.hide()
+
+
 func switch() -> void:
 	if disabled:
 		return

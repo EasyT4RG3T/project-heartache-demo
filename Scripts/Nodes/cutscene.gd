@@ -110,6 +110,7 @@ func _exit_anim(anim_name: StringName) -> void:
 			player.can_vault = false
 			await get_tree().process_frame
 			player.can_vault = false
+	player.last_pos = player.global_position
 	player.look_vector.x = player.head.global_rotation.y
 	player.look_vector.y = player.head.global_rotation.x
 	InputManager.player_character_input = true

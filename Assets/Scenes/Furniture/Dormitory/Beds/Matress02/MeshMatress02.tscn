@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7ygpsrjuctgi"]
 
 [ext_resource type="ArrayMesh" uid="uid://uk17d5n0426u" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Matress02/Matress02.obj" id="1_co4er"]
-[ext_resource type="Material" uid="uid://dbv6risj1gvcu" path="res://Assets/Materials/Fabrics/CushionGrid/GridCoushion.tres" id="2_vqc2y"]
+[ext_resource type="Material" uid="uid://dofq5bekons36" path="res://Assets/Materials/Fabrics/CushionGrid/GridCoushion.tres" id="2_vqc2y"]
 
 [node name="MeshMatress02" type="MeshInstance3D" unique_id=1246102882]
 mesh = ExtResource("1_co4er")

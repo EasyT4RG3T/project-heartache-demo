@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8tkwovpcmrta"]
 
 [ext_resource type="Script" uid="uid://wcbk1gsr8ak7" path="res://Entities/Player/flashlight.gd" id="1_j7gns"]
+[ext_resource type="Texture2D" uid="uid://bijdbbevq0ttv" path="res://Entities/Player/FlashlightMask.png" id="2_3urj3"]
 
 [node name="Flashlight" type="Node3D" unique_id=1417213788]
 script = ExtResource("1_j7gns")
@@ -8,6 +9,7 @@ script = ExtResource("1_j7gns")
 [node name="Light" type="SpotLight3D" parent="." unique_id=988323481]
 unique_name_in_owner = true
 visible = false
+light_projector = ExtResource("2_3urj3")
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 2.0

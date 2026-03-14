@@ -28,6 +28,7 @@ func _ready() -> void:
 		if GameManager.is_new_game:
 			cutscenes.play("WakeUp")
 			GameManager.is_new_game = false)
+	AudioManager.play_ambient("uid://c1auf3n2ayc5b", -10.0, 1.0)
 
 
 func first_setup() -> void:
@@ -39,18 +40,25 @@ func first_setup() -> void:
 
 func animation_signal(animation: String) -> void:
 	match animation:
-		"WakeUp":
+		"WakeUp01":
+			AudioManager.play_uid_sound("SFX", "uid://brc4swaa4mfyk", 0.0, 1.0)
+		"WakeUp02":
 			Game.character_say(
 				PlayerHUD.Characters.PLAYER,
 				"It's that nightmare again.",
 				4
 			)
+		"WakeUp03":
+			AudioManager.play_uid_sound("SFX", "uid://lt1hxj2141l1", -4.0, 0.9)
+		"WakeUp04":
+			AudioManager.play_uid_sound("SFX", "uid://lt1hxj2141l1", -4.0, 0.85)
 		"PictureInspect01":
 			GameManager.player_character.player_hud.add_dialogue(
 				PlayerHUD.Characters.PLAYER,
 				"My parents.",
 				1.5
 			)
+			AudioManager.play_uid_sound("SFX", "uid://qh1cl6auhn2b", -5.0, 0.8)
 		"PictureInspect02":
 			GameManager.player_character.player_hud.add_dialogue(
 				PlayerHUD.Characters.PLAYER,
@@ -59,6 +67,7 @@ func animation_signal(animation: String) -> void:
 			)
 		"PictureInspect03":
 			%PictureSpotLight.hide()
+			AudioManager.play_uid_sound("SFX", "uid://bcaovrflj7lr2", -10.0, 0.8)
 		"KeyPickUp01":
 			%KeyHighlightSpot.out_of_area = true
 		"KeyPickUp02":

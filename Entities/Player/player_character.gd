@@ -91,9 +91,15 @@ func _change_fov_smooth(fov: float, duration: float = 0.3) -> void:
 	fov_tween = create_tween().set_ease(Tween.EASE_IN).set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	fov_tween.tween_property(main_camera, "fov", fov, duration)
 @onready var shader: ColorRect = %Shader
+var do_bob: bool = true:
+	set(value):
+		do_bob = value
+		if !value:
+			main_camera.position = Vector3.ZERO
+var bob_time: float = 0.0
+var bob_speed: float = 0.8
 
 @onready var dust_particles: GPUParticles3D = %DustParticles
-
 
 var mouse_sensitivity: float = 10.0
 var mouse_sensitivity_modifier: float = 0.0001
@@ -105,20 +111,78 @@ var movement_vector_fly: float = 0.0
 var wanted_movement_direction: Vector2 = Vector2.ZERO
 enum MovementMode { NONE, FLY, WALKING, SPRINTING, CROUCHING, CRAWL, CARRYING, VAULTING, CUTSCENE}
 var movement_speeds: Dictionary[MovementMode, float] = {
-	MovementMode.NONE: 0,
-	MovementMode.FLY: 5,
-	MovementMode.WALKING: 2,
-	MovementMode.SPRINTING: 3.5,
-	MovementMode.CROUCHING: 1,
+	MovementMode.NONE: 0.0,
+	MovementMode.FLY: 5.0,
+	MovementMode.WALKING: 1.5,
+	MovementMode.SPRINTING: 3.0,
+	MovementMode.CROUCHING: 1.0,
 	MovementMode.CRAWL: 0.8,
 	MovementMode.CARRYING: 1.5,
-	MovementMode.VAULTING: 0,
+	MovementMode.VAULTING: 0.0,
 }
 var current_movement_mode: MovementMode = MovementMode.WALKING
 var current_movement_speed: float = movement_speeds[MovementMode.WALKING]
 var movement_speed_tween: Tween
 var pre_fly_movement_mode: MovementMode = MovementMode.WALKING
 var pre_fly_movement_speed: float = movement_speeds[MovementMode.WALKING]
+
+var last_pos: Vector3 = Vector3.ZERO
+var footstep_time: float = 0.0
+
+const FAST_FOOTSTEP_01 = preload("uid://bj2u5uymwqsxx")
+const FAST_FOOTSTEP_02 = preload("uid://bua6s2wd6n8ke")
+const FAST_FOOTSTEP_03 = preload("uid://bfwl4fi50nlp")
+const FAST_FOOTSTEP_04 = preload("uid://p7aytdgt2cqn")
+const FAST_FOOTSTEP_05 = preload("uid://bj5fe00wqxsph")
+const FAST_FOOTSTEP_06 = preload("uid://jd14431lq3x0")
+const FAST_FOOTSTEP_07 = preload("uid://dmt2wh43yakgj")
+const FAST_FOOTSTEP_08 = preload("uid://bu5toc2hdy4ce")
+const FAST_FOOTSTEP_09 = preload("uid://dllae3mada0nt")
+var fast_footsteps: Array = [
+	FAST_FOOTSTEP_01,
+	FAST_FOOTSTEP_02,
+	FAST_FOOTSTEP_03,
+	FAST_FOOTSTEP_04,
+	FAST_FOOTSTEP_05,
+	FAST_FOOTSTEP_06,
+	FAST_FOOTSTEP_07,
+	FAST_FOOTSTEP_08,
+	FAST_FOOTSTEP_09
+]
+const FOOTSTEP_01 = preload("uid://crhxrcny28e6h")
+const FOOTSTEP_02 = preload("uid://cha064owsqoh0")
+const FOOTSTEP_03 = preload("uid://47sixlvx4lcq")
+const FOOTSTEP_04 = preload("uid://bmep3oop7q06b")
+const FOOTSTEP_05 = preload("uid://ducjj2sg2y78x")
+const FOOTSTEP_06 = preload("uid://fghmdu3wu63o")
+const FOOTSTEP_07 = preload("uid://c4lunogx8cjl7")
+var footsteps: Array = [
+	FOOTSTEP_01,
+	FOOTSTEP_02,
+	FOOTSTEP_03,
+	FOOTSTEP_04,
+	FOOTSTEP_05,
+	FOOTSTEP_06,
+	FOOTSTEP_07
+]
+const SLOW_FOOTSTEP_01 = preload("uid://dklk0hsrg5bgw")
+const SLOW_FOOTSTEP_02 = preload("uid://cbmw6w1uwenoc")
+const SLOW_FOOTSTEP_03 = preload("uid://chlusknabfn5d")
+const SLOW_FOOTSTEP_04 = preload("uid://c5aquhnm5s71s")
+const SLOW_FOOTSTEP_05 = preload("uid://cbp4lus65spto")
+const SLOW_FOOTSTEP_06 = preload("uid://cxb11nbq8x6b1")
+const SLOW_FOOTSTEP_07 = preload("uid://dk3m7xg44j8kx")
+var slow_footsteps: Array = [
+	SLOW_FOOTSTEP_01,
+	SLOW_FOOTSTEP_02,
+	SLOW_FOOTSTEP_03,
+	SLOW_FOOTSTEP_04,
+	SLOW_FOOTSTEP_05,
+	SLOW_FOOTSTEP_06,
+	SLOW_FOOTSTEP_07
+]
+var current_footsteps: Array = footsteps
+
 
 var vault_checks: VaultChecks = VaultChecks.new()
 var vault_position: Vector3 = Vector3.ZERO
@@ -334,10 +398,12 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 			change_movement_speed(movement_speeds[MovementMode.WALKING])
 			_change_fov_smooth(player_fov)
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.WALKING]
+			current_footsteps = footsteps
 		MovementMode.SPRINTING:
 			change_movement_speed(movement_speeds[MovementMode.SPRINTING])
 			_change_fov_smooth(player_fov + 10)
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.SPRINTING]
+			current_footsteps = fast_footsteps
 		MovementMode.CROUCHING:
 			change_movement_speed(movement_speeds[MovementMode.CROUCHING])
 			_change_fov_smooth(player_fov - 10)
@@ -345,6 +411,7 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 			body_collision.position = player_crouch_collision_position
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
 			_move_head_smooth(player_crouch_head_position, 0.3)
+			current_footsteps = slow_footsteps
 		MovementMode.CRAWL:
 			change_movement_speed(movement_speeds[MovementMode.CRAWL])
 			_change_fov_smooth(player_fov - 20, 0.1)
@@ -412,6 +479,7 @@ func _physics_process(delta: float) -> void:
 	
 	if phys_object:
 		phys_wanted_position = head.global_position - head.global_basis.z * phys_wanted_distance
+		
 		var force: Vector3 = phys_wanted_position - phys_object.global_position
 		phys_object.linear_velocity = force * 10 * (1 + force.length())
 		
@@ -420,6 +488,9 @@ func _physics_process(delta: float) -> void:
 		var axis: Vector3 = rotation_diff.normalized()
 		
 		phys_object.angular_velocity = axis * angle_error * 100
+		
+		if (phys_wanted_position - phys_object.global_position).length() > 2.0:
+			interactable.interact()
 	
 	match current_movement_mode:
 		MovementMode.NONE:
@@ -452,6 +523,23 @@ func _on_ground_movement(delta: float) -> void:
 	_apply_velocity(delta, current_movement_speed)
 	if is_on_floor():
 		_step_check()
+		
+		var distance_delta: float = (global_position - last_pos).length()
+		footstep_time += distance_delta * bob_speed * ((abs(main_camera.position.x) + 1.0) * 4)
+		if footstep_time >= PI:
+			AudioManager.play_sound("SFX", current_footsteps.pick_random())
+			footstep_time = 0
+		
+		last_pos = global_position
+		bob_time += distance_delta * bob_speed * ((abs(main_camera.position.x) + 1.0) * 4)
+		if bob_time >= TAU:
+			bob_time = 0
+		var side_bob: float = lerpf(-0.05, 0.05, ((sin(bob_time) + 1) / 2.0))
+		var down_bob: float = lerpf(0, -0.02, sin(bob_time * 2))
+		
+		if do_bob:
+			main_camera.position.x = side_bob
+			main_camera.position.y = down_bob
 	else:
 		_gravity(delta)
 	move_and_slide()
@@ -669,6 +757,7 @@ func apply_settings() -> void:
 			player_fov -= 20
 	main_camera.fov = clamp(player_fov, 50, 120)
 	mouse_sensitivity = SaverLoader.settings.sensitivity
+	do_bob = SaverLoader.settings.head_bob
 	shader.material.set_shader_parameter("static_enabled", SaverLoader.settings.static_shader)
 	
 	player_hud.apply_settings()

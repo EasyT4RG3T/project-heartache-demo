@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bc8s25tocifqm"]
+
+[ext_resource type="Texture2D" uid="uid://cdbpiytvfwe0v" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Pillow03/Pillow03_albedo.png" id="1_26vty"]
+
+[resource]
+albedo_texture = ExtResource("1_26vty")
+texture_filter = 2
