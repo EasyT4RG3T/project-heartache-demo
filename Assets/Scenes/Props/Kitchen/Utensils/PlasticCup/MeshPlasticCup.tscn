@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://rxlsj8fpjdur"]
-
-[ext_resource type="ArrayMesh" uid="uid://bv0t8dxqeq843" path="res://Assets/Scenes/Props/Kitchen/Utensils/PlasticCup/PlasticCup.obj" id="1_tl860"]
-[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/WhitePlastic/WhitePlastic.tres" id="2_u2fqk"]
-
-[node name="MeshPlasticCup" type="MeshInstance3D" unique_id=2046180498]
-mesh = ExtResource("1_tl860")
-surface_material_override/0 = ExtResource("2_u2fqk")

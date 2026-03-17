@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvyq0lr4hte7t"
+path="res://.godot/imported/StandingFrame.obj-df012549467fc9e448b266ab82d3f820.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StandingFrame.obj-df012549467fc9e448b266ab82d3f820.mesh"]
+
+source_file="res://Assets/Assets/Decorations/Photos/StandingFrame/StandingFrame.obj"
+dest_files=["res://.godot/imported/StandingFrame.obj-df012549467fc9e448b266ab82d3f820.mesh", "res://.godot/imported/StandingFrame.obj-df012549467fc9e448b266ab82d3f820.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

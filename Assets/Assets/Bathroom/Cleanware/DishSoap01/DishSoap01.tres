@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://epch2rtqxibw"]
+
+[ext_resource type="Texture2D" uid="uid://b6e1mqpwqa38w" path="res://Assets/Assets/Bathroom/Cleanware/DishSoap01/DishSoap01_albedo.png" id="1_bgyg6"]
+
+[resource]
+albedo_texture = ExtResource("1_bgyg6")
+roughness = 0.8
+texture_filter = 2

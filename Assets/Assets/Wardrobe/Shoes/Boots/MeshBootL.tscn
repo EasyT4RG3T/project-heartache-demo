@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dwdgvypdnoxv5"]
+
+[ext_resource type="ArrayMesh" uid="uid://dysvlet3qda3u" path="res://Assets/Assets/Wardrobe/Shoes/Boots/BootL.obj" id="1_xdolp"]
+[ext_resource type="Material" uid="uid://bf76c5g3knha" path="res://Assets/Assets/Wardrobe/Shoes/Boots/Boot.tres" id="2_xpq5c"]
+
+[node name="MeshBootL" type="MeshInstance3D" unique_id=1119838436]
+mesh = ExtResource("1_xdolp")
+surface_material_override/0 = ExtResource("2_xpq5c")

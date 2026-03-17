@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccvo3blast12i"]
-
-[ext_resource type="Texture2D" uid="uid://cadit4xhhpokg" path="res://Assets/Scenes/Props/Bathroom/Cleanware/CleaningSpray/CleaningSpray_albedo.png" id="1_weepg"]
-
-[resource]
-albedo_texture = ExtResource("1_weepg")
-roughness = 0.8
-texture_filter = 2

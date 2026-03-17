@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bhwf8nm6gxyqb"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_woj7e"]
+[ext_resource type="PackedScene" uid="uid://dudvk33mqsvr5" path="res://Assets/Assets/Kitchen/Utensils/PlasticKnife/MeshPlasticKnife.tscn" id="2_guxjk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vhwke"]
+size = Vector3(0.015, 0.007, 0.165)
+
+[node name="DynamicPlasticKnife" type="RigidBody3D" unique_id=2061653560]
+mass = 0.01
+continuous_cd = true
+script = ExtResource("1_woj7e")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshPlasticKnife" parent="." unique_id=195707100 instance=ExtResource("2_guxjk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0024606958, 0)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=645556841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000102277845, 0.0024609342)
+shape = SubResource("BoxShape3D_vhwke")

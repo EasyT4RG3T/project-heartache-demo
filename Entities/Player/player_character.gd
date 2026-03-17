@@ -428,6 +428,11 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 			flashlight.turn_off()
 		MovementMode.VAULTING:
 			body_collision.disabled = true
+		MovementMode.CUTSCENE:
+			var main_camera_tween: Tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+			main_camera_tween.tween_property(main_camera, "position", Vector3.ZERO, 0.2)
+			bob_time = 0
+			footstep_time = 0
 
 
 func exit_movement_mode(mode: MovementMode) -> void:
@@ -478,7 +483,7 @@ func _physics_process(delta: float) -> void:
 	raytraced_audio_listener.update()
 	
 	if phys_object:
-		phys_wanted_position = head.global_position - head.global_basis.z * phys_wanted_distance
+		phys_wanted_position = main_camera.global_position - main_camera.global_basis.z * phys_wanted_distance
 		
 		var force: Vector3 = phys_wanted_position - phys_object.global_position
 		phys_object.linear_velocity = force * 10 * (1 + force.length())
@@ -489,7 +494,7 @@ func _physics_process(delta: float) -> void:
 		
 		phys_object.angular_velocity = axis * angle_error * 100
 		
-		if (phys_wanted_position - phys_object.global_position).length() > 2.0:
+		if (phys_wanted_position - phys_object.global_position).length() > 1.0:
 			interactable.interact()
 	
 	match current_movement_mode:

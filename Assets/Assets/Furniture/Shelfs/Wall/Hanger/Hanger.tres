@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7rb2v7da2l4g"]
+
+[ext_resource type="Texture2D" uid="uid://cow27powf2f60" path="res://Assets/Assets/Furniture/Shelfs/Wall/Hanger/Hanger_albedo.png" id="1_8p31s"]
+[ext_resource type="Texture2D" uid="uid://cjnrn8veg3i6i" path="res://Assets/Assets/Furniture/Shelfs/Wall/Hanger/Hanger_roughness.png" id="2_2g8nl"]
+
+[resource]
+albedo_texture = ExtResource("1_8p31s")
+roughness_texture = ExtResource("2_2g8nl")
+texture_filter = 2

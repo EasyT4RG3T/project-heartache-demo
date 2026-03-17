@@ -3,24 +3,14 @@ extends Node3D
 
 @onready var cutscenes: Cutscene = %Cutscenes
 
+var reflection_update: Timer = Timer.new()
+
 enum Event { INIT, SETUP, TRIGGER, DISABLE }
 
 var key_event_happened: bool = false
-var double_bed_event_happened: bool = false:
-	set(value):
-		double_bed_event_happened = value
-		if toilet_paper_event_happened and picture_event_happened and !key_event_happened:
-			key_event(Event.SETUP)
-var toilet_paper_event_happened: bool = false:
-	set(value):
-		toilet_paper_event_happened = value
-		if double_bed_event_happened and picture_event_happened and !key_event_happened:
-			key_event(Event.SETUP)
-var picture_event_happened: bool = false:
-	set(value):
-		picture_event_happened = value
-		if double_bed_event_happened and toilet_paper_event_happened and !key_event_happened:
-			key_event(Event.SETUP)
+var double_bed_event_happened: bool = false
+var toilet_paper_event_happened: bool = false
+var picture_event_happened: bool = false
 
 
 func _ready() -> void:
@@ -29,6 +19,16 @@ func _ready() -> void:
 			cutscenes.play("WakeUp")
 			GameManager.is_new_game = false)
 	AudioManager.play_ambient("uid://c1auf3n2ayc5b", -10.0, 1.0)
+	
+	add_child(reflection_update)
+	var nudge: bool = false
+	reflection_update.timeout.connect(func():
+		if nudge:
+			$ReflectionProbe2.global_position.y += 0.0001
+		else:
+			$ReflectionProbe2.global_position.y -= 0.0001
+		reflection_update.start(0.5))
+	reflection_update.start(0.5)
 
 
 func first_setup() -> void:
@@ -68,6 +68,7 @@ func animation_signal(animation: String) -> void:
 		"PictureInspect03":
 			%PictureSpotLight.hide()
 			AudioManager.play_uid_sound("SFX", "uid://bcaovrflj7lr2", -10.0, 0.8)
+			key_event(Event.SETUP)
 		"KeyPickUp01":
 			%KeyHighlightSpot.out_of_area = true
 		"KeyPickUp02":
@@ -81,7 +82,7 @@ func double_bed_event(event: Event) -> void:
 			%DoubleBedEvent.center_entered.connect(double_bed_event.bind(Event.TRIGGER))
 		Event.TRIGGER:
 			get_tree().create_timer(0.5).timeout.connect(func():
-				Game.character_say(PlayerHUD.Characters.PLAYER, "They never replaced him...", 2.5))
+				Game.character_say(PlayerHUD.Characters.PLAYER, "He's gone...", 2.5))
 			var look_cut: LookCutscene = LookCutscene.new()
 			add_child(look_cut)
 			look_cut.look(%DoubleBedEvent.global_position, 1.0, 3.0)
@@ -181,3 +182,5 @@ func load_save(data: Dictionary) -> void:
 	picture_event_happened = data["picture_event_happened"]
 	if !picture_event_happened:
 		picture_event(Event.SETUP)
+	else:
+		key_event(Event.SETUP)

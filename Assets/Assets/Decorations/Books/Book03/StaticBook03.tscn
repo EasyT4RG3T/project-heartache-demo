@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b08btvrv03lng"]
+
+[ext_resource type="PackedScene" uid="uid://lc6colw48855" path="res://Assets/Assets/Decorations/Books/Book03/MeshBook03.tscn" id="1_mehwf"]
+[ext_resource type="ArrayMesh" uid="uid://bulw5ie6hm0xu" path="res://Assets/Assets/Decorations/Books/Book03/Book03.obj" id="2_4x6bx"]
+[ext_resource type="Material" uid="uid://fc6mop7tw01r" path="res://Assets/Assets/Decorations/Books/Book03/Book03.tres" id="3_g5kow"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jb7ja"]
+data = PackedVector3Array(-0.0765, 0.2004, 0.029199999, -0.0765, 0, 0.029199999, -0.0765, 0.2004, -0.029199999, -0.0765, 0.2004, -0.029199999, -0.0765, 0, 0.029199999, -0.0765, 0, -0.029199999, -0.0765, 0.2004, -0.029199999, -0.0765, 0, -0.029199999, 0.0765, 0.2004, -0.029199999, 0.0765, 0.2004, -0.029199999, -0.0765, 0, -0.029199999, 0.0765, 0, -0.029199999, 0.0765, 0.2004, -0.029199999, 0.0765, 0, -0.029199999, 0.0765, 0.2004, 0.029199999, 0.0765, 0.2004, 0.029199999, 0.0765, 0, -0.029199999, 0.0765, 0, 0.029199999, 0.0765, 0.2004, 0.029199999, 0.0765, 0, 0.029199999, -0.0765, 0.2004, 0.029199999, -0.0765, 0.2004, 0.029199999, 0.0765, 0, 0.029199999, -0.0765, 0, 0.029199999, 0.0765, 0, -0.029199999, -0.0765, 0, -0.029199999, 0.0765, 0, 0.029199999, 0.0765, 0, 0.029199999, -0.0765, 0, -0.029199999, -0.0765, 0, 0.029199999, -0.0765, 0.2004, -0.029199999, 0.0765, 0.2004, -0.029199999, -0.0765, 0.2004, 0.029199999, -0.0765, 0.2004, 0.029199999, 0.0765, 0.2004, -0.029199999, 0.0765, 0.2004, 0.029199999)
+
+[node name="StaticBook03" type="StaticBody3D" unique_id=1317993750]
+
+[node name="MeshBook03" type="MeshInstance3D" parent="." unique_id=696006061 instance=ExtResource("1_mehwf")]
+mesh = ExtResource("2_4x6bx")
+surface_material_override/0 = ExtResource("3_g5kow")
+
+[node name="@CollisionShape3D@153412" type="CollisionShape3D" parent="." unique_id=956436340]
+shape = SubResource("ConcavePolygonShape3D_jb7ja")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ccyvx8pi4upbh"]
+
+[ext_resource type="ArrayMesh" uid="uid://iv3wr1nou1x5" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket03/Blanket03.obj" id="1_u7sr6"]
+[ext_resource type="Material" uid="uid://cnrx2guo5cwif" path="res://Assets/Materials/Noise/SmoothNoise/DarkGreen/SmoothNoiseDarkGreen.tres" id="2_etohm"]
+[ext_resource type="Material" uid="uid://cftn2g8j310mm" path="res://Assets/Materials/Noise/SmoothNoise/LightGray/SmoothNoiseLightGray.tres" id="2_nmy8b"]
+
+[node name="MeshBlanket03" type="MeshInstance3D" unique_id=1539699138]
+mesh = ExtResource("1_u7sr6")
+surface_material_override/0 = ExtResource("2_nmy8b")
+surface_material_override/1 = ExtResource("2_etohm")

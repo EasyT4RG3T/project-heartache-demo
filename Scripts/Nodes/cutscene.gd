@@ -57,7 +57,7 @@ func _set_up_anim(anim_name: StringName) -> void:
 
 
 func _play_anim() -> void:
-	player.current_movement_mode = PlayerCharacter.MovementMode.CUTSCENE
+	player.change_movement_mode(PlayerCharacter.MovementMode.CUTSCENE)
 	InputManager.player_character_input = false
 	SaverLoader.can_save += 1
 	play()

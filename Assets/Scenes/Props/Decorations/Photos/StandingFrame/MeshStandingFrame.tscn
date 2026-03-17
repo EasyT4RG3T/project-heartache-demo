@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://boj3rw2gkll0e"]
-
-[ext_resource type="ArrayMesh" uid="uid://dvyq0lr4hte7t" path="res://Assets/Scenes/Props/Decorations/Photos/StandingFrame/StandingFrame.obj" id="1_bbat8"]
-[ext_resource type="Material" uid="uid://d22tj0ro20ipj" path="res://Assets/Scenes/Props/Decorations/Photos/StandingFrame/StandingFrame.tres" id="2_cfma3"]
-
-[node name="MeshStandingFrame" type="MeshInstance3D" unique_id=627653287]
-mesh = ExtResource("1_bbat8")
-surface_material_override/0 = ExtResource("2_cfma3")

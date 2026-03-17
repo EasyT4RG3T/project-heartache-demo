@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://8jmifesl66qf"]
+
+[ext_resource type="Texture2D" uid="uid://blx7a1i7prtv4" path="res://Assets/Sprites/Pictures/Posters/BikerGirl02.png" id="1_lrjad"]
+
+[resource]
+albedo_color = Color(0.91, 0.91, 0.91, 1)
+albedo_texture = ExtResource("1_lrjad")
+metallic_specular = 0.7
+roughness = 0.3
+texture_filter = 2

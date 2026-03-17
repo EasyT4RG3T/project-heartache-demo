@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://odjib8fji6ev"]
+
+[ext_resource type="ArrayMesh" uid="uid://c33xksccvjsoy" path="res://Assets/Assets/Bathroom/ToiletBrush/ToiletBrushHolder.obj" id="1_8njc7"]
+[ext_resource type="Material" uid="uid://bbnaoiq3necvq" path="res://Assets/Materials/Porcelain/Porcelain.tres" id="2_wuppi"]
+
+[node name="MeshToiletBrushHolder" type="MeshInstance3D" unique_id=1775037686]
+mesh = ExtResource("1_8njc7")
+surface_material_override/0 = ExtResource("2_wuppi")

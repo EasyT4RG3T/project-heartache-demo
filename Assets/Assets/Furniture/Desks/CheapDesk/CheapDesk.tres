@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cnb7w0kay8lpw"]
+
+[ext_resource type="Texture2D" uid="uid://6au0yhy01y8v" path="res://Assets/Assets/Furniture/Desks/CheapDesk/CheapDesk_albedo.png" id="1_wkk7e"]
+[ext_resource type="Texture2D" uid="uid://bla3jit2groyf" path="res://Assets/Assets/Furniture/Desks/CheapDesk/CheapDesk_roughness.png" id="2_1t1di"]
+
+[resource]
+albedo_texture = ExtResource("1_wkk7e")
+roughness_texture = ExtResource("2_1t1di")
+roughness_texture_channel = 4
+texture_filter = 2

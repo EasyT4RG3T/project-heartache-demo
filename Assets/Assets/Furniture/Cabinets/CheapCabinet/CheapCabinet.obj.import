@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfmaucyiea4m0"
+path="res://.godot/imported/CheapCabinet.obj-176b65dbad1138f5288ecf0d3d78419c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CheapCabinet.obj-176b65dbad1138f5288ecf0d3d78419c.mesh"]
+
+source_file="res://Assets/Assets/Furniture/Cabinets/CheapCabinet/CheapCabinet.obj"
+dest_files=["res://.godot/imported/CheapCabinet.obj-176b65dbad1138f5288ecf0d3d78419c.mesh", "res://.godot/imported/CheapCabinet.obj-176b65dbad1138f5288ecf0d3d78419c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

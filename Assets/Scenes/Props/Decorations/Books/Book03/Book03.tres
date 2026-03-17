@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://fc6mop7tw01r"]
-
-[ext_resource type="Texture2D" uid="uid://vm2sdmkqic77" path="res://Assets/Scenes/Props/Decorations/Books/Book03/Book03_albedo.png" id="1_l68bn"]
-
-[resource]
-albedo_texture = ExtResource("1_l68bn")
-texture_filter = 2

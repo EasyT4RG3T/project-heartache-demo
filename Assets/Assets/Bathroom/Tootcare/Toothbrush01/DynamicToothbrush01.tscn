@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cetljfqxhfp82"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_sdm4l"]
+[ext_resource type="PackedScene" uid="uid://bddi0gxk2i3ci" path="res://Assets/Assets/Bathroom/Tootcare/Toothbrush01/MeshToothbrush01.tscn" id="2_86e1g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7dob"]
+size = Vector3(0.02, 0.02, 0.13390625)
+
+[node name="DynamicToothbrush01" type="RigidBody3D" unique_id=1463747931]
+mass = 0.02
+continuous_cd = true
+script = ExtResource("1_sdm4l")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshToothbrush01" parent="." unique_id=1514491885 instance=ExtResource("2_86e1g")]
+gi_mode = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2133193988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010013048, 0.00054688007)
+shape = SubResource("BoxShape3D_v7dob")

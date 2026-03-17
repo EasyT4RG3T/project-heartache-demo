@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://durltbkp0l6u6"]
+
+[ext_resource type="ArrayMesh" uid="uid://oubgf0bwju58" path="res://Assets/Assets/Furniture/Desks/CheapDesk/CheapDesk.obj" id="1_m575a"]
+[ext_resource type="Material" uid="uid://cnb7w0kay8lpw" path="res://Assets/Assets/Furniture/Desks/CheapDesk/CheapDesk.tres" id="2_b5c64"]
+
+[node name="MeshCheapDesk" type="MeshInstance3D" unique_id=34903522]
+mesh = ExtResource("1_m575a")
+surface_material_override/0 = ExtResource("2_b5c64")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cewfbartl1esb"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_rn1xp"]
+[ext_resource type="PackedScene" uid="uid://dywrskl8bjuro" path="res://Assets/Assets/Bathroom/Tootcare/Toothpaste01/MeshToothpaste01.tscn" id="2_k3s4v"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iul7e"]
+points = PackedVector3Array(-0.015994, 0.124608, 0, -0.010267096, 0.10410428, 0.00573068, 0, 0.10410428, 0.007754612, 0, 0.11849714, 0.0025384417, 0.015994, 0.124608, 0, 0, 0.11849714, -0.002541284, 0, 0.10410428, -0.007757455, -0.010267096, 0.10410428, -0.0057335235, -0.010267096, 0.05641269, -0.008763735, -0.010267096, 0.0164908, -0.01026747, -0.010267096, 0, -0.01026747, -0.014522351, 0, 0, -0.010267096, 0, 0.010264629, -0.010267096, 0.0164908, 0.010264629, -0.010267096, 0.05641269, 0.008760893, 0, 0.0164908, 0.01452, 0, 0.05641269, 0.01188491, 0.0102639645, 0.10410428, 0.00573068, 0.01451922, 0, 0, 0.0102639645, 0, -0.01026747, 0.0102639645, 0.0164908, -0.01026747, 0.0102639645, 0.05641269, -0.008763735, 0.0102639645, 0.10410428, -0.0057335235, 0.0102639645, 0.05641269, 0.008760893, 0.0102639645, 0.0164908, 0.010264629, 0.0102639645, 0, 0.010264629, 0, 0.05641269, -0.011887752, 0, 0.0164908, -0.01452, 0, 0, -0.01452, 0, 0, 0.01452)
+
+[node name="DynamicToothpaste01" type="RigidBody3D" unique_id=280398662]
+mass = 0.05
+continuous_cd = true
+script = ExtResource("1_rn1xp")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshToothpaste01" parent="." unique_id=1527767618 instance=ExtResource("2_k3s4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05704215, 0)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=210635753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05704215, 0)
+shape = SubResource("ConvexPolygonShape3D_iul7e")

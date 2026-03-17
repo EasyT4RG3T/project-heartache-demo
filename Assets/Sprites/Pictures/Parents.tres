@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cculcya4lb2i2"]
+
+[ext_resource type="Texture2D" uid="uid://culfmh3cpnaxf" path="res://Assets/Sprites/Pictures/Parents.png" id="1_obmpr"]
+
+[resource]
+albedo_texture = ExtResource("1_obmpr")
+metallic = 0.3
+clearcoat_enabled = true
+clearcoat_roughness = 0.05
+texture_filter = 2

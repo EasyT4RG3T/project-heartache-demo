@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmov2podyxhuh"]
-
-[ext_resource type="Texture2D" uid="uid://ca0msiykrypqt" path="res://Assets/Scenes/Furniture/Trash/TrashCanFull02/TrashCanFull02_albedo.png" id="1_11jp7"]
-
-[resource]
-albedo_texture = ExtResource("1_11jp7")
-texture_filter = 2

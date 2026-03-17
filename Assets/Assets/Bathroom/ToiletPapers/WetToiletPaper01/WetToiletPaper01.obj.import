@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dg418suqwn0g0"
+path="res://.godot/imported/WetToiletPaper01.obj-869c8a61f2eead14b45c61bfc73d8134.mesh"
+
+[deps]
+
+files=["res://.godot/imported/WetToiletPaper01.obj-869c8a61f2eead14b45c61bfc73d8134.mesh"]
+
+source_file="res://Assets/Assets/Bathroom/ToiletPapers/WetToiletPaper01/WetToiletPaper01.obj"
+dest_files=["res://.godot/imported/WetToiletPaper01.obj-869c8a61f2eead14b45c61bfc73d8134.mesh", "res://.godot/imported/WetToiletPaper01.obj-869c8a61f2eead14b45c61bfc73d8134.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

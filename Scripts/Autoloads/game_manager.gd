@@ -74,12 +74,12 @@ func apply_settings_data() -> void:
 	if SaverLoader.settings.window_mode != DisplayServer.window_get_mode():
 		DisplayServer.window_set_mode(SaverLoader.settings.window_mode)
 	
-	AudioServer.set_bus_volume_db(0, linear_to_db(SaverLoader.settings.master_volume))
-	AudioServer.set_bus_volume_db(1, linear_to_db(SaverLoader.settings.sfx_volume))
-	AudioServer.set_bus_volume_db(2, linear_to_db(SaverLoader.settings.dialogue_volume))
-	AudioServer.set_bus_volume_db(3, linear_to_db(SaverLoader.settings.ambient_volume))
-	AudioServer.set_bus_volume_db(4, linear_to_db(SaverLoader.settings.music_volume))
-	AudioServer.set_bus_volume_db(5, linear_to_db(SaverLoader.settings.menus_volume))
+	AudioServer.set_bus_volume_db(0, linear_to_db(clamp(SaverLoader.settings.master_volume, 0.0, 1.0)))
+	AudioServer.set_bus_volume_db(1, linear_to_db(clamp(SaverLoader.settings.sfx_volume, 0.0, 1.0)))
+	AudioServer.set_bus_volume_db(2, linear_to_db(clamp(SaverLoader.settings.dialogue_volume, 0.0, 1.0)))
+	AudioServer.set_bus_volume_db(3, linear_to_db(clamp(SaverLoader.settings.ambient_volume, 0.0, 1.0)))
+	AudioServer.set_bus_volume_db(4, linear_to_db(clamp(SaverLoader.settings.music_volume, 0.0, 1.0)))
+	AudioServer.set_bus_volume_db(5, linear_to_db(clamp(SaverLoader.settings.menus_volume, 0.0, 1.0)))
 	
 	if player_character:
 		player_character.apply_settings()
@@ -87,6 +87,7 @@ func apply_settings_data() -> void:
 
 func apply_graphics_settings_data() -> void:
 	get_viewport().scaling_3d_mode = SaverLoader.graphics_settings.scaling_3d_mode
+	get_viewport().scaling_3d_scale = SaverLoader.graphics_settings.scaling_3d_scale
 	get_viewport().msaa_2d = SaverLoader.graphics_settings.msaa_2d
 	get_viewport().msaa_3d = SaverLoader.graphics_settings.msaa_3d
 	get_viewport().screen_space_aa = SaverLoader.graphics_settings.ssaa

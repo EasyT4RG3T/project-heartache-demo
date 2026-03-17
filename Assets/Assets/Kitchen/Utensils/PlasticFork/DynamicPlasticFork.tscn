@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bvitoqn4ds0a1"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_nppq7"]
+[ext_resource type="PackedScene" uid="uid://cgax6igwt415n" path="res://Assets/Assets/Kitchen/Utensils/PlasticFork/MeshPlasticFork.tscn" id="2_0uqv1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_agtoe"]
+size = Vector3(0.025, 0.0103076175, 0.15)
+
+[node name="DynamicPlasticFork" type="RigidBody3D" unique_id=1292873037]
+mass = 0.01
+continuous_cd = true
+script = ExtResource("1_nppq7")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshPlasticFork" parent="." unique_id=1345784651 instance=ExtResource("2_0uqv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005011037, 0)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1351671847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00032754475, 0)
+shape = SubResource("BoxShape3D_agtoe")

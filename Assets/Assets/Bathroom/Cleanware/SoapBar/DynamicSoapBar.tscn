@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://wx8dgmje0l0k"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_tco84"]
+[ext_resource type="PackedScene" uid="uid://d4adigyyt1jn3" path="res://Assets/Assets/Bathroom/Cleanware/SoapBar/MeshSoapBar.tscn" id="2_p7xut"]
+[ext_resource type="ArrayMesh" uid="uid://b2wg8tlfiwu0a" path="res://Assets/Assets/Bathroom/Cleanware/SoapBar/SoapBar.obj" id="3_bnoe2"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a8rrt"]
+points = PackedVector3Array(0.025, 0.02044342, 0.03544244, 0.020443423, 0.02044342, 0.04, 0.025, 0.0045541306, 0.03544244, 0.025, 0.02044342, -0.035450272, 0.020443423, 0.025, 0.03544244, 0.020443423, 0.0045541306, 0.04, -0.020448316, 0.02044342, 0.04, 0.020443423, 0, 0.03544244, 0.025, 0.0045541306, -0.035450272, 0.020443423, 0.02044342, -0.04, 0.020443423, 0.025, -0.035450272, -0.020448316, 0.025, 0.03544244, -0.020448316, 0.0045541306, 0.04, -0.025, 0.02044342, 0.03544244, -0.020448316, 0, 0.03544244, 0.020443423, 0, -0.035450272, 0.020443423, 0.0045541306, -0.04, -0.020448316, 0.02044342, -0.04, -0.020448316, 0.025, -0.035450272, -0.025, 0.0045541306, 0.03544244, -0.025, 0.02044342, -0.035450272, -0.020448316, 0, -0.035450272, -0.020448316, 0.0045541306, -0.04, -0.025, 0.0045541306, -0.035450272)
+
+[node name="DynamicSoapBar" type="RigidBody3D" unique_id=168733316]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_tco84")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshSoapBar" type="MeshInstance3D" parent="." unique_id=1742101398 instance=ExtResource("2_p7xut")]
+gi_mode = 2
+mesh = ExtResource("3_bnoe2")
+
+[node name="@CollisionShape3D@102186" type="CollisionShape3D" parent="." unique_id=1052571213]
+shape = SubResource("ConvexPolygonShape3D_a8rrt")

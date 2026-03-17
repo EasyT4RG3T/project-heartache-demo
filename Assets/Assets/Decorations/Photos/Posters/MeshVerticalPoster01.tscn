@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxsxc7t4f24bg"]
+
+[ext_resource type="ArrayMesh" uid="uid://y561vmhpaxk8" path="res://Assets/Assets/Decorations/Photos/Posters/VerticalPoster01.obj" id="1_06q51"]
+
+[node name="MeshVerticalPoster01" type="MeshInstance3D" unique_id=469513239]
+mesh = ExtResource("1_06q51")

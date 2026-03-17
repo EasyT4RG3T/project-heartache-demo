@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://iv3wr1nou1x5"
+path="res://.godot/imported/Blanket03.obj-7fcf16e90209d6f28ac1428cc2aded83.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Blanket03.obj-7fcf16e90209d6f28ac1428cc2aded83.mesh"]
+
+source_file="res://Assets/Assets/Furniture/Beds/Blankets/Blanket03/Blanket03.obj"
+dest_files=["res://.godot/imported/Blanket03.obj-7fcf16e90209d6f28ac1428cc2aded83.mesh", "res://.godot/imported/Blanket03.obj-7fcf16e90209d6f28ac1428cc2aded83.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

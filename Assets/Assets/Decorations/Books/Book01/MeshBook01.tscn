@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2nonqffm7rrw"]
+
+[ext_resource type="ArrayMesh" uid="uid://cwia527vyxioc" path="res://Assets/Assets/Decorations/Books/Book01/Book01.obj" id="1_5m3ts"]
+[ext_resource type="Material" uid="uid://cu5hfvkxorsq1" path="res://Assets/Assets/Decorations/Books/Book01/Book01.tres" id="2_euuln"]
+
+[node name="MeshBook01" type="MeshInstance3D" unique_id=966782773]
+mesh = ExtResource("1_5m3ts")
+surface_material_override/0 = ExtResource("2_euuln")

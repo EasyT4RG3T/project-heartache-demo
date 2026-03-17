@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dmev8j0b4xpcb"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_n3pw1"]
+[ext_resource type="PackedScene" uid="uid://de25tj6ppmapt" path="res://Assets/Assets/Kitchen/Utensils/PlasticSpoon/MeshPlasticSpoon.tscn" id="2_t5027"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym51f"]
+size = Vector3(0.03, 0.013, 0.15)
+
+[node name="DynamicPlasticSpoon" type="RigidBody3D" unique_id=1797238982]
+mass = 0.01
+continuous_cd = true
+script = ExtResource("1_n3pw1")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshPlasticSpoon" parent="." unique_id=432751832 instance=ExtResource("2_t5027")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005906811, 0)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=940304392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001043573, 0)
+shape = SubResource("BoxShape3D_ym51f")

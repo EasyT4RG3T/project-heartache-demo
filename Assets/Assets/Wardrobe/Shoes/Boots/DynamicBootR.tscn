@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cfue66kax2gwv"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_kqinh"]
+[ext_resource type="PackedScene" uid="uid://dandk28a0bbmf" path="res://Assets/Assets/Wardrobe/Shoes/Boots/MeshBootR.tscn" id="2_a1dfe"]
+[ext_resource type="PackedScene" uid="uid://tknih1wlf8j3" path="res://Assets/Assets/Wardrobe/Shoes/Boots/ConvexBootR-col.tscn" id="3_kqinh"]
+
+[node name="DynamicBootR" type="RigidBody3D" unique_id=57295369]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_kqinh")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshBootR" parent="." unique_id=1626242960 instance=ExtResource("2_a1dfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+gi_mode = 2
+
+[node name="ColBootR-col" parent="." unique_id=2013409076 instance=ExtResource("3_kqinh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)

@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bq6x6bsudg5em"]
-
-[ext_resource type="ArrayMesh" uid="uid://pxdyta1b1rdp" path="res://Assets/Scenes/Furniture/Doors/Reinforced/CellDoor01/CellDoor01.obj" id="1_siekj"]
-[ext_resource type="Material" uid="uid://tgfju1otef43" path="res://Assets/Scenes/Furniture/Doors/Reinforced/CellDoor01/CellDoor01.tres" id="2_drl8s"]
-
-[node name="MeshCellDoor01" type="MeshInstance3D" unique_id=1995039359]
-mesh = ExtResource("1_siekj")
-surface_material_override/0 = ExtResource("2_drl8s")

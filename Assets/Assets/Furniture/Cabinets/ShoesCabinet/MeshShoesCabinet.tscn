@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://4hom1gudsddq"]
+
+[ext_resource type="ArrayMesh" uid="uid://d06r51xclvdtg" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/ShoesCabinet.obj" id="1_j7d2r"]
+[ext_resource type="Material" uid="uid://cebhriam8y8aw" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/ShoesCabinet.tres" id="2_gd4su"]
+
+[node name="MeshShoesCabinet" type="MeshInstance3D" unique_id=1990149323]
+mesh = ExtResource("1_j7d2r")
+surface_material_override/0 = ExtResource("2_gd4su")

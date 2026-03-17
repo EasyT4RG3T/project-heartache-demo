@@ -253,7 +253,8 @@ func _convert_png() -> void:
 		var texture_group = texture_groups.get(key)
 		
 		var output: String = texture_group[0].get_slice("_", 0)
-		
+		if !texture_group[0].contains("_"):
+			output = texture_group[0].get_slice(".", 0)
 		var material
 		var do_orm_texture: bool = false
 		for texture in texture_group:
@@ -291,7 +292,8 @@ func _convert_png() -> void:
 					material.normal_enabled = true
 					material.normal_texture = texture
 				_:
-					return
+					if !texture_groups[key].size() > 1:
+						material.albedo_texture = texture
 		
 		var save_error = ResourceSaver.save(material, output + ".tres")
 		if save_error != OK:

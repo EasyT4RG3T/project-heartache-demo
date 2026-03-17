@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://hkoos73g6uf2"]
-
-[ext_resource type="ArrayMesh" uid="uid://xxlgy2lrtp5o" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Pillow03/Pillow03.obj" id="1_myan4"]
-[ext_resource type="Material" uid="uid://bc8s25tocifqm" path="res://Assets/Scenes/Furniture/Dormitory/Beds/Pillow03/Pillow03.tres" id="2_0covl"]
-
-[node name="MeshPillow03" type="MeshInstance3D" unique_id=504725690]
-mesh = ExtResource("1_myan4")
-surface_material_override/0 = ExtResource("2_0covl")

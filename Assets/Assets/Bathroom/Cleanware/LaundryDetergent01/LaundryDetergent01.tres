@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmnfnj4w5abf7"]
+
+[ext_resource type="Texture2D" uid="uid://bw6bsfxcs3jxd" path="res://Assets/Assets/Bathroom/Cleanware/LaundryDetergent01/LaundryDetergent01_albedo.png" id="1_g34yv"]
+
+[resource]
+albedo_texture = ExtResource("1_g34yv")
+roughness = 0.8
+texture_filter = 2

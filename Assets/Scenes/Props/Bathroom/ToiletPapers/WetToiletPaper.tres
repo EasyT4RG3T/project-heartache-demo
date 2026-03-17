@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsohgf7rnpga7"]
-
-[ext_resource type="Texture2D" uid="uid://bwdymauejm0uw" path="res://Assets/Scenes/Props/Bathroom/ToiletPapers/WetToiletPaper_albedo.png" id="1_7gx7l"]
-
-[resource]
-albedo_texture = ExtResource("1_7gx7l")
-texture_filter = 2

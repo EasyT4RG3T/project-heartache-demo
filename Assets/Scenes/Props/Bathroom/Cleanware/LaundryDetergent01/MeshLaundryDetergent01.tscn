@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://kqo55j0gam7t"]
-
-[ext_resource type="ArrayMesh" uid="uid://fk0eqqdiqqad" path="res://Assets/Scenes/Props/Bathroom/Cleanware/LaundryDetergent01/LaundryDetergent01.obj" id="1_u5lo5"]
-[ext_resource type="Material" uid="uid://cmnfnj4w5abf7" path="res://Assets/Scenes/Props/Bathroom/Cleanware/LaundryDetergent01/LaundryDetergent01.tres" id="2_v21rw"]
-
-[node name="MeshLaundryDetergent01" type="MeshInstance3D" unique_id=184212215]
-mesh = ExtResource("1_u5lo5")
-surface_material_override/0 = ExtResource("2_v21rw")

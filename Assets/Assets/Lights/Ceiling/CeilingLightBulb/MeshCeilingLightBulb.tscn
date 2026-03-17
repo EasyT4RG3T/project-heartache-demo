@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://06ske2hi4t8b"]
+
+[ext_resource type="ArrayMesh" uid="uid://dyso77i344xms" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/CeilingLightBulb.obj" id="1_jnuh3"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_fukai"]
+[ext_resource type="Material" uid="uid://c3exb48g5dfjw" path="res://Assets/Materials/Light/Warm/WarmLight.tres" id="3_o6g3g"]
+
+[node name="MeshCeilingLightBulb" type="MeshInstance3D" unique_id=913305178]
+layers = 8
+gi_mode = 0
+mesh = ExtResource("1_jnuh3")
+surface_material_override/0 = ExtResource("2_fukai")
+surface_material_override/1 = ExtResource("3_o6g3g")

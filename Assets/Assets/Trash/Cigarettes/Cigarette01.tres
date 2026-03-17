@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dixpfw3g8wbcn"]
+
+[ext_resource type="Texture2D" uid="uid://cvrrxesmqynlm" path="res://Assets/Assets/Trash/Cigarettes/Cigarette01_albedo.png" id="1_uib0f"]
+
+[resource]
+albedo_texture = ExtResource("1_uib0f")
+texture_filter = 2

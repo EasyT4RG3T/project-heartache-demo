@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tiyri86icnqn"
+path="res://.godot/imported/TrashCan01.obj-83a6ef039a54c191e7cfd5b5c1ecb4ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TrashCan01.obj-83a6ef039a54c191e7cfd5b5c1ecb4ef.mesh"]
+
+source_file="res://Assets/Assets/Trash/TrashCans/TrashCan01/TrashCan01.obj"
+dest_files=["res://.godot/imported/TrashCan01.obj-83a6ef039a54c191e7cfd5b5c1ecb4ef.mesh", "res://.godot/imported/TrashCan01.obj-83a6ef039a54c191e7cfd5b5c1ecb4ef.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

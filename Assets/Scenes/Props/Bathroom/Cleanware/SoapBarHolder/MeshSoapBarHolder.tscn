@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cc2l2wetfpenl"]
-
-[ext_resource type="ArrayMesh" uid="uid://dmhncdc0eqr80" path="res://Assets/Scenes/Props/Bathroom/Cleanware/SoapBarHolder/SoapBarHolder.obj" id="1_qtbj8"]
-[ext_resource type="Material" uid="uid://bbnaoiq3necvq" path="res://Assets/Materials/Porcelain/Porcelain.tres" id="2_5cala"]
-
-[node name="MeshSoapBarHolder" type="MeshInstance3D" unique_id=143227721]
-mesh = ExtResource("1_qtbj8")
-surface_material_override/0 = ExtResource("2_5cala")

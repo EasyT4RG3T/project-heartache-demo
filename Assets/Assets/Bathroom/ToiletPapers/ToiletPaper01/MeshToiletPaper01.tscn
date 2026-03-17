@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://der0vtm813rma"]
+
+[ext_resource type="ArrayMesh" uid="uid://dhdfu5bgf0cn0" path="res://Assets/Assets/Bathroom/ToiletPapers/ToiletPaper01/ToiletPaper01.obj" id="1_nte86"]
+[ext_resource type="Material" uid="uid://b0a0na37yxj0x" path="res://Assets/Assets/Bathroom/ToiletPapers/ToiletPaper.tres" id="2_wx2xs"]
+
+[node name="MeshToiletPaper01" type="MeshInstance3D" unique_id=113112114]
+mesh = ExtResource("1_nte86")
+surface_material_override/0 = ExtResource("2_wx2xs")

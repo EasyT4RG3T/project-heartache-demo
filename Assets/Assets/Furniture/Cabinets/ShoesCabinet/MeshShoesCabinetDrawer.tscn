@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bin4ylyt5uu2r"]
+
+[ext_resource type="ArrayMesh" uid="uid://dx8eqcvj1rte2" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/ShoesCabinetDrawer.obj" id="1_qe7rf"]
+[ext_resource type="Material" uid="uid://cebhriam8y8aw" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/ShoesCabinet.tres" id="2_bkhw8"]
+
+[node name="MeshShoesCabinetDrawer" type="MeshInstance3D" unique_id=657577277]
+mesh = ExtResource("1_qe7rf")
+surface_material_override/0 = ExtResource("2_bkhw8")

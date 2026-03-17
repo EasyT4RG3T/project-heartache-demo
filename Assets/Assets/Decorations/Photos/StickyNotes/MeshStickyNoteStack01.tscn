@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cay600om0nuv1"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqodvlv4iqbmp" path="res://Assets/Assets/Decorations/Photos/StickyNotes/StickyNoteStack01.obj" id="1_tkk3k"]
+
+[node name="MeshStickyNoteStack01" type="MeshInstance3D" unique_id=1598883872]
+mesh = ExtResource("1_tkk3k")

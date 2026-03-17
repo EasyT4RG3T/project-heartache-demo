@@ -39,7 +39,6 @@ clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "	[font_size=20][color=yellow]/!\\ This can crash the game or even break save files /!\\[/color][/font_size]"
 vertical_alignment = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false

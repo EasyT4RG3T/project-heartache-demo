@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://cebhriam8y8aw"]
-
-[ext_resource type="Texture2D" uid="uid://do0xc1l77kpjb" path="res://Assets/Scenes/Furniture/Dormitory/Cabinets/ShoesCabinet/ShoesCabinet_albedo.png" id="1_eip75"]
-[ext_resource type="Texture2D" uid="uid://bc5fjeev0tcee" path="res://Assets/Scenes/Furniture/Dormitory/Cabinets/ShoesCabinet/ShoesCabinet_roughness.png" id="2_dnuvp"]
-
-[resource]
-albedo_texture = ExtResource("1_eip75")
-roughness_texture = ExtResource("2_dnuvp")
-texture_filter = 2

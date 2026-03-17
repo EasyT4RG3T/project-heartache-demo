@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tgfju1otef43"]
+
+[ext_resource type="Texture2D" uid="uid://b06gd6e0by86t" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/CellDoor01_albedo.png" id="1_f8t52"]
+
+[resource]
+albedo_texture = ExtResource("1_f8t52")
+metallic = 0.7
+roughness = 0.3
+texture_filter = 2
+grow_amount = 0.085

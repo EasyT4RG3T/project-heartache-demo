@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_aq26j")
-scaling_3d_scale = 0.75
+scaling_3d_scale = 0.85
 ssao_quality = 1
 volumetric_fog_enabled = false
 volumetric_fog_volume_size = 64

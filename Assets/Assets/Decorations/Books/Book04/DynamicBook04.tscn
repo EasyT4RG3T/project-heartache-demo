@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://p6se47afbw5x"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_ydpjc"]
+[ext_resource type="PackedScene" uid="uid://c7lbwnnkvav21" path="res://Assets/Assets/Decorations/Books/Book04/MeshBook04.tscn" id="2_cpsyh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_44etd"]
+points = PackedVector3Array(-0.151893, 0, -0.08101, -0.151893, 0, 0.08101, -0.151893, 0.020250091, -0.08101, 0.151893, 0, -0.08101, -0.151893, 0.020250091, 0.08101, 0.151893, 0, 0.08101, -0.05468505, 0.035442, -0.08101, 0.151893, 0.020250091, -0.08101, -0.05468505, 0.035442, 0.08101, 0.151893, 0.020250091, 0.08101, 0.054655313, 0.035442, -0.08101, 0.054655313, 0.035442, 0.08101)
+
+[node name="DynamicBook04" type="RigidBody3D" unique_id=1031545888]
+mass = 0.4
+continuous_cd = true
+script = ExtResource("1_ydpjc")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshBook04" parent="." unique_id=527122419 instance=ExtResource("2_cpsyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012716994, 0)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1208605860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012716994, 0)
+shape = SubResource("ConvexPolygonShape3D_44etd")

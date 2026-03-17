@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ce2166tm3bvrc"]
+
+[ext_resource type="Texture2D" uid="uid://bv67nr5ydll88" path="res://Assets/Sprites/Pictures/StickyNotes/StickyNote02.png" id="1_wusyg"]
+
+[resource]
+albedo_texture = ExtResource("1_wusyg")
+texture_filter = 2

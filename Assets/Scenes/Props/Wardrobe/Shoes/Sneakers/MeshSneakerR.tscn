@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://ca782v7pf0e4r"]
-
-[ext_resource type="ArrayMesh" uid="uid://x68eltorvg0a" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Sneakers/SneakerR.obj" id="1_7l4bi"]
-[ext_resource type="Material" uid="uid://betriu356rasf" path="res://Assets/Scenes/Props/Wardrobe/Shoes/Sneakers/Sneaker.tres" id="2_103kb"]
-
-[node name="MeshSneakerR" type="MeshInstance3D" unique_id=1522968252]
-mesh = ExtResource("1_7l4bi")
-surface_material_override/0 = ExtResource("2_103kb")

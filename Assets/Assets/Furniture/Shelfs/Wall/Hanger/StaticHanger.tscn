@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://xflhs6evd8l0"]
+
+[ext_resource type="PackedScene" uid="uid://dhce8e186xsob" path="res://Assets/Assets/Furniture/Shelfs/Wall/Hanger/MeshHanger.tscn" id="1_2yd0j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kcrsl"]
+size = Vector3(1, 0.03, 0.2)
+
+[node name="StaticHanger" type="StaticBody3D" unique_id=569260941]
+
+[node name="MeshHanger" parent="." unique_id=2103494231 instance=ExtResource("1_2yd0j")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1275132635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0151322335, 0)
+shape = SubResource("BoxShape3D_kcrsl")

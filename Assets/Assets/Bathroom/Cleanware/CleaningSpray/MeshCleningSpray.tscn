@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://3j0thglcqkoq"]
+
+[ext_resource type="ArrayMesh" uid="uid://t18l6ncoi744" path="res://Assets/Assets/Bathroom/Cleanware/CleaningSpray/CleningSpray.obj" id="1_cbcq3"]
+[ext_resource type="Material" uid="uid://ccvo3blast12i" path="res://Assets/Assets/Bathroom/Cleanware/CleaningSpray/CleaningSpray.tres" id="2_jjfhw"]
+
+[node name="MeshCleningSpray" type="MeshInstance3D" unique_id=1571887964]
+mesh = ExtResource("1_cbcq3")
+surface_material_override/0 = ExtResource("2_jjfhw")

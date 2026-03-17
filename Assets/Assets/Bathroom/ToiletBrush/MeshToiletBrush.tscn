@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwk1r4e1eavlv"]
+
+[ext_resource type="ArrayMesh" uid="uid://blemmukc3233k" path="res://Assets/Assets/Bathroom/ToiletBrush/ToiletBrush.obj" id="1_vlocg"]
+[ext_resource type="Material" uid="uid://bstj7lj6c423m" path="res://Assets/Assets/Bathroom/ToiletBrush/ToiletBrush.tres" id="2_h2lu1"]
+
+[node name="MeshToiletBrush" type="MeshInstance3D" unique_id=335104830]
+mesh = ExtResource("1_vlocg")
+surface_material_override/0 = ExtResource("2_h2lu1")

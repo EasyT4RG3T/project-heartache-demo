@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://qyxlek2xtqyf"]
+
+[ext_resource type="ArrayMesh" uid="uid://xkmig318g1uo" path="res://Assets/Assets/Furniture/Beds/DoubleDeckerBeds/DoubleDeckerBed01/DoubleDeckerBed01.obj" id="1_eurha"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_jsauk"]
+
+[node name="MeshDoubleDeckerBed01" type="MeshInstance3D" unique_id=1227467326]
+mesh = ExtResource("1_eurha")
+surface_material_override/0 = ExtResource("2_jsauk")
