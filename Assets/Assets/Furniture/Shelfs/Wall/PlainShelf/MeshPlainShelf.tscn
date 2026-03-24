@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dturjbtut5bdp"]
+
+[ext_resource type="ArrayMesh" uid="uid://bks1stmw7ersi" path="res://Assets/Assets/Furniture/Shelfs/Wall/PlainShelf/PlainShelf.obj" id="1_0jbp5"]
+[ext_resource type="Material" uid="uid://baxi6eor8uthd" path="res://Assets/Assets/Furniture/Shelfs/Wall/PlainShelf/PlainShelf.tres" id="2_d3838"]
+
+[node name="MeshPlainShelf" type="MeshInstance3D" unique_id=22062354]
+mesh = ExtResource("1_0jbp5")
+surface_material_override/0 = ExtResource("2_d3838")

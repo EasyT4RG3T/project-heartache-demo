@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwb3pe14auwf2"]
+
+[ext_resource type="ArrayMesh" uid="uid://cn5wrxtphjrks" path="res://Assets/Assets/Decorations/Wall/Hanger/Hanger.obj" id="1_wuwcq"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_d6n1b"]
+
+[node name="MeshHanger" type="MeshInstance3D" unique_id=1349992238]
+mesh = ExtResource("1_wuwcq")
+surface_material_override/0 = ExtResource("2_d6n1b")

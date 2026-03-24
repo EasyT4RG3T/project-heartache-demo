@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://mcsc6bvkg8kq"
+path.bptc="res://.godot/imported/corridor.exr-763249ffc27f4d09e2894f4f511a53b2.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Scenes/Maps/PrisonBlockLowSec/corridor.exr"
+dest_files=["res://.godot/imported/corridor.exr-763249ffc27f4d09e2894f4f511a53b2.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=8

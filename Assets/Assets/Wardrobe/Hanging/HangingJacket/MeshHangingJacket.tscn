@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ca80v0ubpxsrr"]
+
+[ext_resource type="ArrayMesh" uid="uid://llawbafqexj" path="res://Assets/Assets/Wardrobe/Hanging/HangingJacket/HangingJacket.obj" id="1_2ypiy"]
+[ext_resource type="Material" uid="uid://q12dt0ftyhej" path="res://Assets/Assets/Wardrobe/Hanging/HangingJacket/HangingJacket.tres" id="2_mhha7"]
+
+[node name="MeshHangingJacket" type="MeshInstance3D" unique_id=1156976586]
+mesh = ExtResource("1_2ypiy")
+surface_material_override/0 = ExtResource("2_mhha7")

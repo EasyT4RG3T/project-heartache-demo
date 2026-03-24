@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://iiu60kwdwa46"]
+
+[ext_resource type="PackedScene" uid="uid://bj7qws0552sqo" path="res://Assets/Maps/PrisonBlockLowSec/MeshBigCorridor.tscn" id="1_0ia5h"]
+[ext_resource type="ArrayMesh" uid="uid://cqu634o7ard3j" path="res://Assets/Maps/PrisonBlockLowSec/BigCorridor.obj" id="2_prh1o"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aa2hb"]
+data = PackedVector3Array(-11.4, 0, -2.1, -8.4, 0, -2.7, -8.4, 0, 0.29999998, -8.4, 0, -2.7, -11.4, 0, -5.1, -8.4, 0, -4.5, -11.4, 0, -2.1, -11.4, 0, -5.1, -8.4, 0, -2.7, -8.4, 0, -7.5, -8.4, 0, -4.5, -11.4, 0, -5.1, -14.4, 0, -2.1, -11.4, 0, -5.1, -11.4, 0, -2.1, -14.4, 0, -5.1, -11.4, 0, -5.1, -14.4, 0, -2.1, -8.4, 0, 0.29999998, -11.4, 0, 0.29999998, -11.4, 0, -2.1, -11.4, 0, -5.1, -11.4, 0, -7.5, -8.4, 0, -7.5)
+
+[node name="StaticBigCorridor" type="StaticBody3D" unique_id=235037294]
+
+[node name="MeshBigCorridor" type="MeshInstance3D" parent="." unique_id=1089606248 instance=ExtResource("1_0ia5h")]
+mesh = ExtResource("2_prh1o")
+
+[node name="@CollisionShape3D@24853" type="CollisionShape3D" parent="." unique_id=1693079058]
+shape = SubResource("ConcavePolygonShape3D_aa2hb")

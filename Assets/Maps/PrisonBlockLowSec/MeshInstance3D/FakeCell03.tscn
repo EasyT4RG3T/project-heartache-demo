@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dwkvyoaxem15g"]
-
-[ext_resource type="ArrayMesh" uid="uid://y5yn5q4x3xjk" path="res://Assets/Maps/PrisonBlockLowSec/FakeCell03.obj" id="1_vdvfc"]
-
-[node name="FakeCell03" type="MeshInstance3D" unique_id=844170827]
-mesh = ExtResource("1_vdvfc")

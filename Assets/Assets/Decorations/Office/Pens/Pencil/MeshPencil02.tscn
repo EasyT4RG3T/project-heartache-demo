@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dnyqpsrnagm53"]
+
+[ext_resource type="ArrayMesh" uid="uid://rifydxu2m4ke" path="res://Assets/Assets/Decorations/Office/Pens/Pencil/Pencil02.obj" id="1_t1w5p"]
+[ext_resource type="Material" uid="uid://c3v3ymjbxv7lp" path="res://Assets/Assets/Decorations/Office/Pens/Pencil/Pencil.tres" id="2_xxl5o"]
+
+[node name="MeshPencil02" type="MeshInstance3D" unique_id=498552408]
+mesh = ExtResource("1_t1w5p")
+surface_material_override/0 = ExtResource("2_xxl5o")

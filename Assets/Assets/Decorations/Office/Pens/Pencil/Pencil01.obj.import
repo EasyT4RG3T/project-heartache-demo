@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bp4c6bqthdlk4"
+path="res://.godot/imported/Pencil01.obj-e741f09fdd7c4579c09831f33d8129ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pencil01.obj-e741f09fdd7c4579c09831f33d8129ff.mesh"]
+
+source_file="res://Assets/Assets/Decorations/Office/Pens/Pencil/Pencil01.obj"
+dest_files=["res://.godot/imported/Pencil01.obj-e741f09fdd7c4579c09831f33d8129ff.mesh", "res://.godot/imported/Pencil01.obj-e741f09fdd7c4579c09831f33d8129ff.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

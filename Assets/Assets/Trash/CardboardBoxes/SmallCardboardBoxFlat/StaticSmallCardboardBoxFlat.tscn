@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://e4bp4jrxojl8"]
+
+[ext_resource type="PackedScene" uid="uid://cwxabc1gadk3f" path="res://Assets/Assets/Trash/CardboardBoxes/SmallCardboardBoxFlat/MeshSmallCardboardBoxFlat.tscn" id="1_3l1hm"]
+[ext_resource type="ArrayMesh" uid="uid://drqtqh42aeqj2" path="res://Assets/Assets/Trash/CardboardBoxes/SmallCardboardBoxFlat/SmallCardboardBoxFlat.obj" id="2_8yl6k"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nybic"]
+data = PackedVector3Array(-0.105, 0, -0.084, -0.105, 0.0827, 0.084, -0.105, 0, 0.084, -0.105, 0.0827, -0.084, -0.105, 0.0827, 0.084, -0.105, 0, -0.084, 0.105, 0, -0.084, -0.105, 0.0827, -0.084, -0.105, 0, -0.084, 0.105, 0.0827, -0.084, -0.105, 0.0827, -0.084, 0.105, 0, -0.084, 0.105, 0, 0.084, 0.105, 0.0827, -0.084, 0.105, 0, -0.084, 0.105, 0.0827, 0.084, 0.105, 0.0827, -0.084, 0.105, 0, 0.084, -0.105, 0, 0.084, 0.105, 0, -0.084, -0.105, 0, -0.084, 0.105, 0, 0.084, 0.105, 0, -0.084, -0.105, 0, 0.084, 0.105, 0.0827, 0.084, -0.105, 0.0827, -0.084, 0.105, 0.0827, -0.084, -0.105, 0.0827, 0.084, -0.105, 0.0827, -0.084, 0.105, 0.0827, 0.084, -0.105, 0, 0.084, 0.105, 0.0827, 0.084, 0.105, 0, 0.084, -0.105, 0.0827, 0.084, 0.105, 0.0827, 0.084, -0.105, 0, 0.084)
+
+[node name="StaticSmallCardboardBoxFlat" type="StaticBody3D" unique_id=271294518]
+
+[node name="MeshSmallCardboardBoxFlat" type="MeshInstance3D" parent="." unique_id=77054897 instance=ExtResource("1_3l1hm")]
+mesh = ExtResource("2_8yl6k")
+
+[node name="@CollisionShape3D@25590" type="CollisionShape3D" parent="." unique_id=205964443]
+shape = SubResource("ConcavePolygonShape3D_nybic")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tw46kq8joxyq"]
+
+[ext_resource type="Texture2D" uid="uid://f7mifbwlo4qb" path="res://Assets/Assets/Wardrobe/Hanging/HangingCoat/HangingCoat_albedo.png" id="1_dcqn2"]
+
+[resource]
+albedo_texture = ExtResource("1_dcqn2")
+roughness = 0.7
+texture_filter = 2

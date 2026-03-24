@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b8tqovm146r7a"]
+
+[ext_resource type="ArrayMesh" uid="uid://dhdngbwjrlrw" path="res://Assets/Maps/PrisonBlockLowSec/Janitor.obj" id="1_hike5"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="2_q5b43"]
+
+[node name="MeshJanitor" type="MeshInstance3D" unique_id=1938766344]
+layers = 33
+mesh = ExtResource("1_hike5")
+surface_material_override/0 = ExtResource("2_q5b43")

@@ -45,6 +45,7 @@ func load_main_menu() -> void:
 	InputManager.player_character = null
 	
 	Game.clear()
+	AudioManager.clear()
 	
 	await get_tree().process_frame
 	
@@ -138,6 +139,7 @@ func apply_graphics_settings_data() -> void:
 
 func new_game() -> void:
 	Game.clear()
+	AudioManager.clear()
 	
 	await get_tree().process_frame
 	
@@ -162,6 +164,7 @@ func load_save(file: Dictionary) -> void:
 	InputManager.player_character_input = false
 	
 	Game.clear()
+	AudioManager.clear()
 	
 	await get_tree().process_frame
 	

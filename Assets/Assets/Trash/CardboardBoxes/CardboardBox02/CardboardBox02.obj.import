@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdb2jyu6vwkrj"
+path="res://.godot/imported/CardboardBox02.obj-9505d33582a14fa36b1f39ee3544745d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CardboardBox02.obj-9505d33582a14fa36b1f39ee3544745d.mesh"]
+
+source_file="res://Assets/Assets/Trash/CardboardBoxes/CardboardBox02/CardboardBox02.obj"
+dest_files=["res://.godot/imported/CardboardBox02.obj-9505d33582a14fa36b1f39ee3544745d.mesh", "res://.godot/imported/CardboardBox02.obj-9505d33582a14fa36b1f39ee3544745d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

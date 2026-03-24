@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhrjreeee3bht"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_luw0g"]
+[ext_resource type="PackedScene" uid="uid://dnyqpsrnagm53" path="res://Assets/Assets/Decorations/Office/Pens/Pencil/MeshPencil02.tscn" id="2_68ebl"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sf1qi"]
+points = PackedVector3Array(0, 0.056098334, 0.009315, 0.008067, 0.056098334, 0.004655676, 0, 0.09, 0, -0.008067, 0.056098334, 0.004655676, 0, -0.008336, 0.009315, 0.008067, -0.008336, 0.004655676, 0.008067, 0.056098334, -0.0046575, 0, 0.056098334, -0.009315, -0.008067, 0.056098334, -0.0046575, -0.008067, -0.008336, 0.004655676, 0.008067, -0.008336, -0.0046575, 0, -0.008336, -0.009315, -0.008067, -0.008336, -0.0046575)
+
+[node name="DynamicPencil02" type="RigidBody3D" unique_id=370685073]
+mass = 0.03
+continuous_cd = true
+script = ExtResource("1_luw0g")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshPencil02" parent="." unique_id=498552408 instance=ExtResource("2_68ebl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03397546, 0)
+gi_mode = 2
+
+[node name="@CollisionShape3D@36841" type="CollisionShape3D" parent="." unique_id=807581427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03397546, 0)
+shape = SubResource("ConvexPolygonShape3D_sf1qi")

@@ -8,7 +8,6 @@ var reflection_update: Timer = Timer.new()
 enum Event { INIT, SETUP, TRIGGER, DISABLE }
 
 var key_event_happened: bool = false
-var double_bed_event_happened: bool = false
 var toilet_paper_event_happened: bool = false
 var picture_event_happened: bool = false
 
@@ -32,10 +31,53 @@ func _ready() -> void:
 
 
 func first_setup() -> void:
-	double_bed_event(Event.SETUP)
 	toilet_paper_event(Event.SETUP)
 	picture_event(Event.SETUP)
 	key_event(Event.INIT)
+
+
+var cooldown: float = 0.0
+func _physics_process(delta: float) -> void:
+	cooldown += delta
+	if cooldown < 0.1:
+		return
+	else:
+		cooldown = 0.0
+	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.out_of_area:
+		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.disabled:
+			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.disabled = false
+		else:
+			var rand: int = randi_range(1, 3)
+			if rand == 3:
+				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.disabled = true
+	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.out_of_area:
+		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.disabled:
+			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.disabled = false
+		else:
+			var rand: int = randi_range(1, 3)
+			if rand == 3:
+				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.disabled = true
+	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.out_of_area:
+		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.disabled:
+			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.disabled = false
+		else:
+			var rand: int = randi_range(1, 3)
+			if rand == 3:
+				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.disabled = true
+	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.out_of_area:
+		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.disabled:
+			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.disabled = false
+		else:
+			var rand: int = randi_range(1, 3)
+			if rand == 3:
+				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.disabled = true
+	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.out_of_area:
+		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.disabled:
+			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.disabled = false
+		else:
+			var rand: int = randi_range(1, 3)
+			if rand == 3:
+				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.disabled = true
 
 
 func animation_signal(animation: String) -> void:
@@ -43,28 +85,15 @@ func animation_signal(animation: String) -> void:
 		"WakeUp01":
 			AudioManager.play_uid_sound("SFX", "uid://brc4swaa4mfyk", 0.0, 1.0)
 		"WakeUp02":
-			Game.character_say(
-				PlayerHUD.Characters.PLAYER,
-				"It's that nightmare again.",
-				4
-			)
+			pass
 		"WakeUp03":
 			AudioManager.play_uid_sound("SFX", "uid://lt1hxj2141l1", -4.0, 0.9)
 		"WakeUp04":
 			AudioManager.play_uid_sound("SFX", "uid://lt1hxj2141l1", -4.0, 0.85)
 		"PictureInspect01":
-			GameManager.player_character.player_hud.add_dialogue(
-				PlayerHUD.Characters.PLAYER,
-				"My parents.",
-				1.5
-			)
 			AudioManager.play_uid_sound("SFX", "uid://qh1cl6auhn2b", -5.0, 0.8)
 		"PictureInspect02":
-			GameManager.player_character.player_hud.add_dialogue(
-				PlayerHUD.Characters.PLAYER,
-				"I don't really remember them.",
-				4.0
-			)
+			pass
 		"PictureInspect03":
 			%PictureSpotLight.hide()
 			AudioManager.play_uid_sound("SFX", "uid://bcaovrflj7lr2", -10.0, 0.8)
@@ -74,25 +103,6 @@ func animation_signal(animation: String) -> void:
 		"KeyPickUp02":
 			%KeyEvent.queue_free()
 			%Cell01DoorHinge3D.force_open(1)
-
-
-func double_bed_event(event: Event) -> void:
-	match event:
-		Event.SETUP:
-			%DoubleBedEvent.center_entered.connect(double_bed_event.bind(Event.TRIGGER))
-		Event.TRIGGER:
-			get_tree().create_timer(0.5).timeout.connect(func():
-				Game.character_say(PlayerHUD.Characters.PLAYER, "He's gone...", 2.5))
-			var look_cut: LookCutscene = LookCutscene.new()
-			add_child(look_cut)
-			look_cut.look(%DoubleBedEvent.global_position, 1.0, 3.0)
-			look_cut.animation_finished.connect(func():
-				double_bed_event_happened = true
-				look_cut.queue_free(),
-				CONNECT_ONE_SHOT)
-			double_bed_event(Event.DISABLE)
-		Event.DISABLE:
-			%DoubleBedEvent.disabled = true
 
 
 func toilet_paper_event(event: Event) -> void:
@@ -164,7 +174,6 @@ func key_event(event: Event) -> void:
 func save() -> Dictionary:
 	var data: Dictionary = {
 		"key_event_happened": key_event_happened,
-		"double_bed_event_happened": double_bed_event_happened,
 		"toilet_paper_event_happened": toilet_paper_event_happened,
 		"picture_event_happened": picture_event_happened,
 	}
@@ -173,14 +182,11 @@ func save() -> Dictionary:
 
 func load_save(data: Dictionary) -> void:
 	key_event_happened = data["key_event_happened"]
-	double_bed_event_happened = data["double_bed_event_happened"]
-	if !double_bed_event_happened:
-		double_bed_event(Event.SETUP)
 	toilet_paper_event_happened = data["toilet_paper_event_happened"]
 	if !toilet_paper_event_happened:
 		toilet_paper_event(Event.SETUP)
 	picture_event_happened = data["picture_event_happened"]
 	if !picture_event_happened:
 		picture_event(Event.SETUP)
-	else:
+	elif !key_event_happened:
 		key_event(Event.SETUP)

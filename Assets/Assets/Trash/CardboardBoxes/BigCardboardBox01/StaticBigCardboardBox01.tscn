@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bij6a6itenjlr"]
+
+[ext_resource type="PackedScene" uid="uid://xaowplr7rgal" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/MeshBigCardboardBox01.tscn" id="1_byxfc"]
+[ext_resource type="ArrayMesh" uid="uid://c4fhx7d2e6hqb" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/BigCardboardBox01.obj" id="2_1y8f4"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3q1ou"]
+data = PackedVector3Array(-0.19999999, 0, -0.19999999, -0.19999999, 0.39999998, 0.19999999, -0.19999999, 0, 0.19999999, -0.19999999, 0.39999998, -0.19999999, -0.19999999, 0.39999998, 0.19999999, -0.19999999, 0, -0.19999999, 0.19999999, 0, -0.19999999, -0.19999999, 0.39999998, -0.19999999, -0.19999999, 0, -0.19999999, 0.19999999, 0.39999998, -0.19999999, -0.19999999, 0.39999998, -0.19999999, 0.19999999, 0, -0.19999999, 0.19999999, 0, 0.19999999, 0.19999999, 0.39999998, -0.19999999, 0.19999999, 0, -0.19999999, 0.19999999, 0.39999998, 0.19999999, 0.19999999, 0.39999998, -0.19999999, 0.19999999, 0, 0.19999999, -0.19999999, 0, 0.19999999, 0.19999999, 0.39999998, 0.19999999, 0.19999999, 0, 0.19999999, -0.19999999, 0.39999998, 0.19999999, 0.19999999, 0.39999998, 0.19999999, -0.19999999, 0, 0.19999999, -0.19999999, 0, 0.19999999, 0.19999999, 0, -0.19999999, -0.19999999, 0, -0.19999999, 0.19999999, 0, 0.19999999, 0.19999999, 0, -0.19999999, -0.19999999, 0, 0.19999999, 0.19999999, 0.39999998, 0.19999999, -0.19999999, 0.39999998, -0.19999999, 0.19999999, 0.39999998, -0.19999999, -0.19999999, 0.39999998, 0.19999999, -0.19999999, 0.39999998, -0.19999999, 0.19999999, 0.39999998, 0.19999999)
+
+[node name="StaticBigCardboardBox01" type="StaticBody3D" unique_id=1121094488]
+
+[node name="MeshBigCardboardBox01" type="MeshInstance3D" parent="." unique_id=483634429 instance=ExtResource("1_byxfc")]
+mesh = ExtResource("2_1y8f4")
+
+[node name="@CollisionShape3D@25574" type="CollisionShape3D" parent="." unique_id=497646717]
+shape = SubResource("ConcavePolygonShape3D_3q1ou")

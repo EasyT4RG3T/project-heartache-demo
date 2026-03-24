@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bjsuajn42qqxj"]
-
-[ext_resource type="ArrayMesh" uid="uid://ccsoypx2cgymp" path="res://Assets/Assets/Decorations/Photos/StickyNotes/StickyNote02.obj" id="1_3rnyg"]
-
-[node name="MeshStickyNote02" type="MeshInstance3D" unique_id=1612883042]
-mesh = ExtResource("1_3rnyg")

@@ -267,6 +267,10 @@ var command_tree: Dictionary = {
 		"sensitivity": [_command_settings_sensitivity, _need_float, func():
 			return SaverLoader.settings.sensitivity],
 		"hud_size": [_command_settings_hud_size, _need_float, func(): return SaverLoader.settings.hud_size],
+		"subtitles": {
+			"on": [_command_settings_subtitles, true],
+			"off": [_command_settings_subtitles, false],
+		},
 	},
 	"graphics": {
 		"save": _command_graphics_save,
@@ -707,6 +711,24 @@ func _command_settings_hud_size(value: float) -> String:
 	if GameManager.player_character:
 		GameManager.player_character.player_hud.apply_settings()
 	return "set hud size to " + str(value)
+
+func _command_settings_static_shader(value: bool) -> String:
+	SaverLoader.settings.static_shader = value
+	if GameManager.player_character:
+		GameManager.player_character.shader.material.set_shader_parameter("static_enabled", value)
+	return "set static shader to " + str(value)
+
+func _command_settings_head_bob(value: bool) -> String:
+	SaverLoader.settings.head_bob = value
+	if GameManager.player_character:
+		GameManager.player_character.do_bob = value
+	return "set head bob to " + str(value)
+
+func _command_settings_subtitles(value: bool) -> String:
+	SaverLoader.settings.subtitles = value
+	if GameManager.player_character:
+		GameManager.player_character.player_hud.apply_settings()
+	return "set subtitles to " + str(value)
 
 func _command_graphics_save() -> String:
 	SaverLoader.save_graphics_settings()
@@ -1253,19 +1275,24 @@ func _command_player_fly() -> String:
 		return "[color=red]couldn't find player[/color]"
 	
 	if player.current_movement_mode != player.MovementMode.FLY:
-		player.body_collision.disabled = true
-		player.head_collision.disabled = true
+		player.collision_mask = 0
+		#player.body_collision.disabled = true
+		#player.head_collision.disabled = true
 		player.pre_fly_movement_mode = player.current_movement_mode
 		player.pre_fly_movement_speed = player.current_movement_speed
 		player.current_movement_mode = player.MovementMode.FLY
 		player.current_movement_speed = player.movement_speeds[player.MovementMode.FLY]
 		return "set player movement mode to fly"
-	elif player.body_collision.disabled == false:
-		player.body_collision.disabled = true
-		player.head_collision.disabled = true
+	elif player.collision_mask == 131:
+	#elif player.body_collision.disabled == false:
+		player.collision_mask = 0
+		#player.body_collision.disabled = true
+		#player.head_collision.disabled = true
 		return "disabled fly collision"
 	else:
-		player.body_collision.disabled = false
+		player.collision_mask = 131
+		#player.body_collision.disabled = false
+		#player.head_collision.disabled = false
 		player.current_movement_mode = player.pre_fly_movement_mode
 		player.current_movement_speed = player.pre_fly_movement_speed
 		return "set player movement mode back from fly"
@@ -1281,9 +1308,11 @@ func _command_player_fly_collision() -> String:
 		player.current_movement_mode = player.MovementMode.FLY
 		player.current_movement_speed = player.movement_speeds[player.MovementMode.FLY]
 		return "set player movement mode to fly with collision"
-	elif player.body_collision.disabled == true:
-		player.body_collision.disabled = false
-		player.head_collision.disabled = false
+	elif player.collision_mask == 0:
+	#elif player.body_collision.disabled == true:
+		player.collision_mask = 131
+		#player.body_collision.disabled = false
+		#player.head_collision.disabled = false
 		return "enabled fly collision"
 	else:
 		player.current_movement_mode = player.pre_fly_movement_mode

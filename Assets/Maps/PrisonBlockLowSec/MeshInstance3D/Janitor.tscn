@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://ia4jk3evnw5n"]
-
-[ext_resource type="ArrayMesh" uid="uid://dhdngbwjrlrw" path="res://Assets/Maps/PrisonBlockLowSec/Janitor.obj" id="1_0g7iq"]
-
-[node name="Janitor" type="MeshInstance3D" unique_id=361007546]
-mesh = ExtResource("1_0g7iq")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dfe3ax0g3l1gp"]
+
+[ext_resource type="PackedScene" uid="uid://dturjbtut5bdp" path="res://Assets/Assets/Furniture/Shelfs/Wall/PlainShelf/MeshPlainShelf.tscn" id="1_1be6j"]
+[ext_resource type="ArrayMesh" uid="uid://bks1stmw7ersi" path="res://Assets/Assets/Furniture/Shelfs/Wall/PlainShelf/PlainShelf.obj" id="2_oawu6"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gv1qs"]
+data = PackedVector3Array(-0.5, 0, -0.099999994, -0.5, 0.03, 0.099999994, -0.5, 0, 0.099999994, -0.5, 0.03, -0.099999994, -0.5, 0.03, 0.099999994, -0.5, 0, -0.099999994, 0.5, 0, 0.099999994, 0.5, 0.03, -0.099999994, 0.5, 0, -0.099999994, 0.5, 0.03, 0.099999994, 0.5, 0.03, -0.099999994, 0.5, 0, 0.099999994, -0.5, 0, 0.099999994, 0.5, 0.03, 0.099999994, 0.5, 0, 0.099999994, -0.5, 0.03, 0.099999994, 0.5, 0.03, 0.099999994, -0.5, 0, 0.099999994, -0.5, 0, 0.099999994, 0.5, 0, -0.099999994, -0.5, 0, -0.099999994, 0.5, 0, 0.099999994, 0.5, 0, -0.099999994, -0.5, 0, 0.099999994, 0.5, 0.03, 0.099999994, -0.5, 0.03, -0.099999994, 0.5, 0.03, -0.099999994, -0.5, 0.03, 0.099999994, -0.5, 0.03, -0.099999994, 0.5, 0.03, 0.099999994)
+
+[node name="StaticPlainShelf" type="StaticBody3D" unique_id=2012598619]
+
+[node name="MeshPlainShelf" type="MeshInstance3D" parent="." unique_id=22062354 instance=ExtResource("1_1be6j")]
+mesh = ExtResource("2_oawu6")
+
+[node name="@CollisionShape3D@24313" type="CollisionShape3D" parent="." unique_id=669351715]
+shape = SubResource("ConcavePolygonShape3D_gv1qs")

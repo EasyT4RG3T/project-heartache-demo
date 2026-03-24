@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://sww3dskxnsh8"
+path="res://.godot/imported/BrokenBigCardboardBoxFlat02.obj-6afe5b17d30fe99c49248d948fddf332.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BrokenBigCardboardBoxFlat02.obj-6afe5b17d30fe99c49248d948fddf332.mesh"]
+
+source_file="res://Assets/Assets/Trash/CardboardBoxes/BrokenBigCardboardBoxFlat02/BrokenBigCardboardBoxFlat02.obj"
+dest_files=["res://.godot/imported/BrokenBigCardboardBoxFlat02.obj-6afe5b17d30fe99c49248d948fddf332.mesh", "res://.godot/imported/BrokenBigCardboardBoxFlat02.obj-6afe5b17d30fe99c49248d948fddf332.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

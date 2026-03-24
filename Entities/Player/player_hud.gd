@@ -17,6 +17,7 @@ extends Control
 enum Characters { CUSTOM, PLAYER, HARUKA }
 
 var hud_size: float = 1.0
+var subtitles: bool = true
 
 var default_crosshair_radius: float = 2.0:
 	set(value):
@@ -214,6 +215,7 @@ func _hide_thought(fade_out: float = 0.2) -> void:
 
 
 func add_dialogue(character: Characters, text: String, time: float = 0) -> RichTextLabel:
+	if !subtitles: return
 	var new_dialogue: RichTextLabel = RichTextLabel.new()
 	new_dialogue.bbcode_enabled = true
 	new_dialogue.fit_content = true
@@ -258,6 +260,7 @@ func remove_dialogue(dialogue: RichTextLabel) -> void:
 
 func apply_settings() -> void:
 	hud_size = SaverLoader.settings.hud_size
+	subtitles = SaverLoader.settings.subtitles
 	queue_redraw()
 	thought_label.offset_top = default_crosshair_radius + thought_text_offset * hud_size
 	var font_size = int(thought_text_size * hud_size)

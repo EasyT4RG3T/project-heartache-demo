@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cw5cq5yylyi0v"]
+
+[ext_resource type="PackedScene" uid="uid://rldbovk2cgct" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/MeshBigCardboardBoxFlat01.tscn" id="1_ep8xf"]
+[ext_resource type="ArrayMesh" uid="uid://co8a7me6yyonw" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/BigCardboardBoxFlat01.obj" id="2_g0s1v"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s26n4"]
+data = PackedVector3Array(-0.19999999, 0, -0.16, -0.19999999, 0.19999999, 0.16, -0.19999999, 0, 0.16, -0.19999999, 0.19999999, -0.16, -0.19999999, 0.19999999, 0.16, -0.19999999, 0, -0.16, 0.19999999, 0, -0.16, -0.19999999, 0.19999999, -0.16, -0.19999999, 0, -0.16, 0.19999999, 0.19999999, -0.16, -0.19999999, 0.19999999, -0.16, 0.19999999, 0, -0.16, 0.19999999, 0, 0.16, 0.19999999, 0.19999999, -0.16, 0.19999999, 0, -0.16, 0.19999999, 0.19999999, 0.16, 0.19999999, 0.19999999, -0.16, 0.19999999, 0, 0.16, -0.19999999, 0, 0.16, 0.19999999, 0.19999999, 0.16, 0.19999999, 0, 0.16, -0.19999999, 0.19999999, 0.16, 0.19999999, 0.19999999, 0.16, -0.19999999, 0, 0.16, -0.19999999, 0, 0.16, 0.19999999, 0, -0.16, -0.19999999, 0, -0.16, 0.19999999, 0, 0.16, 0.19999999, 0, -0.16, -0.19999999, 0, 0.16, 0.19999999, 0.19999999, 0.16, -0.19999999, 0.19999999, -0.16, 0.19999999, 0.19999999, -0.16, -0.19999999, 0.19999999, 0.16, -0.19999999, 0.19999999, -0.16, 0.19999999, 0.19999999, 0.16)
+
+[node name="StaticBigCardboardBoxFlat01" type="StaticBody3D" unique_id=1800840931]
+
+[node name="MeshBigCardboardBoxFlat01" type="MeshInstance3D" parent="." unique_id=1435062039 instance=ExtResource("1_ep8xf")]
+mesh = ExtResource("2_g0s1v")
+
+[node name="@CollisionShape3D@25576" type="CollisionShape3D" parent="." unique_id=1583813723]
+shape = SubResource("ConcavePolygonShape3D_s26n4")

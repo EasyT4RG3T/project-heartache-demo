@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cmkk7ts2ihsld"]
+
+[ext_resource type="ArrayMesh" uid="uid://doptirt1l5gnf" path="res://Assets/Assets/Lights/Wall/OpenSmallWallLight/OpenSmallWallLight.obj" id="1_leypg"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_uen1m"]
+[ext_resource type="Material" uid="uid://c3exb48g5dfjw" path="res://Assets/Materials/Light/Warm/WarmLight.tres" id="3_jbdnd"]
+
+[node name="MeshOpenSmallWallLight" type="MeshInstance3D" unique_id=551003114]
+layers = 8
+mesh = ExtResource("1_leypg")
+surface_material_override/0 = ExtResource("2_uen1m")
+surface_material_override/1 = ExtResource("3_jbdnd")

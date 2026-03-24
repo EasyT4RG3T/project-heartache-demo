@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dgrhclbqo243d"]
+
+[ext_resource type="ArrayMesh" uid="uid://db16nd8p84k3b" path="res://Assets/Maps/PrisonBlockLowSec/Corridor.obj" id="1_xpok7"]
+[ext_resource type="Material" uid="uid://41krkpsxqiid" path="res://Assets/Materials/Concrete/ConcreteTiles/ConcreteTiles.tres" id="2_7ww2b"]
+[ext_resource type="Material" uid="uid://tqnokcoc3b06" path="res://Assets/Materials/Bricks/GrayBricks/GrayBricks.tres" id="3_bll27"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="4_jvna0"]
+[ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="5_5qxu1"]
+
+[node name="MeshCorridor" type="MeshInstance3D" unique_id=1462976663]
+layers = 33
+mesh = ExtResource("1_xpok7")
+surface_material_override/0 = ExtResource("2_7ww2b")
+surface_material_override/1 = ExtResource("3_bll27")
+surface_material_override/2 = ExtResource("4_jvna0")
+surface_material_override/3 = ExtResource("5_5qxu1")

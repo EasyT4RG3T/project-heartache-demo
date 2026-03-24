@@ -4,6 +4,11 @@ extends Node
 var ambient_player: AudioStreamPlayer
 
 
+func clear() -> void:
+	if ambient_player.playing:
+		ambient_player.stop()
+
+
 func _ready() -> void:
 	ambient_player = AudioStreamPlayer.new()
 	add_child(ambient_player)

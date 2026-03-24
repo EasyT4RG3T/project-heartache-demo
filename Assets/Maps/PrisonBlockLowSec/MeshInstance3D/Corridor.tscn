@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dciio14f02h86"]
-
-[ext_resource type="ArrayMesh" uid="uid://db16nd8p84k3b" path="res://Assets/Maps/PrisonBlockLowSec/Corridor.obj" id="1_pnei6"]
-
-[node name="Corridor" type="MeshInstance3D" unique_id=2028724056]
-mesh = ExtResource("1_pnei6")

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsw2rmkd0a4vt"]
+
+[ext_resource type="Texture2D" uid="uid://ue37patup42c" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBox_albedo.png" id="1_3rpyn"]
+
+[resource]
+albedo_texture = ExtResource("1_3rpyn")
+texture_filter = 2

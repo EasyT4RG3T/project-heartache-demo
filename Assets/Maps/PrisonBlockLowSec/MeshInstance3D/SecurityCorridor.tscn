@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://b6yalyiyrsfin"]
-
-[ext_resource type="ArrayMesh" uid="uid://csaygi640oiwy" path="res://Assets/Maps/PrisonBlockLowSec/SecurityCorridor.obj" id="1_vt2do"]
-
-[node name="SecurityCorridor" type="MeshInstance3D" unique_id=1300467112]
-mesh = ExtResource("1_vt2do")

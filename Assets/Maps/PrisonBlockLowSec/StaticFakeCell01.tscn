@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cdiofejx0o00h"]
+
+[ext_resource type="PackedScene" uid="uid://cqyo6rsgnl2j2" path="res://Assets/Maps/PrisonBlockLowSec/MeshFakeCell01.tscn" id="1_5m8xm"]
+[ext_resource type="ArrayMesh" uid="uid://dnpl5oyjh66hb" path="res://Assets/Maps/PrisonBlockLowSec/FakeCell01.obj" id="2_b1ggx"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_83g3h"]
+data = PackedVector3Array(-3.6, 0, -2.7, -4.6, 0, -2.5, -4.6, 0, -2.7, -3.6, 0, -2.5, -4.6, 0, -2.5, -3.6, 0, -2.7, -2, 0, 1.5, -5, 0, -1.4, -2, 0, -0.79999995, -2, 0, 1.5, -5, 0, 1.5, -5, 0, -1.4, -2, 3, -0.79999995, -2, 0, 1.5, -2, 0, -0.79999995, -2, 3, 1.5, -2, 0, 1.5, -2, 3, -0.79999995, -5, 3, 1.5, -5, 0, -1.4, -5, 0, 1.5, -5, 3, -1.4, -5, 0, -1.4, -5, 3, 1.5, -5, 3, -2.5, -5, 0, -1.4, -5, 3, -1.4, -5, 0, -2.5, -5, 0, -1.4, -5, 3, -2.5, -2, 3, 1.5, -5, 0, 1.5, -2, 0, 1.5, -5, 3, 1.5, -5, 0, 1.5, -2, 3, 1.5, -3.6, 2, -2.7, -4.6, 2, -2.5, -3.6, 2, -2.5, -4.6, 2, -2.7, -4.6, 2, -2.5, -3.6, 2, -2.7, -3.6, 0, -2.7, -3.6, 2, -2.5, -3.6, 0, -2.5, -3.6, 2, -2.7, -3.6, 2, -2.5, -3.6, 0, -2.7, -4.6, 0, -2.5, -4.6, 2, -2.7, -4.6, 0, -2.7, -4.6, 2, -2.5, -4.6, 2, -2.7, -4.6, 0, -2.5, -3.1999998, 3, -2.5, -3.1999998, 0, -1.4, -3.1999998, 0, -2.5, -3.1999998, 3, -1.4, -3.1999998, 0, -1.4, -3.1999998, 3, -2.5, -5, 3, -1.4, -5, 3, 1.5, -2, 3, 1.5, -2, 3, 1.5, -2, 3, -0.79999995, -5, 3, -1.4, -3.1999998, 3, -1.4, -5, 3, -1.4, -2, 3, -0.79999995, -3.1999998, 3, -1.4, -3.1999998, 3, -2.5, -5, 3, -1.4, -5, 3, -1.4, -3.1999998, 3, -2.5, -5, 3, -2.5)
+
+[node name="StaticFakeCell01" type="StaticBody3D" unique_id=1732458505]
+
+[node name="MeshFakeCell01" type="MeshInstance3D" parent="." unique_id=1771773192 instance=ExtResource("1_5m8xm")]
+mesh = ExtResource("2_b1ggx")
+
+[node name="@CollisionShape3D@24858" type="CollisionShape3D" parent="." unique_id=1358302911]
+shape = SubResource("ConcavePolygonShape3D_83g3h")

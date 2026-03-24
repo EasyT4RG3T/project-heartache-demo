@@ -20,6 +20,8 @@ extends Resource
 
 @export var static_shader: bool = true
 
+@export var subtitles: bool = true
+
 
 ## Audio ##
 

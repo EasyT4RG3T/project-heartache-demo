@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bn17jlruiwqgi"]
+
+[ext_resource type="ArrayMesh" uid="uid://dxcfbcf0vcppr" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenSmallCardboardBoxFlat/BrokenSmallCardboardBoxFlat.obj" id="1_vewlv"]
+[ext_resource type="Material" uid="uid://bsw2rmkd0a4vt" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBox.tres" id="2_8thd2"]
+
+[node name="MeshBrokenSmallCardboardBoxFlat" type="MeshInstance3D" unique_id=2056137634]
+mesh = ExtResource("1_vewlv")
+surface_material_override/0 = ExtResource("2_8thd2")

@@ -14,7 +14,9 @@ func _init() -> void:
 	if Engine.is_editor_hint():
 		quality = LightmapGI.BAKE_QUALITY_HIGH
 		supersampling = true
+		directional = true
 		use_texture_for_bounces = false
+		interior = true
 		environment_mode = LightmapGI.ENVIRONMENT_MODE_DISABLED
 		generate_probes_subdiv = LightmapGI.GENERATE_PROBES_DISABLED
 		add_to_group("GlobalIllumination")
