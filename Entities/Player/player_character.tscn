@@ -26,6 +26,10 @@ shader_parameter/grain_intensity = 0.2
 shader_parameter/grain_blur_size = 5.0
 shader_parameter/static_enabled = true
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_seg3p"]
+radius = 0.25
+height = 0.6
+
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=765852671 groups=["PlayerCharacter", "Save"]]
 collision_layer = 8
 collision_mask = 131
@@ -49,7 +53,7 @@ shape = SubResource("SphereShape3D_3xgjn")
 
 [node name="Head" type="Node3D" parent="." unique_id=1612740848]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="RaytracedAudioListener" type="AudioListener3D" parent="Head" unique_id=1307621807]
 unique_name_in_owner = true
@@ -123,7 +127,7 @@ render_target_update_mode = 4
 
 [node name="InventoryCamera" type="Camera3D" parent="Head/MainCamera/InventorySubViewportContainer/InventorySubViewport" unique_id=1668812067]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 cull_mask = 2
 environment = ExtResource("7_4rt0j")
 fov = 60.0
@@ -131,3 +135,7 @@ far = 1.0
 
 [node name="DustParticles" parent="Head/MainCamera" unique_id=1570257191 instance=ExtResource("6_d821y")]
 unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=688524617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CapsuleShape3D_seg3p")

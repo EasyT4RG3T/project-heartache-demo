@@ -23,9 +23,9 @@ func _ready() -> void:
 	var nudge: bool = false
 	reflection_update.timeout.connect(func():
 		if nudge:
-			$ReflectionProbe2.global_position.y += 0.0001
+			$Cell01/ReflectionProbe2.global_position.y += 0.0001
 		else:
-			$ReflectionProbe2.global_position.y -= 0.0001
+			$Cell01/ReflectionProbe2.global_position.y -= 0.0001
 		reflection_update.start(0.5))
 	reflection_update.start(0.5)
 

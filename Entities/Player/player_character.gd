@@ -38,9 +38,9 @@ var crawl_debug: bool = false:
 var d_crouch_query = MeshInstance3D
 var d_crawl_query = MeshInstance3D
 
-const player_head_position: Vector3 = Vector3(0, 1.7, 0)
-const player_crouch_head_position: Vector3 = Vector3(0, 0.7, 0)
-const player_crawl_head_position: Vector3 = Vector3(0, 0.4, 0)
+const player_head_position: Vector3 = Vector3(0, 1.6, 0)
+const player_crouch_head_position: Vector3 = Vector3(0, 0.6, 0)
+const player_crawl_head_position: Vector3 = Vector3(0, 0.3, 0)
 
 var direct_space_state: PhysicsDirectSpaceState3D
 var player_shape_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.25, 1.8)
@@ -51,7 +51,7 @@ var player_crawl_ceiling_query: PhysicsRayQueryParameters3D = PhysicsRayQueryPar
 
 @onready var body_collision: CollisionShape3D = %BodyCollision
 @onready var head_collision: CollisionShape3D = %HeadCollision
-const head_collision_position: Vector3 = Vector3(0, -0.15, 0)
+const head_collision_position: Vector3 = Vector3(0, -0.05, 0)
 @onready var head: Node3D = %Head
 var head_tween: Tween
 func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Callable()) -> void:
@@ -96,6 +96,7 @@ var do_bob: bool = true:
 		do_bob = value
 		if !value:
 			main_camera.position = Vector3.ZERO
+var bob_halftime: bool = false
 var bob_time: float = 0.0
 var bob_speed: float = 0.8
 
@@ -127,7 +128,7 @@ var pre_fly_movement_mode: MovementMode = MovementMode.WALKING
 var pre_fly_movement_speed: float = movement_speeds[MovementMode.WALKING]
 
 var last_pos: Vector3 = Vector3.ZERO
-var footstep_time: float = 0.0
+var was_on_ground: bool = false
 
 const FAST_FOOTSTEP_01 = preload("uid://bj2u5uymwqsxx")
 const FAST_FOOTSTEP_02 = preload("uid://bua6s2wd6n8ke")
@@ -196,6 +197,7 @@ var can_vault: bool = false:
 			player_hud.vault = false
 			#_raise_hands(false)
 var player_tween: Tween
+var tilt_tween: Tween
 
 var interactable: Interactable:
 	set(value):
@@ -432,7 +434,6 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 			var main_camera_tween: Tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 			main_camera_tween.tween_property(main_camera, "position", Vector3.ZERO, 0.2)
 			bob_time = 0
-			footstep_time = 0
 
 
 func exit_movement_mode(mode: MovementMode) -> void:
@@ -445,6 +446,7 @@ func exit_movement_mode(mode: MovementMode) -> void:
 			body_collision.shape.radius = 0.25
 		MovementMode.VAULTING:
 			body_collision.disabled = false
+			was_on_ground = false
 
 
 func change_movement_speed(speed: float) -> void:
@@ -530,23 +532,28 @@ func _on_ground_movement(delta: float) -> void:
 		_step_check()
 		
 		var distance_delta: float = (global_position - last_pos).length()
-		footstep_time += distance_delta * bob_speed * ((abs(main_camera.position.x) + 1.0) * 4)
-		if footstep_time >= PI:
-			AudioManager.play_sound("SFX", current_footsteps.pick_random())
-			footstep_time = 0
-		
+		if !was_on_ground: distance_delta = 0.0
 		last_pos = global_position
 		bob_time += distance_delta * bob_speed * ((abs(main_camera.position.x) + 1.0) * 4)
+		if bob_time >= PI and !bob_halftime:
+			AudioManager.play_sound("SFX", current_footsteps.pick_random())
+			bob_halftime = true
 		if bob_time >= TAU:
 			bob_time = 0
+			AudioManager.play_sound("SFX", current_footsteps.pick_random())
+			bob_halftime = false
 		var side_bob: float = lerpf(-0.05, 0.05, ((sin(bob_time) + 1) / 2.0))
 		var down_bob: float = lerpf(0, -0.02, sin(bob_time * 2))
 		
 		if do_bob:
 			main_camera.position.x = side_bob
 			main_camera.position.y = down_bob
+		
+		was_on_ground = true
 	else:
 		_gravity(delta)
+		
+		was_on_ground = false
 	move_and_slide()
 
 
@@ -705,22 +712,36 @@ func _vault_check() -> void:
 
 
 func _vault() -> void:
-	var pre_vault_movement_mode = current_movement_mode
+	var pre_vault_movement_mode: MovementMode = current_movement_mode
+	var vault_height: float = vault_position.y - global_position.y
+	var duration: float = 0.4 if vault_height < 1.0 else 0.8
+	var tilt: float = 0.01 if (vault_position - global_position).dot(head.global_basis.x) < 0 else -0.01
+	
+	if tilt_tween:
+		tilt_tween.kill()
+		main_camera.rotation.z = 0.0
+	tilt_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_parallel()
+	tilt_tween.tween_method(main_camera.rotate_z, main_camera.rotation.z, tilt, 0.2)
+	tilt_tween.chain().tween_method(main_camera.rotate_z, main_camera.rotation.z, -tilt, 0.2)
+	if vault_height > 1.0:
+		tilt_tween.chain().tween_method(main_camera.rotate_z, main_camera.rotation.z, -tilt, 0.2)
+		tilt_tween.chain().tween_method(main_camera.rotate_z, main_camera.rotation.z, tilt, 0.2)
+	
 	if current_movement_mode != MovementMode.CROUCHING or vault_checks.vault_uncrouch_height == Vector3.ZERO:
 		change_movement_mode(MovementMode.VAULTING)
-		_move_player_smooth(vault_position, 0.4, func():
+		_move_player_smooth(vault_position, duration, func():
 			change_movement_mode(pre_vault_movement_mode))
 		return
 	
 	change_movement_mode(MovementMode.VAULTING, false)
 	if vault_checks.vault_crouch_mid == Vector3.ZERO:
 		_move_player_smooth(global_position + vault_checks.vault_uncrouch_height, 0.2, func():
-			_move_player_smooth(vault_position, 0.4, func():
+			_move_player_smooth(vault_position, duration, func():
 				change_movement_mode(pre_vault_movement_mode)))
 		return
 	
 	_move_player_smooth(global_position + vault_checks.vault_uncrouch_height, 0.2, func():
-		_move_player_smooth(vault_checks.vault_crouch_mid, 0.4, func():
+		_move_player_smooth(vault_checks.vault_crouch_mid, duration, func():
 			_move_player_smooth(vault_position, 0.2, func():
 				change_movement_mode(pre_vault_movement_mode))))
 

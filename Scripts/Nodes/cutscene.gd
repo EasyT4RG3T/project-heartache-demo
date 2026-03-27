@@ -73,7 +73,7 @@ func _exit_anim(anim_name: StringName) -> void:
 	var last_rot_key = get_animation(anim_name).track_get_key_count(1) - 1
 	match setup[anim_name]["ExitMode"]:
 		PlayerCharacter.MovementMode.WALKING:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.7, 0)
+			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.6, 0)
 			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
 			player.current_movement_speed = player.movement_speeds[player.MovementMode.WALKING]
 			player._change_fov_smooth(player.player_fov, 0.5)
@@ -82,7 +82,7 @@ func _exit_anim(anim_name: StringName) -> void:
 			player.vault_checks.vault_distance = player.vault_checks.vault_distances[player.MovementMode.WALKING]
 			player.head.position = player.player_head_position
 		PlayerCharacter.MovementMode.SPRINTING:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.7, 0)
+			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.6, 0)
 			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
 			player.current_movement_speed = player.movement_speeds[player.MovementMode.SPRINTING]
 			player._change_fov_smooth(player.player_fov + 10, 0.5)
@@ -91,7 +91,7 @@ func _exit_anim(anim_name: StringName) -> void:
 			player.vault_checks.vault_distance = player.vault_checks.vault_distances[player.MovementMode.SPRINTING]
 			player.head.position = player.player_head_position
 		PlayerCharacter.MovementMode.CROUCHING:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 0.7, 0)
+			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 0.6, 0)
 			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
 			player.current_movement_speed = player.movement_speeds[player.MovementMode.CROUCHING]
 			player._change_fov_smooth(player.player_fov - 10, 0.5)
@@ -100,7 +100,7 @@ func _exit_anim(anim_name: StringName) -> void:
 			player.vault_checks.vault_distance = player.vault_checks.vault_distances[player.MovementMode.CROUCHING]
 			player.head.position = player.player_crouch_head_position
 		PlayerCharacter.MovementMode.CRAWL:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 0.4, 0)
+			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 0.3, 0)
 			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
 			player.current_movement_speed = player.movement_speeds[player.MovementMode.CRAWL]
 			player._change_fov_smooth(player.player_fov - 20, 0.5)

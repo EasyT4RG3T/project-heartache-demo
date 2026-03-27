@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://iw6q1cfqjafk" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.gd" id="1_ndu8s"]
 [ext_resource type="ArrayOccluder3D" uid="uid://jky03lonjbcn" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.occ" id="2_asgqg"]
 [ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="3_lsyox"]
-[ext_resource type="LightmapGIData" uid="uid://c58vgi7mt5473" path="res://Scenes/Maps/PrisonBlockLowSec/cell_01.lmbake" id="4_5iag7"]
+[ext_resource type="LightmapGIData" uid="uid://c58vgi7mt5473" path="res://Scenes/Maps/PrisonBlockLowSec/Cell01/cell_01.lmbake" id="4_5iag7"]
 [ext_resource type="PackedScene" uid="uid://iiu60kwdwa46" path="res://Assets/Maps/PrisonBlockLowSec/StaticBigCorridor.tscn" id="5_2b7ak"]
 [ext_resource type="Material" uid="uid://dysdim7lyvac" path="res://Assets/Materials/Water/StillWater/StillWater.tres" id="6_g4ibd"]
 [ext_resource type="PackedScene" uid="uid://cj4h1gol5tkgv" path="res://Assets/Maps/PrisonBlockLowSec/StaticCell01.tscn" id="6_qouf5"]
@@ -121,7 +121,7 @@
 [ext_resource type="PackedScene" uid="uid://bctu1ah3ype80" path="res://Assets/Assets/Trash/Cigarettes/MeshCigarette01.tscn" id="111_an5o7"]
 [ext_resource type="PackedScene" uid="uid://wsok11ohrvww" path="res://Assets/Maps/PrisonBlockLowSec/StaticCell02.tscn" id="116_oxlnu"]
 [ext_resource type="PackedScene" uid="uid://cw6tvx884jcdo" path="res://Assets/Maps/PrisonBlockLowSec/StaticCorridor.tscn" id="117_5iag7"]
-[ext_resource type="LightmapGIData" uid="uid://txvispabyajw" path="res://Scenes/Maps/PrisonBlockLowSec/corridor.lmbake" id="117_8yman"]
+[ext_resource type="LightmapGIData" uid="uid://txvispabyajw" path="res://Scenes/Maps/PrisonBlockLowSec/Corridor/corridor.lmbake" id="117_8yman"]
 [ext_resource type="PackedScene" uid="uid://cdiofejx0o00h" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell01.tscn" id="123_8yman"]
 [ext_resource type="PackedScene" uid="uid://drxu3lcl7xmmw" path="res://Assets/Assets/Wardrobe/Hanging/HangingCoat/StaticHangingCoat.tscn" id="123_twglr"]
 [ext_resource type="PackedScene" uid="uid://bf5kqm6hb2ud5" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell02.tscn" id="124_ixvda"]
@@ -129,9 +129,12 @@
 [ext_resource type="PackedScene" uid="uid://tvy25silkecl" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell04.tscn" id="126_jcduw"]
 [ext_resource type="PackedScene" uid="uid://2pmyvk18ao51" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell05.tscn" id="127_v50d2"]
 [ext_resource type="PackedScene" uid="uid://vrmd7hqt8pjm" path="res://Assets/Maps/PrisonBlockLowSec/StaticJanitor.tscn" id="128_2ywr4"]
-[ext_resource type="LightmapGIData" uid="uid://d1ut2tigxj7te" path="res://Scenes/Maps/PrisonBlockLowSec/security_corridor.lmbake" id="129_oxlnu"]
+[ext_resource type="LightmapGIData" uid="uid://cj1576i33snjh" path="res://Scenes/Maps/PrisonBlockLowSec/Janitor/janitor.lmbake" id="129_7muf3"]
+[ext_resource type="LightmapGIData" uid="uid://d1ut2tigxj7te" path="res://Scenes/Maps/PrisonBlockLowSec/SecurityCorridor/security_corridor.lmbake" id="129_oxlnu"]
 [ext_resource type="PackedScene" uid="uid://dlhprli7bfhy6" path="res://Assets/Maps/PrisonBlockLowSec/StaticSecurityCorridor.tscn" id="129_rsf4b"]
 [ext_resource type="Material" uid="uid://ou4gywh8vxvk" path="res://Assets/Materials/Light/Red/RedLight.tres" id="130_qouf5"]
+[ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="130_rsf4b"]
+[ext_resource type="PackedScene" uid="uid://06ske2hi4t8b" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/MeshCeilingLightBulb.tscn" id="130_sr8rd"]
 [ext_resource type="PackedScene" uid="uid://cskkld4ieh0m8" path="res://Assets/Assets/Trash/CigaretteBoxes/MeshCigaretteBox01.tscn" id="133_jcduw"]
 [ext_resource type="PackedScene" uid="uid://boy6v8jnxejer" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenSmallCardboardPackage/MeshBrokenSmallCardboardPackage.tscn" id="134_v50d2"]
 [ext_resource type="PackedScene" uid="uid://ccgbie05hppbi" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenCardboardBoxFlat/MeshBrokenCardboardBoxFlat.tscn" id="135_2ywr4"]
@@ -172,6 +175,16 @@ data = PackedVector3Array(0.137, 0.024999999, -0.1398, -0.13849999, 0.0475, -0.1
 [sub_resource type="QuadMesh" id="QuadMesh_ni7vx"]
 size = Vector2(0.5, 0.5)
 
+[sub_resource type="QuadMesh" id="QuadMesh_snto7"]
+size = Vector2(0.4, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni7vx"]
+metallic = 0.9
+roughness = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_snto7"]
+size = Vector3(0.1, 0.42, 0.32)
+
 [sub_resource type="Animation" id="Animation_1mivf"]
 resource_name = "KeyPickUp"
 length = 8.5
@@ -185,7 +198,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.6666667, 1.0333333, 1.7, 2.67, 3.33, 3.957565, 7.6000004, 8.466666),
 "transitions": PackedFloat32Array(1, 1, 0.6830201, 1, 1, 1, 1, 3.605001, 3.605001, 0.784584),
 "update": 0,
-"values": [Vector3(-0.89930886, 0.8, -1.8039035), Vector3(-0.89930886, 0.8, -1.8039035), Vector3(-0.89930886, 0.7067769, -1.8510298), Vector3(-0.89930886, 0.71190417, -1.8484377), Vector3(-0.89930886, 0.8, -1.8039035), Vector3(-0.89930886, 1.61794, -1.8039035), Vector3(-0.89930886, 1.61794, -2.2877474), Vector3(-0.89930886, 1.61794, -2.2877474), Vector3(-0.89930886, 1.61794, -2.2877474), Vector3(-0.899, 1.7, -2.230815)]
+"values": [Vector3(-0.899, 0.7, -1.804), Vector3(-0.899, 0.7, -1.804), Vector3(-0.899, 0.607, -1.851), Vector3(-0.899, 0.612, -1.848), Vector3(-0.899, 0.7, -1.804), Vector3(-0.899, 1.518, -1.804), Vector3(-0.899, 1.518, -2.288), Vector3(-0.899, 1.518, -2.288), Vector3(-0.899, 1.518, -2.288), Vector3(-0.899, 1.6, -2.231)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -254,7 +267,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 1, 1.9333332, 2.6, 8.166667, 9),
 "transitions": PackedFloat32Array(1, 1.3660382, 0.81225246, 0.81225246, 1, 0.8122524, 1),
 "update": 0,
-"values": [Vector3(0.530036, 1.7, 0.5743648), Vector3(0.530036, 1.7, 0.5743648), Vector3(0.8018515, 1.1601182, 0.5849171), Vector3(0.8018515, 1.1601182, 0.5849171), Vector3(0.7748265, 1.1670029, 0.6736314), Vector3(0.7748265, 1.1670029, 0.6736314), Vector3(0.530036, 1.7, 0.5743648)]
+"values": [Vector3(0.53, 1.6, 0.574), Vector3(0.53, 1.6, 0.574), Vector3(0.802, 1.06, 0.585), Vector3(0.802, 1.06, 0.585), Vector3(0.775, 1.067, 0.674), Vector3(0.775, 1.067, 0.674), Vector3(0.53, 1.6, 0.574)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -401,7 +414,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3.0000002, 4, 5, 5.5000005, 6, 6.5, 7.0000005, 7.266667, 7.9999995),
 "transitions": PackedFloat32Array(1, 1, 2, 1, 1, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-0.81158847, 1.0998875, 0.88625884), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(0, 1.7, 0)]
+"values": [Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-0.81158847, 1.0998875, 0.88625884), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(0, 1.6, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -468,6 +481,17 @@ size = Vector3(5.967224, 2.883789, 5.9162292)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7k6yf"]
 size = Vector3(15.550629, 2.9033813, 1.7264404)
 
+[sub_resource type="QuadMesh" id="QuadMesh_sr8rd"]
+material = ExtResource("53_ni7vx")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2w77u"]
+size = Vector3(5, 3, 6)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7muf3"]
+material = ExtResource("53_ni7vx")
+size = Vector2(0.5, 0.5)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ywr4"]
 size = Vector3(9.3, 3, 4)
 
@@ -476,16 +500,6 @@ size = Vector3(2, 3, 4.7000003)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sr8rd"]
 size = Vector3(2, 3, 5.8)
-
-[sub_resource type="QuadMesh" id="QuadMesh_snto7"]
-size = Vector2(0.4, 0.3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni7vx"]
-metallic = 0.9
-roughness = 0.01
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_snto7"]
-size = Vector3(0.1, 0.42, 0.32)
 
 [node name="PrisonBlockLowSec" type="Node3D" unique_id=1311521136]
 script = ExtResource("1_ndu8s")
@@ -513,6 +527,29 @@ generate_probes_subdiv = 0
 light_data = ExtResource("4_5iag7")
 script = ExtResource("3_lsyox")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Cell01" unique_id=1678168926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29845527, 1.5002226, -0.5051857)
+blend_distance = 0.0
+max_distance = 4.0
+size = Vector3(3.016, 3.0267892, 4.011)
+box_projection = true
+interior = true
+enable_shadows = true
+cull_mask = 1048571
+reflection_mask = 1047553
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="Cell01" unique_id=2051936807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7567096, 1.6831172, -1.5156803)
+blend_distance = 0.0
+max_distance = 3.1
+size = Vector3(1.123, 1.381, 1.456)
+origin_offset = Vector3(0.511, -0.1, 0)
+box_projection = true
+interior = true
+enable_shadows = true
+cull_mask = 1048571
+reflection_mask = 1047568
 
 [node name="StaticCell01" parent="Cell01" unique_id=1889062747 instance=ExtResource("6_qouf5")]
 
@@ -1185,6 +1222,32 @@ metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 transform = Transform3D(-4.371139e-08, 1, -7.764702e-23, -1, -4.371139e-08, -1.7763568e-15, -1.7763568e-15, -6.3108872e-30, 1, -0.4879228, 0.12577742, -0.05955696)
 gi_mode = 2
 
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Cell01/Assets" unique_id=1958135691]
+layers = 4
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Cell01/Assets/CSGCombiner3D" unique_id=1080566879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1988544, 1.5360076, -1.5248443)
+size = Vector3(0.02, 0.42, 0.32)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Cell01/Assets/CSGCombiner3D" unique_id=2050533162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1952847, 1.5360076, -1.5248443)
+operation = 2
+size = Vector3(0.02, 0.4, 0.3)
+
+[node name="Mirror" type="MeshInstance3D" parent="Cell01/Assets/CSGCombiner3D" unique_id=2108800791]
+transform = Transform3D(-4.371139e-08, 4.371139e-08, -1, 1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 1.1988544, 1.5360076, -1.5248443)
+layers = 17
+mesh = SubResource("QuadMesh_snto7")
+surface_material_override/0 = SubResource("StandardMaterial3D_ni7vx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cell01/Assets/CSGCombiner3D" unique_id=889702111]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Assets/CSGCombiner3D/StaticBody3D" unique_id=1458180473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2246771, 1.5366523, -1.524549)
+shape = SubResource("BoxShape3D_snto7")
+
 [node name="Events" type="Node3D" parent="Cell01" unique_id=1640541678]
 
 [node name="Cutscenes" type="AnimationPlayer" parent="Cell01/Events" unique_id=500231388 node_paths=PackedStringArray("player_anim")]
@@ -1579,6 +1642,10 @@ transform = Transform3D(-0.9196022, 0, -0.39285082, 0, 1, 0, 0.39285082, 0, -0.9
 [node name="MeshCigarette03" parent="Corridor/Assets/Static" unique_id=1495048621 instance=ExtResource("100_ni7vx")]
 transform = Transform3D(0.99052626, 0, -0.13732353, 0, 1, 0, 0.13732353, 0, 0.99052626, 0.5803471, -2.9802322e-08, -2.9634697)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Corridor/Assets/Static" unique_id=769622922]
+transform = Transform3D(-0.7071068, -0.49999994, -0.49999997, -2.9802322e-08, 0.70710677, -0.7071067, 0.70710677, -0.5, -0.5000001, 2.8850377, 2.8379502, -2.94007)
+mesh = SubResource("QuadMesh_sr8rd")
+
 [node name="Dynamic" type="Node3D" parent="Corridor/Assets" unique_id=572334942]
 
 [node name="DynamicBottle01" parent="Corridor/Assets/Dynamic" unique_id=663455289 instance=ExtResource("31_h8gwk")]
@@ -1589,6 +1656,15 @@ transform = Transform3D(0.6765932, 0.7363569, 3.2187188e-08, 0, -4.371139e-08, 1
 
 [node name="DynamicBottle03" parent="Corridor/Assets/Dynamic" unique_id=1085364328 instance=ExtResource("31_h8gwk")]
 transform = Transform3D(-3.557327e-08, -0.8138215, -0.58111495, 1, -4.371139e-08, 0, -2.5401341e-08, -0.58111495, 0.8138215, -6.478538, 0.025309384, -2.8479795)
+
+[node name="Decals" type="Node3D" parent="Corridor/Assets" unique_id=951389717]
+
+[node name="Wall" type="Node3D" parent="Corridor/Assets/Decals" unique_id=573154079]
+
+[node name="Decal" type="Decal" parent="Corridor/Assets/Decals/Wall" unique_id=861257009]
+transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.821371e-15, 1, 4.371139e-08, -0.07929462, 2.0024726, -4.500155)
+size = Vector3(2, 0.001, 2)
+texture_albedo = ExtResource("77_j6lwy")
 
 [node name="FakeCell01" type="Node3D" parent="." unique_id=1074104884]
 
@@ -1736,9 +1812,92 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.18
 
 [node name="Janitor" type="Node3D" parent="." unique_id=778305958]
 
+[node name="DynamicLightmapGI" type="LightmapGI" parent="Janitor" unique_id=1643369631]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("129_7muf3")
+script = ExtResource("3_lsyox")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Janitor" unique_id=348483571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0031128, 1.5, -7.4097915)
+blend_distance = 0.0
+size = Vector3(2, 3, 3)
+box_projection = true
+interior = true
+enable_shadows = true
+
 [node name="StaticJanitor" parent="Janitor" unique_id=1851783736 instance=ExtResource("128_2ywr4")]
 
 [node name="Lights" type="Node3D" parent="Janitor" unique_id=1174905357]
+
+[node name="Static" type="Node3D" parent="Janitor/Lights" unique_id=597544987]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="Janitor/Lights/Static" unique_id=450795527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92899823, 2.708876, -7.227954)
+visible = false
+light_color = Color(1, 0.95, 0.85, 1)
+light_energy = 0.8
+light_bake_mode = 1
+light_cull_mask = 4294967287
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 1.0
+script = ExtResource("10_c5cvx")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Dynamic" type="Node3D" parent="Janitor/Lights" unique_id=711100386]
+
+[node name="Area3D" type="Area3D" parent="Janitor/Lights/Dynamic" unique_id=185920288]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Janitor/Lights/Dynamic/Area3D" unique_id=1020748260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5874765, 1.5, -7.902809)
+shape = SubResource("BoxShape3D_2w77u")
+
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="Janitor/Lights/Dynamic" unique_id=269617639 node_paths=PackedStringArray("area")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.92899823, 3.0318851, -7.227954)
+light_color = Color(1, 0.95, 0.85, 1)
+light_bake_mode = 0
+light_cull_mask = 4294967287
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 4.0
+shadow_blur = 1.25
+shadow_caster_mask = 4294967287
+distance_fade_enabled = true
+distance_fade_begin = 3.0
+distance_fade_shadow = 5.0
+distance_fade_length = 5.0
+spot_range = 4.0
+spot_angle = 80.0
+spot_angle_attenuation = 10.0
+script = ExtResource("11_gbybj")
+cull_distance = 3.0
+area = NodePath("../Area3D")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="MeshCeilingLightBulb" parent="Janitor/Lights" unique_id=913305178 instance=ExtResource("130_sr8rd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9277116, 2.7823782, -7.227833)
+
+[node name="Assets" type="Node3D" parent="Janitor" unique_id=286687251]
+
+[node name="Static" type="Node3D" parent="Janitor/Assets" unique_id=6721475]
+
+[node name="StaticIndustrialShelf" parent="Janitor/Assets/Static" unique_id=669091726 instance=ExtResource("130_rsf4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57143044, 2.3841858e-07, -6.104849)
+
+[node name="StaticIndustrialShelf2" parent="Janitor/Assets/Static" unique_id=1581627568 instance=ExtResource("130_rsf4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.453389, 2.3841858e-07, -6.104849)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Janitor/Assets/Static" unique_id=1602035219]
+transform = Transform3D(0.70710677, -0.49999988, 0.5, -2.0861626e-07, -0.7071069, -0.7071067, 0.7071067, 0.49999985, -0.50000006, -1.656575, 2.8311098, -6.1561713)
+mesh = SubResource("QuadMesh_7muf3")
 
 [node name="SecurityCorridor" type="Node3D" parent="." unique_id=1898180137]
 
@@ -2044,55 +2203,6 @@ size = Vector3(1.9172485, 3.1909423, 0.2)
 [node name="CSGBox3D" type="CSGBox3D" parent="BLOCKOUT" unique_id=1077477681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1, -4.6)
 size = Vector3(1, 2, 0.1)
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1678168926]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29845527, 1.5002226, -0.5051857)
-blend_distance = 0.0
-max_distance = 4.0
-size = Vector3(3.016, 3.0267892, 4.011)
-box_projection = true
-interior = true
-enable_shadows = true
-cull_mask = 1048571
-reflection_mask = 1047553
-
-[node name="ReflectionProbe2" type="ReflectionProbe" parent="." unique_id=2051936807]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7567096, 1.6831172, -1.5156803)
-blend_distance = 0.0
-max_distance = 3.1
-size = Vector3(1.123, 1.381, 1.456)
-origin_offset = Vector3(0.511, -0.1, 0)
-box_projection = true
-interior = true
-enable_shadows = true
-cull_mask = 1048571
-reflection_mask = 1047568
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1958135691]
-layers = 4
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1080566879]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1988544, 1.5360076, -1.5248443)
-size = Vector3(0.02, 0.42, 0.32)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2050533162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1952847, 1.5360076, -1.5248443)
-operation = 2
-size = Vector3(0.02, 0.4, 0.3)
-
-[node name="Mirror" type="MeshInstance3D" parent="CSGCombiner3D" unique_id=2108800791]
-transform = Transform3D(-4.371139e-08, 4.371139e-08, -1, 1, 1.9106855e-15, -4.371139e-08, 0, -1, -4.371139e-08, 1.1988544, 1.5360076, -1.5248443)
-layers = 17
-mesh = SubResource("QuadMesh_snto7")
-surface_material_override/0 = SubResource("StandardMaterial3D_ni7vx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="CSGCombiner3D" unique_id=889702111]
-collision_layer = 6
-collision_mask = 6
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCombiner3D/StaticBody3D" unique_id=1458180473]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2246771, 1.5366523, -1.524549)
-shape = SubResource("BoxShape3D_snto7")
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]

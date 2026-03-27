@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dudvk33mqsvr5"]
 
 [ext_resource type="ArrayMesh" uid="uid://bqrxtgm7q5c1" path="res://Assets/Assets/Kitchen/Utensils/PlasticKnife/PlasticKnife.obj" id="1_gic3s"]
-[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/WhitePlastic/WhitePlastic.tres" id="2_yy2nc"]
+[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_yy2nc"]
 
 [node name="MeshPlasticKnife" type="MeshInstance3D" unique_id=195707100]
 mesh = ExtResource("1_gic3s")

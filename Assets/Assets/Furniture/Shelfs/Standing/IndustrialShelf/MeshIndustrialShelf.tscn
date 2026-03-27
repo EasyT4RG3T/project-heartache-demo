@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dpjtjtvpmu0oj"]
+
+[ext_resource type="ArrayMesh" uid="uid://beffskcljgc8g" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/IndustrialShelf.obj" id="1_egjw5"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_it68d"]
+[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_mb0cx"]
+
+[node name="MeshIndustrialShelf" type="MeshInstance3D" unique_id=1784607283]
+mesh = ExtResource("1_egjw5")
+surface_material_override/0 = ExtResource("2_mb0cx")
+surface_material_override/1 = ExtResource("2_it68d")

@@ -2,8 +2,8 @@
 
 importer="2d_array_texture"
 type="CompressedTexture2DArray"
-uid="uid://dp8rfo851oni0"
-path.bptc="res://.godot/imported/security_corridor.exr-0116f87c2ab63dfb0bfba13ada13112d.bptc.ctexarray"
+uid="uid://cloiik0jt03r5"
+path.bptc="res://.godot/imported/cell_01.exr-9a3111cc8cc3c6452d0be99d59b79f81.bptc.ctexarray"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/Maps/PrisonBlockLowSec/security_corridor.exr"
-dest_files=["res://.godot/imported/security_corridor.exr-0116f87c2ab63dfb0bfba13ada13112d.bptc.ctexarray"]
+source_file="res://Scenes/Maps/PrisonBlockLowSec/Cell01/cell_01.exr"
+dest_files=["res://.godot/imported/cell_01.exr-9a3111cc8cc3c6452d0be99d59b79f81.bptc.ctexarray"]
 
 [params]
 
@@ -26,4 +26,4 @@ compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 slices/horizontal=1
-slices/vertical=8
+slices/vertical=24

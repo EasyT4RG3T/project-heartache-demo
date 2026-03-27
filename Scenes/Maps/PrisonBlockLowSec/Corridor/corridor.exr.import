@@ -3,7 +3,7 @@
 importer="2d_array_texture"
 type="CompressedTexture2DArray"
 uid="uid://mcsc6bvkg8kq"
-path.bptc="res://.godot/imported/corridor.exr-763249ffc27f4d09e2894f4f511a53b2.bptc.ctexarray"
+path.bptc="res://.godot/imported/corridor.exr-e7c8163e084111d9ee346d145f9703bc.bptc.ctexarray"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/Maps/PrisonBlockLowSec/corridor.exr"
-dest_files=["res://.godot/imported/corridor.exr-763249ffc27f4d09e2894f4f511a53b2.bptc.ctexarray"]
+source_file="res://Scenes/Maps/PrisonBlockLowSec/Corridor/corridor.exr"
+dest_files=["res://.godot/imported/corridor.exr-e7c8163e084111d9ee346d145f9703bc.bptc.ctexarray"]
 
 [params]
 

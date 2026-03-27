@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8tqovm146r7a"]
 
 [ext_resource type="ArrayMesh" uid="uid://dhdngbwjrlrw" path="res://Assets/Maps/PrisonBlockLowSec/Janitor.obj" id="1_hike5"]
-[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="2_q5b43"]
+[ext_resource type="Material" uid="uid://41krkpsxqiid" path="res://Assets/Materials/Concrete/ConcreteTiles/ConcreteTiles.tres" id="2_q5b43"]
 
 [node name="MeshJanitor" type="MeshInstance3D" unique_id=1938766344]
 layers = 33

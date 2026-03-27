@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgax6igwt415n"]
 
 [ext_resource type="ArrayMesh" uid="uid://0nnaw0opsmpe" path="res://Assets/Assets/Kitchen/Utensils/PlasticFork/PlasticFork.obj" id="1_hixsa"]
-[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/WhitePlastic/WhitePlastic.tres" id="2_nevcl"]
+[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_nevcl"]
 
 [node name="MeshPlasticFork" type="MeshInstance3D" unique_id=1345784651]
 mesh = ExtResource("1_hixsa")
