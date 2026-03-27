@@ -430,6 +430,7 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 			flashlight.turn_off()
 		MovementMode.VAULTING:
 			body_collision.disabled = true
+			InputManager.player_character_input = false
 		MovementMode.CUTSCENE:
 			var main_camera_tween: Tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 			main_camera_tween.tween_property(main_camera, "position", Vector3.ZERO, 0.2)
@@ -447,6 +448,7 @@ func exit_movement_mode(mode: MovementMode) -> void:
 		MovementMode.VAULTING:
 			body_collision.disabled = false
 			was_on_ground = false
+			InputManager.player_character_input = true
 
 
 func change_movement_speed(speed: float) -> void:
@@ -715,17 +717,23 @@ func _vault() -> void:
 	var pre_vault_movement_mode: MovementMode = current_movement_mode
 	var vault_height: float = vault_position.y - global_position.y
 	var duration: float = 0.4 if vault_height < 1.0 else 0.8
-	var tilt: float = 0.01 if (vault_position - global_position).dot(head.global_basis.x) < 0 else -0.01
+	var tilt: float = 0.05 if (vault_position - global_position).dot(head.global_basis.x) < 0 else -0.05
 	
 	if tilt_tween:
 		tilt_tween.kill()
 		main_camera.rotation.z = 0.0
+	
 	tilt_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_parallel()
-	tilt_tween.tween_method(main_camera.rotate_z, main_camera.rotation.z, tilt, 0.2)
-	tilt_tween.chain().tween_method(main_camera.rotate_z, main_camera.rotation.z, -tilt, 0.2)
-	if vault_height > 1.0:
-		tilt_tween.chain().tween_method(main_camera.rotate_z, main_camera.rotation.z, -tilt, 0.2)
-		tilt_tween.chain().tween_method(main_camera.rotate_z, main_camera.rotation.z, tilt, 0.2)
+	tilt_tween.set_ease(Tween.EASE_IN)
+	tilt_tween.tween_property(main_camera, "rotation:z", tilt, 0.2)
+	if vault_height <= 1.0:
+		tilt_tween.set_ease(Tween.EASE_OUT)
+		tilt_tween.chain().tween_property(main_camera, "rotation:z", 0, 0.2)
+	else:
+		tilt_tween.set_ease(Tween.EASE_OUT_IN)
+		tilt_tween.chain().tween_property(main_camera, "rotation:z", -tilt * 2, 0.4)
+		tilt_tween.set_ease(Tween.EASE_OUT)
+		tilt_tween.chain().tween_property(main_camera, "rotation:z", 0, 0.2)
 	
 	if current_movement_mode != MovementMode.CROUCHING or vault_checks.vault_uncrouch_height == Vector3.ZERO:
 		change_movement_mode(MovementMode.VAULTING)

@@ -608,7 +608,7 @@ var command_tree: Dictionary = {
 				return "0"],
 	},
 	"engine": {
-		"speed": [_command_engine_speed, _need_int, func(): return str(Engine.time_scale)],
+		"speed": [_command_engine_speed, _need_float, func(): return str(Engine.time_scale)],
 	},
 	"system": {
 		"quit": _command_system_quit,
@@ -1341,7 +1341,7 @@ func _command_player_tp(value: Vector3) -> String:
 	GameManager.player_character.global_position = value
 	return "teleported player to " + str(value)
 
-func _command_engine_speed(value: int) -> String:
+func _command_engine_speed(value: float) -> String:
 	Engine.time_scale = value
 	return "set engine speed to " + str(value)
 

@@ -77,8 +77,10 @@ var vault_check_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_
 var vault_check_query_position: Vector3 = Vector3(0, 0.685, 0)
 var vault_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var vault_height_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.25)
-var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.249)
-var vault_fit_query_position: Vector3 = Vector3(0, 1.55, 0)
+var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.249, 0.599)
+var vault_fit_query_position: Vector3 = Vector3(0, 1.5, 0)
+#var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.249)
+#var vault_fit_query_position: Vector3 = Vector3(0, 1.55, 0)
 var vault_fit_queary_mid_position: Vector3 = Vector3(0, 1.05, 0)
 var vault_fit_query_crouch_position: Vector3 = Vector3(0, 0.55, 0)
 
@@ -352,6 +354,16 @@ func _vault_end_point_final(point: Vector3) -> bool:
 		return false
 	
 	point = _vault_height_adjust(point)
+	
+	var vault_direction: Vector2 = Vector2(point.x, point.z) - Vector2(p.global_position.x, p.global_position.z)
+	vault_direction = vault_direction.normalized()
+	var p_norm_basis: Vector2 = Vector2(-p.head.global_basis.z.x, -p.head.global_basis.z.z)
+	p_norm_basis = p_norm_basis.normalized()
+	var p_direction: Vector2 = Vector2(p_norm_basis.x, p_norm_basis.y)
+	
+	if point.y - p.global_position.y > 1.0 and p_direction.dot(vault_direction) < 0.95:
+		vault_error["error"] = "too_high_angle_up"
+		return false
 	
 	if !_vault_end_fit_check(point):
 		vault_error["error"] = "cant_fit"
