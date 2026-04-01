@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dnnrsoi6kvn0m" path="res://Entities/Player/player_character.gd" id="1_12kfy"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="2_f477v"]
 [ext_resource type="PackedScene" uid="uid://babc4ssbcm5g7" path="res://Scenes/Menus/PauseMenu/pause_menu.tscn" id="2_seg3p"]
-[ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/flashlight.tscn" id="2_stcdd"]
+[ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/Inventory/flashlight.tscn" id="2_stcdd"]
 [ext_resource type="PackedScene" uid="uid://c0tamd213o31x" path="res://Entities/Player/player_hud.tscn" id="3_b2vmj"]
 [ext_resource type="Shader" uid="uid://bwrc3gdocmt4n" path="res://Assets/Shaders/skinamarink.gdshader" id="3_lobkq"]
 [ext_resource type="Script" uid="uid://bjpmu5sklv5h8" path="res://addons/raytraced_audio/raytraced_audio_listener.gd" id="3_seg3p"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://rnt1ojt8hyqv"]
+
+[ext_resource type="ArrayMesh" uid="uid://bllwy8awi3b0d" path="res://Assets/Assets/Bathroom/Janitor/Bucket/Bucket.obj" id="1_22vu8"]
+[ext_resource type="Material" uid="uid://bknlmkgjgoaqh" path="res://Assets/Assets/Bathroom/Janitor/Bucket/Bucket02.tres" id="2_544fx"]
+
+[node name="MeshBucket" type="MeshInstance3D" unique_id=2005581449]
+mesh = ExtResource("1_22vu8")
+surface_material_override/0 = ExtResource("2_544fx")

@@ -506,16 +506,19 @@ func _physics_process(delta: float) -> void:
 			pass
 		MovementMode.WALKING:
 			_on_ground_movement(delta)
-			_vault_check()
+			if is_on_floor():
+				vault_checks.check()
 		MovementMode.SPRINTING:
 			_on_ground_movement(delta)
 			if !movement_vector.y < 0:
 				change_movement_mode(MovementMode.WALKING)
-			_vault_check()
+			if is_on_floor():
+				vault_checks.check()
 		MovementMode.CROUCHING:
 			_on_ground_movement(delta)
 			_crawl_check()
-			_vault_check()
+			if is_on_floor():
+				vault_checks.check()
 		MovementMode.CRAWL:
 			_on_ground_movement(delta)
 			_uncrawl_check()
@@ -705,12 +708,6 @@ func _uncrawl_check() -> void:
 	if uncrawl_result: return
 	
 	change_movement_mode(MovementMode.CROUCHING)
-
-
-func _vault_check() -> void:
-	if !is_on_floor(): return
-	
-	vault_checks.check()
 
 
 func _vault() -> void:

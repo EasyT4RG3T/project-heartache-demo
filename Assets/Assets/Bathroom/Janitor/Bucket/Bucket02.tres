@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bknlmkgjgoaqh"]
+
+[ext_resource type="Texture2D" uid="uid://brpdn37oi8b7l" path="res://Assets/Assets/Bathroom/Janitor/Bucket/Bucket02_albedo.png" id="1_o315r"]
+
+[resource]
+albedo_texture = ExtResource("1_o315r")
+roughness = 0.7
+texture_filter = 2

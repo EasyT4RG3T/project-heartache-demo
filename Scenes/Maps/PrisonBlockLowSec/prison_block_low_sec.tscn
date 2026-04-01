@@ -135,9 +135,12 @@
 [ext_resource type="Material" uid="uid://ou4gywh8vxvk" path="res://Assets/Materials/Light/Red/RedLight.tres" id="130_qouf5"]
 [ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="130_rsf4b"]
 [ext_resource type="PackedScene" uid="uid://06ske2hi4t8b" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/MeshCeilingLightBulb.tscn" id="130_sr8rd"]
+[ext_resource type="PackedScene" uid="uid://c1frg167313lc" path="res://Assets/Assets/Bathroom/Janitor/Bucket/DynamicBucket02.tscn" id="133_2w77u"]
 [ext_resource type="PackedScene" uid="uid://cskkld4ieh0m8" path="res://Assets/Assets/Trash/CigaretteBoxes/MeshCigaretteBox01.tscn" id="133_jcduw"]
+[ext_resource type="PackedScene" uid="uid://e4iblqa7tbty" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox02/StaticBigCardboardBox02.tscn" id="133_wsi88"]
 [ext_resource type="PackedScene" uid="uid://boy6v8jnxejer" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenSmallCardboardPackage/MeshBrokenSmallCardboardPackage.tscn" id="134_v50d2"]
 [ext_resource type="PackedScene" uid="uid://ccgbie05hppbi" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenCardboardBoxFlat/MeshBrokenCardboardBoxFlat.tscn" id="135_2ywr4"]
+[ext_resource type="PackedScene" uid="uid://bxxxwbs1omnvm" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBoxFlat/StaticCardboardBoxFlat.tscn" id="135_5sipq"]
 [ext_resource type="PackedScene" uid="uid://di1m765wvavai" path="res://Assets/Assets/Trash/CardboardBoxes/OpenCardboardBoxFlat/StaticOpenCardboardBoxFlat.tscn" id="136_rsf4b"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="137_2ywr4"]
 [ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="138_rsf4b"]
@@ -1876,9 +1879,9 @@ distance_fade_shadow = 5.0
 distance_fade_length = 5.0
 spot_range = 4.0
 spot_angle = 80.0
-spot_angle_attenuation = 10.0
+spot_angle_attenuation = 5.0
 script = ExtResource("11_gbybj")
-cull_distance = 3.0
+cull_distance = 5.0
 area = NodePath("../Area3D")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
@@ -1892,12 +1895,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9277116, 2.7823782, -7.227
 [node name="StaticIndustrialShelf" parent="Janitor/Assets/Static" unique_id=669091726 instance=ExtResource("130_rsf4b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57143044, 2.3841858e-07, -6.104849)
 
+[node name="StaticIndustrialShelf3" parent="Janitor/Assets/Static" unique_id=1186011781 instance=ExtResource("130_rsf4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57143044, 2.3841858e-07, -8.6949835)
+
 [node name="StaticIndustrialShelf2" parent="Janitor/Assets/Static" unique_id=1581627568 instance=ExtResource("130_rsf4b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.453389, 2.3841858e-07, -6.104849)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Janitor/Assets/Static" unique_id=1602035219]
 transform = Transform3D(0.70710677, -0.49999988, 0.5, -2.0861626e-07, -0.7071069, -0.7071067, 0.7071067, 0.49999985, -0.50000006, -1.656575, 2.8311098, -6.1561713)
 mesh = SubResource("QuadMesh_7muf3")
+
+[node name="StaticBigCardboardBox02" parent="Janitor/Assets/Static" unique_id=1846966015 instance=ExtResource("133_wsi88")]
+transform = Transform3D(0.9629934, 0, 0.26952493, 0, 1, 0, -0.26952493, 0, 0.9629934, -1.6347146, -1.1920929e-07, -7.675943)
+
+[node name="StaticBigCardboardBox01" parent="Janitor/Assets/Static" unique_id=1121094488 instance=ExtResource("137_2ywr4")]
+transform = Transform3D(-0.13709876, 0, -0.9905574, 0, 1, 0, 0.9905574, 0, -0.13709876, -1.6602899, 0, -7.1815286)
+
+[node name="StaticCardboardBoxFlat" parent="Janitor/Assets/Static" unique_id=1055490897 instance=ExtResource("135_5sipq")]
+transform = Transform3D(0.25200143, 0.940482, -0.22801104, -0.96592593, 0.2588191, 0, 0.059013598, 0.22024174, 0.9736587, -1.372582, 0.15365252, -7.4340143)
+
+[node name="StaticCardboardBox02" parent="Janitor/Assets/Static" unique_id=855685041 instance=ExtResource("71_8yman")]
+transform = Transform3D(-0.03859712, 0, 0.9992548, 0, 1, 0, -0.9992548, 0, -0.03859712, -1.6465509, 0.39999992, -7.529932)
+
+[node name="StaticCardboardBoxFlat2" parent="Janitor/Assets/Static" unique_id=678927168 instance=ExtResource("135_5sipq")]
+transform = Transform3D(0.9439911, 0, 0.32997075, 0, 1, 0, -0.32997075, 0, 0.9439911, -1.6568487, 0.39999998, -7.20939)
+
+[node name="Dynamic" type="Node3D" parent="Janitor/Assets" unique_id=2032661819]
+
+[node name="DynamicBucket" parent="Janitor/Assets/Dynamic" unique_id=645098443 instance=ExtResource("133_2w77u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1420647, 0.15065664, -8.721651)
+
+[node name="DynamicBucket3" parent="Janitor/Assets/Dynamic" unique_id=891033532 instance=ExtResource("133_2w77u")]
+transform = Transform3D(0.38733858, 0, -0.9219375, 0, 1, 0, 0.9219375, 0, 0.38733858, -1.7328787, 0.15065664, -6.8036485)
+
+[node name="DynamicBucket2" parent="Janitor/Assets/Dynamic" unique_id=1796322702 instance=ExtResource("133_2w77u")]
+transform = Transform3D(-0.78988194, -0.5054788, 0.34724307, 0.34314892, 0.10498553, 0.9333953, -0.5082671, 0.85642815, 0.0905283, -1.442512, 0.12098616, -8.706934)
+
+[node name="Decals" type="Node3D" parent="Janitor/Assets" unique_id=1160843097]
+
+[node name="Floor" type="Node3D" parent="Janitor/Assets/Decals" unique_id=297760623]
+
+[node name="Decal" type="Decal" parent="Janitor/Assets/Decals/Floor" unique_id=825265070]
+transform = Transform3D(0.8965483, 0, 0.44294602, 0, 1, 0, -0.44294602, 0, 0.8965483, -1.4536419, 0, -7.4100842)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("32_3wdts")
 
 [node name="SecurityCorridor" type="Node3D" parent="." unique_id=1898180137]
 
@@ -2169,7 +2210,7 @@ transform = Transform3D(0.9535015, 0, 0.30138817, -0.029750595, 0.99511606, 0.09
 [node name="StaticCardboardBox01" parent="SecurityCorridor/Assets/Static" unique_id=124962466 instance=ExtResource("70_5iag7")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -8.031849, 0.5520002, -6.0363536)
 
-[node name="StaticBigCardboardBox01" parent="SecurityCorridor/Assets/Static" unique_id=1121094488 instance=ExtResource("137_2ywr4")]
+[node name="StaticBigCardboardBox01" parent="SecurityCorridor/Assets/Static" unique_id=1495798671 instance=ExtResource("137_2ywr4")]
 transform = Transform3D(-0.06820688, 0, 0.9976712, 0, 1, 0, -0.9976712, 0, -0.06820688, -7.9851184, -1.1920929e-07, -5.83418)
 
 [node name="StaticBigCardboardBoxFlat01" parent="SecurityCorridor/Assets/Static" unique_id=1800840931 instance=ExtResource("138_rsf4b")]
