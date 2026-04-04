@@ -3,6 +3,7 @@ extends Resource
 
 
 signal interacted(player)
+signal started_looking(player)
 signal started_interacting(player)
 signal stopped_interacting(player)
 
@@ -34,6 +35,7 @@ var current_player: PlayerCharacter
 
 func start_looking(player: PlayerCharacter) -> void:
 	current_player = player
+	started_looking.emit(player)
 	if hold:
 		player.add_child(hold_timer)
 

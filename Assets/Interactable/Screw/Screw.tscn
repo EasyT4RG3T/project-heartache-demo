@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1vfysk3061ug"]
+
+[ext_resource type="Script" uid="uid://bn6s5vqotnup4" path="res://Assets/Interactable/Screw/screw.gd" id="1_o63br"]
+[ext_resource type="PackedScene" uid="uid://b1emn7gmsdb3m" path="res://Assets/Interactable/Screw/MeshScrew.tscn" id="1_oi2ou"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o63br"]
+height = 0.040463865
+radius = 0.013
+
+[node name="Screw" type="StaticBody3D" unique_id=1165702596]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_o63br")
+
+[node name="MeshScrew" parent="." unique_id=1719428110 instance=ExtResource("1_oi2ou")]
+
+[node name="CollisionScrew" type="CollisionShape3D" parent="." unique_id=1002766981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0085766595, 0)
+shape = SubResource("CylinderShape3D_o63br")

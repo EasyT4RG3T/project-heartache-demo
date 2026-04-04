@@ -120,12 +120,14 @@
 [ext_resource type="PackedScene" uid="uid://c8ws14w5vx42q" path="res://Assets/Assets/Trash/Cigarettes/MeshCigarette02.tscn" id="100_ni7vx"]
 [ext_resource type="PackedScene" uid="uid://bctu1ah3ype80" path="res://Assets/Assets/Trash/Cigarettes/MeshCigarette01.tscn" id="111_an5o7"]
 [ext_resource type="PackedScene" uid="uid://wsok11ohrvww" path="res://Assets/Maps/PrisonBlockLowSec/StaticCell02.tscn" id="116_oxlnu"]
+[ext_resource type="LightmapGIData" uid="uid://bev5joyo0vb0q" path="res://Scenes/Maps/PrisonBlockLowSec/Cell02/cell_02.lmbake" id="116_up0o4"]
 [ext_resource type="PackedScene" uid="uid://cw6tvx884jcdo" path="res://Assets/Maps/PrisonBlockLowSec/StaticCorridor.tscn" id="117_5iag7"]
 [ext_resource type="LightmapGIData" uid="uid://txvispabyajw" path="res://Scenes/Maps/PrisonBlockLowSec/Corridor/corridor.lmbake" id="117_8yman"]
 [ext_resource type="PackedScene" uid="uid://cdiofejx0o00h" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell01.tscn" id="123_8yman"]
 [ext_resource type="PackedScene" uid="uid://drxu3lcl7xmmw" path="res://Assets/Assets/Wardrobe/Hanging/HangingCoat/StaticHangingCoat.tscn" id="123_twglr"]
 [ext_resource type="PackedScene" uid="uid://bf5kqm6hb2ud5" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell02.tscn" id="124_ixvda"]
 [ext_resource type="PackedScene" uid="uid://crhjsjja150vm" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell03.tscn" id="125_5dygt"]
+[ext_resource type="LightmapGIData" uid="uid://cdonudavcwfyw" path="res://Scenes/Maps/PrisonBlockLowSec/FakeCells/fake_cells.lmbake" id="125_jyfgu"]
 [ext_resource type="PackedScene" uid="uid://tvy25silkecl" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell04.tscn" id="126_jcduw"]
 [ext_resource type="PackedScene" uid="uid://2pmyvk18ao51" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell05.tscn" id="127_v50d2"]
 [ext_resource type="PackedScene" uid="uid://vrmd7hqt8pjm" path="res://Assets/Maps/PrisonBlockLowSec/StaticJanitor.tscn" id="128_2ywr4"]
@@ -144,6 +146,8 @@
 [ext_resource type="PackedScene" uid="uid://di1m765wvavai" path="res://Assets/Assets/Trash/CardboardBoxes/OpenCardboardBoxFlat/StaticOpenCardboardBoxFlat.tscn" id="136_rsf4b"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="137_2ywr4"]
 [ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="138_rsf4b"]
+[ext_resource type="PackedScene" uid="uid://1vfysk3061ug" path="res://Assets/Interactable/Screw/Screw.tscn" id="145_3cies"]
+[ext_resource type="PackedScene" uid="uid://c0b5uxaor0mhy" path="res://Assets/Interactable/Screwdriver/Screwdriver.tscn" id="148_jyfgu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
 size = Vector3(1.0236816, 3.0178223, 0.8113861)
@@ -1384,6 +1388,18 @@ spot_angle_attenuation = 3.0
 
 [node name="Cell02" type="Node3D" parent="." unique_id=1686302145]
 
+[node name="DynamicLightmapGI" type="LightmapGI" parent="Cell02" unique_id=714907643]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("116_up0o4")
+script = ExtResource("3_lsyox")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
 [node name="StaticCell02" parent="Cell02" unique_id=336553807 instance=ExtResource("116_oxlnu")]
 
 [node name="Lights" type="Node3D" parent="Cell02" unique_id=729034654]
@@ -1669,15 +1685,29 @@ transform = Transform3D(-1, 0, 8.742278e-08, 8.742278e-08, -4.371139e-08, 1, 3.8
 size = Vector3(2, 0.001, 2)
 texture_albedo = ExtResource("77_j6lwy")
 
-[node name="FakeCell01" type="Node3D" parent="." unique_id=1074104884]
+[node name="FakeCells" type="Node3D" parent="." unique_id=2110757887]
 
-[node name="StaticFakeCell01" parent="FakeCell01" unique_id=1732458505 instance=ExtResource("123_8yman")]
+[node name="DynamicLightmapGI" type="LightmapGI" parent="FakeCells" unique_id=1098280962]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("125_jyfgu")
+script = ExtResource("3_lsyox")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
-[node name="Lights" type="Node3D" parent="FakeCell01" unique_id=1892191401]
+[node name="FakeCell01" type="Node3D" parent="FakeCells" unique_id=1074104884]
 
-[node name="Static" type="Node3D" parent="FakeCell01/Lights" unique_id=1203810816]
+[node name="StaticFakeCell01" parent="FakeCells/FakeCell01" unique_id=1732458505 instance=ExtResource("123_8yman")]
 
-[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell01/Lights/Static" unique_id=647345866]
+[node name="Lights" type="Node3D" parent="FakeCells/FakeCell01" unique_id=1892191401]
+
+[node name="Static" type="Node3D" parent="FakeCells/FakeCell01/Lights" unique_id=1203810816]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCells/FakeCell01/Lights/Static" unique_id=647345866]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
 visible = false
 light_color = Color(1, 0.95, 0.9, 1)
@@ -1690,23 +1720,23 @@ omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="Assets" type="Node3D" parent="FakeCell01" unique_id=765099154]
+[node name="Assets" type="Node3D" parent="FakeCells/FakeCell01" unique_id=765099154]
 
-[node name="StaticCellDoor01" parent="FakeCell01/Assets" unique_id=402169596 instance=ExtResource("20_ylyy8")]
+[node name="StaticCellDoor01" parent="FakeCells/FakeCell01/Assets" unique_id=402169596 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1017027, 0, -2.6255884)
 
-[node name="MeshCellDoor01Flap" parent="FakeCell01/Assets/StaticCellDoor01" unique_id=1603027349 instance=ExtResource("21_h8gwk")]
+[node name="MeshCellDoor01Flap" parent="FakeCells/FakeCell01/Assets/StaticCellDoor01" unique_id=1603027349 instance=ExtResource("21_h8gwk")]
 
-[node name="FakeCell02" type="Node3D" parent="." unique_id=1376976655]
+[node name="FakeCell02" type="Node3D" parent="FakeCells" unique_id=1376976655]
 
-[node name="StaticFakeCell02" parent="FakeCell02" unique_id=762382539 instance=ExtResource("124_ixvda")]
+[node name="StaticFakeCell02" parent="FakeCells/FakeCell02" unique_id=762382539 instance=ExtResource("124_ixvda")]
 
-[node name="Lights" type="Node3D" parent="FakeCell02" unique_id=1795938272]
+[node name="Lights" type="Node3D" parent="FakeCells/FakeCell02" unique_id=1795938272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1962245, 0, 0)
 
-[node name="Static" type="Node3D" parent="FakeCell02/Lights" unique_id=441700855]
+[node name="Static" type="Node3D" parent="FakeCells/FakeCell02/Lights" unique_id=441700855]
 
-[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell02/Lights/Static" unique_id=750225964]
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCells/FakeCell02/Lights/Static" unique_id=750225964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
 visible = false
 light_color = Color(1, 0.95, 0.9, 1)
@@ -1719,23 +1749,23 @@ omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="Assets" type="Node3D" parent="FakeCell02" unique_id=1073490745]
+[node name="Assets" type="Node3D" parent="FakeCells/FakeCell02" unique_id=1073490745]
 
-[node name="StaticCellDoor01" parent="FakeCell02/Assets" unique_id=343315692 instance=ExtResource("20_ylyy8")]
+[node name="StaticCellDoor01" parent="FakeCells/FakeCell02/Assets" unique_id=343315692 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.29946, 0, -2.6255884)
 
-[node name="MeshCellDoor01Flap" parent="FakeCell02/Assets/StaticCellDoor01" unique_id=2033920800 instance=ExtResource("21_h8gwk")]
+[node name="MeshCellDoor01Flap" parent="FakeCells/FakeCell02/Assets/StaticCellDoor01" unique_id=2033920800 instance=ExtResource("21_h8gwk")]
 
-[node name="FakeCell03" type="Node3D" parent="." unique_id=1026454723]
+[node name="FakeCell03" type="Node3D" parent="FakeCells" unique_id=1026454723]
 
-[node name="StaticFakeCell03" parent="FakeCell03" unique_id=1146152200 instance=ExtResource("125_5dygt")]
+[node name="StaticFakeCell03" parent="FakeCells/FakeCell03" unique_id=1146152200 instance=ExtResource("125_5dygt")]
 
-[node name="Lights" type="Node3D" parent="FakeCell03" unique_id=1155186900]
+[node name="Lights" type="Node3D" parent="FakeCells/FakeCell03" unique_id=1155186900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4147, 0, 0)
 
-[node name="Static" type="Node3D" parent="FakeCell03/Lights" unique_id=1187380298]
+[node name="Static" type="Node3D" parent="FakeCells/FakeCell03/Lights" unique_id=1187380298]
 
-[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell03/Lights/Static" unique_id=319531489]
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCells/FakeCell03/Lights/Static" unique_id=319531489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
 visible = false
 light_color = Color(1, 0.95, 0.9, 1)
@@ -1748,23 +1778,23 @@ omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="Assets" type="Node3D" parent="FakeCell03" unique_id=65315602]
+[node name="Assets" type="Node3D" parent="FakeCells/FakeCell03" unique_id=65315602]
 
-[node name="StaticCellDoor01" parent="FakeCell03/Assets" unique_id=1318198038 instance=ExtResource("20_ylyy8")]
+[node name="StaticCellDoor01" parent="FakeCells/FakeCell03/Assets" unique_id=1318198038 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2998128, 0, -2.6255884)
 
-[node name="MeshCellDoor01Flap" parent="FakeCell03/Assets/StaticCellDoor01" unique_id=913067479 instance=ExtResource("21_h8gwk")]
+[node name="MeshCellDoor01Flap" parent="FakeCells/FakeCell03/Assets/StaticCellDoor01" unique_id=913067479 instance=ExtResource("21_h8gwk")]
 
-[node name="FakeCell04" type="Node3D" parent="." unique_id=70928119]
+[node name="FakeCell04" type="Node3D" parent="FakeCells" unique_id=70928119]
 
-[node name="StaticFakeCell04" parent="FakeCell04" unique_id=743695051 instance=ExtResource("126_jcduw")]
+[node name="StaticFakeCell04" parent="FakeCells/FakeCell04" unique_id=743695051 instance=ExtResource("126_jcduw")]
 
-[node name="Lights" type="Node3D" parent="FakeCell04" unique_id=884185896]
+[node name="Lights" type="Node3D" parent="FakeCells/FakeCell04" unique_id=884185896]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.7756224, 0, -10.927139)
 
-[node name="Static" type="Node3D" parent="FakeCell04/Lights" unique_id=1327973681]
+[node name="Static" type="Node3D" parent="FakeCells/FakeCell04/Lights" unique_id=1327973681]
 
-[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell04/Lights/Static" unique_id=1460051265]
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCells/FakeCell04/Lights/Static" unique_id=1460051265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
 visible = false
 light_color = Color(1, 0.95, 0.9, 1)
@@ -1777,23 +1807,23 @@ omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="Assets" type="Node3D" parent="FakeCell04" unique_id=988574374]
+[node name="Assets" type="Node3D" parent="FakeCells/FakeCell04" unique_id=988574374]
 
-[node name="StaticCellDoor01" parent="FakeCell04/Assets" unique_id=481933899 instance=ExtResource("20_ylyy8")]
+[node name="StaticCellDoor01" parent="FakeCells/FakeCell04/Assets" unique_id=481933899 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.189653, -2.3841858e-07, -6.8014493)
 
-[node name="MeshCellDoor01Flap" parent="FakeCell04/Assets/StaticCellDoor01" unique_id=659714260 instance=ExtResource("21_h8gwk")]
+[node name="MeshCellDoor01Flap" parent="FakeCells/FakeCell04/Assets/StaticCellDoor01" unique_id=659714260 instance=ExtResource("21_h8gwk")]
 
-[node name="FakeCell05" type="Node3D" parent="." unique_id=602358942]
+[node name="FakeCell05" type="Node3D" parent="FakeCells" unique_id=602358942]
 
-[node name="StaticFakeCell05" parent="FakeCell05" unique_id=1685079370 instance=ExtResource("127_v50d2")]
+[node name="StaticFakeCell05" parent="FakeCells/FakeCell05" unique_id=1685079370 instance=ExtResource("127_v50d2")]
 
-[node name="Lights" type="Node3D" parent="FakeCell05" unique_id=1480414736]
+[node name="Lights" type="Node3D" parent="FakeCells/FakeCell05" unique_id=1480414736]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.7756224, 0, -14.09643)
 
-[node name="Static" type="Node3D" parent="FakeCell05/Lights" unique_id=703066208]
+[node name="Static" type="Node3D" parent="FakeCells/FakeCell05/Lights" unique_id=703066208]
 
-[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCell05/Lights/Static" unique_id=717414194]
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCells/FakeCell05/Lights/Static" unique_id=717414194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5801299, 2.8596194, 0.0018693805)
 visible = false
 light_color = Color(1, 0.95, 0.9, 1)
@@ -1806,12 +1836,12 @@ omni_range = 2.5
 script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="Assets" type="Node3D" parent="FakeCell05" unique_id=457451771]
+[node name="Assets" type="Node3D" parent="FakeCells/FakeCell05" unique_id=457451771]
 
-[node name="StaticCellDoor01" parent="FakeCell05/Assets" unique_id=1831222585 instance=ExtResource("20_ylyy8")]
+[node name="StaticCellDoor01" parent="FakeCells/FakeCell05/Assets" unique_id=1831222585 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.189653, -2.3841858e-07, -9.99977)
 
-[node name="MeshCellDoor01Flap" parent="FakeCell05/Assets/StaticCellDoor01" unique_id=137591208 instance=ExtResource("21_h8gwk")]
+[node name="MeshCellDoor01Flap" parent="FakeCells/FakeCell05/Assets/StaticCellDoor01" unique_id=137591208 instance=ExtResource("21_h8gwk")]
 
 [node name="Janitor" type="Node3D" parent="." unique_id=778305958]
 
@@ -2244,6 +2274,24 @@ size = Vector3(1.9172485, 3.1909423, 0.2)
 [node name="CSGBox3D" type="CSGBox3D" parent="BLOCKOUT" unique_id=1077477681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1, -4.6)
 size = Vector3(1, 2, 0.1)
+
+[node name="Screw" parent="." unique_id=713635949 instance=ExtResource("145_3cies")]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, -0.3042541)
+
+[node name="Screw2" parent="." unique_id=1165702596 instance=ExtResource("145_3cies")]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, -0.20954438)
+
+[node name="Screw3" parent="." unique_id=1111659434 instance=ExtResource("145_3cies")]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, -0.10399151)
+
+[node name="Screw4" parent="." unique_id=1495955855 instance=ExtResource("145_3cies")]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, 0.004716918)
+
+[node name="Screw5" parent="." unique_id=2138691289 instance=ExtResource("145_3cies")]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, 0.109126195)
+
+[node name="Screwdriver" parent="." unique_id=447539991 instance=ExtResource("148_jyfgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6890948, 1.3671093, -0.64311117)
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]

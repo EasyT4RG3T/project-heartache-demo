@@ -6,5 +6,4 @@
 albedo_texture = ExtResource("1")
 metallic = 0.8
 roughness = 0.2
-uv1_scale = Vector3(5, 5, 5)
 texture_filter = 2

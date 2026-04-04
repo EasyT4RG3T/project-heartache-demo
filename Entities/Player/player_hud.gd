@@ -11,7 +11,7 @@ extends Control
 @export var hud_color_accent: Color = Color.LIGHT_GRAY
 @export var hud_opacity_active: float = 0.8
 @export var hud_opacity_inactive: float = 0.0
-@export var thought_text_offset: float = 10.0
+@export var thought_text_offset: float = 30.0
 @export var thought_text_size: float = 16
 
 enum Characters { CUSTOM, PLAYER, HARUKA }

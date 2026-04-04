@@ -9,5 +9,4 @@ albedo_texture = ExtResource("1")
 orm_texture = ExtResource("2")
 normal_enabled = true
 normal_texture = ExtResource("3")
-uv1_scale = Vector3(10, 10, 10)
 texture_filter = 2

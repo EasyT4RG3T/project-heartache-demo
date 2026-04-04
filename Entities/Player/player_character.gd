@@ -74,8 +74,7 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 
 @onready var pause_menu: Control = %PauseMenu
 @onready var player_hud: PlayerHUD = %PlayerHUD
-@onready var flashlight: Flashlight = %Flashlight
-@onready var hands: Node3D = %Hands
+@onready var inventory: Inventory = %Inventory
 
 @onready var raytraced_audio_listener: RaytracedAudioListener = %RaytracedAudioListener
 
@@ -265,9 +264,11 @@ func _ready() -> void:
 	direct_space_state = get_world_3d().direct_space_state
 	get_window().size_changed.connect(_update_sub_viewport)
 	_update_sub_viewport()
-	interaction_ray_query.collision_mask = 7
+	interaction_ray_query.collision_mask = 263
 	add_child(vault_checks)
 	vault_checks.p = self
+	inventory.p = self
+	inventory.screwdriver.p = self
 	
 	add_child(crawl_cooldown)
 	crawl_cooldown.one_shot = true
@@ -362,9 +363,9 @@ func _handle_action_input(event: InputEvent) -> void:
 			interactable.stop_interacting()
 	
 	if event.is_action_pressed("flashlight"):
-		if !flashlight.disabled:
+		if !inventory.flashlight.disabled:
 			if current_movement_mode != MovementMode.CARRYING:
-				flashlight.switch()
+				inventory.flashlight.switch()
 	
 	if event.is_action_pressed("drop"):
 		print("drop")
@@ -427,7 +428,7 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 			change_movement_speed(movement_speeds[MovementMode.CARRYING])
 			_change_fov_smooth(player_fov - 5)
 			can_vault = false
-			flashlight.turn_off()
+			inventory.flashlight.turn_off()
 		MovementMode.VAULTING:
 			body_collision.disabled = true
 			InputManager.player_character_input = false
@@ -461,24 +462,12 @@ func change_movement_speed(speed: float) -> void:
 	movement_speed_tween.tween_property(self, "current_movement_speed", speed, 0.5)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	interaction_ray_query.from = main_camera.global_position
 	interaction_ray_query.to = main_camera.global_position - main_camera.global_basis.z *\
 		clampf(abs(head.rotation.x) * 2, 1.2, 1.6)
 	
 	interaction_ray_result = direct_space_state.intersect_ray(interaction_ray_query)
-	
-	flashlight.global_position = head.global_position - head.basis.y * 0.2 - head.basis.x * 0.1
-	
-	flashlight.global_rotation.x = lerpf(
-		flashlight.global_rotation.x,
-		head.global_rotation.x,
-		delta * 20
-	)
-	flashlight.global_rotation.y = lerp_angle(
-		flashlight.global_rotation.y,
-		head.global_rotation.y,
-		delta * 20)
 
 
 func _physics_process(delta: float) -> void:
@@ -809,10 +798,7 @@ func save() -> Dictionary:
 		"fog_density": main_camera.environment.volumetric_fog_density
 	}
 	
-	file["flashlight"] = {
-		"disabled": flashlight.disabled,
-		"visible": flashlight.light.visible,
-	}
+	file["inventory"] = inventory.save()
 	
 	return file
 
@@ -842,5 +828,4 @@ func load_save(file: Dictionary) -> void:
 	
 	main_camera.environment.volumetric_fog_density = file["fog_density"]
 	
-	flashlight.disabled = file["flashlight"]["disabled"]
-	flashlight.light.visible = file["flashlight"]["visible"]
+	inventory.load_save(file["inventory"])

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://de25tj6ppmapt"]
 
 [ext_resource type="ArrayMesh" uid="uid://gd2pafix6ubd" path="res://Assets/Assets/Kitchen/Utensils/PlasticSpoon/PlasticSpoon.obj" id="1_02147"]
-[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_mtipk"]
+[ext_resource type="Material" uid="uid://b4tsj2175mpcp" path="res://Assets/Materials/Plastic/WhitePlastic.tres" id="2_q47s5"]
 
 [node name="MeshPlasticSpoon" type="MeshInstance3D" unique_id=432751832]
 mesh = ExtResource("1_02147")
-surface_material_override/0 = ExtResource("2_mtipk")
+surface_material_override/0 = ExtResource("2_q47s5")

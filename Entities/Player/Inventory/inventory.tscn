@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://da0k85xdmg6pf"]
+
+[ext_resource type="Script" uid="uid://drco6lresdt7r" path="res://Entities/Player/Inventory/inventory.gd" id="1_n0ao5"]
+[ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/Inventory/flashlight.tscn" id="2_byh8v"]
+[ext_resource type="PackedScene" uid="uid://b1g0wdab2jhjg" path="res://Entities/Player/Inventory/screwdriver.tscn" id="3_xdc5x"]
+[ext_resource type="PackedScene" uid="uid://71wg2s6ie0oa" path="res://Entities/Player/Inventory/pistol.tscn" id="4_ns2xd"]
+
+[node name="Inventory" type="Node3D" unique_id=222880276]
+script = ExtResource("1_n0ao5")
+
+[node name="Flashlight" parent="." unique_id=1417213788 instance=ExtResource("2_byh8v")]
+unique_name_in_owner = true
+top_level = true
+
+[node name="Screwdriver" parent="." unique_id=809140471 instance=ExtResource("3_xdc5x")]
+unique_name_in_owner = true
+top_level = true
+
+[node name="Pistol" parent="." unique_id=37447055 instance=ExtResource("4_ns2xd")]
+unique_name_in_owner = true

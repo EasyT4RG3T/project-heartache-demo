@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bh6fjqqclb8sq"]
 
 [ext_resource type="ArrayMesh" uid="uid://da8mcunfjsiv7" path="res://Assets/Assets/Kitchen/Utensils/PlasticCupCrumpled/PlasticCupCrumpled.obj" id="1_mkdbe"]
-[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_ueyaw"]
+[ext_resource type="Material" uid="uid://b4tsj2175mpcp" path="res://Assets/Materials/Plastic/WhitePlastic.tres" id="2_kh28c"]
 
 [node name="MeshPlasticCupCrumpled" type="MeshInstance3D" unique_id=829496183]
 mesh = ExtResource("1_mkdbe")
-surface_material_override/0 = ExtResource("2_ueyaw")
+surface_material_override/0 = ExtResource("2_kh28c")

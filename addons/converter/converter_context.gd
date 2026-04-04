@@ -32,6 +32,9 @@ func _parse(paths: PackedStringArray) -> void:
 var only_collision_shape_3d: bool = false
 var do_static_body_3d: bool = false
 var do_trimesh_collision: bool = false
+var do_rigidbody_3d: bool = false
+var do_rconvex_collision: bool = false
+var do_rsmall_body: bool = false
 var do_dynamic_body_3d: bool = false
 var do_convex_collision: bool = false
 var do_small_body: bool = false
@@ -97,6 +100,33 @@ func _configure_obj() -> void:
 		do_trimesh_collision = trimesh_collision_button.button_pressed)
 	vbox.add_child(trimesh_collision_button)
 	trimesh_collision_button.hide()
+	
+	var rigidbody_hbox: HBoxContainer = HBoxContainer.new()
+	
+	var rigidbody_button: CheckBox = CheckBox.new()
+	rigidbody_button.text = "RigidBody3D"
+	rigidbody_button.pressed.connect(func():
+		do_rigidbody_3d = rigidbody_button.button_pressed
+		if rigidbody_button.button_pressed:
+			rigidbody_hbox.show()
+		else:
+			rigidbody_hbox.hide())
+	vbox.add_child(rigidbody_button)
+	
+	vbox.add_child(rigidbody_hbox)
+	rigidbody_hbox.hide()
+	
+	var convex_rcollision_button: CheckBox = CheckBox.new()
+	convex_rcollision_button.text = "Collision"
+	convex_rcollision_button.pressed.connect(func():
+		do_rconvex_collision = convex_rcollision_button.button_pressed)
+	rigidbody_hbox.add_child(convex_rcollision_button)
+	
+	var small_rbody_button: CheckBox = CheckBox.new()
+	small_rbody_button.text = "Small"
+	small_rbody_button.pressed.connect(func():
+		do_rsmall_body = small_rbody_button.button_pressed)
+	rigidbody_hbox.add_child(small_rbody_button)
 	
 	var dynamic_body_hbox: HBoxContainer = HBoxContainer.new()
 	
@@ -199,6 +229,40 @@ func _convert_obj() -> void:
 				new_pscene.pack(root)
 				
 				var save_error = ResourceSaver.save(new_pscene, output + "/Static" + scene_name + ".tscn")
+				if save_error != OK:
+					print("ERROR: ", save_error)
+				
+				root.queue_free()
+			
+			if do_rigidbody_3d:
+				var root: DynamicRigidBody3D = DynamicRigidBody3D.new()
+				root.name = "Rigid" + scene_name
+				
+				var pscene: PackedScene = load(output + "/Mesh" + scene_name + ".tscn")
+				var mesh_instance: MeshInstance3D = pscene.instantiate()
+				
+				root.add_child(mesh_instance)
+				mesh_instance.owner = root
+				
+				mesh_instance.gi_mode = GeometryInstance3D.GI_MODE_DYNAMIC
+				
+				if do_rsmall_body:
+					root.ignore_player = true
+					root.max_distance = 1.2
+					root.min_distance = 0.4
+					root.mass = 0.4
+					root.continuous_cd = true
+				
+				if do_rconvex_collision:
+					var collision: CollisionShape3D = CollisionShape3D.new()
+					collision.shape = mesh_instance.mesh.create_convex_shape()
+					root.add_child(collision)
+					collision.owner = root
+				
+				var new_pscene: PackedScene = PackedScene.new()
+				new_pscene.pack(root)
+				
+				var save_error = ResourceSaver.save(new_pscene, output + "/Rigid" + scene_name + ".tscn")
 				if save_error != OK:
 					print("ERROR: ", save_error)
 				

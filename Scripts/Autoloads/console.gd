@@ -1322,11 +1322,11 @@ func _command_player_fly_collision() -> String:
 func _command_player_flashlight() -> String:
 	if !GameManager.player_character:
 		return "[color=red]couldn't find player[/color]"
-	if GameManager.player_character.flashlight.disabled:
-		GameManager.player_character.flashlight.disabled = false
+	if GameManager.player_character.inventory.flashlight.disabled:
+		GameManager.player_character.inventory.flashlight.disabled = false
 		return "player flashlight added"
 	else:
-		GameManager.player_character.flashlight.disabled = true
+		GameManager.player_character.inventory.flashlight.disabled = true
 		return "player flashlight removed"
 
 func _command_player_speed(value: float) -> String:

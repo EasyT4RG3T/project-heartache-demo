@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b1emn7gmsdb3m"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqx6gs5ge5o1v" path="res://Assets/Interactable/Screw/Screw.obj" id="1_y1vob"]
+
+[node name="MeshScrew" type="MeshInstance3D" unique_id=1719428110]
+mesh = ExtResource("1_y1vob")
