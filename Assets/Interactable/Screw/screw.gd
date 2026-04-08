@@ -69,3 +69,19 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_PREDELETE:
 		if unscrew_tween:
 			unscrew_tween.kill()
+
+
+func save() -> Dictionary:
+	var file: Dictionary = {
+		"mesh_transform": mesh_screw.global_transform,
+		"collision_transform": collision_screw.global_transform,
+		"unscrew_time": unscrew_time,
+	}
+	
+	return file
+
+
+func load_save(file: Dictionary) -> void:
+	unscrew_time = file["unscrew_time"]
+	mesh_screw.global_transform = file["mesh_transform"]
+	collision_screw.global_transform = file["collision_transform"]

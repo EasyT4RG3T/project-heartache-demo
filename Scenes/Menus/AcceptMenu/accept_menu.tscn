@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dckjpcj38rsvw"]
 
+[ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="1_kk2b0"]
 [ext_resource type="Script" uid="uid://cdq8l4a1700r6" path="res://Scenes/Menus/AcceptMenu/accept_menu.gd" id="1_reydb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reydb"]
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_kk2b0")
 script = ExtResource("1_reydb")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=659850109]

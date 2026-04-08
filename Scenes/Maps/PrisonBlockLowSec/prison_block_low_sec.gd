@@ -117,7 +117,6 @@ func toilet_paper_event(event: Event) -> void:
 				look_cut.queue_free(),
 				CONNECT_ONE_SHOT)
 			look_cut.look($Cell01/Assets/Static/StaticToilet01.global_position + Vector3(0, 0.5, -0.2), 0.2, 1.0)
-			Game.character_say(PlayerHUD.Characters.PLAYER, "Dammit", 1.5)
 			for child in %ToiletPaperEvent.get_children():
 				if child is RigidBody3D:
 					child.apply_impulse(Vector3(0, 0, 0.7))
@@ -155,11 +154,6 @@ func key_event(event: Event) -> void:
 			%KeyInteract.interacted.connect(func(_player: PlayerCharacter):
 				key_event(Event.TRIGGER),
 				CONNECT_ONE_SHOT)
-			GameManager.player_character.player_hud.add_dialogue(
-				PlayerHUD.Characters.CUSTOM,
-				"Wanna get out of here?",
-				3.5
-			)
 			await get_tree().process_frame
 			%CellDoor01FlapHinge3D.open_progress = -165.0
 			await get_tree().create_timer(0.2).timeout

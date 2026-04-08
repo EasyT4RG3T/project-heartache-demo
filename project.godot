@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [audio]
 
 buses/default_bus_layout="uid://ddud0m5r4yr7q"
+driver/driver=""
 
 [autoload]
 
@@ -29,6 +30,7 @@ Console="*res://Scripts/Autoloads/console.tscn"
 SaverLoader="*res://Scripts/Autoloads/saverloader.gd"
 Game="*res://Scripts/Autoloads/game.gd"
 AudioManager="*res://Scripts/Autoloads/audio_manager.gd"
+DialogueManager="*uid://jm2dekw56t5u"
 
 [debug]
 

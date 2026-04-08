@@ -10,10 +10,6 @@ func _init() -> void:
 		node.process_mode = Node.PROCESS_MODE_PAUSABLE)
 
 
-func character_say(character: PlayerHUD.Characters, text: String, time: float = 0) -> RichTextLabel:
-	return GameManager.player_character.player_hud.add_dialogue(character, text, time)
-
-
 func get_chunks() -> Array:
 	var chunks: Array[Node]
 	for child: Node in get_children():

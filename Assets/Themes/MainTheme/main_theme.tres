@@ -1,0 +1,63 @@
+[gd_resource type="Theme" format=3 uid="uid://b0uh1pcsxlvvv"]
+
+[ext_resource type="Texture2D" uid="uid://cngpg0v0ha0s1" path="res://Assets/Themes/MainTheme/UI_Panel.png" id="1_8qyp2"]
+[ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="2_v3bui"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qyp2"]
+texture = ExtResource("1_8qyp2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.38857287, 0.38857287, 0.38857287, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3bui"]
+texture = ExtResource("1_8qyp2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h2ekx"]
+texture = ExtResource("1_8qyp2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47j31"]
+texture = ExtResource("1_8qyp2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.85814106, 0.85814106, 0.85814106, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1pajf"]
+texture = ExtResource("1_8qyp2")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.5370987, 0.5370987, 0.5370987, 1)
+
+[resource]
+default_font = ExtResource("2_v3bui")
+default_font_size = 25
+Button/styles/disabled = SubResource("StyleBoxTexture_8qyp2")
+Button/styles/focus = SubResource("StyleBoxTexture_v3bui")
+Button/styles/hover = SubResource("StyleBoxTexture_h2ekx")
+Button/styles/normal = SubResource("StyleBoxTexture_47j31")
+Button/styles/pressed = SubResource("StyleBoxTexture_1pajf")

@@ -70,6 +70,12 @@ var window_mode: DisplayServer.WindowMode = DisplayServer.window_get_mode():
 			DisplayServer.WindowMode.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 				%WindowModeOptionButton.selected = 4
 		unsaved = true
+var persistent_crosshair: bool = temp_settings.persistent_crosshair:
+	set(value):
+		persistent_crosshair = value
+		temp_settings.persistent_crosshair = value
+		%PersistentCrosshairCheckButton.button_pressed = value
+		unsaved = true
 var hud_size: float = temp_settings.hud_size:
 	set(value):
 		value = clamp(value, 0.5, 5)
@@ -275,6 +281,9 @@ func _set_up_game() -> void:
 			3:
 				window_mode = DisplayServer.WindowMode.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
 		)
+	%PersistentCrosshairCheckButton.button_pressed = temp_settings.persistent_crosshair
+	%PersistentCrosshairCheckButton.pressed.connect(func():
+		persistent_crosshair = %PersistentCrosshairCheckButton.button_pressed)
 	%HUDSizeLineEdit.text = str(temp_settings.hud_size)
 	%HUDSizeLineEdit.editing_toggled.connect(func(editing: bool):
 		if editing: return
@@ -384,6 +393,7 @@ func _set_all_settings(graphics: bool = false) -> void:
 	fov = temp_settings.fov
 	dynamic_fov = temp_settings.dynamic_fov
 	window_mode = temp_settings.window_mode
+	persistent_crosshair = temp_settings.persistent_crosshair
 	hud_size = temp_settings.hud_size
 	head_bob = temp_settings.head_bob
 	static_shader = temp_settings.static_shader

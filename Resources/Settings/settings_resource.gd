@@ -14,6 +14,8 @@ extends Resource
 
 @export var window_mode: DisplayServer.WindowMode = DisplayServer.WINDOW_MODE_FULLSCREEN
 
+@export var persistent_crosshair: bool = false
+
 @export var hud_size: float = 1.0
 
 @export var head_bob: bool = true

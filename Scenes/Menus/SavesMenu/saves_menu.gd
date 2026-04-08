@@ -190,8 +190,8 @@ func _create_button(save_name: String, date: String, version: String) -> Button:
 	button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	button.add_theme_constant_override("line_spacing", -5)
-	button.text = save_name + "\n-----------------------------\n" +\
-				  date + "\n-----------------------------\n" +\
+	button.text = save_name + "\n-------------\n" +\
+				  date.get_slice(" ", 0) + "\n" + date.get_slice(" ", 1) + "\n-------------\n" +\
 				  version
 	button.pressed.connect(_save_select.bind(save_name))
 	saves_v_box_container.add_child(button)

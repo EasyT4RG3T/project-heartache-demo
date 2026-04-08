@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://bk6rwqeytisu1"]
 
 [ext_resource type="Script" uid="uid://f2k43ifglu36" path="res://Scenes/Menus/Intro/intro.gd" id="1_2h0vi"]
+[ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="1_cwg5t"]
+[ext_resource type="FontFile" uid="uid://ec2tuv0fro0y" path="res://Assets/Fonts/Alkhemikal.ttf" id="3_38cwy"]
+[ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="4_8m75e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ww6g"]
 
 [node name="Intro" type="Control" unique_id=708625349]
 layout_mode = 3
@@ -9,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_cwg5t")
 script = ExtResource("1_2h0vi")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2143486061]
@@ -22,7 +28,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Intro" type="Control" parent="." unique_id=1808803421]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -49,19 +54,36 @@ offset_right = 177.0
 offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = -4
+theme_override_constants/separation = -12
 
-[node name="Label" type="Label" parent="Intro/VBoxContainer" unique_id=588260062]
+[node name="HBoxContainer" type="HBoxContainer" parent="Intro/VBoxContainer" unique_id=1994646181]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "HeartStuck"
-horizontal_alignment = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Intro/VBoxContainer/HBoxContainer" unique_id=1599703930]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_38cwy")
+theme_override_font_sizes/font_size = 100
+text = "Heart"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Intro/VBoxContainer/HBoxContainer" unique_id=1679538574]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8m75e")
+theme_override_font_sizes/font_size = 100
+text = "Stuck"
 
 [node name="Label2" type="Label" parent="Intro/VBoxContainer" unique_id=1607986952]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "-by-"
+
+[node name="HSeparator" type="HSeparator" parent="Intro/VBoxContainer" unique_id=1985636776]
+layout_mode = 2
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_6ww6g")
 
 [node name="Label3" type="Label" parent="Intro/VBoxContainer" unique_id=1959198212]
 layout_mode = 2

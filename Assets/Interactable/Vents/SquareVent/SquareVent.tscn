@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://d2mkyfd2tkob0"]
+
+[ext_resource type="Script" uid="uid://dvk73a0jhy4ao" path="res://Assets/Interactable/Vents/vent.gd" id="1_2w17v"]
+[ext_resource type="PackedScene" uid="uid://b4wjvyklsdveg" path="res://Assets/Interactable/Vents/SquareVent/MeshSquareVent.tscn" id="1_k771m"]
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="1_llxlb"]
+[ext_resource type="PackedScene" uid="uid://1vfysk3061ug" path="res://Assets/Interactable/Screw/Screw.tscn" id="2_meky1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k771m"]
+data = PackedVector3Array(0, 0.5, 0.25, 0, 0, -0.25, 0, 0, 0.25, 0, 0.5, -0.25, 0, 0, -0.25, 0, 0.5, 0.25, -0.02, 0, -0.25, -0.02, 0.5, 0.25, -0.02, 0, 0.25, -0.02, 0.5, -0.25, -0.02, 0.5, 0.25, -0.02, 0, -0.25, -0.02, 0.5, 0.25, 0, 0.5, -0.25, 0, 0.5, 0.25, -0.02, 0.5, -0.25, 0, 0.5, -0.25, -0.02, 0.5, 0.25, -0.02, 0, -0.25, 0, 0, 0.25, 0, 0, -0.25, -0.02, 0, 0.25, 0, 0, 0.25, -0.02, 0, -0.25, -0.02, 0.5, -0.25, 0, 0, -0.25, 0, 0.5, -0.25, -0.02, 0, -0.25, 0, 0, -0.25, -0.02, 0.5, -0.25, -0.02, 0, 0.25, 0, 0.5, 0.25, 0, 0, 0.25, -0.02, 0.5, 0.25, 0, 0.5, 0.25, -0.02, 0, 0.25)
+
+[node name="SquareVent" type="StaticBody3D" unique_id=441020651 node_paths=PackedStringArray("screw_01", "screw_02", "hinge", "collision")]
+script = ExtResource("1_2w17v")
+screw_01 = NodePath("Node3D/Hinge3D/Screw")
+screw_02 = NodePath("Node3D/Hinge3D/Screw2")
+hinge = NodePath("Node3D/Hinge3D")
+collision = NodePath("@CollisionShape3D@38445")
+
+[node name="@CollisionShape3D@38445" type="CollisionShape3D" parent="." unique_id=2025099074]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0.01968792)
+shape = SubResource("ConcavePolygonShape3D_k771m")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1643115443]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0.02)
+
+[node name="Hinge3D" type="Node3D" parent="Node3D" unique_id=82550966]
+script = ExtResource("1_llxlb")
+open_positive = false
+duration = 0.3
+locked = true
+auto_unlock = 2
+max_positive = 0.0
+max_negative = 90.0
+metadata/_custom_type_script = "uid://ejx8vfok1s3u"
+
+[node name="MeshSquareVent" parent="Node3D/Hinge3D" unique_id=554461989 instance=ExtResource("1_k771m")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.02)
+
+[node name="Screw" parent="Node3D/Hinge3D" unique_id=1165702596 instance=ExtResource("2_meky1")]
+transform = Transform3D(-1, -4.3711385e-08, 4.371139e-08, 4.3711385e-08, 4.3711392e-08, 1, -4.371139e-08, 1, -4.371139e-08, 0.48798922, 0.23801044, 0.0006248895)
+
+[node name="Screw2" parent="Node3D/Hinge3D" unique_id=1918544570 instance=ExtResource("2_meky1")]
+transform = Transform3D(-1, -4.3711385e-08, 4.371139e-08, 4.3711385e-08, 4.3711392e-08, 1, -4.371139e-08, 1, -4.371139e-08, 0.488, -0.23800002, 0.0010000002)

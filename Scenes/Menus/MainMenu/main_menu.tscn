@@ -1,17 +1,9 @@
 [gd_scene format=3 uid="uid://evmnqmy0k477"]
 
 [ext_resource type="Script" uid="uid://gsm72w8et18h" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_yo6co"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo6co"]
-content_margin_left = 5.0
-content_margin_top = 1.0
-content_margin_right = 5.0
-content_margin_bottom = 1.0
-bg_color = Color(0.25, 0.25, 0.25, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[ext_resource type="FontFile" uid="uid://ec2tuv0fro0y" path="res://Assets/Fonts/Alkhemikal.ttf" id="2_fy1kh"]
+[ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="3_gphap"]
+[ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="4_gphap"]
 
 [node name="MainMenu" type="Control" unique_id=760916766 groups=["Menu"]]
 layout_mode = 3
@@ -20,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_gphap")
 script = ExtResource("1_yo6co")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=888351268]
@@ -40,67 +33,83 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Start" unique_id=494509859]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Start" unique_id=2046635856]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -90.5
-offset_right = 51.0
-offset_bottom = 90.5
+offset_left = -137.0
+offset_top = -141.5
+offset_right = 137.0
+offset_bottom = 141.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Start/VBoxContainer2" unique_id=428124784]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Start/VBoxContainer2/HBoxContainer" unique_id=1787437941]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fy1kh")
+theme_override_font_sizes/font_size = 100
+text = "Heart"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Start/VBoxContainer2/HBoxContainer" unique_id=1935901053]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gphap")
+theme_override_font_sizes/font_size = 100
+text = "Stuck"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start/VBoxContainer2" unique_id=494509859]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Start/VBoxContainer" unique_id=854181270]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Start/VBoxContainer2/VBoxContainer" unique_id=854181270]
 layout_mode = 2
 
-[node name="NewGameButton" type="Button" parent="Start/VBoxContainer/VBoxContainer2" unique_id=669965964]
+[node name="NewGameButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=669965964]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
 text = "New Game"
 
-[node name="ContinueButton" type="Button" parent="Start/VBoxContainer/VBoxContainer2" unique_id=776522030]
+[node name="ContinueButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=776522030]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
 text = "Continue"
 
-[node name="LoadGameButton" type="Button" parent="Start/VBoxContainer/VBoxContainer2" unique_id=1753429916]
+[node name="LoadGameButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=1753429916]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
 text = "Load Game"
 
-[node name="SettingsButton" type="Button" parent="Start/VBoxContainer/VBoxContainer2" unique_id=879321606]
+[node name="SettingsButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=879321606]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="Start/VBoxContainer/VBoxContainer2" unique_id=1110013767]
+[node name="QuitButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=1110013767]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
 text = "Quit"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="Start/VBoxContainer" unique_id=863287606]
+[node name="VBoxContainer3" type="VBoxContainer" parent="Start/VBoxContainer2/VBoxContainer" unique_id=863287606]
 layout_mode = 2
 
-[node name="ChunkButton" type="Button" parent="Start/VBoxContainer/VBoxContainer3" unique_id=1591042161]
+[node name="ChunkButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=1591042161]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
 text = "Load Chunk"
 
-[node name="MapSelect" type="OptionButton" parent="Start/VBoxContainer/VBoxContainer3" unique_id=19395027]
+[node name="MapSelect" type="OptionButton" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=19395027]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_yo6co")
 
 [node name="VersionLabel" type="Label" parent="." unique_id=663272528]
 unique_name_in_owner = true

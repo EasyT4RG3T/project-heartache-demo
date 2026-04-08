@@ -596,6 +596,7 @@ var command_tree: Dictionary = {
 		"fly": _command_player_fly,
 		"fly_collision": _command_player_fly_collision,
 		"flashlight": _command_player_flashlight,
+		"screwdriver": _command_player_screwdriver,
 		"speed": [_command_player_speed, _need_float, func():
 			if GameManager.player_character:
 				return str(GameManager.player_character.current_movement_speed)
@@ -1328,6 +1329,16 @@ func _command_player_flashlight() -> String:
 	else:
 		GameManager.player_character.inventory.flashlight.disabled = true
 		return "player flashlight removed"
+
+func _command_player_screwdriver() -> String:
+	if !GameManager.player_character:
+		return "[color=red]couldn't find player[/color]"
+	if GameManager.player_character.inventory.screwdriver.disabled:
+		GameManager.player_character.inventory.screwdriver.disabled = false
+		return "player screwdriver added"
+	else:
+		GameManager.player_character.inventory.screwdriver.disabled = true
+		return "player screwdriver removed"
 
 func _command_player_speed(value: float) -> String:
 	if !GameManager.player_character:

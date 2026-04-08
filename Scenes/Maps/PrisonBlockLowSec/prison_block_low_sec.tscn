@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://iw6q1cfqjafk" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.gd" id="1_ndu8s"]
 [ext_resource type="ArrayOccluder3D" uid="uid://jky03lonjbcn" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.occ" id="2_asgqg"]
+[ext_resource type="LightmapGIData" uid="uid://b1wtkw27n0utu" path="res://Scenes/Maps/PrisonBlockLowSec/Vents/CellVent/cell_vent.lmbake" id="3_e4yc8"]
 [ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="3_lsyox"]
 [ext_resource type="LightmapGIData" uid="uid://c58vgi7mt5473" path="res://Scenes/Maps/PrisonBlockLowSec/Cell01/cell_01.lmbake" id="4_5iag7"]
 [ext_resource type="PackedScene" uid="uid://iiu60kwdwa46" path="res://Assets/Maps/PrisonBlockLowSec/StaticBigCorridor.tscn" id="5_2b7ak"]
+[ext_resource type="PackedScene" uid="uid://qnbx1bdou71r" path="res://Assets/Maps/PrisonBlockLowSec/StaticCellVent.tscn" id="5_12tgg"]
 [ext_resource type="Material" uid="uid://dysdim7lyvac" path="res://Assets/Materials/Water/StillWater/StillWater.tres" id="6_g4ibd"]
 [ext_resource type="PackedScene" uid="uid://cj4h1gol5tkgv" path="res://Assets/Maps/PrisonBlockLowSec/StaticCell01.tscn" id="6_qouf5"]
 [ext_resource type="Script" uid="uid://csvt28n3c5lft" path="res://Scripts/Nodes/water.gd" id="8_o0s1p"]
@@ -146,8 +148,7 @@
 [ext_resource type="PackedScene" uid="uid://di1m765wvavai" path="res://Assets/Assets/Trash/CardboardBoxes/OpenCardboardBoxFlat/StaticOpenCardboardBoxFlat.tscn" id="136_rsf4b"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="137_2ywr4"]
 [ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="138_rsf4b"]
-[ext_resource type="PackedScene" uid="uid://1vfysk3061ug" path="res://Assets/Interactable/Screw/Screw.tscn" id="145_3cies"]
-[ext_resource type="PackedScene" uid="uid://c0b5uxaor0mhy" path="res://Assets/Interactable/Screwdriver/Screwdriver.tscn" id="148_jyfgu"]
+[ext_resource type="PackedScene" uid="uid://d2mkyfd2tkob0" path="res://Assets/Interactable/Vents/SquareVent/SquareVent.tscn" id="150_ux50x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
 size = Vector3(1.0236816, 3.0178223, 0.8113861)
@@ -159,10 +160,10 @@ size = Vector3(1.973877, 0.140625, 1)
 size = Vector3(1.0463867, 1.8896484, 0.6176758)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7jsn"]
-size = Vector3(4.5756836, 2.8741455, 5.897949)
+size = Vector3(4.5756836, 2.8741455, 9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o83bg"]
-size = Vector3(9.640259, 2.8808594, 5.9901733)
+size = Vector3(9.640259, 2.8808594, 9.151489)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oix7g"]
 size = Vector3(1.7241211, 2.9248047, 1.9707031)
@@ -517,6 +518,24 @@ layers = 3
 occluder = ExtResource("2_asgqg")
 bake_mask = 4294966304
 
+[node name="Vents" type="Node3D" parent="." unique_id=1716601805]
+
+[node name="CellVent" type="Node3D" parent="Vents" unique_id=906077492]
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="Vents/CellVent" unique_id=1095999187]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("3_e4yc8")
+script = ExtResource("3_lsyox")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="StaticCellVent" parent="Vents/CellVent" unique_id=1608027914 instance=ExtResource("5_12tgg")]
+
 [node name="BigCorridor" type="Node3D" parent="." unique_id=1862610280]
 
 [node name="StaticBigCorridor" parent="BigCorridor" unique_id=235037294 instance=ExtResource("5_2b7ak")]
@@ -611,7 +630,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="Area3D2" type="Area3D" parent="Cell01/Lights/Dynamic" unique_id=30865212]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Lights/Dynamic/Area3D2" unique_id=62308779]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1233808, 1.4875596, -1.490171)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1233808, 1.4875596, 0.060854435)
 shape = SubResource("BoxShape3D_y7jsn")
 
 [node name="LampDynamicSpotLight3D3" type="SpotLight3D" parent="Cell01/Lights/Dynamic" unique_id=2107974454 node_paths=PackedStringArray("area")]
@@ -664,7 +683,7 @@ metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 [node name="Area3D" type="Area3D" parent="Cell01/Lights/Dynamic" unique_id=1550300507]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Lights/Dynamic/Area3D" unique_id=637760362]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7561646, 1.4912164, -1.5851746)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7561646, 1.4912164, -0.0045166016)
 shape = SubResource("BoxShape3D_o83bg")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Cell01/Lights/Dynamic/Area3D" unique_id=310612133]
@@ -1254,6 +1273,9 @@ collision_mask = 6
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Assets/CSGCombiner3D/StaticBody3D" unique_id=1458180473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2246771, 1.5366523, -1.524549)
 shape = SubResource("BoxShape3D_snto7")
+
+[node name="StaticSquareVent" parent="Cell01/Assets" unique_id=441020651 instance=ExtResource("150_ux50x")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9997559, -1.1920929e-07, 1.4985952)
 
 [node name="Events" type="Node3D" parent="Cell01" unique_id=1640541678]
 
@@ -2274,24 +2296,6 @@ size = Vector3(1.9172485, 3.1909423, 0.2)
 [node name="CSGBox3D" type="CSGBox3D" parent="BLOCKOUT" unique_id=1077477681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1, -4.6)
 size = Vector3(1, 2, 0.1)
-
-[node name="Screw" parent="." unique_id=713635949 instance=ExtResource("145_3cies")]
-transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, -0.3042541)
-
-[node name="Screw2" parent="." unique_id=1165702596 instance=ExtResource("145_3cies")]
-transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, -0.20954438)
-
-[node name="Screw3" parent="." unique_id=1111659434 instance=ExtResource("145_3cies")]
-transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, -0.10399151)
-
-[node name="Screw4" parent="." unique_id=1495955855 instance=ExtResource("145_3cies")]
-transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, 0.004716918)
-
-[node name="Screw5" parent="." unique_id=2138691289 instance=ExtResource("145_3cies")]
-transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -1.799972, 1.5819463, 0.109126195)
-
-[node name="Screwdriver" parent="." unique_id=447539991 instance=ExtResource("148_jyfgu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6890948, 1.3671093, -0.64311117)
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]

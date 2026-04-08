@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhgnetxnj0n4y"]
+
+[ext_resource type="ArrayMesh" uid="uid://bfug71v20mq7l" path="res://Assets/Maps/PrisonBlockLowSec/CellVent.obj" id="1_rfwfp"]
+[ext_resource type="Material" uid="uid://blmgg0mrostow" path="res://Assets/Materials/Metal/MetalVent/MetalVent.tres" id="2_cnwpm"]
+
+[node name="MeshCellVent" type="MeshInstance3D" unique_id=823051478]
+layers = 33
+mesh = ExtResource("1_rfwfp")
+surface_material_override/0 = ExtResource("2_cnwpm")

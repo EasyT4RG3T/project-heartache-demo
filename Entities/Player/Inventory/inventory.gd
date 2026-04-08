@@ -31,6 +31,9 @@ func save() -> Dictionary:
 		"disabled": flashlight.disabled,
 		"visible": flashlight.light.visible,
 	}
+	file["screwdriver"] = {
+		"disabled": screwdriver.disabled,
+	}
 	
 	return file
 
@@ -38,3 +41,5 @@ func save() -> Dictionary:
 func load_save(file: Dictionary) -> void:
 	flashlight.disabled = file["flashlight"]["disabled"]
 	flashlight.light.visible = file["flashlight"]["visible"]
+	
+	screwdriver.disabled = file["screwdriver"]["disabled"]

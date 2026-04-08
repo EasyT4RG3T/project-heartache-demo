@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://babc4ssbcm5g7"]
 
+[ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="1_6avlu"]
 [ext_resource type="Script" uid="uid://bkie0xk6gol6t" path="res://Scenes/Menus/PauseMenu/pause_menu.gd" id="1_xybiy"]
 
 [node name="PauseMenu" type="Control" unique_id=1819213750 groups=["Menu"]]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6avlu")
 script = ExtResource("1_xybiy")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1079292935]
