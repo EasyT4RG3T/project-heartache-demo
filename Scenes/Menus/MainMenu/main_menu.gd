@@ -3,6 +3,13 @@ extends Control
 
 const MENU_BUTTON_SOUND = preload("uid://dyf7ad2tflj7r")
 
+@onready var camera_3d: Camera3D = %Camera3D
+@onready var lights: Node3D = %Lights
+@onready var dynamic_lightmap_gi: DynamicLightmapGI = %DynamicLightmapGI
+@onready var monster: Node3D = %monster
+
+var camera_tween: Tween
+
 @onready var start: Control = %Start
 
 @onready var start_new_game_button: Button = %NewGameButton
@@ -30,9 +37,55 @@ func take_input(event: InputEvent) -> void:
 func _ready() -> void:
 	InputManager.menu = self
 	
+	camera_3d.make_current()
+	monster.hide()
+	
 	version_label.text = "Version: " + ProjectSettings.get_setting("application/config/version")
 	_setup_map_select("res://Scenes/Maps/")
 	_setup_start()
+	_move_camera()
+	
+	
+	$Helper/AnimationPlayer.play("Map")
+
+
+var blink_timer: float = 0.0
+var monster_reapear: int = 0
+func _physics_process(delta: float) -> void:
+	blink_timer += delta
+	if blink_timer > 0.3:
+		if !lights.visible:
+			if randi_range(0, 1) == 1:
+				lights.show()
+				dynamic_lightmap_gi.show()
+				if !monster.visible:
+					if monster_reapear >= 1:
+						monster.show()
+					else:
+						monster_reapear += randi_range(0, 1)
+		elif randi_range(0, 10) == 10:
+			lights.hide()
+			dynamic_lightmap_gi.hide()
+			if monster.visible and randi_range(0, 5) == 5:
+				monster.hide()
+				monster_reapear = 0
+		
+		blink_timer = 0.0
+
+
+func _move_camera() -> void:
+	if camera_tween:
+		camera_tween.kill()
+	
+	var new_pos: Vector3 = Vector3(
+		randf_range(0.766, 0.806),
+		randf_range(1.23, 1.27),
+		0.7
+	)
+	
+	camera_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_ease(Tween.EASE_IN_OUT)
+	camera_tween.tween_property(camera_3d, "position", new_pos, 5.0)
+	camera_tween.finished.connect(_move_camera, PROPERTY_HINT_ONESHOT)
 
 
 func _setup_start() -> void:

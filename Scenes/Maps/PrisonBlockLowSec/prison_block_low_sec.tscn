@@ -148,6 +148,7 @@
 [ext_resource type="PackedScene" uid="uid://di1m765wvavai" path="res://Assets/Assets/Trash/CardboardBoxes/OpenCardboardBoxFlat/StaticOpenCardboardBoxFlat.tscn" id="136_rsf4b"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="137_2ywr4"]
 [ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="138_rsf4b"]
+[ext_resource type="PackedScene" uid="uid://bnckj8ofncc32" path="res://Entities/Helper/helper.tscn" id="150_12tgg"]
 [ext_resource type="PackedScene" uid="uid://d2mkyfd2tkob0" path="res://Assets/Interactable/Vents/SquareVent/SquareVent.tscn" id="150_ux50x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
@@ -2296,6 +2297,9 @@ size = Vector3(1.9172485, 3.1909423, 0.2)
 [node name="CSGBox3D" type="CSGBox3D" parent="BLOCKOUT" unique_id=1077477681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1, -4.6)
 size = Vector3(1, 2, 0.1)
+
+[node name="Helper" parent="." unique_id=1881633511 instance=ExtResource("150_12tgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7220775, 0.0067597614, -2.052624)
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]

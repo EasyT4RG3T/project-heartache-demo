@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c5wa87680w4av"]
+
+[ext_resource type="ArrayMesh" uid="uid://cp0bf0t1n2rcw" path="res://Assets/Maps/MainMenu/MainMenuRoom.obj" id="1_qj8ip"]
+[ext_resource type="Material" uid="uid://41krkpsxqiid" path="res://Assets/Materials/Concrete/ConcreteTiles/ConcreteTiles.tres" id="2_o082h"]
+[ext_resource type="Material" uid="uid://tqnokcoc3b06" path="res://Assets/Materials/Bricks/GrayBricks/GrayBricks.tres" id="3_8m5w3"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="4_jy2ne"]
+[ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="5_848nd"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="6_8m5w3"]
+
+[node name="MeshMainMenuRoom" type="MeshInstance3D" unique_id=1682356069]
+mesh = ExtResource("1_qj8ip")
+surface_material_override/0 = ExtResource("2_o082h")
+surface_material_override/1 = ExtResource("3_8m5w3")
+surface_material_override/2 = ExtResource("4_jy2ne")
+surface_material_override/3 = ExtResource("5_848nd")
+surface_material_override/4 = ExtResource("6_8m5w3")
