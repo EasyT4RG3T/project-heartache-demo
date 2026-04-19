@@ -47,6 +47,7 @@ func _ready() -> void:
 	
 	
 	$Helper/AnimationPlayer.play("Map")
+	$Node3D/Helper/HelperAnimationPlayer.play("Map")
 
 
 var blink_timer: float = 0.0

@@ -25,11 +25,34 @@
 [ext_resource type="Texture2D" uid="uid://dw1j21bo0x7o" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrowThick.png" id="20_q26na"]
 [ext_resource type="PackedScene" uid="uid://y8bwsn68l4yx" path="res://Entities/Player/dust_particles.tscn" id="22_3aj5m"]
 [ext_resource type="Texture2D" uid="uid://hv0bq0i1amf3" path="res://Assets/Textures/Gross/GrossSmall.png" id="22_204kq"]
+[ext_resource type="PackedScene" uid="uid://kqo55j0gam7t" path="res://Assets/Assets/Bathroom/Cleanware/LaundryDetergent01/MeshLaundryDetergent01.tscn" id="22_eg26q"]
 [ext_resource type="PackedScene" uid="uid://c5rpyq0k8o0f7" path="res://Assets/Assets/Trash/NewsPapers02/MeshNewsPaper02.tscn" id="23_bippp"]
+[ext_resource type="PackedScene" uid="uid://byjr040dls64" path="res://Assets/Assets/Bathroom/Cleanware/DishSoap01/MeshDishSoap01.tscn" id="23_em3l8"]
+[ext_resource type="PackedScene" uid="uid://1pjuvwyqkl0x" path="res://Assets/Assets/Decorations/Photos/Blueprint/MeshBlueprint.tscn" id="23_hiqi6"]
+[ext_resource type="PackedScene" uid="uid://3j0thglcqkoq" path="res://Assets/Assets/Bathroom/Cleanware/CleaningSpray/MeshCleningSpray.tscn" id="24_aqbh2"]
+[ext_resource type="PackedScene" uid="uid://ggdmrw7t4ri3" path="res://Assets/Assets/Decorations/Photos/Blueprint/MeshRolledBlueprint.tscn" id="24_ywog7"]
 [ext_resource type="Material" uid="uid://ctgopv0unrbxt" path="res://Assets/Materials/Light/White/WhiteLight.tres" id="27_sxlxj"]
 [ext_resource type="Material" uid="uid://ikw1oms1pqm1" path="res://Assets/Materials/Organic/MovingMeat/MovingMeat.tres" id="28_pvonr"]
 [ext_resource type="PackedScene" uid="uid://bnckj8ofncc32" path="res://Entities/Helper/helper.tscn" id="29_6txr5"]
+[ext_resource type="PackedScene" uid="uid://c35hohhxmv238" path="res://Assets/Assets/Decorations/Office/Pens/Pencil/MeshPencil01.tscn" id="29_iu5j6"]
+[ext_resource type="PackedScene" uid="uid://dnyqpsrnagm53" path="res://Assets/Assets/Decorations/Office/Pens/Pencil/MeshPencil02.tscn" id="29_mxtuo"]
 [ext_resource type="PackedScene" uid="uid://durltbkp0l6u6" path="res://Assets/Assets/Furniture/Desks/CheapDesk/MeshCheapDesk.tscn" id="30_gn2c7"]
+[ext_resource type="PackedScene" uid="uid://bvhefcbarv2ux" path="res://Assets/Assets/Decorations/Photos/Paper/MeshDocument01.tscn" id="31_bw1tc"]
+[ext_resource type="PackedScene" uid="uid://bbutqsgbkdgq" path="res://Assets/Assets/Bathroom/Janitor/Bucket/MeshBucket01.tscn" id="31_dhoal"]
+[ext_resource type="PackedScene" uid="uid://bnvjsbmof3vvu" path="res://Assets/Assets/Decorations/Photos/Paper/MeshDocument02.tscn" id="32_rfo54"]
+[ext_resource type="PackedScene" uid="uid://t8a2scx11vin" path="res://Assets/Assets/Decorations/Photos/Paper/MeshDocument03.tscn" id="33_ywog7"]
+[ext_resource type="PackedScene" uid="uid://bjsuajn42qqxj" path="res://Assets/Assets/Decorations/Office/StickyNotes/MeshStickyNote02.tscn" id="35_5nl2r"]
+[ext_resource type="PackedScene" uid="uid://mt3is8ys7lsi" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBox01/MeshCardboardBox01.tscn" id="35_yjfgl"]
+[ext_resource type="PackedScene" uid="uid://ovxabscitwla" path="res://Assets/Assets/Trash/CardboardBoxes/OpenSmallCardboardBoxFlat/MeshOpenSmallCardboardBoxFlat.tscn" id="36_cr6rm"]
+[ext_resource type="Material" uid="uid://ial7yqeqcioo" path="res://Assets/Sprites/Pictures/StickyNotes/StickyNote01.tres" id="36_yyg8x"]
+[ext_resource type="PackedScene" uid="uid://cskkld4ieh0m8" path="res://Assets/Assets/Trash/CigaretteBoxes/MeshCigaretteBox01.tscn" id="37_cr6rm"]
+[ext_resource type="PackedScene" uid="uid://uqf7jx72441o" path="res://Assets/Assets/Trash/CardboardBoxes/SmallCardboardPackage/MeshSmallCardboardPackage.tscn" id="37_ypuea"]
+[ext_resource type="PackedScene" uid="uid://c282i7fo88f2f" path="res://Assets/Assets/Trash/TrashCans/TrashCan01/MeshTrashCan01.tscn" id="39_r13d6"]
+[ext_resource type="PackedScene" uid="uid://cewhqxkae0ro3" path="res://Assets/Assets/Wardrobe/Hanging/HangingCoat/MeshHangingCoat.tscn" id="40_41gu1"]
+[ext_resource type="PackedScene" uid="uid://c8ws14w5vx42q" path="res://Assets/Assets/Trash/Cigarettes/MeshCigarette02.tscn" id="40_fyb8d"]
+[ext_resource type="PackedScene" uid="uid://h3per66fctju" path="res://Assets/Assets/Decorations/Office/StickyNotes/MeshStickyNoteStack02.tscn" id="41_l4bli"]
+[ext_resource type="Material" uid="uid://ce2166tm3bvrc" path="res://Assets/Sprites/Pictures/StickyNotes/StickyNote02.tres" id="42_5nl2r"]
+[ext_resource type="Material" uid="uid://cqbdqhsve4hwm" path="res://Assets/Assets/Decorations/Office/StickyNotes/StickyNoteStack.tres" id="43_yyg8x"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_y5bw6"]
 size = Vector2(0.5, 0.5)
@@ -42,6 +65,92 @@ size = Vector2(0.01, 0.01)
 
 [sub_resource type="QuadMesh" id="QuadMesh_6txr5"]
 size = Vector2(0.3, 0.3)
+
+[sub_resource type="Animation" id="Animation_ishgt"]
+resource_name = "Map"
+length = 21.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshPaper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10.000001, 11.000001, 12),
+"transitions": PackedFloat32Array(1, 0.5, 1.5, 1),
+"update": 0,
+"values": [Vector3(-0.269, 0.746, -1.176), Vector3(-0.269, 0.746, -1.176), Vector3(-0.248, 0.746, -1.381), Vector3(-0.269, 0.746, -1.176)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshPaper:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10.000001, 11.000001, 12),
+"transitions": PackedFloat32Array(1, 0.5, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, -2.1367192, 0), Vector3(0, -2.1367192, 0), Vector3(0, -1.6755162, 0), Vector3(0, -2.1367192, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshPaper:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10.966666, 11, 12.000001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_rfo54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshPaper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.26932156, 0.744751, -1.17615)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshPaper:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.1367192, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshPaper:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywog7"]
+_data = {
+&"Map": SubResource("Animation_ishgt"),
+&"RESET": SubResource("Animation_rfo54")
+}
 
 [node name="MainMenu" type="Control" unique_id=760916766 groups=["Menu"]]
 layout_mode = 3
@@ -275,6 +384,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59635764, 1.9648318, -0.658
 [node name="MeshCeilingLightBulb2" parent="Node3D/Lights" unique_id=1637466198 instance=ExtResource("7_rbcii")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.59635764, 2.3892307, -0.65867174)
 
+[node name="Probes" type="Node3D" parent="Node3D/Lights" unique_id=2035967851]
+
+[node name="LightmapProbe" type="LightmapProbe" parent="Node3D/Lights/Probes" unique_id=1038414444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13022101, 1.0085828, -1.3160077)
+
 [node name="Assets" type="Node3D" parent="Node3D" unique_id=419184888]
 
 [node name="Static" type="Node3D" parent="Node3D/Assets" unique_id=141525738]
@@ -320,6 +434,105 @@ transform = Transform3D(0.17517766, 0, -0.9845368, 0, 1, 0, 0.9845368, 0, 0.1751
 
 [node name="MeshNewsPaper02" parent="Node3D/Assets/Static" unique_id=93815626 instance=ExtResource("23_bippp")]
 transform = Transform3D(-0.8660254, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660254, 1.1711936, 0.0051695034, -1.4267728)
+
+[node name="MeshIndustrialShelf2" parent="Node3D/Assets/Static" unique_id=1985276536 instance=ExtResource("5_yobja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8805785, 0, -2.7907476)
+
+[node name="MeshLaundryDetergent01" parent="Node3D/Assets/Static/MeshIndustrialShelf2" unique_id=184212215 instance=ExtResource("22_eg26q")]
+transform = Transform3D(0.6576514, 0, -0.75332236, 0, 1, 0, 0.75332236, 0, 0.6576514, 0.0763098, 1.0197904, -0.055900574)
+
+[node name="MeshDishSoap01" parent="Node3D/Assets/Static/MeshIndustrialShelf2" unique_id=2037398500 instance=ExtResource("23_em3l8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18977422, 1.0197905, 0.018137217)
+
+[node name="MeshDishSoap02" parent="Node3D/Assets/Static/MeshIndustrialShelf2" unique_id=1949918268 instance=ExtResource("23_em3l8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22407568, 1.0197905, -0.0887928)
+
+[node name="MeshCleningSpray" parent="Node3D/Assets/Static/MeshIndustrialShelf2" unique_id=1571887964 instance=ExtResource("24_aqbh2")]
+transform = Transform3D(-0.8579304, 0, -0.51376593, 0, 1, 0, 0.51376593, 0, -0.8579304, 0.314938, 1.0197905, 0.019536257)
+
+[node name="MeshCheapDesk" parent="Node3D/Assets/Static" unique_id=34903522 instance=ExtResource("30_gn2c7")]
+transform = Transform3D(-0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25881907, -0.17060998, -1.1920929e-07, -1.3291146)
+
+[node name="MeshBlueprint" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=1569603936 instance=ExtResource("23_hiqi6")]
+transform = Transform3D(-0.9977933, 0, -0.066395774, 0, 1, 0, 0.066395774, 0, -0.9977933, -0.029658437, 0.74171084, 0.0024106503)
+
+[node name="MeshRolledBlueprint" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=262169267 instance=ExtResource("24_ywog7")]
+transform = Transform3D(0.98347384, 0, 0.18105136, 0, 1, 0, -0.18105136, 0, 0.98347384, -0.4170215, 0.73800033, -0.011098504)
+
+[node name="MeshRolledBlueprint2" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=1105125364 instance=ExtResource("24_ywog7")]
+transform = Transform3D(0.98347396, -0.17743495, 0.036006033, 1.1175871e-08, 0.1988719, 0.9800257, -0.18105136, -0.96382934, 0.19558531, -0.3491037, 0.24619243, -0.21780774)
+
+[node name="MeshPaper2" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=738725292 instance=ExtResource("31_bw1tc")]
+transform = Transform3D(0.9876883, 0, 0.15643433, 0, 1, 0, -0.15643433, 0, 0.9876883, -0.03014648, 0.74527496, 0.088009715)
+
+[node name="MeshPaper3" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=604129652 instance=ExtResource("31_bw1tc")]
+transform = Transform3D(0.9541098, 0, -0.299457, 0, 1, 0, 0.299457, 0, 0.9541098, 0.17330098, 0.7454108, 0.05575788)
+
+[node name="MeshPaper4" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=792060188 instance=ExtResource("32_rfo54")]
+transform = Transform3D(0.9317491, -0.028054329, 0.36201698, 0.016856968, 0.99927807, 0.03405255, -0.3627109, -0.02562592, 0.9315493, 0.28260916, 0.74543303, 0.054553032)
+
+[node name="MeshPaper5" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=1750951948 instance=ExtResource("33_ywog7")]
+transform = Transform3D(-0.98874724, 0.006377899, -0.14945927, 0.008089667, 0.9999085, -0.010847898, 0.14937636, -0.011934908, -0.9887084, 0.11417115, 0.74231124, 0.10845423)
+
+[node name="MeshPencil01" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=861496329 instance=ExtResource("29_iu5j6")]
+transform = Transform3D(-1.6991574e-08, 0.38872188, 0.9213551, -1, -4.371139e-08, 0, 4.027371e-08, -0.9213551, 0.38872188, 0.4084376, 0.74596334, 0.16695774)
+
+[node name="MeshPencil02" parent="Node3D/Assets/Static/MeshCheapDesk" unique_id=498552408 instance=ExtResource("29_mxtuo")]
+transform = Transform3D(-0.32452834, 0.94587594, -4.134555e-08, 0, -4.371139e-08, -1, -0.94587594, -0.32452834, 1.4185583e-08, 0.41278, 0.7468534, 0.23758578)
+
+[node name="MeshBucket" parent="Node3D/Assets/Static" unique_id=5239817 instance=ExtResource("31_dhoal")]
+transform = Transform3D(0.5556573, 0, 0.8314114, 0, 1, 0, -0.8314114, 0, 0.5556573, -0.2538213, 0, -2.7556548)
+
+[node name="MeshCardboardBox01" parent="Node3D/Assets/Static" unique_id=1574934281 instance=ExtResource("35_yjfgl")]
+transform = Transform3D(0.9891419, 0, -0.14696354, 0, 1, 0, 0.14696354, 0, 0.9891419, -0.0834968, 0, -1.5998694)
+
+[node name="MeshStickyNote02" parent="Node3D/Assets/Static/MeshCardboardBox01" unique_id=1612883042 instance=ExtResource("35_5nl2r")]
+transform = Transform3D(-0.0072081834, 0.99997413, -4.053325e-08, 4.2550097e-09, -4.4543913e-08, -1, -0.99997413, -0.0072081685, 6.022301e-09, 0.15029687, 0.22508982, 0.078165054)
+surface_material_override/0 = ExtResource("36_yyg8x")
+
+[node name="MeshCardboardBoxFlat2" parent="Node3D/Assets/Static" unique_id=411835582 instance=ExtResource("13_v0fly")]
+transform = Transform3D(0.95081353, 0, 0.30976385, 0, 1, 0, -0.30976385, 0, 0.95081353, -0.07227288, 0.30044577, -1.6203635)
+
+[node name="MeshOpenSmallCardboardBoxFlat" parent="Node3D/Assets/Static" unique_id=2051482242 instance=ExtResource("36_cr6rm")]
+transform = Transform3D(0.92912614, 0, -0.369763, 0, 1, 0, 0.369763, 0, 0.92912614, -0.13314134, 0, -1.294038)
+
+[node name="MeshCigaretteBox01" parent="Node3D/Assets/Static/MeshOpenSmallCardboardBoxFlat" unique_id=1016977139 instance=ExtResource("37_cr6rm")]
+transform = Transform3D(0.9999745, 0.0071383417, 1.5898912e-08, 0, -4.371139e-08, 1, 0.0071383417, -0.9999745, -3.9033075e-08, 0.06575215, 0.038382955, -0.0043652058)
+
+[node name="MeshCigaretteBox02" parent="Node3D/Assets/Static/MeshOpenSmallCardboardBoxFlat" unique_id=19097639 instance=ExtResource("37_cr6rm")]
+transform = Transform3D(0.9999745, 0.0071383417, 1.5898912e-08, 0, -4.371139e-08, 1, 0.0071383417, -0.9999745, -3.9033075e-08, 0.00413866, 0.060802847, -0.004805036)
+
+[node name="MeshCigaretteBox03" parent="Node3D/Assets/Static/MeshOpenSmallCardboardBoxFlat" unique_id=1999018742 instance=ExtResource("37_cr6rm")]
+transform = Transform3D(0.9999745, 0.0071383417, 1.5898912e-08, 0, -4.371139e-08, 1, 0.0071383417, -0.9999745, -3.9033075e-08, -0.059517596, 0.060802847, -0.0052594477)
+
+[node name="MeshCigaretteBox04" parent="Node3D/Assets/Static/MeshOpenSmallCardboardBoxFlat" unique_id=359504797 instance=ExtResource("37_cr6rm")]
+transform = Transform3D(0.9999745, 0.0071383417, 1.5898912e-08, 0, -4.371139e-08, 1, 0.0071383417, -0.9999745, -3.9033075e-08, 0.06518454, 0.06080285, 0.07514796)
+
+[node name="MeshCigaretteBox05" parent="Node3D/Assets/Static/MeshOpenSmallCardboardBoxFlat" unique_id=1433511572 instance=ExtResource("37_cr6rm")]
+transform = Transform3D(0.9999745, 0.0071383417, 1.5898912e-08, 0, -4.371139e-08, 1, 0.0071383417, -0.9999745, -3.9033075e-08, 0.0035710514, 0.06080285, 0.07470813)
+
+[node name="MeshCigaretteBox06" parent="Node3D/Assets/Static/MeshOpenSmallCardboardBoxFlat" unique_id=494190550 instance=ExtResource("37_cr6rm")]
+transform = Transform3D(0.9999745, 0.0071383417, 1.5898912e-08, 0, -4.371139e-08, 1, 0.0071383417, -0.9999745, -3.9033075e-08, -0.060085203, 0.06080285, 0.074253716)
+
+[node name="MeshSmallCardboardPackage" parent="Node3D/Assets/Static" unique_id=316741368 instance=ExtResource("37_ypuea")]
+transform = Transform3D(0.1537619, 0.85904413, 0.48826277, -4.409717e-11, 0.49413916, -0.8693829, -0.98810804, 0.13367799, 0.0759798, 0.09158204, 0.045601472, -1.5319276)
+
+[node name="MeshTrashCan01" parent="Node3D/Assets/Static" unique_id=1318703038 instance=ExtResource("39_r13d6")]
+transform = Transform3D(0.9942635, 0, 0.10695822, 0, 1, 0, -0.10695822, 0, 0.9942635, -0.52766967, 0, -0.7723128)
+
+[node name="MeshHangingCoat" parent="Node3D/Assets/Static" unique_id=847873980 instance=ExtResource("40_41gu1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.1332008, 1.572877, -2.9713583)
+
+[node name="MeshCigarette03" parent="Node3D/Assets/Static" unique_id=725790181 instance=ExtResource("40_fyb8d")]
+transform = Transform3D(0.92216045, 0, 0.38680753, 0, 1, 0, -0.38680753, 0, 0.92216045, 1.1237117, 1.4901161e-08, -1.2049527)
+
+[node name="MeshCigarette04" parent="Node3D/Assets/Static" unique_id=1996422257 instance=ExtResource("40_fyb8d")]
+transform = Transform3D(0.9772607, 0, -0.21204123, 0, 1, 0, 0.21204123, 0, 0.9772607, 1.1523743, 0, -1.2229239)
+
+[node name="MeshStickyNoteStack02" parent="Node3D/Assets/Static" unique_id=1325743100 instance=ExtResource("41_l4bli")]
+transform = Transform3D(-0.45425484, 0, -0.89087176, 0, 1, 0, 0.89087176, 0, -0.45425484, -0.0994024, 0.7396461, -0.86792463)
+surface_material_override/0 = ExtResource("42_5nl2r")
+surface_material_override/1 = ExtResource("43_yyg8x")
 
 [node name="Decals" type="Node3D" parent="Node3D/Assets" unique_id=1272633659]
 
@@ -403,17 +616,21 @@ spot_angle_attenuation = 0.3077861
 script = ExtResource("6_kw60b")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
+[node name="Helper" type="Node3D" parent="Node3D" unique_id=931359308]
+
+[node name="HelperAnimationPlayer" type="AnimationPlayer" parent="Node3D/Helper" unique_id=368516293]
+libraries/ = SubResource("AnimationLibrary_ywog7")
+
+[node name="MeshPaper" parent="Node3D/Helper" unique_id=539428434 instance=ExtResource("31_bw1tc")]
+transform = Transform3D(-0.536195, 0, -0.844094, 0, 1, 0, 0.844094, 0, -0.536195, -0.26932156, 0.744751, -1.17615)
+
 [node name="Helper" parent="." unique_id=1336398743 instance=ExtResource("29_6txr5")]
 transform = Transform3D(0.25881898, 0, 0.9659257, 0, 1, 0, -0.9659257, 0, 0.25881898, -0.6817502, 2.3841858e-07, -1.4663229)
 
 [node name="LeftHandIK" parent="Helper/rig" parent_id_path=PackedInt32Array(1336398743, 692840714) index="2" unique_id=1666210711]
-transform = Transform3D(-1, 1.5099576e-07, -2.664536e-15, -1.4585075e-07, -0.9659255, 0.2588191, 3.908059e-08, 0.25881898, 0.96592593, 0.25, 0.83, 0)
+transform = Transform3D(-1, 1.5099575e-07, -2.664536e-15, -1.4585075e-07, -0.9659254, 0.2588191, 3.908059e-08, 0.25881895, 0.96592593, 0.25, 0.83, 0)
 
 [node name="RightHandIK" parent="Helper/rig" parent_id_path=PackedInt32Array(1336398743, 692840714) index="4" unique_id=1632144750]
-transform = Transform3D(-1, 1.5099572e-07, -2.6645346e-15, -1.4585075e-07, -0.9659252, 0.25881898, 3.908059e-08, 0.25881892, 0.9659255, -0.25, 0.83, 0)
-
-[node name="MeshCheapDesk" parent="." unique_id=34903522 instance=ExtResource("30_gn2c7")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.38280398, -1.1920929e-07, -0.8663362)
-visible = false
+transform = Transform3D(-1, 1.5099567e-07, -2.6645344e-15, -1.4585075e-07, -0.965925, 0.25881898, 3.908059e-08, 0.25881884, 0.96592546, -0.25, 0.83, 0)
 
 [editable path="Helper"]

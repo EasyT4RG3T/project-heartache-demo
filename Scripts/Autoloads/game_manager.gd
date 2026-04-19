@@ -82,6 +82,8 @@ func apply_settings_data() -> void:
 	AudioServer.set_bus_volume_db(4, linear_to_db(clamp(SaverLoader.settings.music_volume, 0.0, 1.0)))
 	AudioServer.set_bus_volume_db(5, linear_to_db(clamp(SaverLoader.settings.menus_volume, 0.0, 1.0)))
 	
+	DialogueManager.apply_settings()
+	
 	if player_character:
 		player_character.apply_settings()
 

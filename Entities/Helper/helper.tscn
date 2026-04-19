@@ -539,22 +539,20 @@ _data = {
 [node name="Skeleton3D" parent="rig" parent_id_path=PackedInt32Array(692840714) index="0" unique_id=1010597944]
 modifier_callback_mode_process = 0
 bones/0/rotation = Quaternion(0.28579798, 1.1423708e-07, 3.406979e-08, 0.9582899)
-bones/1/rotation = Quaternion(-0.061227478, 1.5099031e-14, -1.4597763e-08, 0.9981238)
+bones/1/rotation = Quaternion(-0.061227508, 1.5099031e-14, -1.4597763e-08, 0.9981238)
 bones/1/scale = Vector3(1, 0.9999997, 0.9999998)
 bones/2/rotation = Quaternion(0.01729118, -3.996803e-14, 4.122567e-09, 0.9998505)
 bones/2/scale = Vector3(1, 1.0000001, 1.0000001)
-bones/3/rotation = Quaternion(0.064863294, 1.8041126e-14, 1.5464583e-08, 0.99789417)
+bones/3/rotation = Quaternion(0.08211777, 1.5432102e-14, 1.9578367e-08, 0.99662274)
 bones/3/scale = Vector3(1, 1.0000004, 1.0000002)
-bones/4/rotation = Quaternion(-0.50437623, -0.3848462, -0.36522684, 0.6812543)
 bones/5/rotation = Quaternion(0.015561347, 0.29885158, -0.81137663, 0.5021092)
 bones/7/rotation = Quaternion(0.038248334, -0.0037396702, 0.010815357, 0.9992028)
 bones/9/rotation = Quaternion(0.08793206, 0.008947398, 0.48329082, 0.87098676)
-bones/10/rotation = Quaternion(-0.5043765, 0.38484597, 0.3652266, 0.6812544)
+bones/10/rotation = Quaternion(-0.5043765, 0.38484594, 0.3652266, 0.6812544)
 bones/10/scale = Vector3(0.99999994, 0.9999998, 0.99999964)
 bones/11/rotation = Quaternion(-0.041401558, -0.35119146, 0.7927803, 0.49643734)
 bones/13/rotation = Quaternion(0.14761083, 0.011580229, -0.033485416, 0.9884107)
 bones/15/rotation = Quaternion(0.29134983, -0.28999633, -0.34549233, 0.84359497)
-bones/16/rotation = Quaternion(0.409309, 3.8938295e-15, 9.758687e-08, 0.91239583)
 bones/21/rotation = Quaternion(0.9269082, -0.033593766, -0.09698815, 0.3609792)
 bones/23/rotation = Quaternion(0.1892763, 0.0022659674, -0.03790062, 0.98118955)
 bones/25/rotation = Quaternion(-0.57368374, 0.081477106, 0.06062314, 0.81275666)
@@ -668,13 +666,13 @@ secondary_damp_threshold = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 1)
 
 [node name="LeftHandIK" type="Marker3D" parent="rig" parent_id_path=PackedInt32Array(692840714) index="2" unique_id=1666210711]
-transform = Transform3D(-1, 1.5099576e-07, -2.664536e-15, -1.4585075e-07, -0.9659256, 0.2588191, 3.908059e-08, 0.258819, 0.96592593, 0.25, 0.83, 0)
+transform = Transform3D(-1, 1.5099576e-07, -2.664536e-15, -1.4585075e-07, -0.9659255, 0.2588191, 3.908059e-08, 0.25881898, 0.96592593, 0.25, 0.83, 0)
 
 [node name="LeftHandIK2" type="Marker3D" parent="rig" parent_id_path=PackedInt32Array(692840714) index="3" unique_id=1557416487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.8299999, -1)
 
 [node name="RightHandIK" type="Marker3D" parent="rig" parent_id_path=PackedInt32Array(692840714) index="4" unique_id=1632144750]
-transform = Transform3D(-0.9999999, 1.5099575e-07, -2.6645348e-15, -1.4585073e-07, -0.96592546, 0.258819, 3.9080586e-08, 0.25881898, 0.9659256, -0.25, 0.83, 0)
+transform = Transform3D(-0.9999999, 1.5099575e-07, -2.6645346e-15, -1.4585073e-07, -0.96592546, 0.25881898, 3.9080586e-08, 0.25881898, 0.9659255, -0.25, 0.83, 0)
 
 [node name="RightHandIK2" type="Marker3D" parent="rig" parent_id_path=PackedInt32Array(692840714) index="5" unique_id=1298207465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.8299999, -1)
@@ -696,3 +694,4 @@ libraries/ = SubResource("AnimationLibrary_gg5i7")
 
 [node name="MeshCheapDesk" parent="." index="2" unique_id=34903522 instance=ExtResource("4_gg5i7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5292122)
+visible = false

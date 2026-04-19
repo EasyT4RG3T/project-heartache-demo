@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ggdmrw7t4ri3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bvx3muiccwuln" path="res://Assets/Assets/Decorations/Photos/Blueprint/RolledBlueprint.obj" id="1_gg3ow"]
+[ext_resource type="Material" uid="uid://m83h4wvsrl80" path="res://Assets/Sprites/Pictures/Blueprint.tres" id="2_ok4m8"]
+
+[node name="MeshRolledBlueprint" type="MeshInstance3D" unique_id=262169267]
+mesh = ExtResource("1_gg3ow")
+surface_material_override/0 = ExtResource("2_ok4m8")

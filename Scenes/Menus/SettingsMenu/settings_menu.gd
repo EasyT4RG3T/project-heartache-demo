@@ -83,6 +83,13 @@ var hud_size: float = temp_settings.hud_size:
 		temp_settings.hud_size = value
 		%HUDSizeLineEdit.text = str(value)
 		unsaved = true
+var subtitles: int = temp_settings.subtitles:
+	set(value):
+		value = clamp(value, 10, 80)
+		subtitles = value
+		temp_settings.subtitles = value
+		%SubtitlesSizeLineEdit.text = str(value)
+		unsaved = true
 var head_bob: bool = temp_settings.head_bob:
 	set(value):
 		head_bob = value
@@ -290,6 +297,12 @@ func _set_up_game() -> void:
 		if !%HUDSizeLineEdit.text.is_valid_float():
 			%HUDSizeLineEdit.text = str(hud_size)
 		hud_size = %HUDSizeLineEdit.text.to_float())
+	%SubtitlesSizeLineEdit.text = str(temp_settings.subtitles)
+	%SubtitlesSizeLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%SubtitlesSizeLineEdit.text.is_valid_int():
+			%SubtitlesSizeLineEdit.text = str(subtitles)
+		subtitles = %SubtitlesSizeLineEdit.text.to_int())
 	%HeadBobCheckButton.button_pressed = temp_settings.head_bob
 	%HeadBobCheckButton.pressed.connect(func():
 		head_bob = %HeadBobCheckButton.button_pressed)

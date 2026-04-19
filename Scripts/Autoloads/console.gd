@@ -116,7 +116,8 @@ func console_print(text: String = "[color=red]print error[/color]"):
 func _add_command_history(text: String) -> void:
 	if !text: return
 	var time: String = Time.get_time_string_from_system()
-	command_history.text += "\n" + "[color=blue][" + time + "][/color]" + "\n" + text
+	command_history.append_text("\n" + "[color=blue][" + time + "][/color]" + "\n" + text)
+	command_history.pop_all()
 
 
 func _command_line_history_update(value: String) -> void:
@@ -623,6 +624,7 @@ var command_tree: Dictionary = {
 			"vault": _command_system_debug_vault,
 			"crawl": _command_system_debug_crawl,
 		},
+		"say": [_command_system_say, _need_string, "text"],
 	}
 }
 
@@ -654,7 +656,11 @@ func _need_string(tokens: PackedStringArray) -> Array:
 	if tokens[0].is_empty():
 		return [false, "[color=red]needs string[/color]"]
 	else:
-		return [true, tokens[0]]
+		var string: String = ""
+		for token in tokens.size():
+			string += tokens[token] + " "
+		string.trim_suffix(" ")
+		return [true, string]
 
 
 func _command_run() -> String:
@@ -1407,3 +1413,7 @@ func _command_system_debug_crawl() -> String:
 			GameManager.player_character.crawl_debug = true
 			return "turned crawl debug on"
 	return "couldn't find player"
+
+func _command_system_say(value: String) -> String:
+	DialogueManager.say(value)
+	return "said " + value

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bnvjsbmof3vvu"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8ui11eoyqp50" path="res://Assets/Assets/Decorations/Photos/Paper/Paper.obj" id="1_rt6x6"]
+[ext_resource type="Material" uid="uid://cu52wonceqb2d" path="res://Assets/Sprites/Pictures/Documents/Document02.tres" id="2_f5tiw"]
+
+[node name="MeshPaper" type="MeshInstance3D" unique_id=792060188]
+mesh = ExtResource("1_rt6x6")
+surface_material_override/0 = ExtResource("2_f5tiw")

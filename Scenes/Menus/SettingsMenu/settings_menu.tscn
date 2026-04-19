@@ -189,6 +189,22 @@ placeholder_text = "1.0"
 max_length = 5
 emoji_menu_enabled = false
 
+[node name="SubtitlesSize" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=1195846528]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SubtitlesSizeLabel" type="Label" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/SubtitlesSize" unique_id=2003651647]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Subtitles Size: "
+
+[node name="SubtitlesSizeLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer/SubtitlesSize" unique_id=807915441]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "40"
+max_length = 5
+emoji_menu_enabled = false
+
 [node name="HeadBob" type="HBoxContainer" parent="VBoxContainer/TabContainer/Game/HBoxContainer/VBoxContainer" unique_id=497869488]
 unique_name_in_owner = true
 layout_mode = 2
