@@ -26,16 +26,16 @@ fov = 80.0
 far = 50.0
 
 [node name="MeshStanding" type="MeshInstance3D" parent="." unique_id=1839034033]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8000001, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
 mesh = SubResource("CapsuleMesh_np8it")
 surface_material_override/0 = SubResource("StandardMaterial3D_wsrj2")
 
 [node name="MeshCrouching" type="MeshInstance3D" parent="." unique_id=1458375954]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30000007, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
 mesh = SubResource("CapsuleMesh_uh14l")
 surface_material_override/0 = SubResource("StandardMaterial3D_wsrj2")
 
 [node name="MeshCrawling" type="MeshInstance3D" parent="." unique_id=948840046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14999998, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 mesh = SubResource("CapsuleMesh_p7p3f")
 surface_material_override/0 = SubResource("StandardMaterial3D_wsrj2")

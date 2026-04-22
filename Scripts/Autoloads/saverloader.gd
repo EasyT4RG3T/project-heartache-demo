@@ -7,10 +7,14 @@ signal GameSaved
 const SETTINGS_VERSION: int = 1
 const accept_menu_uid: String = "uid://dckjpcj38rsvw"
 
+@onready var loading_screen: Control = %LoadingScreen
+@onready var progress_label: Label = %ProgressLabel
+
 var settings: SettingsResource
 var graphics_settings: GraphicsSettingsResource
 
 var load_thread: Thread = Thread.new()
+var thread_loading: bool = false
 
 var queue_semaphore: Semaphore = Semaphore.new()
 var stop_thread: bool = false
@@ -29,6 +33,13 @@ var current_slot: String = "0":
 		current_slot = value
 		settings.last_save = value
 		save_settings()
+
+
+var thread_load_progress: Array = []
+var progress_message: String = "":
+	set(value):
+		progress_message = value
+		progress_label.text = value
 
 
 func save_settings() -> void:
@@ -91,11 +102,13 @@ func load_chunk_data(chunk_uid: String) -> void:
 func thread_load(path: String) -> Resource:
 	ResourceLoader.load_threaded_request(path)
 	
-	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-		await get_tree().physics_frame
-	
-	if ResourceLoader.load_threaded_get_status(path) != ResourceLoader.THREAD_LOAD_LOADED:
-		print("couldn't load resource")
+	var status = ResourceLoader.THREAD_LOAD_IN_PROGRESS
+	while status == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		status = ResourceLoader.load_threaded_get_status(path, thread_load_progress)
+		progress_message = "Loading Scene: " + str(int(thread_load_progress[0] * 100))
+		await get_tree().process_frame
+	if status != ResourceLoader.THREAD_LOAD_LOADED:
+		assert(false, "couldn't load resource")
 		return
 	
 	return ResourceLoader.load_threaded_get(path)
@@ -108,6 +121,8 @@ func _init() -> void:
 func _ready() -> void:
 	stop_thread = false
 	load_thread.start(_thread_worker)
+	
+	hide_loading_screen()
 	
 	await get_tree().process_frame
 	
@@ -538,3 +553,38 @@ func _override_dic_deep(old: Dictionary, new: Dictionary) -> Dictionary:
 		old[key] = new[key]
 	
 	return old
+
+
+func show_loading_screen() -> void:
+	loading_screen.show()
+
+func hide_loading_screen() -> void:
+	loading_screen.hide()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		if !Game.running:
+			get_tree().quit()
+			return
+		if can_save > 0:
+			var prev_menu: Node = InputManager.menu
+			var accept_menu_packed: PackedScene = load(accept_menu_uid)
+			var accept_menu: AcceptMenu = accept_menu_packed.instantiate()
+			accept_menu.message = "Cannot save at this moment/nQuit without saving?"
+			accept_menu.accept_text = "Yes"
+			accept_menu.cancel_text = "No"
+			add_child(accept_menu)
+			accept_menu.z_as_relative = false
+			accept_menu.z_index = 251
+			accept_menu.accepted.connect(func():
+				get_tree().quit())
+			accept_menu.cancelled.connect(func():
+				accept_menu.queue_free()
+				InputManager.menu = prev_menu)
+			InputManager.menu = accept_menu
+			return
+		else:
+			save_game_data(SaverLoader.current_slot)
+			await GameSaved
+			get_tree().quit()

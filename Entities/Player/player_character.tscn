@@ -79,7 +79,6 @@ update_scale = false
 [node name="PlayerHUD" parent="Head/MainCamera" unique_id=2020952220 instance=ExtResource("3_b2vmj")]
 unique_name_in_owner = true
 z_index = 1
-anchors_preset = 15
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0

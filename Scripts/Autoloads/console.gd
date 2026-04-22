@@ -625,6 +625,8 @@ var command_tree: Dictionary = {
 			"crawl": _command_system_debug_crawl,
 		},
 		"say": [_command_system_say, _need_string, "text"],
+		"set_can_save": [_command_system_set_can_save, _need_int, func():
+			return SaverLoader.can_save]
 	}
 }
 
@@ -1417,3 +1419,7 @@ func _command_system_debug_crawl() -> String:
 func _command_system_say(value: String) -> String:
 	DialogueManager.say(value)
 	return "said " + value
+
+func _command_system_set_can_save(value: int) -> String:
+	SaverLoader.can_save = value
+	return "set can_save to: " + str(value)

@@ -1,7 +1,19 @@
 extends Node3D
 
 
-var story_description: String = "I had that nightmare again."
+var story_description: String = ""
+
+var running: bool = false
+
+
+var objects_to_load: int = 0:
+	set(value):
+		objects_to_load = value
+		SaverLoader.progress_message = "Loading Objects: " + str(objects_loaded) + " / " + str(value)
+var objects_loaded: int = 0:
+	set(value):
+		objects_loaded = value
+		SaverLoader.progress_message = "Loading Objects: " + str(value) + " / " + str(objects_to_load)
 
 
 func _init() -> void:
@@ -71,7 +83,12 @@ func load_chunk(chunk_uid: String, data: Dictionary = {}) -> void:
 			chunk.first_setup()
 		return
 	
+	_count_data(data)
+	
 	load_deep(chunk, data)
+	
+	objects_to_load = 0
+	objects_loaded = 0
 
 
 func save_deep(node: Node) -> Dictionary:
@@ -102,6 +119,7 @@ func save_deep(node: Node) -> Dictionary:
 
 func load_deep(node: Node, data: Dictionary, used: Array = []) -> void:
 	if data.has("Data") and node.has_method("load_save"):
+		objects_loaded += 1
 		node.load_save(data["Data"])
 		if !used.has(node):
 			used.append(node)
@@ -163,24 +181,21 @@ func load_deep(node: Node, data: Dictionary, used: Array = []) -> void:
 				if child_node:
 					used.append(child_node)
 					load_deep(child_node, child_data, used)
-		
-		#for child in node.get_children():
-		#	if !used.has(child) and child.has_method("save"):
-		#		child.queue_free()
-	
 	
 	if node.has_method("save") and !used.has(node):
 		node.queue_free()
 	for child in node.get_children():
 		load_deep(child, {}, used)
-	
-	#for child in node.get_children():
-	#	print("CURRENT NODE: ", child)
-	#	if child.has_method("save"):
-	#		print("HAS SAVE")
-	#	if used.has(child):
-	#		print("DATA: ", used.find(child))
-	#	if child.has_method("save") and !used.has(child):
-	#		child.queue_free()
-	#	for schild in child.get_children():
-	#		load_deep(schild, {}, used)
+
+
+func _count_data(data: Dictionary) -> void:
+	if data.has("Data"):
+		objects_to_load += 1
+	if data.has("Children"):
+		for child in data["Children"]:
+			var child_data = data["Children"][child]
+			if child_data is Array:
+				for i in child_data.size():
+					_count_data(child_data[i])
+			else:
+				_count_data(child_data)

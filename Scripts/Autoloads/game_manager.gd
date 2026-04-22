@@ -20,6 +20,10 @@ func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
+func _ready() -> void:
+	get_tree().auto_accept_quit = false
+
+
 func screenshot(ss_name: String) -> void:
 	await RenderingServer.frame_post_draw
 	var image: Image = get_viewport().get_texture().get_image()
@@ -40,18 +44,23 @@ func load_player() -> void:
 
 
 func load_main_menu() -> void:
+	SaverLoader.progress_message = "Loading Menu"
+	SaverLoader.show_loading_screen()
 	SaverLoader.can_save = 1
 	player_character = null
 	InputManager.player_character = null
 	
 	Game.clear()
+	Game.running = false
 	AudioManager.clear()
+	DialogueManager.clear()
 	
 	await get_tree().process_frame
 	
 	var menu = load(main_menu_uid)
 	menu = menu.instantiate()
 	Game.add_child(menu)
+	SaverLoader.hide_loading_screen()
 
 
 func set_debug_overlay(value: int) -> void:
@@ -140,8 +149,11 @@ func apply_graphics_settings_data() -> void:
 
 
 func new_game() -> void:
+	SaverLoader.show_loading_screen()
+	
 	Game.clear()
 	AudioManager.clear()
+	DialogueManager.clear()
 	
 	await get_tree().process_frame
 	
@@ -153,6 +165,8 @@ func new_game() -> void:
 	is_new_game = true
 	SaverLoader.can_save = 0
 	GameFullyLoaded.emit()
+	Game.running = true
+	SaverLoader.hide_loading_screen()
 
 
 func save(file: Dictionary) -> void:
@@ -161,12 +175,15 @@ func save(file: Dictionary) -> void:
 
 
 func load_save(file: Dictionary) -> void:
+	SaverLoader.show_loading_screen()
+	
 	player_character = null
 	InputManager.player_character = null
 	InputManager.player_character_input = false
 	
 	Game.clear()
 	AudioManager.clear()
+	DialogueManager.clear()
 	
 	await get_tree().process_frame
 	
@@ -178,3 +195,5 @@ func load_save(file: Dictionary) -> void:
 	SaverLoader.can_save = 0
 	get_tree().paused = false
 	GameFullyLoaded.emit()
+	Game.running = true
+	SaverLoader.hide_loading_screen()

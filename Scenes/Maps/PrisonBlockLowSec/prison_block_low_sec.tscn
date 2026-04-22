@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://c8kvj7pe8k7rf" path="res://Assets/Assets/Furniture/Beds/DoubleDeckerBeds/DoubleDeckerBed01/StaticDoubleDeckerBed01.tscn" id="16_3u5ng"]
 [ext_resource type="PackedScene" uid="uid://b5nkr7ac05tt3" path="res://Assets/Assets/Furniture/Beds/Matresses/Matress01/StaticMatress01.tscn" id="17_rjwt6"]
 [ext_resource type="PackedScene" uid="uid://dxkc2bmku0med" path="res://Assets/Assets/Furniture/Beds/Matresses/Matress02/StaticMatress02.tscn" id="18_1y3rs"]
-[ext_resource type="PackedScene" uid="uid://kdlqfy0rjsev" path="res://Assets/Assets/Bathroom/ToiletPapers/ToiletPaper02/DynamicToiletPaper02.tscn" id="19_1mivf"]
 [ext_resource type="PackedScene" uid="uid://beaxqi7h2sjqk" path="res://Assets/Assets/Furniture/Desks/CheapDesk/StaticCheapDesk.tscn" id="19_o83bg"]
 [ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="20_n3fkx"]
 [ext_resource type="PackedScene" uid="uid://ikyd56ugg1ih" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/StaticCellDoor01.tscn" id="20_ylyy8"]
@@ -28,15 +27,12 @@
 [ext_resource type="PackedScene" uid="uid://bldjqon1070cl" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/MeshCellDoor01Flap.tscn" id="21_h8gwk"]
 [ext_resource type="PackedScene" uid="uid://b08btvrv03lng" path="res://Assets/Assets/Decorations/Books/Book03/StaticBook03.tscn" id="22_5ocwt"]
 [ext_resource type="PackedScene" uid="uid://p6se47afbw5x" path="res://Assets/Assets/Decorations/Books/Book04/DynamicBook04.tscn" id="23_3chxh"]
-[ext_resource type="PackedScene" uid="uid://be6h4l67ik3su" path="res://Assets/Assets/Decorations/Photos/StandingFrame/StaticStandingFrame.tscn" id="23_colw2"]
 [ext_resource type="PackedScene" uid="uid://d1so8kmycr4nh" path="res://Assets/Assets/Furniture/Chairs/Stool/StaticStool.tscn" id="23_ju711"]
 [ext_resource type="PackedScene" uid="uid://bfrptftxp5wf6" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow03/StaticPillow03.tscn" id="23_jw84x"]
 [ext_resource type="PackedScene" uid="uid://wrnhde8lcn0w" path="res://Assets/Assets/Bathroom/Tootcare/Toothpaste02/MeshToothpaste02.tscn" id="23_y7jsn"]
-[ext_resource type="PackedScene" uid="uid://ckpuiw51v3677" path="res://Assets/Assets/Keys/Key01/MeshKey01.tscn" id="24_amldx"]
 [ext_resource type="PackedScene" uid="uid://bcy6xeau0816g" path="res://Assets/Assets/Lights/Desk/FlatDeskLamp/StaticFlatDeskLamp.tscn" id="24_csg3t"]
 [ext_resource type="PackedScene" uid="uid://cix0b5xqjdlrj" path="res://Assets/Assets/Bathroom/Cleanware/SoapBarHolder/StaticSoapBarHolder.tscn" id="25_pfi4x"]
 [ext_resource type="PackedScene" uid="uid://bobblgukya4qi" path="res://Assets/Assets/Furniture/Cabinets/CheapCabinet/InteractableCheapCabinet.tscn" id="26_4xmcm"]
-[ext_resource type="Script" uid="uid://bpy5q0ccwpl1e" path="res://Scripts/Nodes/on_screen_notifier_3d.gd" id="27_88rhs"]
 [ext_resource type="Texture2D" uid="uid://i1ynqd8vhwsi" path="res://Assets/Textures/Gross/GrossSmear/GrossSmearWideR.png" id="27_cctlo"]
 [ext_resource type="PackedScene" uid="uid://ypqvycri57f7" path="res://Assets/Assets/Bathroom/Tootcare/ToothbrushHolder01/DynamicToothbrushHolder01.tscn" id="27_p7852"]
 [ext_resource type="PackedScene" uid="uid://cetljfqxhfp82" path="res://Assets/Assets/Bathroom/Tootcare/Toothbrush01/DynamicToothbrush01.tscn" id="28_5ocwt"]
@@ -108,19 +104,18 @@
 [ext_resource type="PackedScene" uid="uid://b2swjcfn8gq50" path="res://Assets/Assets/Trash/CardboardBoxes/OpenSmallCardboardBoxFlat/StaticOpenSmallCardboardBoxFlat.tscn" id="74_8yman"]
 [ext_resource type="PackedScene" uid="uid://d0sceivejyuke" path="res://Assets/Assets/Trash/CardboardBoxes/OpenCardboardBox01/StaticOpenCardboardBox01.tscn" id="75_ixvda"]
 [ext_resource type="Texture2D" uid="uid://dw1j21bo0x7o" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrowThick.png" id="77_j6lwy"]
-[ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="81_4sofw"]
 [ext_resource type="PackedScene" uid="uid://i4k60m55kpjo" path="res://Assets/Assets/Bathroom/ToiletBrush/StaticToiletBrush.tscn" id="81_pckie"]
 [ext_resource type="PackedScene" uid="uid://dslcymxarobuh" path="res://Assets/Assets/Wardrobe/Shoes/Sneakers/DynamicSneakerL.tscn" id="82_nw5rh"]
 [ext_resource type="PackedScene" uid="uid://f3eq6qps6u8e" path="res://Assets/Assets/Wardrobe/Shoes/Sneakers/DynamicSneakerR.tscn" id="83_6uvc4"]
 [ext_resource type="PackedScene" uid="uid://cupms33codepa" path="res://Assets/Assets/Furniture/Shelfs/Wall/WallBookShelf/StaticWallBookShelf.tscn" id="88_qkk5q"]
 [ext_resource type="PackedScene" uid="uid://b0vraigtgqns" path="res://Assets/Assets/Decorations/Books/Book02/DynamicBook02.tscn" id="89_n0al7"]
-[ext_resource type="Material" uid="uid://cculcya4lb2i2" path="res://Assets/Sprites/Pictures/Parents.tres" id="95_an5o7"]
 [ext_resource type="PackedScene" uid="uid://dhrjreeee3bht" path="res://Assets/Assets/Decorations/Office/Pens/Pencil/DynamicPencil02.tscn" id="96_4ktly"]
 [ext_resource type="PackedScene" uid="uid://dftnfm72cju1b" path="res://Assets/Assets/Trash/CigaretteBoxes/MeshCigaretteBox02.tscn" id="99_snto7"]
 [ext_resource type="PackedScene" uid="uid://ce0a7as346bsp" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket03/StaticBlanket03.tscn" id="99_yatlx"]
 [ext_resource type="PackedScene" uid="uid://cx1vqr0ol80el" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow02/StaticPillow02.tscn" id="100_mnx6g"]
 [ext_resource type="PackedScene" uid="uid://c8ws14w5vx42q" path="res://Assets/Assets/Trash/Cigarettes/MeshCigarette02.tscn" id="100_ni7vx"]
 [ext_resource type="PackedScene" uid="uid://bctu1ah3ype80" path="res://Assets/Assets/Trash/Cigarettes/MeshCigarette01.tscn" id="111_an5o7"]
+[ext_resource type="PackedScene" uid="uid://d4kvwarvn1dgn" path="res://Entities/DummyPlayer/dummy_player.tscn" id="113_5sipq"]
 [ext_resource type="PackedScene" uid="uid://wsok11ohrvww" path="res://Assets/Maps/PrisonBlockLowSec/StaticCell02.tscn" id="116_oxlnu"]
 [ext_resource type="LightmapGIData" uid="uid://bev5joyo0vb0q" path="res://Scenes/Maps/PrisonBlockLowSec/Cell02/cell_02.lmbake" id="116_up0o4"]
 [ext_resource type="PackedScene" uid="uid://cw6tvx884jcdo" path="res://Assets/Maps/PrisonBlockLowSec/StaticCorridor.tscn" id="117_5iag7"]
@@ -148,7 +143,6 @@
 [ext_resource type="PackedScene" uid="uid://di1m765wvavai" path="res://Assets/Assets/Trash/CardboardBoxes/OpenCardboardBoxFlat/StaticOpenCardboardBoxFlat.tscn" id="136_rsf4b"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="137_2ywr4"]
 [ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="138_rsf4b"]
-[ext_resource type="PackedScene" uid="uid://bnckj8ofncc32" path="res://Entities/Helper/helper.tscn" id="150_12tgg"]
 [ext_resource type="PackedScene" uid="uid://d2mkyfd2tkob0" path="res://Assets/Interactable/Vents/SquareVent/SquareVent.tscn" id="150_ux50x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
@@ -194,33 +188,47 @@ roughness = 0.01
 [sub_resource type="BoxShape3D" id="BoxShape3D_snto7"]
 size = Vector3(0.1, 0.42, 0.32)
 
-[sub_resource type="Animation" id="Animation_1mivf"]
-resource_name = "KeyPickUp"
-length = 8.5
-tracks/0/type = "value"
+[sub_resource type="Animation" id="Animation_5sipq"]
+length = 0.001
+tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
+tracks/0/path = NodePath("DynamicSneakerR")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6666667, 1.0333333, 1.7, 2.67, 3.33, 3.957565, 7.6000004, 8.466666),
-"transitions": PackedFloat32Array(1, 1, 0.6830201, 1, 1, 1, 1, 3.605001, 3.605001, 0.784584),
-"update": 0,
-"values": [Vector3(-0.899, 0.7, -1.804), Vector3(-0.899, 0.7, -1.804), Vector3(-0.899, 0.607, -1.851), Vector3(-0.899, 0.612, -1.848), Vector3(-0.899, 0.7, -1.804), Vector3(-0.899, 1.518, -1.804), Vector3(-0.899, 1.518, -2.288), Vector3(-0.899, 1.518, -2.288), Vector3(-0.899, 1.518, -2.288), Vector3(-0.899, 1.6, -2.231)]
-}
-tracks/1/type = "value"
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.73644555, 0, 0.67649686)
+tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
+tracks/1/path = NodePath("AnimatedPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6666667, 1.0333333, 1.7000005, 2.0333333, 2.67, 3.33, 3.957565, 4.86, 6.33, 7.6000004, 8.466666),
-"transitions": PackedFloat32Array(1, 1, 0.6830201, 1, 1, 2.0000021, 1, 1, 3.605001, 1.8025012, 1.8025012, 3.605001, 0.784584),
-"update": 0,
-"values": [Vector3(-1.2882276, 0, 0), Vector3(-1.2882276, 0, 0), Vector3(-1.2940943, -0.5289215, 0.54597473), Vector3(-1.2229191, -0.4998308, 0.51594615), Vector3(0, 0, 0), Vector3(-0.16891296, 0, 0), Vector3(0, 0, 0), Vector3(-0.076270886, 0, 0), Vector3(0.22189547, -1.3056604, -0.38930935), Vector3(0.23906665, -1.3389384, -0.4562621), Vector3(0.2253091, -1.2987996, -0.4034908), Vector3(0.22189547, -1.3056604, -0.38930935), Vector3(0, 0, 0)]
-}
+tracks/1/keys = PackedFloat32Array(0, 1, -0.8056248, 1.6, -1.0543367)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../DynamicBook01")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.04775989, 0, -0.7373793)
+
+[sub_resource type="Animation" id="Animation_3cies"]
+resource_name = "test"
+length = 60.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DynamicSneakerR")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(1.5333333, 1, 0, 1.5938375, 0.058, 33.666668, 1, 0, 1.4556705, 0.058, 58, 1, 0, 1.568, 0.058)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DynamicSneakerR")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(1.8333334, 1, 0, 0.14396752, 0, 0.9895824, 58, 1, 0, 0.89230233, 0, 0.45143828)
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -228,258 +236,43 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.6666667, 8.166667),
+"times": PackedFloat32Array(0.43333334, 8.033334),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": ["KeyPickUp01"],
-"method": &"animation_signal"
+"args": ["test [{homicide}][{red}]test[/color][/font]"],
+"method": &"_say"
 }, {
-"args": ["KeyPickUp02"],
-"method": &"animation_signal"
+"args": ["[font_size=80][{homicide}][{blue}]test2[/color][/font][/font_size]"],
+"method": &"_say"
 }]
 }
-tracks/3/type = "value"
+tracks/3/type = "position_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Cell01/Events/KeyEvent/MeshKey01:position")
+tracks/3/path = NodePath("AnimatedPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.6666667, 1.7, 2.67, 3.3333335, 3.966667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.9005222, -0.0019390136, -1.9652284), Vector3(-0.98876584, 0.7079947, -2.0110164), Vector3(-0.98876584, 1.5603894, -2.0110164), Vector3(-0.97941184, 1.5603894, -2.6501648), Vector3(-0.9352559, 1.3118787, -2.6920347)]
-}
-tracks/4/type = "value"
+tracks/3/keys = PackedFloat32Array(1, 1, -0.8056248, 1.6, -1.0543367, 58, 1, -0.7188206, 1.6, -0.7684064)
+tracks/4/type = "rotation_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Cell01/Events/KeyEvent/MeshKey01:rotation")
+tracks/4/path = NodePath("AnimatedPlayer")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.6666667, 1.7, 2.67, 3.3333335, 3.966667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.5162335, 0), Vector3(-0.52643967, -1.1172267, 1.4807135), Vector3(-0.52643967, -1.1172268, 1.4807135), Vector3(-0.5264397, -0.7679341, 1.4807135), Vector3(-0.5264397, -0.767934, 1.4807135)]
-}
-
-[sub_resource type="Animation" id="Animation_mnx6g"]
-resource_name = "PictureInspect"
-length = 9.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 1, 1.9333332, 2.6, 8.166667, 9),
-"transitions": PackedFloat32Array(1, 1.3660382, 0.81225246, 0.81225246, 1, 0.8122524, 1),
-"update": 0,
-"values": [Vector3(0.53, 1.6, 0.574), Vector3(0.53, 1.6, 0.574), Vector3(0.802, 1.06, 0.585), Vector3(0.802, 1.06, 0.585), Vector3(0.775, 1.067, 0.674), Vector3(0.775, 1.067, 0.674), Vector3(0.53, 1.6, 0.574)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 1.0000001, 1.9333333, 2.6, 8.166667, 9),
-"transitions": PackedFloat32Array(1, 1.3660382, 0.81225246, 0.81225246, 1, 0.8122524, 1),
-"update": 0,
-"values": [Vector3(-0.79761547, 3.3161256, 0), Vector3(-0.79761547, 3.3161256, 0), Vector3(-0.29792917, 2.902957, -0.07003897), Vector3(-0.29792917, 2.902957, -0.07003897), Vector3(-0.24695602, 2.9995434, 0.0694899), Vector3(-0.24695602, 2.9995434, 0.0694899), Vector3(-0.24085544, 0.5131268, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 1.8, 2.7333336, 7.533334, 8.166667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.9557981, 0.74, 1.3272198), Vector3(0.9557981, 0.74, 1.3272198), Vector3(0.78960234, 0.9429665, 1.0724032), Vector3(0.752, 1.002, 0.885), Vector3(0.741, 1.005, 0.882), Vector3(0.9557981, 0.74, 1.3272198)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 1.8, 2.7333333, 7.533334, 8.166667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.3161256, 0), Vector3(0, 3.3161256, 0), Vector3(-0.15009831, 3.169518, 0.03141593), Vector3(-0.14508635, 3.0172715, 0.051671397), Vector3(-0.14390871, 2.994957, 0.028547693), Vector3(0, 3.3161256, 0)]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.46666667, 3.6333334, 8.066667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": ["PictureInspect01"],
-"method": &"animation_signal"
-}, {
-"args": ["PictureInspect02"],
-"method": &"animation_signal"
-}, {
-"args": ["PictureInspect03"],
-"method": &"animation_signal"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_ndu8s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.3424103, 0.8604666, 0.9991046)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Cell01/Events/KeyEvent/MeshKey01:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.9005222, -0.0019390136, -1.9652284)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Cell01/Events/KeyEvent/MeshKey01:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.5162335, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.9557981, 0.74, 1.3272198)]
-}
-tracks/5/type = "value"
+tracks/4/keys = PackedFloat32Array(1, 1, 0, -0.739819, 0, 0.67280596, 58, 1, 0, 0.9335804, 0, -0.35836798)
+tracks/5/type = "position_3d"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Cell01/Events/PictureEvent/FamilyPicture:rotation")
+tracks/5/path = NodePath("../../../DynamicBook01")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -2.9670596, 0)]
-}
+tracks/5/keys = PackedFloat32Array(1.1333333, 1, 0.048, 1, -0.737, 58, 1, 0.048, 2, -0.737)
 
-[sub_resource type="Animation" id="Animation_i2lk4"]
-resource_name = "WakeUp"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cell01/Events/Cutscenes/Player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3.0000002, 4, 5, 5.5000005, 6, 6.5, 7.0000005, 7.266667, 7.9999995),
-"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.4567578, 0.8604666, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0904784, 1.0998875, 0.9991046), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-1.0048134, 1.0998875, 0.9923512), Vector3(-0.81158847, 1.0998875, 0.88625884), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(-0.6183635, 1.0998875, 0.7024921), Vector3(0, 1.6, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Cell01/Events/Cutscenes/Player:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 1, 1.2, 2, 3.0000002, 4, 5, 5.5000005, 6, 6.5, 7.0000005, 7.266667, 7.9999995),
-"transitions": PackedFloat32Array(1, 1, 2, 1, 1, 1, 1, 0.5, 1, 1.5, 1.5, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, -1.5707964, 0), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.34147888, -1.6179014, -0.103105165), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.34147888, -1.6179014, -0.103105165), Vector3(-0.37594527, -1.6185147, -0.10135876), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.077656515, -0.25510332, -0.09833581), Vector3(-0.29021418, -0.1796255, 0.12487688), Vector3(-0.55433404, 0, 0), Vector3(-0.55433404, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1, 1.6666666, 6.0333333, 6.5333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"values": [{
-"args": ["WakeUp01"],
-"method": &"animation_signal"
-}, {
-"args": ["WakeUp02"],
-"method": &"animation_signal"
-}, {
-"args": ["WakeUp03"],
-"method": &"animation_signal"
-}, {
-"args": ["WakeUp04"],
-"method": &"animation_signal"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ndu8s"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_up0o4"]
 _data = {
-&"KeyPickUp": SubResource("Animation_1mivf"),
-&"PictureInspect": SubResource("Animation_mnx6g"),
-&"RESET": SubResource("Animation_ndu8s"),
-&"WakeUp": SubResource("Animation_i2lk4")
+&"RESET": SubResource("Animation_5sipq"),
+&"test": SubResource("Animation_3cies")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_88rhs"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mr04o"]
-size = Vector3(0.92370605, 1.4655151, 1.6129761)
-
-[sub_resource type="QuadMesh" id="QuadMesh_jw84x"]
-size = Vector2(0.07, 0.11)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ho4kq"]
-size = Vector3(0.4104576, 0.26715088, 0.4019165)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n6xt3"]
 size = Vector3(1.7799683, 2.883789, 11.38501)
@@ -1280,134 +1073,25 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9
 
 [node name="Events" type="Node3D" parent="Cell01" unique_id=1640541678]
 
-[node name="Cutscenes" type="AnimationPlayer" parent="Cell01/Events" unique_id=500231388 node_paths=PackedStringArray("player_anim")]
-unique_name_in_owner = true
-root_node = NodePath("../../..")
-libraries/ = SubResource("AnimationLibrary_ndu8s")
+[node name="Cutscene" type="Node3D" parent="Cell01/Events" unique_id=1697250521 node_paths=PackedStringArray("animation_player", "animated_player")]
 script = ExtResource("15_q5vw5")
-player_anim = NodePath("Player")
-setup = Dictionary[String, Dictionary]({
-"KeyPickUp": {
-"EnterAngle": 0,
-"ExitMode": 2
-},
-"PictureInspect": {
-"EnterAngle": 1,
-"ExitMode": 2
-},
-"RESET": {
-"EnterAngle": 1,
-"ExitMode": 2
-},
-"WakeUp": {
-"EnterAngle": 1,
-"ExitMode": 2
-}
+animation_player = NodePath("AnimationPlayer")
+animated_player = NodePath("AnimatedPlayer")
+exit_modes = Dictionary[String, int]({
+"test": 2
 })
 metadata/_custom_type_script = "uid://c6k6l4h73v30"
 
-[node name="Player" type="Node3D" parent="Cell01/Events/Cutscenes" unique_id=2110128382]
-unique_name_in_owner = true
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999976, -1.3424103, 0.8604666, 0.9991046)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cell01/Events/Cutscene" unique_id=1635802302]
+libraries/ = SubResource("AnimationLibrary_up0o4")
 
-[node name="KeyEvent" type="Node3D" parent="Cell01/Events" unique_id=1042713027]
-unique_name_in_owner = true
+[node name="DynamicSneakerR" parent="Cell01/Events/Cutscene" unique_id=1322880950 instance=ExtResource("83_6uvc4")]
+transform = Transform3D(-0.08470401, 0, -0.9964059, 0, 1, 0, 0.9964059, 0, -0.08470401, 0, 1.5938375, 0.058)
 
-[node name="MeshKey01" parent="Cell01/Events/KeyEvent" unique_id=590914060 instance=ExtResource("24_amldx")]
-transform = Transform3D(0.8696845, 0, 0.49360797, 0, 0.99999994, 0, -0.49360797, 0, 0.8696845, -0.9005222, -0.0019390136, -1.9652284)
+[node name="AnimatedPlayer" type="Node3D" parent="Cell01/Events/Cutscene" unique_id=1284395909]
+transform = Transform3D(-0.094664276, 0, -0.99550927, 0, 1, 0, 0.99550927, 0, -0.094664276, -0.8056248, 1.6, -1.0543367)
 
-[node name="KeyHighlightSpot" type="SpotLight3D" parent="Cell01/Events/KeyEvent" unique_id=638532212]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.3711392e-08, -0.9032478, 0.050425075, -1.9685305)
-light_energy = 0.03
-light_bake_mode = 0
-shadow_bias = 0.01
-shadow_blur = 1.5
-spot_range = 0.105
-spot_attenuation = 2.0
-spot_angle = 10.5
-script = ExtResource("11_gbybj")
-metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
-
-[node name="ThroughDoorRaySpot" type="SpotLight3D" parent="Cell01/Events/KeyEvent" unique_id=648673728]
-unique_name_in_owner = true
-transform = Transform3D(-1, 2.4957222e-15, -8.742278e-08, -5.940984e-08, 0.7336113, 0.67956936, 6.413434e-08, 0.67956936, -0.7336113, -0.9014234, 0.9293661, -3.0513506)
-light_color = Color(1, 0.9666667, 0.95, 1)
-light_energy = 0.2
-light_volumetric_fog_energy = 10.0
-light_bake_mode = 0
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_blur = 10.0
-spot_range = 2.975
-spot_angle = 20.75
-script = ExtResource("11_gbybj")
-metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
-
-[node name="KeyInteract" type="StaticBody3D" parent="Cell01/Events/KeyEvent" unique_id=662087129]
-unique_name_in_owner = true
-collision_layer = 4
-script = ExtResource("81_4sofw")
-metadata/_custom_type_script = "uid://dhhej803ct5gc"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Events/KeyEvent/KeyInteract" unique_id=1672291285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90661407, -2.3841858e-07, -1.9835942)
-shape = SubResource("BoxShape3D_88rhs")
-
-[node name="ToiletPaperEvent" type="Node3D" parent="Cell01/Events" unique_id=4230337]
-unique_name_in_owner = true
-
-[node name="ToiletPaperEventOnScreen" type="VisibleOnScreenNotifier3D" parent="Cell01/Events/ToiletPaperEvent" unique_id=436363712 node_paths=PackedStringArray("area")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26714146, 0.63693976, -2.4281228)
-aabb = AABB(-0.016641315, -0.15220909, -0.06285688, 0.03328263, 0.30441818, 0.12571377)
-script = ExtResource("27_88rhs")
-distance = 1.5
-area = NodePath("Area3D")
-metadata/_custom_type_script = "uid://bpy5q0ccwpl1e"
-
-[node name="Area3D" type="Area3D" parent="Cell01/Events/ToiletPaperEvent/ToiletPaperEventOnScreen" unique_id=707830619]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Events/ToiletPaperEvent/ToiletPaperEventOnScreen/Area3D" unique_id=2087949017]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43255615, 0.23275757, 0.30648804)
-shape = SubResource("BoxShape3D_mr04o")
-
-[node name="DynamicToiletPaper02Event" parent="Cell01/Events/ToiletPaperEvent" unique_id=1636605517 instance=ExtResource("19_1mivf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5691111, 0.66844857, -2.4141219)
-
-[node name="PictureEvent" type="Node3D" parent="Cell01/Events" unique_id=1911511740]
-unique_name_in_owner = true
-
-[node name="FamilyPicture" parent="Cell01/Events/PictureEvent" unique_id=94241534 instance=ExtResource("23_colw2")]
-unique_name_in_owner = true
-transform = Transform3D(-0.9848077, 0, -0.1736483, 0, 0.9999999, 0, 0.1736483, 0, -0.9848077, 0.9557981, 0.74, 1.3272198)
-
-[node name="MeshStandingFrame" parent="Cell01/Events/PictureEvent/FamilyPicture" index="0" unique_id=627653287]
-gi_mode = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cell01/Events/PictureEvent/FamilyPicture" unique_id=2092660064]
-transform = Transform3D(1, -7.450581e-09, 0, 0, 0.98480767, 0.17364818, 0, -0.1736481, 0.9848077, 0.00085526705, 0.06063895, 0.011071045)
-gi_mode = 2
-mesh = SubResource("QuadMesh_jw84x")
-surface_material_override/0 = ExtResource("95_an5o7")
-
-[node name="PictureInteract" type="StaticBody3D" parent="Cell01/Events/PictureEvent" unique_id=194334338]
-unique_name_in_owner = true
-script = ExtResource("81_4sofw")
-metadata/_custom_type_script = "uid://dhhej803ct5gc"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cell01/Events/PictureEvent/PictureInteract" unique_id=95601032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92932814, 0.8936312, 1.2716242)
-shape = SubResource("BoxShape3D_ho4kq")
-
-[node name="PictureSpotLight" type="SpotLight3D" parent="Cell01/Events/PictureEvent" unique_id=1937438660]
-unique_name_in_owner = true
-transform = Transform3D(-0.9659258, 2.9802322e-08, -0.25881913, -0.08557326, 0.9437606, 0.31936377, 0.24426329, 0.3306297, -0.9116027, 0.5806985, 1.2963494, 0.52933985)
-visible = false
-light_color = Color(1, 0.9066667, 0.8, 1)
-light_energy = 0.445
-spot_range = 0.885
-spot_angle_attenuation = 3.0
+[node name="DummyPlayer" parent="Cell01/Events/Cutscene/AnimatedPlayer" unique_id=813126692 instance=ExtResource("113_5sipq")]
 
 [node name="Cell02" type="Node3D" parent="." unique_id=1686302145]
 
@@ -2298,12 +1982,12 @@ size = Vector3(1.9172485, 3.1909423, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1, -4.6)
 size = Vector3(1, 2, 0.1)
 
-[node name="Helper" parent="." unique_id=1881633511 instance=ExtResource("150_12tgg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7220775, 0.0067597614, -2.052624)
+[node name="DynamicBook01" parent="." unique_id=645338410 instance=ExtResource("49_7k6yf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04775989, 0, -0.7373793)
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedSmallTowel"]
 [editable path="Cell01/Assets/Static/InteractableShoesCabinet"]
 [editable path="Cell01/Assets/Doors/Cell01Door/Cell01DoorHinge3D/StaticCellDoor01"]
-[editable path="Cell01/Events/PictureEvent/FamilyPicture"]
+[editable path="Cell01/Events/Cutscene/AnimatedPlayer/DummyPlayer"]

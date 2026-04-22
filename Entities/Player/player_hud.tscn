@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://deuuqjpwmbb7o" path="res://Assets/Fonts/Comicoro.ttf" id="2_jwibv"]
 
 [node name="PlayerHUD" type="Control" unique_id=1460563721]
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

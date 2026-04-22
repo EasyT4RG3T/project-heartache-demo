@@ -5,6 +5,7 @@
 
 [node name="PauseMenu" type="Control" unique_id=1819213750 groups=["Menu"]]
 z_index = 2
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

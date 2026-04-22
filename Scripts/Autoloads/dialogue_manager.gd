@@ -17,22 +17,33 @@ var default_font: String = RUNESCAPE_UF
 var default_font_size: int = 40
 
 
+var dialogues: Array[RichTextLabel] = []
+
+
 func say(text: String) -> void:
 	var label: RichTextLabel = RichTextLabel.new()
 	vbox.add_child(label)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.bbcode_enabled = true
 	text = text.format({
-		"alkhemikal": ALKHEMIKAL,
-		"belanidi": BELANIDI_SERIF_REGULAR,
-		"birch": BIRCH_LEAF,
-		"bonefish": BONEFISH,
-		"comicoro": COMICORO,
-		"homicide": DOUBLE_HOMICIDE,
-		"grape": GRAPE_SODA,
-		"notepen": NOTEPEN,
-		"peanut": PEANUT_MONEY,
-		"rune": RUNESCAPE_UF,
+		"alkhemikal": "font="+ALKHEMIKAL,
+		"belanidi": "font="+BELANIDI_SERIF_REGULAR,
+		"birch": "font="+BIRCH_LEAF,
+		"bonefish": "font="+BONEFISH,
+		"comicoro": "font="+COMICORO,
+		"homicide": "font="+DOUBLE_HOMICIDE,
+		"grape": "font="+GRAPE_SODA,
+		"notepen": "font="+NOTEPEN,
+		"peanut": "font="+PEANUT_MONEY,
+		"rune": "font="+RUNESCAPE_UF,
+		
+		"red": "color=red",
+		"green": "color=green",
+		"blue": "color=blue",
+		"yellow": "color=yellow",
+		"pink": "color=pink",
+		"gray": "color=gray",
+		"black": "color=black",
 	})
 	text = "[font="+default_font+"][font_size="+str(default_font_size)+"]" + text + "[/font_size][/font]"
 	label.text = text
@@ -40,8 +51,19 @@ func say(text: String) -> void:
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	
+	dialogues.append(label)
+	
 	await get_tree().create_timer(10).timeout
-	label.queue_free()
+	if label:
+		dialogues.erase(label)
+		label.queue_free()
+
+
+func clear() -> void:
+	for label in dialogues:
+		dialogues.erase(label)
+		if label:
+			label.queue_free()
 
 
 func apply_settings() -> void:

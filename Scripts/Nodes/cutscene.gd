@@ -1,118 +1,140 @@
 @tool
 class_name Cutscene
-extends AnimationPlayer
+extends Node3D
 
 
-## First key will be replaced for smooth transition into cutscene /!\
+@export var animation_player: AnimationPlayer
+@export var animated_player: Node3D
+@export var exit_modes: Dictionary[String, PlayerCharacter.MovementMode]
 
+const UI_SKIP = preload("uid://b2fn5yvvmjf2m")
+var skip_progress_bar: TextureProgressBar
 
-@export var player_anim: Node3D
+var rigid_bodies: Array[DynamicRigidBody3D] = []
 
-@export var setup: Dictionary[String, Dictionary]
-@export_tool_button("Refresh Animation List") var refresh: Callable = func():
-	for anim in get_animation_list():
-		if setup.has(anim):
-			temp_setup[anim] = setup[anim]
-		else:
-			temp_setup[anim] = {}
-			temp_setup[anim]["EnterAngle"] = +1
-			temp_setup[anim]["ExitMode"] = PlayerCharacter.MovementMode.WALKING
-	setup.clear()
-	setup = temp_setup
-var temp_setup: Dictionary[String, Dictionary]
+var skip_dialogue: bool = false
 
-var player: PlayerCharacter
-
-var set_up: bool = false
-
-
-func _ready() -> void:
-	assert(player_anim, "No player_anim in cutscene node")
-	
-	animation_started.connect(_set_up_anim)
-	
-	animation_finished.connect(_exit_anim)
-
-
-func _set_up_anim(anim_name: StringName) -> void:
-	if Engine.is_editor_hint(): return
-	
-	if set_up: return
-	
-	player = GameManager.player_character
-	
-	pause()
-	var adjusted_player_rotation: Vector3 = player.head.global_rotation
-	if setup[anim_name]["EnterAngle"] > 0 and adjusted_player_rotation.y < 0:
-		adjusted_player_rotation.y += TAU
-	elif setup[anim_name]["EnterAngle"] < 0 and adjusted_player_rotation.y > 0:
-		adjusted_player_rotation.y -= TAU
-	get_animation(anim_name).track_set_key_value(0, 0, player.head.global_position)
-	get_animation(anim_name).track_set_key_value(1, 0, adjusted_player_rotation)
-	player_anim.global_position = player.head.global_position
-	player_anim.global_rotation = adjusted_player_rotation
-	player._change_fov_smooth(80, get_animation(anim_name).track_get_key_time(0, 1))
-	set_up = true
-	_play_anim()
-
-
-func _play_anim() -> void:
-	player.change_movement_mode(PlayerCharacter.MovementMode.CUTSCENE)
-	InputManager.player_character_input = false
-	SaverLoader.can_save += 1
-	play()
-	while is_playing():
-		player.head.global_position = player_anim.global_position
-		player.head.global_rotation = player_anim.global_rotation
-		await get_tree().process_frame
-
-
-func _exit_anim(anim_name: StringName) -> void:
-	player.current_movement_mode = setup[anim_name]["ExitMode"]
-	var last_pos_key = get_animation(anim_name).track_get_key_count(0) - 1
-	var last_rot_key = get_animation(anim_name).track_get_key_count(1) - 1
-	match setup[anim_name]["ExitMode"]:
-		PlayerCharacter.MovementMode.WALKING:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.6, 0)
-			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
-			player.current_movement_speed = player.movement_speeds[player.MovementMode.WALKING]
-			player._change_fov_smooth(player.player_fov, 0.5)
-			player.body_collision.shape.height = player.player_collision_height
-			player.body_collision.position.y = player.player_collision_position.y
-			player.vault_checks.vault_distance = player.vault_checks.vault_distances[player.MovementMode.WALKING]
-			player.head.position = player.player_head_position
-		PlayerCharacter.MovementMode.SPRINTING:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 1.6, 0)
-			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
-			player.current_movement_speed = player.movement_speeds[player.MovementMode.SPRINTING]
-			player._change_fov_smooth(player.player_fov + 10, 0.5)
-			player.body_collision.shape.height = player.player_collision_height
-			player.body_collision.position.y = player.player_collision_position.y
-			player.vault_checks.vault_distance = player.vault_checks.vault_distances[player.MovementMode.SPRINTING]
-			player.head.position = player.player_head_position
-		PlayerCharacter.MovementMode.CROUCHING:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 0.6, 0)
-			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
-			player.current_movement_speed = player.movement_speeds[player.MovementMode.CROUCHING]
-			player._change_fov_smooth(player.player_fov - 10, 0.5)
-			player.body_collision.shape.height = player.player_crouch_collision_height
-			player.body_collision.position = player.player_crouch_collision_position
-			player.vault_checks.vault_distance = player.vault_checks.vault_distances[player.MovementMode.CROUCHING]
-			player.head.position = player.player_crouch_head_position
-		PlayerCharacter.MovementMode.CRAWL:
-			player.global_position = get_animation(anim_name).track_get_key_value(0, last_pos_key) - Vector3(0, 0.3, 0)
-			player.head.global_rotation = get_animation(anim_name).track_get_key_value(1, last_rot_key)
-			player.current_movement_speed = player.movement_speeds[player.MovementMode.CRAWL]
-			player._change_fov_smooth(player.player_fov - 20, 0.5)
-			player.body_collision.shape.height = player.player_crawl_collision_height
-			player.body_collision.position = player.player_crawl_collision_position
-			player.head.position = player.player_crawl_head_position
-			player.can_vault = false
+var holding: bool = false:
+	set(value):
+		holding = value
+		
+		while holding == true:
+			hold_timer -= get_process_delta_time()
+			skip_progress_bar.value = 1.0 - hold_timer
 			await get_tree().process_frame
-			player.can_vault = false
-	player.last_pos = player.global_position
-	player.look_vector.x = player.head.global_rotation.y
-	player.look_vector.y = player.head.global_rotation.x
-	InputManager.player_character_input = true
-	set_up = false
+		if holding == false:
+			hold_timer = 1.0
+			if skip_progress_bar:
+				skip_progress_bar.value = 0.0
+var hold_timer: float = 1.0:
+	set(value):
+		hold_timer = value
+		if value <= 0.0:
+			holding = false
+			if animation_player.is_playing():
+				skip_dialogue = true
+				DialogueManager.clear()
+				animation_player.advance(
+					animation_player.current_animation_length - animation_player.current_animation_position
+					- 0.01
+					)
+var holding_key: InputEvent
+
+
+func take_input(event: InputEvent) -> void:
+	if event is not InputEventMouse:
+		if holding_key and !event.is_match(holding_key, false): return
+		if event.is_pressed():
+			if holding: return
+			holding_key = event
+			holding = true
+		if event.is_released():
+			holding_key = null
+			holding = false
+
+
+func play_animation(anim_name: String) -> void:
+	while InputManager.menu:
+		await get_tree().process_frame
+	
+	var animation: Animation = animation_player.get_animation(anim_name)
+	
+	skip_dialogue = false
+	
+	SaverLoader.can_save += 1
+	
+	if animated_player:
+		animated_player.global_transform = GameManager.player_character.head.global_transform
+	
+	for track in animation.get_track_count():
+		var node_path: String = animation.track_get_path(track)
+		var node = get_node(node_path)
+		
+		if node is DynamicRigidBody3D:
+			if node.picked_up:
+				node.put_down(node.current_player)
+			rigid_bodies.append(node)
+		
+		match animation.track_get_type(track):
+			Animation.TrackType.TYPE_VALUE:
+				animation.track_insert_key(track, 0.0, node.get(node_path.get_slice(":", 1)))
+			Animation.TrackType.TYPE_POSITION_3D:
+				animation.position_track_insert_key(track, 0.0, node.position)
+			Animation.TrackType.TYPE_ROTATION_3D:
+				animation.rotation_track_insert_key(track, 0.0, node.quaternion)
+			Animation.TrackType.TYPE_SCALE_3D:
+				animation.scale_track_insert_key(track, 0.0, node.scale)
+	
+	animation_player.animation_finished.connect(_finish_animation, CONNECT_ONE_SHOT)
+	animation_player.play(anim_name)
+	
+	if animated_player:
+		GameManager.player_character.change_movement_mode(PlayerCharacter.MovementMode.CUTSCENE)
+		
+		InputManager.menu = self
+		
+		skip_progress_bar = TextureProgressBar.new()
+		add_child(skip_progress_bar)
+		skip_progress_bar.fill_mode = TextureProgressBar.FILL_CLOCKWISE
+		skip_progress_bar.nine_patch_stretch = true
+		skip_progress_bar.texture_progress = UI_SKIP
+		skip_progress_bar.max_value = 1.0
+		skip_progress_bar.step = 0.01
+		skip_progress_bar.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+		skip_progress_bar.offset_left = -74
+		skip_progress_bar.offset_top = -74
+		skip_progress_bar.offset_right = -10
+		skip_progress_bar.offset_bottom = -10
+		skip_progress_bar.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS
+		
+		while animation_player.is_playing():
+			GameManager.player_character.head.global_position = animated_player.global_position
+			GameManager.player_character.head.global_rotation = animated_player.global_rotation
+			await get_tree().process_frame
+
+
+func _finish_animation(anim_name: StringName) -> void:
+	for rigid: DynamicRigidBody3D in rigid_bodies:
+		rigid.linear_velocity = Vector3.ZERO
+		rigid.angular_velocity = Vector3.ZERO
+	
+	rigid_bodies.clear()
+	
+	if animated_player:
+		var animation: Animation = animation_player.get_animation(anim_name)
+		var pos_track: int = animation.find_track(get_path_to(animated_player), Animation.TYPE_POSITION_3D)
+		GameManager.player_character.global_position = animation.track_get_key_value(pos_track, animation.track_get_key_count(pos_track) - 1)
+		GameManager.player_character.global_position -= Vector3(0, 1.6, 0)
+		var movement_mode: PlayerCharacter.MovementMode = exit_modes.get(anim_name, PlayerCharacter.MovementMode.WALKING)
+		GameManager.player_character.change_movement_mode(movement_mode, true)
+		
+		InputManager.menu = null
+		
+		skip_progress_bar.queue_free()
+	
 	SaverLoader.can_save -= 1
+
+
+func _say(text: String) -> void:
+	if skip_dialogue: return
+	DialogueManager.say(text)

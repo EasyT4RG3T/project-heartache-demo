@@ -2,6 +2,7 @@ class_name PlayerCharacter
 extends CharacterBody3D
 
 const player_collision_height: float = 1.8
+const player_collision_radius: float = 0.25
 const player_collision_position: Vector3 = Vector3(0, 0.9, 0)
 const player_crouch_collision_height: float = 0.8
 const player_crouch_collision_position: Vector3 = Vector3(0, 0.4, 0)
@@ -59,7 +60,7 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 		head.position = pos
 		if on_complete.is_valid():
 			on_complete.call()
-			return
+		return
 	
 	if head_tween:
 		head_tween.kill()
@@ -392,47 +393,88 @@ func _handle_action_input(event: InputEvent) -> void:
 		phys_wanted_distance -= 0.2
 
 
-func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
+func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool = true) -> void:
 	if exit:
 		exit_movement_mode(current_movement_mode)
 	current_movement_mode = mode
 	match mode:
 		MovementMode.WALKING:
-			change_movement_speed(movement_speeds[MovementMode.WALKING])
-			_change_fov_smooth(player_fov)
+			if instant:
+				current_movement_speed = movement_speeds[MovementMode.WALKING]
+				main_camera.fov = player_fov
+				head.position = player_head_position
+			else:
+				change_movement_speed(movement_speeds[MovementMode.WALKING])
+				_change_fov_smooth(player_fov)
+				_move_head_smooth(player_head_position, 0.3)
+			body_collision.shape.height = player_collision_height
+			body_collision.shape.radius = player_collision_radius
+			body_collision.position.y = player_collision_position.y
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.WALKING]
 			current_footsteps = footsteps
 		MovementMode.SPRINTING:
-			change_movement_speed(movement_speeds[MovementMode.SPRINTING])
-			_change_fov_smooth(player_fov + 10)
+			if instant:
+				current_movement_speed = movement_speeds[MovementMode.SPRINTING]
+				main_camera.fov = player_fov + 10
+				head.position = player_head_position
+			else:
+				change_movement_speed(movement_speeds[MovementMode.SPRINTING])
+				_change_fov_smooth(player_fov + 10)
+				_move_head_smooth(player_head_position, 0.3)
+			body_collision.shape.height = player_collision_height
+			body_collision.shape.radius = player_collision_radius
+			body_collision.position.y = player_collision_position.y
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.SPRINTING]
 			current_footsteps = fast_footsteps
 		MovementMode.CROUCHING:
-			change_movement_speed(movement_speeds[MovementMode.CROUCHING])
-			_change_fov_smooth(player_fov - 10)
+			if instant:
+				current_movement_speed = movement_speeds[MovementMode.CROUCHING]
+				main_camera.fov = player_fov - 10
+				head.position = player_crouch_head_position
+			else:
+				change_movement_speed(movement_speeds[MovementMode.CROUCHING])
+				_change_fov_smooth(player_fov - 10)
+				_move_head_smooth(player_crouch_head_position, 0.3)
 			body_collision.shape.height = player_crouch_collision_height
+			body_collision.shape.radius = player_collision_radius
 			body_collision.position = player_crouch_collision_position
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
-			_move_head_smooth(player_crouch_head_position, 0.3)
 			current_footsteps = slow_footsteps
 		MovementMode.CRAWL:
-			change_movement_speed(movement_speeds[MovementMode.CRAWL])
-			_change_fov_smooth(player_fov - 20, 0.1)
+			if instant:
+				current_movement_speed = movement_speeds[MovementMode.CRAWL]
+				main_camera.fov = player_fov - 20
+				head.position = player_crawl_head_position
+			else:
+				change_movement_speed(movement_speeds[MovementMode.CRAWL])
+				_change_fov_smooth(player_fov - 20, 0.1)
+				_move_head_smooth(player_crawl_head_position, 0.1)
 			body_collision.shape.height = player_crawl_collision_height
 			body_collision.position = player_crawl_collision_position
-			_move_head_smooth(player_crawl_head_position, 0.1)
+			current_footsteps = slow_footsteps
 			can_vault = false
 			await get_tree().process_frame
 			can_vault = false
 		MovementMode.CARRYING:
-			change_movement_speed(movement_speeds[MovementMode.CARRYING])
-			_change_fov_smooth(player_fov - 5)
+			if instant:
+				current_movement_speed = movement_speeds[MovementMode.CARRYING]
+				main_camera.fov = player_fov - 5
+				head.position = player_head_position
+			else:
+				change_movement_speed(movement_speeds[MovementMode.CARRYING])
+				_change_fov_smooth(player_fov - 5)
+				_move_head_smooth(player_head_position, 0.3)
+			body_collision.shape.height = player_collision_height
+			body_collision.shape.radius = player_collision_radius
+			body_collision.position.y = player_collision_position.y
+			current_footsteps = footsteps
 			can_vault = false
 			inventory.flashlight.turn_off()
 		MovementMode.VAULTING:
 			body_collision.disabled = true
 			InputManager.player_character_input = false
 		MovementMode.CUTSCENE:
+			InputManager.player_character_input = false
 			var main_camera_tween: Tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 			main_camera_tween.tween_property(main_camera, "position", Vector3.ZERO, 0.2)
 			bob_time = 0
@@ -440,15 +482,14 @@ func change_movement_mode(mode: MovementMode, exit: bool = true) -> void:
 
 func exit_movement_mode(mode: MovementMode) -> void:
 	match mode:
-		MovementMode.CROUCHING:
-			body_collision.shape.height = player_collision_height
-			body_collision.position.y = player_collision_position.y
-			_move_head_smooth(player_head_position, 0.3)
-		MovementMode.CRAWL:
-			body_collision.shape.radius = 0.25
 		MovementMode.VAULTING:
 			body_collision.disabled = false
 			was_on_ground = false
+			InputManager.player_character_input = true
+		MovementMode.CUTSCENE:
+			last_pos = global_position
+			look_vector.x = head.global_rotation.y
+			look_vector.y = head.global_rotation.x
 			InputManager.player_character_input = true
 
 
@@ -727,7 +768,7 @@ func _vault() -> void:
 			change_movement_mode(pre_vault_movement_mode))
 		return
 	
-	change_movement_mode(MovementMode.VAULTING, false)
+	change_movement_mode(MovementMode.VAULTING, false, false)
 	if vault_checks.vault_crouch_mid == Vector3.ZERO:
 		_move_player_smooth(global_position + vault_checks.vault_uncrouch_height, 0.2, func():
 			_move_player_smooth(vault_position, duration, func():

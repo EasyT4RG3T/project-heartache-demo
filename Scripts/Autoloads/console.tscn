@@ -8,6 +8,7 @@ bg_color = Color(0.1, 0.1, 0.1, 0.78431374)
 [node name="Console" type="Control" unique_id=501821176]
 process_mode = 3
 z_index = 255
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
