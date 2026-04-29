@@ -54,7 +54,7 @@ func _ready() -> void:
 			accept_menu.cancel_text = "No"
 			add_child(accept_menu)
 			accept_menu.accepted.connect(func():
-				SaverLoader.save_game_data(SaverLoader.current_slot)
+				SaverLoader.auto_save_game_data()
 				get_tree().paused = false
 				GameManager.load_main_menu())
 			accept_menu.cancelled.connect(func():
@@ -62,7 +62,7 @@ func _ready() -> void:
 				InputManager.menu = self)
 			InputManager.menu = accept_menu
 			return
-		SaverLoader.save_game_data(SaverLoader.current_slot)
+		SaverLoader.auto_save_game_data()
 		await SaverLoader.GameSaved
 		get_tree().paused = false
 		GameManager.load_main_menu())

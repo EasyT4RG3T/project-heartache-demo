@@ -38,4 +38,5 @@ extends Resource
 ## Save ##
 
 @export var last_save: String = "0"
+@export var last_autosave: int = 0
 @export var last_opened_settings_tab: int = 0

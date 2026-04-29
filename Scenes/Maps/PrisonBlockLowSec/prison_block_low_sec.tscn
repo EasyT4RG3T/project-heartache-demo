@@ -143,6 +143,8 @@
 [ext_resource type="PackedScene" uid="uid://di1m765wvavai" path="res://Assets/Assets/Trash/CardboardBoxes/OpenCardboardBoxFlat/StaticOpenCardboardBoxFlat.tscn" id="136_rsf4b"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="137_2ywr4"]
 [ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="138_rsf4b"]
+[ext_resource type="PackedScene" uid="uid://bnckj8ofncc32" path="res://Entities/Helper/helper.tscn" id="145_5sipq"]
+[ext_resource type="PackedScene" uid="uid://c4meqoffwnpx" path="res://Entities/Guard/guard.tscn" id="146_3cies"]
 [ext_resource type="PackedScene" uid="uid://d2mkyfd2tkob0" path="res://Assets/Interactable/Vents/SquareVent/SquareVent.tscn" id="150_ux50x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35oj4"]
@@ -190,52 +192,24 @@ size = Vector3(0.1, 0.42, 0.32)
 
 [sub_resource type="Animation" id="Animation_5sipq"]
 length = 0.001
-tracks/0/type = "rotation_3d"
+tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DynamicSneakerR")
+tracks/0/path = NodePath("AnimatedPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.73644555, 0, 0.67649686)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.8056248, 1.6, -1.0543367)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../DynamicBook01")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.04775989, 0, -0.7373793)
+tracks/0/keys = PackedFloat32Array(0, 1, -0.8056248, 1.6, -1.0543367)
 
 [sub_resource type="Animation" id="Animation_3cies"]
 resource_name = "test"
 length = 60.0
-tracks/0/type = "position_3d"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DynamicSneakerR")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(1.5333333, 1, 0, 1.5938375, 0.058, 33.666668, 1, 0, 1.4556705, 0.058, 58, 1, 0, 1.568, 0.058)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DynamicSneakerR")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(1.8333334, 1, 0, 0.14396752, 0, 0.9895824, 58, 1, 0, 0.89230233, 0, 0.45143828)
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/0/keys = {
 "times": PackedFloat32Array(0.43333334, 8.033334),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -246,27 +220,20 @@ tracks/2/keys = {
 "method": &"_say"
 }]
 }
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedPlayer")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(1, 1, -0.8056248, 1.6, -1.0543367, 58, 1, -0.7188206, 1.6, -0.7684064)
-tracks/4/type = "rotation_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedPlayer")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(1, 1, 0, -0.739819, 0, 0.67280596, 58, 1, 0, 0.9335804, 0, -0.35836798)
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../../DynamicBook01")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(1.1333333, 1, 0.048, 1, -0.737, 58, 1, 0.048, 2, -0.737)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(1, 1, -0.8056248, 1.6, -1.0543367, 58, 1, -0.7188206, 1.6, -0.7684064)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(1, 1, 0, -0.739819, 0, 0.67280596, 58, 1, 0, 0.9335804, 0, -0.35836798)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_up0o4"]
 _data = {
@@ -1085,11 +1052,8 @@ metadata/_custom_type_script = "uid://c6k6l4h73v30"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cell01/Events/Cutscene" unique_id=1635802302]
 libraries/ = SubResource("AnimationLibrary_up0o4")
 
-[node name="DynamicSneakerR" parent="Cell01/Events/Cutscene" unique_id=1322880950 instance=ExtResource("83_6uvc4")]
-transform = Transform3D(-0.08470401, 0, -0.9964059, 0, 1, 0, 0.9964059, 0, -0.08470401, 0, 1.5938375, 0.058)
-
 [node name="AnimatedPlayer" type="Node3D" parent="Cell01/Events/Cutscene" unique_id=1284395909]
-transform = Transform3D(-0.094664276, 0, -0.99550927, 0, 1, 0, 0.99550927, 0, -0.094664276, -0.8056248, 1.6, -1.0543367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8056248, 1.6, -1.0543367)
 
 [node name="DummyPlayer" parent="Cell01/Events/Cutscene/AnimatedPlayer" unique_id=813126692 instance=ExtResource("113_5sipq")]
 
@@ -1982,8 +1946,11 @@ size = Vector3(1.9172485, 3.1909423, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1, -4.6)
 size = Vector3(1, 2, 0.1)
 
-[node name="DynamicBook01" parent="." unique_id=645338410 instance=ExtResource("49_7k6yf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04775989, 0, -0.7373793)
+[node name="Helper" parent="." unique_id=1881633511 instance=ExtResource("145_5sipq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.613291, 0.0067598806, -4.390299)
+
+[node name="Guard" parent="." unique_id=1168603233 instance=ExtResource("146_3cies")]
+transform = Transform3D(-0.84796786, 0.1207086, 0.51612, 0.10311098, 0.992688, -0.06275903, -0.51992166, 2.220446e-16, -0.8542139, -0.28996795, 0.0018806893, -5.394825)
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]

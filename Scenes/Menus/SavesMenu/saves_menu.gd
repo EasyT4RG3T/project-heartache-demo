@@ -22,10 +22,17 @@ var current_selection: String = "":
 			delete_button.hide()
 			load_button.hide()
 			save_button.hide()
+		elif value.contains("AutoSave"):
+			delete_button.hide()
+			load_button.show()
+			save_button.show()
+			save_button.disabled = true
 		else:
 			delete_button.show()
 			load_button.show()
 			save_button.show()
+			if SaverLoader.can_save <= 0:
+				save_button.disabled = false
 var saves: Dictionary = {}
 
 
@@ -90,9 +97,9 @@ func _ready() -> void:
 		if SaverLoader.can_save > 0: return
 		var int_files: Array[int] = []
 		for file: String in saves:
-			if !file.begins_with(SaverLoader.current_slot + "_"):
+			if !file.begins_with("NewSave_"):
 				continue
-			file = file.trim_prefix(SaverLoader.current_slot + "_")
+			file = file.trim_prefix("NewSave_")
 			if file.is_valid_int():
 				if !int_files.has(file.to_int()):
 					int_files.append(file.to_int())
@@ -102,7 +109,7 @@ func _ready() -> void:
 				current_try += 1
 			else:
 				break
-		var full_slot: String = SaverLoader.current_slot + "_" + str(current_try)
+		var full_slot: String = "NewSave_" + str(current_try)
 		saves[full_slot] = {
 			"datetime" = Time.get_datetime_string_from_system(false, true),
 			"version" = ProjectSettings.get_setting("application/config/version"),
@@ -117,7 +124,7 @@ func _ready() -> void:
 		SaverLoader.save_game_data(full_slot))
 	
 	selected_name.text_submitted.connect(func(new_text: String):
-		if saves.has(new_text):
+		if saves.has(new_text) or new_text.contains("AutoSave"):
 			selected_name.text = current_selection
 			return
 		DirAccess.rename_absolute(SaverLoader.GAME_DATA_PATH + current_selection + ".dat",\
@@ -198,7 +205,7 @@ func _create_button(save_name: String, date: String, version: String) -> Button:
 	
 	var children = saves_v_box_container.get_children()
 	for child in children:
-		if child.name == "NewSaveButton":
+		if child.name == "NewSaveButton" or child.name.contains("AutoSave"):
 			children.erase(child)
 	children.sort_custom(func(a: Button, b: Button) -> bool:
 		var save_a = a.text.get_slice("\n", 0)

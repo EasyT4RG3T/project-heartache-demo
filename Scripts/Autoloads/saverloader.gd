@@ -34,6 +34,12 @@ var current_slot: String = "0":
 		settings.last_save = value
 		save_settings()
 
+var autosave_slot: int = 0:
+	set(value):
+		autosave_slot = value
+		settings.last_autosave = value
+		save_settings()
+
 
 var thread_load_progress: Array = []
 var progress_message: String = "":
@@ -59,6 +65,16 @@ func load_graphics_settings(preset: int) -> void:
 
 func erase_graphics_settings() -> void:
 	_queue_function(_erase_graphics_settings_data)
+
+func auto_save_game_data() -> void:
+	if can_save > 0:
+		Console.console_print(str("[color=red]actions blocking saving: ", can_save, "[/color]"))
+		return
+	save_game_data("AutoSave_" + str(autosave_slot))
+	if autosave_slot >= 2:
+		autosave_slot = 0
+	else:
+		autosave_slot += 1
 
 func save_game_data(slot: String) -> void:
 	if can_save > 0:
@@ -394,6 +410,8 @@ func _save_game_data(data: Array) -> void:
 	file_write.store_buffer(write_data_byte)
 	file_write.close()
 	
+	current_slot = slot
+	
 	Console.call_deferred("console_print", "game data: saved in slot " + slot)
 	call_deferred("emit_signal", "GameSaved")
 
@@ -585,6 +603,6 @@ func _notification(what: int) -> void:
 			InputManager.menu = accept_menu
 			return
 		else:
-			save_game_data(SaverLoader.current_slot)
+			auto_save_game_data()
 			await GameSaved
 			get_tree().quit()

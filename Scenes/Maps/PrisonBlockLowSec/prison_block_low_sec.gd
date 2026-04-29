@@ -28,7 +28,7 @@ func _ready() -> void:
 	reflection_update.start(0.5)
 	
 	await get_tree().create_timer(5.0, false).timeout
-	$Cell01/Events/Cutscene.play_animation("test")
+	#$Cell01/Events/Cutscene.play_animation("test")
 
 
 #func first_setup() -> void:

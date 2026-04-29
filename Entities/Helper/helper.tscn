@@ -538,17 +538,12 @@ _data = {
 
 [node name="Skeleton3D" parent="rig" parent_id_path=PackedInt32Array(692840714) index="0" unique_id=1010597944]
 modifier_callback_mode_process = 0
-bones/0/rotation = Quaternion(0.28579798, 1.1423708e-07, 3.406979e-08, 0.9582899)
-bones/1/rotation = Quaternion(-0.061227508, 1.5099031e-14, -1.4597763e-08, 0.9981238)
 bones/1/scale = Vector3(1, 0.9999997, 0.9999998)
-bones/2/rotation = Quaternion(0.01729118, -3.996803e-14, 4.122567e-09, 0.9998505)
 bones/2/scale = Vector3(1, 1.0000001, 1.0000001)
-bones/3/rotation = Quaternion(0.08211777, 1.5432102e-14, 1.9578367e-08, 0.99662274)
 bones/3/scale = Vector3(1, 1.0000004, 1.0000002)
 bones/5/rotation = Quaternion(0.015561347, 0.29885158, -0.81137663, 0.5021092)
 bones/7/rotation = Quaternion(0.038248334, -0.0037396702, 0.010815357, 0.9992028)
 bones/9/rotation = Quaternion(0.08793206, 0.008947398, 0.48329082, 0.87098676)
-bones/10/rotation = Quaternion(-0.5043765, 0.38484594, 0.3652266, 0.6812544)
 bones/10/scale = Vector3(0.99999994, 0.9999998, 0.99999964)
 bones/11/rotation = Quaternion(-0.041401558, -0.35119146, 0.7927803, 0.49643734)
 bones/13/rotation = Quaternion(0.14761083, 0.011580229, -0.033485416, 0.9884107)
@@ -690,6 +685,7 @@ transform = Transform3D(1, 0, 0, 0, -0.5, -0.86602527, 0, 0.86602527, -0.5, -0.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.075, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1110995997]
+active = false
 libraries/ = SubResource("AnimationLibrary_gg5i7")
 
 [node name="MeshCheapDesk" parent="." index="2" unique_id=34903522 instance=ExtResource("4_gg5i7")]
