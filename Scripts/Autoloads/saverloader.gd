@@ -586,20 +586,29 @@ func _notification(what: int) -> void:
 			get_tree().quit()
 			return
 		if can_save > 0:
+			get_tree().paused = true
 			var prev_menu: Node = InputManager.menu
+			var previous_mouse_mode = DisplayServer.mouse_get_mode()
+			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+			
 			var accept_menu_packed: PackedScene = load(accept_menu_uid)
 			var accept_menu: AcceptMenu = accept_menu_packed.instantiate()
 			accept_menu.message = "Cannot save at this moment/nQuit without saving?"
 			accept_menu.accept_text = "Yes"
 			accept_menu.cancel_text = "No"
-			add_child(accept_menu)
+			if prev_menu:
+				prev_menu.add_child(accept_menu)
+			else:
+				add_child(accept_menu)
 			accept_menu.z_as_relative = false
 			accept_menu.z_index = 251
 			accept_menu.accepted.connect(func():
 				get_tree().quit())
 			accept_menu.cancelled.connect(func():
 				accept_menu.queue_free()
-				InputManager.menu = prev_menu)
+				InputManager.menu = prev_menu
+				DisplayServer.mouse_set_mode(previous_mouse_mode)
+				get_tree().paused = false)
 			InputManager.menu = accept_menu
 			return
 		else:

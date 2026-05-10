@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bpadl8u70t7sr"]
+
+[ext_resource type="ArrayMesh" uid="uid://bt6y74x0i06oi" path="res://Assets/Assets/Weapons/Glock19/GlockSlide.obj" id="1_4kdwq"]
+[ext_resource type="Material" uid="uid://clc11uah4uowi" path="res://Assets/Assets/Weapons/Glock19/Glock19.tres" id="2_vlv32"]
+
+[node name="MeshGlockSlide" type="MeshInstance3D" unique_id=75198793]
+mesh = ExtResource("1_4kdwq")
+surface_material_override/0 = ExtResource("2_vlv32")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dl66xwpss2err"]
+
+[ext_resource type="ArrayMesh" uid="uid://cruvg36typ43r" path="res://Assets/Assets/Weapons/Glock19/GlockTrigger.obj" id="1_pyifm"]
+[ext_resource type="Material" uid="uid://clc11uah4uowi" path="res://Assets/Assets/Weapons/Glock19/Glock19.tres" id="2_bu4ii"]
+
+[node name="MeshGlockTrigger" type="MeshInstance3D" unique_id=1443066092]
+mesh = ExtResource("1_pyifm")
+surface_material_override/0 = ExtResource("2_bu4ii")

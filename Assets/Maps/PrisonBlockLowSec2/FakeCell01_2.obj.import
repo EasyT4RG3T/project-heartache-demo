@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dr43rahyviyv2"
+path="res://.godot/imported/FakeCell01_2.obj-0229f4197b752f77ec3c8c1bb18d632b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FakeCell01_2.obj-0229f4197b752f77ec3c8c1bb18d632b.mesh"]
+
+source_file="res://Assets/Maps/PrisonBlockLowSec2/FakeCell01_2.obj"
+dest_files=["res://.godot/imported/FakeCell01_2.obj-0229f4197b752f77ec3c8c1bb18d632b.mesh", "res://.godot/imported/FakeCell01_2.obj-0229f4197b752f77ec3c8c1bb18d632b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

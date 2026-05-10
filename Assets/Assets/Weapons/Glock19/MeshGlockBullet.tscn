@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://deoimmvld2k5l"]
+
+[ext_resource type="ArrayMesh" uid="uid://mgy05n7fth3d" path="res://Assets/Assets/Weapons/Glock19/GlockBullet.obj" id="1_tgbi5"]
+[ext_resource type="Material" uid="uid://1hwqppiuux7c" path="res://Assets/Assets/Weapons/Glock19/GlockBullet.tres" id="2_ru6r7"]
+
+[node name="MeshGlockBullet" type="MeshInstance3D" unique_id=1340161132]
+mesh = ExtResource("1_tgbi5")
+surface_material_override/0 = ExtResource("2_ru6r7")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmwyiy77hwg0a"]
+
+[ext_resource type="ArrayMesh" uid="uid://5isgdom1ow1n" path="res://Assets/Maps/KitchenCafeteria/Cafeteria.obj" id="1_qkjt1"]
+
+[node name="MeshCafeteria" type="MeshInstance3D" unique_id=1432159313]
+layers = 33
+mesh = ExtResource("1_qkjt1")

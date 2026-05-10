@@ -24,10 +24,12 @@ script = ExtResource("1_igepr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1980240037]
 transform = Transform3D(0.84612596, -0.44192117, 0.29795408, -0.3172985, 0.031514455, 0.9478019, -0.4282436, -0.89650005, -0.11355574, 0, 3, 0)
+layers = 3
 light_color = Color(0.96, 0.97, 1, 1)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=956017743]
 transform = Transform3D(0.79774046, -0.5216845, -0.30241606, 0.3103625, -0.07476369, 0.94767386, -0.51699656, -0.8498564, 0.10226929, 0, 3, 0)
+layers = 3
 light_color = Color(1, 0.94, 0.94, 1)
 light_energy = 0.5
 

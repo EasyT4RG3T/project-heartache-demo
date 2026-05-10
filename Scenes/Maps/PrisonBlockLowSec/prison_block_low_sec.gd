@@ -27,6 +27,8 @@ func _ready() -> void:
 		reflection_update.start(0.5))
 	reflection_update.start(0.5)
 	
+	%Cell01DoorHinge3D.force_open(1)
+	
 	await get_tree().create_timer(5.0, false).timeout
 	#$Cell01/Events/Cutscene.play_animation("test")
 
@@ -35,50 +37,6 @@ func _ready() -> void:
 #	toilet_paper_event(Event.SETUP)
 #	picture_event(Event.SETUP)
 #	key_event(Event.INIT)
-
-
-var cooldown: float = 0.0
-func _physics_process(delta: float) -> void:
-	cooldown += delta
-	if cooldown < 0.1:
-		return
-	else:
-		cooldown = 0.0
-	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.out_of_area:
-		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.disabled:
-			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.disabled = false
-		else:
-			var rand: int = randi_range(1, 3)
-			if rand == 3:
-				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D.disabled = true
-	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.out_of_area:
-		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.disabled:
-			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.disabled = false
-		else:
-			var rand: int = randi_range(1, 3)
-			if rand == 3:
-				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D2.disabled = true
-	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.out_of_area:
-		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.disabled:
-			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.disabled = false
-		else:
-			var rand: int = randi_range(1, 3)
-			if rand == 3:
-				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D3.disabled = true
-	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.out_of_area:
-		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.disabled:
-			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.disabled = false
-		else:
-			var rand: int = randi_range(1, 3)
-			if rand == 3:
-				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D4.disabled = true
-	if !$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.out_of_area:
-		if $SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.disabled:
-			$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.disabled = false
-		else:
-			var rand: int = randi_range(1, 3)
-			if rand == 3:
-				$SecurityCorridor/Lights/Dynamic/DynamicSpotLight3D5.disabled = true
 
 
 func animation_signal(animation: String) -> void:

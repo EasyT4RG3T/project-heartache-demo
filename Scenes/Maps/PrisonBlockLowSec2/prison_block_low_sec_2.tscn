@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bme8og1xpgnit"]
+
+[ext_resource type="ArrayOccluder3D" uid="uid://dmife5ceapoov" path="res://Scenes/Maps/PrisonBlockLowSec2/prison_block_low_sec_2.occ" id="1_4mrco"]
+[ext_resource type="PackedScene" uid="uid://cn0b35rsw3jtd" path="res://Assets/Maps/PrisonBlockLowSec2/StaticCell_2.tscn" id="1_reo23"]
+[ext_resource type="LightmapGIData" uid="uid://br8ayf0shitjj" path="res://Scenes/Maps/PrisonBlockLowSec2/Cell2/cell_2.lmbake" id="2_d0qgm"]
+[ext_resource type="PackedScene" uid="uid://b1mbicsh5lyxr" path="res://Assets/Maps/PrisonBlockLowSec2/StaticCorridor_2.tscn" id="2_nulnn"]
+[ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="3_k2k3y"]
+[ext_resource type="PackedScene" uid="uid://h20ihvkcakut" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell01_2.tscn" id="3_s3cis"]
+[ext_resource type="PackedScene" uid="uid://dhb2v7670ygo3" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell02_2.tscn" id="4_esko6"]
+[ext_resource type="PackedScene" uid="uid://bemtn8ybo5hbj" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell03_2.tscn" id="5_t61ea"]
+[ext_resource type="LightmapGIData" uid="uid://diikmxp1oxw46" path="res://Scenes/Maps/PrisonBlockLowSec2/Corridor2/corridor_2.lmbake" id="5_uld8x"]
+[ext_resource type="PackedScene" uid="uid://bhvrlls5s5kgh" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell04_2.tscn" id="6_4mrco"]
+[ext_resource type="LightmapGIData" uid="uid://th3dpaw3ooe8" path="res://Scenes/Maps/PrisonBlockLowSec2/FakeCells2/fake_cells_2.lmbake" id="7_vx3k6"]
+
+[node name="PrisonBlockLowSec2" type="Node3D" unique_id=76092142]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=224293770]
+layers = 32
+occluder = ExtResource("1_4mrco")
+
+[node name="Cell" type="Node3D" parent="." unique_id=2042484492]
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="Cell" unique_id=703750392]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_d0qgm")
+script = ExtResource("3_k2k3y")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="StaticCell_2" parent="Cell" unique_id=1548876165 instance=ExtResource("1_reo23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
+
+[node name="Corridor" type="Node3D" parent="." unique_id=1812813125]
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="Corridor" unique_id=1855763670]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("5_uld8x")
+script = ExtResource("3_k2k3y")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="StaticCorridor_2" parent="Corridor" unique_id=615203143 instance=ExtResource("2_nulnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
+
+[node name="FakeCells" type="Node3D" parent="." unique_id=617401663]
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="FakeCells" unique_id=1142481856]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("7_vx3k6")
+script = ExtResource("3_k2k3y")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="FakeCell01" type="Node3D" parent="FakeCells" unique_id=246160761]
+
+[node name="StaticFakeCell01_2" parent="FakeCells/FakeCell01" unique_id=227848841 instance=ExtResource("3_s3cis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
+
+[node name="FakeCell02" type="Node3D" parent="FakeCells" unique_id=1978673440]
+
+[node name="StaticFakeCell02_2" parent="FakeCells/FakeCell02" unique_id=1685848530 instance=ExtResource("4_esko6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
+
+[node name="FakeCell03" type="Node3D" parent="FakeCells" unique_id=336363572]
+
+[node name="StaticFakeCell03_2" parent="FakeCells/FakeCell03" unique_id=1636350243 instance=ExtResource("5_t61ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
+
+[node name="FakeCell04" type="Node3D" parent="FakeCells" unique_id=354190621]
+
+[node name="StaticFakeCell04_2" parent="FakeCells/FakeCell04" unique_id=132628369 instance=ExtResource("6_4mrco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)

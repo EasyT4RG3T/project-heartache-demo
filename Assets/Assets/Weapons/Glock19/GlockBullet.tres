@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1hwqppiuux7c"]
+
+[ext_resource type="Texture2D" uid="uid://bwknyxbodoheo" path="res://Assets/Assets/Weapons/Glock19/GlockBullet_albedo.png" id="1_80020"]
+
+[resource]
+albedo_texture = ExtResource("1_80020")
+metallic = 0.5
+roughness = 0.6
+texture_filter = 2

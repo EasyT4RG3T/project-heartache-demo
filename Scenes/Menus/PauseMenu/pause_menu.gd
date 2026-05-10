@@ -70,10 +70,10 @@ func _ready() -> void:
 
 func open() -> void:
 	show()
-	previous_mouse_mode = DisplayServer.mouse_get_mode()
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	InputManager.menu = self
+	previous_mouse_mode = DisplayServer.mouse_get_mode()
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 
 
 func close() -> void:

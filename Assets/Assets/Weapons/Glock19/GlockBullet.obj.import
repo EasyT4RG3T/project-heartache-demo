@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mgy05n7fth3d"
+path="res://.godot/imported/GlockBullet.obj-edd3598155c4afe06e1574f67e9c707c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GlockBullet.obj-edd3598155c4afe06e1574f67e9c707c.mesh"]
+
+source_file="res://Assets/Assets/Weapons/Glock19/GlockBullet.obj"
+dest_files=["res://.godot/imported/GlockBullet.obj-edd3598155c4afe06e1574f67e9c707c.mesh", "res://.godot/imported/GlockBullet.obj-edd3598155c4afe06e1574f67e9c707c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

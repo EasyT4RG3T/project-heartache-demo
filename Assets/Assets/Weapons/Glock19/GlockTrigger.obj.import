@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cruvg36typ43r"
+path="res://.godot/imported/GlockTrigger.obj-e56415fac2f23274b6927916ca70d48f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GlockTrigger.obj-e56415fac2f23274b6927916ca70d48f.mesh"]
+
+source_file="res://Assets/Assets/Weapons/Glock19/GlockTrigger.obj"
+dest_files=["res://.godot/imported/GlockTrigger.obj-e56415fac2f23274b6927916ca70d48f.mesh", "res://.godot/imported/GlockTrigger.obj-e56415fac2f23274b6927916ca70d48f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

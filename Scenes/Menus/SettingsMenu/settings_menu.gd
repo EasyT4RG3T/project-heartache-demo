@@ -111,6 +111,16 @@ var preset: GraphicsSettingsResource = null:
 		unsaved = true
 		changed_graphics = true
 
+var brightness: float = temp_graphics_settings.brightness:
+	set(value):
+		value = clampf(value, 0.0, 5.0)
+		brightness = value
+		temp_graphics_settings.brightness = value
+		%BrightnessHSlider.value = value
+		%BrightnessLineEdit.text = str(int(value * 100))
+		unsaved = true
+		changed_graphics = true
+
 var master_volume: float = temp_settings.master_volume:
 	set(value):
 		value = clamp(value, 0.0, 1.0)
@@ -322,6 +332,16 @@ func _set_up_graphics() -> void:
 		preset = load(graphics_medium))
 	%PresetButtonHigh.pressed.connect(func():
 		preset = load(graphics_high))
+	
+	%BrightnessHSlider.value = temp_graphics_settings.brightness
+	%BrightnessHSlider.value_changed.connect(func(value: float):
+		brightness = value)
+	%BrightnessLineEdit.text = str(int(temp_graphics_settings.brightness * 100))
+	%BrightnessLineEdit.editing_toggled.connect(func(editing: bool):
+		if editing: return
+		if !%BrightnessLineEdit.text.is_valid_int():
+			%BrightnessLineEdit.text = str(int(temp_graphics_settings.brightness * 100))
+		brightness = %BrightnessLineEdit.text.to_float() * 0.01)
 
 
 func _set_up_sound() -> void:
@@ -420,7 +440,7 @@ func _set_all_settings(graphics: bool = false) -> void:
 	
 	if !graphics: return
 	
-	## graphics settings
+	brightness = temp_graphics_settings.brightness
 
 
 func _save_settings() -> void:

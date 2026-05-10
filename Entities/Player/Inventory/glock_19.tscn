@@ -1,0 +1,1990 @@
+[gd_scene format=3 uid="uid://mkd5tcw3nnrk"]
+
+[ext_resource type="Script" uid="uid://jyrhmqedbi61" path="res://Entities/Player/Inventory/glock_19.gd" id="1_gksta"]
+[ext_resource type="PackedScene" uid="uid://dgbtnn8qyek6s" path="res://Assets/Assets/Weapons/Glock19/MeshGlockHandle.tscn" id="2_y7api"]
+[ext_resource type="PackedScene" uid="uid://4eb5fycddsy" path="res://Assets/Assets/Weapons/Glock19/MeshGlockMagHole.tscn" id="3_fg5y3"]
+[ext_resource type="PackedScene" uid="uid://bpadl8u70t7sr" path="res://Assets/Assets/Weapons/Glock19/MeshGlockSlide.tscn" id="4_ay18y"]
+[ext_resource type="PackedScene" uid="uid://dl66xwpss2err" path="res://Assets/Assets/Weapons/Glock19/MeshGlockTrigger.tscn" id="5_mac41"]
+[ext_resource type="PackedScene" uid="uid://deoimmvld2k5l" path="res://Assets/Assets/Weapons/Glock19/MeshGlockBullet.tscn" id="6_y7api"]
+[ext_resource type="Environment" uid="uid://d2m0td6ed2a2t" path="res://Assets/Environments/stripped_environment.tres" id="7_fg5y3"]
+[ext_resource type="PackedScene" uid="uid://cxdnhdlbqcklv" path="res://Assets/Assets/Weapons/Glock19/RigidGlockBullet.tscn" id="8_ay18y"]
+
+[sub_resource type="Animation" id="Animation_t6umm"]
+resource_name = "MagCheck"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3.0000002, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(-0.037209015, 0.046747483, 0.0017618649), Vector3(-0.03724319, 0.04604511, 0.0017618734), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, -0.3550698, -0.093218036), Vector3(0, -0.3550698, -0.093218036), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.5, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [7],
+"method": &"play_sound"
+}, {
+"args": [6],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jpdm6"]
+resource_name = "MagCheckLast"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(-0.07518433, -0.0073648063, 0.033361115), Vector3(-0.07730307, -0.0085440595, 0.034767397), Vector3(-0.07550841, -0.008144716, 0.033583652), Vector3(-0.06456923, -0.00437496, 0.023592617), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.055182572, -0.0073648063, 0.014425215), Vector3(-0.057336457, -0.0071113463, 0.015848607), Vector3(-0.055531565, -0.0070139323, 0.01465521), Vector3(-0.044665396, -0.007228986, 0.004768937), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.055182576, -0.0073648025, 0.014425213), Vector3(-0.05733646, -0.0071113426, 0.015848605), Vector3(-0.05553157, -0.0070139286, 0.014655208), Vector3(-0.0446654, -0.0072289812, 0.004768934), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.05518568, -0.0073650866, 0.014427542), Vector3(-0.08212094, -0.011287989, 0.032088995), Vector3(-0.08000299, -0.010868803, 0.030728819), Vector3(-0.044668503, -0.0072288867, 0.004771279), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.055182572, -0.0073648063, 0.014425215), Vector3(-0.057336457, -0.0071113463, 0.015848607), Vector3(-0.055531565, -0.0070139323, 0.01465521), Vector3(-0.044665396, -0.007228986, 0.004768937), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.055182572, -0.0073648063, 0.014425215), Vector3(-0.057336457, -0.0071113463, 0.015848607), Vector3(-0.055531565, -0.0070139323, 0.01465521), Vector3(-0.044665396, -0.007228986, 0.004768937), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.090444826, -0.9892858, 0.28197885), Vector3(0.14003289, -0.99073744, 0.26355124), Vector3(0.1309129, -0.9896418, 0.274948), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.090444826, -0.9892858, 0.28197885), Vector3(0.14003289, -0.99073744, 0.26355124), Vector3(0.1309129, -0.9896418, 0.274948), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.09044484, -0.9892858, 0.28197873), Vector3(0.14003292, -0.99073744, 0.26355103), Vector3(0.13091294, -0.9896417, 0.2749479), Vector3(-0.0028733686, -0.9840899, 0.35091308), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.09044485, -0.9892858, 0.28197876), Vector3(0.14003292, -0.9907374, 0.26355115), Vector3(0.1309129, -0.9896417, 0.274948), Vector3(-0.0028733762, -0.98408985, 0.35091317), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.090444826, -0.9892858, 0.28197885), Vector3(0.14003289, -0.99073744, 0.26355124), Vector3(0.1309129, -0.9896418, 0.274948), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.090444826, -0.9892858, 0.28197885), Vector3(0.14003289, -0.99073744, 0.26355124), Vector3(0.1309129, -0.9896418, 0.274948), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.4, 1.3333334),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [2],
+"method": &"play_sound"
+}, {
+"args": [1],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_n3ai0"]
+resource_name = "MagCheckLast_Aim"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(-0.04390245, -0.0072442363, 0.0335095), Vector3(-0.029774839, -0.010284295, 0.03450975), Vector3(-0.03175034, -0.009744927, 0.03457822), Vector3(-0.06456923, -0.00437496, 0.023592617), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.024071308, -0.0073889415, 0.014395539), Vector3(-0.009664983, -0.0064363317, 0.016086236), Vector3(-0.011605665, -0.0067198365, 0.01603963), Vector3(-0.044665396, -0.007228986, 0.004768937), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.02407131, -0.007388937, 0.014395538), Vector3(-0.009664986, -0.0064363275, 0.016086234), Vector3(-0.011605669, -0.0067198323, 0.01603963), Vector3(-0.0446654, -0.0072289812, 0.004768934), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.024074418, -0.0073891147, 0.0143978605), Vector3(-0.03471092, -0.012247814, 0.031396132), Vector3(-0.036738705, -0.011653152, 0.03151398), Vector3(-0.044668503, -0.0072288867, 0.004771279), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.024071308, -0.0073889415, 0.014395539), Vector3(-0.009664983, -0.0064363317, 0.016086236), Vector3(-0.011605665, -0.0067198365, 0.01603963), Vector3(-0.044665396, -0.007228986, 0.004768937), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.024071308, -0.0073889415, 0.014395539), Vector3(-0.009664983, -0.0064363317, 0.016086236), Vector3(-0.011605665, -0.0067198365, 0.01603963), Vector3(-0.044665396, -0.007228986, 0.004768937), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.051768012, -0.9936338, 0.10207732), Vector3(0.19544852, -1.0221379, 0.07896483), Vector3(0.16561657, -1.0189224, 0.08338066), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.051768012, -0.9936338, 0.10207732), Vector3(0.19544852, -1.0221379, 0.07896483), Vector3(0.16561657, -1.0189224, 0.08338066), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.051768042, -0.9936337, 0.10207718), Vector3(0.19544856, -1.0221381, 0.07896443), Vector3(0.16561647, -1.0189223, 0.08338038), Vector3(-0.0028733686, -0.9840899, 0.35091308), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.051767997, -0.9936335, 0.10207722), Vector3(0.19544862, -1.0221379, 0.07896454), Vector3(0.16561663, -1.0189224, 0.083380416), Vector3(-0.0028733762, -0.98408985, 0.35091317), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.051768012, -0.9936338, 0.10207732), Vector3(0.19544852, -1.0221379, 0.07896483), Vector3(0.16561657, -1.0189224, 0.08338066), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.6, 1.3333334, 1.4666667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.051768012, -0.9936338, 0.10207732), Vector3(0.19544852, -1.0221379, 0.07896483), Vector3(0.16561657, -1.0189224, 0.08338066), Vector3(-0.0028734533, -0.9840899, 0.3509133), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.4, 1.3333334),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [2],
+"method": &"play_sound"
+}, {
+"args": [1],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gtfue"]
+resource_name = "MagCheckLow"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3.0000002, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(-0.037209015, 0.074076995, -0.07609475), Vector3(-0.037209004, 0.07407696, -0.07609471), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3.0000002, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(1.0996461, -1.9122905, -1.6139805), Vector3(1.1072851, -1.9485935, -1.5711888), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.5, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [7],
+"method": &"play_sound"
+}, {
+"args": [6],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ayeba"]
+resource_name = "MagCheckLow_Aim"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3.0000002, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(-0.037209015, 0.074076995, -0.07609475), Vector3(-0.037209008, 0.07407697, -0.07609473), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3.0000002, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(1.099322, -1.6185528, -1.7032173), Vector3(1.1072854, -1.537883, -1.571189), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.5, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [7],
+"method": &"play_sound"
+}, {
+"args": [6],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_u0wyb"]
+resource_name = "MagCheck_Aim"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3.0000002, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(-0.037209015, 0.046747483, 0.0017618649), Vector3(-0.03724319, 0.04604511, 0.0017618734), Vector3(-0.013224671, -0.012863241, 0.023430932), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 3, 3.4, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(-8.569459e-09, 0.2889218, -0.093218036), Vector3(-8.569459e-09, 0.2889218, -0.093218036), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 3.7, 3.766667, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.45378542), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.5, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [7],
+"method": &"play_sound"
+}, {
+"args": [6],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y7api"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlockHandle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockMag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockSlide:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockTrigger:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletBarrel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletChamber:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GlockHandle:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockMag:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockSlide:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockTrigger:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BulletBarrel:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletChamber:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fg5y3"]
+resource_name = "Reload"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9666667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9666667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028647274, 0.057352923, -0.03195934), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028654715, 0.05809432, -0.03195933), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 1.6, 1.9000001, 1.9666667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.026428137, 0.055871725, -0.031959336), Vector3(-0.025668435, -0.048552748, 0.00569505), Vector3(-0.056035254, -0.66451734, 0.29238316), Vector3(-0.025668435, -0.048552748, 0.00569505), Vector3(0.028221415, 0.057434715, -0.03195933), Vector3(0.03044799, 0.0596573, -0.031959318), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9666667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028647274, 0.057352923, -0.03195934), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028654715, 0.05809432, -0.03195933), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9583333, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028647274, 0.057352923, -0.03195934), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028654715, 0.05809432, -0.03195933), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9583333, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028647274, 0.057352923, -0.03195934), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028654715, 0.05809432, -0.03195933), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 1.6, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9583331, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9583331, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.5, 1.2, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [7],
+"method": &"play_sound"
+}, {
+"args": [16],
+"method": &"refil_ammo"
+}, {
+"args": [6],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ay18y"]
+resource_name = "ReloadEmpty"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletChamber:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9666667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028647274, 0.057352923, -0.004415944), Vector3(0.02642814, 0.055871733, -0.004415944), Vector3(0.028654715, 0.05809432, -0.004415933), Vector3(0, 0, 0.027543396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockHandle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9666667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028647274, 0.057352923, -0.03195934), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028654715, 0.05809432, -0.03195933), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockMag:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 1.6, 1.9000001, 1.9666667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.026428137, 0.055871725, -0.031959336), Vector3(-0.025668435, -0.048552748, 0.00569505), Vector3(-0.056035254, -0.66451734, 0.29238316), Vector3(-0.025668435, -0.048552748, 0.00569505), Vector3(0.028221415, 0.057434715, -0.03195933), Vector3(0.03044799, 0.0596573, -0.031959318), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockSlide:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9666667, 2.4, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.030006342), Vector3(0.026, 0.056, 0), Vector3(0.029, 0.057, 0), Vector3(0.026, 0.056, 0), Vector3(0.029, 0.058, 0), Vector3(0, 0, 0.03), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlockTrigger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9583333, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028647274, 0.057352923, -0.03195934), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028654715, 0.05809432, -0.03195933), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletBarrel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666667, 1.9000001, 1.9583333, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028647274, 0.057352923, -0.03195934), Vector3(0.02642814, 0.055871733, -0.03195934), Vector3(0.028654715, 0.05809432, -0.03195933), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BulletChamber:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockHandle:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockMag:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8000001, 1.2, 1.6, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockSlide:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9666666, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GlockTrigger:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9583331, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletBarrel:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6666666, 1.9, 1.9583331, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1.5, 1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, -0.5235988), Vector3(0, 0, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.5, 1.2, 1.7, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [7],
+"method": &"play_sound"
+}, {
+"args": [15],
+"method": &"refil_ammo"
+}, {
+"args": [6],
+"method": &"play_sound"
+}, {
+"args": [1],
+"method": &"play_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mac41"]
+resource_name = "Shoot"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlockHandle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockMag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockSlide:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.058333334, 0.15),
+"transitions": PackedFloat32Array(1, 1.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.030006342), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockTrigger:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletBarrel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletChamber:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GlockHandle:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockMag:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockSlide:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockTrigger:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BulletBarrel:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletChamber:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lh46g"]
+resource_name = "ShootLast"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GlockHandle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GlockMag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlockSlide:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.058333334, 0.15),
+"transitions": PackedFloat32Array(1, 1.5, 1.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.030006342), Vector3(0, 0, 0.030006342)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlockTrigger:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BulletBarrel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BulletChamber:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.027543396)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GlockHandle:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GlockMag:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GlockSlide:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.058333337, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GlockTrigger:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BulletBarrel:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BulletChamber:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6umm"]
+_data = {
+&"MagCheck": SubResource("Animation_t6umm"),
+&"MagCheckLast": SubResource("Animation_jpdm6"),
+&"MagCheckLast_Aim": SubResource("Animation_n3ai0"),
+&"MagCheckLow": SubResource("Animation_gtfue"),
+&"MagCheckLow_Aim": SubResource("Animation_ayeba"),
+&"MagCheck_Aim": SubResource("Animation_u0wyb"),
+&"RESET": SubResource("Animation_y7api"),
+&"Reload": SubResource("Animation_fg5y3"),
+&"ReloadEmpty": SubResource("Animation_ay18y"),
+&"Shoot": SubResource("Animation_mac41"),
+&"ShootLast": SubResource("Animation_lh46g")
+}
+
+[node name="Glock19" type="Node3D" unique_id=174346797]
+script = ExtResource("1_gksta")
+
+[node name="GlockHandle" parent="." unique_id=2049028982 instance=ExtResource("2_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(0.9999991, 0, 0, 0, 0.9999994, 0, 0, 0, 1, 0, 0, 0)
+layers = 2
+gi_mode = 2
+
+[node name="Flare" type="SpotLight3D" parent="GlockHandle" unique_id=1885079374]
+unique_name_in_owner = true
+transform = Transform3D(1.000001, 0, 0, 0, 1.0000006, 0, 0, 0, 1, 0, 0.10201363, -0.10731488)
+visible = false
+light_color = Color(1, 0.6146667, 0.32, 1)
+light_energy = 0.1
+light_volumetric_fog_energy = 6.0
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 2.0
+shadow_opacity = 0.9
+spot_range = 2.0
+spot_angle = 80.0
+
+[node name="AimMarker" type="Marker3D" parent="GlockHandle" unique_id=2060133543]
+transform = Transform3D(1, 0, 0, 0, 0.99998623, -0.0052359635, 0, 0.0052359635, 0.99998623, 0, 0.10081276, -0.05068259)
+visible = false
+
+[node name="GlockMag" parent="." unique_id=403376275 instance=ExtResource("3_fg5y3")]
+unique_name_in_owner = true
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999996, 0, 0, 0, 0.9999998, 0, 0, 0)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet1" parent="GlockMag" unique_id=831932693 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.014188632, 0.027543396)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet2" parent="GlockMag" unique_id=398077792 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -0.021874653, 0.029891968)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet3" parent="GlockMag" unique_id=1087348625 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004, -0.021874653, 0.029891968)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet4" parent="GlockMag" unique_id=433879779 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -0.029970061, 0.031499073)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet5" parent="GlockMag" unique_id=1912112046 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003782292, -0.029970061, 0.031499073)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet6" parent="GlockMag" unique_id=1362057052 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -0.038190957, 0.034789648)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet7" parent="GlockMag" unique_id=1231461673 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003782292, -0.038190957, 0.034789648)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet8" parent="GlockMag" unique_id=1308015955 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -0.045929074, 0.03774901)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet9" parent="GlockMag" unique_id=612008612 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003782292, -0.045929074, 0.03774901)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet10" parent="GlockMag" unique_id=1420348265 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -0.053962108, 0.04065294)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet11" parent="GlockMag" unique_id=1961019766 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003782292, -0.053962108, 0.04065294)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet12" parent="GlockMag" unique_id=1119565258 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -0.061657958, 0.042355932)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet13" parent="GlockMag" unique_id=2115973061 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003782292, -0.061657958, 0.042355932)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet14" parent="GlockMag" unique_id=1623410770 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -0.06967754, 0.045800503)
+layers = 2
+gi_mode = 2
+
+[node name="Bullet15" parent="GlockMag" unique_id=450451224 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003782292, -0.06967754, 0.045800503)
+layers = 2
+gi_mode = 2
+
+[node name="GlockSlide" parent="." unique_id=75198793 instance=ExtResource("4_ay18y")]
+unique_name_in_owner = true
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+layers = 2
+gi_mode = 2
+
+[node name="GlockTrigger" parent="." unique_id=1443066092 instance=ExtResource("5_mac41")]
+unique_name_in_owner = true
+transform = Transform3D(0.9999991, 0, 0, 0, 0.9999994, 0, 0, 0, 1, 0, 0, 0)
+layers = 2
+gi_mode = 2
+
+[node name="BulletBarrel" parent="." unique_id=1340161132 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(0.9999991, 0, 0, 0, 0.99999934, 0, 0, 0, 1, 0, 0, 0)
+layers = 2
+gi_mode = 2
+
+[node name="BulletChamber" parent="." unique_id=1772760759 instance=ExtResource("6_y7api")]
+unique_name_in_owner = true
+transform = Transform3D(0.9999991, 0, 0, 0, 0.9999994, 0, 0, 0, 1, 0, 0, 0.027543396)
+layers = 2
+gi_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1127121329]
+libraries/ = SubResource("AnimationLibrary_t6umm")
+
+[node name="InventoryCamera" type="Camera3D" parent="." unique_id=303304245]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115, 0.12)
+visible = false
+cull_mask = 2
+environment = ExtResource("7_fg5y3")
+fov = 60.0
+near = 0.01
+far = 1.0
+
+[node name="RigidGlockBullet1" parent="." unique_id=1243568499 instance=ExtResource("8_ay18y")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1037166, -0.018224366)
+top_level = true
+visible = false
+collision_layer = 0
+collision_mask = 0
+input_ray_pickable = false
+mass = 0.1
+ignore_player = true
+
+[node name="RigidGlockBullet2" parent="." unique_id=579095306 instance=ExtResource("8_ay18y")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1037166, -0.018224366)
+top_level = true
+visible = false
+collision_layer = 0
+collision_mask = 0
+input_ray_pickable = false
+mass = 0.1
+ignore_player = true
+
+[node name="RigidGlockBullet3" parent="." unique_id=894351341 instance=ExtResource("8_ay18y")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1037166, -0.018224366)
+top_level = true
+visible = false
+collision_layer = 0
+collision_mask = 0
+input_ray_pickable = false
+mass = 0.1
+ignore_player = true

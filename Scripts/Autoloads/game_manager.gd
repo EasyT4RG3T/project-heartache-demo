@@ -3,6 +3,8 @@ extends Node
 
 signal GameFullyLoaded
 
+var DEFAULT_ENVIRONMENT = preload("uid://b5hbq6dr1gixx")
+var STRIPPED_ENVIRONMENT = preload("uid://d2m0td6ed2a2t")
 
 const main_menu_uid: String = "uid://evmnqmy0k477"
 const new_game_uid: String = "uid://cxen7otwqul1c"
@@ -144,6 +146,60 @@ func apply_graphics_settings_data() -> void:
 	get_viewport().positional_shadow_atlas_quad_2 = SaverLoader.graphics_settings.positional_shadow_atlas2
 	get_viewport().positional_shadow_atlas_quad_3 = SaverLoader.graphics_settings.positional_shadow_atlas3
 	
+	DEFAULT_ENVIRONMENT.tonemap_mode = SaverLoader.graphics_settings.tonemap_mode
+	DEFAULT_ENVIRONMENT.tonemap_exposure = SaverLoader.graphics_settings.tonemap_exposure
+	DEFAULT_ENVIRONMENT.tonemap_white = SaverLoader.graphics_settings.tonemap_white
+	
+	DEFAULT_ENVIRONMENT.ssao_enabled = SaverLoader.graphics_settings.ssao_enabled
+	DEFAULT_ENVIRONMENT.ssao_radius = SaverLoader.graphics_settings.ssao_radius
+	DEFAULT_ENVIRONMENT.ssao_intensity = SaverLoader.graphics_settings.ssao_intensity
+	DEFAULT_ENVIRONMENT.ssao_power = SaverLoader.graphics_settings.ssao_power
+	DEFAULT_ENVIRONMENT.ssao_detail = SaverLoader.graphics_settings.ssao_detail
+	DEFAULT_ENVIRONMENT.ssao_horizon = SaverLoader.graphics_settings.ssao_horizon
+	DEFAULT_ENVIRONMENT.ssao_sharpness = SaverLoader.graphics_settings.ssao_sharpness
+	DEFAULT_ENVIRONMENT.ssao_light_affect = SaverLoader.graphics_settings.ssao_light_affect
+	
+	DEFAULT_ENVIRONMENT.ssil_enabled = SaverLoader.graphics_settings.ssil_enabled
+	DEFAULT_ENVIRONMENT.ssil_radius = SaverLoader.graphics_settings.ssil_radius
+	DEFAULT_ENVIRONMENT.ssil_intensity = SaverLoader.graphics_settings.ssil_intensity
+	DEFAULT_ENVIRONMENT.ssil_sharpness = SaverLoader.graphics_settings.ssil_sharpness
+	DEFAULT_ENVIRONMENT.ssil_normal_rejection = SaverLoader.graphics_settings.ssil_normal_rejection
+	
+	DEFAULT_ENVIRONMENT.glow_enabled = SaverLoader.graphics_settings.glow_enabled
+	var current_level: int = 1
+	for level in SaverLoader.graphics_settings.glow_levels:
+		DEFAULT_ENVIRONMENT.set("glow_levels/" + str(current_level), level)
+		current_level += 1
+	DEFAULT_ENVIRONMENT.glow_normalized = SaverLoader.graphics_settings.glow_normalized
+	DEFAULT_ENVIRONMENT.glow_intensity = SaverLoader.graphics_settings.glow_intensity
+	DEFAULT_ENVIRONMENT.glow_strength = SaverLoader.graphics_settings.glow_strength
+	DEFAULT_ENVIRONMENT.glow_bloom = SaverLoader.graphics_settings.glow_bloom
+	DEFAULT_ENVIRONMENT.glow_blend_mode = SaverLoader.graphics_settings.glow_blend_mode
+	
+	DEFAULT_ENVIRONMENT.ssr_enabled = SaverLoader.graphics_settings.ssr_enabled
+	
+	DEFAULT_ENVIRONMENT.fog_enabled = SaverLoader.graphics_settings.fog_enabled
+	DEFAULT_ENVIRONMENT.fog_mode = SaverLoader.graphics_settings.fog_mode
+	DEFAULT_ENVIRONMENT.fog_light_energy = SaverLoader.graphics_settings.fog_light_energy
+	DEFAULT_ENVIRONMENT.fog_sun_scatter = SaverLoader.graphics_settings.fog_sun_scatter
+	DEFAULT_ENVIRONMENT.fog_density = SaverLoader.graphics_settings.fog_density
+	DEFAULT_ENVIRONMENT.fog_sky_affect = SaverLoader.graphics_settings.fog_sky_affect
+	DEFAULT_ENVIRONMENT.fog_height = SaverLoader.graphics_settings.fog_height
+	DEFAULT_ENVIRONMENT.fog_height_density = SaverLoader.graphics_settings.fog_height_density
+	DEFAULT_ENVIRONMENT.fog_depth_curve = SaverLoader.graphics_settings.fog_depth_curve
+	DEFAULT_ENVIRONMENT.fog_depth_begin = SaverLoader.graphics_settings.fog_depth_begin
+	DEFAULT_ENVIRONMENT.fog_depth_end = SaverLoader.graphics_settings.fog_depth_end
+	
+	DEFAULT_ENVIRONMENT.volumetric_fog_enabled = SaverLoader.graphics_settings.volumetric_fog_enabled
+	
+	DEFAULT_ENVIRONMENT.adjustment_brightness = SaverLoader.graphics_settings.brightness
+	DEFAULT_ENVIRONMENT.adjustment_contrast = SaverLoader.graphics_settings.contrast
+	DEFAULT_ENVIRONMENT.adjustment_saturation = SaverLoader.graphics_settings.saturation
+	
+	STRIPPED_ENVIRONMENT.adjustment_brightness = SaverLoader.graphics_settings.brightness
+	STRIPPED_ENVIRONMENT.adjustment_contrast = SaverLoader.graphics_settings.contrast
+	STRIPPED_ENVIRONMENT.adjustment_saturation = SaverLoader.graphics_settings.saturation
+	
 	if player_character:
 		player_character.apply_graphics_settings()
 
@@ -154,6 +210,8 @@ func new_game() -> void:
 	Game.clear()
 	AudioManager.clear()
 	DialogueManager.clear()
+	
+	get_tree().paused = true
 	
 	await get_tree().process_frame
 	
@@ -167,6 +225,8 @@ func new_game() -> void:
 	GameFullyLoaded.emit()
 	Game.running = true
 	SaverLoader.hide_loading_screen()
+	
+	get_tree().paused = false
 
 
 func save(file: Dictionary) -> void:
@@ -185,6 +245,8 @@ func load_save(file: Dictionary) -> void:
 	AudioManager.clear()
 	DialogueManager.clear()
 	
+	get_tree().paused = true
+	
 	await get_tree().process_frame
 	
 	await Game.load_save(file["game"])
@@ -197,3 +259,5 @@ func load_save(file: Dictionary) -> void:
 	GameFullyLoaded.emit()
 	Game.running = true
 	SaverLoader.hide_loading_screen()
+	
+	get_tree().paused = false

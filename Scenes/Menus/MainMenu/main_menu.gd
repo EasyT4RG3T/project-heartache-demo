@@ -17,16 +17,12 @@ var camera_tween: Tween
 @onready var start_load_game_button: Button = %LoadGameButton
 @onready var start_settings_button: Button = %SettingsButton
 @onready var start_quit_button: Button = %QuitButton
-@onready var start_chunk_button: Button = %ChunkButton
-@onready var start_map_select: OptionButton = %MapSelect
 @onready var version_label: Label = %VersionLabel
 
 
 const settings_menu_uid: String = "uid://0ogoc8tlkqfx"
 const saves_menu_uid: String = "uid://cs7mrt6rnpmfp"
 const accept_menu_uid: String = "uid://dckjpcj38rsvw"
-
-var maps: Dictionary = {}
 
 
 func take_input(event: InputEvent) -> void:
@@ -38,13 +34,12 @@ func _ready() -> void:
 	InputManager.menu = self
 	
 	camera_3d.make_current()
+	camera_3d.environment = GameManager.DEFAULT_ENVIRONMENT
 	monster.hide()
 	
 	version_label.text = "Version: " + ProjectSettings.get_setting("application/config/version")
-	_setup_map_select("res://Scenes/Maps/")
 	_setup_start()
 	_move_camera()
-	
 	
 	$Helper/AnimationPlayer.play("Map")
 	$Node3D/Helper/HelperAnimationPlayer.play("Map")
@@ -157,13 +152,6 @@ func _setup_start() -> void:
 			start.show()
 			InputManager.menu = self))
 	
-	start_chunk_button.pressed.connect(func():
-		start_chunk_button.disabled = true
-		var map = ResourceUID.path_to_uid(maps[str(start_map_select.get_selected_id())])
-		await Game.load_chunk(map)
-		GameManager.load_player()
-		self.queue_free())
-	
 	start_quit_button.pressed.connect(func():
 		var accept_menu_packed: PackedScene = load(accept_menu_uid)
 		var accept_menu: AcceptMenu = accept_menu_packed.instantiate()
@@ -179,39 +167,3 @@ func _setup_start() -> void:
 			accept_menu.queue_free()
 			InputManager.menu = self)
 		InputManager.menu = accept_menu)
-
-
-func _setup_map_select(dir: String, folders: Array = []) -> void:
-	if !folders:
-		var base_dir = DirAccess.open(dir)
-		
-		if !base_dir:
-			print("ERROR: " + str(dir))
-			return
-		
-		var new_folders = base_dir.get_directories()
-		
-		if !new_folders:
-			print("ERROR: empty directory")
-			return
-		
-		_setup_map_select(dir, new_folders)
-	
-	for folder: String in folders:
-		var base_dir = DirAccess.open(dir + str(folder) + "/")
-		
-		if !base_dir:
-			print("ERROR: " + str(folder))
-			return
-		
-		var new_files = base_dir.get_files()
-		var new_folders = base_dir.get_directories()
-		
-		if new_files:
-			for file in new_files:
-				if file.contains(".tscn"):
-					var map_index = maps.size()
-					maps[str(map_index)] = dir + folder + "/" + file
-					start_map_select.add_item(file.rstrip(".tscn"), map_index)
-		if new_folders:
-			_setup_map_select(dir + str(folder) + "/", new_folders)

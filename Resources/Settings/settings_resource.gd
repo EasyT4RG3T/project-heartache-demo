@@ -16,6 +16,8 @@ extends Resource
 
 @export var persistent_crosshair: bool = false
 
+@export var hold_aim: bool = false
+
 @export var hud_size: float = 1.0
 
 @export var head_bob: bool = true

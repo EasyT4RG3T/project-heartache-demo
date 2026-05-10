@@ -4,6 +4,10 @@
 [ext_resource type="Material" uid="uid://cic18jraepjbu" path="res://Entities/Guard/Body.tres" id="2_tmkor"]
 [ext_resource type="Material" uid="uid://dspwumemjl0sx" path="res://Entities/Guard/Face.tres" id="3_kl3r6"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b4qr0"]
+radius = 0.38
+height = 1.8
+
 [node name="Guard" unique_id=1107532329 instance=ExtResource("1_b4qr0")]
 
 [node name="Male" parent="metarig/Skeleton3D" parent_id_path=PackedInt32Array(1721436691) index="0" unique_id=2074804167]
@@ -134,3 +138,11 @@ transform = Transform3D(1, 0, 0, 0, -0.5, -0.86602527, 0, 0.86602527, -0.5, -0.1
 
 [node name="RightLegIK2" type="Marker3D" parent="." index="9" unique_id=1353039]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.075, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="10" unique_id=1025349471]
+collision_layer = 4224
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1274932231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_b4qr0")

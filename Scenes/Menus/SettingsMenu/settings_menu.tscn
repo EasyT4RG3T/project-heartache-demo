@@ -31,11 +31,12 @@ grow_vertical = 2
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=2034174625]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 0
+current_tab = 2
 use_hidden_tabs_for_min_size = true
 
 [node name="Game" type="Control" parent="VBoxContainer/TabContainer" unique_id=1903188767]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -257,7 +258,6 @@ text = "WIP"
 
 [node name="Graphics" type="Control" parent="VBoxContainer/TabContainer" unique_id=453174472]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -302,6 +302,25 @@ text = "High"
 layout_mode = 2
 text = "advanced graphics settings currently only
 available through the console"
+
+[node name="Brightness" type="HBoxContainer" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer" unique_id=883359952]
+layout_mode = 2
+
+[node name="BrightnessHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Brightness" unique_id=1308910846]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 5.0
+step = 0.01
+
+[node name="BrightnessLineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Brightness" unique_id=905471042]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "100"
+alignment = 1
+max_length = 3
+emoji_menu_enabled = false
 
 [node name="Sound" type="Control" parent="VBoxContainer/TabContainer" unique_id=1538599151]
 unique_name_in_owner = true

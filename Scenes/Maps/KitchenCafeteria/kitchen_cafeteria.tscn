@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://pjru50282l3r"]
+
+[ext_resource type="ArrayOccluder3D" uid="uid://dp0dfcgq7eo53" path="res://Scenes/Maps/KitchenCafeteria/kitchen_cafeteria.occ" id="1_petcf"]
+[ext_resource type="PackedScene" uid="uid://b47ejdjfc47ci" path="res://Assets/Maps/KitchenCafeteria/StaticCafeteria.tscn" id="1_v3k8i"]
+[ext_resource type="LightmapGIData" uid="uid://d0v1ohri5bxgx" path="res://Scenes/Maps/KitchenCafeteria/Cafeteria/cafeteria.lmbake" id="2_anl4u"]
+[ext_resource type="PackedScene" uid="uid://cgsw2mf2i2617" path="res://Assets/Maps/KitchenCafeteria/StaticKitchen.tscn" id="2_petcf"]
+[ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="3_0al2n"]
+[ext_resource type="LightmapGIData" uid="uid://bqkx3jwuffrd2" path="res://Scenes/Maps/KitchenCafeteria/Kitchen/kitchen.lmbake" id="5_3o0l8"]
+
+[node name="KitchenCafeteria" type="Node3D" unique_id=1348848964]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1716336434]
+occluder = ExtResource("1_petcf")
+bake_mask = 4293918752
+
+[node name="Cafeteria" type="Node3D" parent="." unique_id=1483395970]
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="Cafeteria" unique_id=729613351]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_anl4u")
+script = ExtResource("3_0al2n")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="StaticCafeteria" parent="Cafeteria" unique_id=1148701501 instance=ExtResource("1_v3k8i")]
+
+[node name="Kitchen" type="Node3D" parent="." unique_id=1981256931]
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="Kitchen" unique_id=632406862]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("5_3o0l8")
+script = ExtResource("3_0al2n")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="StaticKitchen" parent="Kitchen" unique_id=1752510500 instance=ExtResource("2_petcf")]

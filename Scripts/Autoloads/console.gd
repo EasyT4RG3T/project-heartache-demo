@@ -46,10 +46,10 @@ func open() -> void:
 
 
 func close() -> void:
+	InputManager.console_input = false
 	hide()
 	DisplayServer.mouse_set_mode(previous_mouse_mode)
 	get_tree().paused = false
-	InputManager.console_input = false
 
 
 func take_input(event: InputEvent) -> void:
@@ -100,7 +100,7 @@ func _on_command_line_text_changed() -> void:
 func _on_command_line_text_submitted() -> void:
 	if !command_line.text: return
 	_command_line_history_update(command_line.text)
-	_add_command_history(_execute_command(command_line.text))
+	_add_command_history(await _execute_command(command_line.text))
 	command_line.text = ""
 	command_hint.text = ""
 	hints.clear()
@@ -141,7 +141,7 @@ func _comman_line_history_select() -> void:
 func _execute_command(text: String) -> String:
 	var tokens: PackedStringArray = text.split(" ", false)
 	
-	return _process_command(command_tree, tokens)
+	return await _process_command(command_tree, tokens)
 
 
 func _process_command(tree: Dictionary, tokens: PackedStringArray) -> String:
@@ -163,7 +163,7 @@ func _process_command(tree: Dictionary, tokens: PackedStringArray) -> String:
 				else:
 					return valid[1]
 			else:
-				return current[0].call(current[1])
+				return await current[0].call(current[1])
 		else:
 			return current[0].call()
 	
@@ -171,7 +171,7 @@ func _process_command(tree: Dictionary, tokens: PackedStringArray) -> String:
 		return current.call()
 	
 	elif current is Dictionary:
-		return _process_command(current, tokens.slice(1))
+		return await _process_command(current, tokens.slice(1))
 	
 	else:
 		return "[color=red]invalid command[/color]"
@@ -592,6 +592,12 @@ var command_tree: Dictionary = {
 		"save": [_command_game_save, _need_string, "slot"],
 		"load": [_command_game_load, _need_string, "slot"],
 		"erase": [_command_game_erase, _need_string, "slot"],
+		"chunk": {
+			"PrisonBlockLowSec": [_command_game_chunk,
+			["PrisonBlockLowSec", "uid://cxen7otwqul1c", Vector3(0, 0 ,-3.6)]],
+			"PrisonBlockLowSec2": [_command_game_chunk,
+			["PrisonBlockLowSec2", "uid://bme8og1xpgnit", Vector3(0, 0, 9.4)]],
+		},
 	},
 	"player": {
 		"fly": _command_player_fly,
@@ -1277,6 +1283,47 @@ func _command_game_load(value: String) -> String:
 func _command_game_erase(value: String) -> String:
 	SaverLoader.erase_game_data(value)
 	return "erasing game data from slot: " + value
+
+func _command_game_chunk(value: Array) -> String:
+	SaverLoader.show_loading_screen()
+	
+	SaverLoader.can_save += 1
+	
+	if Game.running:
+		get_tree().paused = true
+		
+		for chunk in Game.get_chunks():
+			chunk.queue_free()
+		
+		await get_tree().process_frame
+		
+		await Game.load_chunk(value[1])
+		
+		GameManager.player_character.global_position = value[2]
+		
+		get_tree().paused = false
+	else:
+		Game.clear()
+		AudioManager.clear()
+		DialogueManager.clear()
+		
+		get_tree().paused = true
+		
+		await get_tree().process_frame
+		
+		await Game.load_chunk(value[1])
+		GameManager.load_player()
+		
+		await get_tree().process_frame
+		
+		GameManager.player_character.global_position = value[2]
+		Game.running = true
+		
+		get_tree().paused = false
+	
+	SaverLoader.hide_loading_screen()
+	
+	return "loaded chunk: " + value[0]
 
 func _command_player_fly() -> String:
 	var player = GameManager.player_character

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jx71inl833iq"]
+
+[ext_resource type="Texture2D" uid="uid://dcf057bnq1d0x" path="res://Assets/Textures/BulletHole/BulletHole_albedo.png" id="1_j46ru"]
+[ext_resource type="Texture2D" uid="uid://degljpye2poqx" path="res://Assets/Textures/BulletHole/BulletHole_normal.png" id="2_skl0f"]
+[ext_resource type="Script" uid="uid://8vljwhkbrh00" path="res://Assets/Sprites/bullet_hole.gd" id="3_fnei3"]
+
+[node name="BulletHole" type="Decal" unique_id=1725255358]
+size = Vector3(0.05, 0.01, 0.05)
+texture_albedo = ExtResource("1_j46ru")
+texture_normal = ExtResource("2_skl0f")
+script = ExtResource("3_fnei3")

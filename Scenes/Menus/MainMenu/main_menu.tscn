@@ -215,50 +215,35 @@ theme_override_fonts/font = ExtResource("3_gphap")
 theme_override_font_sizes/font_size = 100
 text = "Stuck"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Start/VBoxContainer2" unique_id=494509859]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Start/VBoxContainer2" unique_id=854181270]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 20
+size_flags_vertical = 4
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Start/VBoxContainer2/VBoxContainer" unique_id=854181270]
-layout_mode = 2
-
-[node name="NewGameButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=669965964]
+[node name="NewGameButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer2" unique_id=669965964]
 unique_name_in_owner = true
 layout_mode = 2
 text = "New Game"
 
-[node name="ContinueButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=776522030]
+[node name="ContinueButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer2" unique_id=776522030]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Continue"
 
-[node name="LoadGameButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=1753429916]
+[node name="LoadGameButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer2" unique_id=1753429916]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Load Game"
 
-[node name="SettingsButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=879321606]
+[node name="SettingsButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer2" unique_id=879321606]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer2" unique_id=1110013767]
+[node name="QuitButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer2" unique_id=1110013767]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="Start/VBoxContainer2/VBoxContainer" unique_id=863287606]
-layout_mode = 2
-
-[node name="ChunkButton" type="Button" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=1591042161]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Load Chunk"
-
-[node name="MapSelect" type="OptionButton" parent="Start/VBoxContainer2/VBoxContainer/VBoxContainer3" unique_id=19395027]
-unique_name_in_owner = true
-layout_mode = 2
 
 [node name="VersionLabel" type="Label" parent="." unique_id=663272528]
 unique_name_in_owner = true
@@ -627,13 +612,6 @@ transform = Transform3D(-0.536195, 0, -0.844094, 0, 1, 0, 0.844094, 0, -0.536195
 
 [node name="Helper" parent="." unique_id=1336398743 instance=ExtResource("29_6txr5")]
 transform = Transform3D(0.25881898, 0, 0.9659257, 0, 1, 0, -0.9659257, 0, 0.25881898, -0.6817502, 2.3841858e-07, -1.4663229)
-
-[node name="Skeleton3D" parent="Helper/rig" parent_id_path=PackedInt32Array(1336398743, 692840714) index="0" unique_id=1010597944]
-bones/0/rotation = Quaternion(0.28579795, 1.1423707e-07, 3.4069785e-08, 0.9582899)
-bones/1/rotation = Quaternion(-0.061227493, 1.5099031e-14, -1.45977666e-08, 0.9981239)
-bones/3/rotation = Quaternion(0.07826208, 1.2406744e-14, 1.8659097e-08, 0.99693286)
-bones/4/rotation = Quaternion(-0.50437623, -0.38484627, -0.36522678, 0.6812543)
-bones/10/rotation = Quaternion(-0.5043765, 0.38484597, 0.3652266, 0.6812544)
 
 [node name="LeftHandIK" parent="Helper/rig" parent_id_path=PackedInt32Array(1336398743, 692840714) index="2" unique_id=1666210711]
 transform = Transform3D(-1, 1.5099573e-07, -2.664536e-15, -1.4585075e-07, -0.96592534, 0.2588191, 3.908059e-08, 0.25881895, 0.96592593, 0.25, 0.83, 0)

@@ -76,6 +76,7 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 @onready var pause_menu: Control = %PauseMenu
 @onready var player_hud: PlayerHUD = %PlayerHUD
 @onready var inventory: Inventory = %Inventory
+var inventory_input: bool = false
 
 @onready var raytraced_audio_listener: RaytracedAudioListener = %RaytracedAudioListener
 
@@ -275,8 +276,7 @@ func _ready() -> void:
 	crawl_cooldown.one_shot = true
 	player_crawl_query.collision_mask = 131
 	
-	inventory_camera.hide()
-	inventory_camera.show()
+	inventory_camera.environment = GameManager.STRIPPED_ENVIRONMENT
 	
 	apply_settings()
 	apply_graphics_settings()
@@ -355,6 +355,9 @@ func _handle_action_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
 		pause_menu.open()
 	
+	if inventory_input:
+		inventory.take_input(event)
+	
 	if event.is_action_pressed("interact"):
 		if interactable:
 			interactable.interact()
@@ -369,10 +372,7 @@ func _handle_action_input(event: InputEvent) -> void:
 				inventory.flashlight.switch()
 	
 	if event.is_action_pressed("drop"):
-		print("drop")
-	
-	if event.is_action_released("drop"):
-		print("drop")
+		inventory.switch_clear()
 	
 	if event.is_action_pressed("use_main"):
 		pass
@@ -381,7 +381,8 @@ func _handle_action_input(event: InputEvent) -> void:
 		pass
 	
 	if event.is_action_pressed("use_third"):
-		mid_phys_rotation = true
+		if phys_object:
+			mid_phys_rotation = true
 	
 	if event.is_action_released("use_third"):
 		mid_phys_rotation = false
@@ -391,6 +392,33 @@ func _handle_action_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("third_pull"):
 		phys_wanted_distance -= 0.2
+	
+	if event.is_action_pressed("slot_1"):
+		inventory.switch_glock()
+	
+	if event.is_action_pressed("slot_2"):
+		inventory.switch_clear()
+	
+	if event.is_action_pressed("slot_3"):
+		inventory.switch_clear()
+	
+	if event.is_action_pressed("slot_4"):
+		inventory.switch_clear()
+	
+	if event.is_action_pressed("slot_5"):
+		inventory.switch_clear()
+	
+	if event.is_action_pressed("slot_6"):
+		inventory.switch_clear()
+	
+	if event.is_action_pressed("slot_7"):
+		inventory.switch_clear()
+	
+	if event.is_action_pressed("slot_8"):
+		inventory.switch_clear()
+	
+	if event.is_action_pressed("slot_9"):
+		inventory.switch_clear()
 
 
 func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool = true) -> void:
@@ -827,7 +855,6 @@ func apply_settings() -> void:
 
 func apply_graphics_settings() -> void:
 	dust_particles.emitting = false if SaverLoader.graphics_settings.reduce_particles else true
-	main_camera.apply_graphics_settings()
 
 
 func save() -> Dictionary:

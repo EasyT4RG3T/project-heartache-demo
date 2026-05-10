@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bj7qws0552sqo"]
-
-[ext_resource type="ArrayMesh" uid="uid://cqu634o7ard3j" path="res://Assets/Maps/PrisonBlockLowSec/BigCorridor.obj" id="1_1uu1f"]
-[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="2_4swap"]
-
-[node name="MeshBigCorridor" type="MeshInstance3D" unique_id=1089606248]
-layers = 33
-mesh = ExtResource("1_1uu1f")
-surface_material_override/0 = ExtResource("2_4swap")

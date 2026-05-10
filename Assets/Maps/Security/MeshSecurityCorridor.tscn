@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c27lewio0muv5"]
+
+[ext_resource type="ArrayMesh" uid="uid://csaygi640oiwy" path="res://Assets/Maps/Security/SecurityCorridor.obj" id="1_7yet5"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="2_ixrhh"]
+[ext_resource type="Material" uid="uid://ccgk0xxvw6kbf" path="res://Assets/Materials/Bricks/CrackedGrayBricks/CrackedGrayBricks.tres" id="3_t2vgj"]
+[ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="4_u3xn4"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="5_u3xn4"]
+
+[node name="MeshSecurityCorridor" type="MeshInstance3D" unique_id=1851711859]
+layers = 33
+mesh = ExtResource("1_7yet5")
+surface_material_override/0 = ExtResource("2_ixrhh")
+surface_material_override/1 = ExtResource("3_t2vgj")
+surface_material_override/2 = ExtResource("4_u3xn4")
+surface_material_override/3 = ExtResource("5_u3xn4")

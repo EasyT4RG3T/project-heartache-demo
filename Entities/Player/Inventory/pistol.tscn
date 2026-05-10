@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://71wg2s6ie0oa"]
-
-[ext_resource type="Script" uid="uid://djd1ucxiarp75" path="res://Entities/Player/Inventory/pistol.gd" id="1_pmok1"]
-
-[node name="Pistol" type="Node3D" unique_id=37447055]
-script = ExtResource("1_pmok1")

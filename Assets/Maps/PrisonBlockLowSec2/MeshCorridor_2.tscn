@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bu4rsbfmn2842"]
+
+[ext_resource type="ArrayMesh" uid="uid://hmhklmcth8y3" path="res://Assets/Maps/PrisonBlockLowSec2/Corridor_2.obj" id="1_lh43m"]
+
+[node name="MeshCorridor_2" type="MeshInstance3D" unique_id=773535772]
+layers = 33
+mesh = ExtResource("1_lh43m")

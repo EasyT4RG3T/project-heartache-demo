@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cxdnhdlbqcklv"]
+
+[ext_resource type="Script" uid="uid://07xri3gdevdi" path="res://Scripts/Nodes/dynamic_rigidbody_3d.gd" id="1_fyi18"]
+[ext_resource type="PackedScene" uid="uid://deoimmvld2k5l" path="res://Assets/Assets/Weapons/Glock19/MeshGlockBullet.tscn" id="2_gn5ks"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bkh23"]
+radius = 0.0048828125
+height = 0.02312207
+
+[node name="RigidGlockBullet" type="RigidBody3D" unique_id=1243568499]
+script = ExtResource("1_fyi18")
+
+[node name="MeshGlockBullet" parent="." unique_id=1340161132 instance=ExtResource("2_gn5ks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10035929, 0.042650133)
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1035895891]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -9.2267805e-11, -0.0021108408)
+shape = SubResource("CapsuleShape3D_bkh23")
+disabled = true

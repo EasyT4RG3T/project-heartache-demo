@@ -96,30 +96,26 @@ text = "EasyT4RG3T"
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Warnings" unique_id=952248234]
+[node name="Label" type="RichTextLabel" parent="Warnings" unique_id=545534987]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -56.5
-offset_top = -11.5
-offset_right = 56.5
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "Warnings here"
+bbcode_enabled = true
+text = "[font_size=60][color=red]WARNING[/color][/font_size]
+
+This Game Contains:
+
+Flashing Lights
+Violence & Gore
+Jumpscares"
+horizontal_alignment = 1
+vertical_alignment = 1
