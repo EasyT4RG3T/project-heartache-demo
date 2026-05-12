@@ -1,9 +1,20 @@
 extends Node3D
 
 
+const LOADING_ZONES = preload("uid://ba6jx3djjul6n")
+var loading_zones: Node3D
+const new_game_uids: Array[String] = ["uid://cxen7otwqul1c", "uid://b11ecofofpu70", "uid://c1xomtgke6hfn"]
+
+
 var story_description: String = ""
 
-var running: bool = false
+var running: bool = false:
+	set(value):
+		running = value
+		if value == true and !loading_zones:
+			SaverLoader.can_chunk_save = 0
+			loading_zones = LOADING_ZONES.instantiate()
+			add_child(loading_zones)
 
 
 var objects_to_load: int = 0:
@@ -26,16 +37,21 @@ func get_chunks() -> Array:
 	var chunks: Array[Node]
 	for child: Node in get_children():
 		if child is PlayerCharacter: continue
+		if child.name == "LoadingZones": continue
 		chunks.append(child)
 	return chunks
 
 
 func clear() -> void:
+	SaverLoader.can_chunk_save = 1
+	SaverLoader.clear_temp()
 	for child in get_children():
 		child.queue_free()
+	loading_zones = null
 
 
 func save() -> Dictionary:
+	SaverLoader.can_chunk_save = 1
 	var data: Dictionary = {}
 	
 	data["data"] = {
@@ -53,7 +69,15 @@ func save() -> Dictionary:
 	
 	data["chunks"] = chunks_dic
 	
+	SaverLoader.can_chunk_save = 0
 	return data
+
+
+func new_game() -> void:
+	for chunk in new_game_uids:
+		await load_chunk(chunk)
+	
+	return
 
 
 func load_save(data: Dictionary) -> void:
@@ -61,6 +85,8 @@ func load_save(data: Dictionary) -> void:
 	
 	for current_chunk_uid in data["current_chunks_uid"]:
 		await load_chunk(current_chunk_uid, data["chunks"][current_chunk_uid])
+	
+	return
 
 
 func save_chunk(chunk: Node) -> Dictionary:

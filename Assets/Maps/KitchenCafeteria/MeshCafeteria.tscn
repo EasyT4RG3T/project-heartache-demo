@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://cmwyiy77hwg0a"]
 
 [ext_resource type="ArrayMesh" uid="uid://5isgdom1ow1n" path="res://Assets/Maps/KitchenCafeteria/Cafeteria.obj" id="1_qkjt1"]
+[ext_resource type="Material" uid="uid://cp1tppx1xoxsq" path="res://Assets/Materials/Plaster/PlasterLightPink.tres" id="2_bx3af"]
+[ext_resource type="Material" uid="uid://b0fnrwlf66urb" path="res://Assets/Materials/Ceramic/CeramicTiles45/CeramicTiles45.tres" id="3_aw14o"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="4_vqm75"]
+[ext_resource type="Material" uid="uid://y20qlaik65t7" path="res://Assets/Materials/Wood/SmoothWood/SmoothWood.tres" id="5_3htgw"]
 
 [node name="MeshCafeteria" type="MeshInstance3D" unique_id=1432159313]
 layers = 33
 mesh = ExtResource("1_qkjt1")
+surface_material_override/0 = ExtResource("2_bx3af")
+surface_material_override/1 = ExtResource("3_aw14o")
+surface_material_override/2 = ExtResource("4_vqm75")
+surface_material_override/3 = ExtResource("4_vqm75")
+surface_material_override/4 = ExtResource("5_3htgw")

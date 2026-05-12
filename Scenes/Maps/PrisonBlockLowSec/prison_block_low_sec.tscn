@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://iw6q1cfqjafk" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.gd" id="1_ndu8s"]
 [ext_resource type="ArrayOccluder3D" uid="uid://jky03lonjbcn" path="res://Scenes/Maps/PrisonBlockLowSec/prison_block_low_sec.occ" id="2_asgqg"]
-[ext_resource type="Script" uid="uid://d00gr8pba06uh" path="res://Scripts/Nodes/loading_zone.gd" id="2_j6lwy"]
 [ext_resource type="LightmapGIData" uid="uid://b1wtkw27n0utu" path="res://Scenes/Maps/PrisonBlockLowSec/Vents/CellVent/cell_vent.lmbake" id="3_e4yc8"]
 [ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="3_lsyox"]
 [ext_resource type="LightmapGIData" uid="uid://c58vgi7mt5473" path="res://Scenes/Maps/PrisonBlockLowSec/Cell01/cell_01.lmbake" id="4_5iag7"]
@@ -239,10 +238,6 @@ size = Vector2(0.5, 0.5)
 [node name="PrisonBlockLowSec" type="Node3D" unique_id=1311521136]
 script = ExtResource("1_ndu8s")
 
-[node name="LoadingZone" type="Area3D" parent="." unique_id=1937453200]
-script = ExtResource("2_j6lwy")
-metadata/_custom_type_script = "uid://d00gr8pba06uh"
-
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1434613764]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0982156e-05, 0.00038301945, 7.0631504e-06)
 layers = 3
@@ -267,10 +262,12 @@ script = ExtResource("3_lsyox")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
 [node name="StaticCellVent" parent="Vents/CellVent" unique_id=1608027914 instance=ExtResource("5_12tgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Cell01" type="Node3D" parent="." unique_id=380742129]
 
 [node name="DynamicLightmapGI" type="LightmapGI" parent="Cell01" unique_id=279877280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 layers = 3
 quality = 2
 supersampling = true
@@ -284,7 +281,7 @@ script = ExtResource("3_lsyox")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Cell01" unique_id=1678168926]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29845527, 1.5002226, -0.5051857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.098455265, 1.5002226, -0.5051857)
 blend_distance = 0.0
 max_distance = 4.0
 size = Vector3(3.016, 3.0267892, 4.011)
@@ -295,7 +292,7 @@ cull_mask = 1048571
 reflection_mask = 1047555
 
 [node name="ReflectionProbe2" type="ReflectionProbe" parent="Cell01" unique_id=2051936807]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7567096, 1.6831172, -1.5156803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95670956, 1.6831172, -1.5156803)
 blend_distance = 0.0
 max_distance = 3.1
 size = Vector3(1.123, 1.381, 1.456)
@@ -309,6 +306,7 @@ reflection_mask = 1047568
 [node name="StaticCell01" parent="Cell01" unique_id=1889062747 instance=ExtResource("6_qouf5")]
 
 [node name="InvisWalls" type="StaticBody3D" parent="Cell01" unique_id=884240659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 collision_layer = 128
 collision_mask = 0
 
@@ -326,6 +324,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6786809, 1.6902565, 1.19780
 shape = SubResource("BoxShape3D_csg3t")
 
 [node name="Lights" type="Node3D" parent="Cell01" unique_id=269570896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="Cell01/Lights" unique_id=318318221]
 
@@ -473,6 +472,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82500374, 2.7864997, 0)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.1988544, 1.8543048, -1.5248443)
 
 [node name="Assets" type="Node3D" parent="Cell01" unique_id=2066019778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="Cell01/Assets" unique_id=811916263]
 
@@ -1010,6 +1010,7 @@ shape = SubResource("BoxShape3D_snto7")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9997559, -1.1920929e-07, 1.4985952)
 
 [node name="Events" type="Node3D" parent="Cell01" unique_id=1640541678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Cutscene" type="Node3D" parent="Cell01/Events" unique_id=1697250521 node_paths=PackedStringArray("animation_player", "animated_player")]
 script = ExtResource("15_q5vw5")
@@ -1031,6 +1032,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8056248, 1.6, -1.0543367)
 [node name="Cell02" type="Node3D" parent="." unique_id=1686302145]
 
 [node name="DynamicLightmapGI" type="LightmapGI" parent="Cell02" unique_id=714907643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 layers = 3
 quality = 2
 supersampling = true
@@ -1046,7 +1048,7 @@ metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 [node name="StaticCell02" parent="Cell02" unique_id=336553807 instance=ExtResource("116_oxlnu")]
 
 [node name="Lights" type="Node3D" parent="Cell02" unique_id=729034654]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.781037, 0, -4.498037)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.9810367, 0, -4.498037)
 
 [node name="Static" type="Node3D" parent="Cell02/Lights" unique_id=371370280]
 
@@ -1136,6 +1138,7 @@ area = NodePath("../Area3D")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
 [node name="Assets" type="Node3D" parent="Cell02" unique_id=1218806485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="Cell02/Assets" unique_id=1687866530]
 
@@ -1176,6 +1179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030417442, 1.5552121, 0.01
 [node name="Corridor" type="Node3D" parent="." unique_id=63834878]
 
 [node name="DynamicLightmapGI" type="LightmapGI" parent="Corridor" unique_id=295917653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 layers = 3
 quality = 2
 supersampling = true
@@ -1191,6 +1195,7 @@ metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 [node name="StaticCorridor" parent="Corridor" unique_id=1353660314 instance=ExtResource("117_5iag7")]
 
 [node name="Lights" type="Node3D" parent="Corridor" unique_id=981602414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="Corridor/Lights" unique_id=987179391]
 
@@ -1275,6 +1280,7 @@ area = NodePath("../Area3D")
 metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
 [node name="Assets" type="Node3D" parent="Corridor" unique_id=1859725912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="Corridor/Assets" unique_id=1134816178]
 
@@ -1352,6 +1358,7 @@ metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 [node name="StaticFakeCell01" parent="FakeCells/FakeCell01" unique_id=1732458505 instance=ExtResource("123_8yman")]
 
 [node name="Lights" type="Node3D" parent="FakeCells/FakeCell01" unique_id=1892191401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="FakeCells/FakeCell01/Lights" unique_id=1203810816]
 
@@ -1369,6 +1376,7 @@ script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="Assets" type="Node3D" parent="FakeCells/FakeCell01" unique_id=765099154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="StaticCellDoor01" parent="FakeCells/FakeCell01/Assets" unique_id=402169596 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1017027, 0, -2.6255884)
@@ -1380,7 +1388,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1017027, 0, -2.6255884)
 [node name="StaticFakeCell02" parent="FakeCells/FakeCell02" unique_id=762382539 instance=ExtResource("124_ixvda")]
 
 [node name="Lights" type="Node3D" parent="FakeCells/FakeCell02" unique_id=1795938272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1962245, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9962244, 0, 0)
 
 [node name="Static" type="Node3D" parent="FakeCells/FakeCell02/Lights" unique_id=441700855]
 
@@ -1398,6 +1406,7 @@ script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="Assets" type="Node3D" parent="FakeCells/FakeCell02" unique_id=1073490745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="StaticCellDoor01" parent="FakeCells/FakeCell02/Assets" unique_id=343315692 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.29946, 0, -2.6255884)
@@ -1409,7 +1418,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.29946, 0, -2.6255884)
 [node name="StaticFakeCell03" parent="FakeCells/FakeCell03" unique_id=1146152200 instance=ExtResource("125_5dygt")]
 
 [node name="Lights" type="Node3D" parent="FakeCells/FakeCell03" unique_id=1155186900]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4147, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6147, 0, 0)
 
 [node name="Static" type="Node3D" parent="FakeCells/FakeCell03/Lights" unique_id=1187380298]
 
@@ -1427,6 +1436,7 @@ script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="Assets" type="Node3D" parent="FakeCells/FakeCell03" unique_id=65315602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="StaticCellDoor01" parent="FakeCells/FakeCell03/Assets" unique_id=1318198038 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2998128, 0, -2.6255884)
@@ -1438,7 +1448,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2998128, 0, -2.6255884)
 [node name="StaticFakeCell04" parent="FakeCells/FakeCell04" unique_id=743695051 instance=ExtResource("126_jcduw")]
 
 [node name="Lights" type="Node3D" parent="FakeCells/FakeCell04" unique_id=884185896]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.7756224, 0, -10.927139)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.975622, 0, -10.927139)
 
 [node name="Static" type="Node3D" parent="FakeCells/FakeCell04/Lights" unique_id=1327973681]
 
@@ -1456,6 +1466,7 @@ script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="Assets" type="Node3D" parent="FakeCells/FakeCell04" unique_id=988574374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="StaticCellDoor01" parent="FakeCells/FakeCell04/Assets" unique_id=481933899 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.189653, -2.3841858e-07, -6.8014493)
@@ -1467,7 +1478,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.18
 [node name="StaticFakeCell05" parent="FakeCells/FakeCell05" unique_id=1685079370 instance=ExtResource("127_v50d2")]
 
 [node name="Lights" type="Node3D" parent="FakeCells/FakeCell05" unique_id=1480414736]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.7756224, 0, -14.09643)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.975622, 0, -14.09643)
 
 [node name="Static" type="Node3D" parent="FakeCells/FakeCell05/Lights" unique_id=703066208]
 
@@ -1485,21 +1496,12 @@ script = ExtResource("10_c5cvx")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="Assets" type="Node3D" parent="FakeCells/FakeCell05" unique_id=457451771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="StaticCellDoor01" parent="FakeCells/FakeCell05/Assets" unique_id=1831222585 instance=ExtResource("20_ylyy8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.189653, -2.3841858e-07, -9.99977)
 
 [node name="MeshCellDoor01Flap" parent="FakeCells/FakeCell05/Assets/StaticCellDoor01" unique_id=137591208 instance=ExtResource("21_h8gwk")]
-
-[node name="BLOCKOUT" type="Node3D" parent="." unique_id=1248431441]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="BLOCKOUT" unique_id=1128361667]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.493598, 1.4954712, -3.6072953)
-size = Vector3(1.9172485, 3.1909423, 0.2)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="BLOCKOUT" unique_id=1077477681]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1, -4.6)
-size = Vector3(1, 2, 0.1)
 
 [editable path="Cell01/Assets/Static/StaticCheapCabinet"]
 [editable path="Cell01/Assets/Static/StaticCheapCabinet/StaticFoldedTowel"]

@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://cn5f7c7imupdt"]
 
 [ext_resource type="ArrayMesh" uid="uid://ck7bb1gmhcddy" path="res://Assets/Maps/PrisonBlockLowSec2/FakeCell04_2.obj" id="1_lh7fg"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="2_qkphg"]
+[ext_resource type="Material" uid="uid://ds6hr7xfg7lwc" path="res://Assets/Materials/Plaster/PlasterLightOrange.tres" id="3_njyts"]
 
 [node name="MeshFakeCell04_2" type="MeshInstance3D" unique_id=1855427128]
 layers = 33
 mesh = ExtResource("1_lh7fg")
+surface_material_override/0 = ExtResource("2_qkphg")
+surface_material_override/1 = ExtResource("3_njyts")
+surface_material_override/2 = ExtResource("2_qkphg")

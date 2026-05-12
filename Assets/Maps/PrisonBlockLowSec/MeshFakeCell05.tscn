@@ -2,11 +2,11 @@
 
 [ext_resource type="ArrayMesh" uid="uid://puugtjkl3xix" path="res://Assets/Maps/PrisonBlockLowSec/FakeCell05.obj" id="1_2rpdd"]
 [ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="2_w67e4"]
-[ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="3_oygef"]
+[ext_resource type="Material" uid="uid://ds6hr7xfg7lwc" path="res://Assets/Materials/Plaster/PlasterLightOrange.tres" id="3_w67e4"]
 
 [node name="MeshFakeCell05" type="MeshInstance3D" unique_id=2055650141]
 layers = 33
 mesh = ExtResource("1_2rpdd")
 surface_material_override/0 = ExtResource("2_w67e4")
-surface_material_override/1 = ExtResource("3_oygef")
+surface_material_override/1 = ExtResource("3_w67e4")
 surface_material_override/2 = ExtResource("2_w67e4")

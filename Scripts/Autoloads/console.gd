@@ -596,7 +596,13 @@ var command_tree: Dictionary = {
 			"PrisonBlockLowSec": [_command_game_chunk,
 			["PrisonBlockLowSec", "uid://cxen7otwqul1c", Vector3(0, 0 ,-3.6)]],
 			"PrisonBlockLowSec2": [_command_game_chunk,
-			["PrisonBlockLowSec2", "uid://bme8og1xpgnit", Vector3(0, 0, 9.4)]],
+			["PrisonBlockLowSec2", "uid://bme8og1xpgnit", Vector3(0, 0, 6.8)]],
+			"Security": [_command_game_chunk,
+			["Security", "uid://b11ecofofpu70", Vector3(-2.5, 0, -5.2)]],
+			"Corridor": [_command_game_chunk,
+			["Corridor", "uid://c1xomtgke6hfn", Vector3(-9.7, 0, -3.7)]],
+			"KitchenCafeteria": [_command_game_chunk,
+			["KithenCafeteria", "uid://pjru50282l3r", Vector3(-17.4, 0, 6.1)]],
 		},
 	},
 	"player": {
@@ -1311,12 +1317,14 @@ func _command_game_chunk(value: Array) -> String:
 		
 		await get_tree().process_frame
 		
-		await Game.load_chunk(value[1])
 		GameManager.load_player()
+		
+		GameManager.player_character.global_position = value[2]
+		
+		await Game.load_chunk(value[1])
 		
 		await get_tree().process_frame
 		
-		GameManager.player_character.global_position = value[2]
 		Game.running = true
 		
 		get_tree().paused = false

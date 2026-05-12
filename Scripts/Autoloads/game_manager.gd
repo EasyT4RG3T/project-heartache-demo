@@ -7,7 +7,6 @@ var DEFAULT_ENVIRONMENT = preload("uid://b5hbq6dr1gixx")
 var STRIPPED_ENVIRONMENT = preload("uid://d2m0td6ed2a2t")
 
 const main_menu_uid: String = "uid://evmnqmy0k477"
-const new_game_uid: String = "uid://cxen7otwqul1c"
 const debug_uid: String = "uid://be8nto6fraipm"
 
 var debug_overlay: DebugOverlay
@@ -216,7 +215,7 @@ func new_game() -> void:
 	await get_tree().process_frame
 	
 	SaverLoader.clear_temp()
-	await Game.load_chunk(new_game_uid)
+	await Game.new_game()
 	load_player()
 	await get_tree().process_frame
 	
@@ -249,10 +248,11 @@ func load_save(file: Dictionary) -> void:
 	
 	await get_tree().process_frame
 	
-	await Game.load_save(file["game"])
-	
 	load_player()
 	player_character.load_save(file["player"])
+	
+	await Game.load_save(file["game"])
+	
 	await get_tree().process_frame
 	SaverLoader.can_save = 0
 	get_tree().paused = false

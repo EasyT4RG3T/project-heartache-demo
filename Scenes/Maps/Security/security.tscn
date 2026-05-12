@@ -68,7 +68,7 @@ script = ExtResource("2_86brh")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Janitor" unique_id=1033518031]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0031128, 1.5, -7.4097915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8031128, 1.5, -7.4097915)
 blend_distance = 0.0
 size = Vector3(2, 3, 3)
 box_projection = true
@@ -78,6 +78,7 @@ enable_shadows = true
 [node name="StaticJanitor" parent="Janitor" unique_id=734946530 instance=ExtResource("3_bst6q")]
 
 [node name="Lights" type="Node3D" parent="Janitor" unique_id=1927687440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="Janitor/Lights" unique_id=733091152]
 
@@ -130,6 +131,7 @@ metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9277116, 2.7823782, -7.227833)
 
 [node name="Assets" type="Node3D" parent="Janitor" unique_id=64691741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="Janitor/Assets" unique_id=2119046030]
 
@@ -199,6 +201,7 @@ metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 [node name="StaticSecurityCorridor" parent="SecurityCorridor" unique_id=87164401 instance=ExtResource("16_hxt03")]
 
 [node name="Lights" type="Node3D" parent="SecurityCorridor" unique_id=189866620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Dynamic" type="Node3D" parent="SecurityCorridor/Lights" unique_id=563690375]
 
@@ -424,6 +427,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.1
 surface_material_override/1 = ExtResource("18_0p23l")
 
 [node name="Assets" type="Node3D" parent="SecurityCorridor" unique_id=1628508392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
 [node name="Static" type="Node3D" parent="SecurityCorridor/Assets" unique_id=75229717]
 

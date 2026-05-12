@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://c6i2f0y81ly82"]
+
+[ext_resource type="Texture2D" uid="uid://dvxn28y3h87n2" path="res://Assets/Materials/Wood/WoodTiles/WoodTiles_albedo.png" id="1_bnxrl"]
+[ext_resource type="Texture2D" uid="uid://ba6affqq2dsst" path="res://Assets/Materials/Wood/WoodTiles/WoodTiles_normal.png" id="2_knso4"]
+[ext_resource type="Texture2D" uid="uid://1ei4qhtkc43b" path="res://Assets/Materials/Wood/WoodTiles/WoodTiles_orm.png" id="3_b4ohu"]
+
+[resource]
+albedo_texture = ExtResource("1_bnxrl")
+orm_texture = ExtResource("3_b4ohu")
+normal_enabled = true
+normal_texture = ExtResource("2_knso4")
+texture_filter = 2

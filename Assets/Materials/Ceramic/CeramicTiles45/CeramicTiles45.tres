@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0fnrwlf66urb"]
+
+[ext_resource type="Texture2D" uid="uid://balww3334gn1v" path="res://Assets/Materials/Ceramic/CeramicTiles45/CeramicTiles45_albedo.png" id="1_qmu1j"]
+[ext_resource type="Texture2D" uid="uid://5m43p55xvwvr" path="res://Assets/Materials/Ceramic/CeramicTiles45/CeramicTiles45_normal.png" id="2_r8mje"]
+
+[resource]
+albedo_texture = ExtResource("1_qmu1j")
+normal_enabled = true
+normal_texture = ExtResource("2_r8mje")
+texture_filter = 2

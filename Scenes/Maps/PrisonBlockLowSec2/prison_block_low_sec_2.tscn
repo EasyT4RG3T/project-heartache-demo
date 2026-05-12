@@ -33,7 +33,6 @@ script = ExtResource("3_k2k3y")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
 [node name="StaticCell_2" parent="Cell" unique_id=1548876165 instance=ExtResource("1_reo23")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
 
 [node name="Corridor" type="Node3D" parent="." unique_id=1812813125]
 
@@ -50,7 +49,6 @@ script = ExtResource("3_k2k3y")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
 [node name="StaticCorridor_2" parent="Corridor" unique_id=615203143 instance=ExtResource("2_nulnn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
 
 [node name="FakeCells" type="Node3D" parent="." unique_id=617401663]
 
@@ -69,19 +67,15 @@ metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 [node name="FakeCell01" type="Node3D" parent="FakeCells" unique_id=246160761]
 
 [node name="StaticFakeCell01_2" parent="FakeCells/FakeCell01" unique_id=227848841 instance=ExtResource("3_s3cis")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
 
 [node name="FakeCell02" type="Node3D" parent="FakeCells" unique_id=1978673440]
 
 [node name="StaticFakeCell02_2" parent="FakeCells/FakeCell02" unique_id=1685848530 instance=ExtResource("4_esko6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
 
 [node name="FakeCell03" type="Node3D" parent="FakeCells" unique_id=336363572]
 
 [node name="StaticFakeCell03_2" parent="FakeCells/FakeCell03" unique_id=1636350243 instance=ExtResource("5_t61ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)
 
 [node name="FakeCell04" type="Node3D" parent="FakeCells" unique_id=354190621]
 
 [node name="StaticFakeCell04_2" parent="FakeCells/FakeCell04" unique_id=132628369 instance=ExtResource("6_4mrco")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21185076, 1.1920929e-07, 2.6140013)

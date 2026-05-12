@@ -28,6 +28,7 @@ var GAME_DATA_PATH = GAME_PATH + "saves/"
 
 
 var can_save: int = 1
+var can_chunk_save: int = 1
 var current_slot: String = "0":
 	set(value):
 		current_slot = value
@@ -108,9 +109,13 @@ func erase_game_data(slot: String) -> void:
 	_queue_function(_erase_game_data, slot)
 
 func save_chunk_data(chunk: Node) -> void:
+	if can_chunk_save > 0:
+		Console.console_print(str("[color=red]actions blocking chunk saving: ", can_chunk_save, "[/color]"))
+		return
 	var save_data: Dictionary = {}
-	Game.save_chunk(chunk)
-	_queue_function(_save_chunk_data, [ResourceUID.path_to_uid(chunk.scene_file_path), save_data])
+	save_data = Game.save_chunk(chunk)
+	var uid = ResourceUID.path_to_uid(chunk.scene_file_path)
+	_queue_function(_save_chunk_data, [chunk, uid, save_data])
 
 func load_chunk_data(chunk_uid: String) -> void:
 	_queue_function(_load_chunk_data, chunk_uid)
@@ -144,9 +149,12 @@ func _ready() -> void:
 	
 	load_settings()
 	load_graphics_settings(0)
+	
+	clear_temp()
 
 
 func _exit_tree() -> void:
+	clear_temp()
 	stop_thread = true
 	queue_semaphore.post()
 	if load_thread.is_started():
@@ -480,7 +488,7 @@ func _erase_game_data(slot: String) -> void:
 
 
 func _save_chunk_data(data: Array) -> void:
-	var uid: String = data[0]
+	var uid: String = data[1]
 	if not DirAccess.dir_exists_absolute(GAME_DATA_PATH):
 		DirAccess.make_dir_recursive_absolute(GAME_DATA_PATH)
 	
@@ -496,12 +504,12 @@ func _save_chunk_data(data: Array) -> void:
 		game_data = bytes_to_var(read_data_byte)
 		file_read.close()
 	
-	var save_data: Dictionary = data[1]
+	var save_data: Dictionary = data[2]
 	
 	if !game_data.has("game"):
 		game_data["game"] = {}
 	if !game_data["game"].has("chunks"):
-		game_data["chunks"] = {}
+		game_data["game"]["chunks"] = {}
 	game_data["game"]["chunks"][uid] = save_data[uid]
 	
 	var file_write = FileAccess.open(GAME_DATA_PATH + "temp", FileAccess.WRITE)
@@ -513,7 +521,9 @@ func _save_chunk_data(data: Array) -> void:
 	file_write.store_buffer(write_data_byte)
 	file_write.close()
 	
-	Console.call_deferred("console_print", "chunk game data: saved")
+	if !data[0]: return
+	Console.call_deferred("console_print", "chunk " + str(data[0].scene_file_path.split("/", -1)) + ": saved")
+	data[0].call_deferred("queue_free")
 
 
 func _load_chunk_data(chunk_uid: String) -> void:
@@ -521,6 +531,24 @@ func _load_chunk_data(chunk_uid: String) -> void:
 	
 	if FileAccess.file_exists(GAME_DATA_PATH + "temp"):
 		var file_read = FileAccess.open(GAME_DATA_PATH + "temp", FileAccess.READ)
+		if !file_read:
+			Console.call_deferred("console_print", "chunk game data: couldn't open file")
+			call_deferred("set", "chunk_loading", false)
+			return
+		
+		var read_data_byte = file_read.get_buffer(file_read.get_length())
+		game_data = bytes_to_var(read_data_byte)
+		file_read.close()
+	
+	if game_data.has("game"):
+		if game_data["game"].has("chunks"):
+			if game_data["game"]["chunks"].has(chunk_uid):
+				Game.call_deferred("load_chunk", chunk_uid, game_data["game"]["chunks"][chunk_uid])
+				Console.call_deferred("console_print", "chunk " + chunk_uid + ": loaded temp")
+				return
+	
+	if FileAccess.file_exists(GAME_DATA_PATH + current_slot + ".dat"):
+		var file_read = FileAccess.open(GAME_DATA_PATH + current_slot + ".dat", FileAccess.READ)
 		if !file_read:
 			Console.call_deferred("console_print", "chunk game data: couldn't open file")
 			return
@@ -533,25 +561,11 @@ func _load_chunk_data(chunk_uid: String) -> void:
 		if game_data["game"].has("chunks"):
 			if game_data["game"]["chunks"].has(chunk_uid):
 				Game.call_deferred("load_chunk", chunk_uid, game_data["game"]["chunks"][chunk_uid])
-				return
-	
-	if FileAccess.file_exists(GAME_DATA_PATH + current_slot):
-		var file_read = FileAccess.open(GAME_DATA_PATH + current_slot, FileAccess.READ)
-		if !file_read:
-			Console.call_deferred("console_print", "game data: couldn't open file")
-			return
-		
-		var read_data_byte = file_read.get_buffer(file_read.get_length())
-		game_data = bytes_to_var(read_data_byte)
-		file_read.close()
-	
-	if game_data.has("game"):
-		if game_data["game"].has("chunks"):
-			if game_data["game"]["chunks"].has(chunk_uid):
-				Game.call_deferred("load_chunk", chunk_uid, game_data["game"]["chunks"][chunk_uid])
+				Console.call_deferred("console_print", "chunk " + chunk_uid + ": loaded")
 				return
 	
 	Game.call_deferred("load_chunk", chunk_uid)
+	Console.call_deferred("console_print", "chunk " + chunk_uid + ": loaded fresh")
 
 
 func clear_temp() -> void:
@@ -583,7 +597,7 @@ func hide_loading_screen() -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if !Game.running:
-			get_tree().quit()
+			get_tree().quit.call_deferred()
 			return
 		if can_save > 0:
 			get_tree().paused = true
@@ -603,7 +617,7 @@ func _notification(what: int) -> void:
 			accept_menu.z_as_relative = false
 			accept_menu.z_index = 251
 			accept_menu.accepted.connect(func():
-				get_tree().quit())
+				get_tree().quit.call_deferred())
 			accept_menu.cancelled.connect(func():
 				accept_menu.queue_free()
 				InputManager.menu = prev_menu
@@ -612,6 +626,7 @@ func _notification(what: int) -> void:
 			InputManager.menu = accept_menu
 			return
 		else:
+			SaverLoader.can_chunk_save = 0
 			auto_save_game_data()
 			await GameSaved
-			get_tree().quit()
+			get_tree().quit.call_deferred()

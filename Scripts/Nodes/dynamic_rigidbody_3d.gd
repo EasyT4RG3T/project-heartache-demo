@@ -14,7 +14,12 @@ var audio_grace: bool = false
 
 var collisions: Array = []
 
-var picked_up: bool = false
+var picked_up: bool = false:
+	set(value):
+		picked_up = value
+		while picked_up:
+			await get_tree().create_timer(1.0).timeout
+			update_parent()
 
 var current_player: PlayerCharacter
 
@@ -56,6 +61,8 @@ func _ready() -> void:
 	max_contacts_reported = 1
 	
 	get_tree().create_timer(0.1).timeout.connect(func(): audio_grace = true, CONNECT_ONE_SHOT)
+	
+	sleeping_state_changed.connect(update_parent)
 
 
 func switch_pick_up(player: PlayerCharacter) -> void:
@@ -96,6 +103,20 @@ func put_down(player: PlayerCharacter) -> void:
 	if !ignore_player:
 		collision_layer = 2
 		set_collision_mask_value(4, false)
+
+
+func update_parent() -> void:
+	var update_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+	update_ray_query.collision_mask = 1
+	
+	update_ray_query.from = global_position
+	update_ray_query.to = global_position + (Vector3.DOWN * 100)
+	
+	var update_ray_result = get_world_3d().direct_space_state.intersect_ray(update_ray_query)
+	
+	if update_ray_result:
+		if update_ray_result["collider"] == get_parent(): return
+		call_deferred("reparent", update_ray_result["collider"])
 
 
 func save() -> Dictionary:
