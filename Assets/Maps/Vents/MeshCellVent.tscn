@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://0fxneprby1eq"]
+
+[ext_resource type="ArrayMesh" uid="uid://cpqvtuufugul5" path="res://Assets/Maps/Vents/CellVent.obj" id="1_1h0c5"]
+[ext_resource type="Material" uid="uid://blmgg0mrostow" path="res://Assets/Materials/Metal/MetalVent/MetalVent.tres" id="2_gaf8g"]
+
+[node name="MeshCellVent" type="MeshInstance3D" unique_id=879024474]
+mesh = ExtResource("1_1h0c5")
+surface_material_override/0 = ExtResource("2_gaf8g")

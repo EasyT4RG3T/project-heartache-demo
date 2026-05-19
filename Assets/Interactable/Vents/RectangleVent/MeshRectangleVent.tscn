@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://dbk1ni5uwr5ub"]
-
-[ext_resource type="ArrayMesh" uid="uid://cedq338214jxp" path="res://Assets/Interactable/Vents/RectangleVent/RectangleVent.obj" id="1_g64uq"]
-[ext_resource type="Material" uid="uid://bgsh7e78yjbxu" path="res://Assets/Materials/Metal/BrushedMetal/BrushedMetal.tres" id="2_rx8vq"]
-
-[node name="MeshRectangleVent" type="MeshInstance3D" unique_id=555469851]
-gi_mode = 2
-mesh = ExtResource("1_g64uq")
-surface_material_override/0 = ExtResource("2_rx8vq")

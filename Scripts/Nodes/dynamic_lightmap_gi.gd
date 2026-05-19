@@ -17,6 +17,9 @@ func _init() -> void:
 		directional = true
 		use_texture_for_bounces = false
 		interior = true
+		denoiser_strength = 0.05
+		denoiser_range = 2
+		texel_scale = 4
 		environment_mode = LightmapGI.ENVIRONMENT_MODE_DISABLED
 		generate_probes_subdiv = LightmapGI.GENERATE_PROBES_DISABLED
 		add_to_group("GlobalIllumination")

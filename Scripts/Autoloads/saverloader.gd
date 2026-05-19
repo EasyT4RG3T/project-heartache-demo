@@ -134,6 +134,28 @@ func thread_load(path: String) -> Resource:
 	
 	return ResourceLoader.load_threaded_get(path)
 
+func _instantiate_properties(properties: Dictionary) -> void:
+	var nodes_to_ready: Array = []
+	
+	for node: Node in properties:
+		for count in properties[node]["count"]:
+			var property_name = properties[node]["names"][count]
+			var property_value = properties[node]["values"][count]
+			
+			if property_name == "script":
+				node.set_script(property_value)
+				nodes_to_ready.append(node)
+				continue
+			
+			node.set(property_name, property_value)
+		
+		print("\n", node.name)
+		node.name = properties[node]["nodename"]
+		print(node.name)
+	
+	for node: Node in nodes_to_ready:
+		node.call_deferred("notification", NOTIFICATION_READY)
+
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

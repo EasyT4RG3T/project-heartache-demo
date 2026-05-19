@@ -38,6 +38,7 @@ var crawl_debug: bool = false:
 
 var d_crouch_query = MeshInstance3D
 var d_crawl_query = MeshInstance3D
+var force_crawl: bool = false
 
 const player_head_position: Vector3 = Vector3(0, 1.6, 0)
 const player_crouch_head_position: Vector3 = Vector3(0, 0.6, 0)
@@ -514,6 +515,7 @@ func exit_movement_mode(mode: MovementMode) -> void:
 			body_collision.disabled = false
 			was_on_ground = false
 			InputManager.player_character_input = true
+			take_input(InputEventKey.new())
 		MovementMode.CUTSCENE:
 			last_pos = global_position
 			look_vector.x = head.global_rotation.y
@@ -728,7 +730,7 @@ func _crawl_check() -> void:
 	
 	player_crawl_query.transform.origin = global_position + player_crawl_collision_position + Vector3(
 		-wanted_movement_direction.x * 0.02,
-		0,
+		-0.001,
 		-wanted_movement_direction.y * 0.02)
 	player_crawl_query.motion = Vector3(
 		wanted_movement_direction.x * 0.52,
@@ -763,7 +765,7 @@ func _uncrawl_check() -> void:
 										 + Vector3(0, 0.01, 0)
 	var uncrawl_result = direct_space_state.get_rest_info(player_crouch_query)
 	
-	if uncrawl_result: return
+	if uncrawl_result or force_crawl: return
 	
 	change_movement_mode(MovementMode.CROUCHING)
 

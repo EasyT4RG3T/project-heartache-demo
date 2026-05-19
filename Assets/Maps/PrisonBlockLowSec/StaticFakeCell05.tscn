@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://2pmyvk18ao51"]
 
 [ext_resource type="PackedScene" uid="uid://drs813buc7kdx" path="res://Assets/Maps/PrisonBlockLowSec/MeshFakeCell05.tscn" id="1_y5fia"]
+[ext_resource type="ArrayMesh" uid="uid://puugtjkl3xix" path="res://Assets/Maps/PrisonBlockLowSec/FakeCell05.obj" id="2_4odpo"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="3_ilgc5"]
+[ext_resource type="Material" uid="uid://ds6hr7xfg7lwc" path="res://Assets/Materials/Plaster/PlasterLightOrange.tres" id="4_jlcqh"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tbvlw"]
-data = PackedVector3Array(3.3, 0, -10.5, 3.5, 0, -9.5, 3.3, 0, -9.5, 3.5, 0, -10.5, 3.5, 0, -9.5, 3.3, 0, -10.5, 7.5, 0, -12.099999, 4.6, 0, -9.099999, 5.2, 0, -12.099999, 7.5, 0, -12.099999, 7.5, 0, -9.099999, 4.6, 0, -9.099999, 5.2, 3, -12.099999, 7.5, 0, -12.099999, 5.2, 0, -12.099999, 7.5, 3, -12.099999, 7.5, 0, -12.099999, 5.2, 3, -12.099999, 7.5, 3, -9.099999, 4.6, 0, -9.099999, 7.5, 0, -9.099999, 4.6, 3, -9.099999, 4.6, 0, -9.099999, 7.5, 3, -9.099999, 3.5, 3, -9.099999, 4.6, 0, -9.099999, 4.6, 3, -9.099999, 3.5, 0, -9.099999, 4.6, 0, -9.099999, 3.5, 3, -9.099999, 7.5, 3, -12.099999, 7.5, 0, -9.099999, 7.5, 0, -12.099999, 7.5, 3, -9.099999, 7.5, 0, -9.099999, 7.5, 3, -12.099999, 3.3, 2, -10.5, 3.5, 2, -9.5, 3.5, 2, -10.5, 3.3, 2, -9.5, 3.5, 2, -9.5, 3.3, 2, -10.5, 3.3, 0, -10.5, 3.5, 2, -10.5, 3.5, 0, -10.5, 3.3, 2, -10.5, 3.5, 2, -10.5, 3.3, 0, -10.5, 3.5, 0, -9.5, 3.3, 2, -9.5, 3.3, 0, -9.5, 3.5, 2, -9.5, 3.3, 2, -9.5, 3.5, 0, -9.5, 3.5, 3, -10.9, 4.6, 0, -10.9, 3.5, 0, -10.9, 4.6, 3, -10.9, 4.6, 0, -10.9, 3.5, 3, -10.9, 4.6, 3, -9.099999, 7.5, 3, -9.099999, 7.5, 3, -12.099999, 7.5, 3, -12.099999, 5.2, 3, -12.099999, 4.6, 3, -9.099999, 4.6, 3, -10.9, 4.6, 3, -9.099999, 5.2, 3, -12.099999, 4.6, 3, -10.9, 3.5, 3, -10.9, 4.6, 3, -9.099999, 4.6, 3, -9.099999, 3.5, 3, -10.9, 3.5, 3, -9.099999)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_l55dn"]
+data = PackedVector3Array(3.3, 0, -9.5, 3.5, 0, -10.5, 3.5, 0, -9.5, 3.3, 0, -10.5, 3.5, 0, -10.5, 3.3, 0, -9.5, 7.5, 0, -12.099999, 4.6, 0, -9.099999, 5.2, 0, -12.099999, 7.5, 0, -12.099999, 7.5, 0, -9.099999, 4.6, 0, -9.099999, 5.2, 3, -12.099999, 7.5, 0, -12.099999, 5.2, 0, -12.099999, 7.5, 3, -12.099999, 7.5, 0, -12.099999, 5.2, 3, -12.099999, 7.5, 3, -9.099999, 4.6, 0, -9.099999, 7.5, 0, -9.099999, 4.6, 3, -9.099999, 4.6, 0, -9.099999, 7.5, 3, -9.099999, 3.5, 3, -9.099999, 4.6, 0, -9.099999, 4.6, 3, -9.099999, 3.5, 0, -9.099999, 4.6, 0, -9.099999, 3.5, 3, -9.099999, 7.5, 3, -12.099999, 7.5, 0, -9.099999, 7.5, 0, -12.099999, 7.5, 3, -9.099999, 7.5, 0, -9.099999, 7.5, 3, -12.099999, 3.3, 2, -10.5, 3.5, 2, -9.5, 3.5, 2, -10.5, 3.3, 2, -9.5, 3.5, 2, -9.5, 3.3, 2, -10.5, 3.3, 0, -10.5, 3.5, 2, -10.5, 3.5, 0, -10.5, 3.3, 2, -10.5, 3.5, 2, -10.5, 3.3, 0, -10.5, 3.5, 0, -9.5, 3.3, 2, -9.5, 3.3, 0, -9.5, 3.5, 2, -9.5, 3.3, 2, -9.5, 3.5, 0, -9.5, 3.5, 3, -10.9, 4.6, 0, -10.9, 3.5, 0, -10.9, 4.6, 3, -10.9, 4.6, 0, -10.9, 3.5, 3, -10.9, 4.6, 3, -9.099999, 7.5, 3, -9.099999, 7.5, 3, -12.099999, 7.5, 3, -12.099999, 5.2, 3, -12.099999, 4.6, 3, -9.099999, 4.6, 3, -10.9, 4.6, 3, -9.099999, 5.2, 3, -12.099999, 4.6, 3, -10.9, 3.5, 3, -10.9, 4.6, 3, -9.099999, 4.6, 3, -9.099999, 3.5, 3, -10.9, 3.5, 3, -9.099999)
 
-[node name="StaticFakeCell05" type="StaticBody3D" unique_id=1685079370]
+[node name="StaticFakeCell05" type="StaticBody3D" unique_id=993172283]
 
-[node name="MeshFakeCell05" parent="." unique_id=2055650141 instance=ExtResource("1_y5fia")]
+[node name="MeshFakeCell05" type="MeshInstance3D" parent="." unique_id=2055650141 instance=ExtResource("1_y5fia")]
+layers = 33
+mesh = ExtResource("2_4odpo")
+surface_material_override/0 = ExtResource("3_ilgc5")
+surface_material_override/1 = ExtResource("4_jlcqh")
+surface_material_override/2 = ExtResource("3_ilgc5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1497878088]
-shape = SubResource("ConcavePolygonShape3D_tbvlw")
+[node name="@CollisionShape3D@30594" type="CollisionShape3D" parent="." unique_id=1971896414]
+shape = SubResource("ConcavePolygonShape3D_l55dn")

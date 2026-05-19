@@ -678,7 +678,14 @@ func _need_string(tokens: PackedStringArray) -> Array:
 
 
 func _command_run() -> String:
+	_run_async()
+	
 	return "run"
+
+func _run_async() -> void:
+	var test_scene: PackedScene = await SaverLoader.thread_load("uid://cn6i15e2ohyv5")
+	
+	SaverLoader.batch_instantiate(self, test_scene, 5)
 
 func _command_settings_save() -> String:
 	SaverLoader.save_settings()

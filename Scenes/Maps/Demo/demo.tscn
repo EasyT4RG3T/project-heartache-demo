@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ly2qmf1awigs"]
+
+[ext_resource type="PackedScene" uid="uid://2dqht0tt7fw0" path="res://Scenes/Maps/Demo/Corridor/big_corridor.tscn" id="1_tpv6t"]
+[ext_resource type="PackedScene" uid="uid://bbcs2l45o00wh" path="res://Scenes/Maps/Demo/KitchenCafeteria/kitchen_cafeteria.tscn" id="2_44cmm"]
+[ext_resource type="PackedScene" uid="uid://c8d4hbl1yhdt5" path="res://Scenes/Maps/Demo/PrisonBlockLowSec/prison_block_low_sec.tscn" id="3_3j33e"]
+[ext_resource type="PackedScene" uid="uid://bm5mk16dkbdnd" path="res://Scenes/Maps/Demo/PrisonBlockLowSec2/prison_block_low_sec_2.tscn" id="4_l5w7o"]
+[ext_resource type="PackedScene" uid="uid://cf6k24sn2nhk3" path="res://Scenes/Maps/Demo/Security/security.tscn" id="5_i6vld"]
+[ext_resource type="PackedScene" uid="uid://bu3lq1m1f5pkv" path="res://Scenes/Maps/Demo/Vents/Vents.tscn" id="6_2h4j7"]
+
+[node name="Demo" type="Node3D" unique_id=701744829]
+
+[node name="BigCorridor" parent="." unique_id=860356082 instance=ExtResource("1_tpv6t")]
+
+[node name="KitchenCafeteria" parent="." unique_id=1932620180 instance=ExtResource("2_44cmm")]
+
+[node name="PrisonBlockLowSec" parent="." unique_id=1505235188 instance=ExtResource("3_3j33e")]
+
+[node name="PrisonBlockLowSec2" parent="." unique_id=1407849894 instance=ExtResource("4_l5w7o")]
+
+[node name="Security" parent="." unique_id=108471197 instance=ExtResource("5_i6vld")]
+
+[node name="Vents" parent="." unique_id=11986073 instance=ExtResource("6_2h4j7")]

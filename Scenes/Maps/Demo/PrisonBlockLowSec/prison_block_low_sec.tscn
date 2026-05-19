@@ -1,0 +1,296 @@
+[gd_scene format=3 uid="uid://c8d4hbl1yhdt5"]
+
+[ext_resource type="ArrayOccluder3D" uid="uid://dgdhm06qf0ep0" path="res://Scenes/Maps/Demo/PrisonBlockLowSec/prison_block_low_sec.occ" id="1_08tt4"]
+[ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="1_pi0t0"]
+[ext_resource type="LightmapGIData" uid="uid://by7mx0s4t3na0" path="res://Scenes/Maps/Demo/PrisonBlockLowSec/prison_block_low_sec.lmbake" id="2_ome15"]
+[ext_resource type="PackedScene" uid="uid://cj4h1gol5tkgv" path="res://Assets/Maps/PrisonBlockLowSec/StaticCell01.tscn" id="3_n0mcl"]
+[ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="4_n0mcl"]
+[ext_resource type="PackedScene" uid="uid://wsok11ohrvww" path="res://Assets/Maps/PrisonBlockLowSec/StaticCell02.tscn" id="4_ome15"]
+[ext_resource type="PackedScene" uid="uid://cw6tvx884jcdo" path="res://Assets/Maps/PrisonBlockLowSec/StaticCorridor.tscn" id="5_5nbar"]
+[ext_resource type="Script" uid="uid://b0xsinj7cw0l3" path="res://Scripts/Nodes/crawl_area.gd" id="6_5nbar"]
+[ext_resource type="Script" uid="uid://cmv4qm8gcm4fc" path="res://Scripts/Nodes/dynamic_spotlight_3d.gd" id="6_cj6ej"]
+[ext_resource type="PackedScene" uid="uid://cdiofejx0o00h" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell01.tscn" id="6_ouh7u"]
+[ext_resource type="PackedScene" uid="uid://bf5kqm6hb2ud5" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell02.tscn" id="7_davo8"]
+[ext_resource type="PackedScene" uid="uid://b5b15rinbiefv" path="res://Assets/Assets/Furniture/Beds/MetalBed/StaticMetalBed01.tscn" id="7_wqn6u"]
+[ext_resource type="PackedScene" uid="uid://crhjsjja150vm" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell03.tscn" id="8_wqn6u"]
+[ext_resource type="PackedScene" uid="uid://tvy25silkecl" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell04.tscn" id="9_fiywg"]
+[ext_resource type="PackedScene" uid="uid://cx1vqr0ol80el" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow02/StaticPillow02.tscn" id="9_wqn6u"]
+[ext_resource type="PackedScene" uid="uid://ce0a7as346bsp" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket03/StaticBlanket03.tscn" id="10_fiywg"]
+[ext_resource type="PackedScene" uid="uid://2pmyvk18ao51" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell05.tscn" id="10_htm6k"]
+[ext_resource type="PackedScene" uid="uid://beaxqi7h2sjqk" path="res://Assets/Assets/Furniture/Desks/CheapDesk/StaticCheapDesk.tscn" id="11_0a8a4"]
+[ext_resource type="PackedScene" uid="uid://d1so8kmycr4nh" path="res://Assets/Assets/Furniture/Chairs/Stool/StaticStool.tscn" id="12_d1c3c"]
+[ext_resource type="PackedScene" uid="uid://bcy6xeau0816g" path="res://Assets/Assets/Lights/Desk/FlatDeskLamp/StaticFlatDeskLamp.tscn" id="13_eag41"]
+[ext_resource type="PackedScene" uid="uid://bepr6ff7t004x" path="res://Assets/Assets/Bathroom/Toilets/Toilet01/StaticToilet01.tscn" id="13_xerjg"]
+[ext_resource type="PackedScene" uid="uid://byi5pu24pkltf" path="res://Assets/Assets/Bathroom/Sinks/Sink03/StaticSink03.tscn" id="14_cj6ej"]
+[ext_resource type="PackedScene" uid="uid://b8kkf3m7obfjr" path="res://Assets/Assets/Furniture/Beds/Matresses/Matress01/StaticMatress01.tscn" id="15_davo8"]
+[ext_resource type="PackedScene" uid="uid://06ske2hi4t8b" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/MeshCeilingLightBulb.tscn" id="17_eag41"]
+[ext_resource type="PackedScene" uid="uid://cmkk7ts2ihsld" path="res://Assets/Assets/Lights/Wall/OpenSmallWallLight/MeshOpenSmallWallLight.tscn" id="18_rh18s"]
+[ext_resource type="Material" uid="uid://djxkv4gdlnjvh" path="res://Assets/Materials/Mirror/FoggyMirror/FoggyMirror.tres" id="19_35jns"]
+[ext_resource type="PackedScene" uid="uid://bgfgdplsq11h6" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/StaticShoesCabinet.tscn" id="20_kdt2s"]
+[ext_resource type="PackedScene" uid="uid://bynh51r0h0oya" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/StaticShoesCabinetDrawer.tscn" id="21_ue7s6"]
+[ext_resource type="PackedScene" uid="uid://dvfph1kq6wc10" path="res://Assets/Assets/Furniture/Cabinets/CheapCabinet/StaticCheapCabinet.tscn" id="22_ue7s6"]
+[ext_resource type="PackedScene" uid="uid://cf0v8ekn0gh5b" path="res://Assets/Assets/Furniture/Cabinets/CheapCabinet/StaticCheapCabinetDoor.tscn" id="23_fchjg"]
+[ext_resource type="PackedScene" uid="uid://b7l6l5acu4p6h" path="res://Assets/Assets/Bathroom/ToiletBrush/StaticToiletBrushHolder.tscn" id="24_aqn4x"]
+[ext_resource type="PackedScene" uid="uid://i4k60m55kpjo" path="res://Assets/Assets/Bathroom/ToiletBrush/StaticToiletBrush.tscn" id="25_uwe2u"]
+[ext_resource type="PackedScene" uid="uid://dfe3ax0g3l1gp" path="res://Assets/Assets/Furniture/Shelfs/Wall/PlainShelf/StaticPlainShelf.tscn" id="26_lt854"]
+[ext_resource type="PackedScene" uid="uid://bwb3pe14auwf2" path="res://Assets/Assets/Decorations/Wall/Hanger/MeshHanger.tscn" id="27_gdw34"]
+[ext_resource type="PackedScene" uid="uid://drxu3lcl7xmmw" path="res://Assets/Assets/Wardrobe/Hanging/HangingCoat/StaticHangingCoat.tscn" id="28_apksj"]
+[ext_resource type="PackedScene" uid="uid://c41momqlr31a1" path="res://Assets/Assets/Wardrobe/Hanging/HangingLongCoat/StaticHangingLongCoat.tscn" id="29_lfwl4"]
+[ext_resource type="PackedScene" uid="uid://cmj4fwku2wi4g" path="res://Assets/Assets/Wardrobe/Hanging/HangingJacket/StaticHangingJacket.tscn" id="30_vk3yo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ouh7u"]
+size = Vector3(0.5, 0.6, 0.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kdt2s"]
+size = Vector2(0.6, 0.4)
+
+[node name="PrisonBlockLowSec" type="Node3D" unique_id=1505235188]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1548736280]
+occluder = ExtResource("1_08tt4")
+bake_mask = 4293918752
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="." unique_id=1896017480]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+denoiser_strength = 0.05
+denoiser_range = 2
+texel_scale = 4.0
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_ome15")
+script = ExtResource("1_pi0t0")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="LightmapProbe" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=306226015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.3, -2.1000001)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1891237486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.3, 0.9999999)
+
+[node name="StaticCell01" parent="." unique_id=2044597550 instance=ExtResource("3_n0mcl")]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="StaticCell01" unique_id=1778541308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.5, -0.5)
+blend_distance = 0.0
+size = Vector3(3.1, 3.1, 4.1)
+origin_offset = Vector3(1, 0, -0.9)
+box_projection = true
+interior = true
+enable_shadows = true
+cull_mask = 1047553
+
+[node name="CrawlArea" type="Area3D" parent="StaticCell01" unique_id=1699533362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.2, 1.5)
+script = ExtResource("6_5nbar")
+metadata/_custom_type_script = "uid://b0xsinj7cw0l3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCell01/CrawlArea" unique_id=1183952771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049999997, 0)
+shape = SubResource("BoxShape3D_ouh7u")
+
+[node name="Lights" type="Node3D" parent="StaticCell01" unique_id=301006181]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCell01/Lights" unique_id=527762432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6999998, -0.3)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticCell01/Lights" unique_id=2121984089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3684877, 1.9999998, -1.4)
+light_energy = 0.6
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="StaticCell01/Lights" unique_id=1665090886]
+transform = Transform3D(0.49999994, -0.8528686, 0.15038377, -3.7252903e-08, 0.17364821, 0.9848078, -0.86602545, -0.49240384, 0.08682405, 1.2002488, 0.9887876, 1.3536628)
+light_color = Color(1, 0.96166664, 0.9, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+spot_range = 1.5
+spot_angle = 61.0
+script = ExtResource("6_cj6ej")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
+[node name="Assets" type="Node3D" parent="StaticCell01" unique_id=1759171700]
+
+[node name="StaticMetalBed01" parent="StaticCell01/Assets" unique_id=657188509 instance=ExtResource("7_wqn6u")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5973571, -2.3841858e-07, 0.9940634)
+
+[node name="StaticMatress01" parent="StaticCell01/Assets/StaticMetalBed01" unique_id=1496251369 instance=ExtResource("15_davo8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025886297, 0.55907595, -0.0072853565)
+
+[node name="StaticPillow02" parent="StaticCell01/Assets/StaticMetalBed01" unique_id=517976141 instance=ExtResource("9_wqn6u")]
+transform = Transform3D(-0.99719435, 0, -0.07485681, 0, 1, 0, 0.07485681, 0, -0.99719435, 0.003073573, 0.673765, 0.69501925)
+
+[node name="StaticBlanket03" parent="StaticCell01/Assets/StaticMetalBed01" unique_id=866370628 instance=ExtResource("10_fiywg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.06064862, 0.5798463, -0.0067902207)
+
+[node name="StaticCheapDesk" parent="StaticCell01/Assets" unique_id=1198558147 instance=ExtResource("11_0a8a4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8984657, 2.3841858e-07, 1.1984764)
+
+[node name="StaticFlatDeskLamp" parent="StaticCell01/Assets/StaticCheapDesk" unique_id=1360255404 instance=ExtResource("13_eag41")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 0.38129276, 0.7475, 0.20286393)
+
+[node name="StaticStool" parent="StaticCell01/Assets" unique_id=217622578 instance=ExtResource("12_d1c3c")]
+transform = Transform3D(0.9336992, 0, -0.35805836, 0, 1, 0, 0.35805836, 0, 0.9336992, 1.111354, 1.1920929e-07, 0.68467647)
+
+[node name="StaticToilet01" parent="StaticCell01/Assets" unique_id=419973264 instance=ExtResource("13_xerjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7427039, 0, -2.0443635)
+
+[node name="StaticSink03" parent="StaticCell01/Assets" unique_id=858744217 instance=ExtResource("14_cj6ej")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.2, 0, -1.4000001)
+
+[node name="MeshCeilingLightBulb" parent="StaticCell01/Assets" unique_id=913305178 instance=ExtResource("17_eag41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, -0.3)
+
+[node name="MeshOpenSmallWallLight" parent="StaticCell01/Assets" unique_id=551003114 instance=ExtResource("18_rh18s")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3964474, 2, -1.4000001)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticCell01/Assets" unique_id=2107989604]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1.3984361, 1.5, -1.4)
+mesh = SubResource("PlaneMesh_kdt2s")
+surface_material_override/0 = ExtResource("19_35jns")
+
+[node name="StaticShoesCabinet" parent="StaticCell01/Assets" unique_id=66757869 instance=ExtResource("20_kdt2s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.0009107888, 1.1920929e-07, -2.0009215)
+
+[node name="StaticShoesCabinetDrawer" parent="StaticCell01/Assets/StaticShoesCabinet" unique_id=1466598124 instance=ExtResource("21_ue7s6")]
+
+[node name="StaticShoesCabinetDrawer2" parent="StaticCell01/Assets/StaticShoesCabinet" unique_id=1925930233 instance=ExtResource("21_ue7s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2300609, 0)
+
+[node name="StaticCheapCabinet" parent="StaticCell01/Assets" unique_id=1794680113 instance=ExtResource("22_ue7s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, -2.3)
+
+[node name="StaticCheapCabinetDoor" parent="StaticCell01/Assets/StaticCheapCabinet" unique_id=404014452 instance=ExtResource("23_fchjg")]
+
+[node name="StaticToiletBrushHolder" parent="StaticCell01/Assets" unique_id=230288076 instance=ExtResource("24_aqn4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.3)
+
+[node name="StaticToiletBrush" parent="StaticCell01/Assets/StaticToiletBrushHolder" unique_id=1719845113 instance=ExtResource("25_uwe2u")]
+
+[node name="StaticPlainShelf" parent="StaticCell01/Assets" unique_id=2012598619 instance=ExtResource("26_lt854")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.1, 1.8000001, -2)
+
+[node name="MeshHanger" parent="StaticCell01/Assets/StaticPlainShelf" unique_id=1349992238 instance=ExtResource("27_gdw34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054208875, -0.1)
+
+[node name="MeshHanger2" parent="StaticCell01/Assets/StaticPlainShelf" unique_id=343493575 instance=ExtResource("27_gdw34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, -0.054208875, -0.10000002)
+
+[node name="MeshHanger3" parent="StaticCell01/Assets/StaticPlainShelf" unique_id=1561143789 instance=ExtResource("27_gdw34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000002, -0.054208875, -0.09999999)
+
+[node name="StaticHangingCoat" parent="StaticCell01/Assets/StaticPlainShelf" unique_id=349337154 instance=ExtResource("28_apksj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.100000024, -0.07829381)
+
+[node name="StaticHangingLongCoat" parent="StaticCell01/Assets/StaticPlainShelf" unique_id=1664803768 instance=ExtResource("29_lfwl4")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -0.3000002, -0.100000024, -0.07337787)
+
+[node name="StaticHangingJacket" parent="StaticCell01/Assets/StaticPlainShelf" unique_id=2623637 instance=ExtResource("30_vk3yo")]
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 0.29999995, -0.100000024, -0.04411281)
+
+[node name="Assets(Ignore)" type="Node3D" parent="StaticCell01" unique_id=18671704]
+
+[node name="StaticCell02" parent="." unique_id=1313619584 instance=ExtResource("4_ome15")]
+
+[node name="Lights" type="Node3D" parent="StaticCell02" unique_id=1214631716]
+
+[node name="StaticCorridor" parent="." unique_id=1627473948 instance=ExtResource("5_5nbar")]
+
+[node name="Lights" type="Node3D" parent="StaticCorridor" unique_id=1959445738]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1535401897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 2.6, -3.6)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D4" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1775448976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 2.6, -7.6)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D5" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1916484477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 2.6, -11.6)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1372387075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 2.6, -3.6)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D3" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1438118493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 2.6, -3.6)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D6" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1834280744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, -3.6)
+visible = false
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="FakeCells" type="Node3D" parent="." unique_id=1874441359]
+
+[node name="StaticFakeCell01" parent="FakeCells" unique_id=1735036929 instance=ExtResource("6_ouh7u")]
+
+[node name="StaticFakeCell02" parent="FakeCells" unique_id=843726955 instance=ExtResource("7_davo8")]
+
+[node name="StaticFakeCell03" parent="FakeCells" unique_id=495801906 instance=ExtResource("8_wqn6u")]
+
+[node name="StaticFakeCell04" parent="FakeCells" unique_id=269877894 instance=ExtResource("9_fiywg")]
+
+[node name="StaticFakeCell05" parent="FakeCells" unique_id=993172283 instance=ExtResource("10_htm6k")]
+
+[node name="Lights" type="Node3D" parent="FakeCells" unique_id=651146983]

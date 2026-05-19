@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bm5mk16dkbdnd"]
+
+[ext_resource type="ArrayOccluder3D" uid="uid://ilpywm7bdxw4" path="res://Scenes/Maps/Demo/PrisonBlockLowSec2/prison_block_low_sec_2.occ" id="1_w6bck"]
+[ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="2_x02ya"]
+[ext_resource type="PackedScene" uid="uid://cn0b35rsw3jtd" path="res://Assets/Maps/PrisonBlockLowSec2/StaticCell_2.tscn" id="3_bep3b"]
+[ext_resource type="PackedScene" uid="uid://b1mbicsh5lyxr" path="res://Assets/Maps/PrisonBlockLowSec2/StaticCorridor_2.tscn" id="4_6b23j"]
+[ext_resource type="PackedScene" uid="uid://h20ihvkcakut" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell01_2.tscn" id="5_s7w7q"]
+[ext_resource type="PackedScene" uid="uid://dhb2v7670ygo3" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell02_2.tscn" id="6_riupe"]
+[ext_resource type="PackedScene" uid="uid://bemtn8ybo5hbj" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell03_2.tscn" id="7_egkj6"]
+[ext_resource type="PackedScene" uid="uid://bhvrlls5s5kgh" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell04_2.tscn" id="8_xho1q"]
+
+[node name="PrisonBlockLowSec2" type="Node3D" unique_id=1407849894]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=936778010]
+occluder = ExtResource("1_w6bck")
+bake_mask = 4293918752
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="." unique_id=1257920914]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+denoiser_strength = 0.05
+denoiser_range = 2
+texel_scale = 4.0
+environment_mode = 0
+generate_probes_subdiv = 0
+script = ExtResource("2_x02ya")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="StaticCell_2" parent="." unique_id=1180242294 instance=ExtResource("3_bep3b")]
+
+[node name="Lights" type="Node3D" parent="StaticCell_2" unique_id=1219569585]
+
+[node name="StaticCorridor_2" parent="." unique_id=951991314 instance=ExtResource("4_6b23j")]
+
+[node name="Lights" type="Node3D" parent="StaticCorridor_2" unique_id=626035811]
+
+[node name="FakeCells" type="Node3D" parent="." unique_id=1855203166]
+
+[node name="StaticFakeCell01_2" parent="FakeCells" unique_id=353964695 instance=ExtResource("5_s7w7q")]
+
+[node name="StaticFakeCell02_2" parent="FakeCells" unique_id=1776596817 instance=ExtResource("6_riupe")]
+
+[node name="StaticFakeCell03_2" parent="FakeCells" unique_id=1570869408 instance=ExtResource("7_egkj6")]
+
+[node name="StaticFakeCell04_2" parent="FakeCells" unique_id=284208375 instance=ExtResource("8_xho1q")]
+
+[node name="Lights" type="Node3D" parent="FakeCells" unique_id=572807771]

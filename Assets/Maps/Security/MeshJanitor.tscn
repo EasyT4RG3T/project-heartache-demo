@@ -2,8 +2,12 @@
 
 [ext_resource type="ArrayMesh" uid="uid://dhdngbwjrlrw" path="res://Assets/Maps/Security/Janitor.obj" id="1_hike5"]
 [ext_resource type="Material" uid="uid://41krkpsxqiid" path="res://Assets/Materials/Concrete/ConcreteTiles/ConcreteTiles.tres" id="2_q5b43"]
+[ext_resource type="Material" uid="uid://kl7fdassp6ec" path="res://Assets/Materials/Plaster/Plaster.tres" id="3_ns2tb"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="4_8rq0g"]
 
 [node name="MeshJanitor" type="MeshInstance3D" unique_id=1938766344]
 layers = 33
 mesh = ExtResource("1_hike5")
 surface_material_override/0 = ExtResource("2_q5b43")
+surface_material_override/1 = ExtResource("3_ns2tb")
+surface_material_override/2 = ExtResource("4_8rq0g")

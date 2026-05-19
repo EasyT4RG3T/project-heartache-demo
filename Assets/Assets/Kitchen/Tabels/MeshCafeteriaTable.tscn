@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdjjfku5yx15w"]
+
+[ext_resource type="ArrayMesh" uid="uid://binwr80bqyp07" path="res://Assets/Assets/Kitchen/Tabels/CafeteriaTable.obj" id="1_8r6l2"]
+[ext_resource type="Material" uid="uid://c3kaewdf5evh4" path="res://Assets/Materials/Plastic/LightBluePlastic.tres" id="2_22eey"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="3_tbmqu"]
+
+[node name="MeshCafeteriaTable" type="MeshInstance3D" unique_id=1978778562]
+mesh = ExtResource("1_8r6l2")
+surface_material_override/0 = ExtResource("2_22eey")
+surface_material_override/1 = ExtResource("3_tbmqu")

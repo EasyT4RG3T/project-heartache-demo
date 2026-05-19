@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://rd75o70te43d"
+path.bptc="res://.godot/imported/cell_2.exr-07a9c44a2335bc82154e8deb7f4ba3eb.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Scenes/Maps/Old/PrisonBlockLowSec2/Cell2/cell_2.exr"
+dest_files=["res://.godot/imported/cell_2.exr-07a9c44a2335bc82154e8deb7f4ba3eb.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=4

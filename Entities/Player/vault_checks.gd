@@ -77,8 +77,8 @@ var vault_check_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_
 var vault_check_query_position: Vector3 = Vector3(0, 0.685, 0)
 var vault_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var vault_height_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_sphere(0.25)
-var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.249, 0.599)
-var vault_fit_query_position: Vector3 = Vector3(0, 1.5, 0)
+var vault_fit_query: PhysicsShapeQueryParameters3D = ShapeHelper.create_query_capsule(0.249, 0.598)
+var vault_fit_query_position: Vector3 = Vector3(0, 1.499, 0)
 var vault_fit_queary_mid_position: Vector3 = Vector3(0, 1.05, 0)
 var vault_fit_query_crouch_position: Vector3 = Vector3(0, 0.55, 0)
 

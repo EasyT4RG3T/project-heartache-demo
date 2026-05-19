@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://crhjsjja150vm"]
 
 [ext_resource type="PackedScene" uid="uid://dxfihic1r53sj" path="res://Assets/Maps/PrisonBlockLowSec/MeshFakeCell03.tscn" id="1_tgfij"]
+[ext_resource type="ArrayMesh" uid="uid://y5yn5q4x3xjk" path="res://Assets/Maps/PrisonBlockLowSec/FakeCell03.obj" id="2_g0hpt"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="3_22gdn"]
+[ext_resource type="Material" uid="uid://ds6hr7xfg7lwc" path="res://Assets/Materials/Plaster/PlasterLightOrange.tres" id="4_761cn"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_id2sw"]
-data = PackedVector3Array(3, 0, -2.7, 2, 0, -2.5, 2, 0, -2.7, 3, 0, -2.5, 2, 0, -2.5, 3, 0, -2.7, 4.6, 0, 1.5, 1.5999999, 0, -1.4, 4.6, 0, -0.79999995, 4.6, 0, 1.5, 1.5999999, 0, 1.5, 1.5999999, 0, -1.4, 4.6, 3, -0.79999995, 4.6, 0, 1.5, 4.6, 0, -0.79999995, 4.6, 3, 1.5, 4.6, 0, 1.5, 4.6, 3, -0.79999995, 1.5999999, 3, 1.5, 1.5999999, 0, -1.4, 1.5999999, 0, 1.5, 1.5999999, 3, -1.4, 1.5999999, 0, -1.4, 1.5999999, 3, 1.5, 1.5999999, 3, -2.5, 1.5999999, 0, -1.4, 1.5999999, 3, -1.4, 1.5999999, 0, -2.5, 1.5999999, 0, -1.4, 1.5999999, 3, -2.5, 4.6, 3, 1.5, 1.5999999, 0, 1.5, 4.6, 0, 1.5, 1.5999999, 3, 1.5, 1.5999999, 0, 1.5, 4.6, 3, 1.5, 3, 2, -2.7, 2, 2, -2.5, 3, 2, -2.5, 2, 2, -2.7, 2, 2, -2.5, 3, 2, -2.7, 3, 0, -2.7, 3, 2, -2.5, 3, 0, -2.5, 3, 2, -2.7, 3, 2, -2.5, 3, 0, -2.7, 2, 0, -2.5, 2, 2, -2.7, 2, 0, -2.7, 2, 2, -2.5, 2, 2, -2.7, 2, 0, -2.5, 3.3999999, 3, -2.5, 3.3999999, 0, -1.4, 3.3999999, 0, -2.5, 3.3999999, 3, -1.4, 3.3999999, 0, -1.4, 3.3999999, 3, -2.5, 1.5999999, 3, -1.4, 1.5999999, 3, 1.5, 4.6, 3, 1.5, 4.6, 3, 1.5, 4.6, 3, -0.79999995, 1.5999999, 3, -1.4, 3.3999999, 3, -1.4, 1.5999999, 3, -1.4, 4.6, 3, -0.79999995, 3.3999999, 3, -1.4, 3.3999999, 3, -2.5, 1.5999999, 3, -1.4, 1.5999999, 3, -1.4, 3.3999999, 3, -2.5, 1.5999999, 3, -2.5)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_65noa"]
+data = PackedVector3Array(2, 0, -2.7, 3, 0, -2.5, 2, 0, -2.5, 3, 0, -2.7, 3, 0, -2.5, 2, 0, -2.7, 4.6, 0, 1.5, 1.5999999, 0, -1.4, 4.6, 0, -0.79999995, 4.6, 0, 1.5, 1.5999999, 0, 1.5, 1.5999999, 0, -1.4, 4.6, 3, -0.79999995, 4.6, 0, 1.5, 4.6, 0, -0.79999995, 4.6, 3, 1.5, 4.6, 0, 1.5, 4.6, 3, -0.79999995, 1.5999999, 3, 1.5, 1.5999999, 0, -1.4, 1.5999999, 0, 1.5, 1.5999999, 3, -1.4, 1.5999999, 0, -1.4, 1.5999999, 3, 1.5, 1.5999999, 3, -2.5, 1.5999999, 0, -1.4, 1.5999999, 3, -1.4, 1.5999999, 0, -2.5, 1.5999999, 0, -1.4, 1.5999999, 3, -2.5, 4.6, 3, 1.5, 1.5999999, 0, 1.5, 4.6, 0, 1.5, 1.5999999, 3, 1.5, 1.5999999, 0, 1.5, 4.6, 3, 1.5, 3, 2, -2.7, 2, 2, -2.5, 3, 2, -2.5, 2, 2, -2.7, 2, 2, -2.5, 3, 2, -2.7, 3, 0, -2.7, 3, 2, -2.5, 3, 0, -2.5, 3, 2, -2.7, 3, 2, -2.5, 3, 0, -2.7, 2, 0, -2.5, 2, 2, -2.7, 2, 0, -2.7, 2, 2, -2.5, 2, 2, -2.7, 2, 0, -2.5, 3.3999999, 3, -2.5, 3.3999999, 0, -1.4, 3.3999999, 0, -2.5, 3.3999999, 3, -1.4, 3.3999999, 0, -1.4, 3.3999999, 3, -2.5, 1.5999999, 3, -1.4, 1.5999999, 3, 1.5, 4.6, 3, 1.5, 4.6, 3, 1.5, 4.6, 3, -0.79999995, 1.5999999, 3, -1.4, 3.3999999, 3, -1.4, 1.5999999, 3, -1.4, 4.6, 3, -0.79999995, 3.3999999, 3, -1.4, 3.3999999, 3, -2.5, 1.5999999, 3, -1.4, 1.5999999, 3, -1.4, 3.3999999, 3, -2.5, 1.5999999, 3, -2.5)
 
-[node name="StaticFakeCell03" type="StaticBody3D" unique_id=1146152200]
+[node name="StaticFakeCell03" type="StaticBody3D" unique_id=495801906]
 
-[node name="MeshFakeCell03" parent="." unique_id=140303335 instance=ExtResource("1_tgfij")]
+[node name="MeshFakeCell03" type="MeshInstance3D" parent="." unique_id=140303335 instance=ExtResource("1_tgfij")]
+layers = 33
+mesh = ExtResource("2_g0hpt")
+surface_material_override/0 = ExtResource("3_22gdn")
+surface_material_override/1 = ExtResource("4_761cn")
+surface_material_override/2 = ExtResource("3_22gdn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1667907993]
-shape = SubResource("ConcavePolygonShape3D_id2sw")
+[node name="@CollisionShape3D@30592" type="CollisionShape3D" parent="." unique_id=487013254]
+shape = SubResource("ConcavePolygonShape3D_65noa")

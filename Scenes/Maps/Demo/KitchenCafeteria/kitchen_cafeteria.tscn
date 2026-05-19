@@ -1,0 +1,510 @@
+[gd_scene format=3 uid="uid://bbcs2l45o00wh"]
+
+[ext_resource type="ArrayOccluder3D" uid="uid://ico0ti5hxb4o" path="res://Scenes/Maps/Demo/KitchenCafeteria/kitchen_cafeteria.occ" id="1_2use8"]
+[ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="2_260da"]
+[ext_resource type="LightmapGIData" uid="uid://dfcb6q0xmng51" path="res://Scenes/Maps/Demo/KitchenCafeteria/kitchen_cafeteria.lmbake" id="2_k2dtm"]
+[ext_resource type="PackedScene" uid="uid://b47ejdjfc47ci" path="res://Assets/Maps/KitchenCafeteria/StaticCafeteria.tscn" id="3_k2dtm"]
+[ext_resource type="PackedScene" uid="uid://cgsw2mf2i2617" path="res://Assets/Maps/KitchenCafeteria/StaticKitchen.tscn" id="4_sl6a2"]
+[ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="5_bguy8"]
+[ext_resource type="PackedScene" uid="uid://bbslq4ybmu8rp" path="res://Assets/Assets/Kitchen/Tabels/StaticCafeteriaTable.tscn" id="6_pf36c"]
+[ext_resource type="PackedScene" uid="uid://c2wgoniymdbe2" path="res://Assets/Assets/Kitchen/Utensils/FoodTray/MeshFoodTray.tscn" id="7_daqxa"]
+
+[node name="KitchenCafeteria" type="Node3D" unique_id=1932620180]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1502307041]
+occluder = ExtResource("1_2use8")
+bake_mask = 4293918752
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="." unique_id=1247803478]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+denoiser_strength = 0.05
+denoiser_range = 2
+texel_scale = 4.0
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_k2dtm")
+script = ExtResource("2_260da")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="StaticCafeteria" parent="." unique_id=1760404024 instance=ExtResource("3_k2dtm")]
+
+[node name="StaticKitchen" parent="." unique_id=714011719 instance=ExtResource("4_sl6a2")]
+
+[node name="Lights" type="Node3D" parent="." unique_id=1700394769]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="Lights" unique_id=591884946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 6.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=328966977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 6.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1224186252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 6.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=1015523654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 3.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=164154974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 3.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D9" type="OmniLight3D" parent="Lights" unique_id=617309603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 3.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D15" type="OmniLight3D" parent="Lights" unique_id=2096295663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 0.099999905)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D16" type="OmniLight3D" parent="Lights" unique_id=1782098917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 0.099999905)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D17" type="OmniLight3D" parent="Lights" unique_id=1749502996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 0.099999905)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=661620656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 9.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=912282068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 9.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=1226891196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 9.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D18" type="OmniLight3D" parent="Lights" unique_id=1268523589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 12.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D19" type="OmniLight3D" parent="Lights" unique_id=1693552050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 12.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D20" type="OmniLight3D" parent="Lights" unique_id=1370718292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 12.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=1191983960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 10.1)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D11" type="OmniLight3D" parent="Lights" unique_id=1373379947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 7.1000004)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D12" type="OmniLight3D" parent="Lights" unique_id=1350594426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 4.1000004)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D14" type="OmniLight3D" parent="Lights" unique_id=1139956534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 1.1000004)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D13" type="OmniLight3D" parent="Lights" unique_id=768088372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, -0.8999996)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("5_bguy8")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="." unique_id=60696952]
+
+[node name="Static" type="Node3D" parent="Assets" unique_id=158304916]
+
+[node name="StaticCafeteriaTable" parent="Assets/Static" unique_id=717026005 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.599999, 0, 3.7)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable" unique_id=425616727 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, -7.351371e-08, 0, 1, 0, 7.351371e-08, 0, 1, -0.43735147, 0.74, 0.28480816)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable" unique_id=1417591824 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, -7.351371e-08, 0, 1, 0, 7.351371e-08, 0, 1, 0.4717841, 0.74, -0.24829578)
+
+[node name="StaticCafeteriaTable2" parent="Assets/Static" unique_id=955333378 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.599999, 0, 3.7)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable2" unique_id=2081914228 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4126172, 0.7399999, -0.22723293)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable2" unique_id=1910718165 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062001705, 0.74, 0.27525043)
+
+[node name="StaticCafeteriaTable3" parent="Assets/Static" unique_id=1692192122 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.599999, 0, 1.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable3" unique_id=672381382 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4490168, 0.74, 0.24614716)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable3" unique_id=1260222433 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4453007, 0.7400001, -0.26344204)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable3" unique_id=779555945 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41929376, 0.7399999, 0.29107857)
+
+[node name="StaticCafeteriaTable4" parent="Assets/Static" unique_id=1469647848 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.599999, 0, 1.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable4" unique_id=1028903763 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4604305, 0.74, -0.24533558)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable4" unique_id=1302314906 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49827814, 0.74, -0.24838543)
+
+[node name="MeshFoodTray5" parent="Assets/Static/StaticCafeteriaTable4" unique_id=1066292514 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02184081, 0.74, -0.23945522)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable4" unique_id=1045719121 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39670157, 0.7399999, 0.27881432)
+
+[node name="MeshFoodTray4" parent="Assets/Static/StaticCafeteriaTable4" unique_id=196380452 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25400603, 0.7399999, 0.2804432)
+
+[node name="StaticCafeteriaTable5" parent="Assets/Static" unique_id=334503341 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.599999, 0, -0.5000001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable5" unique_id=60266210 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38297164, 0.74, 0.25408077)
+
+[node name="StaticCafeteriaTable6" parent="Assets/Static" unique_id=256356525 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.599999, 0, -0.5000001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable6" unique_id=286145988 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.058481455, 0.74, -0.26300335)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable6" unique_id=578442209 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46174645, 0.73999995, 0.24955559)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable6" unique_id=875730236 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055158854, 0.73999995, 0.24118805)
+
+[node name="StaticCafeteriaTable7" parent="Assets/Static" unique_id=2144211660 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.6, 0, 3.7)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable7" unique_id=825332966 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4073789, 0.74, 0.23706436)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable7" unique_id=2127113977 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3832252, 0.74, -0.20199585)
+
+[node name="StaticCafeteriaTable8" parent="Assets/Static" unique_id=1001057389 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.6, 0, 3.7)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable8" unique_id=346156490 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4207461, 0.74, 0.26247787)
+
+[node name="StaticCafeteriaTable9" parent="Assets/Static" unique_id=1302320206 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.6, 0, 1.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable9" unique_id=886677813 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032732487, 0.7399999, -0.2543068)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable9" unique_id=779753245 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47658968, 0.74, -0.22582436)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable9" unique_id=1488987205 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37548006, 0.74, 0.28342056)
+
+[node name="MeshFoodTray4" parent="Assets/Static/StaticCafeteriaTable9" unique_id=581512871 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47199833, 0.74, -0.23361397)
+
+[node name="StaticCafeteriaTable10" parent="Assets/Static" unique_id=906452008 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.6, 0, 1.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable10" unique_id=375753625 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039516687, 0.7399999, -0.2709427)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable10" unique_id=26728899 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014018536, 0.7399999, 0.27724457)
+
+[node name="StaticCafeteriaTable11" parent="Assets/Static" unique_id=1669908571 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.6, 0, -0.5000001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable11" unique_id=1386213399 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40212974, 0.74, -0.26170158)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable11" unique_id=854534154 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47047138, 0.7400001, -0.26226616)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable11" unique_id=12908161 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45278704, 0.74, 0.2602253)
+
+[node name="StaticCafeteriaTable12" parent="Assets/Static" unique_id=1676116361 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.6, 0, -0.5000001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable12" unique_id=1786903700 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43004653, 0.74000025, 0.26499176)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable12" unique_id=461082731 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43562695, 0.7400001, -0.2766285)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable12" unique_id=849282658 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060160756, 0.7400001, -0.27396202)
+
+[node name="MeshFoodTray4" parent="Assets/Static/StaticCafeteriaTable12" unique_id=691174931 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45454937, 0.7400001, 0.28315926)
+
+[node name="StaticCafeteriaTable13" parent="Assets/Static" unique_id=1275429913 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.599999, 0, 12.8)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable13" unique_id=1912194755 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43433285, 0.74, 0.2725191)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable13" unique_id=967127046 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44345665, 0.74, 0.29404068)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable13" unique_id=1018306927 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017212868, 0.74, -0.2618246)
+
+[node name="StaticCafeteriaTable14" parent="Assets/Static" unique_id=620674365 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.599999, 0, 12.8)
+
+[node name="StaticCafeteriaTable15" parent="Assets/Static" unique_id=600585143 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.599999, 0, 10.700001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable15" unique_id=1467418690 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41222954, 0.74, 0.29230404)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable15" unique_id=141725845 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43377972, 0.74, -0.25185966)
+
+[node name="StaticCafeteriaTable16" parent="Assets/Static" unique_id=406645508 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.599999, 0, 10.700001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable16" unique_id=51469421 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42956734, 0.74, -0.2721405)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable16" unique_id=1764306675 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1738205, 0.74, 0.2908411)
+
+[node name="StaticCafeteriaTable17" parent="Assets/Static" unique_id=854100373 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.599999, 0, 8.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable17" unique_id=473033683 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45607567, 0.74, 0.28725624)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable17" unique_id=2003110583 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017736435, 0.74, 0.2962923)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable17" unique_id=157464878 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51205635, 0.74, 0.29069424)
+
+[node name="MeshFoodTray4" parent="Assets/Static/StaticCafeteriaTable17" unique_id=285367344 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44768047, 0.74, -0.2865448)
+
+[node name="MeshFoodTray5" parent="Assets/Static/StaticCafeteriaTable17" unique_id=1206035147 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057946205, 0.74, -0.29509068)
+
+[node name="StaticCafeteriaTable18" parent="Assets/Static" unique_id=1620250244 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.599999, 0, 8.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable18" unique_id=235357916 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33679104, 0.74, -0.25778484)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable18" unique_id=1317715479 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022252083, 0.74, 0.2601223)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable18" unique_id=447101896 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5058899, 0.74, 0.26098442)
+
+[node name="StaticCafeteriaTable19" parent="Assets/Static" unique_id=729044568 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.6, 0, 12.8)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable19" unique_id=1791283392 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4319086, 0.74, 0.25971985)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable19" unique_id=638679166 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07326126, 0.74, 0.26846695)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable19" unique_id=708085317 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35740376, 0.74, -0.24460411)
+
+[node name="StaticCafeteriaTable20" parent="Assets/Static" unique_id=1242679304 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.6, 0, 12.8)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable20" unique_id=2137121828 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39880753, 0.74, -0.2675991)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable20" unique_id=135521183 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4534073, 0.74, -0.27905846)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable20" unique_id=464591912 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38603306, 0.74, 0.2843876)
+
+[node name="MeshFoodTray4" parent="Assets/Static/StaticCafeteriaTable20" unique_id=185386449 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21918106, 0.74, 0.29384232)
+
+[node name="StaticCafeteriaTable21" parent="Assets/Static" unique_id=312703842 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.6, 0, 10.700001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable21" unique_id=2010662721 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09091377, 0.74, -0.26517296)
+
+[node name="StaticCafeteriaTable22" parent="Assets/Static" unique_id=454919718 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.6, 0, 10.700001)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable22" unique_id=822517612 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36839485, 0.74, -0.24351501)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable22" unique_id=1150660066 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36118793, 0.7400001, -0.2518425)
+
+[node name="StaticCafeteriaTable23" parent="Assets/Static" unique_id=99424927 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.6, 0, 8.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable23" unique_id=212454213 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4537964, 0.74, -0.2536068)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable23" unique_id=50719884 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023771286, 0.74, -0.266325)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable23" unique_id=1649538666 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51686954, 0.74, -0.24703026)
+
+[node name="MeshFoodTray4" parent="Assets/Static/StaticCafeteriaTable23" unique_id=667584436 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20950222, 0.74, 0.29468918)
+
+[node name="MeshFoodTray5" parent="Assets/Static/StaticCafeteriaTable23" unique_id=656278959 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45052433, 0.74, 0.290123)
+
+[node name="StaticCafeteriaTable24" parent="Assets/Static" unique_id=149812354 instance=ExtResource("6_pf36c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.6, 0, 8.6)
+
+[node name="MeshFoodTray" parent="Assets/Static/StaticCafeteriaTable24" unique_id=12945503 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39525795, 0.74, -0.23234749)
+
+[node name="MeshFoodTray2" parent="Assets/Static/StaticCafeteriaTable24" unique_id=1144214155 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44365692, 0.7400001, 0.27654076)
+
+[node name="MeshFoodTray3" parent="Assets/Static/StaticCafeteriaTable24" unique_id=2048662545 instance=ExtResource("7_daqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.097335815, 0.7400001, 0.2737007)
+
+[node name="Dynamic" type="Node3D" parent="Assets" unique_id=79660150]

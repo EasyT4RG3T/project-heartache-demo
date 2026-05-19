@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://tvy25silkecl"]
 
 [ext_resource type="PackedScene" uid="uid://bimmtkx2tujef" path="res://Assets/Maps/PrisonBlockLowSec/MeshFakeCell04.tscn" id="1_8jw4k"]
+[ext_resource type="ArrayMesh" uid="uid://bb444r0nue7s" path="res://Assets/Maps/PrisonBlockLowSec/FakeCell04.obj" id="2_x3fd2"]
+[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="3_jotgb"]
+[ext_resource type="Material" uid="uid://ds6hr7xfg7lwc" path="res://Assets/Materials/Plaster/PlasterLightOrange.tres" id="4_d6ym8"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xfy51"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ompxf"]
 data = PackedVector3Array(3.3, 0, -7.2999997, 3.5, 0, -6.2999997, 3.3, 0, -6.2999997, 3.5, 0, -7.2999997, 3.5, 0, -6.2999997, 3.3, 0, -7.2999997, 7.5, 0, -8.9, 4.6, 0, -5.8999996, 5.2, 0, -8.9, 7.5, 0, -8.9, 7.5, 0, -5.8999996, 4.6, 0, -5.8999996, 5.2, 3, -8.9, 7.5, 0, -8.9, 5.2, 0, -8.9, 7.5, 3, -8.9, 7.5, 0, -8.9, 5.2, 3, -8.9, 7.5, 3, -5.8999996, 4.6, 0, -5.8999996, 7.5, 0, -5.8999996, 4.6, 3, -5.8999996, 4.6, 0, -5.8999996, 7.5, 3, -5.8999996, 3.5, 3, -5.8999996, 4.6, 0, -5.8999996, 4.6, 3, -5.8999996, 3.5, 0, -5.8999996, 4.6, 0, -5.8999996, 3.5, 3, -5.8999996, 7.5, 3, -8.9, 7.5, 0, -5.8999996, 7.5, 0, -8.9, 7.5, 3, -5.8999996, 7.5, 0, -5.8999996, 7.5, 3, -8.9, 3.3, 2, -7.2999997, 3.5, 2, -6.2999997, 3.5, 2, -7.2999997, 3.3, 2, -6.2999997, 3.5, 2, -6.2999997, 3.3, 2, -7.2999997, 3.3, 0, -7.2999997, 3.5, 2, -7.2999997, 3.5, 0, -7.2999997, 3.3, 2, -7.2999997, 3.5, 2, -7.2999997, 3.3, 0, -7.2999997, 3.5, 0, -6.2999997, 3.3, 2, -6.2999997, 3.3, 0, -6.2999997, 3.5, 2, -6.2999997, 3.3, 2, -6.2999997, 3.5, 0, -6.2999997, 3.5, 3, -7.7, 4.6, 0, -7.7, 3.5, 0, -7.7, 4.6, 3, -7.7, 4.6, 0, -7.7, 3.5, 3, -7.7, 4.6, 3, -5.8999996, 7.5, 3, -5.8999996, 7.5, 3, -8.9, 7.5, 3, -8.9, 5.2, 3, -8.9, 4.6, 3, -5.8999996, 4.6, 3, -7.7, 4.6, 3, -5.8999996, 5.2, 3, -8.9, 4.6, 3, -7.7, 3.5, 3, -7.7, 4.6, 3, -5.8999996, 4.6, 3, -5.8999996, 3.5, 3, -7.7, 3.5, 3, -5.8999996)
 
-[node name="StaticFakeCell04" type="StaticBody3D" unique_id=743695051]
+[node name="StaticFakeCell04" type="StaticBody3D" unique_id=269877894]
 
-[node name="MeshFakeCell04" parent="." unique_id=102686004 instance=ExtResource("1_8jw4k")]
+[node name="MeshFakeCell04" type="MeshInstance3D" parent="." unique_id=102686004 instance=ExtResource("1_8jw4k")]
+layers = 33
+mesh = ExtResource("2_x3fd2")
+surface_material_override/0 = ExtResource("3_jotgb")
+surface_material_override/1 = ExtResource("4_d6ym8")
+surface_material_override/2 = ExtResource("3_jotgb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=909501393]
-shape = SubResource("ConcavePolygonShape3D_xfy51")
+[node name="@CollisionShape3D@30593" type="CollisionShape3D" parent="." unique_id=2072143624]
+shape = SubResource("ConcavePolygonShape3D_ompxf")

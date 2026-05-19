@@ -106,8 +106,8 @@ func _ready() -> void:
 		else:
 			AudioManager.play_sound("SFX", HOLSTER_IN))
 	
-	aim_ray_query.collision_mask = 4101
-	shot_ray_query.collision_mask = 5
+	aim_ray_query.collision_mask = 4103
+	shot_ray_query.collision_mask = 7
 
 
 func _physics_process(delta: float) -> void:

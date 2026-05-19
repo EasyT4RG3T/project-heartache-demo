@@ -8,14 +8,17 @@ var disabled: bool = false:
 		disabled = value
 		if value:
 			hide()
+		elif !out_of_area:
+			show()
 
 var out_of_area: bool = false:
 	set(value):
 		out_of_area = value
 		if value:
 			hide()
+		elif !disabled:
+			show()
 
-@export var cull_distance: float = 10.0
 @export var area: Area3D
 
 
@@ -48,24 +51,3 @@ func _ready() -> void:
 			out_of_area = true)
 		if !area.has_overlapping_bodies():
 			out_of_area = true
-
-
-func _physics_process(_delta: float) -> void:
-	if Engine.is_editor_hint(): return
-	if !GameManager.player_character: return
-	
-	if disabled: return
-	
-	if out_of_area: return
-	
-	var vector: Vector3 = global_position - GameManager.player_character.global_position
-	var distance: float = vector.length()
-	
-	if distance > cull_distance:
-		var dot: float = vector.normalized().dot(GameManager.player_character.head.basis.z)
-		if visible and dot > 0:
-			hide()
-		elif !visible and dot < 0:
-			show()
-	elif !visible:
-		show()

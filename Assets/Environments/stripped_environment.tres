@@ -1,6 +1,8 @@
 [gd_resource type="Environment" format=3 uid="uid://d2m0td6ed2a2t"]
 
 [resource]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 1
 tonemap_mode = 2
 tonemap_white = 3.0

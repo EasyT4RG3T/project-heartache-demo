@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7rlj5hdneqxt"
+path="res://.godot/imported/SquareVent.obj-6beae2a889a76595248b5dee34036372.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SquareVent.obj-6beae2a889a76595248b5dee34036372.mesh"]
+
+source_file="res://Assets/Assets/Mics/Vents/SquareVent/SquareVent.obj"
+dest_files=["res://.godot/imported/SquareVent.obj-6beae2a889a76595248b5dee34036372.mesh", "res://.godot/imported/SquareVent.obj-6beae2a889a76595248b5dee34036372.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

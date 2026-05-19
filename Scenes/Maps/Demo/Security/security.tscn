@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://cf6k24sn2nhk3"]
+
+[ext_resource type="ArrayOccluder3D" uid="uid://cu2rt1go3q2t" path="res://Scenes/Maps/Demo/Security/security.occ" id="1_sqppk"]
+[ext_resource type="LightmapGIData" uid="uid://b5aqtlft3c4xd" path="res://Scenes/Maps/Demo/Security/security.lmbake" id="2_tq8nf"]
+[ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="3_ldogt"]
+[ext_resource type="PackedScene" uid="uid://vrmd7hqt8pjm" path="res://Assets/Maps/Security/StaticJanitor.tscn" id="4_55yb5"]
+[ext_resource type="PackedScene" uid="uid://dlhprli7bfhy6" path="res://Assets/Maps/Security/StaticSecurityCorridor.tscn" id="5_bn24p"]
+[ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="6_bwggy"]
+[ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="7_wku3x"]
+[ext_resource type="PackedScene" uid="uid://cmkk7ts2ihsld" path="res://Assets/Assets/Lights/Wall/OpenSmallWallLight/MeshOpenSmallWallLight.tscn" id="8_rdvlf"]
+
+[node name="Security" type="Node3D" unique_id=108471197]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=807272442]
+occluder = ExtResource("1_sqppk")
+bake_mask = 4293918752
+
+[node name="DynamicLightmapGI" type="LightmapGI" parent="." unique_id=1420971173]
+quality = 2
+supersampling = true
+directional = true
+use_texture_for_bounces = false
+interior = true
+denoiser_strength = 0.05
+denoiser_range = 2
+texel_scale = 4.0
+environment_mode = 0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_tq8nf")
+script = ExtResource("3_ldogt")
+metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1855444644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81342775, 1.4999999, -7.324878)
+blend_distance = 0.0
+size = Vector3(2.0268555, 3.2, 3.2265136)
+box_projection = true
+interior = true
+enable_shadows = true
+
+[node name="StaticJanitor" parent="." unique_id=1513281172 instance=ExtResource("4_55yb5")]
+
+[node name="Lights" type="Node3D" parent="StaticJanitor" unique_id=1710813099]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticJanitor/Lights" unique_id=812972078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 2.8, -7.4)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="StaticJanitor" unique_id=752261858]
+
+[node name="StaticIndustrialShelf" parent="StaticJanitor/Assets" unique_id=669091726 instance=ExtResource("7_wku3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 0, -6.1)
+
+[node name="StaticIndustrialShelf2" parent="StaticJanitor/Assets" unique_id=1592094912 instance=ExtResource("7_wku3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999995, 0, -6.1)
+
+[node name="StaticIndustrialShelf3" parent="StaticJanitor/Assets" unique_id=2133859927 instance=ExtResource("7_wku3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999995, 0, -8.700001)
+
+[node name="StaticSecurityCorridor" parent="." unique_id=389981551 instance=ExtResource("5_bn24p")]
+
+[node name="Lights" type="Node3D" parent="StaticSecurityCorridor" unique_id=42368124]
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=1951953763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 2.8, -7.4)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 2.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D3" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=720133984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19999999, 1.8, -5.6562824)
+light_energy = 0.75
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 1.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D4" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=1674933675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4000001, 1.8, -5.6562824)
+light_energy = 0.75
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 1.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D5" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=1095922106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.8, -5.6562824)
+light_energy = 0.75
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 1.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D6" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=2083209267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1.8, -5.6562824)
+light_energy = 0.75
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 1.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D7" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=674667542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.044262, 1.8, -6.6562824)
+light_energy = 0.75
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 1.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D8" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=879933313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9442619, 1.8, -6.6562824)
+light_energy = 0.75
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 1.0
+script = ExtResource("6_bwggy")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="StaticSecurityCorridor" unique_id=510485660]
+
+[node name="MeshOpenSmallWallLight" parent="StaticSecurityCorridor/Assets" unique_id=551003114 instance=ExtResource("8_rdvlf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.19999999, 1.8, -5.695716)
+
+[node name="MeshOpenSmallWallLight2" parent="StaticSecurityCorridor/Assets" unique_id=1407522760 instance=ExtResource("8_rdvlf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.4000001, 1.8, -5.695716)
+
+[node name="MeshOpenSmallWallLight3" parent="StaticSecurityCorridor/Assets" unique_id=1004125684 instance=ExtResource("8_rdvlf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.5, 1.8, -5.695716)
+
+[node name="MeshOpenSmallWallLight4" parent="StaticSecurityCorridor/Assets" unique_id=693433267 instance=ExtResource("8_rdvlf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.5, 1.8, -5.695716)
+
+[node name="MeshOpenSmallWallLight5" parent="StaticSecurityCorridor/Assets" unique_id=369245447 instance=ExtResource("8_rdvlf")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -7.0042224, 1.8, -6.6562824)
+
+[node name="MeshOpenSmallWallLight6" parent="StaticSecurityCorridor/Assets" unique_id=1263827839 instance=ExtResource("8_rdvlf")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.9042224, 1.8, -6.6562824)

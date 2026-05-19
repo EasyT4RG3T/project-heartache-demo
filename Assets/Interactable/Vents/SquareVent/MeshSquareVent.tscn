@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://b4wjvyklsdveg"]
-
-[ext_resource type="ArrayMesh" uid="uid://7rlj5hdneqxt" path="res://Assets/Interactable/Vents/SquareVent/SquareVent.obj" id="1_ea6nc"]
-[ext_resource type="Material" uid="uid://bgsh7e78yjbxu" path="res://Assets/Materials/Metal/BrushedMetal/BrushedMetal.tres" id="2_nj1e6"]
-
-[node name="MeshSquareVent" type="MeshInstance3D" unique_id=554461989]
-gi_mode = 2
-mesh = ExtResource("1_ea6nc")
-surface_material_override/0 = ExtResource("2_nj1e6")

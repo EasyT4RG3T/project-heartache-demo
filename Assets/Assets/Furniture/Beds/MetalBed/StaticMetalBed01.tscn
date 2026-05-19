@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b5b15rinbiefv"]
+
+[ext_resource type="PackedScene" uid="uid://da86ncawgldey" path="res://Assets/Assets/Furniture/Beds/MetalBed/MeshMetalBed01.tscn" id="1_g6p3v"]
+[ext_resource type="PackedScene" uid="uid://0ojeyualrxkw" path="res://Assets/Assets/Furniture/Beds/MetalBed/TrimeshMetalBed01collision.tscn" id="2_g6p3v"]
+
+[node name="StaticMetalBed01" type="StaticBody3D" unique_id=657188509]
+
+[node name="MeshMetalBed01" parent="." unique_id=711667116 instance=ExtResource("1_g6p3v")]
+
+[node name="ColMetalBed01collision" parent="." unique_id=726813132 instance=ExtResource("2_g6p3v")]

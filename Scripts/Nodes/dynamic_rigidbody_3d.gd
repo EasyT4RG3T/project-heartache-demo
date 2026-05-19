@@ -50,6 +50,10 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	collisions = new_collisions
 
 
+func _init() -> void:
+	sleeping = true
+
+
 func _ready() -> void:
 	if ignore_player:
 		collision_layer = 4

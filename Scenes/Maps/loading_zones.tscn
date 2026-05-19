@@ -34,6 +34,15 @@ size = Vector3(32.9, 3, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vf3g0"]
 size = Vector3(15.6, 3, 13.6)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5i501"]
+size = Vector3(35.2, 3, 3.6000001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u54uc"]
+size = Vector3(3, 3, 3.6000001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c0bmq"]
+size = Vector3(6.4, 3, 11.3)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_efrtl"]
 size = Vector3(16.1, 3, 16.300001)
 
@@ -79,11 +88,8 @@ size = Vector3(3.9, 3, 15.7)
 [node name="LoadingZones" type="Node3D" unique_id=1271106201]
 
 [node name="Map" type="Node3D" parent="." unique_id=227581180]
-visible = false
 
 [node name="PrisonBlockLowSec" type="Node3D" parent="Map" unique_id=1624417025]
-
-[node name="MeshCell01" parent="Map/PrisonBlockLowSec" unique_id=1024498472 instance=ExtResource("1_d8312")]
 
 [node name="MeshCell02" parent="Map/PrisonBlockLowSec" unique_id=331659298 instance=ExtResource("2_1x7s8")]
 
@@ -100,6 +106,10 @@ visible = false
 [node name="MeshFakeCell04" parent="Map/PrisonBlockLowSec" unique_id=102686004 instance=ExtResource("8_7rff6")]
 
 [node name="MeshFakeCell05" parent="Map/PrisonBlockLowSec" unique_id=2055650141 instance=ExtResource("9_i0lxj")]
+
+[node name="MCCell" type="Node3D" parent="Map" unique_id=118736386]
+
+[node name="MeshCell01" parent="Map/MCCell" unique_id=1024498472 instance=ExtResource("1_d8312")]
 
 [node name="PrisonBlockLowSec2" type="Node3D" parent="Map" unique_id=1882484381]
 
@@ -156,6 +166,26 @@ debug_color = Color(0.8776068, 0.3422981, 0, 0.41960785)
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Zones/PrisonBlockLowSec" unique_id=1392449298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999962, 1.5, -5.2999997)
 shape = SubResource("BoxShape3D_vf3g0")
+debug_color = Color(0.8776068, 0.3422981, 0, 0.41960785)
+
+[node name="MCCell" type="Area3D" parent="Zones" unique_id=452410683]
+script = ExtResource("21_f3rqr")
+wanted_chunks = Array[String](["uid://cn6i15e2ohyv5"])
+metadata/_custom_type_script = "uid://d00gr8pba06uh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/MCCell" unique_id=634201866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1, 1.5, -3.9)
+shape = SubResource("BoxShape3D_5i501")
+debug_color = Color(0.8776068, 0.3422981, 0, 0.41960785)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Zones/MCCell" unique_id=1497121583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10000086, 1.5, -0.2999999)
+shape = SubResource("BoxShape3D_u54uc")
+debug_color = Color(0.8776068, 0.3422981, 0, 0.41960785)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Zones/MCCell" unique_id=61173894]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.3500006, 1.5, -8.900001)
+shape = SubResource("BoxShape3D_c0bmq")
 debug_color = Color(0.8776068, 0.3422981, 0, 0.41960785)
 
 [node name="PrisonBlockLowSec2" type="Area3D" parent="Zones" unique_id=271917433]

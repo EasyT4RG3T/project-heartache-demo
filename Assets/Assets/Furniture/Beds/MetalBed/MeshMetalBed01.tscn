@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://da86ncawgldey"]
+
+[ext_resource type="ArrayMesh" uid="uid://rto4nqxynri6" path="res://Assets/Assets/Furniture/Beds/MetalBed/MetalBed01.obj" id="1_l4vef"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_etrt0"]
+
+[node name="MeshMetalBed01" type="MeshInstance3D" unique_id=711667116]
+mesh = ExtResource("1_l4vef")
+surface_material_override/0 = ExtResource("2_etrt0")
