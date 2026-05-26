@@ -118,6 +118,7 @@ var brightness: float = temp_graphics_settings.brightness:
 		temp_graphics_settings.brightness = value
 		%BrightnessHSlider.value = value
 		%BrightnessLineEdit.text = str(int(value * 100))
+		GameManager.DEFAULT_ENVIRONMENT.adjustment_brightness = value
 		unsaved = true
 		changed_graphics = true
 
@@ -208,6 +209,9 @@ func _ready() -> void:
 				SaverLoader.settings.last_opened_settings_tab = 2
 			elif %Sound.visible:
 				SaverLoader.settings.last_opened_settings_tab = 3
+			
+			if unsaved:
+				GameManager.DEFAULT_ENVIRONMENT.adjustment_brightness = SaverLoader.graphics_settings.brightness
 			
 			queue_free())
 	
@@ -342,6 +346,26 @@ func _set_up_graphics() -> void:
 		if !%BrightnessLineEdit.text.is_valid_int():
 			%BrightnessLineEdit.text = str(int(temp_graphics_settings.brightness * 100))
 		brightness = %BrightnessLineEdit.text.to_float() * 0.01)
+	%BrightnessTest.hide()
+	var camera: Camera3D
+	if GameManager.player_character:
+		camera = GameManager.player_character.main_camera
+	else:
+		camera = get_viewport().get_camera_3d()
+	%BrightnessTest.global_position = camera.global_position - camera.global_basis.z
+	%BrightnessTest.global_rotation = camera.global_rotation
+	%BrightnessHSlider.mouse_entered.connect(func():
+		if !is_queued_for_deletion():
+			%BrightnessTest.show())
+	%BrightnessHSlider.mouse_exited.connect(func():
+		if !is_queued_for_deletion():
+			%BrightnessTest.hide())
+	%BrightnessLineEdit.mouse_entered.connect(func():
+		if !is_queued_for_deletion():
+			%BrightnessTest.show())
+	%BrightnessLineEdit.mouse_exited.connect(func():
+		if !is_queued_for_deletion():
+			%BrightnessTest.hide())
 
 
 func _set_up_sound() -> void:

@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://3kxvwwvoxq4d"]
+
+[ext_resource type="PackedScene" uid="uid://grm0kdgniqtv" path="res://Assets/Assets/Mics/Journal/Journal.glb" id="1_4q54c"]
+[ext_resource type="Material" uid="uid://7reqrm7mia1d" path="res://Assets/Assets/Mics/Journal/Journal.tres" id="2_aqscl"]
+[ext_resource type="Script" uid="uid://bq5ctnv5g8lvd" path="res://Entities/Player/Inventory/journal.gd" id="2_vr0ld"]
+
+[sub_resource type="Animation" id="Animation_4q54c"]
+resource_name = "Close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JournalArmature:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JournalArmature:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.2617994, 0, 0)]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JournalArmature/Skeleton3D:Bone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -7.4107746e-08, 7.410773e-08, 0.70710695, 0.7071066, 0.3, 1, 0.51060075, 0.51060057, 0.4891698, 0.48916954)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("JournalArmature/Skeleton3D:Bone.001")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, -0.5, 0.3, 1, -0.015468612, 0.7069376, 0.70693755, 0.015468629)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("JournalArmature/Skeleton3D:neutral_bone")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677, 0.3, 1, -0.70710677, 0, 0, 0.70710677)
+
+[sub_resource type="Animation" id="Animation_vr0ld"]
+resource_name = "Open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JournalArmature:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1, 0.2), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JournalArmature:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.2617994, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JournalArmature/Skeleton3D:Bone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.51060075, 0.51060057, 0.4891698, 0.48916954, 0.3, 1, -7.4107746e-08, 7.410773e-08, 0.70710695, 0.7071066)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("JournalArmature/Skeleton3D:Bone.001")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.015468612, 0.7069376, 0.70693755, 0.015468629, 0.3, 1, 0.5, 0.5, 0.5, -0.5)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("JournalArmature/Skeleton3D:neutral_bone")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677, 0.3, 1, -0.70710677, 0, 0, 0.70710677)
+
+[sub_resource type="Animation" id="Animation_aqscl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JournalArmature:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JournalArmature:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JournalArmature/Skeleton3D:Bone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -7.4107746e-08, 7.410773e-08, 0.70710695, 0.7071066)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("JournalArmature/Skeleton3D:Bone.001")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, -0.5)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("JournalArmature/Skeleton3D:neutral_bone")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vr0ld"]
+_data = {
+&"Close": SubResource("Animation_4q54c"),
+&"Open": SubResource("Animation_vr0ld"),
+&"RESET": SubResource("Animation_aqscl")
+}
+
+[node name="Journal" unique_id=968137669 instance=ExtResource("1_4q54c")]
+script = ExtResource("2_vr0ld")
+
+[node name="JournalArmature" parent="." index="0" unique_id=1684005087]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Skeleton3D" parent="JournalArmature" index="0" unique_id=1743231790]
+bones/0/position = Vector3(-0.0067351237, 0, -0.03527865)
+bones/0/scale = Vector3(0.99999994, 0.9999997, 0.9999998)
+bones/1/position = Vector3(0.0067442507, 0, -0.03552966)
+bones/1/scale = Vector3(1.0000001, 0.99999994, 1)
+bones/2/position = Vector3(0, 0, -0.03244883)
+bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
+
+[node name="Journal" parent="JournalArmature/Skeleton3D" index="0" unique_id=276687062]
+surface_material_override/0 = ExtResource("2_aqscl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=776264402]
+libraries/ = SubResource("AnimationLibrary_vr0ld")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://de3ynddeg62cv"]
+
+[ext_resource type="Texture2D" uid="uid://c1d6e8ukukaam" path="res://Assets/Assets/Kitchen/Utensils/Knife/Knife_albedo.png" id="1_57pxb"]
+
+[resource]
+albedo_texture = ExtResource("1_57pxb")
+metallic = 0.6
+roughness = 0.3
+texture_filter = 2

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://beb3nd87yuklp"]
+
+[ext_resource type="ArrayMesh" uid="uid://v7vpmv4pfp8j" path="res://Assets/Assets/Kitchen/Utensils/Tongs/Tongs.obj" id="1_aul8m"]
+[ext_resource type="Material" uid="uid://cgimgtf6y8ufi" path="res://Assets/Assets/Kitchen/Utensils/Tongs/Tongs.tres" id="2_t4cyp"]
+
+[node name="MeshTongs" type="MeshInstance3D" unique_id=1341306973]
+mesh = ExtResource("1_aul8m")
+surface_material_override/0 = ExtResource("2_t4cyp")

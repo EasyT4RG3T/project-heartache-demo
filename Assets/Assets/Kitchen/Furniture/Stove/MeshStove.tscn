@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dafy1tr06qbe0"]
+
+[ext_resource type="ArrayMesh" uid="uid://b76vorij50w6v" path="res://Assets/Assets/Kitchen/Furniture/Stove/Stove.obj" id="1_5rkbe"]
+[ext_resource type="Material" uid="uid://4b7s4jf4obvk" path="res://Assets/Assets/Kitchen/Furniture/Stove/Stove .tres" id="2_5hmd4"]
+
+[node name="MeshStove" type="MeshInstance3D" unique_id=1328490876]
+mesh = ExtResource("1_5rkbe")
+surface_material_override/0 = ExtResource("2_5hmd4")

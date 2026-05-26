@@ -2,6 +2,41 @@
 
 [ext_resource type="Script" uid="uid://hu58gbk5v88e" path="res://Scenes/Menus/SettingsMenu/settings_menu.gd" id="1_28f3a"]
 [ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="1_cuw7p"]
+[ext_resource type="Texture2D" uid="uid://b25ju32lahf7h" path="res://Scenes/Menus/SettingsMenu/Brightness_Show.png" id="3_o0qv1"]
+[ext_resource type="Texture2D" uid="uid://d06ewycgwlt5r" path="res://Scenes/Menus/SettingsMenu/Brightness_Hide.png" id="4_7f7if"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v1a1j"]
+size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0qv1"]
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_color = Color(0, 0, 0, 1)
+use_z_clip_scale = true
+z_clip_scale = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o0qv1"]
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1a1j"]
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("3_o0qv1")
+texture_filter = 2
+use_z_clip_scale = true
+z_clip_scale = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrclt"]
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("4_7f7if")
+texture_filter = 2
+use_z_clip_scale = true
+z_clip_scale = 0.5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28f3a"]
 
@@ -306,6 +341,10 @@ available through the console"
 [node name="Brightness" type="HBoxContainer" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer" unique_id=883359952]
 layout_mode = 2
 
+[node name="BrightnessLabel" type="Label" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Brightness" unique_id=160141720]
+layout_mode = 2
+text = "Brightness"
+
 [node name="BrightnessHSlider" type="HSlider" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/VBoxContainer/Brightness" unique_id=1308910846]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
@@ -321,6 +360,63 @@ placeholder_text = "100"
 alignment = 1
 max_length = 3
 emoji_menu_enabled = false
+
+[node name="BrightnessTest" type="Node3D" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer" unique_id=338528815]
+unique_name_in_owner = true
+top_level = true
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/BrightnessTest" unique_id=2051606358]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.0028452277)
+layers = 524288
+sorting_offset = 0.9
+mesh = SubResource("PlaneMesh_v1a1j")
+surface_material_override/0 = SubResource("StandardMaterial3D_o0qv1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/BrightnessTest" unique_id=1004603249]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.3, 0, 0)
+layers = 524288
+sorting_offset = 1.0
+mesh = SubResource("PlaneMesh_o0qv1")
+surface_material_override/0 = SubResource("StandardMaterial3D_v1a1j")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/BrightnessTest" unique_id=584427482]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.3, 0, 0)
+layers = 524288
+sorting_offset = 1.0
+mesh = SubResource("PlaneMesh_o0qv1")
+surface_material_override/0 = SubResource("StandardMaterial3D_nrclt")
+
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/BrightnessTest" unique_id=1377957160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 0, 1.5)
+light_energy = 0.3
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+light_cull_mask = 4294443008
+shadow_bias = 0.01
+shadow_caster_mask = 4294443008
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+spot_range = 3.0
+spot_attenuation = 1.5
+spot_angle = 12.0
+spot_angle_attenuation = 4.0
+
+[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/BrightnessTest" unique_id=643250436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30000007, 0, 1.5)
+light_energy = 0.02
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+light_cull_mask = 4294443008
+shadow_bias = 0.01
+shadow_caster_mask = 4294443008
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+spot_range = 3.0
+spot_attenuation = 1.5
+spot_angle = 12.0
+spot_angle_attenuation = 4.0
 
 [node name="Sound" type="Control" parent="VBoxContainer/TabContainer" unique_id=1538599151]
 unique_name_in_owner = true

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dkosjmlmsly1f"]
+
+[ext_resource type="Texture2D" uid="uid://djrb2hg0wv66f" path="res://Assets/Assets/Kitchen/Utensils/Ladle/Ladle_albedo.png" id="1_kt1p5"]
+
+[resource]
+albedo_texture = ExtResource("1_kt1p5")
+metallic = 0.6
+roughness = 0.3
+texture_filter = 2

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b02aoyfu5ixw6"]
+
+[ext_resource type="Texture2D" uid="uid://4ruj2fcn0ndr" path="res://Assets/Assets/Kitchen/Furniture/KitchenSink/KitchenSink_albedo.png" id="1_f23pl"]
+
+[resource]
+albedo_texture = ExtResource("1_f23pl")
+metallic = 0.6
+roughness = 0.2
+texture_filter = 2

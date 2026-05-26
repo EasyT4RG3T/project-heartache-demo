@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cdiofejx0o00h" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell01.tscn" id="6_ouh7u"]
 [ext_resource type="PackedScene" uid="uid://bf5kqm6hb2ud5" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell02.tscn" id="7_davo8"]
 [ext_resource type="PackedScene" uid="uid://b5b15rinbiefv" path="res://Assets/Assets/Furniture/Beds/MetalBed/StaticMetalBed01.tscn" id="7_wqn6u"]
+[ext_resource type="PackedScene" uid="uid://0a6o7q8gyotj" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/CellDoor01.tscn" id="8_khnwg"]
 [ext_resource type="PackedScene" uid="uid://crhjsjja150vm" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell03.tscn" id="8_wqn6u"]
 [ext_resource type="PackedScene" uid="uid://tvy25silkecl" path="res://Assets/Maps/PrisonBlockLowSec/StaticFakeCell04.tscn" id="9_fiywg"]
 [ext_resource type="PackedScene" uid="uid://cx1vqr0ol80el" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow02/StaticPillow02.tscn" id="9_wqn6u"]
@@ -22,11 +23,18 @@
 [ext_resource type="PackedScene" uid="uid://bcy6xeau0816g" path="res://Assets/Assets/Lights/Desk/FlatDeskLamp/StaticFlatDeskLamp.tscn" id="13_eag41"]
 [ext_resource type="PackedScene" uid="uid://bepr6ff7t004x" path="res://Assets/Assets/Bathroom/Toilets/Toilet01/StaticToilet01.tscn" id="13_xerjg"]
 [ext_resource type="PackedScene" uid="uid://byi5pu24pkltf" path="res://Assets/Assets/Bathroom/Sinks/Sink03/StaticSink03.tscn" id="14_cj6ej"]
+[ext_resource type="PackedScene" uid="uid://be6h4l67ik3su" path="res://Assets/Assets/Decorations/Photos/StandingFrame/StaticStandingFrame.tscn" id="14_yfeig"]
+[ext_resource type="Material" uid="uid://cculcya4lb2i2" path="res://Assets/Sprites/Pictures/Parents.tres" id="15_2py3c"]
+[ext_resource type="PackedScene" uid="uid://h3per66fctju" path="res://Assets/Assets/Decorations/Office/StickyNotes/MeshStickyNoteStack02.tscn" id="15_5dcn4"]
 [ext_resource type="PackedScene" uid="uid://b8kkf3m7obfjr" path="res://Assets/Assets/Furniture/Beds/Matresses/Matress01/StaticMatress01.tscn" id="15_davo8"]
+[ext_resource type="Material" uid="uid://ce2166tm3bvrc" path="res://Assets/Sprites/Pictures/StickyNotes/StickyNote02.tres" id="16_2py3c"]
+[ext_resource type="Material" uid="uid://cqbdqhsve4hwm" path="res://Assets/Assets/Decorations/Office/StickyNotes/StickyNoteStack.tres" id="17_djeg5"]
 [ext_resource type="PackedScene" uid="uid://06ske2hi4t8b" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/MeshCeilingLightBulb.tscn" id="17_eag41"]
 [ext_resource type="PackedScene" uid="uid://cmkk7ts2ihsld" path="res://Assets/Assets/Lights/Wall/OpenSmallWallLight/MeshOpenSmallWallLight.tscn" id="18_rh18s"]
 [ext_resource type="Material" uid="uid://djxkv4gdlnjvh" path="res://Assets/Materials/Mirror/FoggyMirror/FoggyMirror.tres" id="19_35jns"]
+[ext_resource type="PackedScene" uid="uid://dnyqpsrnagm53" path="res://Assets/Assets/Decorations/Office/Pens/Pencil/MeshPencil02.tscn" id="19_djeg5"]
 [ext_resource type="PackedScene" uid="uid://bgfgdplsq11h6" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/StaticShoesCabinet.tscn" id="20_kdt2s"]
+[ext_resource type="PackedScene" uid="uid://b7qlbecd1lalt" path="res://Assets/Assets/Kitchen/Utensils/PlasticCup/DynamicPlasticCup.tscn" id="21_4vlnq"]
 [ext_resource type="PackedScene" uid="uid://bynh51r0h0oya" path="res://Assets/Assets/Furniture/Cabinets/ShoesCabinet/StaticShoesCabinetDrawer.tscn" id="21_ue7s6"]
 [ext_resource type="PackedScene" uid="uid://dvfph1kq6wc10" path="res://Assets/Assets/Furniture/Cabinets/CheapCabinet/StaticCheapCabinet.tscn" id="22_ue7s6"]
 [ext_resource type="PackedScene" uid="uid://cf0v8ekn0gh5b" path="res://Assets/Assets/Furniture/Cabinets/CheapCabinet/StaticCheapCabinetDoor.tscn" id="23_fchjg"]
@@ -37,12 +45,31 @@
 [ext_resource type="PackedScene" uid="uid://drxu3lcl7xmmw" path="res://Assets/Assets/Wardrobe/Hanging/HangingCoat/StaticHangingCoat.tscn" id="28_apksj"]
 [ext_resource type="PackedScene" uid="uid://c41momqlr31a1" path="res://Assets/Assets/Wardrobe/Hanging/HangingLongCoat/StaticHangingLongCoat.tscn" id="29_lfwl4"]
 [ext_resource type="PackedScene" uid="uid://cmj4fwku2wi4g" path="res://Assets/Assets/Wardrobe/Hanging/HangingJacket/StaticHangingJacket.tscn" id="30_vk3yo"]
+[ext_resource type="PackedScene" uid="uid://bi5st1dtt1ckd" path="res://Assets/Assets/Decorations/Photos/Posters/MeshVerticalPoster02.tscn" id="35_khnwg"]
+[ext_resource type="Material" uid="uid://bdcn5hbf1kc3j" path="res://Assets/Sprites/Pictures/Posters/BikerGirlOld01.tres" id="36_2t1d3"]
+[ext_resource type="PackedScene" uid="uid://i3ni1uqxh3nt" path="res://Assets/Assets/Decorations/Photos/Posters/MeshHorizontalPoster02.tscn" id="37_08emt"]
+[ext_resource type="Material" uid="uid://c4vwjlyars665" path="res://Assets/Sprites/Pictures/Posters/BikerGirlOld02.tres" id="38_u8jl7"]
+[ext_resource type="PackedScene" uid="uid://1nhk8unojfyc" path="res://Assets/Assets/Decorations/Office/StickyNotes/MeshStickyNote01.tscn" id="39_4vlnq"]
+[ext_resource type="Material" uid="uid://ial7yqeqcioo" path="res://Assets/Sprites/Pictures/StickyNotes/StickyNote01.tres" id="40_6kfm4"]
+[ext_resource type="PackedScene" uid="uid://bjsuajn42qqxj" path="res://Assets/Assets/Decorations/Office/StickyNotes/MeshStickyNote02.tscn" id="41_kph2b"]
+[ext_resource type="Material" uid="uid://b62d2a8ls5dhq" path="res://Assets/Sprites/Pictures/StickyNotes/StickyNote03.tres" id="42_2v7ii"]
+[ext_resource type="PackedScene" uid="uid://cupms33codepa" path="res://Assets/Assets/Furniture/Shelfs/Wall/WallBookShelf/StaticWallBookShelf.tscn" id="46_4vlnq"]
+[ext_resource type="PackedScene" uid="uid://biv8i87g08u4g" path="res://Assets/Assets/Decorations/Books/Book01/DynamicBook01.tscn" id="47_6kfm4"]
+[ext_resource type="PackedScene" uid="uid://b0vraigtgqns" path="res://Assets/Assets/Decorations/Books/Book02/DynamicBook02.tscn" id="48_kph2b"]
+[ext_resource type="PackedScene" uid="uid://nkfwxf6idurk" path="res://Assets/Assets/Decorations/Books/Book03/DynamicBook03.tscn" id="49_2v7ii"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ouh7u"]
 size = Vector3(0.5, 0.6, 0.5)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_khnwg"]
+material = ExtResource("15_2py3c")
+size = Vector2(0.07, 0.11)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_kdt2s"]
 size = Vector2(0.6, 0.4)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_khnwg"]
+height = 3.0
 
 [node name="PrisonBlockLowSec" type="Node3D" unique_id=1505235188]
 
@@ -70,6 +97,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.3, -2.1000001)
 
 [node name="LightmapProbe2" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1891237486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.3, 0.9999999)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=6050311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999964, 1.8, -0.10000014)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=611398372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1, 0.9999999)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=186391458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.8, -1.8000002)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1030254350]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.8199992, 0.3, -3.6800008)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=437843308]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.9199996, 0.3, -3.6800008)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1255123763]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.819999, 1.8, -4.2800007)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1278434238]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.9199996, 1, -5.180001)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1344565892]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.1199994, 0.8, -5.180001)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1375374396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 1.5, -3.6)
+
+[node name="LightmapProbe14" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=492091760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7000002, 1.5, -3.6)
+
+[node name="LightmapProbe15" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=588990127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7000003, 1.5, -3.6)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=370147011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 1.5, -7.6000004)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=623756072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 1.5, -11.6)
 
 [node name="StaticCell01" parent="." unique_id=2044597550 instance=ExtResource("3_n0mcl")]
 
@@ -133,6 +199,9 @@ metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
 [node name="Assets" type="Node3D" parent="StaticCell01" unique_id=1759171700]
 
+[node name="CellDoor01" parent="StaticCell01/Assets" unique_id=1817534583 instance=ExtResource("8_khnwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70000005, 0, -2.6301441)
+
 [node name="StaticMetalBed01" parent="StaticCell01/Assets" unique_id=657188509 instance=ExtResource("7_wqn6u")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5973571, -2.3841858e-07, 0.9940634)
 
@@ -151,6 +220,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8984657, 2.3841858e-07, 1.1
 [node name="StaticFlatDeskLamp" parent="StaticCell01/Assets/StaticCheapDesk" unique_id=1360255404 instance=ExtResource("13_eag41")]
 transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 0.38129276, 0.7475, 0.20286393)
 
+[node name="StaticStandingFrame" parent="StaticCell01/Assets/StaticCheapDesk" unique_id=94241534 instance=ExtResource("14_yfeig")]
+transform = Transform3D(-0.9659258, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, -0.9659258, 0.21834463, 0.74, 0.17367768)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticCell01/Assets/StaticCheapDesk/StaticStandingFrame" unique_id=816004775]
+transform = Transform3D(1, 0, 0, 0, 0.17364822, -0.9848077, 0, 0.9848077, 0.17364822, 0.000641178, 0.061407473, 0.010788564)
+mesh = SubResource("PlaneMesh_khnwg")
+
+[node name="MeshStickyNoteStack02" parent="StaticCell01/Assets/StaticCheapDesk" unique_id=1325743100 instance=ExtResource("15_5dcn4")]
+transform = Transform3D(-0.949639, 0, 0.31334612, 0, 1, 0, -0.31334612, 0, -0.949639, -0.34088427, 0.74, 0.14940858)
+surface_material_override/0 = ExtResource("16_2py3c")
+surface_material_override/1 = ExtResource("17_djeg5")
+
+[node name="MeshPencil02" parent="StaticCell01/Assets/StaticCheapDesk" unique_id=498552408 instance=ExtResource("19_djeg5")]
+transform = Transform3D(0.21013202, -0.9704307, 0.11878053, 0.4920893, -4.370812e-08, -0.8705447, 0.8448033, 0.24137996, 0.47753856, -0.326894, 0.748336, 0.03910303)
+
+[node name="DynamicPlasticCup" parent="StaticCell01/Assets/StaticCheapDesk" unique_id=1020628902 instance=ExtResource("21_4vlnq")]
+transform = Transform3D(0.98946774, 0, -0.1447534, 0, 1, 0, 0.1447534, 0, 0.98946774, -0.18445653, 0.795876, 0.17608857)
+
 [node name="StaticStool" parent="StaticCell01/Assets" unique_id=217622578 instance=ExtResource("12_d1c3c")]
 transform = Transform3D(0.9336992, 0, -0.35805836, 0, 1, 0, 0.35805836, 0, 0.9336992, 1.111354, 1.1920929e-07, 0.68467647)
 
@@ -165,6 +252,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, -0.3)
 
 [node name="MeshOpenSmallWallLight" parent="StaticCell01/Assets" unique_id=551003114 instance=ExtResource("18_rh18s")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3964474, 2, -1.4000001)
+gi_mode = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticCell01/Assets" unique_id=2107989604]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1.3984361, 1.5, -1.4)
@@ -210,18 +298,118 @@ transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -0.3
 [node name="StaticHangingJacket" parent="StaticCell01/Assets/StaticPlainShelf" unique_id=2623637 instance=ExtResource("30_vk3yo")]
 transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 0.29999995, -0.100000024, -0.04411281)
 
+[node name="MeshVerticalPoster02" parent="StaticCell01/Assets" unique_id=971235624 instance=ExtResource("35_khnwg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.3997338, 1.4251753, 0.19229251)
+surface_material_override/0 = ExtResource("36_2t1d3")
+
+[node name="MeshHorizontalPoster02" parent="StaticCell01/Assets" unique_id=1244422692 instance=ExtResource("37_08emt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.3993776, 1.6925278, 0.61925185)
+surface_material_override/0 = ExtResource("38_u8jl7")
+
+[node name="MeshStickyNote01" parent="StaticCell01/Assets" unique_id=1800097251 instance=ExtResource("39_4vlnq")]
+transform = Transform3D(0.99797153, 2.7827285e-09, -0.06366141, 0.06366141, -4.362272e-08, 0.99797153, 0, -1, -4.371139e-08, 0.8494983, 1.0533592, 1.4991866)
+surface_material_override/0 = ExtResource("40_6kfm4")
+
+[node name="MeshStickyNote02" parent="StaticCell01/Assets" unique_id=1612883042 instance=ExtResource("41_kph2b")]
+transform = Transform3D(-0.99719304, -3.2728633e-09, 0.07487439, -0.07487439, 4.3588688e-08, -0.99719304, 0, -1, -4.371139e-08, 0.5615063, 1.1369348, 1.4991868)
+surface_material_override/0 = ExtResource("42_2v7ii")
+
+[node name="MeshStickyNote03" parent="StaticCell01/Assets" unique_id=1731259312 instance=ExtResource("41_kph2b")]
+transform = Transform3D(-0.99917465, 1.7755565e-09, -0.04062, 0.04062, 4.367531e-08, -0.99917465, 0, -1, -4.371139e-08, 0.9522304, 1.2107861, 1.4991869)
+surface_material_override/0 = ExtResource("16_2py3c")
+
+[node name="StaticWallBookShelf" parent="StaticCell01/Assets" unique_id=950407555 instance=ExtResource("46_4vlnq")]
+transform = Transform3D(-4.371139e-08, 0, 1, -0.015550257, 0.99987906, -6.7972333e-10, -0.99987906, -0.015550257, -4.3706102e-08, -1.5267911, 1.7129321, -0.39608502)
+
+[node name="DynamicBook01" parent="StaticCell01/Assets/StaticWallBookShelf" unique_id=2066645951 instance=ExtResource("47_6kfm4")]
+transform = Transform3D(-4.1214026e-08, -0.237313, 0.97143376, -2.0746564e-08, 0.97143394, 0.23731303, -1, -1.0373283e-08, -4.4960075e-08, -0.3303712, 0.10893726, -0.020812273)
+
+[node name="DynamicBook02" parent="StaticCell01/Assets/StaticWallBookShelf" unique_id=1071873156 instance=ExtResource("48_kph2b")]
+transform = Transform3D(-4.1214026e-08, -0.237313, 0.97143376, -2.0746564e-08, 0.97143394, 0.23731303, -1, -1.0373283e-08, -4.4960075e-08, -0.28117174, 0.12325902, -0.020812273)
+
+[node name="DynamicBook03" parent="StaticCell01/Assets/StaticWallBookShelf" unique_id=2048826487 instance=ExtResource("49_2v7ii")]
+transform = Transform3D(-4.1214026e-08, -0.237313, 0.97143376, -2.0746564e-08, 0.97143394, 0.23731303, -1, -1.0373283e-08, -4.4960075e-08, -0.22419555, 0.12629527, -0.020812273)
+
 [node name="Assets(Ignore)" type="Node3D" parent="StaticCell01" unique_id=18671704]
 
 [node name="StaticCell02" parent="." unique_id=1313619584 instance=ExtResource("4_ome15")]
 
-[node name="Lights" type="Node3D" parent="StaticCell02" unique_id=1214631716]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="StaticCell02" unique_id=1814961352]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.5, 1.5, -4.2)
+blend_distance = 0.0
+size = Vector3(3.1, 3.1, 4.1)
+origin_offset = Vector3(1, 0, -0.9)
+box_projection = true
+interior = true
+enable_shadows = true
+cull_mask = 1047553
+
+[node name="Lights" type="Node3D" parent="StaticCell02" unique_id=120903776]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0, -4.2)
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCell02/Lights" unique_id=458017932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6999998, -0.3)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticCell02/Lights" unique_id=140963365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3684877, 1.9999998, -1.4)
+light_energy = 0.6
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="StaticCell02" unique_id=399340753]
+
+[node name="CellDoor04" parent="StaticCell02/Assets" unique_id=1804758253 instance=ExtResource("8_khnwg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.3703516, 0, -3.6000001)
+
+[node name="Hinge3D" parent="StaticCell02/Assets/CellDoor04" index="0" unique_id=861721976]
+max_positive = 110.0
 
 [node name="StaticCorridor" parent="." unique_id=1627473948 instance=ExtResource("5_5nbar")]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="StaticCorridor" unique_id=2093864158]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4500003, 1.5, -3.55)
+blend_distance = 0.0
+size = Vector3(2, 3.1, 11.6)
+origin_offset = Vector3(0.89000005, 0, -0.9)
+box_projection = true
+interior = true
+enable_shadows = true
+cull_mask = 1047553
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="StaticCorridor" unique_id=253791579]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.4504821, 1.5, -7.3999996)
+blend_distance = 0.0
+size = Vector3(2, 3.1, 9.6)
+origin_offset = Vector3(0.89000005, 0, -0.9)
+box_projection = true
+interior = true
+enable_shadows = true
+cull_mask = 1047553
+
+[node name="InvisibleWalls" type="StaticBody3D" parent="StaticCorridor" unique_id=200358777]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor/InvisibleWalls" unique_id=1744539139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.5, -2.7)
+shape = SubResource("CylinderShape3D_khnwg")
 
 [node name="Lights" type="Node3D" parent="StaticCorridor" unique_id=1959445738]
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1535401897]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 2.6, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 2.6, -3.6)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -231,7 +419,7 @@ script = ExtResource("4_n0mcl")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D4" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1775448976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 2.6, -7.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 2.6, -7.6)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -241,7 +429,7 @@ script = ExtResource("4_n0mcl")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="StaticCorridor/Lights" unique_id=1916484477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 2.6, -11.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 2.6, -11.6)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -294,3 +482,132 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticFakeCell05" parent="FakeCells" unique_id=993172283 instance=ExtResource("10_htm6k")]
 
 [node name="Lights" type="Node3D" parent="FakeCells" unique_id=651146983]
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCells/Lights" unique_id=607427803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 2.6999998, -0.3)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="FakeCells/Lights" unique_id=976762276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0315123, 1.9999998, -1.4)
+light_energy = 0.6
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D9" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1921034445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.6999998, -0.3)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D10" type="OmniLight3D" parent="FakeCells/Lights" unique_id=205314339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.368488, 1.9999998, -1.4)
+light_energy = 0.6
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D3" type="OmniLight3D" parent="FakeCells/Lights" unique_id=419375306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4, 2.6999998, -0.3)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D4" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1912993904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0315123, 1.9999998, -1.4)
+light_energy = 0.6
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D5" type="OmniLight3D" parent="FakeCells/Lights" unique_id=135327526]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.734244, 2.6999998, -7.365756)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D6" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1399250244]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.6342435, 1.9999998, -8.734244)
+light_energy = 0.6
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D7" type="OmniLight3D" parent="FakeCells/Lights" unique_id=82436401]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.734244, 2.6999998, -10.565756)
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 4.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D8" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1562593665]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.6342435, 1.9999998, -11.934244)
+light_energy = 0.6
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("4_n0mcl")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="Assets" type="Node3D" parent="FakeCells" unique_id=2075726295]
+
+[node name="CellDoor01" parent="FakeCells/Assets" unique_id=1723869254 instance=ExtResource("8_khnwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0, -2.6301441)
+locked = true
+
+[node name="CellDoor02" parent="FakeCells/Assets" unique_id=290321344 instance=ExtResource("8_khnwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1000004, 0, -2.6301441)
+locked = true
+
+[node name="CellDoor03" parent="FakeCells/Assets" unique_id=1424121897 instance=ExtResource("8_khnwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4999998, 0, -2.6301441)
+locked = true
+
+[node name="CellDoor04" parent="FakeCells/Assets" unique_id=335892560 instance=ExtResource("8_khnwg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.3703516, 0, -6.8)
+locked = true
+
+[node name="CellDoor05" parent="FakeCells/Assets" unique_id=1247440515 instance=ExtResource("8_khnwg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.3703516, 0, -10)
+locked = true
+
+[editable path="StaticCell02/Assets/CellDoor04"]

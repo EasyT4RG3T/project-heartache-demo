@@ -4,16 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://dbk1ni5uwr5ub" path="res://Assets/Assets/Mics/Vents/RectangleVent/MeshRectangleVent.tscn" id="1_ngpni"]
 [ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="2_gia1m"]
 [ext_resource type="PackedScene" uid="uid://1vfysk3061ug" path="res://Assets/Interactable/Screw/Screw.tscn" id="2_nfsur"]
+[ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="5_yln27"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ngpni"]
 data = PackedVector3Array(0, 0.5, 0.375, 0, 0, -0.375, 0, 0, 0.375, 0, 0.5, -0.375, 0, 0, -0.375, 0, 0.5, 0.375, -0.02, 0, -0.375, -0.02, 0.5, 0.375, -0.02, 0, 0.375, -0.02, 0.5, -0.375, -0.02, 0.5, 0.375, -0.02, 0, -0.375, -0.02, 0.5, -0.375, 0, 0, -0.375, 0, 0.5, -0.375, -0.02, 0, -0.375, 0, 0, -0.375, -0.02, 0.5, -0.375, -0.02, 0, 0.375, 0, 0.5, 0.375, 0, 0, 0.375, -0.02, 0.5, 0.375, 0, 0.5, 0.375, -0.02, 0, 0.375, -0.02, 0.5, 0.375, 0, 0.5, -0.375, 0, 0.5, 0.375, -0.02, 0.5, -0.375, 0, 0.5, -0.375, -0.02, 0.5, 0.375, -0.02, 0, -0.375, 0, 0, 0.375, 0, 0, -0.375, -0.02, 0, 0.375, 0, 0, 0.375, -0.02, 0, -0.375)
 
-[node name="RectangleVent" type="StaticBody3D" unique_id=929985697 node_paths=PackedStringArray("screw_01", "screw_02", "hinge", "collision")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xjvqp"]
+size = Vector3(0.5, 0.755, 0.023)
+
+[node name="RectangleVent" type="StaticBody3D" unique_id=929985697 node_paths=PackedStringArray("screw_01", "screw_02", "hinge", "collision", "interactable_static_body_3d")]
 script = ExtResource("1_aaxpq")
 screw_01 = NodePath("Node3D/Hinge3D/Screw")
 screw_02 = NodePath("Node3D/Hinge3D/Screw2")
 hinge = NodePath("Node3D/Hinge3D")
 collision = NodePath("@CollisionShape3D@38446")
+interactable_static_body_3d = NodePath("Node3D/Hinge3D/InteractableStaticBody3D")
 
 [node name="@CollisionShape3D@38446" type="CollisionShape3D" parent="." unique_id=2132772521]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0.020288497)
@@ -25,7 +30,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 [node name="Hinge3D" type="Node3D" parent="Node3D" unique_id=1242530575]
 script = ExtResource("2_gia1m")
 open_positive = false
-duration = 0.3
+duration = 0.5
 locked = true
 auto_unlock = 2
 max_positive = 0.0
@@ -40,3 +45,13 @@ transform = Transform3D(-1, -4.3711385e-08, 4.371139e-08, 4.3711385e-08, 4.37113
 
 [node name="Screw2" parent="Node3D/Hinge3D" unique_id=1793832216 instance=ExtResource("2_nfsur")]
 transform = Transform3D(-1, -4.3711385e-08, 4.371139e-08, 4.3711385e-08, 4.3711392e-08, 1, -4.371139e-08, 1, -4.371139e-08, 0.5093835, -0.3778027, 0)
+
+[node name="InteractableStaticBody3D" type="StaticBody3D" parent="Node3D/Hinge3D" unique_id=1447294726]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("5_yln27")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Hinge3D/InteractableStaticBody3D" unique_id=76218773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25845337, -8.881784e-16, -0.026349124)
+shape = SubResource("BoxShape3D_xjvqp")

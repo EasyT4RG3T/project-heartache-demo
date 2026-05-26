@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bm2qxfq7gv4i5"]
+
+[ext_resource type="Texture2D" uid="uid://byjasbiy0iihq" path="res://Assets/Assets/Kitchen/Furniture/CuttingBoard/CuttingBoard_albedo.png" id="1_ftgvf"]
+
+[resource]
+albedo_texture = ExtResource("1_ftgvf")
+roughness = 0.5
+texture_filter = 2

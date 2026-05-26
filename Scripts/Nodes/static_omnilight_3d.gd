@@ -17,4 +17,6 @@ extends OmniLight3D
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
+	if light_cull_mask >= 524288:
+		light_cull_mask -= 524288
 	add_to_group("StaticLights")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bryahiae8bwhl"]
+
+[ext_resource type="ArrayMesh" uid="uid://tw7vq3cudg08" path="res://Assets/Assets/Food/Burger/Burger.obj" id="1_j05sm"]
+[ext_resource type="Material" uid="uid://bdhuq8rqm57as" path="res://Assets/Assets/Food/Burger/Burger.tres" id="2_yeckl"]
+
+[node name="MeshBurger" type="MeshInstance3D" unique_id=1147786030]
+mesh = ExtResource("1_j05sm")
+surface_material_override/0 = ExtResource("2_yeckl")

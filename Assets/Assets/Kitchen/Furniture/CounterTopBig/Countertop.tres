@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vxpsgx6el6s2"]
+
+[ext_resource type="Texture2D" uid="uid://cix4h5sqtw5eo" path="res://Assets/Assets/Kitchen/Furniture/CounterTopBig/Countertop_albedo.png" id="1_optt4"]
+
+[resource]
+albedo_texture = ExtResource("1_optt4")
+metallic = 0.6
+roughness = 0.2
+texture_filter = 2

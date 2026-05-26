@@ -3,8 +3,13 @@ extends Node3D
 
 
 @onready var light: SpotLight3D = %Light
+const FLASHLIGHT_CLICKING_OFF = preload("uid://b4ib7bjp8jbuf")
+const FLASHLIGHT_CLICKING_ON = preload("uid://cjv3tpi7ahesh")
 
 
+var cooldown: Timer
+
+ 
 var disabled: bool = true:
 	set(value):
 		disabled = value
@@ -18,15 +23,29 @@ var current_battery: float = 0.0
 func _ready() -> void:
 	if disabled:
 		light.hide()
+	
+	cooldown = Timer.new()
+	cooldown.one_shot = true
+	add_child(cooldown)
 
 
 func switch() -> void:
 	if disabled:
 		return
+	
+	if cooldown.time_left:
+		return
+	
 	if light.visible:
+		AudioManager.play_sound_at("SFX", FLASHLIGHT_CLICKING_OFF, global_position)
+		await get_tree().create_timer(0.1).timeout
 		turn_off()
 	else:
+		AudioManager.play_sound_at("SFX", FLASHLIGHT_CLICKING_ON, global_position)
+		await get_tree().create_timer(0.1).timeout
 		turn_on()
+	
+	cooldown.start(0.2)
 
 
 func turn_on() -> void:

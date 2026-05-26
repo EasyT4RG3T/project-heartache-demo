@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dr7byfutj3jik"]
+
+[ext_resource type="ArrayMesh" uid="uid://1e3d1mbnr7r8" path="res://Assets/Assets/Kitchen/Furniture/CuttingBoard/CuttingBoard.obj" id="1_lgfwt"]
+[ext_resource type="Material" uid="uid://bm2qxfq7gv4i5" path="res://Assets/Assets/Kitchen/Furniture/CuttingBoard/CuttingBoard.tres" id="2_qvbsm"]
+
+[node name="MeshCuttingBoard" type="MeshInstance3D" unique_id=176816377]
+mesh = ExtResource("1_lgfwt")
+surface_material_override/0 = ExtResource("2_qvbsm")

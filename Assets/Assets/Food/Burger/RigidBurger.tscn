@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://kfgrwmt1i0g0"]
+
+[ext_resource type="Script" uid="uid://07xri3gdevdi" path="res://Scripts/Nodes/dynamic_rigidbody_3d.gd" id="1_76twb"]
+[ext_resource type="PackedScene" uid="uid://bryahiae8bwhl" path="res://Assets/Assets/Food/Burger/MeshBurger.tscn" id="2_t4p0u"]
+[ext_resource type="ArrayMesh" uid="uid://tw7vq3cudg08" path="res://Assets/Assets/Food/Burger/Burger.obj" id="3_1jf07"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gvjam"]
+points = PackedVector3Array(0.08108799, -0.0011212099, -0.022427939, 0.05656196, -0.025003616, -0.05657011, 0.056677416, -0.0012101028, -0.06911765, 0.05656196, 0.024998317, -0.05657011, 0.07999942, 0.024998317, -4.708767e-06, 0.08041176, 0.006382784, 0.027373292, 0.07999942, -0.025003616, -4.708767e-06, -1.1220574e-05, -0.028263, -0.0726012, -1.1220574e-05, -0.025003616, -0.08000797, 0.07257728, -0.028263, -4.708767e-06, -0.01604303, -0.0015434492, -0.089444, -1.1220574e-05, 0.024998317, -0.08000797, -1.1220574e-05, 0.039191455, -0.06314827, 0.063142926, 0.039191455, -4.708767e-06, 0.05656196, 0.024998317, 0.056560695, 0.05718872, 0.0015011132, 0.07419829, 0.05656196, -0.025003616, 0.056560695, -0.07259972, -0.028263, -4.708767e-06, -0.056584395, -0.025003616, -0.05657011, -1.1220574e-05, -0.028263, 0.0725918, -0.08492046, -0.0046250504, -0.035871737, -0.049739532, -0.0024842266, -0.063232824, -0.056584395, 0.024998317, -0.05657011, -0.06314886, 0.039191455, -4.708767e-06, -1.1220574e-05, 0.047413997, -4.708767e-06, -1.1220574e-05, 0.039191455, 0.06313886, -1.1220574e-05, 0.024998317, 0.07999857, 0.015476309, -6.931834e-05, 0.083313, -1.1220574e-05, -0.025003616, 0.07999857, -0.080005355, -0.025003616, -4.708767e-06, -0.056584395, -0.025003616, 0.056560695, -0.087411, 0.0065605696, 0.018241651, -0.080005355, 0.024998317, -4.708767e-06, -0.056584395, 0.024998317, 0.056560695, -0.030903801, -0.0077140573, 0.080066204, -0.06087274, 0.00087886676, 0.055038765)
+
+[node name="RigidBurger" type="RigidBody3D" unique_id=2043707068]
+mass = 0.4
+sleeping = true
+continuous_cd = true
+script = ExtResource("1_76twb")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshBurger" type="MeshInstance3D" parent="." unique_id=1147786030 instance=ExtResource("2_t4p0u")]
+gi_mode = 2
+mesh = ExtResource("3_1jf07")
+
+[node name="@CollisionShape3D@25916" type="CollisionShape3D" parent="." unique_id=436735188]
+shape = SubResource("ConvexPolygonShape3D_gvjam")

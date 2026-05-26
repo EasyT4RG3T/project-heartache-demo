@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://0a6o7q8gyotj"]
+
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="1_5tu6q"]
+[ext_resource type="Script" uid="uid://dkf7l7mswhktl" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/cell_door_01.gd" id="1_xooq8"]
+[ext_resource type="PackedScene" uid="uid://bldjqon1070cl" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/MeshCellDoor01Flap.tscn" id="3_cyky4"]
+[ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="3_flgxn"]
+[ext_resource type="PackedScene" uid="uid://bq6x6bsudg5em" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/MeshCellDoor01.tscn" id="4_e34b3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yb888"]
+size = Vector3(1, 2, 0.12)
+
+[node name="CellDoor01" type="Node3D" unique_id=1817534583]
+script = ExtResource("1_xooq8")
+
+[node name="Hinge3D" type="Node3D" parent="." unique_id=861721976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.059872054)
+script = ExtResource("1_5tu6q")
+open_negative = false
+duration = 1.6
+max_negative = 0.0
+metadata/_custom_type_script = "uid://ejx8vfok1s3u"
+
+[node name="InteractableStaticBody3D" type="StaticBody3D" parent="Hinge3D" unique_id=1281781463]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5, 0, 0.059872054)
+script = ExtResource("3_flgxn")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="MeshCellDoor01" parent="Hinge3D/InteractableStaticBody3D" unique_id=1995039359 instance=ExtResource("4_e34b3")]
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge3D/InteractableStaticBody3D" unique_id=575152204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_yb888")
+
+[node name="MeshCellDoor01Flap" parent="Hinge3D" unique_id=457494418 instance=ExtResource("3_cyky4")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5, 0, 0.059872054)
+gi_mode = 2

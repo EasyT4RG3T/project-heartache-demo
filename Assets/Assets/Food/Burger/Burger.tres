@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdhuq8rqm57as"]
+
+[ext_resource type="Texture2D" uid="uid://csa047rxhy4i1" path="res://Assets/Assets/Food/Burger/Burger_albedo.png" id="1_bkbm0"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_bkbm0")
+texture_filter = 2

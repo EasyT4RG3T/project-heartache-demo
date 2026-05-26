@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b34ph0rhv7pvb"]
+
+[ext_resource type="Texture2D" uid="uid://wjkfx0ii7dt6" path="res://Assets/Assets/Kitchen/Furniture/Cooker/Cooker_albedo.png" id="1_0scoc"]
+
+[resource]
+albedo_texture = ExtResource("1_0scoc")
+metallic = 0.6
+metallic_specular = 0.3
+roughness = 0.2
+texture_filter = 2

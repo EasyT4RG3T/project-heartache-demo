@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://6bdk2bupxw3j"]
+
+[ext_resource type="ArrayMesh" uid="uid://y20wktp6lup2" path="res://Assets/Assets/Kitchen/Furniture/Fryer/Fryer.obj" id="1_x7avl"]
+[ext_resource type="Material" uid="uid://6a7kvbpo5y3n" path="res://Assets/Assets/Kitchen/Furniture/Fryer/Fryer.tres" id="2_4k6ea"]
+
+[node name="MeshFryer" type="MeshInstance3D" unique_id=14748902]
+mesh = ExtResource("1_x7avl")
+surface_material_override/0 = ExtResource("2_4k6ea")

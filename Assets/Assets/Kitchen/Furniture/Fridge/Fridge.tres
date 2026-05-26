@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bpxg6cjxkelv2"]
+
+[ext_resource type="Texture2D" uid="uid://dtsb3r2p3tjqp" path="res://Assets/Assets/Kitchen/Furniture/Fridge/Fridge_albedo.png" id="1_ck24m"]
+
+[resource]
+albedo_texture = ExtResource("1_ck24m")
+metallic = 0.6
+roughness = 0.2
+texture_filter = 2

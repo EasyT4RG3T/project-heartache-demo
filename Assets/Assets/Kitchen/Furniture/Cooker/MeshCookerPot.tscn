@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ch1tv8rky2xx6"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjlkvap1310qy" path="res://Assets/Assets/Kitchen/Furniture/Cooker/CookerPot.obj" id="1_q283q"]
+[ext_resource type="Material" uid="uid://b34ph0rhv7pvb" path="res://Assets/Assets/Kitchen/Furniture/Cooker/Cooker.tres" id="2_kw7qy"]
+
+[node name="MeshCookerPot" type="MeshInstance3D" unique_id=456955079]
+mesh = ExtResource("1_q283q")
+surface_material_override/0 = ExtResource("2_kw7qy")

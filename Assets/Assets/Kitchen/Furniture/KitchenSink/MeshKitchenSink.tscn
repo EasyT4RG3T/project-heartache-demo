@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bqcu6were4tpe"]
+
+[ext_resource type="ArrayMesh" uid="uid://bv8ia0e1jdkdh" path="res://Assets/Assets/Kitchen/Furniture/KitchenSink/KitchenSink.obj" id="1_26f1s"]
+[ext_resource type="Material" uid="uid://b02aoyfu5ixw6" path="res://Assets/Assets/Kitchen/Furniture/KitchenSink/KitchenSink.tres" id="2_t01fk"]
+
+[node name="MeshKitchenSink" type="MeshInstance3D" unique_id=1134787994]
+mesh = ExtResource("1_26f1s")
+surface_material_override/0 = ExtResource("2_t01fk")

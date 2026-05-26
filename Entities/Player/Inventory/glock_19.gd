@@ -51,13 +51,9 @@ const SHOT_03 = preload("uid://d3nijuhh3000o")
 
 const BULLET_HOLE = preload("uid://jx71inl833iq")
 
-var enabled: bool = false:
-	set(value):
-		enabled = value
-		if value:
-			show()
-		else:
-			hide()
+var offset: Vector3 = Vector3(0.09, -0.14, -0.15)
+var aim_offset: Vector3 = Vector3(0, -0.115, -0.15)
+var wanted_offset: Vector3 = Vector3.ZERO
 
 var aiming: bool = false
 
@@ -66,10 +62,11 @@ var recoil: Vector2 = Vector2.ZERO
 var ammo: int = 16:
 	set(value):
 		value = clampi(value, 0, 16)
-	
+		
 		if value == 0:
-			for i in 14:
+			for i in 15:
 				get("bullet_" + str(i + 1)).hide()
+				print("bullet_" + str(i + 1) + "hide")
 			bullet_barrel.hide()
 			bullet_chamber.hide()
 		elif value < ammo:
@@ -79,15 +76,37 @@ var ammo: int = 16:
 			for i in value:
 				if get("bullet_" + str(i)):
 					get("bullet_" + str(i)).show()
+					print("bullet_" + str(i) + "show")
 			bullet_barrel.show()
 			bullet_chamber.show()
-	
+		
 		ammo = value
 
+var mags: int = 3
+
+var can_shoot: bool = true
 
 var direct_space_state: PhysicsDirectSpaceState3D
 var aim_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var shot_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+
+
+func take_input(event: InputEvent) -> void:
+	if event.is_action_pressed("use_main"):
+		shoot()
+	
+	if event.is_action_pressed("use_second"):
+		aim()
+	
+	if event.is_action_released("use_second"):
+		if SaverLoader.settings.hold_aim:
+			stop_aim()
+	
+	if event.is_action_pressed("reload"):
+		reload()
+	
+	if event.is_action_pressed("use_third"):
+		mag_check()
 
 
 func _ready() -> void:
@@ -126,7 +145,9 @@ func _physics_process(delta: float) -> void:
 	if aim_ray_result:
 		var aim_collider: Node3D = aim_ray_result["collider"]
 		if aim_collider.collision_layer >= 4096 and aim_collider.collision_layer < 8192:
-			print("can't shoot")
+			can_shoot = false
+		else:
+			can_shoot = true
 	
 	rotation.x = lerp_angle(
 		rotation.x,
@@ -138,10 +159,18 @@ func _physics_process(delta: float) -> void:
 		0 + recoil.x,
 		delta * 5
 	)
+	
+	if aiming:
+		wanted_offset = wanted_offset.lerp(aim_offset, delta * 10)
+	else:
+		wanted_offset = wanted_offset.lerp(offset, delta * 10)
+	
+	position = wanted_offset
 
 
 func shoot() -> void:
 	if animation_player.is_playing(): return
+	if !can_shoot: return
 	if ammo <= 0:
 		AudioManager.play_sound("SFX", DRY_FIRE, 0, randf_range(0.8, 1.2))
 		return
@@ -169,7 +198,7 @@ func shoot() -> void:
 		var shot_normal: Vector3 = shot_ray_result["normal"]
 	
 		if shot_collider is RigidBody3D:
-			shot_collider.apply_force(-global_basis.z * 2, shot_position)
+			shot_collider.apply_impulse(-global_basis.z * 5, shot_position)
 	
 		if shot_normal != Vector3.ZERO:
 			var bullet_hole: Decal = BULLET_HOLE.instantiate()
@@ -201,6 +230,22 @@ func stop_aim() -> void:
 
 func reload() -> void:
 	if animation_player.is_playing(): return
+	if ammo >= 16:
+		DialogueManager.say("It's full", 3)
+		return
+	
+	if mags <= 0:
+		DialogueManager.say("I need to find ammo", 3)
+		return
+	
+	mags -= 1
+	
+	if mags > 1:
+		DialogueManager.say(str(mags) + " mags left", 3)
+	elif mags == 1:
+		DialogueManager.say("one mag left", 3)
+	else:
+		DialogueManager.say("that's the last mag", 3)
 	
 	if ammo > 0:
 		animation_player.play("Reload")
@@ -213,16 +258,21 @@ func mag_check() -> void:
 	if ammo <= 0: return
 	
 	if ammo > 4:
+		DialogueManager.say(str(ammo) + " bullets left", 3)
+		
 		if aiming:
 			animation_player.play("MagCheck_Aim")
 		else:
 			animation_player.play("MagCheck")
 	elif ammo > 1:
+		DialogueManager.say("only " + str(ammo) + " bullets left", 3)
+		
 		if aiming:
 			animation_player.play("MagCheckLow_Aim")
 		else:
 			animation_player.play("MagCheckLow")
 	else:
+		DialogueManager.say("last bullet", 3)
 		if aiming:
 			animation_player.play("MagCheckLast_Aim")
 		else:
@@ -266,3 +316,24 @@ func play_sound(sound: int) -> void:
 			AudioManager.play_sound("SFX", SHOT_02)
 		10:
 			AudioManager.play_sound("SFX", SHOT_03)
+
+
+func save() -> Dictionary:
+	var file: Dictionary = {}
+	
+	file["aiming"] = aiming
+	file["ammo"] = ammo
+	file["mags"] = mags
+	file["can_shoot"] = can_shoot
+	
+	return file
+
+
+func load_save(file: Dictionary) -> void:
+	aiming = file["aiming"]
+	ammo = 0
+	ammo = file["ammo"]
+	if ammo == 0:
+		animation_player.play("ShootLast")
+	mags = file["mags"]
+	can_shoot = file["can_shoot"]

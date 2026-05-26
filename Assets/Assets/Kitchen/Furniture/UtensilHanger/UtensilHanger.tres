@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dis7g4vsp16ku"]
+
+[ext_resource type="Texture2D" uid="uid://2neqgy4ma28t" path="res://Assets/Assets/Kitchen/Furniture/UtensilHanger/UtensilHanger_albedo.png" id="1_yo3k5"]
+
+[resource]
+albedo_texture = ExtResource("1_yo3k5")
+roughness = 0.5
+texture_filter = 2

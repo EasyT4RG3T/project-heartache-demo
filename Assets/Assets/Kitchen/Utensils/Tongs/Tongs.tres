@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgimgtf6y8ufi"]
+
+[ext_resource type="Texture2D" uid="uid://bh3ahggroyrdm" path="res://Assets/Assets/Kitchen/Utensils/Tongs/Tongs_albedo.png" id="1_ybjjr"]
+
+[resource]
+albedo_texture = ExtResource("1_ybjjr")
+metallic = 0.6
+roughness = 0.3
+texture_filter = 2

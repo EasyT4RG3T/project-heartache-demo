@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c3cff6wl2rl3x"]
+
+[ext_resource type="Texture2D" uid="uid://bth0boang02iw" path="res://Assets/Assets/Kitchen/Furniture/FryerBasket/FryerBasket_albedo.png" id="1_bmvou"]
+
+[resource]
+albedo_texture = ExtResource("1_bmvou")
+metallic = 0.6
+roughness = 0.2
+texture_filter = 2

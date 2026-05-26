@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2yaem5t7r75u"]
+
+[ext_resource type="ArrayMesh" uid="uid://b35deblopatjb" path="res://Assets/Assets/Kitchen/Furniture/UtensilHanger/UtensilHanger.obj" id="1_h6bny"]
+[ext_resource type="Material" uid="uid://dis7g4vsp16ku" path="res://Assets/Assets/Kitchen/Furniture/UtensilHanger/UtensilHanger.tres" id="2_rb4ll"]
+
+[node name="MeshUtensilHanger" type="MeshInstance3D" unique_id=1838346464]
+mesh = ExtResource("1_h6bny")
+surface_material_override/0 = ExtResource("2_rb4ll")

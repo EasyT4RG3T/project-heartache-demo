@@ -132,59 +132,9 @@ var pre_fly_movement_speed: float = movement_speeds[MovementMode.WALKING]
 var last_pos: Vector3 = Vector3.ZERO
 var was_on_ground: bool = false
 
-const FAST_FOOTSTEP_01 = preload("uid://bj2u5uymwqsxx")
-const FAST_FOOTSTEP_02 = preload("uid://bua6s2wd6n8ke")
-const FAST_FOOTSTEP_03 = preload("uid://bfwl4fi50nlp")
-const FAST_FOOTSTEP_04 = preload("uid://p7aytdgt2cqn")
-const FAST_FOOTSTEP_05 = preload("uid://bj5fe00wqxsph")
-const FAST_FOOTSTEP_06 = preload("uid://jd14431lq3x0")
-const FAST_FOOTSTEP_07 = preload("uid://dmt2wh43yakgj")
-const FAST_FOOTSTEP_08 = preload("uid://bu5toc2hdy4ce")
-const FAST_FOOTSTEP_09 = preload("uid://dllae3mada0nt")
-var fast_footsteps: Array = [
-	FAST_FOOTSTEP_01,
-	FAST_FOOTSTEP_02,
-	FAST_FOOTSTEP_03,
-	FAST_FOOTSTEP_04,
-	FAST_FOOTSTEP_05,
-	FAST_FOOTSTEP_06,
-	FAST_FOOTSTEP_07,
-	FAST_FOOTSTEP_08,
-	FAST_FOOTSTEP_09
-]
-const FOOTSTEP_01 = preload("uid://crhxrcny28e6h")
-const FOOTSTEP_02 = preload("uid://cha064owsqoh0")
-const FOOTSTEP_03 = preload("uid://47sixlvx4lcq")
-const FOOTSTEP_04 = preload("uid://bmep3oop7q06b")
-const FOOTSTEP_05 = preload("uid://ducjj2sg2y78x")
-const FOOTSTEP_06 = preload("uid://fghmdu3wu63o")
-const FOOTSTEP_07 = preload("uid://c4lunogx8cjl7")
-var footsteps: Array = [
-	FOOTSTEP_01,
-	FOOTSTEP_02,
-	FOOTSTEP_03,
-	FOOTSTEP_04,
-	FOOTSTEP_05,
-	FOOTSTEP_06,
-	FOOTSTEP_07
-]
-const SLOW_FOOTSTEP_01 = preload("uid://dklk0hsrg5bgw")
-const SLOW_FOOTSTEP_02 = preload("uid://cbmw6w1uwenoc")
-const SLOW_FOOTSTEP_03 = preload("uid://chlusknabfn5d")
-const SLOW_FOOTSTEP_04 = preload("uid://c5aquhnm5s71s")
-const SLOW_FOOTSTEP_05 = preload("uid://cbp4lus65spto")
-const SLOW_FOOTSTEP_06 = preload("uid://cxb11nbq8x6b1")
-const SLOW_FOOTSTEP_07 = preload("uid://dk3m7xg44j8kx")
-var slow_footsteps: Array = [
-	SLOW_FOOTSTEP_01,
-	SLOW_FOOTSTEP_02,
-	SLOW_FOOTSTEP_03,
-	SLOW_FOOTSTEP_04,
-	SLOW_FOOTSTEP_05,
-	SLOW_FOOTSTEP_06,
-	SLOW_FOOTSTEP_07
-]
-var current_footsteps: Array = footsteps
+var footsteps_resource: FootstepsResource = FootstepsResource.new()
+var current_footsteps_pace = footsteps_resource.Pace.NORMAL
+var current_footsteps_mod: Array[FootstepsResource.Mod] = []
 
 
 var vault_checks: VaultChecks = VaultChecks.new()
@@ -198,6 +148,7 @@ var can_vault: bool = false:
 		else:
 			player_hud.vault = false
 			#_raise_hands(false)
+var crouch_vault = true
 var player_tween: Tween
 var tilt_tween: Tween
 
@@ -394,32 +345,35 @@ func _handle_action_input(event: InputEvent) -> void:
 	if event.is_action_pressed("third_pull"):
 		phys_wanted_distance -= 0.2
 	
+	if event.is_action_pressed("inventory"):
+		inventory.switch_slot(inventory.Slots.INVENTORY)
+	
 	if event.is_action_pressed("slot_1"):
-		inventory.switch_glock()
+		inventory.switch_slot(inventory.Slots.GLOCK_19)
 	
 	if event.is_action_pressed("slot_2"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 	
 	if event.is_action_pressed("slot_3"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 	
 	if event.is_action_pressed("slot_4"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 	
 	if event.is_action_pressed("slot_5"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 	
 	if event.is_action_pressed("slot_6"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 	
 	if event.is_action_pressed("slot_7"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 	
 	if event.is_action_pressed("slot_8"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 	
 	if event.is_action_pressed("slot_9"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.NONE)
 
 
 func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool = true) -> void:
@@ -440,7 +394,7 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 			body_collision.shape.radius = player_collision_radius
 			body_collision.position.y = player_collision_position.y
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.WALKING]
-			current_footsteps = footsteps
+			current_footsteps_pace = footsteps_resource.Pace.NORMAL
 		MovementMode.SPRINTING:
 			if instant:
 				current_movement_speed = movement_speeds[MovementMode.SPRINTING]
@@ -454,7 +408,7 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 			body_collision.shape.radius = player_collision_radius
 			body_collision.position.y = player_collision_position.y
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.SPRINTING]
-			current_footsteps = fast_footsteps
+			current_footsteps_pace = footsteps_resource.Pace.FAST
 		MovementMode.CROUCHING:
 			if instant:
 				current_movement_speed = movement_speeds[MovementMode.CROUCHING]
@@ -468,7 +422,7 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 			body_collision.shape.radius = player_collision_radius
 			body_collision.position = player_crouch_collision_position
 			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
-			current_footsteps = slow_footsteps
+			current_footsteps_pace = footsteps_resource.Pace.SLOW
 		MovementMode.CRAWL:
 			if instant:
 				current_movement_speed = movement_speeds[MovementMode.CRAWL]
@@ -480,7 +434,7 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 				_move_head_smooth(player_crawl_head_position, 0.1)
 			body_collision.shape.height = player_crawl_collision_height
 			body_collision.position = player_crawl_collision_position
-			current_footsteps = slow_footsteps
+			current_footsteps_pace = footsteps_resource.Pace.SLOW
 			can_vault = false
 			await get_tree().process_frame
 			can_vault = false
@@ -496,10 +450,12 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 			body_collision.shape.height = player_collision_height
 			body_collision.shape.radius = player_collision_radius
 			body_collision.position.y = player_collision_position.y
-			current_footsteps = footsteps
+			current_footsteps_pace = footsteps_resource.Pace.NORMAL
 			can_vault = false
 			inventory.flashlight.turn_off()
 		MovementMode.VAULTING:
+			if crouch_vault:
+				pass
 			body_collision.disabled = true
 			InputManager.player_character_input = false
 		MovementMode.CUTSCENE:
@@ -601,11 +557,29 @@ func _on_ground_movement(delta: float) -> void:
 		last_pos = global_position
 		bob_time += distance_delta * bob_speed * ((abs(main_camera.position.x) + 1.0) * 4)
 		if bob_time >= PI and !bob_halftime:
-			AudioManager.play_sound("SFX", current_footsteps.pick_random())
+			if current_footsteps_mod.is_empty():
+				AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
+			else:
+				match current_footsteps_mod.pick_random():
+					FootstepsResource.Mod.WET:
+						AudioManager.play_sound("SFX", footsteps_resource.random_wet_footstep(current_footsteps_pace))
+					FootstepsResource.Mod.METAL:
+						AudioManager.play_sound("SFX", footsteps_resource.random_metal_footstep(current_footsteps_pace))
+					_:
+						AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
 			bob_halftime = true
 		if bob_time >= TAU:
 			bob_time = 0
-			AudioManager.play_sound("SFX", current_footsteps.pick_random())
+			if current_footsteps_mod.is_empty():
+				AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
+			else:
+				match current_footsteps_mod.pick_random():
+					FootstepsResource.Mod.WET:
+						AudioManager.play_sound("SFX", footsteps_resource.random_wet_footstep(current_footsteps_pace))
+					FootstepsResource.Mod.METAL:
+						AudioManager.play_sound("SFX", footsteps_resource.random_metal_footstep(current_footsteps_pace))
+					_:
+						AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
 			bob_halftime = false
 		var side_bob: float = lerpf(-0.05, 0.05, ((sin(bob_time) + 1) / 2.0))
 		var down_bob: float = lerpf(0, -0.02, sin(bob_time * 2))
@@ -746,7 +720,7 @@ func _crawl_check() -> void:
 		return
 	
 	player_crawl_ceiling_query.from = player_crawl_query.transform.origin + player_crawl_query.motion
-	player_crawl_ceiling_query.to = player_crawl_ceiling_query.from + Vector3(0, 0.5, 0)
+	player_crawl_ceiling_query.to = player_crawl_ceiling_query.from + Vector3(0, 0.51, 0)
 	var crawl_ceiling_result = direct_space_state.intersect_ray(player_crawl_ceiling_query)
 	
 	if !crawl_ceiling_result.has("collider"):
@@ -771,9 +745,9 @@ func _uncrawl_check() -> void:
 
 
 func _vault() -> void:
-	var pre_vault_movement_mode: MovementMode = current_movement_mode
+	var pre_vault_movement_mode: MovementMode = current_movement_mode if !crouch_vault else MovementMode.CROUCHING
 	var vault_height: float = vault_position.y - global_position.y
-	var duration: float = 0.4 if vault_height < 1.0 else 0.8
+	var duration: float = 0.4 if vault_height < 1.2 else 0.8
 	var tilt: float = 0.05 if (vault_position - global_position).dot(head.global_basis.x) < 0 else -0.05
 	
 	if tilt_tween:
@@ -783,7 +757,7 @@ func _vault() -> void:
 	tilt_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_parallel()
 	tilt_tween.set_ease(Tween.EASE_IN)
 	tilt_tween.tween_property(main_camera, "rotation:z", tilt, 0.2)
-	if vault_height <= 1.0:
+	if vault_height <= 1.2:
 		tilt_tween.set_ease(Tween.EASE_OUT)
 		tilt_tween.chain().tween_property(main_camera, "rotation:z", 0, 0.2)
 	else:
@@ -791,6 +765,10 @@ func _vault() -> void:
 		tilt_tween.chain().tween_property(main_camera, "rotation:z", -tilt * 2, 0.4)
 		tilt_tween.set_ease(Tween.EASE_OUT)
 		tilt_tween.chain().tween_property(main_camera, "rotation:z", 0, 0.2)
+	
+	if crouch_vault:
+		_move_head_smooth(player_crouch_head_position, duration)
+		_change_fov_smooth(player_fov - 10)
 	
 	if current_movement_mode != MovementMode.CROUCHING or vault_checks.vault_uncrouch_height == Vector3.ZERO:
 		change_movement_mode(MovementMode.VAULTING)
@@ -865,7 +843,6 @@ func save() -> Dictionary:
 		"rotation": head.global_rotation,
 		"look_vector": look_vector,
 		"movement_mode": current_movement_mode,
-		"fog_density": main_camera.environment.volumetric_fog_density
 	}
 	
 	file["inventory"] = inventory.save()
@@ -878,24 +855,6 @@ func load_save(file: Dictionary) -> void:
 	global_position = file["position"]
 	head.global_rotation = file["rotation"]
 	look_vector = file["look_vector"]
-	match file["movement_mode"]:
-		MovementMode.CROUCHING:
-			current_movement_mode = MovementMode.CROUCHING
-			current_movement_speed = movement_speeds[MovementMode.CROUCHING]
-			main_camera.fov = player_fov - 10
-			body_collision.shape.height = player_crouch_collision_height
-			body_collision.position = player_crouch_collision_position
-			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
-			head.position = player_crouch_head_position
-		MovementMode.CRAWL:
-			current_movement_mode = MovementMode.CRAWL
-			current_movement_speed = movement_speeds[MovementMode.CRAWL]
-			main_camera.fov = player_fov - 20
-			body_collision.shape.height = player_crawl_collision_height
-			body_collision.position = player_crawl_collision_position
-			vault_checks.vault_distance = vault_checks.vault_distances[MovementMode.CROUCHING]
-			head.position = player_crawl_head_position
-	
-	main_camera.environment.volumetric_fog_density = file["fog_density"]
+	change_movement_mode(file["movement_mode"], true)
 	
 	inventory.load_save(file["inventory"])

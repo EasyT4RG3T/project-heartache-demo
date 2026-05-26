@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0a2vmx4ibvmn"
+path="res://.godot/imported/OvenStack.obj-47ac32cc10ea5855bb4ee89a0e2a8d36.mesh"
+
+[deps]
+
+files=["res://.godot/imported/OvenStack.obj-47ac32cc10ea5855bb4ee89a0e2a8d36.mesh"]
+
+source_file="res://Assets/Assets/Kitchen/Furniture/OvenStack/OvenStack.obj"
+dest_files=["res://.godot/imported/OvenStack.obj-47ac32cc10ea5855bb4ee89a0e2a8d36.mesh", "res://.godot/imported/OvenStack.obj-47ac32cc10ea5855bb4ee89a0e2a8d36.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bxdb216luolyp"]
+
+[ext_resource type="ArrayMesh" uid="uid://1cctrt30kqgf" path="res://Assets/Assets/Kitchen/Utensils/Knife/Knife.obj" id="1_ks4vy"]
+[ext_resource type="Material" uid="uid://de3ynddeg62cv" path="res://Assets/Assets/Kitchen/Utensils/Knife/Knife.tres" id="2_pd8y5"]
+
+[node name="MeshKnife" type="MeshInstance3D" unique_id=792570182]
+mesh = ExtResource("1_ks4vy")
+surface_material_override/0 = ExtResource("2_pd8y5")

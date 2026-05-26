@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bao6rqxk8bvch"]
+
+[ext_resource type="Texture2D" uid="uid://ba6lgre0b360q" path="res://Assets/Assets/Kitchen/Furniture/ServiceTable/ServiceTable_albedo.png" id="1_874bv"]
+
+[resource]
+albedo_texture = ExtResource("1_874bv")
+metallic = 0.6
+roughness = 0.2
+texture_filter = 2

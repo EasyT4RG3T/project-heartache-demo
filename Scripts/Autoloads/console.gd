@@ -592,17 +592,11 @@ var command_tree: Dictionary = {
 		"save": [_command_game_save, _need_string, "slot"],
 		"load": [_command_game_load, _need_string, "slot"],
 		"erase": [_command_game_erase, _need_string, "slot"],
-		"chunk": {
-			"PrisonBlockLowSec": [_command_game_chunk,
-			["PrisonBlockLowSec", "uid://cxen7otwqul1c", Vector3(0, 0 ,-3.6)]],
-			"PrisonBlockLowSec2": [_command_game_chunk,
-			["PrisonBlockLowSec2", "uid://bme8og1xpgnit", Vector3(0, 0, 6.8)]],
-			"Security": [_command_game_chunk,
-			["Security", "uid://b11ecofofpu70", Vector3(-2.5, 0, -5.2)]],
-			"Corridor": [_command_game_chunk,
-			["Corridor", "uid://c1xomtgke6hfn", Vector3(-9.7, 0, -3.7)]],
-			"KitchenCafeteria": [_command_game_chunk,
-			["KithenCafeteria", "uid://pjru50282l3r", Vector3(-17.4, 0, 6.1)]],
+		"map": {
+			"Gym": [_command_game_map,
+				["Gym", "uid://cralm3aptvr1y", Vector3.ZERO]],
+			"Demo": [_command_game_map,
+				["Demo", "uid://ly2qmf1awigs", Vector3(0, 0 , 0)]],
 		},
 	},
 	"player": {
@@ -610,6 +604,12 @@ var command_tree: Dictionary = {
 		"fly_collision": _command_player_fly_collision,
 		"flashlight": _command_player_flashlight,
 		"screwdriver": _command_player_screwdriver,
+		"glock": _command_player_glock,
+		"glock_mags": [_command_player_glock_mags, _need_int, func():
+			if GameManager.player_character:
+				return str(GameManager.player_character.inventory.glock_19.mags)
+			else:
+				return "0"],
 		"speed": [_command_player_speed, _need_float, func():
 			if GameManager.player_character:
 				return str(GameManager.player_character.current_movement_speed)
@@ -1297,7 +1297,7 @@ func _command_game_erase(value: String) -> String:
 	SaverLoader.erase_game_data(value)
 	return "erasing game data from slot: " + value
 
-func _command_game_chunk(value: Array) -> String:
+func _command_game_map(value: Array) -> String:
 	SaverLoader.show_loading_screen()
 	
 	SaverLoader.can_save += 1
@@ -1409,6 +1409,23 @@ func _command_player_screwdriver() -> String:
 	else:
 		GameManager.player_character.inventory.screwdriver.disabled = true
 		return "player screwdriver removed"
+
+func _command_player_glock() -> String:
+	if !GameManager.player_character:
+		return "[color=red]couldn't find player[/color]"
+	if GameManager.player_character.inventory.glock_19_disabled:
+		GameManager.player_character.inventory.glock_19_disabled = false
+		return "player glock added"
+	else:
+		GameManager.player_character.inventory.glock_19_disabled = true
+		return "player glock removed"
+
+func _command_player_glock_mags(value: int) -> String:
+	if !GameManager.player_character:
+		return "[color=red]couldn't find player[/color]"
+	else:
+		GameManager.player_character.inventory.glock_19.mags = value
+		return "glock mags: " + str(value)
 
 func _command_player_speed(value: float) -> String:
 	if !GameManager.player_character:

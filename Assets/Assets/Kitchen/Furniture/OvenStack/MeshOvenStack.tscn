@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byvfluv3c7bsd"]
+
+[ext_resource type="ArrayMesh" uid="uid://c0a2vmx4ibvmn" path="res://Assets/Assets/Kitchen/Furniture/OvenStack/OvenStack.obj" id="1_1eqb2"]
+[ext_resource type="Material" uid="uid://bn4rq0rxt8h6p" path="res://Assets/Assets/Kitchen/Furniture/OvenStack/OvenStack.tres" id="2_83lj3"]
+
+[node name="MeshOvenStack" type="MeshInstance3D" unique_id=373570063]
+mesh = ExtResource("1_1eqb2")
+surface_material_override/0 = ExtResource("2_83lj3")

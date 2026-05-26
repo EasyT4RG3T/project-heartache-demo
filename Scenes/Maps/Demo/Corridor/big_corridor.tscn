@@ -5,7 +5,31 @@
 [ext_resource type="PackedScene" uid="uid://iiu60kwdwa46" path="res://Assets/Maps/Corridor/StaticBigCorridor.tscn" id="2_h2reb"]
 [ext_resource type="LightmapGIData" uid="uid://n16rml2xk8y5" path="res://Scenes/Maps/Demo/Corridor/big_corridor.lmbake" id="2_oyt0y"]
 [ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="5_5a1ox"]
+[ext_resource type="PackedScene" uid="uid://d2mkyfd2tkob0" path="res://Assets/Assets/Mics/Vents/SquareVent/SquareVent.tscn" id="6_5a1ox"]
 [ext_resource type="Script" uid="uid://b0xsinj7cw0l3" path="res://Scripts/Nodes/crawl_area.gd" id="6_oyt0y"]
+[ext_resource type="Texture2D" uid="uid://d3l43o88664ky" path="res://Assets/Textures/Dirt/DirtBigThick.png" id="7_qvvx3"]
+[ext_resource type="Texture2D" uid="uid://dtrvtkdr4bojt" path="res://Assets/Textures/Dirt/DirtBig.png" id="8_ec1yt"]
+[ext_resource type="PackedScene" uid="uid://dygcadfcvcagg" path="res://Assets/Assets/Furniture/Chairs/Bench/StaticBench.tscn" id="8_mwq0s"]
+[ext_resource type="Texture2D" uid="uid://dw1j21bo0x7o" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrowThick.png" id="8_uo3s1"]
+[ext_resource type="PackedScene" uid="uid://ddql0jkojbw5j" path="res://Assets/Assets/Trash/TrashCans/TrashCan01/StaticTrashCan01.tscn" id="9_jv4t3"]
+[ext_resource type="Texture2D" uid="uid://cxx17xifx3koi" path="res://Assets/Textures/Dirt/DirtSmallThick.png" id="10_1leyd"]
+[ext_resource type="PackedScene" uid="uid://ccbr6rgcdf6ek" path="res://Assets/Assets/Trash/CigaretteBoxes/DynamicCigaretteBox02.tscn" id="11_mwq0s"]
+[ext_resource type="PackedScene" uid="uid://cbqfgqqkicvxf" path="res://Assets/Assets/Trash/TrashCans/TrashCanFull01/StaticTrashCanFull01.tscn" id="12_1leyd"]
+[ext_resource type="PackedScene" uid="uid://uxeponejyhfo" path="res://Assets/Assets/Trash/Bottle01/DynamicBottle01.tscn" id="12_440gm"]
+[ext_resource type="PackedScene" uid="uid://crtaqr638t54c" path="res://Assets/Assets/Trash/Cigarettes/DynamicCigarette02.tscn" id="12_jv4t3"]
+[ext_resource type="PackedScene" uid="uid://c5rpyq0k8o0f7" path="res://Assets/Assets/Trash/NewsPapers02/MeshNewsPaper02.tscn" id="13_440gm"]
+[ext_resource type="PackedScene" uid="uid://bfg2h380msc2n" path="res://Assets/Assets/Trash/NewsPapers01/MeshNewsPaper01.tscn" id="14_5uimo"]
+[ext_resource type="PackedScene" uid="uid://h1fpxni5r5bo" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBox02/StaticCardboardBox02.tscn" id="15_nfnfh"]
+[ext_resource type="PackedScene" uid="uid://br8np0a7lbv8g" path="res://Assets/Assets/Trash/CigaretteBoxes/DynamicCigaretteBox01.tscn" id="16_j18ys"]
+[ext_resource type="PackedScene" uid="uid://cxaks8yaxskm3" path="res://Assets/Assets/Trash/Cigarettes/DynamicCigarette01.tscn" id="17_5uimo"]
+[ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="23_lvyxl"]
+[ext_resource type="PackedScene" uid="uid://e4iblqa7tbty" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox02/StaticBigCardboardBox02.tscn" id="24_a03c2"]
+[ext_resource type="PackedScene" uid="uid://dhd414fwvi7o" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat02/StaticBigCardboardBoxFlat02.tscn" id="25_ygxby"]
+[ext_resource type="PackedScene" uid="uid://t8a2scx11vin" path="res://Assets/Assets/Decorations/Photos/Paper/MeshDocument03.tscn" id="26_c6iqd"]
+[ext_resource type="PackedScene" uid="uid://bnvjsbmof3vvu" path="res://Assets/Assets/Decorations/Photos/Paper/MeshDocument02.tscn" id="27_jy5jr"]
+[ext_resource type="PackedScene" uid="uid://bvhefcbarv2ux" path="res://Assets/Assets/Decorations/Photos/Paper/MeshDocument01.tscn" id="28_4rt4r"]
+[ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="29_rgvan"]
+[ext_resource type="PackedScene" uid="uid://bxxxwbs1omnvm" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBoxFlat/StaticCardboardBoxFlat.tscn" id="30_0ksg7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5a1ox"]
 size = Vector3(0.5, 0.6, 0.5)
@@ -15,6 +39,22 @@ size = Vector3(0.5, 0.6, 0.5)
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1908972932]
 occluder = ExtResource("1_n7g03")
 bake_mask = 4293918752
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1679409340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.6, -7)
+blend_distance = 0.0
+size = Vector3(3.1, 3.1, 50.1)
+box_projection = true
+interior = true
+enable_shadows = true
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="." unique_id=342543306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7, 1.6, -3.5999994)
+blend_distance = 0.0
+size = Vector3(16.7, 3.1, 3.1000001)
+box_projection = true
+interior = true
+enable_shadows = true
 
 [node name="DynamicLightmapGI" type="LightmapGI" parent="." unique_id=1240033494]
 quality = 2
@@ -33,7 +73,58 @@ light_data = ExtResource("2_oyt0y")
 script = ExtResource("1_158xu")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
+[node name="LightmapProbe" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1735013399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0.4, 2.7497127)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1370604896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, -3.6502874)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=103859239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 1.5000001, -3.6502874)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=777268268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9, 1.5000001, -3.6502874)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1272991516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9, 1.5000001, -3.6502874)
+
+[node name="LightmapProbe14" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=784226140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9, 1.5000001, -3.6502874)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1300690602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, -7.6502876)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=450334686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, -11.650288)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=717244839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, -15.650288)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=404117515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 0.3497126)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1667488054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 4.3497124)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=2091146458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 8.349712)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1360867448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 12.349712)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=242919323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 16.349712)
+
 [node name="StaticBigCorridor" parent="." unique_id=1696982158 instance=ExtResource("2_h2reb")]
+
+[node name="CrawlArea" type="Area3D" parent="." unique_id=1424901759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.25021505, 2.74982)
+script = ExtResource("6_oyt0y")
+metadata/_custom_type_script = "uid://b0xsinj7cw0l3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrawlArea" unique_id=1715659725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049999997, 0)
+shape = SubResource("BoxShape3D_5a1ox")
 
 [node name="Lights" type="Node3D" parent="." unique_id=1490990878]
 
@@ -168,8 +259,9 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D14" type="OmniLight3D" parent="Lights" unique_id=813488866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.9999999, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.3999999, -3.6)
 visible = false
+light_energy = 0.5
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -179,8 +271,9 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D15" type="OmniLight3D" parent="Lights" unique_id=647261827]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.9999999, 9.099999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.3999999, 9.099999)
 visible = false
+light_energy = 0.5
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -189,11 +282,147 @@ omni_range = 3.0
 script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="CrawlArea" type="Area3D" parent="." unique_id=1424901759]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.25021505, 2.74982)
-script = ExtResource("6_oyt0y")
-metadata/_custom_type_script = "uid://b0xsinj7cw0l3"
+[node name="Decals" type="Node3D" parent="." unique_id=1820649096]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CrawlArea" unique_id=1715659725]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049999997, 0)
-shape = SubResource("BoxShape3D_5a1ox")
+[node name="Decal" type="Decal" parent="Decals" unique_id=1538516084]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -10.228093, 0.10036436, -0.46922135)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("7_qvvx3")
+
+[node name="Decal6" type="Decal" parent="Decals" unique_id=182664119]
+transform = Transform3D(0.9340301, 0, 0.3571945, 0, 1, 0, -0.3571945, 0, 0.9340301, -9.06119, 0.10036436, -9.290599)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("8_ec1yt")
+
+[node name="Decal4" type="Decal" parent="Decals" unique_id=1876361292]
+transform = Transform3D(-0.9999999, 0, -8.742276e-08, 0, 1, 0, 8.742276e-08, 0, -0.9999999, -17.346222, 0.10036436, -4.3514814)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("8_uo3s1")
+
+[node name="Decal5" type="Decal" parent="Decals" unique_id=498324522]
+transform = Transform3D(-0.8969189, 0, -0.4421948, 0, 1, 0, 0.4421948, 0, -0.8969189, -21.79185, 0.10036436, -3.184619)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("10_1leyd")
+
+[node name="Decal3" type="Decal" parent="Decals" unique_id=856409311]
+transform = Transform3D(-4.371138e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, -9.140576, 0.10036436, 2.7045414)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("8_uo3s1")
+
+[node name="Decal2" type="Decal" parent="Decals" unique_id=538148337]
+transform = Transform3D(0.7568241, 0, 0.6536189, 0, 1, 0, -0.6536189, 0, 0.7568241, -9.636107, 0.10036436, 7.395861)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("8_ec1yt")
+
+[node name="Assets" type="Node3D" parent="." unique_id=722804881]
+
+[node name="SquareVent" parent="Assets" unique_id=441020651 instance=ExtResource("6_5a1ox")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -8.4, 0.1, 2.75)
+
+[node name="StaticBench" parent="Assets" unique_id=1893121587 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.6, 0.1, 0)
+
+[node name="StaticBench2" parent="Assets" unique_id=1642384872 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.6, 0.1, 6)
+
+[node name="StaticBench3" parent="Assets" unique_id=638722484 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.200001, 0.1, 2.4)
+
+[node name="StaticBench5" parent="Assets" unique_id=885371565 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.200001, 0.1, -7.6)
+
+[node name="StaticBench4" parent="Assets" unique_id=945929003 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.200001, 0.1, 8.499999)
+
+[node name="StaticTrashCan01" parent="Assets" unique_id=543805757 instance=ExtResource("9_jv4t3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6, 0.1, 1)
+
+[node name="StaticTrashCanFull01" parent="Assets" unique_id=1093351646 instance=ExtResource("12_1leyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 0.1, 7.5)
+
+[node name="StaticBench6" parent="Assets" unique_id=1415749412 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.700001, 0.1, -2.3000004)
+
+[node name="StaticTrashCanFull02" parent="Assets" unique_id=221189656 instance=ExtResource("12_1leyd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.700001, 0.1, -2.3000014)
+
+[node name="StaticTrashCan03" parent="Assets" unique_id=1734564051 instance=ExtResource("9_jv4t3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.200001, 0.1, -8.7)
+
+[node name="DynamicBottle01" parent="Assets" unique_id=663455289 instance=ExtResource("12_440gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.514494, 0.19999996, 2.3839285)
+
+[node name="DynamicBottle02" parent="Assets" unique_id=368128458 instance=ExtResource("12_440gm")]
+transform = Transform3D(-2.7661155e-08, -0.63281345, 0.77430433, 1, -4.371139e-08, 0, 3.3845918e-08, 0.77430433, 0.63281345, -8.559718, 0.13064292, 2.3018792)
+
+[node name="DynamicCigaretteBox02" parent="Assets" unique_id=571195990 instance=ExtResource("11_mwq0s")]
+transform = Transform3D(0.90502036, 0.41087455, -0.11009353, 1.0003057e-08, 0.2588191, 0.96592593, 0.42536873, -0.87418246, 0.23423652, -8.687922, 0.119341455, 3.1553447)
+
+[node name="DynamicCigarette02" parent="Assets" unique_id=378235819 instance=ExtResource("12_jv4t3")]
+transform = Transform3D(0.36030608, 0, 0.932834, 0, 1, 0, -0.932834, 0, 0.36030608, -8.705667, 0.099999934, 3.0515287)
+
+[node name="MeshNewsPaper02" parent="Assets" unique_id=93815626 instance=ExtResource("13_440gm")]
+transform = Transform3D(0.9509217, 0, 0.3094319, 0, 1, 0, -0.3094319, 0, 0.9509217, -9.772023, 0.099999905, 3.429528)
+
+[node name="MeshNewsPaper01" parent="Assets" unique_id=905681738 instance=ExtResource("14_5uimo")]
+transform = Transform3D(0.5726468, 0, 0.8198022, 0, 1, 0, -0.8198022, 0, 0.5726468, -8.783651, 0.099999905, 5.4373894)
+
+[node name="DynamicBottle03" parent="Assets" unique_id=266231397 instance=ExtResource("12_440gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.526671, 0.19999996, 1.228702)
+
+[node name="StaticCardboardBox02" parent="Assets" unique_id=1300642437 instance=ExtResource("15_nfnfh")]
+transform = Transform3D(0.96143943, 0, 0.27501655, 0, 1, 0, -0.27501655, 0, 0.96143943, -11.208978, 0.099999964, 1.4324474)
+
+[node name="DynamicCigaretteBox01" parent="Assets/StaticCardboardBox02" unique_id=7758160 instance=ExtResource("16_j18ys")]
+transform = Transform3D(0.83055705, -0.55693364, 2.4344342e-08, 0, -4.371139e-08, -1, 0.55693364, 0.83055705, -3.63048e-08, -0.027690887, 0.3124404, 0.068635106)
+
+[node name="DynamicCigarette01" parent="Assets" unique_id=436209573 instance=ExtResource("17_5uimo")]
+transform = Transform3D(0.7340737, 0, -0.6790698, 0, 1, 0, 0.6790698, 0, 0.7340737, -11.142815, 0.099999964, 2.842246)
+
+[node name="DynamicCigarette03" parent="Assets" unique_id=1698018437 instance=ExtResource("12_jv4t3")]
+transform = Transform3D(0.90510935, 0, 0.42517912, 0, 1, 0, -0.42517912, 0, 0.90510935, -11.156486, 0.100000024, 2.7938395)
+
+[node name="StaticBigCardboardBox01" parent="Assets" unique_id=1121094488 instance=ExtResource("23_lvyxl")]
+transform = Transform3D(0.99552244, 0, -0.09452533, 0, 1, 0, 0.09452533, 0, 0.99552244, -16.841831, 0.100000024, -2.3382893)
+
+[node name="StaticBigCardboardBox02" parent="Assets" unique_id=1846966015 instance=ExtResource("24_a03c2")]
+transform = Transform3D(-0.39469585, 0, 0.9188119, 0, 1, 0, -0.9188119, 0, -0.39469585, -17.339115, 0.100000024, -2.3591561)
+
+[node name="StaticBigCardboardBoxFlat02" parent="Assets" unique_id=2128450432 instance=ExtResource("25_ygxby")]
+transform = Transform3D(-0.99979186, 0, -0.020401405, 0, 1, 0, 0.020401405, 0, -0.99979186, -17.055836, 0.5, -2.2794683)
+
+[node name="MeshPaper" parent="Assets" unique_id=1750951948 instance=ExtResource("26_c6iqd")]
+transform = Transform3D(0.9410167, 0, 0.33836022, 0, 1, 0, -0.33836022, 0, 0.9410167, -19.276127, 0.099999905, -4.641252)
+
+[node name="MeshPaper2" parent="Assets" unique_id=792060188 instance=ExtResource("27_jy5jr")]
+transform = Transform3D(0.9605465, 0, -0.27811944, 0, 1, 0, 0.27811944, 0, 0.9605465, -19.845171, 0.099999905, -4.4441056)
+
+[node name="MeshPaper3" parent="Assets" unique_id=539428434 instance=ExtResource("28_4rt4r")]
+transform = Transform3D(0.92922366, 0.037386455, 0.36762145, -0.04020155, 0.9991916, 0, -0.36732426, -0.014778951, 0.9299755, -19.752777, 0.105042994, -4.5394664)
+
+[node name="StaticBigCardboardBox03" parent="Assets" unique_id=257397396 instance=ExtResource("24_a03c2")]
+transform = Transform3D(0.9981571, 0, 0.0606827, 0, 1, 0, -0.0606827, 0, 0.9981571, -27.775475, 0.100000024, -2.4136586)
+
+[node name="StaticBigCardboardBox04" parent="Assets" unique_id=1346340992 instance=ExtResource("23_lvyxl")]
+transform = Transform3D(0.9926669, 0, -0.12088186, 0, 1, 0, 0.12088186, 0, 0.9926669, -27.316835, 0.099999905, -2.3342588)
+
+[node name="StaticCardboardBox03" parent="Assets" unique_id=1715624886 instance=ExtResource("15_nfnfh")]
+transform = Transform3D(-0.051830467, 0, 0.9986559, 0, 1, 0, -0.9986559, 0, -0.051830467, -27.469915, 0.5, -2.3303113)
+
+[node name="StaticBigCardboardBoxFlat01" parent="Assets" unique_id=1800840931 instance=ExtResource("29_rgvan")]
+transform = Transform3D(0.1955867, 0, 0.9806864, 0, 1, 0, -0.9806864, 0, 0.1955867, -27.786222, 0.5000001, -2.5963588)
+
+[node name="StaticBigCardboardBox05" parent="Assets" unique_id=1798903393 instance=ExtResource("23_lvyxl")]
+transform = Transform3D(0.9358629, 0, 0.3523644, 0, 1, 0, -0.3523644, 0, 0.9358629, -27.742188, 0.099999905, -2.940307)
+
+[node name="StaticCardboardBoxFlat" parent="Assets" unique_id=1055490897 instance=ExtResource("30_0ksg7")]
+transform = Transform3D(-0.06336869, -0.1889927, -0.97993165, -0.8343684, 0.5487601, -0.051879995, 0.5475526, 0.8143365, -0.19246374, -27.801306, 0.6211848, -2.3406389)
+
+[node name="MeshPaper4" parent="Assets" unique_id=941864837 instance=ExtResource("26_c6iqd")]
+transform = Transform3D(0.48860598, 0, 0.8725046, 0, 1, 0, -0.8725046, 0, 0.48860598, -27.724482, 0.49999988, -2.9573038)
+
+[node name="DynamicBottle04" parent="Assets" unique_id=453812628 instance=ExtResource("12_440gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.496428, 0.19999996, -2.6259995)
+
+[node name="DynamicBottle05" parent="Assets" unique_id=1297596817 instance=ExtResource("12_440gm")]
+transform = Transform3D(-3.2147927e-08, -0.73545885, -0.6775694, 1, -4.371139e-08, 0, -2.9617498e-08, -0.6775694, 0.73545885, -27.407915, 0.12565684, -2.6811984)

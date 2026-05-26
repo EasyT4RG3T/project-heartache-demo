@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b4xu65q7lmtjo"]
+
+[ext_resource type="ArrayMesh" uid="uid://b7y5ext6dsuyj" path="res://Assets/Assets/Kitchen/Furniture/FryerBasket/FryerBasket.obj" id="1_b0fsj"]
+[ext_resource type="Material" uid="uid://c3cff6wl2rl3x" path="res://Assets/Assets/Kitchen/Furniture/FryerBasket/FryerBasket.tres" id="2_0t8t6"]
+
+[node name="MeshFryerBasket" type="MeshInstance3D" unique_id=50845851]
+mesh = ExtResource("1_b0fsj")
+surface_material_override/0 = ExtResource("2_0t8t6")

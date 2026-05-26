@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cgbo8rsysonmu"]
+
+[ext_resource type="ArrayMesh" uid="uid://d0ivporlahyin" path="res://Assets/Assets/Kitchen/Furniture/Fridge/FridgeDoorsUR.obj" id="1_6l4pb"]
+[ext_resource type="Material" uid="uid://bpxg6cjxkelv2" path="res://Assets/Assets/Kitchen/Furniture/Fridge/Fridge.tres" id="2_m7kcy"]
+
+[node name="MeshFridgeDoorsUR" type="MeshInstance3D" unique_id=596261206]
+mesh = ExtResource("1_6l4pb")
+surface_material_override/0 = ExtResource("2_m7kcy")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2th03scr1wu5"]
+
+[ext_resource type="Texture2D" uid="uid://bnvmqfqfj21vv" path="res://Assets/Assets/Kitchen/Utensils/WoodenSpoon/WoodenSpoon_albedo.png" id="1_vk0pq"]
+
+[resource]
+albedo_texture = ExtResource("1_vk0pq")
+roughness = 0.5
+texture_filter = 2

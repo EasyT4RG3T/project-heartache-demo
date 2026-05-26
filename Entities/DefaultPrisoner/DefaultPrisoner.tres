@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn2mwjmli4lpv"]
+
+[ext_resource type="Texture2D" uid="uid://wvpjvlagrds1" path="res://Entities/DefaultPrisoner/DefaultPrisoner_albedo.png" id="1_6wepd"]
+
+[resource]
+albedo_texture = ExtResource("1_6wepd")
+texture_filter = 2

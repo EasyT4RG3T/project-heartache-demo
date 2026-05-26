@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://8vljwhkbrh00" path="res://Assets/Sprites/bullet_hole.gd" id="3_fnei3"]
 
 [node name="BulletHole" type="Decal" unique_id=1725255358]
-size = Vector3(0.05, 0.01, 0.05)
+size = Vector3(0.05, 0.05, 0.05)
 texture_albedo = ExtResource("1_j46ru")
 texture_normal = ExtResource("2_skl0f")
 script = ExtResource("3_fnei3")

@@ -272,6 +272,9 @@ supersampling = true
 directional = true
 use_texture_for_bounces = false
 interior = true
+denoiser_strength = 0.05
+denoiser_range = 2
+texel_scale = 4.0
 environment_mode = 0
 generate_probes_subdiv = 0
 light_data = ExtResource("5_7cp3c")
@@ -280,12 +283,13 @@ metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
 [node name="MeshMainMenuRoom" parent="Node3D" unique_id=1682356069 instance=ExtResource("7_rur1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+gi_lightmap_texel_scale = 2.0
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Node3D" unique_id=130608603]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49, 4.568, -1.071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49, 1.4861151, -1.071)
 blend_distance = 0.0
-size = Vector3(7.303093, 10.86377, 4.3605957)
+size = Vector3(7.303093, 3.3, 4.3605957)
 box_projection = true
 interior = true
 enable_shadows = true
@@ -300,10 +304,9 @@ unique_name_in_owner = true
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="Node3D/Lights" unique_id=877086270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59537745, 1.8890611, -0.65935737)
-visible = false
 light_energy = 0.4
 light_bake_mode = 1
-light_cull_mask = 4294967287
+light_cull_mask = 4294442999
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
@@ -316,48 +319,14 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.59541804, 1.922673, -0.6583044)
 light_energy = 0.25
 light_bake_mode = 0
-light_cull_mask = 4294967287
+light_cull_mask = 4294442999
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 3.0
-shadow_caster_mask = 4294967287
+shadow_caster_mask = 4294442999
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-spot_angle = 80.0
-spot_angle_attenuation = 2.0000005
-script = ExtResource("6_kw60b")
-metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
-
-[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="Node3D/Lights" unique_id=1260303728]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.59541804, 1.922673, -0.6583044)
-light_energy = 0.2
-light_bake_mode = 0
-light_cull_mask = 4294967287
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_normal_bias = 3.0
-shadow_caster_mask = 4294967287
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-spot_angle = 80.0
-spot_angle_attenuation = 2.0000005
-script = ExtResource("6_kw60b")
-metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
-
-[node name="DynamicSpotLight3D3" type="SpotLight3D" parent="Node3D/Lights" unique_id=326120060]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59541804, 1.922673, -0.6583044)
-light_energy = 0.03
-light_bake_mode = 0
-light_cull_mask = 4294967287
-shadow_bias = 0.01
-shadow_normal_bias = 3.0
-shadow_caster_mask = 4294967287
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-spot_range = 3.765
 spot_angle = 80.0
 spot_angle_attenuation = 2.0000005
 script = ExtResource("6_kw60b")
@@ -374,6 +343,12 @@ transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.59
 
 [node name="LightmapProbe" type="LightmapProbe" parent="Node3D/Lights/Probes" unique_id=1038414444]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13022101, 1.0085828, -1.3160077)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="Node3D/Lights/Probes" unique_id=710149544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.869779, 1.2085829, -0.31600773)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="Node3D/Lights/Probes" unique_id=456584265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.869779, 1.5085828, -3.3160076)
 
 [node name="Assets" type="Node3D" parent="Node3D" unique_id=419184888]
 
@@ -589,8 +564,9 @@ surface_material_override/0 = ExtResource("28_pvonr")
 
 [node name="DynamicSpotLight3D" type="SpotLight3D" parent="Node3D/Assets/monster" unique_id=807529027]
 transform = Transform3D(0.8888653, 0, -0.4581687, 0, 1, 0, 0.4581687, 0, 0.8888653, 2.5942028, 1.5477889, -2.763166)
-light_energy = 0.08
+light_energy = 0.04
 light_bake_mode = 0
+light_cull_mask = 4294443007
 shadow_bias = 0.01
 distance_fade_enabled = true
 distance_fade_begin = 5.0

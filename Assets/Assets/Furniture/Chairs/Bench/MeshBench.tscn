@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://blgcjpfcwh0ur"]
+
+[ext_resource type="ArrayMesh" uid="uid://b325ybckltv07" path="res://Assets/Assets/Furniture/Chairs/Bench/Bench.obj" id="1_kxdit"]
+[ext_resource type="Material" uid="uid://bk185cx2mgv6e" path="res://Assets/Materials/Plastic/DarkRedPlastic.tres" id="2_il3gg"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="3_cg74x"]
+
+[node name="MeshBench" type="MeshInstance3D" unique_id=1852365820]
+mesh = ExtResource("1_kxdit")
+surface_material_override/0 = ExtResource("2_il3gg")
+surface_material_override/1 = ExtResource("3_cg74x")

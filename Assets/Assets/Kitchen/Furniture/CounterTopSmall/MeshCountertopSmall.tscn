@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://daamhp432w8qp"]
+
+[ext_resource type="ArrayMesh" uid="uid://bcfi2lixoqcr4" path="res://Assets/Assets/Kitchen/Furniture/CounterTopSmall/CountertopSmall.obj" id="1_kpn6k"]
+[ext_resource type="Material" uid="uid://vxpsgx6el6s2" path="res://Assets/Assets/Kitchen/Furniture/CounterTopBig/Countertop.tres" id="2_lk23l"]
+
+[node name="MeshCountertopSmall" type="MeshInstance3D" unique_id=1601984255]
+mesh = ExtResource("1_kpn6k")
+surface_material_override/0 = ExtResource("2_lk23l")

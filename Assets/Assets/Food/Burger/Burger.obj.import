@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tw7vq3cudg08"
+path="res://.godot/imported/Burger.obj-43534f967ce6a13b2c5143765f3f3ab0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Burger.obj-43534f967ce6a13b2c5143765f3f3ab0.mesh"]
+
+source_file="res://Assets/Assets/Food/Burger/Burger.obj"
+dest_files=["res://.godot/imported/Burger.obj-43534f967ce6a13b2c5143765f3f3ab0.mesh", "res://.godot/imported/Burger.obj-43534f967ce6a13b2c5143765f3f3ab0.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

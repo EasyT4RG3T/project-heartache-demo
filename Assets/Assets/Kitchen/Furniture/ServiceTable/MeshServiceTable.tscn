@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ckreiw01kalhp"]
+
+[ext_resource type="ArrayMesh" uid="uid://dabaoho1wvj4j" path="res://Assets/Assets/Kitchen/Furniture/ServiceTable/ServiceTable.obj" id="1_b8552"]
+[ext_resource type="Material" uid="uid://bao6rqxk8bvch" path="res://Assets/Assets/Kitchen/Furniture/ServiceTable/ServiceTable.tres" id="2_bxrhf"]
+
+[node name="MeshServiceTable" type="MeshInstance3D" unique_id=2069302736]
+mesh = ExtResource("1_b8552")
+surface_material_override/0 = ExtResource("2_bxrhf")

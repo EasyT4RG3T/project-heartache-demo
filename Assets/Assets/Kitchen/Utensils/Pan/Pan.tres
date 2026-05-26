@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crqk1ngjc5vuq"]
+
+[ext_resource type="Texture2D" uid="uid://dek4vrv10kyvw" path="res://Assets/Assets/Kitchen/Utensils/Pan/Pan_albedo.png" id="1_rj8u6"]
+
+[resource]
+albedo_texture = ExtResource("1_rj8u6")
+metallic = 0.6
+roughness = 0.3
+texture_filter = 2

@@ -39,6 +39,12 @@ var out_of_area: bool = false:
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
+	if light_cull_mask >= 524288:
+		light_cull_mask -= 524288
+	
+	if shadow_caster_mask >= 524288:
+		shadow_caster_mask -= 524288
+	
 	add_to_group("DynamicLights")
 	if area:
 		area.collision_layer = 8

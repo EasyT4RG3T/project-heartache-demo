@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bdqco3l41brvt"]
+
+[ext_resource type="ArrayMesh" uid="uid://b6ck47dm4pjpd" path="res://Assets/Assets/Kitchen/Utensils/Ladle/Ladle.obj" id="1_qgg0f"]
+[ext_resource type="Material" uid="uid://dkosjmlmsly1f" path="res://Assets/Assets/Kitchen/Utensils/Ladle/Ladle.tres" id="2_guotl"]
+
+[node name="MeshLadle" type="MeshInstance3D" unique_id=6250098]
+mesh = ExtResource("1_qgg0f")
+surface_material_override/0 = ExtResource("2_guotl")

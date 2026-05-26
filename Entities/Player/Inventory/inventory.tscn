@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b8tkwovpcmrta" path="res://Entities/Player/Inventory/flashlight.tscn" id="2_byh8v"]
 [ext_resource type="PackedScene" uid="uid://b1g0wdab2jhjg" path="res://Entities/Player/Inventory/screwdriver.tscn" id="3_xdc5x"]
 [ext_resource type="PackedScene" uid="uid://mkd5tcw3nnrk" path="res://Entities/Player/Inventory/glock_19.tscn" id="4_xdc5x"]
+[ext_resource type="PackedScene" uid="uid://3kxvwwvoxq4d" path="res://Entities/Player/Inventory/journal.tscn" id="5_ns2xd"]
 
 [node name="Inventory" type="Node3D" unique_id=222880276]
 script = ExtResource("1_n0ao5")
@@ -22,3 +23,7 @@ unique_name_in_owner = true
 
 [node name="Glock19" parent="Hand" unique_id=174346797 instance=ExtResource("4_xdc5x")]
 unique_name_in_owner = true
+
+[node name="Journal" parent="Hand" unique_id=968137669 instance=ExtResource("5_ns2xd")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)

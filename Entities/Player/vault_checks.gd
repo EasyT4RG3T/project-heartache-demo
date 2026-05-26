@@ -174,11 +174,18 @@ func check() -> void:
 		p.MovementMode.CROUCHING:
 			if _vault_crouch_cast(p.vault_position):
 				p.can_vault = true
+				p.crouch_vault = false
 				vault_error["can_vault"] = "true"
 				return
 		_:
 			if _vault_standing_cast(p.vault_position):
 				p.can_vault = true
+				p.crouch_vault = false
+				vault_error["can_vault"] = "true"
+				return
+			elif _vault_crouch_cast(p.vault_position):
+				p.can_vault = true
+				p.crouch_vault = true
 				vault_error["can_vault"] = "true"
 				return
 	
@@ -320,7 +327,9 @@ func _vault_end_fit_check(check_pos: Vector3) -> bool:
 		_:
 			p.player_shape_query.transform.origin = check_pos + p.player_collision_position
 			if p.direct_space_state.get_rest_info(p.player_shape_query):
-				return false
+				p.player_crouch_query.transform.origin = check_pos + p.player_crouch_collision_position
+				if p.direct_space_state.get_rest_info(p.player_crouch_query):
+					return false
 	return true
 
 

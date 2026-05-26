@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bn4rq0rxt8h6p"]
+
+[ext_resource type="Texture2D" uid="uid://c1jd5ahyg5bm3" path="res://Assets/Assets/Kitchen/Furniture/OvenStack/OvenStack_albedo.png" id="1_cg0fb"]
+
+[resource]
+albedo_texture = ExtResource("1_cg0fb")
+metallic = 0.6
+roughness = 0.2
+texture_filter = 2

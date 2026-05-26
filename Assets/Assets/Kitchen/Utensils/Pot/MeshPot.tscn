@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d0m8g32it1hix"]
+
+[ext_resource type="ArrayMesh" uid="uid://ba7xt06etj8mi" path="res://Assets/Assets/Kitchen/Utensils/Pot/Pot.obj" id="1_oyirn"]
+[ext_resource type="Material" uid="uid://b6icwotsdmmbq" path="res://Assets/Assets/Kitchen/Utensils/Pot/Pot.tres" id="2_kqylh"]
+
+[node name="MeshPot" type="MeshInstance3D" unique_id=1408429732]
+mesh = ExtResource("1_oyirn")
+surface_material_override/0 = ExtResource("2_kqylh")

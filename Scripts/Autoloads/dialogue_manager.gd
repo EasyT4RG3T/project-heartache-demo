@@ -20,7 +20,7 @@ var default_font_size: int = 40
 var dialogues: Array[RichTextLabel] = []
 
 
-func say(text: String) -> void:
+func say(text: String, duration: float = 10) -> void:
 	var label: RichTextLabel = RichTextLabel.new()
 	vbox.add_child(label)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -53,7 +53,7 @@ func say(text: String) -> void:
 	
 	dialogues.append(label)
 	
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(duration).timeout
 	if label:
 		dialogues.erase(label)
 		label.queue_free()

@@ -65,7 +65,7 @@ unique_name_in_owner = true
 
 [node name="MainCamera" type="Camera3D" parent="Head" unique_id=1704508663]
 unique_name_in_owner = true
-cull_mask = 1037
+cull_mask = 525325
 environment = ExtResource("2_f477v")
 current = true
 fov = 80.0

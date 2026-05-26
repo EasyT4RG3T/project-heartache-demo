@@ -8,39 +8,72 @@ var p: PlayerCharacter
 @onready var flashlight: Flashlight = %Flashlight
 @onready var screwdriver: Node3D = %Screwdriver
 @onready var hand: Node3D = %Hand
+@onready var journal: Node3D = %Journal
 @onready var glock_19: Node3D = %Glock19
+var glock_19_disabled: bool = true:
+	set(value):
+		glock_19_disabled = value
+		if value and current_slot == Slots.GLOCK_19:
+			current_slot = Slots.NONE
 
 
-var hand_offset: Vector3 = Vector3(0.09, -0.14, -0.15)
-var hand_aim_offset: Vector3 = Vector3(0, -0.115, -0.15)
-var wanted_hand_offset: Vector3 = Vector3.ZERO
+var slot_timer: Timer = Timer.new()
+
+
+enum Slots { NONE, INVENTORY, GLOCK_19 }
+var current_slot: Slots:
+	set(value):
+		p.inventory_input = true
+		match value:
+			Slots.NONE:
+				p.inventory_input = false
+			Slots.INVENTORY:
+				journal.show()
+				journal.animation_player.play("Open")
+				slot_timer.start(0.3)
+			Slots.GLOCK_19:
+				glock_19.process_mode = Node.PROCESS_MODE_INHERIT
+				glock_19.show()
+				glock_19.reset_physics_interpolation()
+				glock_19.animation_player.play("PullOut")
+		match current_slot:
+			Slots.NONE:
+				pass
+			Slots.INVENTORY:
+				if value == Slots.NONE:
+					journal.animation_player.play("Close")
+					slot_timer.start(0.3)
+					slot_timer.timeout.connect(func():
+						journal.hide(),
+						CONNECT_ONE_SHOT)
+				else:
+					journal.hide()
+			Slots.GLOCK_19:
+				if glock_19.aiming:
+					glock_19.aiming = false
+				if value == Slots.NONE:
+					glock_19.animation_player.play("Holster")
+					slot_timer.start(0.1)
+					slot_timer.timeout.connect(func():
+						journal.hide()
+						glock_19.process_mode = Node.PROCESS_MODE_DISABLED,
+						CONNECT_ONE_SHOT)
+				else:
+					glock_19.hide()
+					glock_19.process_mode = Node.PROCESS_MODE_DISABLED
+		
+		current_slot = value
 
 
 func _ready() -> void:
-	pass
+	add_child(slot_timer)
+	slot_timer.one_shot = true
 
 
 func take_input(event: InputEvent) -> void:
-	if glock_19.enabled:
-		_glock_19_input(event)
-
-
-func _glock_19_input(event: InputEvent) -> void:
-	if event.is_action_pressed("use_main"):
-		glock_19.shoot()
-	
-	if event.is_action_pressed("use_second"):
-		glock_19.aim()
-	
-	if event.is_action_released("use_second"):
-		if SaverLoader.settings.hold_aim:
-			glock_19.stop_aim()
-	
-	if event.is_action_pressed("reload"):
-		glock_19.reload()
-	
-	if event.is_action_pressed("use_third"):
-		glock_19.mag_check()
+	match current_slot:
+		Slots.GLOCK_19:
+			glock_19.take_input(event)
 
 
 func _physics_process(delta: float) -> void:
@@ -57,32 +90,26 @@ func _physics_process(delta: float) -> void:
 		delta * 20
 	)
 	
-	if glock_19.aiming:
-		wanted_hand_offset = wanted_hand_offset.lerp(hand_aim_offset, delta * 10)
-	else:
-		wanted_hand_offset = wanted_hand_offset.lerp(hand_offset, delta * 10)
+	hand.global_transform = p.main_camera.global_transform
+
+
+func switch_slot(slot: Slots) -> void:
+	if slot_timer.time_left > 0: return
 	
-	var wanted_hand_position = p.main_camera.global_position
-	wanted_hand_position += p.main_camera.global_basis.x * wanted_hand_offset.x
-	wanted_hand_position += p.main_camera.global_basis.y * wanted_hand_offset.y
-	wanted_hand_position += p.main_camera.global_basis.z * wanted_hand_offset.z
-	
-	hand.global_position = wanted_hand_position
-
-
-func switch_clear() -> void:
-	glock_19.enabled = false
-	p.inventory_input = false
-
-
-func switch_glock() -> void:
-	if glock_19.enabled:
-		glock_19.enabled = false
-		p.inventory_input = false
-	else:
-		glock_19.enabled = true
-		p.inventory_input = true
-		glock_19.reset_physics_interpolation()
+	match slot:
+		Slots.NONE:
+			current_slot = Slots.NONE
+		Slots.INVENTORY:
+			if current_slot == Slots.INVENTORY:
+				current_slot = Slots.NONE
+			else:
+				current_slot = Slots.INVENTORY
+		Slots.GLOCK_19:
+			if glock_19_disabled: return
+			if current_slot == Slots.GLOCK_19:
+				current_slot = Slots.NONE
+			else:
+				current_slot = Slots.GLOCK_19
 
 
 func save() -> Dictionary:
@@ -96,6 +123,11 @@ func save() -> Dictionary:
 		"disabled": screwdriver.disabled,
 	}
 	
+	file["current_slot"] = current_slot
+	
+	file["glock_19"] = glock_19.save()
+	file["glock_19_disabled"] = glock_19_disabled
+	
 	return file
 
 
@@ -104,3 +136,8 @@ func load_save(file: Dictionary) -> void:
 	flashlight.light.visible = file["flashlight"]["visible"]
 	
 	screwdriver.disabled = file["screwdriver"]["disabled"]
+	
+	current_slot = file["current_slot"]
+	
+	glock_19.load_save(file["glock_19"])
+	glock_19_disabled = file["glock_19_disabled"]

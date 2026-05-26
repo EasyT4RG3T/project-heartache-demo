@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dohrusatqh4qe"]
+
+[ext_resource type="ArrayMesh" uid="uid://y6rnmgajkkuu" path="res://Assets/Assets/Kitchen/Utensils/WoodenSpoon/WoodenSpoon.obj" id="1_n7xtt"]
+[ext_resource type="Material" uid="uid://c2th03scr1wu5" path="res://Assets/Assets/Kitchen/Utensils/WoodenSpoon/WoodenSpoon.tres" id="2_k8h1d"]
+
+[node name="MeshWoodenSpoon" type="MeshInstance3D" unique_id=1381749153]
+mesh = ExtResource("1_n7xtt")
+surface_material_override/0 = ExtResource("2_k8h1d")
