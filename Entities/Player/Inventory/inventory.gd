@@ -6,15 +6,10 @@ var p: PlayerCharacter
 
 
 @onready var flashlight: Flashlight = %Flashlight
-@onready var screwdriver: Node3D = %Screwdriver
+@onready var screwdriver: Screwdriver = %Screwdriver
 @onready var hand: Node3D = %Hand
-@onready var journal: Node3D = %Journal
-@onready var glock_19: Node3D = %Glock19
-var glock_19_disabled: bool = true:
-	set(value):
-		glock_19_disabled = value
-		if value and current_slot == Slots.GLOCK_19:
-			current_slot = Slots.NONE
+@onready var journal: Journal = %Journal
+@onready var glock_19: Glock19 = %Glock19
 
 
 var slot_timer: Timer = Timer.new()
@@ -77,7 +72,12 @@ func take_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	flashlight.global_position = p.head.global_position - p.head.basis.y * 0.2 - p.head.basis.x * 0.1
+	#flashlight.global_position = p.main_camera.global_position - p.head.basis.y * 0.2 - p.head.basis.x * 0.1
+	
+	var camera_pos: Vector3 = p.main_camera.global_position - p.head.basis.y * 0.2 - p.head.basis.x * 0.1
+	var head_pos: Vector3 = p.head.global_position - p.head.basis.y * 0.2 - p.head.basis.x * 0.1
+	
+	flashlight.global_position = head_pos + ((camera_pos - head_pos) / 2)
 	
 	flashlight.global_rotation.x = lerpf(
 		flashlight.global_rotation.x,
@@ -105,7 +105,7 @@ func switch_slot(slot: Slots) -> void:
 			else:
 				current_slot = Slots.INVENTORY
 		Slots.GLOCK_19:
-			if glock_19_disabled: return
+			if glock_19.disabled: return
 			if current_slot == Slots.GLOCK_19:
 				current_slot = Slots.NONE
 			else:
@@ -126,7 +126,6 @@ func save() -> Dictionary:
 	file["current_slot"] = current_slot
 	
 	file["glock_19"] = glock_19.save()
-	file["glock_19_disabled"] = glock_19_disabled
 	
 	return file
 
@@ -140,4 +139,3 @@ func load_save(file: Dictionary) -> void:
 	current_slot = file["current_slot"]
 	
 	glock_19.load_save(file["glock_19"])
-	glock_19_disabled = file["glock_19_disabled"]

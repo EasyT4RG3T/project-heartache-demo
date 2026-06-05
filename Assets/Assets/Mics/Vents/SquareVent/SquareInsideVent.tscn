@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://16lwvfwgvfdr"]
+
+[ext_resource type="Script" uid="uid://dvk73a0jhy4ao" path="res://Assets/Assets/Mics/Vents/vent.gd" id="1_dw8rr"]
+[ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="2_k12wb"]
+[ext_resource type="PackedScene" uid="uid://b4wjvyklsdveg" path="res://Assets/Assets/Mics/Vents/SquareVent/MeshSquareVent.tscn" id="3_iynbs"]
+[ext_resource type="PackedScene" uid="uid://1vfysk3061ug" path="res://Assets/Interactable/Screw/Screw.tscn" id="4_xwq7n"]
+[ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="5_vr33y"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k771m"]
+data = PackedVector3Array(0, 0.5, 0.25, 0, 0, -0.25, 0, 0, 0.25, 0, 0.5, -0.25, 0, 0, -0.25, 0, 0.5, 0.25, -0.02, 0, -0.25, -0.02, 0.5, 0.25, -0.02, 0, 0.25, -0.02, 0.5, -0.25, -0.02, 0.5, 0.25, -0.02, 0, -0.25, -0.02, 0.5, 0.25, 0, 0.5, -0.25, 0, 0.5, 0.25, -0.02, 0.5, -0.25, 0, 0.5, -0.25, -0.02, 0.5, 0.25, -0.02, 0, -0.25, 0, 0, 0.25, 0, 0, -0.25, -0.02, 0, 0.25, 0, 0, 0.25, -0.02, 0, -0.25, -0.02, 0.5, -0.25, 0, 0, -0.25, 0, 0.5, -0.25, -0.02, 0, -0.25, 0, 0, -0.25, -0.02, 0.5, -0.25, -0.02, 0, 0.25, 0, 0.5, 0.25, 0, 0, 0.25, -0.02, 0.5, 0.25, 0, 0.5, 0.25, -0.02, 0, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n5ns5"]
+size = Vector3(0.50042725, 0.5, 0.023001954)
+
+[node name="SquareVent" type="StaticBody3D" unique_id=441020651 node_paths=PackedStringArray("screw_01", "screw_02", "hinge", "collision", "interactable_static_body_3d")]
+script = ExtResource("1_dw8rr")
+screw_01 = NodePath("Node3D/Hinge3D/Screw")
+screw_02 = NodePath("Node3D/Hinge3D/Screw2")
+hinge = NodePath("Node3D/Hinge3D")
+collision = NodePath("@CollisionShape3D@38445")
+interactable_static_body_3d = NodePath("Node3D/Hinge3D/InteractableStaticBody3D")
+
+[node name="@CollisionShape3D@38445" type="CollisionShape3D" parent="." unique_id=2025099074]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0.01968792)
+shape = SubResource("ConcavePolygonShape3D_k771m")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1643115443]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0.02)
+
+[node name="Hinge3D" type="Node3D" parent="Node3D" unique_id=82550966]
+script = ExtResource("2_k12wb")
+open_positive = false
+duration = 0.5
+locked = true
+auto_unlock = 2
+max_positive = 0.0
+max_negative = 90.0
+metadata/_custom_type_script = "uid://ejx8vfok1s3u"
+
+[node name="MeshSquareVent" parent="Node3D/Hinge3D" unique_id=554461989 instance=ExtResource("3_iynbs")]
+transform = Transform3D(-4.196293e-08, 0.96, 0, -0.96, -4.196293e-08, 0, 0, 0, 0.96, 0, 0, -0.02)
+
+[node name="Screw" parent="Node3D/Hinge3D" unique_id=1165702596 instance=ExtResource("4_xwq7n")]
+transform = Transform3D(-1, -4.3711385e-08, 4.371139e-08, 4.3711385e-08, 4.3711392e-08, 1, -4.371139e-08, 1, -4.371139e-08, 0.4881425, 0.23791976, 0.0006248895)
+
+[node name="Screw2" parent="Node3D/Hinge3D" unique_id=1918544570 instance=ExtResource("4_xwq7n")]
+transform = Transform3D(-1, -4.3711385e-08, 4.371139e-08, 4.3711385e-08, 4.3711392e-08, 1, -4.371139e-08, 1, -4.371139e-08, 0.48815322, -0.23814563, 0.0010000002)
+
+[node name="InteractableStaticBody3D" type="StaticBody3D" parent="Node3D/Hinge3D" unique_id=886152807]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("5_vr33y")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Hinge3D/InteractableStaticBody3D" unique_id=1478087441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25845337, -8.881784e-16, -0.026349124)
+shape = SubResource("BoxShape3D_n5ns5")

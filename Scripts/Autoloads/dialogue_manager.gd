@@ -57,6 +57,8 @@ func say(text: String, duration: float = 10) -> void:
 	if label:
 		dialogues.erase(label)
 		label.queue_free()
+	
+	return
 
 
 func clear() -> void:

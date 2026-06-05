@@ -5,9 +5,9 @@ extends Control
 @onready var thought_label: RichTextLabel = %ThoughtLabel
 
 
-@export var hud_color_primary: Color = Color.GRAY
-@export var hud_color_secondary: Color = Color.DIM_GRAY
-@export var hud_color_accent: Color = Color.LIGHT_GRAY
+@export var hud_color_primary: Color = Color.LIGHT_GRAY
+@export var hud_color_secondary: Color = Color.GRAY
+@export var hud_color_accent: Color = Color.GHOST_WHITE
 @export var hud_opacity_active: float = 0.8
 @export var hud_opacity_inactive: float = 0.0
 @export var thought_text_offset: float = 50.0

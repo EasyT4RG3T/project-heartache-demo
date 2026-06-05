@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cp87aiml4p6sn"]
+
+[ext_resource type="Texture2D" uid="uid://6mxlkbbevy1c" path="res://Entities/Skeleton/Skeleton_albedo.png" id="1_txe1x"]
+
+[resource]
+albedo_color = Color(0.54114014, 0.13920002, 0.87, 1)
+albedo_texture = ExtResource("1_txe1x")
+metallic = 0.5
+roughness = 0.75
+emission_enabled = true
+emission = Color(0.24749997, 0, 0.27, 1)
+emission_energy_multiplier = 0.2
+texture_filter = 2

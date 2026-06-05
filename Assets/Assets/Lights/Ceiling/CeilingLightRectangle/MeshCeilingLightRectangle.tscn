@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://m3lowajr78xh"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjgr88td7jhwj" path="res://Assets/Assets/Lights/Ceiling/CeilingLightRectangle/CeilingLightRectangle.obj" id="1_6npvy"]
+[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_bt40h"]
+[ext_resource type="Material" uid="uid://c3exb48g5dfjw" path="res://Assets/Materials/Light/Warm/WarmLight.tres" id="3_qi6kx"]
+
+[node name="MeshCeilingLightRectangle" type="MeshInstance3D" unique_id=1743645727]
+mesh = ExtResource("1_6npvy")
+surface_material_override/0 = ExtResource("2_bt40h")
+surface_material_override/1 = ExtResource("3_qi6kx")

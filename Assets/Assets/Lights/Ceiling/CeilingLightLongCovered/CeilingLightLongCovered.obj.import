@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwanjm1pj5hse"
+path="res://.godot/imported/CeilingLightLongCovered.obj-ee20ae357057e723173303c25772556d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CeilingLightLongCovered.obj-ee20ae357057e723173303c25772556d.mesh"]
+
+source_file="res://Assets/Assets/Lights/Ceiling/CeilingLightLongCovered/CeilingLightLongCovered.obj"
+dest_files=["res://.godot/imported/CeilingLightLongCovered.obj-ee20ae357057e723173303c25772556d.mesh", "res://.godot/imported/CeilingLightLongCovered.obj-ee20ae357057e723173303c25772556d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

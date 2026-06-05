@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cqmxdd5na22ou"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxkw1vpcywaui" path="res://Assets/Assets/Doors/Staff/StaffDoorHandle.obj" id="1_xrt5j"]
+[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_q7nmi"]
+
+[node name="MeshStaffDoorHandle" type="MeshInstance3D" unique_id=1811335509]
+mesh = ExtResource("1_xrt5j")
+surface_material_override/0 = ExtResource("2_q7nmi")

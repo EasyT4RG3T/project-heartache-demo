@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d36rb1ttwronc"]
 
 [ext_resource type="ArrayMesh" uid="uid://bhvbunouw4j5b" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket01/Blanket01.obj" id="1_tek1l"]
-[ext_resource type="Material" uid="uid://cftn2g8j310mm" path="res://Assets/Materials/Noise/SmoothNoise/LightGray/SmoothNoiseLightGray.tres" id="2_6ynx5"]
-[ext_resource type="Material" uid="uid://cnrx2guo5cwif" path="res://Assets/Materials/Noise/SmoothNoise/DarkGreen/SmoothNoiseDarkGreen.tres" id="2_bt31h"]
+[ext_resource type="Material" uid="uid://cftn2g8j310mm" path="res://Assets/Materials/Noise/SmoothNoise/SmoothNoiseLightGray.tres" id="2_6ynx5"]
+[ext_resource type="Material" uid="uid://cnrx2guo5cwif" path="res://Assets/Materials/Noise/SmoothNoise/SmoothNoiseDarkGreen.tres" id="2_bt31h"]
 
 [node name="MeshBlanket01" type="MeshInstance3D" unique_id=1965913316]
 mesh = ExtResource("1_tek1l")

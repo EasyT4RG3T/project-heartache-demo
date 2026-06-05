@@ -1,21 +1,13 @@
 [gd_scene format=3 uid="uid://bf5kqm6hb2ud5"]
 
 [ext_resource type="PackedScene" uid="uid://ielxcqwxvcym" path="res://Assets/Maps/PrisonBlockLowSec/MeshFakeCell02.tscn" id="1_wnrg0"]
-[ext_resource type="ArrayMesh" uid="uid://bgs7qfn03y3kn" path="res://Assets/Maps/PrisonBlockLowSec/FakeCell02.obj" id="2_wpprx"]
-[ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="3_jpmm0"]
-[ext_resource type="Material" uid="uid://ds6hr7xfg7lwc" path="res://Assets/Materials/Plaster/PlasterLightOrange.tres" id="4_xkw0a"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fkoy5"]
 data = PackedVector3Array(-7.6, 0, -2.7, -6.6, 0, -2.5, -7.6, 0, -2.5, -6.6, 0, -2.7, -6.6, 0, -2.5, -7.6, 0, -2.7, -5, 0, 1.5, -8, 0, -1.4, -5, 0, -0.79999995, -5, 0, 1.5, -8, 0, 1.5, -8, 0, -1.4, -5, 3, -0.79999995, -5, 0, 1.5, -5, 0, -0.79999995, -5, 3, 1.5, -5, 0, 1.5, -5, 3, -0.79999995, -8, 3, 1.5, -8, 0, -1.4, -8, 0, 1.5, -8, 3, -1.4, -8, 0, -1.4, -8, 3, 1.5, -8, 3, -2.5, -8, 0, -1.4, -8, 3, -1.4, -8, 0, -2.5, -8, 0, -1.4, -8, 3, -2.5, -5, 3, 1.5, -8, 0, 1.5, -5, 0, 1.5, -8, 3, 1.5, -8, 0, 1.5, -5, 3, 1.5, -6.6, 2, -2.7, -7.6, 2, -2.5, -6.6, 2, -2.5, -7.6, 2, -2.7, -7.6, 2, -2.5, -6.6, 2, -2.7, -6.6, 0, -2.7, -6.6, 2, -2.5, -6.6, 0, -2.5, -6.6, 2, -2.7, -6.6, 2, -2.5, -6.6, 0, -2.7, -7.6, 0, -2.5, -7.6, 2, -2.7, -7.6, 0, -2.7, -7.6, 2, -2.5, -7.6, 2, -2.7, -7.6, 0, -2.5, -6.2, 3, -2.5, -6.2, 0, -1.4, -6.2, 0, -2.5, -6.2, 3, -1.4, -6.2, 0, -1.4, -6.2, 3, -2.5, -8, 3, -1.4, -8, 3, 1.5, -5, 3, 1.5, -5, 3, 1.5, -5, 3, -0.79999995, -8, 3, -1.4, -6.2, 3, -1.4, -8, 3, -1.4, -5, 3, -0.79999995, -6.2, 3, -1.4, -6.2, 3, -2.5, -8, 3, -1.4, -8, 3, -1.4, -6.2, 3, -2.5, -8, 3, -2.5)
 
 [node name="StaticFakeCell02" type="StaticBody3D" unique_id=843726955]
 
-[node name="MeshFakeCell02" type="MeshInstance3D" parent="." unique_id=1564866535 instance=ExtResource("1_wnrg0")]
-layers = 33
-mesh = ExtResource("2_wpprx")
-surface_material_override/0 = ExtResource("3_jpmm0")
-surface_material_override/1 = ExtResource("4_xkw0a")
-surface_material_override/2 = ExtResource("3_jpmm0")
+[node name="MeshFakeCell02" parent="." unique_id=1564866535 instance=ExtResource("1_wnrg0")]
 
 [node name="@CollisionShape3D@30591" type="CollisionShape3D" parent="." unique_id=1714511806]
 shape = SubResource("ConcavePolygonShape3D_fkoy5")

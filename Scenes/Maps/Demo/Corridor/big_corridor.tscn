@@ -30,6 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://bvhefcbarv2ux" path="res://Assets/Assets/Decorations/Photos/Paper/MeshDocument01.tscn" id="28_4rt4r"]
 [ext_resource type="PackedScene" uid="uid://cw5cq5yylyi0v" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBoxFlat01/StaticBigCardboardBoxFlat01.tscn" id="29_rgvan"]
 [ext_resource type="PackedScene" uid="uid://bxxxwbs1omnvm" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBoxFlat/StaticCardboardBoxFlat.tscn" id="30_0ksg7"]
+[ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="31_jy5jr"]
+[ext_resource type="PackedScene" uid="uid://coha7fhwe5plg" path="res://Assets/Assets/Lights/Ceiling/CeilingLightLongOpen02/StaticCeilingLightLongOpen02.tscn" id="32_4rt4r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5a1ox"]
 size = Vector3(0.5, 0.6, 0.5)
@@ -129,7 +131,8 @@ shape = SubResource("BoxShape3D_5a1ox")
 [node name="Lights" type="Node3D" parent="." unique_id=1490990878]
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="Lights" unique_id=202540133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -3.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -139,7 +142,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=143813590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 2.8, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 2.8999999, -3.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -149,7 +153,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D11" type="OmniLight3D" parent="Lights" unique_id=1398664201]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9, 2.8, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9, 2.8999999, -3.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -159,7 +164,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D12" type="OmniLight3D" parent="Lights" unique_id=1082664838]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9, 2.8, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9, 2.8999999, -3.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -169,7 +175,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D13" type="OmniLight3D" parent="Lights" unique_id=949550406]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9, 2.8, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9, 2.8999999, -3.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -179,7 +186,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=18473507]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, -7.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -7.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -189,7 +197,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=323883328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, -11.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -11.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -199,7 +208,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D9" type="OmniLight3D" parent="Lights" unique_id=134329275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, -15.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -15.6)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -209,7 +219,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=66765070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, 0.4000001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 0.4000001)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -219,7 +230,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1630342995]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, 4.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 4.4)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -229,7 +241,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=438042761]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, 8.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 8.4)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -239,7 +252,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=2079716841]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, 12.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 12.4)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -249,7 +263,8 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=1919066574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8, 16.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 16.4)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -259,8 +274,9 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D14" type="OmniLight3D" parent="Lights" unique_id=813488866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.3999999, -3.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.4999999, -3.6)
 visible = false
+layers = 3
 light_energy = 0.5
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -271,8 +287,9 @@ script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D15" type="OmniLight3D" parent="Lights" unique_id=647261827]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.3999999, 9.099999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.4999999, 9.099999)
 visible = false
+layers = 3
 light_energy = 0.5
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -332,13 +349,13 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.200001, 0.1, -7.6)
 
 [node name="StaticBench4" parent="Assets" unique_id=945929003 instance=ExtResource("8_mwq0s")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.200001, 0.1, 8.499999)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.200001, 0.1, 8.799999)
 
 [node name="StaticTrashCan01" parent="Assets" unique_id=543805757 instance=ExtResource("9_jv4t3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6, 0.1, 1)
 
 [node name="StaticTrashCanFull01" parent="Assets" unique_id=1093351646 instance=ExtResource("12_1leyd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 0.1, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 0.1, 7.8)
 
 [node name="StaticBench6" parent="Assets" unique_id=1415749412 instance=ExtResource("8_mwq0s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.700001, 0.1, -2.3000004)
@@ -426,3 +443,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.496428, 0.19999996, -2.62
 
 [node name="DynamicBottle05" parent="Assets" unique_id=1297596817 instance=ExtResource("12_440gm")]
 transform = Transform3D(-3.2147927e-08, -0.73545885, -0.6775694, 1, -4.371139e-08, 0, -2.9617498e-08, -0.6775694, 0.73545885, -27.407915, 0.12565684, -2.6811984)
+
+[node name="StaffDoor" parent="Assets" unique_id=7613722 instance=ExtResource("31_jy5jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7, 0.1, -5.2000003)
+
+[node name="StaffDoor2" parent="Assets" unique_id=1623434203 instance=ExtResource("31_jy5jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7, 0.1, -5.2000003)
+
+[node name="StaffDoor3" parent="Assets" unique_id=2108432235 instance=ExtResource("31_jy5jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7, 0.1, -2)
+
+[node name="Hinge3D" parent="Assets/StaffDoor3" index="0" unique_id=1673009916]
+duration = 1.2
+id = 1
+max_positive = 95.0
+max_negative = 95.0
+
+[node name="StaticCeilingLightLongOpen02" parent="Assets" unique_id=637214842 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -3.6)
+
+[node name="StaticCeilingLightLongOpen11" parent="Assets" unique_id=1962235402 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.900001, 3.1000001, -3.6)
+
+[node name="StaticCeilingLightLongOpen12" parent="Assets" unique_id=1016314849 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.900002, 3.1000001, -3.6)
+
+[node name="StaticCeilingLightLongOpen13" parent="Assets" unique_id=1447911283 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.900002, 3.1000001, -3.6)
+
+[node name="StaticCeilingLightLongOpen14" parent="Assets" unique_id=400562475 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.900002, 3.1000001, -3.6)
+
+[node name="StaticCeilingLightLongOpen08" parent="Assets" unique_id=1989047153 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -7.6)
+
+[node name="StaticCeilingLightLongOpen09" parent="Assets" unique_id=1525147029 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -11.6)
+
+[node name="StaticCeilingLightLongOpen10" parent="Assets" unique_id=770557920 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -15.6)
+
+[node name="StaticCeilingLightLongOpen03" parent="Assets" unique_id=579821522 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 0.4000001)
+
+[node name="StaticCeilingLightLongOpen04" parent="Assets" unique_id=728336745 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 4.4)
+
+[node name="StaticCeilingLightLongOpen05" parent="Assets" unique_id=168872798 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 8.4)
+
+[node name="StaticCeilingLightLongOpen06" parent="Assets" unique_id=1437119830 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 12.4)
+
+[node name="StaticCeilingLightLongOpen07" parent="Assets" unique_id=1448440207 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 16.4)
+
+[editable path="Assets/StaffDoor3"]

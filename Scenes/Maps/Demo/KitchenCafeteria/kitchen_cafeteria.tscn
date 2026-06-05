@@ -41,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://bvq5vhjcat220" path="res://Assets/Assets/Kitchen/Furniture/UtensilHanger/StaticUtensilHanger.tscn" id="27_d61sy"]
 [ext_resource type="PackedScene" uid="uid://dohrusatqh4qe" path="res://Assets/Assets/Kitchen/Utensils/WoodenSpoon/MeshWoodenSpoon.tscn" id="28_r3jby"]
 [ext_resource type="PackedScene" uid="uid://beb3nd87yuklp" path="res://Assets/Assets/Kitchen/Utensils/Tongs/MeshTongs.tscn" id="33_rmcr3"]
+[ext_resource type="PackedScene" uid="uid://bwvpe4osmv3bd" path="res://Assets/Assets/Decorations/Wall/Menu/MeshMenu.tscn" id="42_j03k8"]
+[ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="43_kgisq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yfvcr"]
 size = Vector3(4, 3, 6)
@@ -111,6 +113,7 @@ shape = SubResource("BoxShape3D_yfvcr")
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=591884946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 6.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -121,6 +124,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=328966977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 6.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -131,6 +135,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D3" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1224186252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 6.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -141,6 +146,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D7" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1015523654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 3.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -151,6 +157,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D8" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=164154974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 3.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -161,6 +168,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D9" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=617309603]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 3.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -171,6 +179,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D15" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=2096295663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 0.099999905)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -181,6 +190,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D16" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1782098917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 0.099999905)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -191,6 +201,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D17" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1749502996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 0.099999905)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -201,6 +212,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D4" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=661620656]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 9.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -211,6 +223,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=912282068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 9.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -221,6 +234,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D6" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1226891196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 9.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -231,6 +245,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D18" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1268523589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 12.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -241,6 +256,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D19" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1693552050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 12.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -251,6 +267,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D20" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1370718292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 12.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1126,6 +1143,9 @@ transform = Transform3D(-0.99999994, 1.5099576e-07, -6.217249e-15, -1.4585073e-0
 [node name="RightHandIK" parent="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner3" index="4" unique_id=467801966]
 transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-07, -0.96592534, 0.25881895, 3.908058e-08, 0.25881895, 0.9659254, -0.25, 0.85420305, 0)
 
+[node name="MeshMenu" parent="StaticCafeteria/Assets" unique_id=1773308484 instance=ExtResource("42_j03k8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.598143, 2.5, 6.1000004)
+
 [node name="StaticKitchen" parent="." unique_id=714011719 instance=ExtResource("4_sl6a2")]
 unique_name_in_owner = true
 
@@ -1158,6 +1178,7 @@ shape = SubResource("BoxShape3D_5tvj5")
 
 [node name="StaticOmniLight3D10" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1191983960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 10.1)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1168,6 +1189,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D11" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1373379947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 7.1000004)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1178,6 +1200,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D12" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1350594426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 4.1000004)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1188,6 +1211,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D14" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1139956534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 1.1000004)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1198,6 +1222,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D13" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=768088372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, -0.8999996)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1369,6 +1394,18 @@ transform = Transform3D(1, -4.368053e-08, 4.206923e-08, 4.368053e-08, 0.03756805
 [node name="MeshTongs" parent="StaticKitchen/Assets/StaticUtensilHanger2" unique_id=441489591 instance=ExtResource("33_rmcr3")]
 transform = Transform3D(1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.3711385e-08, -0.3241558, -0.04688835, 0.050966263)
 
+[node name="StaffDoor" parent="StaticKitchen/Assets" unique_id=7613722 instance=ExtResource("43_kgisq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3, 0.1, 0.2)
+
+[node name="Hinge3D" parent="StaticKitchen/Assets/StaffDoor" index="0" unique_id=1673009916]
+transform = Transform3D(-0.08715577, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, -0.08715577, -0.5, 0, 0)
+duration = 1.2
+locked = false
+max_positive = 95.0
+max_negative = 95.0
+open_progress = -95.0
+open = true
+
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable/DefaultPrisoner2"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable2/DefaultPrisoner"]
@@ -1433,3 +1470,4 @@ transform = Transform3D(1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner2"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner3"]
+[editable path="StaticKitchen/Assets/StaffDoor"]

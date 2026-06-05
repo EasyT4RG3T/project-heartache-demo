@@ -24,6 +24,7 @@ var out_of_area: bool = false:
 
 @export_tool_button("Set up") var set_up: Callable = func():
 	if Engine.is_editor_hint():
+		layers = 3
 		spot_angle = 80
 		light_bake_mode = Light3D.BAKE_DISABLED
 		shadow_enabled = true

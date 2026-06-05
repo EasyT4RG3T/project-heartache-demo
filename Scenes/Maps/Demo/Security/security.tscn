@@ -6,8 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://vrmd7hqt8pjm" path="res://Assets/Maps/Security/StaticJanitor.tscn" id="4_55yb5"]
 [ext_resource type="PackedScene" uid="uid://dlhprli7bfhy6" path="res://Assets/Maps/Security/StaticSecurityCorridor.tscn" id="5_bn24p"]
 [ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="6_bwggy"]
+[ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="7_tq8nf"]
 [ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="7_wku3x"]
+[ext_resource type="PackedScene" uid="uid://bllom5di64vbs" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/StaticCeilingLightBulb.tscn" id="8_bwggy"]
 [ext_resource type="PackedScene" uid="uid://cmkk7ts2ihsld" path="res://Assets/Assets/Lights/Wall/OpenSmallWallLight/MeshOpenSmallWallLight.tscn" id="8_rdvlf"]
+[ext_resource type="PackedScene" uid="uid://cy8tgg73nxcr1" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenBigCardboardBox02/StaticBrokenBigCardboardBox02.tscn" id="10_bn24p"]
+[ext_resource type="PackedScene" uid="uid://bljvpy5pm07l4" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenCardboardBoxFlat/StaticBrokenCardboardBoxFlat.tscn" id="11_bwggy"]
+[ext_resource type="PackedScene" uid="uid://cp7gd0aqwos2e" path="res://Assets/Assets/Trash/CardboardBoxes/BrokenSmallCardboardBoxFlat/StaticBrokenSmallCardboardBoxFlat.tscn" id="12_wku3x"]
+[ext_resource type="PackedScene" uid="uid://nqinfwshcygf" path="res://Assets/Assets/Lights/Ceiling/CeilingLightRound/StaticCeilingLightRound.tscn" id="14_wku3x"]
 
 [node name="Security" type="Node3D" unique_id=108471197]
 
@@ -30,6 +36,21 @@ light_data = ExtResource("2_tq8nf")
 script = ExtResource("3_ldogt")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
 
+[node name="LightmapProbe" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1422910986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.5, -8)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1438009152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.5, -5.2000003)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=651760338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, -5.2000003)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=885174757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.5, -8.3)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=741765625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.5, -6.5000005)
+
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1855444644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81342775, 1.4999999, -7.324878)
 blend_distance = 0.0
@@ -43,7 +64,8 @@ enable_shadows = true
 [node name="Lights" type="Node3D" parent="StaticJanitor" unique_id=1710813099]
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticJanitor/Lights" unique_id=812972078]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 2.8, -7.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 2.7, -7.4)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -63,12 +85,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999995, 0, -6.1)
 [node name="StaticIndustrialShelf3" parent="StaticJanitor/Assets" unique_id=2133859927 instance=ExtResource("7_wku3x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999995, 0, -8.700001)
 
+[node name="StaffDoor" parent="StaticJanitor/Assets" unique_id=7613722 instance=ExtResource("7_tq8nf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.2, 0, -7.9)
+
+[node name="Hinge3D" parent="StaticJanitor/Assets/StaffDoor" index="0" unique_id=1673009916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.0502021)
+open_negative = false
+max_positive = 130.0
+
+[node name="StaticCeilingLightBulb" parent="StaticJanitor/Assets" unique_id=1761225178 instance=ExtResource("8_bwggy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 2.8, -7.4)
+
 [node name="StaticSecurityCorridor" parent="." unique_id=389981551 instance=ExtResource("5_bn24p")]
 
 [node name="Lights" type="Node3D" parent="StaticSecurityCorridor" unique_id=42368124]
 
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=1951953763]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 2.8, -7.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 2.8999999, -7.4)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -79,6 +113,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D3" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=720133984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19999999, 1.8, -5.6562824)
+layers = 3
 light_energy = 0.75
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -90,6 +125,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D4" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=1674933675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4000001, 1.8, -5.6562824)
+layers = 3
 light_energy = 0.75
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -101,6 +137,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=1095922106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.8, -5.6562824)
+layers = 3
 light_energy = 0.75
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -112,6 +149,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D6" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=2083209267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1.8, -5.6562824)
+layers = 3
 light_energy = 0.75
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -123,6 +161,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D7" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=674667542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.044262, 1.8, -6.6562824)
+layers = 3
 light_energy = 0.75
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -134,6 +173,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D8" type="OmniLight3D" parent="StaticSecurityCorridor/Lights" unique_id=879933313]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9442619, 1.8, -6.6562824)
+layers = 3
 light_energy = 0.75
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -162,3 +202,32 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -7.0
 
 [node name="MeshOpenSmallWallLight6" parent="StaticSecurityCorridor/Assets" unique_id=1263827839 instance=ExtResource("8_rdvlf")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.9042224, 1.8, -6.6562824)
+
+[node name="StaffDoor" parent="StaticSecurityCorridor/Assets" unique_id=1575523502 instance=ExtResource("7_tq8nf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4000001, 0, -7.9)
+
+[node name="Hinge3D" parent="StaticSecurityCorridor/Assets/StaffDoor" index="0" unique_id=1673009916]
+id = 3
+max_positive = 95.0
+max_negative = 95.0
+
+[node name="StaticIndustrialShelf" parent="StaticSecurityCorridor/Assets" unique_id=285565647 instance=ExtResource("7_wku3x")]
+transform = Transform3D(-0.049638912, -0.003972267, 0.9987593, 0.49728897, 0.8671277, 0.02816429, -0.86616373, 0.49807003, -0.041067906, -2.1000001, 0.17553394, -5.977333)
+
+[node name="StaticBrokenBigCardboardBox02" parent="StaticSecurityCorridor/Assets" unique_id=230780182 instance=ExtResource("10_bn24p")]
+transform = Transform3D(0.9709299, 0, -0.2393639, 0, 1, 0, 0.2393639, 0, 0.9709299, -2.1414814, 0.02792688, -5.0121965)
+
+[node name="StaticBrokenCardboardBoxFlat" parent="StaticSecurityCorridor/Assets" unique_id=152692877 instance=ExtResource("11_bwggy")]
+transform = Transform3D(0.021448474, -4.3794976e-10, 0.99977005, 0.3928727, 0.91955423, -0.008428459, -0.9193428, 0.39296314, 0.019723035, -2.210659, 0.47232464, -5.2313614)
+
+[node name="StaticBrokenSmallCardboardBoxFlat" parent="StaticSecurityCorridor/Assets" unique_id=173204842 instance=ExtResource("12_wku3x")]
+transform = Transform3D(-0.26937363, 0, 0.96303576, 0, 1, 0, -0.96303576, 0, -0.26937363, -2.0158992, 0.01354312, -5.364234)
+
+[node name="StaticBrokenSmallCardboardBoxFlat2" parent="StaticSecurityCorridor/Assets" unique_id=1015413716 instance=ExtResource("12_wku3x")]
+transform = Transform3D(0.2756542, 0, 0.961257, -0.8330427, 0.4989718, 0.23888692, -0.47964013, -0.86661834, 0.13754366, -2.2539048, 0.5028434, -4.76869)
+
+[node name="StaticCeilingLightRound" parent="StaticSecurityCorridor/Assets" unique_id=1300730171 instance=ExtResource("14_wku3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 3, -7.4)
+
+[editable path="StaticJanitor/Assets/StaffDoor"]
+[editable path="StaticSecurityCorridor/Assets/StaffDoor"]

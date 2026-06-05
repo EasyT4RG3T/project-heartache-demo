@@ -1,3 +1,4 @@
+class_name Glock19
 extends Node3D
 
 
@@ -55,6 +56,23 @@ var offset: Vector3 = Vector3(0.09, -0.14, -0.15)
 var aim_offset: Vector3 = Vector3(0, -0.115, -0.15)
 var wanted_offset: Vector3 = Vector3.ZERO
 
+var disabled: bool = true:
+	set(value):
+		disabled = value 
+		if value:
+			if GameManager.player_character.inventory.current_slot == Inventory.Slots.GLOCK_19:
+				GameManager.player_character.inventory.current_slot = Inventory.Slots.NONE
+			if journal_entry:
+				journal_entry.queue_free()
+		else:
+			journal_entry = GameManager.journal.add("Glock19", "[color=red][1][/color] Glock19")
+			if mags > 1:
+				journal_entry.text = "[color=red][1][/color] Glock19 (" + str(mags) + " mags)"
+			elif mags == 1:
+				journal_entry.text = "[color=red][1][/color] Glock19 (one mag)"
+			else:
+				journal_entry.text = "[color=red][1][/color] Glock19"
+
 var aiming: bool = false
 
 var recoil: Vector2 = Vector2.ZERO
@@ -66,7 +84,6 @@ var ammo: int = 16:
 		if value == 0:
 			for i in 15:
 				get("bullet_" + str(i + 1)).hide()
-				print("bullet_" + str(i + 1) + "hide")
 			bullet_barrel.hide()
 			bullet_chamber.hide()
 		elif value < ammo:
@@ -76,19 +93,28 @@ var ammo: int = 16:
 			for i in value:
 				if get("bullet_" + str(i)):
 					get("bullet_" + str(i)).show()
-					print("bullet_" + str(i) + "show")
 			bullet_barrel.show()
 			bullet_chamber.show()
 		
 		ammo = value
 
-var mags: int = 3
+var mags: int = 3:
+	set(value):
+		mags = value
+		if mags > 1:
+			journal_entry.text = "[color=red][1][/color] Glock19 (" + str(mags) + " mags)"
+		elif mags == 1:
+			journal_entry.text = "[color=red][1][/color] Glock19 (one mag)"
+		else:
+			journal_entry.text = "[color=red][1][/color] Glock19"
 
 var can_shoot: bool = true
 
 var direct_space_state: PhysicsDirectSpaceState3D
 var aim_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var shot_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
+
+var journal_entry: RichTextLabel
 
 
 func take_input(event: InputEvent) -> void:
@@ -242,10 +268,13 @@ func reload() -> void:
 	
 	if mags > 1:
 		DialogueManager.say(str(mags) + " mags left", 3)
+		journal_entry.text = "[color=red][1][/color] Glock19 (" + str(mags) + " mags)"
 	elif mags == 1:
 		DialogueManager.say("one mag left", 3)
+		journal_entry.text = "[color=red][1][/color] Glock19 (one mag)"
 	else:
 		DialogueManager.say("that's the last mag", 3)
+		journal_entry.text = "[color=red][1][/color] Glock19"
 	
 	if ammo > 0:
 		animation_player.play("Reload")
@@ -303,9 +332,9 @@ func play_sound(sound: int) -> void:
 		3:
 			AudioManager.play_sound("SFX", DRY_FIRE)
 		4:
-			AudioManager.play_sound("SFX", HOLSTER_IN)
+			AudioManager.play_sound("SFX", HOLSTER_IN, 10)
 		5:
-			AudioManager.play_sound("SFX", HOLSTER_OUT)
+			AudioManager.play_sound("SFX", HOLSTER_OUT, 10)
 		6:
 			AudioManager.play_sound("SFX", MAG_IN)
 		7:
@@ -321,6 +350,7 @@ func play_sound(sound: int) -> void:
 func save() -> Dictionary:
 	var file: Dictionary = {}
 	
+	file["disabled"] = disabled
 	file["aiming"] = aiming
 	file["ammo"] = ammo
 	file["mags"] = mags
@@ -330,6 +360,7 @@ func save() -> Dictionary:
 
 
 func load_save(file: Dictionary) -> void:
+	disabled = file["disabled"]
 	aiming = file["aiming"]
 	ammo = 0
 	ammo = file["ammo"]

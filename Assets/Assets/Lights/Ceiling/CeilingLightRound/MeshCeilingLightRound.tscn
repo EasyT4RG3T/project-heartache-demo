@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0hms3xxvnlgy"]
+
+[ext_resource type="ArrayMesh" uid="uid://cw5xyp8lldh5q" path="res://Assets/Assets/Lights/Ceiling/CeilingLightRound/CeilingLightRound.obj" id="1_yf5j1"]
+[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_umrjh"]
+[ext_resource type="Material" uid="uid://c3exb48g5dfjw" path="res://Assets/Materials/Light/Warm/WarmLight.tres" id="3_s3fyi"]
+
+[node name="MeshCeilingLightRound" type="MeshInstance3D" unique_id=1997455132]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("1_yf5j1")
+surface_material_override/0 = ExtResource("2_umrjh")
+surface_material_override/1 = ExtResource("3_s3fyi")

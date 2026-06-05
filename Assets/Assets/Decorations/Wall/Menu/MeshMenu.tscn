@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwvpe4osmv3bd"]
+
+[ext_resource type="ArrayMesh" uid="uid://corgrtvxxocvy" path="res://Assets/Assets/Decorations/Wall/Menu/Menu.obj" id="1_6v8ce"]
+[ext_resource type="Material" uid="uid://vof3gbtx4waq" path="res://Assets/Materials/Wood/SmoothWood/DarkSmoothWood.tres" id="2_bph58"]
+
+[node name="MeshMenu" type="MeshInstance3D" unique_id=1773308484]
+mesh = ExtResource("1_6v8ce")
+surface_material_override/0 = ExtResource("2_bph58")

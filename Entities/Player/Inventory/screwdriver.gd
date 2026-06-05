@@ -1,3 +1,4 @@
+class_name Screwdriver
 extends Node3D
 
 
@@ -12,6 +13,11 @@ var disabled: bool = true:
 		if value:
 			collision_shape_3d.disabled = true
 			hide()
+			if journal_entry:
+				journal_entry.queue_free()
+		else:
+			journal_entry = GameManager.journal.add("Screwdriver", "[color=red][ ][/color] Screwdriver")
+var journal_entry: RichTextLabel
 
 var move_tween: Tween
 

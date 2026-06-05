@@ -5,7 +5,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_o63br"]
 height = 0.040463865
-radius = 0.013
+radius = 0.015
 
 [node name="Screw" type="StaticBody3D" unique_id=1165702596]
 collision_layer = 256

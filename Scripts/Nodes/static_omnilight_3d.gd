@@ -5,6 +5,7 @@ extends OmniLight3D
 
 @export_tool_button("Set up") var set_up: Callable = func():
 	if Engine.is_editor_hint():
+		layers = 3
 		light_bake_mode = Light3D.BAKE_STATIC
 		omni_range = 3.0
 		distance_fade_enabled = true

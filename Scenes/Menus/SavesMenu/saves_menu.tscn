@@ -104,15 +104,15 @@ flat = true
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1907884177]
 layout_mode = 2
 
-[node name="SelectedDescription" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1460385873]
+[node name="SelectedDescription" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=2051884542]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 3
+bbcode_enabled = true
 text = "DESCRIPTION"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=337921055]
 layout_mode = 2

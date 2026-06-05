@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://civahpu0bsrib"]
+
+[ext_resource type="ArrayMesh" uid="uid://dkmwwhq4ehlj" path="res://Assets/Assets/Doors/Staff/StaffDoorPlate.obj" id="1_352x3"]
+
+[node name="MeshStaffDoorPlate" type="MeshInstance3D" unique_id=735961663]
+mesh = ExtResource("1_352x3")

@@ -3,6 +3,33 @@
 [ext_resource type="PackedScene" uid="uid://grm0kdgniqtv" path="res://Assets/Assets/Mics/Journal/Journal.glb" id="1_4q54c"]
 [ext_resource type="Material" uid="uid://7reqrm7mia1d" path="res://Assets/Assets/Mics/Journal/Journal.tres" id="2_aqscl"]
 [ext_resource type="Script" uid="uid://bq5ctnv5g8lvd" path="res://Entities/Player/Inventory/journal.gd" id="2_vr0ld"]
+[ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="4_vr0ld"]
+[ext_resource type="FontFile" uid="uid://xoru8jjgd8sd" path="res://Assets/Fonts/Notepen.ttf" id="5_gkpdm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gkpdm"]
+size = Vector2(0.135, 0.2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gkpdm"]
+viewport_path = NodePath("JournalArmature/SubViewportContainer/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr0ld"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_gkpdm")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.05
+texture_filter = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vr0ld"]
+viewport_path = NodePath("JournalArmature/SubViewportContainer/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0vjb"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_vr0ld")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.05
+texture_filter = 2
 
 [sub_resource type="Animation" id="Animation_4q54c"]
 resource_name = "Close"
@@ -37,14 +64,14 @@ tracks/2/enabled = true
 tracks/2/path = NodePath("JournalArmature/Skeleton3D:Bone")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -7.4107746e-08, 7.410773e-08, 0.70710695, 0.7071066, 0.3, 1, 0.51060075, 0.51060057, 0.4891698, 0.48916954)
+tracks/2/keys = PackedFloat32Array(0, 1, -7.4107746e-08, 7.410773e-08, 0.70710695, 0.7071066, 0.3, 1, 0.49999982, 0.5000002, 0.50000006, 0.49999994)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("JournalArmature/Skeleton3D:Bone.001")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, -0.5, 0.3, 1, -0.015468612, 0.7069376, 0.70693755, 0.015468629)
+tracks/3/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, -0.5, 0.3, 1, -1.545431e-08, 0.70710677, 0.70710677, 1.545431e-08)
 tracks/4/type = "rotation_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
@@ -52,6 +79,54 @@ tracks/4/path = NodePath("JournalArmature/Skeleton3D:neutral_bone")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677, 0.3, 1, -0.70710677, 0, 0, 0.70710677)
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("JournalArmature/MeshInstance3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.079, 0, 0.008), Vector3(0.0005047545, 0.0008044243, 0.13672559)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("JournalArmature/MeshInstance3D2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.07933029, 0, 0.008101929), Vector3(-0.0010601059, 0.0008045435, 0.1366514)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("JournalArmature/MeshInstance3D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0), Vector3(1.5707964, 1.5707964, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("JournalArmature/MeshInstance3D2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0), Vector3(1.5707964, -1.5707964, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_vr0ld"]
 resource_name = "Open"
@@ -86,14 +161,14 @@ tracks/2/enabled = true
 tracks/2/path = NodePath("JournalArmature/Skeleton3D:Bone")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.51060075, 0.51060057, 0.4891698, 0.48916954, 0.3, 1, -7.4107746e-08, 7.410773e-08, 0.70710695, 0.7071066)
+tracks/2/keys = PackedFloat32Array(0, 1, 0.49999982, 0.5000002, 0.50000006, 0.49999994, 0.3, 1, -7.4107746e-08, 7.410773e-08, 0.70710695, 0.7071066)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("JournalArmature/Skeleton3D:Bone.001")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.015468612, 0.7069376, 0.70693755, 0.015468629, 0.3, 1, 0.5, 0.5, 0.5, -0.5)
+tracks/3/keys = PackedFloat32Array(0, 1, -1.545431e-08, 0.70710677, 0.70710677, 1.545431e-08, 0.3, 1, 0.5, 0.5, 0.5, -0.5)
 tracks/4/type = "rotation_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
@@ -101,6 +176,54 @@ tracks/4/path = NodePath("JournalArmature/Skeleton3D:neutral_bone")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677, 0.3, 1, -0.70710677, 0, 0, 0.70710677)
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("JournalArmature/MeshInstance3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0005047545, 0.0008044243, 0.13672559), Vector3(-0.079, 0, 0.008)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("JournalArmature/MeshInstance3D2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0010601059, 0.0008045435, 0.1366514), Vector3(0.07933029, 0, 0.008101929)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("JournalArmature/MeshInstance3D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 1.5707964, 0), Vector3(1.5707964, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("JournalArmature/MeshInstance3D2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, -1.5707964, 0), Vector3(1.5707964, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_aqscl"]
 length = 0.001
@@ -149,6 +272,54 @@ tracks/4/path = NodePath("JournalArmature/Skeleton3D:neutral_bone")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677)
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("JournalArmature/MeshInstance3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.079, 0, 0.008)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("JournalArmature/MeshInstance3D2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.07933029, 0, 0.008101929)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("JournalArmature/MeshInstance3D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("JournalArmature/MeshInstance3D2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vr0ld"]
 _data = {
@@ -157,22 +328,112 @@ _data = {
 &"RESET": SubResource("Animation_aqscl")
 }
 
-[node name="Journal" unique_id=968137669 instance=ExtResource("1_4q54c")]
+[node name="Journal" unique_id=1469078346 instance=ExtResource("1_4q54c")]
 script = ExtResource("2_vr0ld")
 
-[node name="JournalArmature" parent="." index="0" unique_id=1684005087]
+[node name="JournalArmature" parent="." index="0" unique_id=87774046]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="Skeleton3D" parent="JournalArmature" index="0" unique_id=1743231790]
-bones/0/position = Vector3(-0.0067351237, 0, -0.03527865)
-bones/0/scale = Vector3(0.99999994, 0.9999997, 0.9999998)
-bones/1/position = Vector3(0.0067442507, 0, -0.03552966)
-bones/1/scale = Vector3(1.0000001, 0.99999994, 1)
-bones/2/position = Vector3(0, 0, -0.03244883)
-bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
-
-[node name="Journal" parent="JournalArmature/Skeleton3D" index="0" unique_id=276687062]
+[node name="Journal" parent="JournalArmature/Skeleton3D" parent_id_path=PackedInt32Array(146942301) index="0" unique_id=42562379]
+layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("2_aqscl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="JournalArmature" index="1" unique_id=319270167]
+transform = Transform3D(1.0000007, 0, 0, 0, -4.3711346e-08, -0.9999996, 0, 0.99999905, -4.371137e-08, -0.079, 0, 0.008)
+layers = 2
+gi_mode = 2
+mesh = SubResource("PlaneMesh_gkpdm")
+surface_material_override/0 = SubResource("StandardMaterial3D_vr0ld")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="JournalArmature" index="2" unique_id=376333389]
+transform = Transform3D(1.0000007, 0, 0, 0, -4.3711342e-08, -0.9999995, 0, 0.9999989, -4.3711367e-08, 0.07933029, 0, 0.008101929)
+layers = 2
+gi_mode = 2
+mesh = SubResource("PlaneMesh_gkpdm")
+surface_material_override/0 = SubResource("StandardMaterial3D_c0vjb")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="JournalArmature" index="3" unique_id=1264635064]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="JournalArmature/SubViewportContainer" index="0" unique_id=298110733]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+gui_disable_input = true
+size = Vector2i(414, 600)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="JournalArmature/SubViewportContainer/SubViewport" index="0" unique_id=411733737]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemsContainer" type="VBoxContainer" parent="JournalArmature/SubViewportContainer/SubViewport/Control" index="0" unique_id=842702324]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemsRichTextLabel" type="RichTextLabel" parent="JournalArmature/SubViewportContainer/SubViewport/Control/ItemsContainer" index="0" unique_id=1779189992]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_vr0ld")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_gkpdm")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "			[color=blue][Items][/color]"
+fit_content = true
+scroll_active = false
+
+[node name="SubViewport2" type="SubViewport" parent="JournalArmature/SubViewportContainer" index="1" unique_id=1518001313]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+gui_disable_input = true
+size = Vector2i(414, 600)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="JournalArmature/SubViewportContainer/SubViewport2" index="0" unique_id=2108502887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestRichTextLabel" type="RichTextLabel" parent="JournalArmature/SubViewportContainer/SubViewport2/Control" index="0" unique_id=1269964669]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_vr0ld")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_gkpdm")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "	quest rn
+
+and/or
+
+	summary summary summary summary [color=red]important[/color] summary summary"
+scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=776264402]
 libraries/ = SubResource("AnimationLibrary_vr0ld")

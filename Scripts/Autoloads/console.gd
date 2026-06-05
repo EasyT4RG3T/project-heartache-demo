@@ -1413,11 +1413,11 @@ func _command_player_screwdriver() -> String:
 func _command_player_glock() -> String:
 	if !GameManager.player_character:
 		return "[color=red]couldn't find player[/color]"
-	if GameManager.player_character.inventory.glock_19_disabled:
-		GameManager.player_character.inventory.glock_19_disabled = false
+	if GameManager.player_character.inventory.glock_19.disabled:
+		GameManager.player_character.inventory.glock_19.disabled = false
 		return "player glock added"
 	else:
-		GameManager.player_character.inventory.glock_19_disabled = true
+		GameManager.player_character.inventory.glock_19.disabled = true
 		return "player glock removed"
 
 func _command_player_glock_mags(value: int) -> String:

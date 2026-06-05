@@ -15,7 +15,7 @@ func _ready() -> void:
 	ambient_player.bus = "Ambient"
 
 
-func play_sound(bus: StringName, sound: AudioStream, db: float = 0.0, pitch: float = 1.0) -> void:
+func play_sound(bus: StringName, sound: AudioStream, db: float = 0.0, pitch: float = 1.0) -> AudioStreamPlayer:
 	var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 	add_child(audio_player)
 	audio_player.bus = bus
@@ -25,9 +25,10 @@ func play_sound(bus: StringName, sound: AudioStream, db: float = 0.0, pitch: flo
 	audio_player.finished.connect(func():
 		audio_player.queue_free())
 	audio_player.play()
+	return audio_player
 
 
-func play_uid_sound(bus: StringName, uid_sound: String, db: float = 0.0, pitch: float = 1.0) -> void:
+func play_uid_sound(bus: StringName, uid_sound: String, db: float = 0.0, pitch: float = 1.0) -> AudioStreamPlayer:
 	var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 	add_child(audio_player)
 	var sound: AudioStream = load(ResourceUID.uid_to_path(uid_sound))
@@ -38,10 +39,11 @@ func play_uid_sound(bus: StringName, uid_sound: String, db: float = 0.0, pitch: 
 	audio_player.finished.connect(func():
 		audio_player.queue_free())
 	audio_player.play()
+	return audio_player
 
 
-func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> void:
-	var audio_player: RaytracedAudioPlayer3D = RaytracedAudioPlayer3D.new()
+func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> RaytracedAudioPlayer3D:
+	var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 	add_child(audio_player)
 	audio_player.bus = bus
 	audio_player.stream = sound
@@ -51,10 +53,11 @@ func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float 
 	audio_player.finished.connect(func():
 		audio_player.queue_free())
 	audio_player.play()
+	return audio_player
 
 
-func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> void:
-	var audio_player: RaytracedAudioPlayer3D = RaytracedAudioPlayer3D.new()
+func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> RaytracedAudioPlayer3D:
+	var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 	add_child(audio_player)
 	var sound: AudioStream = load(ResourceUID.uid_to_path(uid_sound))
 	audio_player.bus = bus
@@ -65,6 +68,7 @@ func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: flo
 	audio_player.finished.connect(func():
 		audio_player.queue_free())
 	audio_player.play()
+	return audio_player
 
 
 func play_ambient(uid: String, db: float = 0.0, pitch: float = 1.0) -> void:

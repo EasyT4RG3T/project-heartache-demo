@@ -14,9 +14,9 @@ script = ExtResource("1_wk34q")
 ignore_player = true
 max_distance = 1.2
 min_distance = 0.4
+collision_sound = "uid://buoippgr5papp"
 
 [node name="MeshScrew" parent="." unique_id=1719428110 instance=ExtResource("2_mmnbo")]
-gi_mode = 2
 
 [node name="CollisionScrew" type="CollisionShape3D" parent="." unique_id=1819378912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0085766595, 0)

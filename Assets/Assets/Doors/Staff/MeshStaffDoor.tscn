@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chrr0f41cr6e4"]
+
+[ext_resource type="ArrayMesh" uid="uid://bw7wwvune0u3e" path="res://Assets/Assets/Doors/Staff/StaffDoor.obj" id="1_t2ltw"]
+[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="2_07qyx"]
+
+[node name="MeshStaffDoor" type="MeshInstance3D" unique_id=2035543080]
+mesh = ExtResource("1_t2ltw")
+surface_material_override/0 = ExtResource("2_07qyx")

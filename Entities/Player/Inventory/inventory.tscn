@@ -26,4 +26,4 @@ unique_name_in_owner = true
 
 [node name="Journal" parent="Hand" unique_id=968137669 instance=ExtResource("5_ns2xd")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2502724)

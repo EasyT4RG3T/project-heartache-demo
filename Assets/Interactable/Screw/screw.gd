@@ -9,6 +9,12 @@ signal unscrewed
 @onready var collision_screw: CollisionShape3D = $CollisionScrew
 
 
+const UNSCREW_01 = preload("uid://bhc738xt12pgf")
+const UNSCREW_02 = preload("uid://d0hsthy6er15h")
+const UNSCREW_03 = preload("uid://dxgijeyp7oqep")
+var unscrew_sounds: Array = [UNSCREW_01, UNSCREW_02, UNSCREW_03]
+
+
 var interactable: Interactable = Interactable.new()
 
 var unscrew_time: float = 3.0
@@ -59,10 +65,16 @@ func start_unscrewing(player: PlayerCharacter) -> void:
 			player.inventory.screwdriver.stop_unscrewing()
 			queue_free())
 	
+	var audio: AudioStreamPlayer3D = AudioManager.play_sound_at("SFX", unscrew_sounds.pick_random(), global_position)
+	audio.seek(unscrew_tween.get_total_elapsed_time())
+	
 	while interactable.is_interacting:
 		await get_tree().physics_frame
 		unscrew_tween.custom_step(get_tree().root.get_physics_process_delta_time())
 		player.inventory.screwdriver.global_transform = mesh_screw.global_transform
+	
+	if audio:
+		audio.finished.emit()
 
 
 func _notification(what: int) -> void:

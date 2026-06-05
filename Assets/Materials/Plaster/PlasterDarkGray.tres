@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cl5pe67u0252s"]
+
+[ext_resource type="Texture2D" uid="uid://c4pydnpaeyptn" path="res://Assets/Materials/Plaster/Plaster_albedo.png" id="1_o2wyr"]
+
+[resource]
+albedo_color = Color(0.39, 0.39, 0.39, 1)
+albedo_texture = ExtResource("1_o2wyr")
+texture_filter = 2

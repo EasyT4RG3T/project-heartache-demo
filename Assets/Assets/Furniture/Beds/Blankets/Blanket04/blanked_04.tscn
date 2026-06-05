@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b68wcurja6mc3"]
+
+[ext_resource type="PackedScene" uid="uid://0gkiuo42vtio" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket04/Blanked04.glb" id="1_1qpos"]
+[ext_resource type="Material" uid="uid://3hp4tkmvouwm" path="res://Assets/Materials/Noise/SmoothNoise/SmoothNoise.tres" id="2_d67ks"]
+[ext_resource type="Material" uid="uid://cnrx2guo5cwif" path="res://Assets/Materials/Noise/SmoothNoise/SmoothNoiseDarkGreen.tres" id="3_kxhm0"]
+
+[sub_resource type="Animation" id="Animation_d67ks"]
+resource_name = "Breathe"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blanket04/Skeleton3D:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677, 1.5000001, 1, -0.70710677, 0, 0, 0.70710677, 3.0000002, 1, -0.70710677, 0, 0, 0.70710677, 4, 1, -0.70710677, 0, 0, 0.70710677)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blanket04/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.008871392, 0, 0, 0.99996066, 1.5000001, 1, 0.0076182936, 0, 0, 0.999971, 3.0000002, 1, -0.0008290329, 0, 0, 0.99999964, 4, 1, -0.008871392, 0, 0, 0.99996066)
+
+[sub_resource type="Animation" id="Animation_kxhm0"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blanket04/Skeleton3D:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.70710677, 0, 0, 0.70710677)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blanket04/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iua4u"]
+_data = {
+&"Breathe": SubResource("Animation_d67ks"),
+&"RESET": SubResource("Animation_kxhm0")
+}
+
+[node name="Blanked04" unique_id=1036667250 instance=ExtResource("1_1qpos")]
+
+[node name="Blanket04m" parent="Blanket04/Skeleton3D" parent_id_path=PackedInt32Array(1536253775) index="0" unique_id=1946272401]
+surface_material_override/0 = ExtResource("2_d67ks")
+surface_material_override/1 = ExtResource("3_kxhm0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1482573395]
+libraries/ = SubResource("AnimationLibrary_iua4u")

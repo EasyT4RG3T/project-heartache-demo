@@ -8,7 +8,11 @@ extends Node3D
 const demo_uid: String = "uid://ly2qmf1awigs"
 
 
-var story_description: String = ""
+var story_description: String = "":
+	set(value):
+		story_description = value
+		if GameManager.journal:
+			GameManager.journal.quest_rich_text_label.text = story_description
 
 var running: bool = false:
 	set(value):
@@ -81,6 +85,8 @@ func new_game() -> void:
 	#	await load_chunk(chunk)
 	
 	await load_chunk(demo_uid)
+	
+	story_description = "I should go to the cafeteria, everyone's already waiting"
 	
 	return
 

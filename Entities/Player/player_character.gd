@@ -500,7 +500,7 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	head_collision.position = head.position + head_collision_position
 	dust_particles.global_position = main_camera.global_position - main_camera.global_basis.z * 2
-	raytraced_audio_listener.update()
+	#raytraced_audio_listener.update()
 	
 	if phys_object:
 		phys_wanted_position = main_camera.global_position - main_camera.global_basis.z * phys_wanted_distance

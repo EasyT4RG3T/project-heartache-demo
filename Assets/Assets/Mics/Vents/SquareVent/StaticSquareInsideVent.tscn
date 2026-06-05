@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://eacxjcof0xnn"]
+
+[ext_resource type="PackedScene" uid="uid://b4wjvyklsdveg" path="res://Assets/Assets/Mics/Vents/SquareVent/MeshSquareVent.tscn" id="3_yaox8"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k771m"]
+data = PackedVector3Array(0, 0.5, 0.25, 0, 0, -0.25, 0, 0, 0.25, 0, 0.5, -0.25, 0, 0, -0.25, 0, 0.5, 0.25, -0.02, 0, -0.25, -0.02, 0.5, 0.25, -0.02, 0, 0.25, -0.02, 0.5, -0.25, -0.02, 0.5, 0.25, -0.02, 0, -0.25, -0.02, 0.5, 0.25, 0, 0.5, -0.25, 0, 0.5, 0.25, -0.02, 0.5, -0.25, 0, 0.5, -0.25, -0.02, 0.5, 0.25, -0.02, 0, -0.25, 0, 0, 0.25, 0, 0, -0.25, -0.02, 0, 0.25, 0, 0, 0.25, -0.02, 0, -0.25, -0.02, 0.5, -0.25, 0, 0, -0.25, 0, 0.5, -0.25, -0.02, 0, -0.25, 0, 0, -0.25, -0.02, 0.5, -0.25, -0.02, 0, 0.25, 0, 0.5, 0.25, 0, 0, 0.25, -0.02, 0.5, 0.25, 0, 0.5, 0.25, -0.02, 0, 0.25)
+
+[node name="SquareVent" type="StaticBody3D" unique_id=441020651]
+
+[node name="@CollisionShape3D@38445" type="CollisionShape3D" parent="." unique_id=2025099074]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0.01968792)
+shape = SubResource("ConcavePolygonShape3D_k771m")
+
+[node name="MeshSquareVent" parent="." unique_id=554461989 instance=ExtResource("3_yaox8")]
+transform = Transform3D(0.96, 0, 0, 0, 0.96, 0, 0, 0, 0.96, 0, 0, 0)

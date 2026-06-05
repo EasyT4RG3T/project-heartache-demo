@@ -13,6 +13,7 @@ var debug_overlay: DebugOverlay
 
 var player_character_uid: String = "uid://c28pkwyvm76o1"
 var player_character: PlayerCharacter
+var journal: Journal
 
 var is_new_game: bool = false
 
@@ -38,6 +39,7 @@ func load_player() -> void:
 	player = player.instantiate()
 	Game.add_child(player)
 	player_character = player
+	journal = player.inventory.journal
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 	InputManager.player_character = player
 	InputManager.player_character_input = true

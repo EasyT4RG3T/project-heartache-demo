@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="5_1fu6e"]
 [ext_resource type="Script" uid="uid://baahwdqohthmc" path="res://Scripts/Nodes/footstep_area_3d.gd" id="5_tcgcq"]
 [ext_resource type="PackedScene" uid="uid://b4wjvyklsdveg" path="res://Assets/Assets/Mics/Vents/SquareVent/MeshSquareVent.tscn" id="7_tcgcq"]
-[ext_resource type="PackedScene" uid="uid://d2mkyfd2tkob0" path="res://Assets/Assets/Mics/Vents/SquareVent/SquareVent.tscn" id="8_26whg"]
+[ext_resource type="PackedScene" uid="uid://eacxjcof0xnn" path="res://Assets/Assets/Mics/Vents/SquareVent/StaticSquareInsideVent.tscn" id="8_26whg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tcgcq"]
 size = Vector3(0.5, 0.5, 0.02)
@@ -105,6 +105,7 @@ shape = SubResource("BoxShape3D_26whg")
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="Lights" unique_id=842324226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 2.3, 2.7000003)
 visible = false
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -179,5 +180,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4007416, 0, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.250889, 0, 4)
 
 [node name="SquareVent" parent="Assets" unique_id=441020651 instance=ExtResource("8_26whg")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 2.7497003)
-locked = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 2.7498267)

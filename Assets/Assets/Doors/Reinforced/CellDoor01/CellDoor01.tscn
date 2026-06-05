@@ -17,6 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.059872054)
 script = ExtResource("1_5tu6q")
 open_negative = false
 duration = 1.6
+locked = true
 max_negative = 0.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
 

@@ -15,6 +15,11 @@ var disabled: bool = true:
 		disabled = value
 		if value == true:
 			light.hide()
+			if journal_entry:
+				journal_entry.queue_free()
+		else:
+			journal_entry = GameManager.journal.add("Flashlight", "[color=red][F][/color] Flashlight")
+var journal_entry: RichTextLabel
 
 var batteries: Array[float] = []
 var current_battery: float = 0.0

@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://btduwsqkxfd64"]
+
+[ext_resource type="PackedScene" uid="uid://dn2mt8yi125yn" path="res://Entities/Skeleton/Skeleton.glb" id="1_ijx28"]
+[ext_resource type="Material" uid="uid://cp87aiml4p6sn" path="res://Entities/Skeleton/Skeleton.tres" id="2_lgixn"]
+
+[sub_resource type="Animation" id="Animation_lgixn"]
+resource_name = "Breathe"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 0, 0, -6.705522e-08, 1.5000001, 1, 0.9993868, -0.0027621526, -1.4084879e-05, 0.034905948, 3.0000002, 1, 0.99996537, -0.0011050004, -1.1951215e-05, 0.008249149, 4, 1, 1, 0, 0, -6.705522e-08)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 9.635381e-09, 0.99877477, 0.04948653, 1.9446865e-07, 1.5000001, 1, 9.635382e-09, 0.9987749, 0.04948654, 1.944687e-07, 3.0000002, 1, 9.635382e-09, 0.9987748, 0.049486537, 1.9446868e-07, 4, 1, 9.635381e-09, 0.99877477, 0.04948653, 1.9446865e-07)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.049486548, 1.3839233e-14, -1.9270768e-08, 0.99877477, 1.5000001, 1, 0.07450061, 1.770174e-14, -2.9011604e-08, 0.997221, 3.0000002, 1, 0.051168658, 9.560441e-15, -1.9925803e-08, 0.99869007, 4, 1, 0.049486548, 1.3839233e-14, -1.9270768e-08, 0.99877477)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, -0.5, 1.5000001, 1, 0.47771448, 0.5213338, 0.47771442, -0.5213338, 3.0000002, 1, 0.4911977, 0.50865006, 0.4911977, -0.50865006, 4, 1, 0.5, 0.5, 0.5, -0.5)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Skeleton3D:Bone.004")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.5, -0.5, -0.5, -0.5, 1.5000001, 1, 0.47771448, -0.5213338, -0.47771442, -0.5213338, 3.0000002, 1, 0.4911977, -0.50865006, -0.4911977, -0.50865006, 4, 1, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Animation" id="Animation_wlf70"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 0, 0, -6.705522e-08)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 9.635381e-09, 0.99877477, 0.04948653, 1.9446865e-07)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.049486548, 1.3839233e-14, -1.9270768e-08, 0.99877477)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.5, -0.5)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Skeleton3D:Bone.004")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wlf70"]
+_data = {
+&"Breathe": SubResource("Animation_lgixn"),
+&"RESET": SubResource("Animation_wlf70")
+}
+
+[node name="Skeleton" unique_id=1501082437 instance=ExtResource("1_ijx28")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1338443641) index="0" unique_id=857438281]
+bones/0/scale = Vector3(1, 1.0000001, 1)
+bones/1/rotation = Quaternion(9.635381e-09, 0.9987748, 0.049486533, 1.9446867e-07)
+bones/1/scale = Vector3(0.9999999, 0.9999998, 0.9999998)
+bones/2/rotation = Quaternion(0.04948655, 1.3839234e-14, -1.9270768e-08, 0.9987748)
+
+[node name="Female" parent="Armature/Skeleton3D" index="0" unique_id=205549357]
+surface_material_override/0 = ExtResource("2_lgixn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1032786585]
+libraries/ = SubResource("AnimationLibrary_wlf70")
