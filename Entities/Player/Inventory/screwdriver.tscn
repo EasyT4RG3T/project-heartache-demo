@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1g0wdab2jhjg"]
 
 [ext_resource type="Script" uid="uid://q6tnnntj4e3l" path="res://Entities/Player/Inventory/screwdriver.gd" id="1_6q4io"]
-[ext_resource type="PackedScene" uid="uid://7awocst0a0r6" path="res://Assets/Interactable/Screwdriver/MeshScrewdriver.tscn" id="2_yj5sn"]
+[ext_resource type="PackedScene" uid="uid://7awocst0a0r6" path="res://Assets/Assets/Mics/Screwdriver/MeshScrewdriver.tscn" id="2_yj5sn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yj5sn"]
 radius = 0.02

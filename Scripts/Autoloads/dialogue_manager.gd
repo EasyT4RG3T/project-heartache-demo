@@ -21,6 +21,9 @@ var dialogues: Array[RichTextLabel] = []
 
 
 func say(text: String, duration: float = 10) -> void:
+	if dialogues.size() >= 3:
+		dialogues.pop_front().queue_free()
+	
 	var label: RichTextLabel = RichTextLabel.new()
 	vbox.add_child(label)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE

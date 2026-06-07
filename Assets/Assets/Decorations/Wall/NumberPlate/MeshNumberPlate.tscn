@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dhtg8b6glyobb"]
+
+[ext_resource type="ArrayMesh" uid="uid://4vha76ytuaaw" path="res://Assets/Assets/Decorations/Wall/NumberPlate/NumberPlate.obj" id="1_gkdhp"]
+[ext_resource type="Material" uid="uid://ccpc20ajfcnm1" path="res://Assets/Assets/Decorations/Wall/NumberPlate/NumberPlate.tres" id="2_1e4uk"]
+[ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="3_tu804"]
+
+[node name="MeshNumberPlate" type="MeshInstance3D" unique_id=1263754861]
+mesh = ExtResource("1_gkdhp")
+surface_material_override/0 = ExtResource("2_1e4uk")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=616751285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0038499776, 0.00022180006)
+pixel_size = 0.001
+modulate = Color(0.55, 0.55, 0.55, 1)
+text = "0 0 0"
+font = ExtResource("3_tu804")
+font_size = 64
+outline_size = 2

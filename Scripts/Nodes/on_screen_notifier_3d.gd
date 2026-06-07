@@ -5,7 +5,6 @@ extends VisibleOnScreenNotifier3D
 signal screen_entered_plus
 
 
-@export var distance: float = 0.0
 @export var area: Area3D
 
 
@@ -30,17 +29,11 @@ func _ready() -> void:
 	await get_tree().process_frame
 	
 	screen_entered.connect(func():
-		if distance <= 0.0:
+		while is_on_screen():
 			if area and area.overlaps_body(GameManager.player_character):
 				screen_entered_plus.emit()
+				break
 				return
-		while is_on_screen():
-			var p_distance = (GameManager.player_character.global_position - global_position).length()
-			if p_distance < distance:
-				if area and area.overlaps_body(GameManager.player_character):
-					screen_entered_plus.emit()
-					is_on_screen_plus = true
-					break
 			await get_tree().process_frame)
 	
 	screen_exited.connect(func():

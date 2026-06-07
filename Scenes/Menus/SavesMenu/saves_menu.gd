@@ -6,7 +6,7 @@ extends Control
 @onready var new_save_button: Button = %NewSaveButton
 @onready var selected_texture: TextureRect = %SelectedTexture
 @onready var selected_name: LineEdit = %SelectedName
-@onready var selected_description: Label = %SelectedDescription
+@onready var selected_description: RichTextLabel = %SelectedDescription
 @onready var selected_version: Label = %SelectedVersion
 @onready var delete_button: Button = %DeleteButton
 @onready var load_button: Button = %LoadButton
@@ -131,16 +131,27 @@ func _ready() -> void:
 		SaverLoader.GAME_DATA_PATH + new_text + ".dat")
 		DirAccess.rename_absolute(SaverLoader.GAME_DATA_PATH + current_selection + ".png",\
 		SaverLoader.GAME_DATA_PATH + new_text + ".png")
-		if SaverLoader.current_slot == current_selection:
-			SaverLoader.current_slot = current_selection
+		#if SaverLoader.current_slot == current_selection:
+		#	SaverLoader.current_slot = current_selection
+		
+		saves[new_text] = {
+			"datetime" = saves[current_selection]["datetime"],
+			"version" = saves[current_selection]["version"],
+			"story_description" = saves[current_selection]["story_description"]
+		}
+		
 		saves[current_selection]["button"].queue_free()
-		saves[current_selection]["button"] = _create_button(
-			new_text,
-			saves[current_selection]["datetime"],
-			saves[current_selection]["version"],
-		)
-		saves[new_text] = saves[current_selection]
 		saves.erase(current_selection)
+		
+		await get_tree().process_frame
+		await get_tree().process_frame
+		
+		saves[new_text]["button"] = _create_button(
+			new_text,
+			saves[new_text]["datetime"],
+			saves[new_text]["version"],
+		)
+		
 		current_selection = new_text)
 	
 	if SaverLoader.can_save > 0:

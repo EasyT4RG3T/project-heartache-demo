@@ -60,6 +60,9 @@ var current_slot: Slots:
 		current_slot = value
 
 
+var keys: Dictionary[String, RichTextLabel] = {}
+
+
 func _ready() -> void:
 	add_child(slot_timer)
 	slot_timer.one_shot = true
@@ -112,6 +115,16 @@ func switch_slot(slot: Slots) -> void:
 				current_slot = Slots.GLOCK_19
 
 
+func add_key(id: String) -> void:
+	keys[id] = journal.add(id, id)
+
+
+func remove_key(id: String) -> void:
+	if keys.has(id):
+		keys[id].queue_free()
+		keys.erase(id)
+
+
 func save() -> Dictionary:
 	var file: Dictionary = {}
 	
@@ -127,6 +140,8 @@ func save() -> Dictionary:
 	
 	file["glock_19"] = glock_19.save()
 	
+	file["keys"] = keys.keys()
+	
 	return file
 
 
@@ -139,3 +154,6 @@ func load_save(file: Dictionary) -> void:
 	current_slot = file["current_slot"]
 	
 	glock_19.load_save(file["glock_19"])
+	
+	for key in file["keys"]:
+		add_key(key)

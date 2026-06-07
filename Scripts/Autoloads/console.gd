@@ -610,6 +610,8 @@ var command_tree: Dictionary = {
 				return str(GameManager.player_character.inventory.glock_19.mags)
 			else:
 				return "0"],
+		"add_key": [_command_player_add_key, _need_string, func():
+			return "id"],
 		"speed": [_command_player_speed, _need_float, func():
 			if GameManager.player_character:
 				return str(GameManager.player_character.current_movement_speed)
@@ -1426,6 +1428,17 @@ func _command_player_glock_mags(value: int) -> String:
 	else:
 		GameManager.player_character.inventory.glock_19.mags = value
 		return "glock mags: " + str(value)
+
+func _command_player_add_key(value: String) -> String:
+	value = value.rstrip(" ")
+	if !GameManager.player_character:
+		return "[color=red]couldn't find player[/color]"
+	if GameManager.player_character.inventory.keys.has(value):
+		GameManager.player_character.inventory.remove_key(value)
+		return "removed key " + value
+	else:
+		GameManager.player_character.inventory.add_key(value)
+		return "added key " + value
 
 func _command_player_speed(value: float) -> String:
 	if !GameManager.player_character:

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bj7qws0552sqo"]
 
-[ext_resource type="ArrayMesh" uid="uid://cqu634o7ard3j" path="res://Assets/Maps/Corridor/BigCorridor.obj" id="1_1uu1f"]
+[ext_resource type="ArrayMesh" uid="uid://dbytvuc8i2i5d" path="res://Assets/Maps/Corridor/BigCorridor.obj" id="1_1uu1f"]
 [ext_resource type="Material" uid="uid://hergs8t72pob" path="res://Assets/Materials/Concrete/SmoothConcrete/SmoothConcrete.tres" id="2_4swap"]
 [ext_resource type="Material" uid="uid://kl7fdassp6ec" path="res://Assets/Materials/Plaster/Plaster.tres" id="3_o0yhy"]
 [ext_resource type="Material" uid="uid://d3lhwyfduq6ir" path="res://Assets/Materials/Concrete/Concrete/Concrete.tres" id="4_ddcd8"]
+[ext_resource type="Material" uid="uid://cl5pe67u0252s" path="res://Assets/Materials/Plaster/PlasterDarkGray.tres" id="5_ddcd8"]
 
 [node name="MeshBigCorridor" type="MeshInstance3D" unique_id=1089606248]
 layers = 33
@@ -11,3 +12,4 @@ mesh = ExtResource("1_1uu1f")
 surface_material_override/0 = ExtResource("2_4swap")
 surface_material_override/1 = ExtResource("3_o0yhy")
 surface_material_override/2 = ExtResource("4_ddcd8")
+surface_material_override/3 = ExtResource("5_ddcd8")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c0b5uxaor0mhy"]
+
+[ext_resource type="PackedScene" uid="uid://7awocst0a0r6" path="res://Assets/Assets/Mics/Screwdriver/MeshScrewdriver.tscn" id="1_fjp0j"]
+[ext_resource type="Script" uid="uid://dxmiykb3crxek" path="res://Assets/Assets/Mics/Screwdriver/screwdriver.gd" id="1_g3qr5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g3qr5"]
+height = 0.1909961
+radius = 0.022949219
+
+[node name="Screwdriver" type="StaticBody3D" unique_id=447539991]
+script = ExtResource("1_g3qr5")
+
+[node name="MeshScrewdriver" parent="." unique_id=66776604 instance=ExtResource("1_fjp0j")]
+gi_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1431809493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09475026, 0)
+shape = SubResource("CylinderShape3D_g3qr5")

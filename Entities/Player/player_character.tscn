@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://babc4ssbcm5g7" path="res://Scenes/Menus/PauseMenu/pause_menu.tscn" id="2_seg3p"]
 [ext_resource type="PackedScene" uid="uid://c0tamd213o31x" path="res://Entities/Player/player_hud.tscn" id="3_b2vmj"]
 [ext_resource type="Shader" uid="uid://bwrc3gdocmt4n" path="res://Assets/Shaders/skinamarink.gdshader" id="3_lobkq"]
-[ext_resource type="Script" uid="uid://bjpmu5sklv5h8" path="res://addons/raytraced_audio/raytraced_audio_listener.gd" id="3_seg3p"]
 [ext_resource type="Script" uid="uid://cvox7ompr4c2t" path="res://Entities/Player/main_camera.gd" id="4_3xgjn"]
 [ext_resource type="PackedScene" uid="uid://da0k85xdmg6pf" path="res://Entities/Player/Inventory/inventory.tscn" id="4_seg3p"]
 [ext_resource type="PackedScene" uid="uid://y8bwsn68l4yx" path="res://Entities/Player/dust_particles.tscn" id="6_d821y"]
@@ -54,16 +53,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 [node name="AudioListener3D" type="AudioListener3D" parent="Head" unique_id=1093242377]
 unique_name_in_owner = true
 current = true
-
-[node name="RaytracedAudioListener" type="AudioListener3D" parent="Head" unique_id=1307621807]
-unique_name_in_owner = true
-current = true
-script = ExtResource("3_seg3p")
-is_enabled = false
-auto_update = false
-rays_count = 32
-echo_room_size_multiplier = 4.0
-metadata/_custom_type_script = "uid://bjpmu5sklv5h8"
 
 [node name="Inventory" parent="Head" unique_id=222880276 instance=ExtResource("4_seg3p")]
 unique_name_in_owner = true

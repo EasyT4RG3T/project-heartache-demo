@@ -79,9 +79,9 @@ func switch_pick_up(player: PlayerCharacter) -> void:
 func pick_up(player: PlayerCharacter) -> void:
 	var distance: float = player.main_camera.global_position.distance_to(global_position)
 	
-	player.phys_wanted_distance = distance
 	player.phys_wanted_distance_max = max_distance
 	player.phys_wanted_distance_min = min_distance
+	player.phys_wanted_distance = distance
 	player.phys_wanted_rotation = global_basis
 	
 	player.phys_object = self

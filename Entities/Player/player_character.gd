@@ -79,8 +79,6 @@ func _move_head_smooth(pos: Vector3, duration: float, on_complete: Callable = Ca
 @onready var inventory: Inventory = %Inventory
 var inventory_input: bool = false
 
-@onready var raytraced_audio_listener: RaytracedAudioListener = %RaytracedAudioListener
-
 @onready var main_camera: Camera3D = %MainCamera
 @onready var inventory_camera: Camera3D = %InventoryCamera
 @onready var inventory_sub_viewport: SubViewport = %InventorySubViewport
@@ -137,6 +135,15 @@ var current_footsteps_pace = footsteps_resource.Pace.NORMAL
 var current_footsteps_mod: Array[FootstepsResource.Mod] = []
 
 
+const FABRIC_RUSTLE_01 = preload("uid://on8q6yfmf0bl")
+const FABRIC_RUSTLE_02 = preload("uid://brc4swaa4mfyk")
+const FABRIC_RUSTLE_03 = preload("uid://lt1hxj2141l1")
+var fabric_rustles: Array = [
+	FABRIC_RUSTLE_01,
+	FABRIC_RUSTLE_02,
+	FABRIC_RUSTLE_03
+]
+
 var vault_checks: VaultChecks = VaultChecks.new()
 var vault_position: Vector3 = Vector3.ZERO
 var can_vault: bool = false:
@@ -144,10 +151,8 @@ var can_vault: bool = false:
 		can_vault = value
 		if value:
 			player_hud.vault = true
-			#_raise_hands(true)
 		else:
 			player_hud.vault = false
-			#_raise_hands(false)
 var crouch_vault = true
 var player_tween: Tween
 var tilt_tween: Tween
@@ -206,6 +211,7 @@ var phys_wanted_distance_min: float = 1.0
 var phys_wanted_distance: float = 0.0:
 	set(value):
 		phys_wanted_distance = clampf(value, phys_wanted_distance_min, phys_wanted_distance_max)
+		print(phys_wanted_distance)
 var phys_object: DynamicRigidBody3D:
 	set(value):
 		phys_object = value
@@ -418,6 +424,7 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 				change_movement_speed(movement_speeds[MovementMode.CROUCHING])
 				_change_fov_smooth(player_fov - 10)
 				_move_head_smooth(player_crouch_head_position, 0.3)
+				AudioManager.play_sound("SFX", fabric_rustles.pick_random(), -10.0)
 			body_collision.shape.height = player_crouch_collision_height
 			body_collision.shape.radius = player_collision_radius
 			body_collision.position = player_crouch_collision_position
@@ -467,6 +474,8 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 
 func exit_movement_mode(mode: MovementMode) -> void:
 	match mode:
+		MovementMode.CROUCHING:
+			AudioManager.play_sound("SFX", fabric_rustles.pick_random(), -10.0)
 		MovementMode.VAULTING:
 			body_collision.disabled = false
 			was_on_ground = false
@@ -500,7 +509,6 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	head_collision.position = head.position + head_collision_position
 	dust_particles.global_position = main_camera.global_position - main_camera.global_basis.z * 2
-	#raytraced_audio_listener.update()
 	
 	if phys_object:
 		phys_wanted_position = main_camera.global_position - main_camera.global_basis.z * phys_wanted_distance
@@ -757,10 +765,16 @@ func _vault() -> void:
 	tilt_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_parallel()
 	tilt_tween.set_ease(Tween.EASE_IN)
 	tilt_tween.tween_property(main_camera, "rotation:z", tilt, 0.2)
+	
+	AudioManager.play_sound("SFX", fabric_rustles.pick_random())
+	
 	if vault_height <= 1.2:
 		tilt_tween.set_ease(Tween.EASE_OUT)
 		tilt_tween.chain().tween_property(main_camera, "rotation:z", 0, 0.2)
 	else:
+		get_tree().create_timer(0.5).timeout.connect(func():
+			AudioManager.play_sound("SFX", fabric_rustles.pick_random(), -5.0))
+		
 		tilt_tween.set_ease(Tween.EASE_OUT_IN)
 		tilt_tween.chain().tween_property(main_camera, "rotation:z", -tilt * 2, 0.4)
 		tilt_tween.set_ease(Tween.EASE_OUT)

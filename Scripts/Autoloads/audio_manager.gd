@@ -42,7 +42,7 @@ func play_uid_sound(bus: StringName, uid_sound: String, db: float = 0.0, pitch: 
 	return audio_player
 
 
-func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> RaytracedAudioPlayer3D:
+func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> AudioStreamPlayer3D:
 	var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 	add_child(audio_player)
 	audio_player.bus = bus
@@ -56,7 +56,7 @@ func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float 
 	return audio_player
 
 
-func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> RaytracedAudioPlayer3D:
+func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> AudioStreamPlayer3D:
 	var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 	add_child(audio_player)
 	var sound: AudioStream = load(ResourceUID.uid_to_path(uid_sound))

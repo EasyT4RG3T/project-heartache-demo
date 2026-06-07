@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://bb43xvw0xg4w8" path="res://Assets/Assets/Kitchen/Furniture/Fryer/StaticFryer.tscn" id="11_rarvb"]
 [ext_resource type="PackedScene" uid="uid://l0jurf8v3qr0" path="res://Assets/Assets/Kitchen/Furniture/Cooker/StaticCookerStand.tscn" id="12_ibxot"]
 [ext_resource type="PackedScene" uid="uid://co55j6eft8i0o" path="res://Assets/Assets/Kitchen/Furniture/CuttingBoard/StaticCuttingBoard.tscn" id="12_n8b7t"]
+[ext_resource type="PackedScene" uid="uid://dfngop24p0gbc" path="res://Assets/Assets/Lights/Ceiling/CeilingLightRectangle/StaticCeilingLightRectangle.tscn" id="13_6fcup"]
+[ext_resource type="Material" uid="uid://bot5xyens3kuo" path="res://Assets/Sprites/Pictures/CafeteriaMenu.tres" id="13_ep0g3"]
 [ext_resource type="PackedScene" uid="uid://cfvcayctfo6fd" path="res://Assets/Assets/Kitchen/Furniture/Cooker/StaticCookerPot.tscn" id="13_q13u7"]
 [ext_resource type="PackedScene" uid="uid://bxdb216luolyp" path="res://Assets/Assets/Kitchen/Utensils/Knife/MeshKnife.tscn" id="13_r3jby"]
 [ext_resource type="PackedScene" uid="uid://d1v6552l61sq1" path="res://Assets/Assets/Kitchen/Furniture/Cooker/StaticCookerLid.tscn" id="14_aixd1"]
@@ -43,6 +45,10 @@
 [ext_resource type="PackedScene" uid="uid://beb3nd87yuklp" path="res://Assets/Assets/Kitchen/Utensils/Tongs/MeshTongs.tscn" id="33_rmcr3"]
 [ext_resource type="PackedScene" uid="uid://bwvpe4osmv3bd" path="res://Assets/Assets/Decorations/Wall/Menu/MeshMenu.tscn" id="42_j03k8"]
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="43_kgisq"]
+[ext_resource type="PackedScene" uid="uid://coha7fhwe5plg" path="res://Assets/Assets/Lights/Ceiling/CeilingLightLongOpen02/StaticCeilingLightLongOpen02.tscn" id="45_eyb21"]
+[ext_resource type="PackedScene" uid="uid://bllom5di64vbs" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/StaticCeilingLightBulb.tscn" id="46_1xivg"]
+[ext_resource type="PackedScene" uid="uid://e4iblqa7tbty" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox02/StaticBigCardboardBox02.tscn" id="47_1xivg"]
+[ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="48_ep0g3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yfvcr"]
 size = Vector3(4, 3, 6)
@@ -77,6 +83,45 @@ generate_probes_subdiv = 0
 light_data = ExtResource("2_k2dtm")
 script = ExtResource("2_260da")
 metadata/_custom_type_script = "uid://bepwmrgf0c61o"
+
+[node name="LightmapProbe" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=317245833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 1.6, 6.1)
+
+[node name="LightmapProbe3" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=738901942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 1.6, 10.6)
+
+[node name="LightmapProbe2" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=594511412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 1.6, 1.5999999)
+
+[node name="LightmapProbe7" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=17557492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6, 1.6, 6.1)
+
+[node name="LightmapProbe8" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1813226286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6, 1.6, 10.6)
+
+[node name="LightmapProbe9" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=598038471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6, 1.6, 1.5999999)
+
+[node name="LightmapProbe4" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1802677358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 1.6, 6.1)
+
+[node name="LightmapProbe5" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1674501837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 1.6, 10.6)
+
+[node name="LightmapProbe6" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=797917043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 1.6, 1.5999999)
+
+[node name="LightmapProbe10" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1967120609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6, 1.6, 6.1)
+
+[node name="LightmapProbe11" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=1560506356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6, 1.6, 10.6)
+
+[node name="LightmapProbe12" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=260515593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6, 1.6, 1.0999999)
+
+[node name="LightmapProbe13" type="LightmapProbe" parent="DynamicLightmapGI" unique_id=775099911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 1.6, -0.8000001)
 
 [node name="StaticCafeteria" parent="." unique_id=1760404024 instance=ExtResource("3_k2dtm")]
 unique_name_in_owner = true
@@ -114,6 +159,7 @@ shape = SubResource("BoxShape3D_yfvcr")
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=591884946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 6.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -125,6 +171,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=328966977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 6.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -136,6 +183,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D3" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1224186252]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 6.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -147,6 +195,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D7" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1015523654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 3.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -158,6 +207,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D8" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=164154974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 3.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -169,6 +219,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D9" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=617309603]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 3.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -180,6 +231,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D15" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=2096295663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 0.099999905)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -191,6 +243,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D16" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1782098917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 0.099999905)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -202,6 +255,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D17" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1749502996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 0.099999905)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -213,6 +267,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D4" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=661620656]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 9.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -224,6 +279,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=912282068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 9.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -235,6 +291,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D6" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1226891196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 9.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -246,6 +303,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D18" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1268523589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2, 2.8, 12.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -257,6 +315,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D19" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1693552050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 2.8, 12.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -268,6 +327,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D20" type="OmniLight3D" parent="StaticCafeteria/Lights" unique_id=1370718292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2.8, 12.1)
 layers = 3
+light_color = Color(1, 0.97866666, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1145,6 +1205,52 @@ transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-
 
 [node name="MeshMenu" parent="StaticCafeteria/Assets" unique_id=1773308484 instance=ExtResource("42_j03k8")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.598143, 2.5, 6.1000004)
+surface_material_override/1 = ExtResource("13_ep0g3")
+
+[node name="StaticCeilingLightRectangle" parent="StaticCafeteria/Assets" unique_id=1842567965 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.6, 3.1000001, 6.1)
+
+[node name="StaticCeilingLightRectangle4" parent="StaticCafeteria/Assets" unique_id=566417828 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.6, 3.1000001, 9.1)
+
+[node name="StaticCeilingLightRectangle5" parent="StaticCafeteria/Assets" unique_id=1326496969 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.6, 3.1000001, 12.1)
+
+[node name="StaticCeilingLightRectangle2" parent="StaticCafeteria/Assets" unique_id=992841055 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.6, 3.1000001, 3.0999997)
+
+[node name="StaticCeilingLightRectangle3" parent="StaticCafeteria/Assets" unique_id=835218751 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.6, 3.1000001, 0.099999666)
+
+[node name="StaticCeilingLightRectangle11" parent="StaticCafeteria/Assets" unique_id=1704060220 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 3.1000001, 6.1)
+
+[node name="StaticCeilingLightRectangle12" parent="StaticCafeteria/Assets" unique_id=1695632467 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 3.1000001, 9.1)
+
+[node name="StaticCeilingLightRectangle13" parent="StaticCafeteria/Assets" unique_id=262435787 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 3.1000001, 12.1)
+
+[node name="StaticCeilingLightRectangle14" parent="StaticCafeteria/Assets" unique_id=1410140274 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 3.1000001, 3.0999997)
+
+[node name="StaticCeilingLightRectangle15" parent="StaticCafeteria/Assets" unique_id=2063119869 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 3.1000001, 0.099999666)
+
+[node name="StaticCeilingLightRectangle6" parent="StaticCafeteria/Assets" unique_id=1092107296 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.200001, 3.1000001, 6.1)
+
+[node name="StaticCeilingLightRectangle7" parent="StaticCafeteria/Assets" unique_id=1739554751 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.200001, 3.1000001, 9.1)
+
+[node name="StaticCeilingLightRectangle8" parent="StaticCafeteria/Assets" unique_id=674765956 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.200001, 3.1000001, 12.1)
+
+[node name="StaticCeilingLightRectangle9" parent="StaticCafeteria/Assets" unique_id=293765686 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.200001, 3.1000001, 3.0999997)
+
+[node name="StaticCeilingLightRectangle10" parent="StaticCafeteria/Assets" unique_id=541667866 instance=ExtResource("13_6fcup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.200001, 3.1000001, 0.099999666)
 
 [node name="StaticKitchen" parent="." unique_id=714011719 instance=ExtResource("4_sl6a2")]
 unique_name_in_owner = true
@@ -1153,6 +1259,14 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8, 1.6, 6.1)
 blend_distance = 0.0
 size = Vector3(4.2, 3.2, 11.8)
+box_projection = true
+interior = true
+enable_shadows = true
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="StaticKitchen" unique_id=1391791683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8, 1.6, -0.9000008)
+blend_distance = 0.0
+size = Vector3(4.2, 3.2, 2.2)
 box_projection = true
 interior = true
 enable_shadows = true
@@ -1179,6 +1293,7 @@ shape = SubResource("BoxShape3D_5tvj5")
 [node name="StaticOmniLight3D10" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1191983960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 10.1)
 layers = 3
+light_color = Color(0.95, 0.9766667, 1, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1190,6 +1305,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D11" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1373379947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 7.1000004)
 layers = 3
+light_color = Color(0.95, 0.9766667, 1, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1201,6 +1317,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D12" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1350594426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 4.1000004)
 layers = 3
+light_color = Color(0.95, 0.9766667, 1, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1212,6 +1329,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D14" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=1139956534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, 1.1000004)
 layers = 3
+light_color = Color(0.95, 0.9766667, 1, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1223,6 +1341,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D13" type="OmniLight3D" parent="StaticKitchen/Lights" unique_id=768088372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, -0.8999996)
 layers = 3
+light_color = Color(1, 0.9813333, 0.96, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -1405,6 +1524,36 @@ max_positive = 95.0
 max_negative = 95.0
 open_progress = -95.0
 open = true
+
+[node name="StaticCeilingLightLongOpen02" parent="StaticKitchen/Assets" unique_id=637214842 instance=ExtResource("45_eyb21")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25.8, 3.1000001, 7.1)
+
+[node name="StaticCeilingLightLongOpen05" parent="StaticKitchen/Assets" unique_id=1238217636 instance=ExtResource("45_eyb21")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25.8, 3.1000001, 10.1)
+
+[node name="StaticCeilingLightLongOpen03" parent="StaticKitchen/Assets" unique_id=674203159 instance=ExtResource("45_eyb21")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25.8, 3.1000001, 4.1)
+
+[node name="StaticCeilingLightLongOpen04" parent="StaticKitchen/Assets" unique_id=953736597 instance=ExtResource("45_eyb21")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25.8, 3.1000001, 1.0999999)
+
+[node name="StaticCeilingLightBulb" parent="StaticKitchen/Assets" unique_id=1761225178 instance=ExtResource("46_1xivg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.9, -0.90000004)
+
+[node name="StaticIndustrialShelf5" parent="StaticKitchen/Assets" unique_id=2067656932 instance=ExtResource("24_aixd1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.6, 0.1, -0.40000004)
+
+[node name="StaticIndustrialShelf6" parent="StaticKitchen/Assets" unique_id=166605861 instance=ExtResource("24_aixd1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.6, 0.1, -1.4000001)
+
+[node name="StaticCountertopBig5" parent="StaticKitchen/Assets" unique_id=964632085 instance=ExtResource("10_kmqwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6, 0.1, -0.30000007)
+
+[node name="StaticBigCardboardBox02" parent="StaticKitchen/Assets/StaticCountertopBig5" unique_id=1846966015 instance=ExtResource("47_1xivg")]
+transform = Transform3D(0.087155804, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, 0.087155804, 0, 1, 0.10000005)
+
+[node name="StaticBigCardboardBox01" parent="StaticKitchen/Assets/StaticCountertopBig5" unique_id=1121094488 instance=ExtResource("48_ep0g3")]
+transform = Transform3D(0.9961948, 0, -0.087155744, 0, 1, 0, 0.087155744, 0, 0.9961948, 0.5000038, 1, -8.940697e-08)
 
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable/DefaultPrisoner2"]

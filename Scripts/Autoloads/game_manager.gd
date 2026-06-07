@@ -60,6 +60,8 @@ func load_main_menu() -> void:
 	
 	await get_tree().process_frame
 	
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	
 	var menu = load(main_menu_uid)
 	menu = menu.instantiate()
 	Game.add_child(menu)
@@ -80,6 +82,7 @@ func set_debug_overlay(value: int) -> void:
 
 func apply_settings_data() -> void:
 	SaverLoader.current_slot = SaverLoader.settings.last_save
+	SaverLoader.autosave_slot = SaverLoader.settings.last_autosave
 	
 	DisplayServer.window_set_vsync_mode(SaverLoader.settings.vsync)
 	Engine.max_fps = SaverLoader.settings.max_fps

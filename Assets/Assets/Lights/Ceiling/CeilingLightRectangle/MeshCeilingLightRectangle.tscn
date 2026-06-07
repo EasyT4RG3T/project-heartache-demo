@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://c3exb48g5dfjw" path="res://Assets/Materials/Light/Warm/WarmLight.tres" id="3_qi6kx"]
 
 [node name="MeshCeilingLightRectangle" type="MeshInstance3D" unique_id=1743645727]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_6npvy")
 surface_material_override/0 = ExtResource("2_bt40h")
 surface_material_override/1 = ExtResource("3_qi6kx")

@@ -5,6 +5,7 @@ extends Node3D
 
 signal opened_positive
 signal opened_negative
+signal opened
 signal closed
 
 
@@ -23,7 +24,7 @@ signal closed
 @export var locked_message: String = "Locked"
 enum AUnlock { NONE, POSITIVE, NEGATIVE }
 @export var auto_unlock: AUnlock = AUnlock.NONE
-@export var id: int = 0
+@export var id: String = "0"
 @export_range(0.0, 360.0) var max_positive: float = 165.0:
 	set(value):
 		max_positive = value
@@ -56,6 +57,8 @@ var left_duration: float = 0.0
 
 
 func _ready() -> void:
+	rotation.y = 0
+	
 	static_direction = global_basis.z
 	
 	rotation.y = deg_to_rad(open_progress)
@@ -65,8 +68,19 @@ func interact(player: PlayerCharacter) -> void:
 	_direction_check(player)
 	
 	if locked:
-		if !_can_unlock(player):
+		if player.inventory.keys.has(id) or player.inventory.keys.has("0"):
+			locked = false
+			_move_hinge()
 			return
+		
+		if _can_unlock(player):
+			locked = false
+			_move_hinge()
+			return
+		
+		if locked_message:
+			player.add_thought(locked_message)
+		return
 	
 	_move_hinge()
 
@@ -81,9 +95,11 @@ func force_open(dir: float = 0.0) -> void:
 		if dir >= 0:
 			hinge_tween.tween_property(self, "open_progress", max_positive, duration)
 			opened_positive.emit()
+			opened.emit()
 		else:
 			hinge_tween.tween_property(self, "open_progress", -max_negative, duration)
 			opened_negative.emit()
+			opened.emit()
 		open = true
 
 
@@ -109,13 +125,11 @@ func _direction_check(player: PlayerCharacter) -> void:
 
 
 func _can_unlock(player: PlayerCharacter) -> bool:
-	if auto_unlock == AUnlock.POSITIVE and static_direction.dot(player.main_camera.global_basis.z) < 0:
+	if auto_unlock == AUnlock.POSITIVE and static_direction.dot(player.main_camera.global_basis.z) > 0:
 		return true
-	elif auto_unlock == AUnlock.NEGATIVE and static_direction.dot(player.main_camera.global_basis.z) > 0:
+	elif auto_unlock == AUnlock.NEGATIVE and static_direction.dot(player.main_camera.global_basis.z) < 0:
 		return true
 	
-	if locked_message:
-		player.add_thought(locked_message)
 	return false
 
 
@@ -130,10 +144,12 @@ func _move_hinge() -> void:
 			left_duration = duration * ((max_positive - open_progress) / max_positive)
 			hinge_tween.tween_property(self, "open_progress", max_positive, left_duration)
 			opened_positive.emit()
+			opened.emit()
 		else:
 			left_duration = duration * ((-max_negative - open_progress) / -max_negative)
 			hinge_tween.tween_property(self, "open_progress", -max_negative, left_duration)
 			opened_negative.emit()
+			opened.emit()
 		open = true
 	else:
 		if open_progress > 0:

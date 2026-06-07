@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bm5mk16dkbdnd"]
 
 [ext_resource type="ArrayOccluder3D" uid="uid://ilpywm7bdxw4" path="res://Scenes/Maps/Demo/PrisonBlockLowSec2/prison_block_low_sec_2.occ" id="1_w6bck"]
+[ext_resource type="Script" uid="uid://dui31myhj4skc" path="res://Scenes/Maps/Demo/PrisonBlockLowSec2/prison_block_low_sec_2.gd" id="1_y825v"]
 [ext_resource type="LightmapGIData" uid="uid://dg3h46joupibj" path="res://Scenes/Maps/Demo/PrisonBlockLowSec2/prison_block_low_sec_2.lmbake" id="2_swnjv"]
 [ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="2_x02ya"]
 [ext_resource type="PackedScene" uid="uid://cn0b35rsw3jtd" path="res://Assets/Maps/PrisonBlockLowSec2/StaticCell_2.tscn" id="3_bep3b"]
@@ -11,15 +12,202 @@
 [ext_resource type="PackedScene" uid="uid://dhb2v7670ygo3" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell02_2.tscn" id="6_riupe"]
 [ext_resource type="PackedScene" uid="uid://bemtn8ybo5hbj" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell03_2.tscn" id="7_egkj6"]
 [ext_resource type="PackedScene" uid="uid://da86ncawgldey" path="res://Assets/Assets/Furniture/Beds/MetalBed/MeshMetalBed01.tscn" id="7_xho1q"]
+[ext_resource type="PackedScene" uid="uid://dhtg8b6glyobb" path="res://Assets/Assets/Decorations/Wall/NumberPlate/MeshNumberPlate.tscn" id="8_4wfve"]
 [ext_resource type="PackedScene" uid="uid://d36rb1ttwronc" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket01/MeshBlanket01.tscn" id="8_120sl"]
 [ext_resource type="PackedScene" uid="uid://bhvrlls5s5kgh" path="res://Assets/Maps/PrisonBlockLowSec2/StaticFakeCell04_2.tscn" id="8_xho1q"]
+[ext_resource type="Texture2D" uid="uid://dtrvtkdr4bojt" path="res://Assets/Textures/Dirt/DirtBig.png" id="9_8lwyr"]
 [ext_resource type="PackedScene" uid="uid://byn1jpubbkbiw" path="res://Assets/Assets/Furniture/Beds/Matresses/Matress01/MeshMatress01.tscn" id="9_khj4p"]
+[ext_resource type="Texture2D" uid="uid://dw1j21bo0x7o" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrowThick.png" id="10_2pwje"]
 [ext_resource type="PackedScene" uid="uid://wy15o66f6ycp" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow01/MeshPillow01.tscn" id="10_swnjv"]
 [ext_resource type="PackedScene" uid="uid://g5xnw3yiebpc" path="res://Assets/Assets/Furniture/Shelfs/Wall/WallBookShelf/MeshWallBookShelf.tscn" id="11_85hnu"]
 [ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="15_xho1q"]
+[ext_resource type="PackedScene" uid="uid://hkoos73g6uf2" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow03/MeshPillow03.tscn" id="16_mq2bn"]
+[ext_resource type="PackedScene" uid="uid://ccyvx8pi4upbh" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket03/MeshBlanket03.tscn" id="17_4wfve"]
 [ext_resource type="PackedScene" uid="uid://0a6o7q8gyotj" path="res://Assets/Assets/Doors/Reinforced/CellDoor01/CellDoor01.tscn" id="17_khj4p"]
+[ext_resource type="Material" uid="uid://ctgopv0unrbxt" path="res://Assets/Materials/Light/White/WhiteLight.tres" id="21_gu0ly"]
+[ext_resource type="Material" uid="uid://ikw1oms1pqm1" path="res://Assets/Materials/Organic/MovingMeat/MovingMeat.tres" id="22_gr287"]
+[ext_resource type="Script" uid="uid://bpy5q0ccwpl1e" path="res://Scripts/Nodes/on_screen_notifier_3d.gd" id="23_gr287"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4wfve"]
+size = Vector3(1.8000001, 3, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rfgp0"]
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_y825v"]
+size = Vector2(0.01, 0.01)
+
+[sub_resource type="Animation" id="Animation_y825v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.6175694, 2.7891707, 36.519653)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rfgp0"]
+resource_name = "Scare"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.35, 1.7733049, 2, 7.8000007, 8),
+"transitions": PackedFloat32Array(1, 2, 0.5, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.6175694, 2.7891707, 36.519653), Vector3(3.3567882, 2.7409816, 36.519653), Vector3(3.078845, 2.6243064, 36.519653), Vector3(2.9943056, 2.5349052, 36.519653), Vector3(2.9943056, 2.5349052, 36.519653), Vector3(2.3943055, 1.4349052, 26.619652)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.35, 1.7733049, 2, 7.8000007, 8),
+"transitions": PackedFloat32Array(1, 2, 0.5, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0), Vector3(3.185073e-08, -3.1415925, -0.2469082), Vector3(1.0574496e-07, -3.1415925, -0.78510153), Vector3(1.1431686e-07, -3.1415925, -0.8588416), Vector3(1.1431686e-07, -3.1415925, -0.8588416), Vector3(-7.3607765e-08, -3.1415925, 0.18835604)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%CorridorMonster/../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.7000003),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_jumpscare"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gb4m1"]
+_data = {
+&"RESET": SubResource("Animation_y825v"),
+&"Scare": SubResource("Animation_rfgp0")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rfgp0"]
+size = Vector3(1.8000001, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gb4m1"]
+size = Vector3(1.8000001, 3, 17)
+
+[sub_resource type="Animation" id="Animation_gu0ly"]
+resource_name = "Hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector3(-7.3904138, 0.88917077, 4.6327744), Vector3(-7.4247546, 0.5706661, 4.6327744)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector3(-7.311061, 0.9083031, 4.6447287), Vector3(-7.345402, 0.5897984, 4.6447287)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Vector3(-7.457792, 0.93262625, 4.6011477), Vector3(-7.4921327, 0.61412156, 4.6011477)]
+}
+
+[sub_resource type="Animation" id="Animation_gr287"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.3904138, 0.88917077, 4.6327744)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.311061, 0.9083031, 4.6447287)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.457792, 0.93262625, 4.6011477)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y825v"]
+_data = {
+&"Hide": SubResource("Animation_gu0ly"),
+&"RESET": SubResource("Animation_gr287")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y825v"]
+size = Vector3(0.2, 3, 0.3)
 
 [node name="PrisonBlockLowSec2" type="Node3D" unique_id=1407849894]
+script = ExtResource("1_y825v")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=936778010]
 occluder = ExtResource("1_w6bck")
@@ -61,11 +249,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 1.5, 13)
 
 [node name="StaticCorridor_2" parent="." unique_id=951991314 instance=ExtResource("4_6b23j")]
 
+[node name="ReflectionProbe" type="ReflectionProbe" parent="StaticCorridor_2" unique_id=329425930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3000004, 1.5, 9.75)
+blend_distance = 0.0
+size = Vector3(11.8, 3.2, 3.7)
+
+[node name="InvisibleWalls" type="StaticBody3D" parent="StaticCorridor_2" unique_id=337542704]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor_2/InvisibleWalls" unique_id=813024273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4000003, 1.5, 35.8)
+shape = SubResource("BoxShape3D_4wfve")
+
 [node name="Lights" type="Node3D" parent="StaticCorridor_2" unique_id=626035811]
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCorridor_2/Lights" unique_id=639110743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 2.8, 9.099999)
 layers = 3
+light_color = Color(1, 0.9766667, 0.95, 1)
+light_energy = 0.6
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -77,6 +280,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="StaticCorridor_2/Lights" unique_id=1734573315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 2.8, 13.099999)
 layers = 3
+light_color = Color(1, 0.9766667, 0.95, 1)
+light_energy = 0.6
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -88,6 +293,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticCorridor_2/Lights" unique_id=501706825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 2.8, 9.099999)
 layers = 3
+light_color = Color(1, 0.9766667, 0.95, 1)
+light_energy = 0.6
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -99,6 +306,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D3" type="OmniLight3D" parent="StaticCorridor_2/Lights" unique_id=415708189]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 2.8, 9.099999)
 layers = 3
+light_color = Color(1, 0.9766667, 0.95, 1)
+light_energy = 0.6
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -111,6 +320,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 3, 9.099999)
 visible = false
 layers = 3
+light_color = Color(0.95, 0.975, 1, 1)
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -119,19 +329,107 @@ omni_range = 3.0
 script = ExtResource("15_xho1q")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="Assets" type="Node3D" parent="StaticCorridor_2" unique_id=1491397788]
-
-[node name="StaticCeilingLightRound" parent="StaticCorridor_2/Assets" unique_id=1300730171 instance=ExtResource("6_120sl")]
+[node name="StaticCeilingLightRound" parent="StaticCorridor_2/Lights" unique_id=1300730171 instance=ExtResource("6_120sl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 3, 9.099999)
 
-[node name="StaticCeilingLightRound2" parent="StaticCorridor_2/Assets" unique_id=841227516 instance=ExtResource("6_120sl")]
+[node name="StaticCeilingLightRound2" parent="StaticCorridor_2/Lights" unique_id=841227516 instance=ExtResource("6_120sl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6999998, 3, 9.099999)
 
-[node name="StaticCeilingLightRound3" parent="StaticCorridor_2/Assets" unique_id=136507658 instance=ExtResource("6_120sl")]
+[node name="StaticCeilingLightRound3" parent="StaticCorridor_2/Lights" unique_id=136507658 instance=ExtResource("6_120sl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 3, 9.099999)
 
-[node name="StaticCeilingLightRound5" parent="StaticCorridor_2/Assets" unique_id=2127276716 instance=ExtResource("6_120sl")]
+[node name="StaticCeilingLightRound5" parent="StaticCorridor_2/Lights" unique_id=2127276716 instance=ExtResource("6_120sl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 3, 13.099999)
+
+[node name="Assets" type="Node3D" parent="StaticCorridor_2" unique_id=1491397788]
+
+[node name="MeshNumberPlate" parent="StaticCorridor_2/Assets" unique_id=1263754861 instance=ExtResource("8_4wfve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8000007, 1.7, 8.201096)
+
+[node name="Label3D" parent="StaticCorridor_2/Assets/MeshNumberPlate" index="0" unique_id=616751285]
+text = "0 0 8"
+
+[node name="MeshNumberPlate2" parent="StaticCorridor_2/Assets" unique_id=1350925667 instance=ExtResource("8_4wfve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6000004, 1.7, 8.201096)
+
+[node name="Label3D" parent="StaticCorridor_2/Assets/MeshNumberPlate2" index="0" unique_id=616751285]
+text = "0 0 9"
+
+[node name="MeshNumberPlate3" parent="StaticCorridor_2/Assets" unique_id=521940683 instance=ExtResource("8_4wfve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4000001, 1.7, 8.201096)
+
+[node name="Label3D" parent="StaticCorridor_2/Assets/MeshNumberPlate3" index="0" unique_id=616751285]
+text = "0 1 0"
+
+[node name="MeshNumberPlate4" parent="StaticCorridor_2/Assets" unique_id=892259660 instance=ExtResource("8_4wfve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7999998, 1.7, 8.201096)
+
+[node name="Label3D" parent="StaticCorridor_2/Assets/MeshNumberPlate4" index="0" unique_id=616751285]
+text = "0 1 1"
+
+[node name="MeshNumberPlate5" parent="StaticCorridor_2/Assets" unique_id=192037561 instance=ExtResource("8_4wfve")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.299329, 1.7, 8.400535)
+
+[node name="Label3D" parent="StaticCorridor_2/Assets/MeshNumberPlate5" index="0" unique_id=616751285]
+text = "0 1 2"
+
+[node name="Decals" type="Node3D" parent="StaticCorridor_2" unique_id=1300229768]
+
+[node name="Decal" type="Decal" parent="StaticCorridor_2/Decals" unique_id=526341952]
+transform = Transform3D(0.820152, 0, 0.57214594, 0, 1, 0, -0.57214594, 0, 0.820152, -2.8571997, 1.1920929e-07, 9.23521)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("9_8lwyr")
+
+[node name="Decal2" type="Decal" parent="StaticCorridor_2/Decals" unique_id=2094133783]
+transform = Transform3D(-0.9999999, 0, -1.0331603e-07, -1.0331603e-07, -4.371139e-08, 0.9999999, -4.516087e-15, 1, 4.3711385e-08, 1.0519872, 2.3000002, 8.200414)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("10_2pwje")
+
+[node name="CorridorMonster" type="Node3D" parent="StaticCorridor_2" unique_id=1901758646]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticCorridor_2/CorridorMonster" unique_id=850726021]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 3.6175694, 2.7891707, 36.519653)
+mesh = SubResource("QuadMesh_rfgp0")
+surface_material_override/0 = ExtResource("22_gr287")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticCorridor_2/CorridorMonster/MeshInstance3D3" unique_id=612487006]
+transform = Transform3D(1, 5.9604645e-08, -2.9802322e-08, -7.450581e-09, 1.0000001, 1.1920929e-07, 0, -1.1920929e-07, 1.0000001, 0.07548523, 0.033255577, 0.0013713837)
+mesh = SubResource("QuadMesh_y825v")
+surface_material_override/0 = ExtResource("21_gu0ly")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticCorridor_2/CorridorMonster/MeshInstance3D3" unique_id=848177426]
+transform = Transform3D(1.0000001, 2.9802322e-08, -2.9802322e-08, -1.4901161e-08, 1, 8.940697e-08, 0, -8.940697e-08, 1.0000001, -0.079502106, 0.03325653, 0.0013694763)
+mesh = SubResource("QuadMesh_y825v")
+surface_material_override/0 = ExtResource("21_gu0ly")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticCorridor_2/CorridorMonster" unique_id=406577680]
+libraries/ = SubResource("AnimationLibrary_gb4m1")
+
+[node name="CorridorArea3D" type="Area3D" parent="StaticCorridor_2/CorridorMonster" unique_id=625998832]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor_2/CorridorMonster/CorridorArea3D" unique_id=966597915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.5, 27)
+shape = SubResource("BoxShape3D_rfgp0")
+
+[node name="CorridorOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="StaticCorridor_2/CorridorMonster" unique_id=938814634]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 2.5, 36)
+aabb = AABB(-0.4, -0.4, -0.4, 0.8, 0.8, 0.8)
+script = ExtResource("23_gr287")
+metadata/_custom_type_script = "uid://bpy5q0ccwpl1e"
+
+[node name="NoSaveArea3D" type="Area3D" parent="StaticCorridor_2/CorridorMonster" unique_id=389888273]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor_2/CorridorMonster/NoSaveArea3D" unique_id=1078061702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.5, 21.5)
+shape = SubResource("BoxShape3D_gb4m1")
 
 [node name="FakeCells" type="Node3D" parent="." unique_id=1855203166]
 
@@ -157,23 +455,56 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7
 
 [node name="StaticFakeCell02_2" parent="FakeCells" unique_id=1776596817 instance=ExtResource("6_riupe")]
 
-[node name="MeshCeilingLightBulb" parent="FakeCells/StaticFakeCell02_2" unique_id=1629220231 instance=ExtResource("6_egkj6")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.60073, 2.8, 5.815189)
-
 [node name="MeshMetalBed01" parent="FakeCells/StaticFakeCell02_2" unique_id=478879166 instance=ExtResource("7_xho1q")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -6.997876, 0, 4.5151887)
-
-[node name="MeshBlanket01" parent="FakeCells/StaticFakeCell02_2/MeshMetalBed01" unique_id=1906615342 instance=ExtResource("8_120sl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="MeshMatress01" parent="FakeCells/StaticFakeCell02_2/MeshMetalBed01" unique_id=1868954488 instance=ExtResource("9_khj4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5555955, 0)
-
-[node name="MeshPillow01" parent="FakeCells/StaticFakeCell02_2/MeshMetalBed01" unique_id=1283076490 instance=ExtResource("10_swnjv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6131086, -0.72201276)
+transform = Transform3D(1.3113416e-07, 0, 1, 0.7071067, 0.7071068, -9.272584e-08, -0.7071068, 0.7071067, 9.2725855e-08, -6.997876, 0.34236094, 4.319802)
 
 [node name="MeshWallBookShelf" parent="FakeCells/StaticFakeCell02_2" unique_id=2020819419 instance=ExtResource("11_85hnu")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.9245424, 1.5066681, 5.892406)
+transform = Transform3D(-4.371139e-08, 0, 1, -0.24988995, 0.96827424, -1.0923037e-08, -0.96827424, -0.24988995, -4.232461e-08, -7.9245424, 1.243537, 6.0077887)
+
+[node name="MeshMatress01" parent="FakeCells/StaticFakeCell02_2" unique_id=1868954488 instance=ExtResource("9_khj4p")]
+transform = Transform3D(0.5000001, 1.4910118e-08, 0.8660253, 0.43301263, 0.8660253, -0.25, -0.7499998, 0.49999994, 0.43301278, -6.997876, 0.36361963, 5.3318815)
+
+[node name="MeshPillow03" parent="FakeCells/StaticFakeCell02_2" unique_id=504725690 instance=ExtResource("16_mq2bn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8687363, 0.014689, 5.8997574)
+
+[node name="MeshBlanket03" parent="FakeCells/StaticFakeCell02_2" unique_id=1539699138 instance=ExtResource("17_4wfve")]
+transform = Transform3D(-0.9084206, 0, -0.41805738, 0, 1, 0, 0.41805738, 0, -0.9084206, -5.7943425, 0.009296, 5.2710414)
+
+[node name="BedMonster" type="Node3D" parent="FakeCells/StaticFakeCell02_2" unique_id=700201596]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FakeCells/StaticFakeCell02_2/BedMonster" unique_id=480279416]
+transform = Transform3D(0.94673246, 0.24578528, -0.20805568, -0.15693755, 0.91633356, 0.36837938, 0.28119066, -0.31610507, 0.90609574, -7.311061, 0.9083031, 4.6447287)
+mesh = SubResource("QuadMesh_y825v")
+surface_material_override/0 = ExtResource("21_gu0ly")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="FakeCells/StaticFakeCell02_2/BedMonster" unique_id=1670467244]
+transform = Transform3D(0.94673246, 0.24578528, -0.2080557, -0.15693754, 0.9163335, 0.36837935, 0.2811907, -0.316105, 0.9060957, -7.457792, 0.93262625, 4.6011477)
+mesh = SubResource("QuadMesh_y825v")
+surface_material_override/0 = ExtResource("21_gu0ly")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="FakeCells/StaticFakeCell02_2/BedMonster" unique_id=2120960821]
+transform = Transform3D(0.94673246, 0.24578527, -0.20805569, -0.15693754, 0.91633356, 0.36837944, 0.28119063, -0.31610504, 0.9060957, -7.3904138, 0.88917077, 4.6327744)
+mesh = SubResource("QuadMesh_rfgp0")
+surface_material_override/0 = ExtResource("22_gr287")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FakeCells/StaticFakeCell02_2/BedMonster" unique_id=633228269]
+libraries/ = SubResource("AnimationLibrary_y825v")
+
+[node name="BedMonsterOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="FakeCells/StaticFakeCell02_2" unique_id=645402068 node_paths=PackedStringArray("area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4, 0.9, 4.6)
+aabb = AABB(-0.04932345, -0.07603445, -0.069400355, 0.0986469, 0.1520689, 0.13880071)
+script = ExtResource("23_gr287")
+area = NodePath("Area3D")
+metadata/_custom_type_script = "uid://bpy5q0ccwpl1e"
+
+[node name="Area3D" type="Area3D" parent="FakeCells/StaticFakeCell02_2/BedMonsterOnScreenNotifier3D" unique_id=490934379]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeCells/StaticFakeCell02_2/BedMonsterOnScreenNotifier3D/Area3D" unique_id=1548312434]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.37814188, 0.6, 3.6431632)
+shape = SubResource("BoxShape3D_y825v")
 
 [node name="StaticFakeCell03_2" parent="FakeCells" unique_id=1570869408 instance=ExtResource("7_egkj6")]
 
@@ -221,6 +552,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.1)
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="FakeCells/Lights" unique_id=324972802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 2.6999998, -0.3)
 layers = 3
+light_color = Color(1, 0.9825, 0.95, 1)
+light_energy = 0.8
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -232,6 +565,20 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1953785574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0315123, 1.9999998, 0.7999997)
 layers = 3
+light_color = Color(1, 0.9791667, 0.95, 1)
+light_energy = 0.4
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("15_xho1q")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D3" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1569872201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.131512, 1.9999998, 0.7999997)
+layers = 3
+light_color = Color(1, 0.97833335, 0.95, 1)
 light_energy = 0.6
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -244,6 +591,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D7" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1305259997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20000005, 2.6999998, -0.3000002)
 layers = 3
+light_color = Color(1, 0.9825, 0.95, 1)
+light_energy = 0.8
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -255,7 +604,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D8" type="OmniLight3D" parent="FakeCells/Lights" unique_id=314318100]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1684878, 1.9999998, 0.7999997)
 layers = 3
-light_energy = 0.6
+light_color = Color(1, 0.9791667, 0.95, 1)
+light_energy = 0.4
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -267,6 +617,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D9" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1913809807]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.6999998, -0.3)
 layers = 3
+light_color = Color(1, 0.9825, 0.95, 1)
+light_energy = 0.8
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -278,30 +630,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D10" type="OmniLight3D" parent="FakeCells/Lights" unique_id=1245189310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.368488, 1.9999998, 0.7999997)
 layers = 3
-light_energy = 0.6
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("15_xho1q")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D3" type="OmniLight3D" parent="FakeCells/Lights" unique_id=366057372]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4, 2.6999998, -0.3)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 4.0
-script = ExtResource("15_xho1q")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D4" type="OmniLight3D" parent="FakeCells/Lights" unique_id=648228060]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0315123, 1.9999998, 0.7999997)
-layers = 3
-light_energy = 0.6
+light_color = Color(1, 0.9791667, 0.95, 1)
+light_energy = 0.4
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -313,6 +643,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D5" type="OmniLight3D" parent="FakeCells/Lights" unique_id=236612356]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.734244, 2.6999998, 3.6342435)
 layers = 3
+light_color = Color(1, 0.9825, 0.95, 1)
+light_energy = 0.8
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -324,7 +656,8 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 [node name="StaticOmniLight3D6" type="OmniLight3D" parent="FakeCells/Lights" unique_id=361095895]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.6342435, 1.9999998, 4.965755)
 layers = 3
-light_energy = 0.6
+light_color = Color(1, 0.9791667, 0.95, 1)
+light_energy = 0.4
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -349,3 +682,9 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.39
 
 [node name="CellDoor03" parent="FakeCells/Assets" unique_id=307922541 instance=ExtResource("17_khj4p")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -7.1037183, 0, 8.13403)
+
+[editable path="StaticCorridor_2/Assets/MeshNumberPlate"]
+[editable path="StaticCorridor_2/Assets/MeshNumberPlate2"]
+[editable path="StaticCorridor_2/Assets/MeshNumberPlate3"]
+[editable path="StaticCorridor_2/Assets/MeshNumberPlate4"]
+[editable path="StaticCorridor_2/Assets/MeshNumberPlate5"]

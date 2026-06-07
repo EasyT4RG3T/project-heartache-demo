@@ -43,7 +43,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/converter/plugin.cfg", "res://addons/raytraced_audio/plugin.cfg")
+enabled=PackedStringArray("res://addons/converter/plugin.cfg")
 
 [file_customization]
 
@@ -278,11 +278,6 @@ common/physics_jitter_fix=0.0
 jolt_physics_3d/simulation/continuous_cd_movement_threshold=0.5
 jolt_physics_3d/simulation/continuous_cd_max_penetration=0.1
 common/physics_interpolation=true
-
-[raytraced_audio]
-
-reverb_bus=&"RaytracedReverb"
-ambient_bus=&"RaytracedAmbient"
 
 [rendering]
 

@@ -101,6 +101,7 @@ var ammo: int = 16:
 var mags: int = 3:
 	set(value):
 		mags = value
+		if !journal_entry: return
 		if mags > 1:
 			journal_entry.text = "[color=red][1][/color] Glock19 (" + str(mags) + " mags)"
 		elif mags == 1:
@@ -117,6 +118,22 @@ var shot_ray_query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.ne
 var journal_entry: RichTextLabel
 
 
+var holding_reload: bool = false:
+	set(value):
+		holding_reload = value
+		while holding_reload == true:
+			reload_timer -= get_process_delta_time()
+			await get_tree().process_frame
+		if holding_reload == false:
+			reload_timer = 0.5
+var reload_timer: float = 0.5:
+	set(value):
+		reload_timer = value
+		if value <= 0.0:
+			holding_reload = false
+			mag_check()
+
+
 func take_input(event: InputEvent) -> void:
 	if event.is_action_pressed("use_main"):
 		shoot()
@@ -129,10 +146,12 @@ func take_input(event: InputEvent) -> void:
 			stop_aim()
 	
 	if event.is_action_pressed("reload"):
-		reload()
+		holding_reload = true
 	
-	if event.is_action_pressed("use_third"):
-		mag_check()
+	if event.is_action_released("reload"):
+		if holding_reload == true:
+			reload()
+		holding_reload = false
 
 
 func _ready() -> void:

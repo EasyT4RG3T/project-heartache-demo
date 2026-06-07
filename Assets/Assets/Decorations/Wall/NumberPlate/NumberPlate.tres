@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccpc20ajfcnm1"]
+
+[ext_resource type="Texture2D" uid="uid://ch4f5wqm7w746" path="res://Assets/Assets/Decorations/Wall/NumberPlate/NumberPlate_albedo.png" id="1_i7qtt"]
+
+[resource]
+albedo_texture = ExtResource("1_i7qtt")
+metallic = 0.6
+roughness = 0.6
+texture_filter = 2

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dvk73a0jhy4ao" path="res://Assets/Assets/Mics/Vents/vent.gd" id="1_2w17v"]
 [ext_resource type="PackedScene" uid="uid://b4wjvyklsdveg" path="res://Assets/Assets/Mics/Vents/SquareVent/MeshSquareVent.tscn" id="1_k771m"]
 [ext_resource type="Script" uid="uid://ejx8vfok1s3u" path="res://Scripts/Nodes/hinge_3d.gd" id="1_llxlb"]
-[ext_resource type="PackedScene" uid="uid://1vfysk3061ug" path="res://Assets/Interactable/Screw/Screw.tscn" id="2_meky1"]
+[ext_resource type="PackedScene" uid="uid://1vfysk3061ug" path="res://Assets/Assets/Mics/Screw/Screw.tscn" id="2_meky1"]
 [ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="5_826p5"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k771m"]

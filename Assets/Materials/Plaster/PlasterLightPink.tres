@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://c4pydnpaeyptn" path="res://Assets/Materials/Plaster/Plaster_albedo.png" id="1_s0dcb"]
 
 [resource]
-albedo_color = Color(1, 0.8, 0.84000003, 1)
+albedo_color = Color(0.91, 0.78260005, 0.80808, 1)
 albedo_texture = ExtResource("1_s0dcb")
 texture_filter = 2

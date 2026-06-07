@@ -72,7 +72,7 @@ func auto_save_game_data() -> void:
 		Console.console_print(str("[color=red]actions blocking saving: ", can_save, "[/color]"))
 		return
 	save_game_data("AutoSave_" + str(autosave_slot))
-	if autosave_slot > 2:
+	if autosave_slot >= 2:
 		autosave_slot = 0
 	else:
 		autosave_slot += 1

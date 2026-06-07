@@ -33,6 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="31_jy5jr"]
 [ext_resource type="PackedScene" uid="uid://coha7fhwe5plg" path="res://Assets/Assets/Lights/Ceiling/CeilingLightLongOpen02/StaticCeilingLightLongOpen02.tscn" id="32_4rt4r"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4rt4r"]
+size = Vector3(3.2, 3, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_5a1ox"]
 size = Vector3(0.5, 0.6, 0.5)
 
@@ -118,6 +121,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 12.349712)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 16.349712)
 
 [node name="StaticBigCorridor" parent="." unique_id=1696982158 instance=ExtResource("2_h2reb")]
+
+[node name="InvisibleWalls" type="StaticBody3D" parent="." unique_id=1451181881]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls" unique_id=647610381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.6, 12.5)
+shape = SubResource("BoxShape3D_4rt4r")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls" unique_id=587510565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.6, -10.5)
+shape = SubResource("BoxShape3D_4rt4r")
 
 [node name="CrawlArea" type="Area3D" parent="." unique_id=1424901759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.25021505, 2.74982)
@@ -277,7 +292,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.4999999, -3.6)
 visible = false
 layers = 3
-light_energy = 0.5
+light_energy = 0.3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -290,7 +305,7 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.4999999, 9.099999)
 visible = false
 layers = 3
-light_energy = 0.5
+light_energy = 0.3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -451,11 +466,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7, 0.1, -5.2000003)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7, 0.1, -5.2000003)
 
 [node name="StaffDoor3" parent="Assets" unique_id=2108432235 instance=ExtResource("31_jy5jr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7, 0.1, -2)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24.7, 0.1, -2)
 
 [node name="Hinge3D" parent="Assets/StaffDoor3" index="0" unique_id=1673009916]
 duration = 1.2
-id = 1
+auto_unlock = 2
+id = "Kitchen Key"
 max_positive = 95.0
 max_negative = 95.0
 
