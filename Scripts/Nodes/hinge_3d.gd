@@ -9,6 +9,15 @@ signal opened
 signal closed
 
 
+const lock_sounds: Array[String] = [
+	"uid://buwb4k4rsr8rw",
+]
+const unlock_sounds: Array[String] = [
+	"uid://c65lpm6mkrtu0",
+	"uid://dm22gi7yerl1i",
+]
+
+
 @export var open_positive: bool = true:
 	set(value):
 		open_positive = value
@@ -21,6 +30,7 @@ signal closed
 			open_positive = true
 @export var duration: float = 0.8
 @export var locked: bool = false
+@export var lock_sound: bool = false
 @export var locked_message: String = "Locked"
 enum AUnlock { NONE, POSITIVE, NEGATIVE }
 @export var auto_unlock: AUnlock = AUnlock.NONE
@@ -70,15 +80,19 @@ func interact(player: PlayerCharacter) -> void:
 	if locked:
 		if player.inventory.keys.has(id) or player.inventory.keys.has("0"):
 			locked = false
+			AudioManager.play_uid_sound_at("SFX", unlock_sounds.pick_random(), global_position, 0, randf_range(0.9, 1.1))
 			_move_hinge()
 			return
 		
 		if _can_unlock(player):
 			locked = false
+			AudioManager.play_uid_sound_at("SFX", unlock_sounds.pick_random(), global_position, 0, randf_range(0.9, 1.1))
 			_move_hinge()
 			return
 		
 		if locked_message:
+			if lock_sound:
+				AudioManager.play_uid_sound_at("SFX", lock_sounds.pick_random(), global_position, 0, randf_range(0.9, 1.1))
 			player.add_thought(locked_message)
 		return
 	
@@ -101,6 +115,7 @@ func force_open(dir: float = 0.0) -> void:
 			opened_negative.emit()
 			opened.emit()
 		open = true
+		locked = false
 
 
 func force_close() -> void:

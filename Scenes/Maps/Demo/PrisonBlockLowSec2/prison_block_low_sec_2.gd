@@ -6,6 +6,7 @@ var bed_monster_happened: bool = false:
 		bed_monster_happened = value
 		if value:
 			%BedMonster.hide()
+			%BedMonsterOnScreenNotifier3D.disabled = true
 var corridor_monster_ready: bool = false
 var corridor_monster_ready_2: bool = false:
 	set(value):
@@ -24,14 +25,20 @@ func _ready() -> void:
 		SaverLoader.can_save -= 1)
 	
 	$FakeCells/StaticFakeCell02_2/BedMonsterOnScreenNotifier3D.screen_entered_plus.connect(func():
+		get_parent().faze2()
 		%BedMonster/AnimationPlayer.play("Hide")
 		AudioManager.play_uid_sound("SFX", "uid://bs05hgwl2paw0", -5.0)
 		%BedMonster/AnimationPlayer.animation_finished.connect(func(_anim):
 			bed_monster_happened = true))
 	
+	if randi_range(1, 1000) == 67:
+		var egg: StandardMaterial3D = load("uid://d34jsbwlmnipc")
+		%CorridorMonster/MeshInstance3D3.set_surface_override_material(0, egg)
+	
 	%CorridorArea3D.body_entered.connect(func(body: PlayerCharacter):
 		body.change_movement_mode(PlayerCharacter.MovementMode.NONE, true, false)
 		if %CorridorOnScreenNotifier3D.is_on_screen():
+			body.inventory.hide()
 			%CorridorMonster/AnimationPlayer.play("Scare")
 			%CorridorMonster/AnimationPlayer.animation_finished.connect(func(_anim):
 				await get_tree().create_timer(0.2).timeout
@@ -44,7 +51,7 @@ func _ready() -> void:
 	
 	%CorridorOnScreenNotifier3D.screen_entered.connect(func():
 		if corridor_monster_ready:
-			
+			GameManager.player_character.inventory.hide()
 			%CorridorMonster/AnimationPlayer.play("Scare")
 			%CorridorMonster/AnimationPlayer.animation_finished.connect(func(_anim):
 				await get_tree().create_timer(0.2).timeout
@@ -62,10 +69,13 @@ func _jumpscare() -> void:
 	var end_point = player.main_camera.global_position - (player.main_camera.global_basis.z * 0.2)
 	animation.track_set_key_value(0, animation.track_get_key_count(0) - 1, end_point)
 	
-	AudioManager.play_uid_sound("SFX", "uid://b8jorf3nmlhbi", -5.0)
+	player.inventory.flashlight.disabled = true
+	
+	AudioManager.play_uid_sound("SFX", "uid://b8jorf3nmlhbi", -10.0)
 
 
 func _end_demo() -> void:
+	Console.menu_hint = true
 	GameManager.load_main_menu()
 
 

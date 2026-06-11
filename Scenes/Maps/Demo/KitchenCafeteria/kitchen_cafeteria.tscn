@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b01wsuwb3x177" path="res://Assets/Assets/Kitchen/Furniture/FryerBasket/StaticFryerBasket.tscn" id="14_x6iov"]
 [ext_resource type="PackedScene" uid="uid://cgax6igwt415n" path="res://Assets/Assets/Kitchen/Utensils/PlasticFork/MeshPlasticFork.tscn" id="14_ynri0"]
 [ext_resource type="PackedScene" uid="uid://djw0d5cpfbihc" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeBody.tscn" id="15_d61sy"]
+[ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="15_l2jke"]
 [ext_resource type="PackedScene" uid="uid://dudvk33mqsvr5" path="res://Assets/Assets/Kitchen/Utensils/PlasticKnife/MeshPlasticKnife.tscn" id="15_yfvcr"]
 [ext_resource type="PackedScene" uid="uid://de25tj6ppmapt" path="res://Assets/Assets/Kitchen/Utensils/PlasticSpoon/MeshPlasticSpoon.tscn" id="16_5tvj5"]
 [ext_resource type="PackedScene" uid="uid://c27b3fu4kgr3w" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsDL.tscn" id="16_n8b7t"]
@@ -49,9 +50,23 @@
 [ext_resource type="PackedScene" uid="uid://bllom5di64vbs" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/StaticCeilingLightBulb.tscn" id="46_1xivg"]
 [ext_resource type="PackedScene" uid="uid://e4iblqa7tbty" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox02/StaticBigCardboardBox02.tscn" id="47_1xivg"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="48_ep0g3"]
+[ext_resource type="PackedScene" uid="uid://c4meqoffwnpx" path="res://Entities/Guard/guard.tscn" id="50_boyu0"]
+[ext_resource type="Texture2D" uid="uid://bk6pdpcwjmvm" path="res://Assets/Textures/Blood/Old/BloodSplatter/BloodSplatter_albedo.png" id="51_aec02"]
+[ext_resource type="Texture2D" uid="uid://mr6ss13d0ha3" path="res://Assets/Textures/Blood/Old/BloodPool/BloodPool_albedo.png" id="52_3xuaa"]
+[ext_resource type="Texture2D" uid="uid://di6okpxe6ayb0" path="res://Assets/Textures/Blood/Old/SmallBloodSplatter/SmallBloodSplatter_albedo.png" id="53_3xuaa"]
+[ext_resource type="PackedScene" uid="uid://h1fpxni5r5bo" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBox02/StaticCardboardBox02.tscn" id="54_bgivh"]
+[ext_resource type="PackedScene" uid="uid://bxxxwbs1omnvm" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBoxFlat/StaticCardboardBoxFlat.tscn" id="55_l2jke"]
+[ext_resource type="PackedScene" uid="uid://ckpuiw51v3677" path="res://Assets/Assets/Keys/Key01/MeshKey01.tscn" id="55_mtxfq"]
+[ext_resource type="PackedScene" uid="uid://dhtg8b6glyobb" path="res://Assets/Assets/Decorations/Wall/NumberPlate/MeshNumberPlate.tscn" id="56_27m7j"]
+[ext_resource type="PackedScene" uid="uid://c6n0rppxacr2r" path="res://Assets/Assets/Trash/CardboardBoxes/SmallCardboardPackage/StaticSmallCardboardPackage.tscn" id="56_05110"]
+[ext_resource type="PackedScene" uid="uid://didi6ndltsbr3" path="res://Assets/Assets/Kitchen/Utensils/FoodTray/StaticFoodTray.tscn" id="57_mtxfq"]
+[ext_resource type="PackedScene" uid="uid://bdqco3l41brvt" path="res://Assets/Assets/Kitchen/Utensils/Ladle/MeshLadle.tscn" id="58_27m7j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yfvcr"]
 size = Vector3(4, 3, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_05110"]
+size = Vector3(1.2, 3, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d61sy"]
 size = Vector3(0.2, 0.8, 2.4)
@@ -61,6 +76,9 @@ size = Vector3(2.6000001, 3, 1.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3jby"]
 size = Vector3(0.46629333, 0.05847168, 0.33233643)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mxa3"]
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="KitchenCafeteria" type="Node3D" unique_id=1932620180]
 script = ExtResource("1_5tvj5")
@@ -615,44 +633,14 @@ transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-
 [node name="StaticCafeteriaTable9" parent="StaticCafeteria/Assets" unique_id=1302320206 instance=ExtResource("6_pf36c")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.6, 0.1, 1.6)
 
-[node name="MeshFoodTray" parent="StaticCafeteria/Assets/StaticCafeteriaTable9" unique_id=886677813 instance=ExtResource("7_daqxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054403067, 0.7399999, -0.2543068)
-
 [node name="MeshFoodTray2" parent="StaticCafeteria/Assets/StaticCafeteriaTable9" unique_id=779753245 instance=ExtResource("7_daqxa")]
-transform = Transform3D(0.97455424, 0, 0.2241517, 0, 1, 0, -0.2241517, 0, 0.97455424, -0.538769, 0.74, -0.23443413)
+transform = Transform3D(0.97455424, 0, 0.2241517, 0, 1, 0, -0.2241517, 0, 0.97455424, -0.43938947, 0.74, -0.23443413)
 
 [node name="MeshFoodTray3" parent="StaticCafeteria/Assets/StaticCafeteriaTable9" unique_id=1488987205 instance=ExtResource("7_daqxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37548006, 0.74, 0.28342056)
 
 [node name="MeshFoodTray4" parent="StaticCafeteria/Assets/StaticCafeteriaTable9" unique_id=581512871 instance=ExtResource("7_daqxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47199833, 0.74, -0.23361397)
-
-[node name="DefaultPrisoner" parent="StaticCafeteria/Assets/StaticCafeteriaTable9" unique_id=1123670873 instance=ExtResource("8_yfvcr")]
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 0.40146434, 0, 0.68172073)
-
-[node name="LeftHandIK" parent="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner" index="2" unique_id=947952659]
-transform = Transform3D(-0.99999994, 1.5099576e-07, -6.217249e-15, -1.4585073e-07, -0.9659255, 0.25881907, 3.9080582e-08, 0.25881898, 0.9659258, 0.25, 0.85420305, 0)
-
-[node name="RightHandIK" parent="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner" index="4" unique_id=467801966]
-transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-07, -0.96592534, 0.25881895, 3.908058e-08, 0.25881895, 0.9659254, -0.25, 0.85420305, 0)
-
-[node name="DefaultPrisoner2" parent="StaticCafeteria/Assets/StaticCafeteriaTable9" unique_id=833067969 instance=ExtResource("8_yfvcr")]
-transform = Transform3D(1, 0, 1.7484552e-07, 0, 1, 0, -1.7484552e-07, 0, 1, 0.4873172, 0, -0.6931648)
-
-[node name="LeftHandIK" parent="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner2" index="2" unique_id=947952659]
-transform = Transform3D(-0.99999994, 1.5099576e-07, -6.217249e-15, -1.4585073e-07, -0.9659255, 0.25881907, 3.9080582e-08, 0.25881898, 0.9659258, 0.25, 0.85420305, 0)
-
-[node name="RightHandIK" parent="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner2" index="4" unique_id=467801966]
-transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-07, -0.96592534, 0.25881895, 3.908058e-08, 0.25881895, 0.9659254, -0.25, 0.85420305, 0)
-
-[node name="DefaultPrisoner3" parent="StaticCafeteria/Assets/StaticCafeteriaTable9" unique_id=1765857441 instance=ExtResource("8_yfvcr")]
-transform = Transform3D(1, 0, 1.7484552e-07, 0, 1, 0, -1.7484552e-07, 0, 1, -0.058877587, 0, -0.6931648)
-
-[node name="LeftHandIK" parent="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner3" index="2" unique_id=947952659]
-transform = Transform3D(-0.99999994, 1.5099576e-07, -6.217249e-15, -1.4585073e-07, -0.9659255, 0.25881907, 3.9080582e-08, 0.25881898, 0.9659258, 0.25, 0.85420305, 0)
-
-[node name="RightHandIK" parent="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner3" index="4" unique_id=467801966]
-transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-07, -0.96592534, 0.25881895, 3.908058e-08, 0.25881895, 0.9659254, -0.25, 0.85420305, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39685488, 0.74, -0.23361397)
 
 [node name="StaticCafeteriaTable10" parent="StaticCafeteria/Assets" unique_id=906452008 instance=ExtResource("6_pf36c")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.6, 0.1, 1.6)
@@ -1252,6 +1240,49 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.
 [node name="StaticCeilingLightRectangle10" parent="StaticCafeteria/Assets" unique_id=541667866 instance=ExtResource("13_6fcup")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.200001, 3.1000001, 0.099999666)
 
+[node name="Friends" type="Node3D" parent="StaticCafeteria" unique_id=1049913109]
+unique_name_in_owner = true
+
+[node name="Friend1" parent="StaticCafeteria/Friends" unique_id=1123670873 instance=ExtResource("8_yfvcr")]
+unique_name_in_owner = true
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -18.91828, 0.1, 1.1985357)
+
+[node name="LeftHandIK" parent="StaticCafeteria/Friends/Friend1" index="2" unique_id=947952659]
+transform = Transform3D(-0.99999994, 1.5099576e-07, -6.217249e-15, -1.4585073e-07, -0.9659255, 0.25881907, 3.9080582e-08, 0.25881898, 0.9659258, 0.25, 0.85420305, 0)
+
+[node name="RightHandIK" parent="StaticCafeteria/Friends/Friend1" index="4" unique_id=467801966]
+transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-07, -0.96592534, 0.25881895, 3.908058e-08, 0.25881895, 0.9659254, -0.25, 0.85420305, 0)
+
+[node name="Friend2" parent="StaticCafeteria/Friends" unique_id=833067969 instance=ExtResource("8_yfvcr")]
+unique_name_in_owner = true
+transform = Transform3D(-2.1855692e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855692e-07, -20.293165, 0.1, 1.2167776)
+
+[node name="LeftHandIK" parent="StaticCafeteria/Friends/Friend2" index="2" unique_id=947952659]
+transform = Transform3D(-0.99999994, 1.5099576e-07, -6.217249e-15, -1.4585073e-07, -0.9659255, 0.25881907, 3.9080582e-08, 0.25881898, 0.9659258, 0.25, 0.85420305, 0)
+
+[node name="RightHandIK" parent="StaticCafeteria/Friends/Friend2" index="4" unique_id=467801966]
+transform = Transform3D(-0.99999976, 1.5099573e-07, -2.6645344e-15, -1.4585072e-07, -0.96592534, 0.25881895, 3.908058e-08, 0.25881895, 0.9659254, -0.25, 0.85420305, 0)
+
+[node name="InteractableFaze1" type="StaticBody3D" parent="StaticCafeteria/Friends" unique_id=1767359791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.087385, 1.5, 1.6)
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("15_l2jke")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCafeteria/Friends/InteractableFaze1" unique_id=1153765420]
+shape = SubResource("BoxShape3D_05110")
+
+[node name="InteractableFaze2" type="StaticBody3D" parent="StaticCafeteria/Friends" unique_id=1908928026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1, 1.5, 1.6)
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("15_l2jke")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCafeteria/Friends/InteractableFaze2" unique_id=1661852157]
+shape = SubResource("BoxShape3D_05110")
+
 [node name="StaticKitchen" parent="." unique_id=714011719 instance=ExtResource("4_sl6a2")]
 unique_name_in_owner = true
 
@@ -1342,11 +1373,12 @@ metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.800001, 2.8, -0.8999996)
 layers = 3
 light_color = Color(1, 0.9813333, 0.96, 1)
+light_energy = 0.6
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
-omni_range = 4.0
+omni_range = 3.0
 script = ExtResource("5_bguy8")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
@@ -1555,6 +1587,116 @@ transform = Transform3D(0.087155804, 0, -0.9961947, 0, 1, 0, 0.9961947, 0, 0.087
 [node name="StaticBigCardboardBox01" parent="StaticKitchen/Assets/StaticCountertopBig5" unique_id=1121094488 instance=ExtResource("48_ep0g3")]
 transform = Transform3D(0.9961948, 0, -0.087155744, 0, 1, 0, 0.087155744, 0, 0.9961948, 0.5000038, 1, -8.940697e-08)
 
+[node name="Guard" parent="StaticKitchen/Assets" unique_id=1107532329 instance=ExtResource("50_boyu0")]
+unique_name_in_owner = true
+transform = Transform3D(0.64278764, 0, 0.76604444, 0, 1, 0, -0.76604444, 0, 0.64278764, -27.1, -0.4, -1.5)
+
+[node name="Skeleton3D" parent="StaticKitchen/Assets/Guard/metarig" parent_id_path=PackedInt32Array(1107532329, 840274788) index="0" unique_id=1721436691]
+bones/0/position = Vector3(0.06851449, 0.5465238, -0.09692165)
+bones/0/rotation = Quaternion(-0.02379732, 0.19492178, -0.004730723, 0.98051864)
+bones/0/scale = Vector3(1, 0.9999998, 0.99999976)
+bones/3/position = Vector3(-1.3488835e-06, 0.15611832, -5.526557e-07)
+bones/3/rotation = Quaternion(-0.08579765, 0.029577348, -0.043331496, 0.9949303)
+bones/3/scale = Vector3(0.99999994, 1.0000001, 1)
+bones/11/position = Vector3(-0.016501445, 0.11373468, 0.07149134)
+bones/11/rotation = Quaternion(-0.43658718, 0.52515274, 0.37543052, 0.6266244)
+bones/11/scale = Vector3(0.99999964, 0.99999976, 0.99999976)
+
+[node name="HeadLookIK" parent="StaticKitchen/Assets/Guard" index="1" unique_id=314193378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14861771, 1.3649685, -0.33928534)
+
+[node name="LeftHandIK" parent="StaticKitchen/Assets/Guard" index="2" unique_id=1254179572]
+transform = Transform3D(-0.46042764, 0.7884171, -0.40792668, -0.8828266, -0.3586178, 0.3033319, 0.09286231, 0.4997907, 0.8611537, 0.23420854, 0.55626655, -0.23048249)
+
+[node name="LeftHandIK2" parent="StaticKitchen/Assets/Guard" index="3" unique_id=98590321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092062, 0.56880915, -0.71297646)
+
+[node name="RightHandIK" parent="StaticKitchen/Assets/Guard" index="4" unique_id=1691306427]
+transform = Transform3D(-0.4412771, -0.4266877, 0.7894374, 0.8765095, -0.0163596, 0.48110574, -0.19236727, 0.9042508, 0.3812155, -0.46510696, 1.1365525, -0.15571594)
+
+[node name="RightHandIK2" parent="StaticKitchen/Assets/Guard" index="5" unique_id=899630948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6575985, 1.1734506, -0.6579857)
+
+[node name="LeftLegIK" parent="StaticKitchen/Assets/Guard" index="6" unique_id=1698430135]
+transform = Transform3D(0.46934903, 0.6496851, 0.5980139, 0.84341335, -0.12930338, -0.5214737, -0.26146835, 0.749126, -0.6086414, 0.5494356, 0.5423622, 0.074905396)
+
+[node name="LeftLegIK2" parent="StaticKitchen/Assets/Guard" index="7" unique_id=617757116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117069244, 0.6517215, 0.5334034)
+
+[node name="RightLegIK" parent="StaticKitchen/Assets/Guard" index="8" unique_id=1355756800]
+transform = Transform3D(0.9841896, 0.06754346, 0.16373464, 1.4901161e-08, 0.9244329, -0.38134474, -0.1771191, 0.37531546, 0.90981734, -0.09096527, 0.544663, 0.816885)
+
+[node name="RightLegIK2" parent="StaticKitchen/Assets/Guard" index="9" unique_id=1353039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24113655, 1.1719165, 0.6875038)
+
+[node name="Decal" type="Decal" parent="StaticKitchen/Assets/Guard" unique_id=1957434865]
+transform = Transform3D(-0.11731207, 0, 0.99309504, 0, 1, 0, -0.99309504, 0, -0.11731207, -0.1348648, 0.9, 0.014986038)
+size = Vector3(1.5, 1, 1.5)
+texture_albedo = ExtResource("51_aec02")
+
+[node name="Decal2" type="Decal" parent="StaticKitchen/Assets/Guard" unique_id=1780586612]
+transform = Transform3D(0.9288936, 0, 0.37034672, 0, 1, 0, -0.37034672, 0, 0.9288936, 0.033311844, 0.49999997, 0.10795975)
+size = Vector3(2, 0.001, 2)
+texture_albedo = ExtResource("52_3xuaa")
+
+[node name="Decal3" type="Decal" parent="StaticKitchen/Assets/Guard" unique_id=1808320342]
+transform = Transform3D(0.8038673, 0, -0.59480894, 0, 1, 0, 0.59480894, 0, 0.8038673, 0.044351578, 0.49999985, 0.9578285)
+size = Vector3(1.5, 0.001, 1.5)
+texture_albedo = ExtResource("53_3xuaa")
+
+[node name="Key" parent="StaticKitchen/Assets/Guard" unique_id=590914060 instance=ExtResource("55_mtxfq")]
+unique_name_in_owner = true
+transform = Transform3D(0.9068382, 0, -0.42147908, 0, 1, 0, 0.42147908, 0, 0.9068382, -0.37330055, 1.12, -0.08121872)
+
+[node name="MeshNumberPlate" parent="StaticKitchen/Assets/Guard/Key" unique_id=1263754861 instance=ExtResource("56_27m7j")]
+transform = Transform3D(0.06694599, -0.14091873, 0.32332814, 0.28043678, 0.22085638, 0.03819242, -0.21390283, 0.24544927, 0.15126526, 0.0017089844, -0.035348177, 0.013744354)
+
+[node name="Label3D" parent="StaticKitchen/Assets/Guard/Key/MeshNumberPlate" index="0" unique_id=616751285]
+text = "Security"
+font_size = 50
+
+[node name="KeyInteractable" type="StaticBody3D" parent="StaticKitchen/Assets/Guard/Key" unique_id=2030383974]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("15_l2jke")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticKitchen/Assets/Guard/Key/KeyInteractable" unique_id=186255806]
+shape = SubResource("BoxShape3D_3mxa3")
+
+[node name="StaticCardboardBox02" parent="StaticKitchen/Assets" unique_id=1300642437 instance=ExtResource("54_bgivh")]
+transform = Transform3D(0.98258036, 0, 0.1858381, 0, 1, 0, -0.1858381, 0, 0.98258036, -27.590443, 0.32000035, -0.24778455)
+
+[node name="StaticCardboardBoxFlat" parent="StaticKitchen/Assets" unique_id=1055490897 instance=ExtResource("55_l2jke")]
+transform = Transform3D(0.9994737, 0, -0.032439977, 0, 1, 0, 0.032439977, 0, 0.9994737, -27.599422, 0.32000053, -0.58658713)
+
+[node name="StaticSmallCardboardPackage" parent="StaticKitchen/Assets" unique_id=1614462556 instance=ExtResource("56_05110")]
+transform = Transform3D(0.33880362, 0, -0.9408571, 0, 1, 0, 0.9408571, 0, 0.33880362, -27.618662, 0.43810055, -0.57921004)
+
+[node name="StaticPot" parent="StaticKitchen/Assets" unique_id=1202726658 instance=ExtResource("25_o0adt")]
+transform = Transform3D(0.9129909, 0, 0.40797994, 0, 1, 0, -0.40797994, 0, 0.9129909, -24.138187, 0.31030035, -0.25808692)
+
+[node name="StaticPot2" parent="StaticKitchen/Assets" unique_id=1965858174 instance=ExtResource("25_o0adt")]
+transform = Transform3D(0.4365977, 0, -0.89965683, 0, 1, 0, 0.89965683, 0, 0.4365977, -24.555222, 0.31030035, -0.17272305)
+
+[node name="StaticPan" parent="StaticKitchen/Assets" unique_id=1132520565 instance=ExtResource("27_5aw48")]
+transform = Transform3D(0.70459706, 0, -0.70960766, 0, 1, 0, 0.70960766, 0, 0.70459706, -25.020332, 0.31030047, -0.17341697)
+
+[node name="StaticPot3" parent="StaticKitchen/Assets" unique_id=696220143 instance=ExtResource("25_o0adt")]
+transform = Transform3D(0.9898036, 0, 0.1424389, 0, 1, 0, -0.1424389, 0, 0.9898036, -27.601246, 0.72, -0.24643743)
+
+[node name="StaticFoodTray" parent="StaticKitchen/Assets" unique_id=1897540121 instance=ExtResource("57_mtxfq")]
+transform = Transform3D(-0.043113735, 0, 0.99907017, 0, 1, 0, -0.99907017, 0, -0.043113735, -27.606668, 1.5200001, -1.5130082)
+
+[node name="MeshLadle" parent="StaticKitchen/Assets" unique_id=6250098 instance=ExtResource("58_27m7j")]
+transform = Transform3D(0.71708095, 0.6829806, -0.13904089, 0, 0.19948767, 0.9799003, 0.6969899, -0.70266783, 0.14304881, -27.734676, 0.76869583, -0.4719742)
+
+[node name="StaticFoodTray2" parent="StaticKitchen/Assets" unique_id=1872001244 instance=ExtResource("57_mtxfq")]
+transform = Transform3D(-0.07908546, 0, -0.9968679, 0, 1, 0, 0.9968679, 0, -0.07908546, -27.613096, 1.5375236, -1.508328)
+
+[node name="StaticFoodTray3" parent="StaticKitchen/Assets" unique_id=1786386372 instance=ExtResource("57_mtxfq")]
+transform = Transform3D(0.035562363, 0, -0.9993675, 0, 1, 0, 0.9993675, 0, 0.035562363, -27.622513, 1.5562682, -1.5073873)
+
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable/DefaultPrisoner2"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable2/DefaultPrisoner"]
@@ -1574,9 +1716,6 @@ transform = Transform3D(0.9961948, 0, -0.087155744, 0, 1, 0, 0.087155744, 0, 0.9
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable7/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable7/DefaultPrisoner2"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable8/DefaultPrisoner"]
-[editable path="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner"]
-[editable path="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner2"]
-[editable path="StaticCafeteria/Assets/StaticCafeteriaTable9/DefaultPrisoner3"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable10/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable10/DefaultPrisoner2"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable11/DefaultPrisoner"]
@@ -1619,4 +1758,8 @@ transform = Transform3D(0.9961948, 0, -0.087155744, 0, 1, 0, 0.087155744, 0, 0.9
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner2"]
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner3"]
+[editable path="StaticCafeteria/Friends/Friend1"]
+[editable path="StaticCafeteria/Friends/Friend2"]
 [editable path="StaticKitchen/Assets/StaffDoor"]
+[editable path="StaticKitchen/Assets/Guard"]
+[editable path="StaticKitchen/Assets/Guard/Key/MeshNumberPlate"]

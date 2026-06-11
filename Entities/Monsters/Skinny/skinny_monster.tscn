@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dbi4bbim1t6ld"]
+
+[ext_resource type="PackedScene" uid="uid://ce57c7qwp5120" path="res://Entities/Monsters/Skinny/SkinnyMonster.glb" id="1_kggwh"]
+[ext_resource type="Material" uid="uid://2lae7vc2l0y0" path="res://Entities/Monsters/Skinny/SkinnyMonster.tres" id="2_dvdd5"]
+
+[node name="SkinnyMonster" unique_id=1458533042 instance=ExtResource("1_kggwh")]
+
+[node name="SkinnyMonster" parent="metarig/Skeleton3D" parent_id_path=PackedInt32Array(1225787861) index="0" unique_id=697866113]
+surface_material_override/0 = ExtResource("2_dvdd5")
+
+[node name="TwoBoneIK3D" type="TwoBoneIK3D" parent="metarig/Skeleton3D" parent_id_path=PackedInt32Array(1225787861) index="1" unique_id=1030161907]
+setting_count = 4
+settings/0/target_node = NodePath("../../../LeftHandIK")
+settings/0/pole_node = NodePath("../../../LeftHandIK2")
+settings/0/root_bone_name = "upper_arm.L"
+settings/0/root_bone = 8
+settings/0/middle_bone_name = "forearm.L"
+settings/0/middle_bone = 9
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "hand.L"
+settings/0/end_bone = 10
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+settings/1/target_node = NodePath("../../../RightHandIK")
+settings/1/pole_node = NodePath("../../../RightHandIK2")
+settings/1/root_bone_name = "upper_arm.R"
+settings/1/root_bone = 12
+settings/1/middle_bone_name = "forearm.R"
+settings/1/middle_bone = 13
+settings/1/pole_direction = 0
+settings/1/end_bone_name = "hand.R"
+settings/1/end_bone = 14
+settings/1/use_virtual_end = false
+settings/1/extend_end_bone = false
+settings/2/target_node = NodePath("../../../LeftLegIK")
+settings/2/pole_node = NodePath("../../../LeftLegIK2")
+settings/2/root_bone_name = "thigh.L"
+settings/2/root_bone = 17
+settings/2/middle_bone_name = "shin.L"
+settings/2/middle_bone = 18
+settings/2/pole_direction = 0
+settings/2/end_bone_name = "foot.L"
+settings/2/end_bone = 19
+settings/2/use_virtual_end = false
+settings/2/extend_end_bone = false
+settings/3/target_node = NodePath("../../../RightLegIK")
+settings/3/pole_node = NodePath("../../../RightLegIK2")
+settings/3/root_bone_name = "thigh.R"
+settings/3/root_bone = 22
+settings/3/middle_bone_name = "shin.R"
+settings/3/middle_bone = 23
+settings/3/pole_direction = 0
+settings/3/end_bone_name = "foot.R"
+settings/3/end_bone = 24
+settings/3/use_virtual_end = false
+settings/3/extend_end_bone = false
+
+[node name="CopyTransformModifier3D" type="CopyTransformModifier3D" parent="metarig/Skeleton3D" parent_id_path=PackedInt32Array(1225787861) index="2" unique_id=1860253068]
+setting_count = 4
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "hand.L"
+settings/0/apply_bone = 10
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../LeftHandIK")
+settings/1/amount = 1.0
+settings/1/apply_bone_name = "hand.R"
+settings/1/apply_bone = 14
+settings/1/reference_type = 1
+settings/1/reference_node = NodePath("../../../RightHandIK")
+settings/2/amount = 1.0
+settings/2/apply_bone_name = "foot.L"
+settings/2/apply_bone = 19
+settings/2/reference_type = 1
+settings/2/reference_node = NodePath("../../../LeftLegIK")
+settings/3/amount = 1.0
+settings/3/apply_bone_name = "foot.R"
+settings/3/apply_bone = 24
+settings/3/reference_type = 1
+settings/3/reference_node = NodePath("../../../RightLegIK")
+settings/0/copy = 7
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+settings/1/copy = 7
+settings/1/axes = 7
+settings/1/invert = 0
+settings/1/additive = false
+settings/2/copy = 7
+settings/2/axes = 7
+settings/2/invert = 0
+settings/2/additive = false
+settings/3/copy = 7
+settings/3/axes = 7
+settings/3/invert = 0
+settings/3/additive = false
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="metarig/Skeleton3D" parent_id_path=PackedInt32Array(1225787861) index="3" unique_id=1702003065]
+target_node = NodePath("../../../HeadLookIK")
+bone_name = "spine.006"
+bone = 6
+origin_offset = Vector3(0, 0.065, 0)
+use_angle_limitation = true
+symmetry_limitation = true
+primary_limit_angle = 3.1415927
+primary_damp_threshold = 1.0
+secondary_limit_angle = 6.2831855
+secondary_damp_threshold = 1.0
+
+[node name="HeadLookIK" type="Marker3D" parent="." index="1" unique_id=1354052232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 1)
+
+[node name="LeftHandIK" type="Marker3D" parent="." index="2" unique_id=2125709531]
+transform = Transform3D(-1, 1.5099576e-07, -2.664536e-15, -1.4585075e-07, -0.9659255, 0.2588191, 3.908059e-08, 0.25881898, 0.96592593, 0.25, 1.0873086, 0)
+
+[node name="LeftHandIK2" type="Marker3D" parent="." index="3" unique_id=1818750846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.8299999, -1)
+
+[node name="RightHandIK" type="Marker3D" parent="." index="4" unique_id=1614960415]
+transform = Transform3D(-0.9999999, 1.5099575e-07, -2.6645346e-15, -1.4585073e-07, -0.96592546, 0.25881898, 3.9080586e-08, 0.25881898, 0.9659255, -0.25, 1.0873086, 0)
+
+[node name="RightHandIK2" type="Marker3D" parent="." index="5" unique_id=842425413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.8299999, -1)
+
+[node name="LeftLegIK" type="Marker3D" parent="." index="6" unique_id=1394752163]
+transform = Transform3D(1, 0, 0, 0, -0.5372996, -0.8433913, 0, 0.8433913, -0.5372996, 0.1003916, 0.07540267, 0)
+
+[node name="LeftLegIK2" type="Marker3D" parent="." index="7" unique_id=1806355855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1003916, 1.0754026, 1)
+
+[node name="RightLegIK" type="Marker3D" parent="." index="8" unique_id=2113939882]
+transform = Transform3D(1, 0, 0, 0, -0.5, -0.86602527, 0, 0.86602527, -0.5, -0.1, 0.075, 0)
+
+[node name="RightLegIK2" type="Marker3D" parent="." index="9" unique_id=1558262757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.075, 1)

@@ -23,14 +23,17 @@ var current_slot: Slots:
 			Slots.NONE:
 				p.inventory_input = false
 			Slots.INVENTORY:
-				journal.show()
 				journal.animation_player.play("Open")
 				slot_timer.start(0.3)
+				await get_tree().process_frame
+				journal.show()
 			Slots.GLOCK_19:
 				glock_19.process_mode = Node.PROCESS_MODE_INHERIT
-				glock_19.show()
 				glock_19.reset_physics_interpolation()
 				glock_19.animation_player.play("PullOut")
+				await get_tree().process_frame
+				glock_19.show()
+		
 		match current_slot:
 			Slots.NONE:
 				pass
@@ -103,6 +106,7 @@ func switch_slot(slot: Slots) -> void:
 		Slots.NONE:
 			current_slot = Slots.NONE
 		Slots.INVENTORY:
+			if journal.disabled: return
 			if current_slot == Slots.INVENTORY:
 				current_slot = Slots.NONE
 			else:

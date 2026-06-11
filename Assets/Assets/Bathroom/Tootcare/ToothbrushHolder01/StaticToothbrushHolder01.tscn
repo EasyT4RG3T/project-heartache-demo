@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b3r48ptmln410"]
+
+[ext_resource type="PackedScene" uid="uid://b3d3g6a3budlx" path="res://Assets/Assets/Bathroom/Tootcare/ToothbrushHolder01/MeshToothbrushHolder01.tscn" id="1_5mi6w"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wbren"]
+points = PackedVector3Array(-0.034848, 0.08, 0, -0.020371208, 0, -0.020371208, -0.028803496, 0, 0, -0.020371208, 0, 0.020364385, -0.024641931, 0.08, 0.024635106, -0.024641931, 0.08, -0.024641931, 0, 0.08, -0.034848, 0, 0, -0.028803496, 0, 0, 0.028796677, 0, 0.08, 0.034848, 0.024635106, 0.08, -0.024641931, 0.020364385, 0, -0.020371208, 0.020364385, 0, 0.020364385, 0.024635106, 0.08, 0.024635106, 0.034848, 0.08, 0, 0.028796677, 0, 0)
+
+[node name="StaticToothbrushHolder01" type="StaticBody3D" unique_id=1115505624]
+
+[node name="MeshToothbrushHolder01" parent="." unique_id=144647628 instance=ExtResource("1_5mi6w")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2071062514]
+shape = SubResource("ConvexPolygonShape3D_wbren")

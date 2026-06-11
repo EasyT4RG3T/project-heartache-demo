@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d34jsbwlmnipc"]
+
+[ext_resource type="Texture2D" uid="uid://dgdi513iit75q" path="res://Assets/Materials/Organic/WhateverMan/IMG_8358.png" id="1_odd28"]
+
+[resource]
+albedo_texture = ExtResource("1_odd28")
+texture_filter = 2

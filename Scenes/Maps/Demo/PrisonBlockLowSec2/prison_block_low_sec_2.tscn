@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dw1j21bo0x7o" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrowThick.png" id="10_2pwje"]
 [ext_resource type="PackedScene" uid="uid://wy15o66f6ycp" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow01/MeshPillow01.tscn" id="10_swnjv"]
 [ext_resource type="PackedScene" uid="uid://g5xnw3yiebpc" path="res://Assets/Assets/Furniture/Shelfs/Wall/WallBookShelf/MeshWallBookShelf.tscn" id="11_85hnu"]
+[ext_resource type="Script" uid="uid://cmv4qm8gcm4fc" path="res://Scripts/Nodes/dynamic_spotlight_3d.gd" id="14_rfgp0"]
 [ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="15_xho1q"]
 [ext_resource type="PackedScene" uid="uid://hkoos73g6uf2" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow03/MeshPillow03.tscn" id="16_mq2bn"]
 [ext_resource type="PackedScene" uid="uid://ccyvx8pi4upbh" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket03/MeshBlanket03.tscn" id="17_4wfve"]
@@ -74,10 +75,10 @@ tracks/0/path = NodePath("MeshInstance3D3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1, 1.35, 1.7733049, 2, 7.8000007, 8),
-"transitions": PackedFloat32Array(1, 2, 0.5, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.35, 1.7733049, 2, 7.6, 7.8, 8),
+"transitions": PackedFloat32Array(1, 2, 0.5, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(3.6175694, 2.7891707, 36.519653), Vector3(3.3567882, 2.7409816, 36.519653), Vector3(3.078845, 2.6243064, 36.519653), Vector3(2.9943056, 2.5349052, 36.519653), Vector3(2.9943056, 2.5349052, 36.519653), Vector3(2.3943055, 1.4349052, 26.619652)]
+"values": [Vector3(3.6175694, 2.7891707, 36.519653), Vector3(3.3567882, 2.7409816, 36.519653), Vector3(3.078845, 2.6243064, 36.519653), Vector3(2.9943056, 2.5349052, 36.519653), Vector3(2.9943056, 2.5349052, 36.519653), Vector3(2.9943063, 2.4144285, 36.201244), Vector3(2.3943055, 1.4349052, 26.619652)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -86,10 +87,10 @@ tracks/1/path = NodePath("MeshInstance3D3:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 1.35, 1.7733049, 2, 7.8000007, 8),
-"transitions": PackedFloat32Array(1, 2, 0.5, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.35, 1.7733049, 2, 7.6, 7.8, 8),
+"transitions": PackedFloat32Array(1, 2, 0.5, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -3.1415925, 0), Vector3(3.185073e-08, -3.1415925, -0.2469082), Vector3(1.0574496e-07, -3.1415925, -0.78510153), Vector3(1.1431686e-07, -3.1415925, -0.8588416), Vector3(1.1431686e-07, -3.1415925, -0.8588416), Vector3(-7.3607765e-08, -3.1415925, 0.18835604)]
+"values": [Vector3(0, -3.1415925, 0), Vector3(3.185073e-08, -3.1415925, -0.2469082), Vector3(1.0574496e-07, -3.1415925, -0.78510153), Vector3(1.1431686e-07, -3.1415925, -0.8588416), Vector3(1.1431686e-07, -3.1415925, -0.8588416), Vector3(1.143171e-07, -3.1415925, -0.85884297), Vector3(-7.3607765e-08, -3.1415925, 0.18835604)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -98,7 +99,7 @@ tracks/2/path = NodePath("%CorridorMonster/../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(7.7000003),
+"times": PackedFloat32Array(7.6),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -116,7 +117,7 @@ _data = {
 size = Vector3(1.8000001, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gb4m1"]
-size = Vector3(1.8000001, 3, 17)
+size = Vector3(1.8000001, 3, 21.9)
 
 [sub_resource type="Animation" id="Animation_gu0ly"]
 resource_name = "Hide"
@@ -403,6 +404,19 @@ transform = Transform3D(1.0000001, 2.9802322e-08, -2.9802322e-08, -1.4901161e-08
 mesh = SubResource("QuadMesh_y825v")
 surface_material_override/0 = ExtResource("21_gu0ly")
 
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="StaticCorridor_2/CorridorMonster/MeshInstance3D3" unique_id=395497963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14674377)
+layers = 3
+light_bake_mode = 0
+shadow_bias = 0.01
+distance_fade_enabled = true
+distance_fade_begin = 0.5
+distance_fade_length = 5.0
+spot_range = 0.2
+spot_angle = 80.0
+script = ExtResource("14_rfgp0")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StaticCorridor_2/CorridorMonster" unique_id=406577680]
 libraries/ = SubResource("AnimationLibrary_gb4m1")
 
@@ -412,7 +426,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor_2/CorridorMonster/CorridorArea3D" unique_id=966597915]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.5, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.5, 30.4)
 shape = SubResource("BoxShape3D_rfgp0")
 
 [node name="CorridorOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="StaticCorridor_2/CorridorMonster" unique_id=938814634]
@@ -428,7 +442,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor_2/CorridorMonster/NoSaveArea3D" unique_id=1078061702]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.5, 21.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.5, 23.95)
 shape = SubResource("BoxShape3D_gb4m1")
 
 [node name="FakeCells" type="Node3D" parent="." unique_id=1855203166]
@@ -492,6 +506,7 @@ surface_material_override/0 = ExtResource("22_gr287")
 libraries/ = SubResource("AnimationLibrary_y825v")
 
 [node name="BedMonsterOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="FakeCells/StaticFakeCell02_2" unique_id=645402068 node_paths=PackedStringArray("area")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4, 0.9, 4.6)
 aabb = AABB(-0.04932345, -0.07603445, -0.069400355, 0.0986469, 0.1520689, 0.13880071)
 script = ExtResource("23_gr287")

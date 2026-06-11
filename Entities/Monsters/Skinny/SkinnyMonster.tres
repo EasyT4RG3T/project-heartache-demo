@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2lae7vc2l0y0"]
+
+[ext_resource type="Texture2D" uid="uid://c82bvly6vsdhm" path="res://Entities/Monsters/Skinny/SkinnyMonster_albedo.png" id="1_36cpl"]
+
+[resource]
+albedo_color = Color(0.69, 0.68218, 0.6624, 1)
+albedo_texture = ExtResource("1_36cpl")
+texture_filter = 2

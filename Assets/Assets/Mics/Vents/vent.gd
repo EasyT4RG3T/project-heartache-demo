@@ -30,6 +30,10 @@ var unlock_02: bool = false:
 		if unlock_01 and !unlocked:
 			_unlock()
 var unlocked: bool = false
+var open: bool = false:
+	set(value):
+		open = value
+		collision.disabled = value
 
 
 func _ready() -> void:
@@ -39,14 +43,14 @@ func _ready() -> void:
 		unlock_02 = true)
 	
 	hinge.opened_negative.connect(func():
-		collision.disabled = true
+		open = true
 		interactable_static_body_3d.active = false
 		if screw_01:
 			screw_01.interactable.active = false
 		if screw_02:
 			screw_02.interactable.active = false)
 	hinge.closed.connect(func():
-		collision.disabled = false
+		open = false
 		interactable_static_body_3d.active = true
 		if screw_01:
 			screw_01.interactable.active = true
@@ -70,6 +74,7 @@ func save() -> Dictionary:
 		"unlocked": unlocked,
 		"unlock_01": unlock_01,
 		"unlock_02": unlock_02,
+		"open": open
 	}
 	
 	return file
@@ -79,3 +84,4 @@ func load_save(file: Dictionary) -> void:
 	unlocked = file["unlocked"]
 	unlock_01 = file["unlock_01"]
 	unlock_02 = file["unlock_02"]
+	open = file["open"]

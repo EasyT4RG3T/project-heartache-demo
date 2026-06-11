@@ -1,6 +1,23 @@
 extends Node3D
 
 
+var journal_picked_up: bool = false:
+	set(value):
+		journal_picked_up = value
+		if value:
+			%JournalPickup.queue_free()
+
+var cell_opened: bool = false:
+	set(value):
+		cell_opened = value
+		if value:
+			if %Guard:
+				%Guard/AnimationPlayer.play("Open")
+				%Guard/AnimationPlayer.seek(3.2)
+				while %Guard:
+					%Guard/HeadLookIK.global_position = lerp(%Guard/HeadLookIK.global_position, GameManager.player_character.main_camera.global_position, get_physics_process_delta_time() * 10)
+					await get_tree().physics_frame
+
 var staff_door_happened: bool = false:
 	set(value):
 		staff_door_happened = value
@@ -10,6 +27,18 @@ var staff_door_happened: bool = false:
 
 
 func _ready() -> void:
+	%JournalPickup/StaticBody3D.interacted.connect(func(player: PlayerCharacter):
+		player.inventory.journal.disabled = false
+		journal_picked_up = true
+		player.add_thought("[TAB] to open the journal")
+		AudioManager.play_uid_sound("SFX", "uid://e11hf6bvulye")
+		await get_tree().create_timer(2).timeout
+		%Guard/AnimationPlayer.play("Open")
+		%Guard/AnimationPlayer.animation_finished.connect(func(_anim):
+			while %Guard:
+				%Guard/HeadLookIK.global_position = lerp(%Guard/HeadLookIK.global_position, GameManager.player_character.main_camera.global_position, get_physics_process_delta_time() * 10)
+				await get_tree().physics_frame))
+	
 	%SkeletonBlanked04/AnimationPlayer.play("Breathe")
 	%Skeleton/AnimationPlayer.play("Breathe")
 	
@@ -20,15 +49,24 @@ func _ready() -> void:
 		%StaffDoor/Hinge3D.force_close())
 	
 	%StaffDoor/Hinge3D.closed.connect(func():
-		SaverLoader.can_save += 1
-		await get_tree().create_timer(0.4).timeout
-		SaverLoader.can_save -= 1
+		AudioManager.play_uid_sound_at("SFX", "uid://ou087mm5q5jl", %StaffDoor.global_position)
 		staff_door_happened = true)
+
+
+func _open_cell() -> void:
+	$StaticCell01/Assets/CellDoor01/Hinge3D.force_open()
+	DialogueManager.say("[{alkhemikal}]You're late for breakfast[/font]", 3)
+
+
+func faze3() -> void:
+	%Guard.queue_free()
 
 
 func save() -> Dictionary:
 	var file: Dictionary = {
-		"staff_door_happened" = staff_door_happened
+		"staff_door_happened" = staff_door_happened,
+		"journal_picked_up" = journal_picked_up,
+		"cell_opened" = cell_opened
 	}
 	
 	return file
@@ -36,3 +74,5 @@ func save() -> Dictionary:
 
 func load_save(file: Dictionary) -> void:
 	staff_door_happened = file["staff_door_happened"]
+	journal_picked_up = file["journal_picked_up"]
+	cell_opened = file["cell_opened"]

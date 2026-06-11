@@ -246,6 +246,7 @@ func take_input(event: InputEvent) -> void:
 			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 		return
 	_handle_camera_input(event)
+	if current_movement_mode == MovementMode.NONE: return
 	_handle_movement_input(event)
 	_handle_action_input(event)
 
@@ -330,7 +331,7 @@ func _handle_action_input(event: InputEvent) -> void:
 				inventory.flashlight.switch()
 	
 	if event.is_action_pressed("drop"):
-		inventory.switch_clear()
+		inventory.switch_slot(inventory.Slots.INVENTORY)
 	
 	if event.is_action_pressed("use_main"):
 		pass

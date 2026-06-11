@@ -1,0 +1,553 @@
+{
+	"connections": [
+		{
+			"from": "uniform",
+			"from_port": 0,
+			"to": "splines",
+			"to_port": 1
+		},
+		{
+			"from": "uniform",
+			"from_port": 0,
+			"to": "splines",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_greyscale_3",
+			"from_port": 0,
+			"to": "combine",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "combine",
+			"to_port": 1
+		},
+		{
+			"from": "uniform_greyscale_2",
+			"from_port": 0,
+			"to": "combine",
+			"to_port": 2
+		},
+		{
+			"from": "uniform_greyscale_3",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 5
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "uniform_greyscale_2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 1
+		},
+		{
+			"from": "combine",
+			"from_port": 0,
+			"to": "export_2",
+			"to_port": 0
+		},
+		{
+			"from": "splines",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "website_962",
+			"to_port": 1
+		},
+		{
+			"from": "splines",
+			"from_port": 0,
+			"to": "website_962",
+			"to_port": 0
+		},
+		{
+			"from": "splines",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 7
+		},
+		{
+			"from": "website_962",
+			"from_port": 0,
+			"to": "export",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "gaussian_blur",
+			"to_port": 0
+		},
+		{
+			"from": "gaussian_blur",
+			"from_port": 0,
+			"to": "transform2",
+			"to_port": 0
+		},
+		{
+			"from": "transform2",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "blend2",
+			"to_port": 1
+		},
+		{
+			"from": "blend2",
+			"from_port": 0,
+			"to": "normal_map2_2",
+			"to_port": 0
+		},
+		{
+			"from": "normal_map2_2",
+			"from_port": 0,
+			"to": "gaussian_blur_2",
+			"to_port": 0
+		},
+		{
+			"from": "gaussian_blur_2",
+			"from_port": 0,
+			"to": "export_3",
+			"to_port": 0
+		},
+		{
+			"from": "gaussian_blur_2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@Node@18020",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 206.337799072266,
+				"y": 53.6153755187988
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 1.0,
+					"g": 1.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": true,
+				"metallic": 1.0,
+				"normal": 1.0,
+				"roughness": 1.0,
+				"size": 7,
+				"sss": 1.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "splines",
+			"node_position": {
+				"x": -1246.17297363281,
+				"y": 61.2217445373535
+			},
+			"parameters": {
+				"splines": {
+					"point_groups": [
+						[
+							3,
+							4
+						],
+						[
+							7,
+							8
+						],
+						[
+							11,
+							12
+						],
+						[
+							15,
+							16
+						],
+						[
+							19,
+							20
+						],
+						[
+							0,
+							23
+						]
+					],
+					"type": "Splines",
+					"values": [
+						0.273749977350235,
+						0.271249979734421,
+						0.00999999977648258,
+						0.0,
+						0.0399999916553497,
+						0.442499995231628,
+						0.00999999977648258,
+						0.0,
+						0.154999986290932,
+						0.579999983310699,
+						0.00999999977648258,
+						0.0,
+						0.209999993443489,
+						0.627499997615814,
+						0.00999999977648258,
+						0.0,
+						0.209999993443489,
+						0.627499997615814,
+						0.00999999977648258,
+						0.0,
+						0.264999985694885,
+						0.675000011920929,
+						0.00999999977648258,
+						0.0,
+						0.317499995231628,
+						0.637499988079071,
+						0.00999999977648258,
+						0.0,
+						0.444999992847443,
+						0.694999992847443,
+						0.00999999977648258,
+						0.0,
+						0.444999992847443,
+						0.694999992847443,
+						0.00999999977648258,
+						0.0,
+						0.510000050067902,
+						0.75,
+						0.00999999977648258,
+						0.0,
+						0.505000114440918,
+						0.852500021457672,
+						0.00999999977648258,
+						0.0,
+						0.670000016689301,
+						0.857500016689301,
+						0.00999999977648258,
+						0.0,
+						0.670000016689301,
+						0.857500016689301,
+						0.00999999977648258,
+						0.0,
+						0.774999976158142,
+						0.852500021457672,
+						0.00999999977648258,
+						0.0,
+						0.777500033378601,
+						0.647500038146973,
+						0.00999999977648258,
+						0.0,
+						0.745000004768372,
+						0.550000011920929,
+						0.00999999977648258,
+						0.0,
+						0.745000004768372,
+						0.550000011920929,
+						0.00999999977648258,
+						0.0,
+						0.685000002384186,
+						0.365000009536743,
+						0.00999999977648258,
+						0.0,
+						0.71999990940094,
+						0.337499976158142,
+						0.00999999977648258,
+						0.0,
+						0.632499992847443,
+						0.267500013113022,
+						0.00999999977648258,
+						0.0,
+						0.632499992847443,
+						0.267500013113022,
+						0.00999999977648258,
+						0.0,
+						0.557500064373016,
+						0.182500004768372,
+						0.00999999977648258,
+						0.0,
+						0.424999892711639,
+						0.147499963641167,
+						0.00999999977648258,
+						0.0,
+						0.273749977350235,
+						0.271249979734421,
+						0.00999999977648258,
+						0.0
+					]
+				}
+			},
+			"seed_int": 0,
+			"type": "splines"
+		},
+		{
+			"name": "uniform",
+			"node_position": {
+				"x": -1456.17297363281,
+				"y": 96.2217407226562
+			},
+			"parameters": {
+				"color": {
+					"a": 1.0,
+					"b": 0.0955799296498299,
+					"g": 0.0161999855190516,
+					"r": 0.810000002384186,
+					"type": "Color"
+				}
+			},
+			"seed_int": 0,
+			"type": "uniform"
+		},
+		{
+			"name": "uniform_greyscale",
+			"node_position": {
+				"x": -441.063842773438,
+				"y": 432.614227294922
+			},
+			"parameters": {
+				"color": 0.32
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "uniform_greyscale_2",
+			"node_position": {
+				"x": -441.063842773438,
+				"y": 522.824890136719
+			},
+			"parameters": {
+				"color": 0.33
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "uniform_greyscale_3",
+			"node_position": {
+				"x": -437.722717285156,
+				"y": 344.631011962891
+			},
+			"parameters": {
+				"color": 1.0
+			},
+			"seed_int": 0,
+			"type": "uniform_greyscale"
+		},
+		{
+			"name": "combine",
+			"node_position": {
+				"x": -132.565643310547,
+				"y": 394.748046875
+			},
+			"parameters": {
+
+			},
+			"seed_int": 0,
+			"type": "combine"
+		},
+		{
+			"name": "export",
+			"node_position": {
+				"x": 238.460678100586,
+				"y": 477.428009033203
+			},
+			"parameters": {
+				"format": 0,
+				"size": 7,
+				"suffix": "albedo"
+			},
+			"seed_int": 0,
+			"type": "export"
+		},
+		{
+			"name": "export_2",
+			"node_position": {
+				"x": 241.126190185547,
+				"y": 615.782531738281
+			},
+			"parameters": {
+				"format": 0,
+				"size": 7,
+				"suffix": "orm"
+			},
+			"seed_int": 0,
+			"type": "export"
+		},
+		{
+			"name": "export_3",
+			"node_position": {
+				"x": 241.126190185547,
+				"y": 750.541687011719
+			},
+			"parameters": {
+				"format": 0,
+				"size": 7,
+				"suffix": "normal"
+			},
+			"seed_int": 0,
+			"type": "export"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -1254.81555175781,
+				"y": 213.191528320312
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1.0,
+							"b": 0.0,
+							"g": 0.0,
+							"pos": 0.0,
+							"r": 0.0
+						},
+						{
+							"a": 1.0,
+							"b": 1.0,
+							"g": 1.0,
+							"pos": 0.000001,
+							"r": 1.0
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed_int": 0,
+			"type": "colorize"
+		},
+		{
+			"name": "website_962",
+			"node_position": {
+				"x": -387.385009765625,
+				"y": 205.351760864258
+			},
+			"parameters": {
+
+			},
+			"seed": 59184.0,
+			"type": "website:962"
+		},
+		{
+			"name": "gaussian_blur",
+			"node_position": {
+				"x": -1161.71740722656,
+				"y": 639.400817871094
+			},
+			"parameters": {
+				"param0": 6,
+				"param1": 4.9,
+				"param2": 0.0,
+				"param3": false
+			},
+			"seed_int": 0,
+			"type": "gaussian_blur"
+		},
+		{
+			"generic_size": 1,
+			"name": "transform2",
+			"node_position": {
+				"x": -906.244873046875,
+				"y": 638.178344726562
+			},
+			"parameters": {
+				"mode": 0.0,
+				"rotate": 0.0,
+				"scale_x": 0.9,
+				"scale_y": 0.9,
+				"translate_x": 0.0,
+				"translate_y": 0.0
+			},
+			"seed_int": 0,
+			"type": "transform2"
+		},
+		{
+			"name": "normal_map2_2",
+			"node_position": {
+				"x": -423.230895996094,
+				"y": 631.851501464844
+			},
+			"parameters": {
+				"buffer": 1.0,
+				"param2": 0,
+				"size": 8,
+				"strength": 0.7
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		},
+		{
+			"generic_size": 1,
+			"name": "blend2",
+			"node_position": {
+				"x": -662.044006347656,
+				"y": 632.677185058594
+			},
+			"parameters": {
+				"amount1": 0.12,
+				"blend_type1": 13
+			},
+			"seed_int": 0,
+			"type": "blend2"
+		},
+		{
+			"name": "gaussian_blur_2",
+			"node_position": {
+				"x": -181.657287597656,
+				"y": 630.232360839844
+			},
+			"parameters": {
+				"param0": 9.0,
+				"param1": 6.9,
+				"param2": 0.0,
+				"param3": false
+			},
+			"seed_int": 0,
+			"type": "gaussian_blur"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://2dqht0tt7fw0"]
 
+[ext_resource type="Script" uid="uid://n0vxcrj0v1vy" path="res://Scenes/Maps/Demo/Corridor/big_corridor.gd" id="1_0ksg7"]
 [ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="1_158xu"]
 [ext_resource type="ArrayOccluder3D" uid="uid://irx4ptggan0o" path="res://Scenes/Maps/Demo/Corridor/big_corridor.occ" id="1_n7g03"]
 [ext_resource type="PackedScene" uid="uid://iiu60kwdwa46" path="res://Assets/Maps/Corridor/StaticBigCorridor.tscn" id="2_h2reb"]
@@ -32,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bxxxwbs1omnvm" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBoxFlat/StaticCardboardBoxFlat.tscn" id="30_0ksg7"]
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="31_jy5jr"]
 [ext_resource type="PackedScene" uid="uid://coha7fhwe5plg" path="res://Assets/Assets/Lights/Ceiling/CeilingLightLongOpen02/StaticCeilingLightLongOpen02.tscn" id="32_4rt4r"]
+[ext_resource type="PackedScene" uid="uid://cmy0krwhyeba4" path="res://Entities/DefaultPrisoner/default_prisoner.tscn" id="33_rgvan"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4rt4r"]
 size = Vector3(3.2, 3, 1)
@@ -39,16 +41,23 @@ size = Vector3(3.2, 3, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5a1ox"]
 size = Vector3(0.5, 0.6, 0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgvan"]
+size = Vector3(3.8, 2.9, 2.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ksg7"]
+size = Vector3(3, 3, 1)
+
 [node name="BigCorridor" type="Node3D" unique_id=860356082]
+script = ExtResource("1_0ksg7")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1908972932]
 occluder = ExtResource("1_n7g03")
 bake_mask = 4293918752
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1679409340]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.6, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.6, -7)
 blend_distance = 0.0
-size = Vector3(3.1, 3.1, 50.1)
+size = Vector3(3.3, 3.1, 50.1)
 box_projection = true
 interior = true
 enable_shadows = true
@@ -56,7 +65,7 @@ enable_shadows = true
 [node name="ReflectionProbe2" type="ReflectionProbe" parent="." unique_id=342543306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7, 1.6, -3.5999994)
 blend_distance = 0.0
-size = Vector3(16.7, 3.1, 3.1000001)
+size = Vector3(16.7, 3.1, 3.3)
 box_projection = true
 interior = true
 enable_shadows = true
@@ -349,7 +358,7 @@ texture_albedo = ExtResource("8_ec1yt")
 [node name="Assets" type="Node3D" parent="." unique_id=722804881]
 
 [node name="SquareVent" parent="Assets" unique_id=441020651 instance=ExtResource("6_5a1ox")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -8.4, 0.1, 2.75)
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -8.4, 0.1, 2.75)
 
 [node name="StaticBench" parent="Assets" unique_id=1893121587 instance=ExtResource("8_mwq0s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.6, 0.1, 0)
@@ -470,6 +479,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24.
 
 [node name="Hinge3D" parent="Assets/StaffDoor3" index="0" unique_id=1673009916]
 duration = 1.2
+locked_message = "Maybe i can try the window in the cafeteria"
 auto_unlock = 2
 id = "Kitchen Key"
 max_positive = 95.0
@@ -514,4 +524,61 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.9
 [node name="StaticCeilingLightLongOpen07" parent="Assets" unique_id=1448440207 instance=ExtResource("32_4rt4r")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 16.4)
 
+[node name="DynamicCigaretteBox03" parent="Assets" unique_id=651074443 instance=ExtResource("11_mwq0s")]
+transform = Transform3D(0.99044216, 0.13792859, -6.02905e-09, 0, -4.371139e-08, -1, -0.13792859, 0.99044216, -4.3293603e-08, -27.715567, 0.5133857, -2.9700935)
+
+[node name="DefaultPrisoner" parent="." unique_id=2036198890 instance=ExtResource("33_rgvan")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.503416, 0.1, -0.1)
+
+[node name="LeftHandIK" parent="DefaultPrisoner" index="2" unique_id=947952659]
+transform = Transform3D(-1.0000001, 1.5099575e-07, -6.217244e-15, -1.4585076e-07, -0.9659254, 0.25881886, 3.908059e-08, 0.25881895, 0.965925, 0.25, 0.85420305, 0)
+
+[node name="RightHandIK" parent="DefaultPrisoner" index="4" unique_id=467801966]
+transform = Transform3D(-0.9999998, 1.5099569e-07, -2.6645346e-15, -1.4585072e-07, -0.96592504, 0.25881898, 3.9080582e-08, 0.25881886, 0.9659255, -0.25, 0.85420305, 0)
+
+[node name="Area3D" type="Area3D" parent="DefaultPrisoner" unique_id=907717027]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DefaultPrisoner/Area3D" unique_id=614825920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 1.5500001, 1.3499994)
+shape = SubResource("BoxShape3D_rgvan")
+
+[node name="TempWall" type="StaticBody3D" parent="." unique_id=1018154128]
+unique_name_in_owner = true
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempWall" unique_id=1992464505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5, 8.3)
+shape = SubResource("BoxShape3D_0ksg7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="TempWall" unique_id=1474923849]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.9, 1.5, -5.9590745)
+shape = SubResource("BoxShape3D_0ksg7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="TempWall" unique_id=2074895141]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12.379538, 1.5, -3.5795372)
+shape = SubResource("BoxShape3D_0ksg7")
+
+[node name="Area3D" type="Area3D" parent="TempWall" unique_id=1504765401]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempWall/Area3D" unique_id=131584561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5, 8.140925)
+shape = SubResource("BoxShape3D_0ksg7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="TempWall/Area3D" unique_id=341793796]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.9, 1.5, -5.7999997)
+shape = SubResource("BoxShape3D_0ksg7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="TempWall/Area3D" unique_id=1917474124]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12.220463, 1.5, -3.5795372)
+shape = SubResource("BoxShape3D_0ksg7")
+
 [editable path="Assets/StaffDoor3"]
+[editable path="DefaultPrisoner"]

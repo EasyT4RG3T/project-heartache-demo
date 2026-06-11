@@ -43,6 +43,12 @@ func _ready() -> void:
 	
 	$Helper/AnimationPlayer.play("Map")
 	$Node3D/Helper/HelperAnimationPlayer.play("Map")
+	
+	if Console.menu_hint:
+		%ConsoleLabel.show()
+		Console.menu_hint = false
+	else:
+		%ConsoleLabel.hide()
 
 
 var blink_timer: float = 0.0

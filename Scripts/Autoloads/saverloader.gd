@@ -91,7 +91,8 @@ func save_game_data(slot: String) -> void:
 	await RenderingServer.frame_post_draw
 	var image: Image = get_viewport().get_texture().get_image()
 	for menu in hidden_menus:
-		menu.show()
+		if menu:
+			menu.show()
 	image.resize(256, 144)
 	if !DirAccess.dir_exists_absolute(GAME_DATA_PATH):
 		DirAccess.make_dir_absolute(GAME_DATA_PATH)

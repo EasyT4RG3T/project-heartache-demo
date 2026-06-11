@@ -22,6 +22,8 @@ var hints: PackedStringArray = []
 var hint_index: int = -1
 var last_tokens: PackedStringArray = []
 
+var menu_hint: bool = false
+
 
 func _ready() -> void:
 	hide()

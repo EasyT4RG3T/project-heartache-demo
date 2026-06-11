@@ -65,27 +65,46 @@
 [ext_resource type="PackedScene" uid="uid://bvda7sckl13lm" path="res://Assets/Assets/Wardrobe/Shoes/Shoes/DynamicShoeL.tscn" id="55_7cwlq"]
 [ext_resource type="PackedScene" uid="uid://c8sjm6x8xpw1u" path="res://Assets/Assets/Wardrobe/Shoes/Shoes/DynamicShoeR.tscn" id="56_kayxn"]
 [ext_resource type="PackedScene" uid="uid://d2mkyfd2tkob0" path="res://Assets/Assets/Mics/Vents/SquareVent/SquareVent.tscn" id="57_01efn"]
+[ext_resource type="PackedScene" uid="uid://grm0kdgniqtv" path="res://Assets/Assets/Mics/Journal/Journal.glb" id="59_vxv4a"]
 [ext_resource type="PackedScene" uid="uid://c5rpyq0k8o0f7" path="res://Assets/Assets/Trash/NewsPapers02/MeshNewsPaper02.tscn" id="60_kayxn"]
+[ext_resource type="Material" uid="uid://7reqrm7mia1d" path="res://Assets/Assets/Mics/Journal/Journal.tres" id="60_vgjr2"]
+[ext_resource type="PackedScene" uid="uid://4sq6yo55dpnq" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket01/StaticBlanket01.tscn" id="60_vh4ft"]
+[ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="61_0h50o"]
 [ext_resource type="PackedScene" uid="uid://crtaqr638t54c" path="res://Assets/Assets/Trash/Cigarettes/DynamicCigarette02.tscn" id="61_cv2q7"]
+[ext_resource type="Script" uid="uid://dhhej803ct5gc" path="res://Scripts/Nodes/Interactables/InteractableStaticBody3D.gd" id="61_vgjr2"]
+[ext_resource type="PackedScene" uid="uid://dwjss63qlmj4n" path="res://Assets/Assets/Bathroom/ToiletPapers/ToiletPaper01/DynamicToiletPaper01.tscn" id="62_84eif"]
 [ext_resource type="PackedScene" uid="uid://nqinfwshcygf" path="res://Assets/Assets/Lights/Ceiling/CeilingLightRound/StaticCeilingLightRound.tscn" id="62_bnq74"]
+[ext_resource type="PackedScene" uid="uid://kdlqfy0rjsev" path="res://Assets/Assets/Bathroom/ToiletPapers/ToiletPaper02/DynamicToiletPaper02.tscn" id="63_hp4kd"]
 [ext_resource type="PackedScene" uid="uid://dhtg8b6glyobb" path="res://Assets/Assets/Decorations/Wall/NumberPlate/MeshNumberPlate.tscn" id="64_k7wdp"]
+[ext_resource type="PackedScene" uid="uid://dkco4kuxu3r57" path="res://Assets/Assets/Bathroom/ToiletPapers/ToiletPaperRoll/DynamicToiletPaperRoll.tscn" id="64_lq80i"]
 [ext_resource type="PackedScene" uid="uid://d36rb1ttwronc" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket01/MeshBlanket01.tscn" id="64_m0qce"]
+[ext_resource type="PackedScene" uid="uid://b3r48ptmln410" path="res://Assets/Assets/Bathroom/Tootcare/ToothbrushHolder01/StaticToothbrushHolder01.tscn" id="65_pih7e"]
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="65_x6kw5"]
 [ext_resource type="PackedScene" uid="uid://b68wcurja6mc3" path="res://Assets/Assets/Furniture/Beds/Blankets/Blanket04/blanked_04.tscn" id="66_5expu"]
 [ext_resource type="PackedScene" uid="uid://bfg2h380msc2n" path="res://Assets/Assets/Trash/NewsPapers01/MeshNewsPaper01.tscn" id="66_b4hlf"]
 [ext_resource type="PackedScene" uid="uid://wy15o66f6ycp" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow01/MeshPillow01.tscn" id="66_bnq74"]
 [ext_resource type="Material" uid="uid://bf4nymlpfdgpf" path="res://Assets/Materials/Noise/SmoothNoise/SmoothNoiseCrimson.tres" id="66_gy1cd"]
+[ext_resource type="PackedScene" uid="uid://bddi0gxk2i3ci" path="res://Assets/Assets/Bathroom/Tootcare/Toothbrush01/MeshToothbrush01.tscn" id="66_u1i4p"]
 [ext_resource type="PackedScene" uid="uid://h1fpxni5r5bo" path="res://Assets/Assets/Trash/CardboardBoxes/CardboardBox02/StaticCardboardBox02.tscn" id="67_nl3gv"]
+[ext_resource type="PackedScene" uid="uid://qs0y58k0dr18" path="res://Assets/Assets/Bathroom/Tootcare/Toothpaste02/StaticToothpaste02.tscn" id="67_qvwg5"]
+[ext_resource type="PackedScene" uid="uid://cix0b5xqjdlrj" path="res://Assets/Assets/Bathroom/Cleanware/SoapBarHolder/StaticSoapBarHolder.tscn" id="68_0h50o"]
 [ext_resource type="PackedScene" uid="uid://byn1jpubbkbiw" path="res://Assets/Assets/Furniture/Beds/Matresses/Matress01/MeshMatress01.tscn" id="68_aldbq"]
 [ext_resource type="PackedScene" uid="uid://br8np0a7lbv8g" path="res://Assets/Assets/Trash/CigaretteBoxes/DynamicCigaretteBox01.tscn" id="68_avcda"]
 [ext_resource type="PackedScene" uid="uid://durltbkp0l6u6" path="res://Assets/Assets/Furniture/Desks/CheapDesk/MeshCheapDesk.tscn" id="68_o5ljw"]
 [ext_resource type="PackedScene" uid="uid://da86ncawgldey" path="res://Assets/Assets/Furniture/Beds/MetalBed/MeshMetalBed01.tscn" id="68_x30y1"]
 [ext_resource type="Texture2D" uid="uid://dtrvtkdr4bojt" path="res://Assets/Textures/Dirt/DirtBig.png" id="69_avcda"]
+[ext_resource type="PackedScene" uid="uid://wx8dgmje0l0k" path="res://Assets/Assets/Bathroom/Cleanware/SoapBar/DynamicSoapBar.tscn" id="69_bbr8c"]
 [ext_resource type="PackedScene" uid="uid://g5xnw3yiebpc" path="res://Assets/Assets/Furniture/Shelfs/Wall/WallBookShelf/MeshWallBookShelf.tscn" id="69_odj84"]
 [ext_resource type="Texture2D" uid="uid://dw1j21bo0x7o" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrowThick.png" id="70_dqbm8"]
+[ext_resource type="PackedScene" uid="uid://c5tu4vi0j143d" path="res://Assets/Assets/Bathroom/Cleanware/LaundryDetergent01/DynamicLaundryDetergent01.tscn" id="70_pih7e"]
 [ext_resource type="Script" uid="uid://bpy5q0ccwpl1e" path="res://Scripts/Nodes/on_screen_notifier_3d.gd" id="71_dqbm8"]
+[ext_resource type="PackedScene" uid="uid://covj3dhtcfcb7" path="res://Assets/Assets/Bathroom/Cleanware/DishSoap01/DynamicDishSoap01.tscn" id="71_u1i4p"]
+[ext_resource type="PackedScene" uid="uid://dblkffd3ew5c6" path="res://Assets/Assets/Bathroom/Cleanware/CleaningSpray/DynamicCleningSpray.tscn" id="72_qvwg5"]
+[ext_resource type="PackedScene" uid="uid://c4meqoffwnpx" path="res://Entities/Guard/guard.tscn" id="73_8dy40"]
 [ext_resource type="PackedScene" uid="uid://btduwsqkxfd64" path="res://Entities/Skeleton/skeleton.tscn" id="73_k7wdp"]
 [ext_resource type="PackedScene" uid="uid://03epcc7x4tum" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow02/MeshPillow02.tscn" id="73_pb06c"]
+[ext_resource type="PackedScene" uid="uid://bqij3n0kldweg" path="res://Assets/Assets/Trash/TrashCans/TrashCan02/StaticTrashCan02.tscn" id="73_u1i4p"]
+[ext_resource type="PackedScene" uid="uid://cl0f15jmdc0ql" path="res://Assets/Assets/Kitchen/Utensils/PlasticCupCrumpled/DynamicPlasticCupCrumpled.tscn" id="75_qvwg5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ouh7u"]
 size = Vector3(0.5, 0.6, 0.5)
@@ -97,14 +116,711 @@ size = Vector2(0.07, 0.11)
 [sub_resource type="PlaneMesh" id="PlaneMesh_kdt2s"]
 size = Vector2(0.6, 0.4)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_khnwg"]
-height = 3.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_w41at"]
+size = Vector3(0.3536499, 0.2453125, 0.1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dqbm8"]
+data = PackedVector3Array(2.3999999, 0, -2.6999998, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.6999998, 2.3999999, 0, -2.6999998, 3.3999999, 0, -4, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.6999998, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.9336379, 2.3999999, 0, -2.6999998, 2.3999999, 3, -2.6999998, 3.3999999, 3, -2.6999998, 2.3999999, 3, -2.6999998, 2.3999999, 3, -2.9336379, 3.3999999, 3, -2.6999998, 3.3999999, 0, -4, 3.242978, 0, -4, 2.3999999, 0, -2.9336379, 3.3999999, 0, -4, 3.242978, 3, -4, 3.242978, 0, -4, 2.3999999, 0, -2.6999998, 3.3999999, 0, -2.6999998, 3.3999999, 0, -4, 2.3999999, 0, -2.6999998, 3.3999999, 3, -2.6999998, 3.3999999, 0, -2.6999998, 3.3999999, 0, -4, 3.3999999, 0, -2.6999998, 3.3999999, 3, -2.6999998, 3.3999999, 3, -4, 2.3999999, 3, -2.9336379, 3.242978, 3, -4, 3.3999999, 0, -4, 3.3999999, 3, -4, 3.242978, 3, -4, 3.3999999, 0, -4, 3.3999999, 3, -2.6999998, 3.3999999, 3, -4, 3.3999999, 3, -4, 3.3999999, 3, -2.6999998, 2.3999999, 3, -2.9336379, 2.3999999, 3, -2.9336379, 2.3999999, 0, -2.9336379, 3.242978, 3, -4, 2.3999999, 0, -2.9336379, 3.242978, 0, -4, 3.242978, 3, -4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dqbm8"]
 size = Vector3(1.8000001, 3, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vh4ft"]
 size = Vector3(1.5, 3, 10.3)
+
+[sub_resource type="Animation" id="Animation_8dy40"]
+resource_name = "Open"
+length = 3.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightLegIK2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.1, 1.075, 1), Vector3(-0.040019274, 1.075, 1.9646738), Vector3(-0.040019274, 1.075, 1.9646738)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeadLookIK:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.6, 1), Vector3(0.84813476, 1.4411638, 1.4458532), Vector3(0.84813476, 1.4411638, 1.4458532)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHandIK:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.25, 0.91686195, 0), Vector3(0.25, 1.2414992, 0.74385977), Vector3(0.25, 1.2414992, 0.74385977)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftHandIK2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.25, 1.8299999, -1), Vector3(-0.35794234, -0.018402338, -1), Vector3(-0.35794234, -0.018402338, -1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightHandIK:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.5000001, 1.8, 3.0000002, 3.3000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.25, 0.91686195, 0), Vector3(0.2395103, 1.2257297, 1.1238229), Vector3(-0.49886322, 1.2257296, 1.375263), Vector3(-0.35382652, 0.93223506, 1.0339012), Vector3(-0.35382652, 0.93223506, 1.0339012), Vector3(-0.57058096, 0.9296078, 0.8529655)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RightHandIK2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 1.6000001, 1.8, 3.0000002, 3.3000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.25, 1.8299999, -1), Vector3(-0.47154307, 1.1912103, 1.4138229), Vector3(-0.7691834, 1.1912103, 1.4372561), Vector3(-0.9923291, 1.1912103, 0.73484486), Vector3(-0.9923291, 1.1912103, 0.7348449), Vector3(-0.94593954, 1.1912103, 0.32149184)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LeftLegIK:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.1003916, 0.07540267, 0), Vector3(-0.21399808, 0.07540273, 0.72867286), Vector3(-0.21399808, 0.07540273, 0.72867286)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LeftLegIK2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.1003916, 1.0754026, 1), Vector3(0.5138011, 1.0754026, 1.7040797), Vector3(0.5138011, 1.0754026, 1.7040797)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RightLegIK:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1, 3.0000002, 3.3000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.1, 0.075, 0), Vector3(-0.33222342, 0.07500006, 0.89047396), Vector3(-0.33222342, 0.07500006, 0.89047396), Vector3(-0.48092127, 0.07499994, 0.7118767)]
+}
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("metarig/Skeleton3D:spine")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.21272676, 1.16480756e-07, 2.5359004e-08, 0.9771117, 3.0000002, 1, 0.21272677, 1.1648076e-07, 2.5359006e-08, 0.97711176, 3.3000002, 1, 0.19966944, -0.3370588, 0.07338106, 0.91713613)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("metarig/Skeleton3D:spine.001")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.16088496, -1.176563e-07, -1.9178971e-08, 0.98697317, 3.0000002, 1, -0.16088496, -1.176563e-07, -1.9178971e-08, 0.98697317, 3.3000002, 1, -0.16088496, -1.176563e-07, -1.9178971e-08, 0.98697317)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("metarig/Skeleton3D:spine.002")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, -0.08358292, 1.1879216e-07, -9.963854e-09, 0.99650085, 3.0000002, 1, -0.08358292, 1.1879216e-07, -9.963854e-09, 0.99650085, 3.3000002, 1, -0.08358292, 1.1879216e-07, -9.963854e-09, 0.99650085)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("metarig/Skeleton3D:spine.003")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -0.069367014, -8.791939e-15, -1.6538387e-08, 0.9975912, 3.0000002, 1, -0.069367014, -8.791939e-15, -1.6538387e-08, 0.99759126, 3.3000002, 1, -0.069367014, -8.79194e-15, -1.6538387e-08, 0.9975913)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("metarig/Skeleton3D:spine.004")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0.44953924, -1.5908968e-14, 1.0717848e-07, 0.8932606, 3.0000002, 1, 0.44953924, -1.5908968e-14, 1.0717848e-07, 0.8932606, 3.3000002, 1, 0.44953924, -1.5908968e-14, 1.0717848e-07, 0.8932606)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("metarig/Skeleton3D:spine.005")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, -0.15311651, 1.1780355e-07, -5.4758704e-08, 0.9882082, 3.0000002, 1, -0.15311651, 1.1780355e-07, -5.4758704e-08, 0.9882082, 3.3000002, 1, -0.15311651, 1.1780355e-07, -5.4758704e-08, 0.9882082)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("metarig/Skeleton3D:spine.006")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, -0.19880438, -1.16829746e-07, -7.109798e-08, 0.9800392, 3.0000002, 1, -0.19880438, -1.16829746e-07, -7.109798e-08, 0.9800392, 3.3000002, 1, -0.19880438, -1.16829746e-07, -7.109798e-08, 0.9800392)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("metarig/Skeleton3D:shoulder.L")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -0.50741357, -0.36743465, -0.43684715, 0.64551365, 3.0000002, 1, -0.50741357, -0.36743465, -0.43684715, 0.64551365, 3.3000002, 1, -0.50741357, -0.36743465, -0.43684715, 0.64551365)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("metarig/Skeleton3D:upper_arm.L")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, -0.16100432, 0.63640434, -0.51575154, 0.55051565, 3.0000002, 1, -0.16100432, 0.63640434, -0.51575154, 0.55051565, 3.3000002, 1, -0.16100432, 0.63640434, -0.51575154, 0.55051565)
+tracks/18/type = "rotation_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("metarig/Skeleton3D:forearm.L")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, 0.26470107, 0.045131378, 0.09173418, 0.9588959, 3.0000002, 1, 0.26470107, 0.045131378, 0.09173418, 0.9588959, 3.3000002, 1, 0.26470107, 0.045131378, 0.09173418, 0.9588959)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("metarig/Skeleton3D:hand.L")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, 0.01976004, -0.104737565, -0.08526513, 0.99064094, 3.0000002, 1, 0.01976004, -0.104737565, -0.08526513, 0.99064094, 3.3000002, 1, 0.01976004, -0.104737565, -0.08526513, 0.99064094)
+tracks/20/type = "rotation_3d"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("metarig/Skeleton3D:shoulder.R")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, -0.5074137, 0.3674345, 0.4368471, 0.64551365, 3.0000002, 1, -0.5074137, 0.3674345, 0.4368471, 0.64551365, 3.3000002, 1, -0.5074137, 0.3674345, 0.4368471, 0.64551365)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("metarig/Skeleton3D:upper_arm.R")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, -0.16100441, -0.63640434, 0.51575166, 0.5505156, 3.0000002, 1, -0.16100441, -0.63640434, 0.51575166, 0.5505156, 3.3000002, 1, -0.16100441, -0.63640434, 0.51575166, 0.5505156)
+tracks/22/type = "rotation_3d"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("metarig/Skeleton3D:forearm.R")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, 0.264701, -0.04513135, -0.0917342, 0.9588959, 3.0000002, 1, 0.264701, -0.04513135, -0.0917342, 0.9588959, 3.3000002, 1, 0.264701, -0.04513135, -0.0917342, 0.9588959)
+tracks/23/type = "rotation_3d"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("metarig/Skeleton3D:hand.R")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = PackedFloat32Array(0, 1, 0.01976002, 0.10473761, 0.08526511, 0.99064094, 3.0000002, 1, 0.01976002, 0.10473761, 0.08526511, 0.99064094, 3.3000002, 1, 0.01976002, 0.10473761, 0.08526511, 0.99064094)
+tracks/24/type = "rotation_3d"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("metarig/Skeleton3D:pelvis.L")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = PackedFloat32Array(0, 1, 0.19333851, 0.816257, 0.21792467, -0.49885222, 3.0000002, 1, 0.19333851, 0.816257, 0.21792467, -0.49885222, 3.3000002, 1, 0.19333851, 0.816257, 0.21792467, -0.49885222)
+tracks/25/type = "rotation_3d"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("metarig/Skeleton3D:pelvis.R")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = PackedFloat32Array(0, 1, -0.19333857, 0.8162569, 0.21792462, 0.49885255, 3.0000002, 1, -0.19333857, 0.8162569, 0.21792462, 0.49885255, 3.3000002, 1, -0.19333857, 0.8162569, 0.21792462, 0.49885255)
+tracks/26/type = "rotation_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("metarig/Skeleton3D:thigh.L")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat32Array(0, 1, 0.96662354, 0.05248441, -0.016265856, 0.25023934, 3.0000002, 1, 0.96662354, 0.05248441, -0.016265856, 0.25023934, 3.3000002, 1, 0.96662354, 0.05248441, -0.016265856, 0.25023934)
+tracks/27/type = "rotation_3d"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("metarig/Skeleton3D:shin.L")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = PackedFloat32Array(0, 1, 0.07520971, 0.012744212, 0.016021522, 0.99695754, 3.0000002, 1, 0.07520971, 0.0127442125, 0.016021522, 0.9969576, 3.3000002, 1, 0.07520971, 0.012744213, 0.016021522, 0.99695766)
+tracks/28/type = "rotation_3d"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("metarig/Skeleton3D:foot.L")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = PackedFloat32Array(0, 1, -0.56042206, -0.024345163, 0.030458406, 0.8272888, 3.0000002, 1, -0.56042206, -0.024345163, 0.030458406, 0.8272888, 3.3000002, 1, -0.56042206, -0.024345163, 0.030458406, 0.8272888)
+tracks/29/type = "rotation_3d"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("metarig/Skeleton3D:toe.L")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = PackedFloat32Array(0, 1, 1.3097637e-07, 0.9743643, -0.22497611, 5.381755e-07, 3.0000002, 1, 1.3097637e-07, 0.9743643, -0.22497611, 5.381755e-07, 3.3000002, 1, 1.3097637e-07, 0.9743643, -0.22497611, 5.381755e-07)
+tracks/30/type = "rotation_3d"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("metarig/Skeleton3D:heel.02.L")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = PackedFloat32Array(0, 1, 0.6889797, 0.6889795, -0.15908182, 0.15908264, 3.0000002, 1, 0.6889797, 0.6889795, -0.15908182, 0.15908264, 3.3000002, 1, 0.6889797, 0.6889795, -0.15908182, 0.15908264)
+tracks/31/type = "rotation_3d"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("metarig/Skeleton3D:thigh.R")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = PackedFloat32Array(0, 1, 0.96662354, -0.05248449, 0.016266134, 0.2502393, 3.0000002, 1, 0.96662354, -0.05248449, 0.016266134, 0.2502393, 3.3000002, 1, 0.96662354, -0.05248449, 0.016266134, 0.2502393)
+tracks/32/type = "rotation_3d"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("metarig/Skeleton3D:shin.R")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = PackedFloat32Array(0, 1, 0.07520971, -0.012744206, -0.016021542, 0.99695754, 3.0000002, 1, 0.07520971, -0.012744207, -0.016021542, 0.9969576, 3.3000002, 1, 0.07520971, -0.012744208, -0.016021542, 0.99695766)
+tracks/33/type = "rotation_3d"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("metarig/Skeleton3D:foot.R")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = PackedFloat32Array(0, 1, -0.5604218, 0.024345154, -0.030458407, 0.8272889, 3.0000002, 1, -0.5604218, 0.024345154, -0.030458407, 0.8272889, 3.3000002, 1, -0.5604218, 0.024345154, -0.030458407, 0.8272889)
+tracks/34/type = "rotation_3d"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("metarig/Skeleton3D:toe.R")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = PackedFloat32Array(0, 1, -1.3029027e-07, 0.9743643, -0.22497623, -5.381756e-07, 3.0000002, 1, -1.3029027e-07, 0.9743643, -0.22497623, -5.381756e-07, 3.3000002, 1, -1.3029027e-07, 0.9743643, -0.22497623, -5.381756e-07)
+tracks/35/type = "rotation_3d"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("metarig/Skeleton3D:heel.02.R")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = PackedFloat32Array(0, 1, 0.68897957, -0.68897957, 0.15908195, 0.15908274, 3.0000002, 1, 0.68897957, -0.68897957, 0.15908195, 0.15908274, 3.3000002, 1, 0.68897957, -0.68897957, 0.15908195, 0.15908274)
+tracks/36/type = "rotation_3d"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("LeftHandIK")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0.2781496, -0.13227956, -0.14652774, 0.9400344, 3, 1, 0.27814963, -0.13227959, -0.14652774, 0.9400344)
+tracks/37/type = "rotation_3d"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("RightHandIK")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.9999999, 1, 1, 0, 0.95090795, 0, -0.30947348, 1.4999999, 1, 0.09992334, 0.89768726, 0.3715438, -0.21477382, 1.8, 1, 0.5410838, 0.0028862888, 0.82904583, 0.14107746, 3, 1, 0.5410839, 0.0028862935, 0.8290458, 0.14107746, 3.3, 1, 0.37540084, -0.023714226, 0.91605836, 0.13910004)
+tracks/38/type = "rotation_3d"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("LeftLegIK")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 1, 1, 0.75198454, 0.2432811, -0.38187492, 0.4790668, 3, 1, 0.75198454, 0.24328111, -0.38187492, 0.47906676)
+tracks/39/type = "rotation_3d"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("RightLegIK")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994, 1, 1, 0.8433913, 0, 0, 0.53729963, 3, 1, 0.8433913, 0, 0, 0.5372997, 3.3, 1, 0.83301586, -0.084019765, 0.13188459, 0.5306898)
+tracks/40/type = "position_3d"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("metarig/Skeleton3D:spine")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = PackedFloat32Array(0, 1, 0.7627684, 0.91066134, -0.52746224, 1, 1, 0.013608217, 0.91066134, -0.16159058, 3.0000002, 1, 0.013608217, 0.91066134, -0.16159058, 3.3000002, 1, 0.03597331, 0.9106614, -0.27974224)
+tracks/41/type = "method"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("%Guard/../..")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_open_cell"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2773x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightLegIK2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.1, 1.075, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeadLookIK:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.6, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHandIK:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.25, 0.91686195, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftHandIK2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.25, 1.8299999, -1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightHandIK:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 0.91686195, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RightHandIK2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 1.8299999, -1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LeftLegIK:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1003916, 0.07540267, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LeftLegIK2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1003916, 1.0754026, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RightLegIK:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.1, 0.075, 0)]
+}
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("metarig/Skeleton3D:spine")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.21272676, 1.16480756e-07, 2.5359004e-08, 0.9771117)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("metarig/Skeleton3D:spine.001")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.16088496, -1.176563e-07, -1.9178971e-08, 0.98697317)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("metarig/Skeleton3D:spine.002")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, -0.08358292, 1.1879216e-07, -9.963854e-09, 0.99650085)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("metarig/Skeleton3D:spine.003")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -0.069367014, -8.791939e-15, -1.6538387e-08, 0.9975912)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("metarig/Skeleton3D:spine.004")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0.44953924, -1.5908968e-14, 1.0717848e-07, 0.8932606)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("metarig/Skeleton3D:spine.005")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, -0.15311651, 1.1780355e-07, -5.4758704e-08, 0.9882082)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("metarig/Skeleton3D:spine.006")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, -0.19880438, -1.16829746e-07, -7.109798e-08, 0.9800392)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("metarig/Skeleton3D:shoulder.L")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -0.50741357, -0.36743465, -0.43684715, 0.64551365)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("metarig/Skeleton3D:upper_arm.L")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, -0.16100432, 0.63640434, -0.51575154, 0.55051565)
+tracks/18/type = "rotation_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("metarig/Skeleton3D:forearm.L")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, 0.26470107, 0.045131378, 0.09173418, 0.9588959)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("metarig/Skeleton3D:hand.L")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, 0.01976004, -0.104737565, -0.08526513, 0.99064094)
+tracks/20/type = "rotation_3d"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("metarig/Skeleton3D:shoulder.R")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, -0.5074137, 0.3674345, 0.4368471, 0.64551365)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("metarig/Skeleton3D:upper_arm.R")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, -0.16100441, -0.63640434, 0.51575166, 0.5505156)
+tracks/22/type = "rotation_3d"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("metarig/Skeleton3D:forearm.R")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, 0.264701, -0.04513135, -0.0917342, 0.9588959)
+tracks/23/type = "rotation_3d"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("metarig/Skeleton3D:hand.R")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = PackedFloat32Array(0, 1, 0.01976002, 0.10473761, 0.08526511, 0.99064094)
+tracks/24/type = "rotation_3d"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("metarig/Skeleton3D:pelvis.L")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = PackedFloat32Array(0, 1, 0.19333851, 0.816257, 0.21792467, -0.49885222)
+tracks/25/type = "rotation_3d"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("metarig/Skeleton3D:pelvis.R")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = PackedFloat32Array(0, 1, -0.19333857, 0.8162569, 0.21792462, 0.49885255)
+tracks/26/type = "rotation_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("metarig/Skeleton3D:thigh.L")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat32Array(0, 1, 0.96662354, 0.05248441, -0.016265856, 0.25023934)
+tracks/27/type = "rotation_3d"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("metarig/Skeleton3D:shin.L")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = PackedFloat32Array(0, 1, 0.07520971, 0.012744212, 0.016021522, 0.99695754)
+tracks/28/type = "rotation_3d"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("metarig/Skeleton3D:foot.L")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = PackedFloat32Array(0, 1, -0.56042206, -0.024345163, 0.030458406, 0.8272888)
+tracks/29/type = "rotation_3d"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("metarig/Skeleton3D:toe.L")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = PackedFloat32Array(0, 1, 1.3097637e-07, 0.9743643, -0.22497611, 5.381755e-07)
+tracks/30/type = "rotation_3d"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("metarig/Skeleton3D:heel.02.L")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = PackedFloat32Array(0, 1, 0.6889797, 0.6889795, -0.15908182, 0.15908264)
+tracks/31/type = "rotation_3d"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("metarig/Skeleton3D:thigh.R")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = PackedFloat32Array(0, 1, 0.96662354, -0.05248449, 0.016266134, 0.2502393)
+tracks/32/type = "rotation_3d"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("metarig/Skeleton3D:shin.R")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = PackedFloat32Array(0, 1, 0.07520971, -0.012744206, -0.016021542, 0.99695754)
+tracks/33/type = "rotation_3d"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("metarig/Skeleton3D:foot.R")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = PackedFloat32Array(0, 1, -0.5604218, 0.024345154, -0.030458407, 0.8272889)
+tracks/34/type = "rotation_3d"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("metarig/Skeleton3D:toe.R")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = PackedFloat32Array(0, 1, -1.3029027e-07, 0.9743643, -0.22497623, -5.381756e-07)
+tracks/35/type = "rotation_3d"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("metarig/Skeleton3D:heel.02.R")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = PackedFloat32Array(0, 1, 0.68897957, -0.68897957, 0.15908195, 0.15908274)
+tracks/36/type = "rotation_3d"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("LeftHandIK")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/37/type = "rotation_3d"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("RightHandIK")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.9999999)
+tracks/38/type = "rotation_3d"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("LeftLegIK")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994)
+tracks/39/type = "rotation_3d"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("RightLegIK")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.99999994)
+tracks/40/type = "position_3d"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("metarig/Skeleton3D:spine")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = PackedFloat32Array(0, 1, 0.7277961, 0.91066134, -0.3488288)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxv4a"]
+_data = {
+&"Open": SubResource("Animation_8dy40"),
+&"RESET": SubResource("Animation_2773x")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dy40"]
+size = Vector3(1.8000001, 3, 1)
 
 [node name="PrisonBlockLowSec" type="Node3D" unique_id=1505235188]
 script = ExtResource("1_pb06c")
@@ -249,9 +965,6 @@ metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
 [node name="CellDoor01" parent="StaticCell01/Assets" unique_id=1817534583 instance=ExtResource("8_khnwg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70000005, 0, -2.6301441)
-
-[node name="Hinge3D" parent="StaticCell01/Assets/CellDoor01" index="0" unique_id=861721976]
-locked = false
 
 [node name="StaticMetalBed01" parent="StaticCell01/Assets" unique_id=657188509 instance=ExtResource("7_wqn6u")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5973571, -2.3841858e-07, 0.9940634)
@@ -399,17 +1112,100 @@ transform = Transform3D(-0.9675947, 0, -0.25250843, 0, 1, 0, 0.25250843, 0, -0.9
 [node name="DynamicShoeR" parent="StaticCell01/Assets" unique_id=943249053 instance=ExtResource("56_kayxn")]
 transform = Transform3D(-0.99542797, 0, 0.09551568, 0, 1, 0, -0.09551568, 0, -0.99542797, 0.0048881173, 0.5826692, -1.7952721)
 
+[node name="JournalPickup" parent="StaticCell01/Assets" unique_id=1469078346 instance=ExtResource("59_vxv4a")]
+unique_name_in_owner = true
+transform = Transform3D(-0.9585019, -0.2850862, -1.2461523e-08, -1.0658141e-14, -4.371139e-08, 1, -0.2850862, 0.9585019, 4.189745e-08, -1.4050623, 0.010933438, 1.334791)
+
+[node name="Journal" parent="StaticCell01/Assets/JournalPickup/JournalArmature/Skeleton3D" parent_id_path=PackedInt32Array(1469078346, 146942301) index="0" unique_id=42562379]
+surface_material_override/0 = ExtResource("60_vgjr2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="StaticCell01/Assets/JournalPickup" unique_id=1464574628]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("61_vgjr2")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCell01/Assets/JournalPickup/StaticBody3D" unique_id=367422890]
+transform = Transform3D(1, 0, 0, 0, 1, 8.881784e-16, 0, 8.881784e-16, 1, 0.000787735, 0.00039041042, 0.03519033)
+shape = SubResource("BoxShape3D_w41at")
+
+[node name="Label3D" type="Label3D" parent="StaticCell01/Assets/JournalPickup" unique_id=1362345999]
+transform = Transform3D(0.9585019, -1.4598887e-14, 0.28508613, 0.28508613, -4.3711378e-08, -0.9585019, 1.2461524e-08, 1, -4.1897444e-08, -0.43074608, -1.0071679, 0.5334913)
+pixel_size = 0.001
+modulate = Color(0.8, 0.8, 0.8, 1)
+text = "[C]"
+font = ExtResource("61_0h50o")
+font_size = 128
+outline_size = 6
+
+[node name="Label3D2" type="Label3D" parent="StaticCell01/Assets/JournalPickup" unique_id=1965319080]
+transform = Transform3D(0.9999971, -0.0025306344, -8.949707e-08, 0.0025306344, 0.9999971, -8.230778e-09, 8.951759e-08, -1.7763568e-13, 1, -0.0004080534, 0.0034447908, 0.00955755)
+pixel_size = 0.001
+modulate = Color(0.8, 0.8, 0.8, 1)
+text = "[E]"
+font = ExtResource("61_0h50o")
+font_size = 128
+outline_size = 6
+
 [node name="SquareVent" parent="StaticCell01/Assets" unique_id=441020651 instance=ExtResource("57_01efn")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.8, 0, 1.5)
+transform = Transform3D(4.371139e-08, 1, 8.742278e-08, 1, -4.371139e-08, 0, 3.821371e-15, 8.742278e-08, -1, -0.8, 0, 1.5)
 
-[node name="MeshSquareVent" parent="StaticCell01/Assets/SquareVent/Node3D/Hinge3D" parent_id_path=PackedInt32Array(441020651, 82550966) index="0" unique_id=554461989]
-transform = Transform3D(-4.371139e-08, 0.955, 0, -1, -4.1744375e-08, 0, 0, 0, 1, 0, 0, -0.01999998)
+[node name="MeshSquareVent" parent="StaticCell01/Assets/SquareVent/Hinge3D" parent_id_path=PackedInt32Array(441020651, 82550966) index="0" unique_id=554461989]
+transform = Transform3D(-4.371139e-08, -0.955, 0, 1, -4.1744375e-08, 0, 0, 0, 1, 0, 0, -0.02)
 
-[node name="Screw" parent="StaticCell01/Assets/SquareVent/Node3D/Hinge3D" parent_id_path=PackedInt32Array(441020651, 82550966) index="1" unique_id=1165702596]
-transform = Transform3D(-1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -1.1924882e-08, 1, -4.371139e-08, 1, 1.1924882e-08, 0.48706514, 0.24961561, 0.0006248951)
+[node name="Screw" parent="StaticCell01/Assets/SquareVent/Hinge3D" parent_id_path=PackedInt32Array(441020651, 82550966) index="1" unique_id=1165702596]
+transform = Transform3D(1, 4.3711392e-08, 0, 0, -4.371139e-08, -1, -4.3711392e-08, 1, -4.371139e-08, -0.48143986, -0.24961561, 0.0006248951)
 
-[node name="Screw2" parent="StaticCell01/Assets/SquareVent/Node3D/Hinge3D" parent_id_path=PackedInt32Array(441020651, 82550966) index="2" unique_id=1918544570]
-transform = Transform3D(-1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -1.1924882e-08, 1, -4.371139e-08, 1, 1.1924882e-08, 0.48707533, -0.25000137, 0.0009999275)
+[node name="Screw2" parent="StaticCell01/Assets/SquareVent/Hinge3D" parent_id_path=PackedInt32Array(441020651, 82550966) index="2" unique_id=1918544570]
+transform = Transform3D(1, 4.3711392e-08, 0, 0, -4.371139e-08, -1, -4.3711392e-08, 1, -4.371139e-08, -0.48145065, 0.25000143, 0.0010000467)
+
+[node name="DynamicToiletPaper01" parent="StaticCell01/Assets" unique_id=495493773 instance=ExtResource("62_84eif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1796904, 0.7199, -2.3905284)
+
+[node name="DynamicToiletPaper02" parent="StaticCell01/Assets" unique_id=552284996 instance=ExtResource("62_84eif")]
+transform = Transform3D(0.92045027, 0, -0.39085963, 0, 1, 0, 0.39085963, 0, 0.92045027, 1.0670484, 0.7199001, -2.421132)
+
+[node name="DynamicToiletPaper03" parent="StaticCell01/Assets" unique_id=1636605517 instance=ExtResource("63_hp4kd")]
+transform = Transform3D(0.6973903, 0, -0.71669155, 0, 1, 0, 0.71669155, 0, 0.6973903, 0.7079422, 0.6679003, -2.4379327)
+
+[node name="DynamicToiletPaperRoll" parent="StaticCell01/Assets" unique_id=1828224178 instance=ExtResource("64_lq80i")]
+transform = Transform3D(0.14578168, -0.9046115, -0.400532, 0.93969256, -4.3711385e-08, 0.34202012, -0.30939534, -0.42623723, 0.8500567, 1.1050816, 0.6971594, -2.3051307)
+
+[node name="StaticToothbrushHolder01" parent="StaticCell01/Assets" unique_id=1115505624 instance=ExtResource("65_pih7e")]
+transform = Transform3D(0.93195724, 0, 0.36256817, 0, 1, 0, -0.36256817, 0, 0.93195724, 1.3653102, 0.99994177, -1.5297574)
+
+[node name="MeshToothbrush01" parent="StaticCell01/Assets" unique_id=1514491885 instance=ExtResource("66_u1i4p")]
+transform = Transform3D(0.8725899, 0.46212727, 0.15819451, -1.14059215e-08, -0.32386783, 0.9461023, 0.4884537, -0.82555926, -0.2826038, 1.3746402, 1.0702007, -1.543716)
+
+[node name="StaticToothpaste02" parent="StaticCell01/Assets" unique_id=13479442 instance=ExtResource("67_qvwg5")]
+transform = Transform3D(0.9906507, 0.023748495, 0.1343416, 0, -0.98473185, 0.17407799, 0.13642448, -0.17245041, -0.97552514, 1.3615421, 1.1218659, -1.5014254)
+
+[node name="StaticSoapBarHolder" parent="StaticCell01/Assets" unique_id=382027965 instance=ExtResource("68_0h50o")]
+transform = Transform3D(0.99971706, 0, -0.023786593, 0, 1, 0, 0.023786593, 0, 0.99971706, 1.3678614, 0.99995935, -1.2700357)
+
+[node name="DynamicSoapBar" parent="StaticCell01/Assets" unique_id=168733316 instance=ExtResource("69_bbr8c")]
+transform = Transform3D(0.9998552, 0, 0.017016139, 0, 1, 0, -0.017016139, 0, 0.9998552, 1.3698889, 1.0049593, -1.2694442)
+
+[node name="DynamicLaundryDetergent01" parent="StaticCell01/Assets" unique_id=1853887981 instance=ExtResource("70_pih7e")]
+transform = Transform3D(0.97139186, 0, -0.23748246, 0, 1, 0, 0.23748246, 0, 0.97139186, 1.3142195, 0.12789178, -1.6245315)
+
+[node name="DynamicDishSoap01" parent="StaticCell01/Assets" unique_id=1151820247 instance=ExtResource("71_u1i4p")]
+transform = Transform3D(0.8528709, 0.39655513, 0.33963993, 0.3699738, -2.4640837e-08, -0.9290422, -0.3684165, 0.91801083, -0.14671503, 1.286582, 0.70787525, -2.2236083)
+
+[node name="DynamicCleningSpray" parent="StaticCell01/Assets" unique_id=1578134326 instance=ExtResource("72_qvwg5")]
+transform = Transform3D(0.89457583, 0, 0.44691616, 0, 1, 0, -0.44691616, 0, 0.89457583, 1.3363239, 0.75570416, -2.3248591)
+
+[node name="StaticTrashCan02" parent="StaticCell01/Assets" unique_id=1888089618 instance=ExtResource("73_u1i4p")]
+transform = Transform3D(0.097721994, 0, -0.9952136, 0, 1, 0, 0.9952136, 0, 0.097721994, 1.2457447, 0, -1.0511914)
+
+[node name="MeshNewsPaper01" parent="StaticCell01/Assets" unique_id=905681738 instance=ExtResource("66_b4hlf")]
+transform = Transform3D(0.09905667, -0.98605096, -0.13375887, 0.08146121, 0.14200437, -0.9865085, 0.991742, 0.0868241, 0.09439139, 1.3365278, 0.18444324, -1.0677047)
+
+[node name="DynamicPlasticCupCrumpled" parent="StaticCell01/Assets" unique_id=656262282 instance=ExtResource("75_qvwg5")]
+transform = Transform3D(0.9351661, 0.34214005, -0.09167616, 0, 0.25881907, 0.9659258, 0.35420945, -0.9033011, 0.24203883, 1.2210288, 0.06066821, -1.13671)
+
+[node name="DynamicPlasticCup" parent="StaticCell01/Assets" unique_id=1654857338 instance=ExtResource("21_4vlnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2465495, 0.07827611, -0.96227384)
 
 [node name="StaticCell02" parent="." unique_id=1313619584 instance=ExtResource("4_ome15")]
 
@@ -427,7 +1223,7 @@ cull_mask = 1047553
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0, -4.2)
 
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="StaticCell02/Lights" unique_id=458017932]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6999998, -0.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999905, 2.6999998, -0.29899454)
 layers = 3
 light_color = Color(1, 0.975, 0.95, 1)
 light_energy = 0.8
@@ -440,7 +1236,7 @@ script = ExtResource("4_n0mcl")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
 [node name="StaticOmniLight3D2" type="OmniLight3D" parent="StaticCell02/Lights" unique_id=140963365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3684877, 1.9999998, -1.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4684887, 1.9999998, -1.398993)
 layers = 3
 light_color = Color(1, 0.975, 0.95, 1)
 light_energy = 0.4
@@ -459,6 +1255,85 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.37
 
 [node name="Hinge3D" parent="StaticCell02/Assets/CellDoor04" index="0" unique_id=861721976]
 max_positive = 110.0
+
+[node name="InvisibleWalls" type="StaticBody3D" parent="StaticCell02/Assets/CellDoor04/Hinge3D" index="2" unique_id=200358777]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.1, 0, -3.3104799)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticCell02/Assets/CellDoor04/Hinge3D/InvisibleWalls" unique_id=1759688120]
+shape = SubResource("ConcavePolygonShape3D_dqbm8")
+
+[node name="StaticMetalBed01" parent="StaticCell02/Assets" unique_id=845255196 instance=ExtResource("7_wqn6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9987884, -2.3841858e-07, -3.7057076)
+
+[node name="StaticMatress01" parent="StaticCell02/Assets/StaticMetalBed01" unique_id=111909385 instance=ExtResource("15_davo8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025886297, 0.55907595, -0.0072853565)
+
+[node name="StaticPillow02" parent="StaticCell02/Assets/StaticMetalBed01" unique_id=1176953334 instance=ExtResource("9_wqn6u")]
+transform = Transform3D(-0.99719435, 0, -0.07485681, 0.0077233114, 0.9946633, -0.10288499, 0.074457325, -0.10317446, -0.9918726, 0.0030736923, 0.68878734, 0.72426414)
+
+[node name="StaticBlanket01" parent="StaticCell02/Assets/StaticMetalBed01" unique_id=1714938732 instance=ExtResource("60_vh4ft")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.5570792, 0)
+
+[node name="StaticCheapDesk" parent="StaticCell02/Assets" unique_id=1166587715 instance=ExtResource("11_0a8a4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.203202, 2.3841858e-07, -5.20153)
+
+[node name="StaticStool" parent="StaticCell02/Assets" unique_id=1595930344 instance=ExtResource("12_d1c3c")]
+transform = Transform3D(0.35805836, 0, 0.9336993, 0, 1, 0, -0.9336993, 0, 0.35805836, 6.6894016, 1.1920929e-07, -5.4144187)
+
+[node name="StaticToilet01" parent="StaticCell02/Assets" unique_id=46962318 instance=ExtResource("13_xerjg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.9603617, 0, -5.0457683)
+
+[node name="StaticSink03" parent="StaticCell02/Assets" unique_id=712534829 instance=ExtResource("14_cj6ej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6047254, 0, -5.5030646)
+
+[node name="StaticShoesCabinet" parent="StaticCell02/Assets" unique_id=811604402 instance=ExtResource("20_kdt2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0038033, 1.1920929e-07, -4.3021536)
+
+[node name="StaticShoesCabinetDrawer" parent="StaticCell02/Assets/StaticShoesCabinet" unique_id=1281585483 instance=ExtResource("21_ue7s6")]
+
+[node name="StaticShoesCabinetDrawer2" parent="StaticCell02/Assets/StaticShoesCabinet" unique_id=366516693 instance=ExtResource("21_ue7s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2300609, 0)
+
+[node name="StaticCheapCabinet" parent="StaticCell02/Assets" unique_id=1046975795 instance=ExtResource("22_ue7s6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.704725, 0, -5.5030646)
+
+[node name="StaticCheapCabinetDoor" parent="StaticCell02/Assets/StaticCheapCabinet" unique_id=198400981 instance=ExtResource("23_fchjg")]
+
+[node name="StaticPlainShelf" parent="StaticCell02/Assets" unique_id=1019531355 instance=ExtResource("26_lt854")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0047255, 1.8000001, -4.4030643)
+
+[node name="MeshHanger" parent="StaticCell02/Assets/StaticPlainShelf" unique_id=816824877 instance=ExtResource("27_gdw34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054208875, -0.1)
+
+[node name="MeshHanger2" parent="StaticCell02/Assets/StaticPlainShelf" unique_id=1850310292 instance=ExtResource("27_gdw34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, -0.054208875, -0.10000002)
+
+[node name="MeshHanger3" parent="StaticCell02/Assets/StaticPlainShelf" unique_id=5957498 instance=ExtResource("27_gdw34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000002, -0.054208875, -0.09999999)
+
+[node name="StaticWallBookShelf" parent="StaticCell02/Assets" unique_id=104091020 instance=ExtResource("46_4vlnq")]
+transform = Transform3D(-0.99999994, 0, 8.742278e-08, 0, 0.99999994, 0, -8.742277e-08, 0, -1, 5.60864, 1.7129321, -2.7762735)
+
+[node name="MeshCeilingLightBulb" parent="StaticCell02/Assets" unique_id=1915785266 instance=ExtResource("17_eag41")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.699224, 2.8, -4.300948)
+
+[node name="MeshOpenSmallWallLight" parent="StaticCell02/Assets" unique_id=544565139 instance=ExtResource("18_rh18s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.5992236, 2, -5.697396)
+gi_mode = 0
+
+[node name="SquareVent" parent="StaticCell02/Assets" unique_id=1078502784 instance=ExtResource("57_01efn")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.5, 0, -3.5)
+
+[node name="MeshSquareVent" parent="StaticCell02/Assets/SquareVent/Hinge3D" parent_id_path=PackedInt32Array(1078502784, 82550966) index="0" unique_id=554461989]
+transform = Transform3D(-4.371139e-08, -0.955, 0, 1, -4.1744375e-08, 0, 0, 0, 1, 0, 0, -0.02)
+
+[node name="Screw" parent="StaticCell02/Assets/SquareVent/Hinge3D" parent_id_path=PackedInt32Array(1078502784, 82550966) index="1" unique_id=1165702596]
+transform = Transform3D(1, 4.3711395e-08, 4.371139e-08, 4.371139e-08, -4.3711385e-08, -1, -4.371139e-08, 1, -4.371139e-08, -0.48407507, -0.24961591, 0.0006246567)
+
+[node name="Screw2" parent="StaticCell02/Assets/SquareVent/Hinge3D" parent_id_path=PackedInt32Array(1078502784, 82550966) index="2" unique_id=1918544570]
+transform = Transform3D(1, 4.3711395e-08, 4.371139e-08, 4.371139e-08, -4.3711385e-08, -1, -4.371139e-08, 1, -4.371139e-08, -0.48408583, 0.2500012, 0.0009999275)
 
 [node name="StaticCorridor" parent="." unique_id=1627473948 instance=ExtResource("5_5nbar")]
 
@@ -479,14 +1354,6 @@ box_projection = true
 interior = true
 enable_shadows = true
 cull_mask = 1047553
-
-[node name="InvisibleWalls" type="StaticBody3D" parent="StaticCorridor" unique_id=200358777]
-collision_layer = 128
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor/InvisibleWalls" unique_id=1744539139]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.5, -2.7)
-shape = SubResource("CylinderShape3D_khnwg")
 
 [node name="Lights" type="Node3D" parent="StaticCorridor" unique_id=1959445738]
 
@@ -672,7 +1539,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1500001, 0.5, 5.4500003)
 shape = SubResource("BoxShape3D_vh4ft")
 
-[node name="MeshNewsPaper01" parent="StaticCorridor/Assets" unique_id=905681738 instance=ExtResource("66_b4hlf")]
+[node name="MeshNewsPaper01" parent="StaticCorridor/Assets" unique_id=1082913555 instance=ExtResource("66_b4hlf")]
 transform = Transform3D(0.99879915, 0.042746548, 0.023939418, -0.042011864, 0.99865466, -0.030394463, -0.025206469, 0.029352218, 0.9992512, 2.0723088, 0.010171197, -7.024491)
 
 [node name="StaticCardboardBox02" parent="StaticCorridor/Assets" unique_id=1300642437 instance=ExtResource("67_nl3gv")]
@@ -692,6 +1559,42 @@ texture_albedo = ExtResource("69_avcda")
 transform = Transform3D(-5.9604645e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -5.9604645e-08, 2.557517, 1.1920929e-07, -10.003549)
 size = Vector3(1.5, 0.001, 1.5)
 texture_albedo = ExtResource("70_dqbm8")
+
+[node name="Guard" parent="StaticCorridor" unique_id=1107532329 instance=ExtResource("73_8dy40")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.70000005, 0, -3)
+
+[node name="Skeleton3D" parent="StaticCorridor/Guard/metarig" parent_id_path=PackedInt32Array(1107532329, 840274788) index="0" unique_id=1721436691]
+transform = Transform3D(0.5307627, 0, 0.84752053, 0, 1, 0, -0.84752053, 0, 0.5307627, -0.15093184, 0, 0.8711928)
+bones/0/position = Vector3(0.7277961, 0.91066134, -0.3488288)
+bones/0/rotation = Quaternion(0.21272677, 1.1648076e-07, 2.5359006e-08, 0.97711176)
+bones/0/scale = Vector3(0.9999998, 0.99999976, 0.9999998)
+bones/3/rotation = Quaternion(-0.069367014, -8.791939e-15, -1.6538387e-08, 0.99759126)
+bones/18/rotation = Quaternion(0.07520971, 0.0127442125, 0.016021522, 0.9969576)
+bones/23/rotation = Quaternion(0.07520971, -0.012744207, -0.016021542, 0.9969576)
+
+[node name="LeftHandIK" parent="StaticCorridor/Guard" index="2" unique_id=1254179572]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0.25, 0.91686195, 0)
+
+[node name="RightHandIK" parent="StaticCorridor/Guard" index="4" unique_id=1691306427]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.25, 0.91686195, 0)
+
+[node name="LeftLegIK" parent="StaticCorridor/Guard" index="6" unique_id=1698430135]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999976, 0.1003916, 0.07540267, 0)
+
+[node name="RightLegIK" parent="StaticCorridor/Guard" index="8" unique_id=1355756800]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, -0.1, 0.075, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticCorridor/Guard" unique_id=176643827]
+libraries/ = SubResource("AnimationLibrary_vxv4a")
+
+[node name="InvisibleWall" type="StaticBody3D" parent="StaticCorridor/Guard" unique_id=1945136131]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor/Guard/InvisibleWall" unique_id=605527580]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -0.6999998, 1.5, 0.60000026)
+shape = SubResource("BoxShape3D_8dy40")
 
 [node name="FakeCells" type="Node3D" parent="." unique_id=1874441359]
 
@@ -956,8 +1859,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.37
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.3703516, 0, -10)
 
 [editable path="StaticCell01/Assets/CellDoor01"]
+[editable path="StaticCell01/Assets/JournalPickup"]
 [editable path="StaticCell01/Assets/SquareVent"]
 [editable path="StaticCell02/Assets/CellDoor04"]
+[editable path="StaticCell02/Assets/SquareVent"]
 [editable path="StaticCorridor/Assets/MeshNumberPlate"]
 [editable path="StaticCorridor/Assets/MeshNumberPlate2"]
 [editable path="StaticCorridor/Assets/MeshNumberPlate3"]
@@ -966,5 +1871,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.37
 [editable path="StaticCorridor/Assets/MeshNumberPlate6"]
 [editable path="StaticCorridor/Assets/MeshNumberPlate7"]
 [editable path="StaticCorridor/Assets/StaffDoor"]
+[editable path="StaticCorridor/Guard"]
 [editable path="FakeCells/StaticFakeCell02/MeshMetalBed01/SkeletonBlanked04"]
 [editable path="FakeCells/StaticFakeCell02/MeshMetalBed01/SkeletonBlanked04/Skeleton"]

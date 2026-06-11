@@ -71,6 +71,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 script = ExtResource("1_7qt5e")
 locked = true
+lock_sound = true
 max_positive = 160.0
 max_negative = 160.0
 metadata/_custom_type_script = "uid://ejx8vfok1s3u"
