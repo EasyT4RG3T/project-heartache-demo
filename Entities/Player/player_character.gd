@@ -319,7 +319,10 @@ func _handle_action_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("interact"):
 		if interactable:
-			interactable.interact()
+			if interactable.active:
+				interactable.interact()
+			else:
+				interactable = null
 	
 	if event.is_action_released("interact"):
 		if interactable:
@@ -590,8 +593,8 @@ func _on_ground_movement(delta: float) -> void:
 					_:
 						AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
 			bob_halftime = false
-		var side_bob: float = lerpf(-0.05, 0.05, ((sin(bob_time) + 1) / 2.0))
-		var down_bob: float = lerpf(0, -0.02, sin(bob_time * 2))
+		var side_bob: float = lerpf(-0.025, 0.025, ((sin(bob_time) + 1) / 2.0))
+		var down_bob: float = lerpf(0, -0.01, sin(bob_time * 2))
 		
 		if do_bob:
 			main_camera.position.x = side_bob

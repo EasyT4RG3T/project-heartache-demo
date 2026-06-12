@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bu3lq1m1f5pkv"]
 
+[ext_resource type="Script" uid="uid://bbwkqx6qo01ga" path="res://Scenes/Maps/Demo/Vents/vents.gd" id="1_8e585"]
 [ext_resource type="ArrayOccluder3D" uid="uid://diyxk63kb7oth" path="res://Scenes/Maps/Demo/Vents/Vents.occ" id="1_8n7rr"]
 [ext_resource type="LightmapGIData" uid="uid://b1jfs4e3nqjwp" path="res://Scenes/Maps/Demo/Vents/Vents.lmbake" id="2_ket1p"]
 [ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="2_njvox"]
@@ -23,7 +24,10 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_1fu6e")
 size = Vector2(0.51, 0.51)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tsoi4"]
+
 [node name="Vents" type="Node3D" unique_id=11986073]
+script = ExtResource("1_8e585")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=545509836]
 occluder = ExtResource("1_8n7rr")
@@ -181,3 +185,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.250889, 0, 4)
 
 [node name="SquareVent" parent="Assets" unique_id=441020651 instance=ExtResource("8_26whg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 2.7498267)
+
+[node name="TempWall" type="StaticBody3D" parent="." unique_id=499006697]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.2, 2.2)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempWall" unique_id=1127558677]
+shape = SubResource("BoxShape3D_tsoi4")
+
+[node name="Area3D" type="Area3D" parent="TempWall" unique_id=2086144196]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempWall/Area3D" unique_id=1562062212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.20000005)
+shape = SubResource("BoxShape3D_tsoi4")

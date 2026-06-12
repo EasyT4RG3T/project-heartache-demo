@@ -9,14 +9,14 @@
 [node name="Inventory" type="Node3D" unique_id=222880276]
 script = ExtResource("1_n0ao5")
 
-[node name="Flashlight" parent="." unique_id=1417213788 instance=ExtResource("2_byh8v")]
-unique_name_in_owner = true
-top_level = true
-
 [node name="Screwdriver" parent="." unique_id=809140471 instance=ExtResource("3_xdc5x")]
 unique_name_in_owner = true
 top_level = true
 visible = false
+
+[node name="Flashlight" parent="." unique_id=1417213788 instance=ExtResource("2_byh8v")]
+unique_name_in_owner = true
+top_level = true
 
 [node name="Hand" type="Node3D" parent="." unique_id=1652039151]
 unique_name_in_owner = true

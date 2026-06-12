@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bujeqi3wpv1d4"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8mchoei12nm6" path="res://Assets/Assets/Mics/Flashlight/Flashlight.obj" id="1_l3myu"]
+[ext_resource type="Material" uid="uid://3p136q5boy0t" path="res://Assets/Materials/Plastic/BlackPlastic.tres" id="2_sm81v"]
+[ext_resource type="Material" uid="uid://ctgopv0unrbxt" path="res://Assets/Materials/Light/White/WhiteLight.tres" id="3_jtqt6"]
+
+[node name="MeshFlashlight" type="MeshInstance3D" unique_id=959831617]
+mesh = ExtResource("1_l3myu")
+surface_material_override/0 = ExtResource("2_sm81v")
+surface_material_override/1 = ExtResource("3_jtqt6")

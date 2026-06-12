@@ -34,6 +34,10 @@
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="31_jy5jr"]
 [ext_resource type="PackedScene" uid="uid://coha7fhwe5plg" path="res://Assets/Assets/Lights/Ceiling/CeilingLightLongOpen02/StaticCeilingLightLongOpen02.tscn" id="32_4rt4r"]
 [ext_resource type="PackedScene" uid="uid://cmy0krwhyeba4" path="res://Entities/DefaultPrisoner/default_prisoner.tscn" id="33_rgvan"]
+[ext_resource type="PackedScene" uid="uid://dk78uppevhuhy" path="res://Assets/Assets/Mics/Flashlight/Flashlight.tscn" id="35_6dseo"]
+[ext_resource type="PackedScene" uid="uid://b5b15rinbiefv" path="res://Assets/Assets/Furniture/Beds/MetalBed/StaticMetalBed01.tscn" id="36_tkv2x"]
+[ext_resource type="PackedScene" uid="uid://beaxqi7h2sjqk" path="res://Assets/Assets/Furniture/Desks/CheapDesk/StaticCheapDesk.tscn" id="37_c7635"]
+[ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="38_c7635"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4rt4r"]
 size = Vector3(3.2, 3, 1)
@@ -41,11 +45,20 @@ size = Vector3(3.2, 3, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5a1ox"]
 size = Vector3(0.5, 0.6, 0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6dseo"]
+size = Vector3(1, 3, 3)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_rgvan"]
 size = Vector3(3.8, 2.9, 2.9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ksg7"]
 size = Vector3(3, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2on5"]
+size = Vector3(3, 2.94812, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7635"]
+size = Vector3(3, 2.94812, 2.5)
 
 [node name="BigCorridor" type="Node3D" unique_id=860356082]
 script = ExtResource("1_0ksg7")
@@ -132,6 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.5000001, 16.349712)
 [node name="StaticBigCorridor" parent="." unique_id=1696982158 instance=ExtResource("2_h2reb")]
 
 [node name="InvisibleWalls" type="StaticBody3D" parent="." unique_id=1451181881]
+unique_name_in_owner = true
 collision_layer = 128
 collision_mask = 0
 
@@ -143,6 +157,19 @@ shape = SubResource("BoxShape3D_4rt4r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.6, -10.5)
 shape = SubResource("BoxShape3D_4rt4r")
 
+[node name="Area3D" type="Area3D" parent="InvisibleWalls" unique_id=224931817]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWalls/Area3D" unique_id=1859963991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.6, -10.393885)
+shape = SubResource("BoxShape3D_4rt4r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWalls/Area3D" unique_id=186011395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 1.6, 12.412099)
+shape = SubResource("BoxShape3D_4rt4r")
+
 [node name="CrawlArea" type="Area3D" parent="." unique_id=1424901759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.25021505, 2.74982)
 script = ExtResource("6_oyt0y")
@@ -152,53 +179,7 @@ metadata/_custom_type_script = "uid://b0xsinj7cw0l3"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049999997, 0)
 shape = SubResource("BoxShape3D_5a1ox")
 
-[node name="Lights" type="Node3D" parent="." unique_id=1490990878]
-
-[node name="StaticOmniLight3D" type="OmniLight3D" parent="Lights" unique_id=202540133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -3.6)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=143813590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 2.8999999, -3.6)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D11" type="OmniLight3D" parent="Lights" unique_id=1398664201]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9, 2.8999999, -3.6)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D12" type="OmniLight3D" parent="Lights" unique_id=1082664838]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9, 2.8999999, -3.6)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D13" type="OmniLight3D" parent="Lights" unique_id=949550406]
+[node name="StaticOmniLight3D13" type="OmniLight3D" parent="." unique_id=949550406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9, 2.8999999, -3.6)
 layers = 3
 light_bake_mode = 1
@@ -209,93 +190,7 @@ omni_range = 3.0
 script = ExtResource("5_5a1ox")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
 
-[node name="StaticOmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=18473507]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -7.6)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=323883328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -11.6)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D9" type="OmniLight3D" parent="Lights" unique_id=134329275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -15.6)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=66765070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 0.4000001)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1630342995]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 4.4)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=438042761]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 8.4)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=2079716841]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 12.4)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
-
-[node name="StaticOmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=1919066574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 16.4)
-layers = 3
-light_bake_mode = 1
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-omni_range = 3.0
-script = ExtResource("5_5a1ox")
-metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+[node name="Lights" type="Node3D" parent="." unique_id=1490990878]
 
 [node name="StaticOmniLight3D14" type="OmniLight3D" parent="Lights" unique_id=813488866]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.4999999, -3.6)
@@ -315,6 +210,138 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.4999999, 9.099999)
 visible = false
 layers = 3
 light_energy = 0.3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D" type="OmniLight3D" parent="Lights" unique_id=277735716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -3.6)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=284873900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9, 2.8999999, -3.6)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D11" type="OmniLight3D" parent="Lights" unique_id=1583641994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9, 2.8999999, -3.6)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D12" type="OmniLight3D" parent="Lights" unique_id=1092924502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9, 2.8999999, -3.6)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=852026236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -7.6)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=180538782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -11.6)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D9" type="OmniLight3D" parent="Lights" unique_id=1792113961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, -15.6)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=597734751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 0.4000001)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=2069678482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 4.4)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=1880498239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 8.4)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=421803046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 12.4)
+layers = 3
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+omni_range = 3.0
+script = ExtResource("5_5a1ox")
+metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="StaticOmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=777320108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 2.8999999, 16.4)
+layers = 3
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
@@ -475,54 +502,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7, 0.1, -5.2000003)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7, 0.1, -5.2000003)
 
 [node name="StaffDoor3" parent="Assets" unique_id=2108432235 instance=ExtResource("31_jy5jr")]
+unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24.7, 0.1, -2)
 
 [node name="Hinge3D" parent="Assets/StaffDoor3" index="0" unique_id=1673009916]
 duration = 1.2
-locked_message = "Maybe i can try the window in the cafeteria"
+locked_message = "Opens from the other side. Maybe i can try the window in the cafeteria"
 auto_unlock = 2
 id = "Kitchen Key"
 max_positive = 95.0
 max_negative = 95.0
 
-[node name="StaticCeilingLightLongOpen02" parent="Assets" unique_id=637214842 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -3.6)
+[node name="Area3D" type="Area3D" parent="Assets/StaffDoor3" unique_id=1616841983]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
 
-[node name="StaticCeilingLightLongOpen11" parent="Assets" unique_id=1962235402 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.900001, 3.1000001, -3.6)
-
-[node name="StaticCeilingLightLongOpen12" parent="Assets" unique_id=1016314849 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.900002, 3.1000001, -3.6)
-
-[node name="StaticCeilingLightLongOpen13" parent="Assets" unique_id=1447911283 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21.900002, 3.1000001, -3.6)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaffDoor3/Area3D" unique_id=1720683352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8999996, 1.5, 1.5999997)
+shape = SubResource("BoxShape3D_6dseo")
 
 [node name="StaticCeilingLightLongOpen14" parent="Assets" unique_id=400562475 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.900002, 3.1000001, -3.6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.900002, 3.1000001, -3.6000004)
 
-[node name="StaticCeilingLightLongOpen08" parent="Assets" unique_id=1989047153 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -7.6)
-
-[node name="StaticCeilingLightLongOpen09" parent="Assets" unique_id=1525147029 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -11.6)
-
-[node name="StaticCeilingLightLongOpen10" parent="Assets" unique_id=770557920 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, -15.6)
-
-[node name="StaticCeilingLightLongOpen03" parent="Assets" unique_id=579821522 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 0.4000001)
-
-[node name="StaticCeilingLightLongOpen04" parent="Assets" unique_id=728336745 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 4.4)
-
-[node name="StaticCeilingLightLongOpen05" parent="Assets" unique_id=168872798 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 8.4)
-
-[node name="StaticCeilingLightLongOpen06" parent="Assets" unique_id=1437119830 instance=ExtResource("32_4rt4r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 12.4)
-
-[node name="StaticCeilingLightLongOpen07" parent="Assets" unique_id=1448440207 instance=ExtResource("32_4rt4r")]
+[node name="StaticCeilingLights" type="Node3D" parent="Assets" unique_id=80787270]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.900001, 3.1000001, 16.4)
+
+[node name="StaticCeilingLightLongOpen02" parent="Assets/StaticCeilingLights" unique_id=637214842 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 9.536743e-07)
+
+[node name="StaticCeilingLightLongOpen11" parent="Assets/StaticCeilingLights" unique_id=1962235402 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -3.999999)
+
+[node name="StaticCeilingLightLongOpen12" parent="Assets/StaticCeilingLights" unique_id=1016314849 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -8)
+
+[node name="StaticCeilingLightLongOpen13" parent="Assets/StaticCeilingLights" unique_id=1447911283 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -12)
+
+[node name="StaticCeilingLightLongOpen08" parent="Assets/StaticCeilingLights" unique_id=1989047153 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 9.536743e-07)
+
+[node name="StaticCeilingLightLongOpen09" parent="Assets/StaticCeilingLights" unique_id=1525147029 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 1.9073486e-06)
+
+[node name="StaticCeilingLightLongOpen10" parent="Assets/StaticCeilingLights" unique_id=770557920 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 1.9073486e-06)
+
+[node name="StaticCeilingLightLongOpen03" parent="Assets/StaticCeilingLights" unique_id=579821522 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 9.536743e-07)
+
+[node name="StaticCeilingLightLongOpen04" parent="Assets/StaticCeilingLights" unique_id=728336745 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 9.536743e-07)
+
+[node name="StaticCeilingLightLongOpen05" parent="Assets/StaticCeilingLights" unique_id=168872798 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 9.536743e-07)
+
+[node name="StaticCeilingLightLongOpen06" parent="Assets/StaticCeilingLights" unique_id=1437119830 instance=ExtResource("32_4rt4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="StaticCeilingLightLongOpen07" parent="Assets/StaticCeilingLights" unique_id=1448440207 instance=ExtResource("32_4rt4r")]
 
 [node name="DynamicCigaretteBox03" parent="Assets" unique_id=651074443 instance=ExtResource("11_mwq0s")]
 transform = Transform3D(0.99044216, 0.13792859, -6.02905e-09, 0, -4.371139e-08, -1, -0.13792859, 0.99044216, -4.3293603e-08, -27.715567, 0.5133857, -2.9700935)
@@ -532,10 +572,10 @@ unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.503416, 0.1, -0.1)
 
 [node name="LeftHandIK" parent="DefaultPrisoner" index="2" unique_id=947952659]
-transform = Transform3D(-1.0000001, 1.5099575e-07, -6.217244e-15, -1.4585076e-07, -0.9659254, 0.25881886, 3.908059e-08, 0.25881895, 0.965925, 0.25, 0.85420305, 0)
+transform = Transform3D(-1.0000001, 1.5099575e-07, -6.2172434e-15, -1.4585076e-07, -0.9659254, 0.25881884, 3.908059e-08, 0.25881895, 0.965925, 0.25, 0.85420305, 0)
 
 [node name="RightHandIK" parent="DefaultPrisoner" index="4" unique_id=467801966]
-transform = Transform3D(-0.9999998, 1.5099569e-07, -2.6645346e-15, -1.4585072e-07, -0.96592504, 0.25881898, 3.9080582e-08, 0.25881886, 0.9659255, -0.25, 0.85420305, 0)
+transform = Transform3D(-0.9999998, 1.5099567e-07, -2.6645346e-15, -1.4585072e-07, -0.965925, 0.25881898, 3.9080582e-08, 0.25881884, 0.9659255, -0.25, 0.85420305, 0)
 
 [node name="Area3D" type="Area3D" parent="DefaultPrisoner" unique_id=907717027]
 collision_layer = 0
@@ -580,5 +620,103 @@ shape = SubResource("BoxShape3D_0ksg7")
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12.220463, 1.5, -3.5795372)
 shape = SubResource("BoxShape3D_0ksg7")
 
+[node name="Flashlight" parent="." unique_id=782332694 instance=ExtResource("35_6dseo")]
+unique_name_in_owner = true
+transform = Transform3D(0.97023666, 0, -0.24215913, 0, 1, 0, 0.24215913, 0, 0.97023666, -8.704625, 0.5347828, 0.49999982)
+
+[node name="Blockade" type="StaticBody3D" parent="." unique_id=1299015088]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.900001, -2.9, 1.8000001)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockade" unique_id=168378569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_g2on5")
+
+[node name="StaticMetalBed01" parent="Blockade" unique_id=657188509 instance=ExtResource("36_tkv2x")]
+transform = Transform3D(-0.258819, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.258819, -0.06928158, 0, 0.21387517)
+
+[node name="MeshMetalBed01" parent="Blockade/StaticMetalBed01" index="0" unique_id=711667116]
+gi_mode = 2
+
+[node name="StaticBench" parent="Blockade" unique_id=1808731237 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(0.9975835, 6.0739502e-09, 0.06947789, 0, -1, 8.742278e-08, 0.06947789, -8.721152e-08, -0.9975835, 0, 0.9959239, 0.13737524)
+
+[node name="MeshBench" parent="Blockade/StaticBench" index="0" unique_id=1852365820]
+gi_mode = 2
+
+[node name="StaticBench2" parent="Blockade" unique_id=620057736 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(0.8340111, 0, 0.55174774, 0, 1, 0, -0.55174774, 0, 0.8340111, 0.01268959, 0.5999999, 0.04504621)
+
+[node name="MeshBench" parent="Blockade/StaticBench2" index="0" unique_id=1852365820]
+gi_mode = 2
+
+[node name="StaticCheapDesk" parent="Blockade" unique_id=1198558147 instance=ExtResource("37_c7635")]
+transform = Transform3D(-0.060299385, -8.726369e-08, -0.9981803, -3.821371e-15, -1, 8.742278e-08, -0.9981803, 5.2715436e-09, 0.060299385, -1.1438541, 1.3446848, 0.43685782)
+
+[node name="MeshCheapDesk" parent="Blockade/StaticCheapDesk" index="0" unique_id=34903522]
+gi_mode = 2
+
+[node name="StaticBigCardboardBox02" parent="Blockade" unique_id=1405402162 instance=ExtResource("24_a03c2")]
+transform = Transform3D(0.9901169, 0, -0.14024459, 0, 1, 0, 0.14024459, 0, 0.9901169, 1.1214657, -9.685755e-08, -0.1977011)
+
+[node name="MeshBigCardboardBox02" parent="Blockade/StaticBigCardboardBox02" index="0" unique_id=1077228510]
+gi_mode = 2
+
+[node name="StaticBigCardboardBox01" parent="Blockade" unique_id=924683176 instance=ExtResource("23_lvyxl")]
+transform = Transform3D(0.95657986, 0, 0.2914703, 0, 1, 0, -0.2914703, 0, 0.95657986, 1.1127939, 0.39999977, -0.115231276)
+
+[node name="MeshBigCardboardBox01" parent="Blockade/StaticBigCardboardBox01" index="0" unique_id=483634429]
+gi_mode = 2
+
+[node name="StaticBigCardboardBox03" parent="Blockade" unique_id=1218104122 instance=ExtResource("23_lvyxl")]
+transform = Transform3D(0.99892735, 0, -0.04630447, 0, 1, 0, 0.04630447, 0, 0.99892735, -0.85280514, 0.644685, 0.39435637)
+
+[node name="MeshBigCardboardBox01" parent="Blockade/StaticBigCardboardBox03" index="0" unique_id=483634429]
+gi_mode = 2
+
+[node name="StaticBigCardboardBoxFlat01" parent="Blockade" unique_id=559479572 instance=ExtResource("29_rgvan")]
+transform = Transform3D(0.3770197, -0.40616202, -0.8323993, 0.7329111, 0.68032444, 0, 0.5663015, -0.6100747, 0.55417633, -0.37167263, 0.80094314, 0.0069803)
+
+[node name="MeshBigCardboardBoxFlat01" parent="Blockade/StaticBigCardboardBoxFlat01" index="0" unique_id=1435062039]
+gi_mode = 2
+
+[node name="StaticBigCardboardBoxFlat02" parent="Blockade" unique_id=1103686865 instance=ExtResource("29_rgvan")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0.5578041, 1.0351683, -0.19044423)
+
+[node name="MeshBigCardboardBoxFlat01" parent="Blockade/StaticBigCardboardBoxFlat02" index="0" unique_id=1435062039]
+gi_mode = 2
+
+[node name="StaticBench3" parent="Blockade" unique_id=469712088 instance=ExtResource("8_mwq0s")]
+transform = Transform3D(0.9958623, 0.09087594, 3.972315e-09, -6.420037e-16, -4.3711392e-08, 1, 0.09087594, -0.9958623, -4.3530523e-08, -0.16652107, 0.15784645, 0.14136684)
+
+[node name="MeshBench" parent="Blockade/StaticBench3" index="0" unique_id=1852365820]
+gi_mode = 2
+
+[node name="StaticIndustrialShelf" parent="Blockade" unique_id=669091726 instance=ExtResource("38_c7635")]
+transform = Transform3D(0.21759813, -0.96371347, 0.15462066, 0.8331605, 0.26591942, 0.4849025, -0.5084236, 0.023309976, 0.86079144, 1.4109592, 1.1213603, 0.08733678)
+
+[node name="MeshIndustrialShelf" parent="Blockade/StaticIndustrialShelf" index="0" unique_id=1784607283]
+gi_mode = 2
+
+[node name="Area3D" type="Area3D" parent="Blockade" unique_id=472162224]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockade/Area3D" unique_id=313212730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47406, -1.7002997)
+shape = SubResource("BoxShape3D_c7635")
+
 [editable path="Assets/StaffDoor3"]
 [editable path="DefaultPrisoner"]
+[editable path="Blockade/StaticMetalBed01"]
+[editable path="Blockade/StaticBench"]
+[editable path="Blockade/StaticBench2"]
+[editable path="Blockade/StaticCheapDesk"]
+[editable path="Blockade/StaticBigCardboardBox02"]
+[editable path="Blockade/StaticBigCardboardBox01"]
+[editable path="Blockade/StaticBigCardboardBox03"]
+[editable path="Blockade/StaticBigCardboardBoxFlat01"]
+[editable path="Blockade/StaticBigCardboardBoxFlat02"]
+[editable path="Blockade/StaticBench3"]
+[editable path="Blockade/StaticIndustrialShelf"]

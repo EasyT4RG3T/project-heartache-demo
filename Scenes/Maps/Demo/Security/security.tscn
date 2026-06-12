@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ry3pgojopyu" path="res://Assets/Assets/Trash/TrashCans/TrashCanFull02/StaticTrashCanFull02.tscn" id="28_xirs0"]
 [ext_resource type="PackedScene" uid="uid://bqij3n0kldweg" path="res://Assets/Assets/Trash/TrashCans/TrashCan02/StaticTrashCan02.tscn" id="29_qqwul"]
 [ext_resource type="Material" uid="uid://2lae7vc2l0y0" path="res://Entities/Monsters/Skinny/SkinnyMonster.tres" id="31_5ve52"]
+[ext_resource type="PackedScene" uid="uid://dhtg8b6glyobb" path="res://Assets/Assets/Decorations/Wall/NumberPlate/MeshNumberPlate.tscn" id="34_eb4ll"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umu7i"]
 size = Vector3(0.5, 3, 1.8000001)
@@ -992,6 +993,14 @@ open_negative = false
 locked = false
 max_positive = 130.0
 
+[node name="MeshNumberPlate" parent="StaticJanitor/Assets/JanitorDoor/Hinge3D/InteractableStaticBody3D" parent_id_path=PackedInt32Array(7613722, 325159432) index="3" unique_id=1263754861 instance=ExtResource("34_eb4ll")]
+transform = Transform3D(1.5409999, 0, 2.6226041e-07, 0, 1.1, 0, -3.6740303e-07, 0, 1.1, 0, 1.5, 0.039356112)
+gi_mode = 2
+
+[node name="Label3D" parent="StaticJanitor/Assets/JanitorDoor/Hinge3D/InteractableStaticBody3D/MeshNumberPlate" index="0" unique_id=616751285]
+transform = Transform3D(0.7137759, 0, 0, 0, 1, 0, 1.4210855e-14, 0, 1, 0, -0.0038499832, 0.00022184849)
+text = "Janitor"
+
 [node name="StaticCeilingLightBulb" parent="StaticJanitor/Assets" unique_id=1761225178 instance=ExtResource("8_bwggy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 2.8, -7.4)
 
@@ -1472,9 +1481,18 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.9
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.4000001, 0, -7.9)
 
 [node name="Hinge3D" parent="StaticSecurityCorridor/Assets/StaffDoor" index="0" unique_id=1673009916]
+locked_message = "I need the guards key"
 id = "Security Key"
 max_positive = 95.0
 max_negative = 95.0
+
+[node name="MeshNumberPlate" parent="StaticSecurityCorridor/Assets/StaffDoor/Hinge3D/InteractableStaticBody3D" parent_id_path=PackedInt32Array(1575523502, 325159432) index="3" unique_id=783961521 instance=ExtResource("34_eb4ll")]
+transform = Transform3D(-1.5409999, 0, -3.584255e-07, 0, 1.1, 0, 5.021215e-07, 0, -1.1, 0, 1.5, -0.039536476)
+gi_mode = 2
+
+[node name="Label3D" parent="StaticSecurityCorridor/Assets/StaffDoor/Hinge3D/InteractableStaticBody3D/MeshNumberPlate" index="0" unique_id=616751285]
+transform = Transform3D(0.7137759, 0, 0, 0, 1, 0, 1.4210855e-14, 0, 1, 0, -0.0038499832, 0.00022184849)
+text = "Security"
 
 [node name="StaticIndustrialShelf" parent="StaticSecurityCorridor/Assets" unique_id=285565647 instance=ExtResource("7_wku3x")]
 transform = Transform3D(-0.049638912, -0.003972267, 0.9987593, 0.49728897, 0.8671277, 0.02816429, -0.86616373, 0.49807003, -0.041067906, -2.1000001, 0.17553394, -5.977333)
@@ -1499,4 +1517,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 3, -7.4)
 [editable path="StaticJanitor/Assets/StaticIndustrialShelf3/StaticFoldedTowel"]
 [editable path="StaticJanitor/Assets/StaticIndustrialShelf3/StaticFoldedSmallTowel2"]
 [editable path="StaticJanitor/Assets/JanitorDoor"]
+[editable path="StaticJanitor/Assets/JanitorDoor/Hinge3D/InteractableStaticBody3D/MeshNumberPlate"]
 [editable path="StaticSecurityCorridor/Assets/StaffDoor"]
+[editable path="StaticSecurityCorridor/Assets/StaffDoor/Hinge3D/InteractableStaticBody3D/MeshNumberPlate"]

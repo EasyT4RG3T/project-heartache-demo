@@ -1,10 +1,6 @@
 extends Node3D
 
 
-#const LOADING_ZONES = preload("uid://ba6jx3djjul6n")
-#var loading_zones: Node3D
-#const new_game_uids: Array[String] = ["uid://cn6i15e2ohyv5", "uid://cxen7otwqul1c", "uid://b11ecofofpu70", "uid://c1xomtgke6hfn"]
-
 const demo_uid: String = "uid://ly2qmf1awigs"
 
 

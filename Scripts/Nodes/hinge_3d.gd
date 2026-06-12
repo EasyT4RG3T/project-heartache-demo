@@ -7,6 +7,7 @@ signal opened_positive
 signal opened_negative
 signal opened
 signal closed
+signal failed_to_open
 
 
 const lock_sounds: Array[String] = [
@@ -90,6 +91,7 @@ func interact(player: PlayerCharacter) -> void:
 			_move_hinge()
 			return
 		
+		failed_to_open.emit()
 		if locked_message:
 			if lock_sound:
 				AudioManager.play_uid_sound_at("SFX", lock_sounds.pick_random(), global_position, 0, randf_range(0.9, 1.1))

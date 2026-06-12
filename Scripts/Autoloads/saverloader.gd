@@ -4,7 +4,7 @@ extends Node
 @warning_ignore("unused_signal")
 signal GameSaved
 
-const SETTINGS_VERSION: int = 1
+const SETTINGS_VERSION: int = 2
 const accept_menu_uid: String = "uid://dckjpcj38rsvw"
 
 @onready var loading_screen: Control = %LoadingScreen

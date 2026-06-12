@@ -25,11 +25,13 @@ func _ready() -> void:
 		SaverLoader.can_save -= 1)
 	
 	$FakeCells/StaticFakeCell02_2/BedMonsterOnScreenNotifier3D.screen_entered_plus.connect(func():
-		get_parent().faze2()
+		get_parent().cell_jumpscare = true
 		%BedMonster/AnimationPlayer.play("Hide")
 		AudioManager.play_uid_sound("SFX", "uid://bs05hgwl2paw0", -5.0)
 		%BedMonster/AnimationPlayer.animation_finished.connect(func(_anim):
-			bed_monster_happened = true))
+			DialogueManager.say("I have to tell them something is wrong", 3)
+			bed_monster_happened = true)
+		Game.story_description = "I have to tell them Michael is gone")
 	
 	if randi_range(1, 1000) == 67:
 		var egg: StandardMaterial3D = load("uid://d34jsbwlmnipc")
@@ -59,6 +61,30 @@ func _ready() -> void:
 			corridor_monster_ready_2 = true
 			await get_tree().create_timer(1).timeout
 			AudioManager.play_uid_sound("SFX", "uid://cfj7ljehifjom", -15.0))
+	
+	%TempWall/Area3D.body_entered.connect(func(player: PlayerCharacter):
+		player.add_thought("Not there"))
+	
+	%CutsceneArea/CollisionShape3D.disabled = true
+	%SpecialCellDoor/Hinge3D.failed_to_open.connect(func():
+		%CutsceneArea/CollisionShape3D.disabled = false
+		Game.story_description = "I have to go there"
+		SaverLoader.can_save += 1
+		%Cutscene.play_animation("Look")
+		DialogueManager.say("This isn't normal", 2)
+		await get_tree().create_timer(1).timeout
+		DialogueManager.say("I have to check this out", 1))
+	
+	%CutsceneArea.body_entered.connect(func(_p):
+		Game.story_description = "I have to go there"
+		%Cutscene.play_animation("Look")
+		DialogueManager.say("This isn't normal", 2)
+		await get_tree().create_timer(1).timeout
+		DialogueManager.say("I have to check this out", 1))
+	
+	
+	get_parent().security_key_signal.connect(func():
+		%TempWall.queue_free())
 
 
 func _jumpscare() -> void:

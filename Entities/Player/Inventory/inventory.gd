@@ -80,8 +80,8 @@ func take_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	#flashlight.global_position = p.main_camera.global_position - p.head.basis.y * 0.2 - p.head.basis.x * 0.1
 	
-	var camera_pos: Vector3 = p.main_camera.global_position - p.head.basis.y * 0.2 - p.head.basis.x * 0.1
-	var head_pos: Vector3 = p.head.global_position - p.head.basis.y * 0.2 - p.head.basis.x * 0.1
+	var camera_pos: Vector3 = p.main_camera.global_position
+	var head_pos: Vector3 = p.head.global_position
 	
 	flashlight.global_position = head_pos + ((camera_pos - head_pos) / 2)
 	
@@ -140,6 +140,8 @@ func save() -> Dictionary:
 		"disabled": screwdriver.disabled,
 	}
 	
+	file["journal"] = journal.save()
+	
 	file["current_slot"] = current_slot
 	
 	file["glock_19"] = glock_19.save()
@@ -154,6 +156,8 @@ func load_save(file: Dictionary) -> void:
 	flashlight.light.visible = file["flashlight"]["visible"]
 	
 	screwdriver.disabled = file["screwdriver"]["disabled"]
+	
+	journal.load_save(file["journal"])
 	
 	current_slot = file["current_slot"]
 	

@@ -1,52 +1,51 @@
 extends Node3D
 
 
-var faze1_happened: bool = false:
+signal first_talk_signal
+var first_talk: bool = false:
 	set(value):
-		faze1_happened = value
+		first_talk = value
 		if value:
-			for child in get_children():
-				if child.has_method("faze1"):
-					child.faze1()
-var faze2_happened: bool = false:
+			first_talk_signal.emit()
+signal cell_jumpscare_signal
+var cell_jumpscare: bool = false:
 	set(value):
-		faze2_happened = value
+		cell_jumpscare = value
 		if value:
-			for child in get_children():
-				if child.has_method("faze2"):
-					child.faze2()
-var faze3_happened: bool = false:
+			cell_jumpscare_signal.emit()
+signal second_talk_signal
+var second_talk: bool = false:
 	set(value):
-		faze3_happened = value
+		second_talk = value
 		if value:
-			for child in get_children():
-				if child.has_method("faze3"):
-					child.faze3()
-
-
-func faze1() -> void:
-	faze1_happened = true
-
-
-func faze2() -> void:
-	faze2_happened = true
-
-
-func faze3() -> void:
-	faze3_happened = true
+			second_talk_signal.emit()
+signal kitchen_door_signal
+var kitchen_door: bool = false:
+	set(value):
+		kitchen_door = value
+		if value:
+			kitchen_door_signal.emit()
+signal security_key_signal
+var security_key: bool = false:
+	set(value):
+		security_key = value
+		if value:
+			security_key_signal.emit()
 
 
 func save() -> Dictionary:
 	var file: Dictionary = {
-		"faze1_happened" = faze1_happened,
-		"faze2_happened" = faze2_happened,
-		"faze3_happened" = faze3_happened,
+		"first_talk" = first_talk,
+		"cell_jumpscare" = cell_jumpscare,
+		"second_talk" = second_talk,
+		"security_key" = security_key,
 	}
 	
 	return file
 
 
 func load_save(file: Dictionary) -> void:
-	faze1_happened = file["faze1_happened"]
-	faze2_happened = file["faze2_happened"]
-	faze3_happened = file["faze3_happened"]
+	first_talk = file["first_talk"]
+	cell_jumpscare = file["cell_jumpscare"]
+	second_talk = file["second_talk"]
+	security_key = file["security_key"]

@@ -18,7 +18,7 @@ var holding: bool = false:
 	set(value):
 		holding = value
 		
-		while holding == true:
+		while holding == true and skip_progress_bar:
 			hold_timer -= get_process_delta_time()
 			skip_progress_bar.value = 1.0 - hold_timer
 			await get_tree().process_frame
