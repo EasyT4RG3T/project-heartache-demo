@@ -1,11 +1,20 @@
 extends Node3D
 
 
+var sparks: Array[String] = [
+	"uid://dyrfnkerk4ccw",
+	"uid://bjr70u8s0c6wi",
+	"uid://cff5v0tb7k5ap",
+	"uid://b5lmdugw3mwwb",
+	"uid://b8aervxaasjj5"
+]
+
+
 var skinny_monster_happened: bool = false:
 	set(value):
 		skinny_monster_happened = value
 		if value:
-			%SkinnyMonster/Area3D.call_deferred("set_monitoring", false)
+			%SkinnyMonster/Area3D.queue_free()
 
 
 func _ready() -> void:
@@ -14,7 +23,7 @@ func _ready() -> void:
 	
 	_light_blink(randf_range(0.5, 2))
 	
-	%SkinnyMonster/Area3D.body_entered.connect(func(_body):
+	%SkinnyMonster/Area3D.screen_entered_plus.connect(func():
 		%SkinnyMonster/AnimationPlayer.play("Run")
 		%SkinnyMonster/AnimationPlayer.animation_finished.connect(func(_anim):
 			%SkinnyMonster.hide())
@@ -27,6 +36,7 @@ func _light_blink(time: float) -> void:
 	if $StaticJanitor/Lights/DynamicSpotLight3D.visible:
 		$StaticJanitor/Lights/DynamicSpotLight3D.hide()
 		_light_blink(randf_range(0.1, 0.2))
+		AudioManager.play_uid_sound_at("SFX", sparks.pick_random(), $StaticJanitor/Lights/DynamicSpotLight3D.global_position, 0, 1, 1)
 	else:
 		$StaticJanitor/Lights/DynamicSpotLight3D.show()
 		_light_blink(randf_range(0.1, 5))

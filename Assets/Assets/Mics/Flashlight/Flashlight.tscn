@@ -22,6 +22,7 @@ shape = SubResource("BoxShape3D_cmbxy")
 [node name="DynamicSpotLight3D" type="SpotLight3D" parent="." unique_id=1178740933]
 transform = Transform3D(-1, 2.646978e-23, 8.742278e-08, -2.6255331e-09, 0.999549, -0.030032601, -8.738334e-08, -0.030032601, -0.999549, 0, 0.017844565, 0.06711271)
 layers = 3
+light_volumetric_fog_energy = 5.0
 light_projector = ExtResource("3_3qb3a")
 shadow_enabled = true
 shadow_bias = 0.01

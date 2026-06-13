@@ -17,14 +17,6 @@ var cell_opened: bool = false:
 					%Guard/HeadLookIK.global_position = lerp(%Guard/HeadLookIK.global_position, GameManager.player_character.main_camera.global_position, get_physics_process_delta_time() * 10)
 					await get_tree().physics_frame
 
-var staff_door_happened: bool = false:
-	set(value):
-		staff_door_happened = value
-		if value:
-			%StaffDoor/Hinge3D.open = false
-			%StaffDoor/Hinge3D.open_progress = 0
-
-
 var janitor_hint_happened: bool = false:
 	set(value):
 		janitor_hint_happened = value
@@ -53,17 +45,6 @@ func _ready() -> void:
 	%SkeletonBlanked04/AnimationPlayer.play("Breathe")
 	%Skeleton/AnimationPlayer.play("Breathe")
 	
-	%StaffDoorOnScreenNotifier3D.screen_entered_plus.connect(func():
-		%StaffDoor/Hinge3D.force_close())
-	
-	%StaffDoorArea3D.body_entered.connect(func(_body):
-		%StaffDoor/Hinge3D.force_close())
-	
-	%StaffDoor/Hinge3D.closed.connect(func():
-		AudioManager.play_uid_sound_at("SFX", "uid://ou087mm5q5jl", %StaffDoor.global_position)
-		staff_door_happened = true)
-	
-	
 	get_parent().second_talk_signal.connect(func():
 		%Guard.queue_free())
 
@@ -77,7 +58,6 @@ func _open_cell() -> void:
 
 func save() -> Dictionary:
 	var file: Dictionary = {
-		"staff_door_happened" = staff_door_happened,
 		"journal_picked_up" = journal_picked_up,
 		"cell_opened" = cell_opened,
 		"janitor_hint_happened" = janitor_hint_happened,
@@ -87,7 +67,6 @@ func save() -> Dictionary:
 
 
 func load_save(file: Dictionary) -> void:
-	staff_door_happened = file["staff_door_happened"]
 	journal_picked_up = file["journal_picked_up"]
 	cell_opened = file["cell_opened"]
 	janitor_hint_happened = file["janitor_hint_happened"]

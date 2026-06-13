@@ -121,9 +121,10 @@ func _finish_animation(anim_name: StringName) -> void:
 	rigid_bodies.clear()
 	
 	if animated_player:
-		var animation: Animation = animation_player.get_animation(anim_name)
-		var pos_track: int = animation.find_track(get_path_to(animated_player), Animation.TYPE_POSITION_3D)
-		GameManager.player_character.global_position = animation.track_get_key_value(pos_track, animation.track_get_key_count(pos_track) - 1)
+		#var animation: Animation = animation_player.get_animation(anim_name)
+		#var pos_track: int = animation.find_track(get_path_to(animated_player), Animation.TYPE_POSITION_3D)
+		#GameManager.player_character.global_position = animation.track_get_key_value(pos_track, animation.track_get_key_count(pos_track) - 1)
+		GameManager.player_character.global_position = GameManager.player_character.head.global_position
 		GameManager.player_character.global_position -= Vector3(0, 1.6, 0)
 		var movement_mode: PlayerCharacter.MovementMode = exit_modes.get(anim_name, PlayerCharacter.MovementMode.WALKING)
 		GameManager.player_character.change_movement_mode(movement_mode, true)

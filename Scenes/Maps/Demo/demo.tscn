@@ -7,6 +7,76 @@
 [ext_resource type="PackedScene" uid="uid://bm5mk16dkbdnd" path="res://Scenes/Maps/Demo/PrisonBlockLowSec2/prison_block_low_sec_2.tscn" id="4_l5w7o"]
 [ext_resource type="PackedScene" uid="uid://cf6k24sn2nhk3" path="res://Scenes/Maps/Demo/Security/security.tscn" id="5_i6vld"]
 [ext_resource type="PackedScene" uid="uid://bu3lq1m1f5pkv" path="res://Scenes/Maps/Demo/Vents/Vents.tscn" id="6_2h4j7"]
+[ext_resource type="Script" uid="uid://c6k6l4h73v30" path="res://Scripts/Nodes/cutscene.gd" id="8_l5w7o"]
+
+[sub_resource type="Animation" id="Animation_l5w7o"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.4, 1.1, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Player")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2h4j7"]
+resource_name = "Wake"
+length = 4.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.816798, 0.8061503, 1.0027846, 0.033333335, 1, -0.816798, 0.8061503, 1.0027846, 0.7, 1, -0.816798, 0.8061503, 1.0027846, 1, 1, -0.816798, 0.8061503, 1.0027846, 1.5, 1, -0.816798, 0.8061503, 1.0027846, 2, 1, -0.816798, 0.8061503, 1.0027846, 3, 1, -0.816798, 0.8061503, 1.0027846, 3.5, 1, -0.816798, 0.8061503, 0.6277274, 4, 1, -0.817, 1.1, 0.040538788, 4.2, 1, -0.817, 1.1, 0.040538788)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, 0, 0.033333335, 1, 0, 0.5, 0, 0.7, 1, 0, 0.5, 0, 1, 1, 0, 0.5, 0, 1.5, 1, 0, 0.5, 0, 2, 1, 0, 0.5, 0, 3, 1, 0, 0.5, 0, 3.5, 1, 0, 0.5, 0, 4, 1, 0, 0.5, 0, 4.2, 1, 0, 0.5, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.4700525, -0.52825254, 0.47005248, 0.5282524, 0.033333335, 1, 0.4700525, -0.52825254, 0.47005248, 0.5282524, 0.7, 1, 0.4700525, -0.52825254, 0.47005248, 0.5282524, 1, 1, 0.02052687, -0.70680887, 0.02052666, 0.70680875, 1.5, 1, 0.02052687, -0.70680887, 0.02052666, 0.70680875, 2, 1, -0.025906755, -1.2268028e-07, -1.4014665e-07, 0.99966437, 3, 1, -0.025906755, -1.2268028e-07, -1.4014665e-07, 0.99966437, 3.5, 1, -0.20470983, -1.4581848e-07, -1.1588143e-07, 0.9788227, 4, 1, 0, 0, 0, 1, 4.2, 1, 0, 0, 0, 1)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Player")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.033333335, 1, 0, 0, 0, 1, 0.7, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1.5, 1, 0, 0, 0, 1, 2, 1, 0, 0, 0, 1, 3, 1, 0, 0, 0, 1, 3.5, 1, 0, 0, 0, 1, 4, 1, 0, 0, 0, 1, 4.2, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sht44"]
+_data = {
+&"RESET": SubResource("Animation_l5w7o"),
+&"Wake": SubResource("Animation_2h4j7")
+}
 
 [node name="Demo" type="Node3D" unique_id=701744829]
 script = ExtResource("1_l5w7o")
@@ -22,3 +92,27 @@ script = ExtResource("1_l5w7o")
 [node name="Security" parent="." unique_id=108471197 instance=ExtResource("5_i6vld")]
 
 [node name="Vents" parent="." unique_id=11986073 instance=ExtResource("6_2h4j7")]
+
+[node name="HintTimer" type="Timer" parent="." unique_id=1253409533]
+process_callback = 0
+wait_time = 60.0
+one_shot = true
+
+[node name="Cutscene" type="Node3D" parent="." unique_id=1093052103 node_paths=PackedStringArray("animation_player", "animated_player")]
+unique_name_in_owner = true
+script = ExtResource("8_l5w7o")
+animation_player = NodePath("AnimationPlayer")
+animated_player = NodePath("Pivot/Player")
+exit_modes = Dictionary[String, int]({
+"Wake": 2
+})
+metadata/_custom_type_script = "uid://c6k6l4h73v30"
+
+[node name="Pivot" type="Node3D" parent="Cutscene" unique_id=622585508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.1, 0)
+
+[node name="Player" type="Node3D" parent="Cutscene/Pivot" unique_id=1645659038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene" unique_id=1370881338]
+libraries/ = SubResource("AnimationLibrary_sht44")

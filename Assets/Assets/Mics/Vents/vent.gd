@@ -60,13 +60,15 @@ func _ready() -> void:
 	interactable_static_body_3d.interacted.connect(func(_p):
 		if locked: return
 		_unlock())
+	
+	hinge.opened.connect(func():
+		AudioManager.play_uid_sound_at("SFX", vent_squeaks.pick_random(), global_position))
 
 
 func _unlock() -> void:
 	unlocked = true
 	hinge.locked = false
 	hinge.force_open(-1)
-	AudioManager.play_uid_sound_at("SFX", vent_squeaks.pick_random(), global_position)
 
 
 func save() -> Dictionary:

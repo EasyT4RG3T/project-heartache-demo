@@ -7,14 +7,28 @@ var bed_monster_happened: bool = false:
 		if value:
 			%BedMonster.hide()
 			%BedMonsterOnScreenNotifier3D.disabled = true
-var corridor_monster_ready: bool = false
+
 var corridor_monster_ready_2: bool = false:
 	set(value):
 		corridor_monster_ready_2 = value
 		var player = GameManager.player_character
+		var last_pos: float = player.global_position.z
 		while value:
-			player.look_vector.x = PI
-			player.look_vector.y = 0
+			if player.look_vector.x < 2.5 and player.look_vector.x > 0:
+				player.look_vector.x = 2.5
+			if player.look_vector.x > -2.5 and player.look_vector.x < 0:
+				player.look_vector.x = -2.5
+			
+			if player.look_vector.y > 0.5 and player.look_vector.y > 0:
+				player.look_vector.y = 0.5
+			if player.look_vector.y < -0.5 and player.look_vector.y < 0:
+				player.look_vector.y = -0.5
+			
+			if player.global_position.z < last_pos:
+				player.global_position.z = last_pos
+			
+			last_pos = player.global_position.z
+			
 			await get_tree().process_frame
 
 
@@ -37,30 +51,15 @@ func _ready() -> void:
 		var egg: StandardMaterial3D = load("uid://d34jsbwlmnipc")
 		%CorridorMonster/MeshInstance3D3.set_surface_override_material(0, egg)
 	
-	%CorridorArea3D.body_entered.connect(func(body: PlayerCharacter):
-		body.change_movement_mode(PlayerCharacter.MovementMode.NONE, true, false)
-		if %CorridorOnScreenNotifier3D.is_on_screen():
-			body.inventory.hide()
-			%CorridorMonster/AnimationPlayer.play("Scare")
-			%CorridorMonster/AnimationPlayer.animation_finished.connect(func(_anim):
-				await get_tree().create_timer(0.2).timeout
-				_end_demo())
-			corridor_monster_ready_2 = true
-			await get_tree().create_timer(1).timeout
-			AudioManager.play_uid_sound("SFX", "uid://cfj7ljehifjom", -15.0)
-		else:
-			corridor_monster_ready = true)
-	
-	%CorridorOnScreenNotifier3D.screen_entered.connect(func():
-		if corridor_monster_ready:
-			GameManager.player_character.inventory.hide()
-			%CorridorMonster/AnimationPlayer.play("Scare")
-			%CorridorMonster/AnimationPlayer.animation_finished.connect(func(_anim):
-				await get_tree().create_timer(0.2).timeout
-				_end_demo())
-			corridor_monster_ready_2 = true
-			await get_tree().create_timer(1).timeout
-			AudioManager.play_uid_sound("SFX", "uid://cfj7ljehifjom", -15.0))
+	%CorridorArea3D.body_entered.connect(func(_body: PlayerCharacter):
+		GameManager.player_character.inventory.hand.hide()
+		%CorridorMonster/AnimationPlayer.play("Scare")
+		%CorridorMonster/AnimationPlayer.animation_finished.connect(func(_anim):
+			await get_tree().create_timer(0.2).timeout)
+			#_end_demo())
+		corridor_monster_ready_2 = true
+		await get_tree().create_timer(1).timeout
+		AudioManager.play_uid_sound("SFX", "uid://cfj7ljehifjom", -15.0))
 	
 	%TempWall/Area3D.body_entered.connect(func(player: PlayerCharacter):
 		player.add_thought("Not there"))
@@ -82,22 +81,28 @@ func _ready() -> void:
 		await get_tree().create_timer(1).timeout
 		DialogueManager.say("I have to check this out", 1))
 	
-	
 	get_parent().security_key_signal.connect(func():
 		%TempWall.queue_free())
+	
+	%CorridorArea3D2.body_entered.connect(func(_p):
+		_jumpscare())
 
 
 func _jumpscare() -> void:
 	InputManager.player_character_input = false
 	
-	var animation: Animation = %CorridorMonster/AnimationPlayer.get_animation("Scare")
 	var player = GameManager.player_character
-	var end_point = player.main_camera.global_position - (player.main_camera.global_basis.z * 0.2)
-	animation.track_set_key_value(0, animation.track_get_key_count(0) - 1, end_point)
 	
-	player.inventory.flashlight.disabled = true
+	player.inventory.hide()
 	
-	AudioManager.play_uid_sound("SFX", "uid://b8jorf3nmlhbi", -10.0)
+	%SkinnyMonster/AnimationPlayer.play("Scare")
+	%SkinnyMonster.global_position = player.main_camera.global_position
+	%SkinnyMonster.global_rotation = player.main_camera.global_rotation
+	
+	AudioManager.play_uid_sound("SFX", "uid://b8jorf3nmlhbi", -12.0)
+	
+	await get_tree().create_timer(0.5).timeout
+	_end_demo()
 
 
 func _end_demo() -> void:

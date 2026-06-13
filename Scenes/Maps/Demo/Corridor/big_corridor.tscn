@@ -34,10 +34,11 @@
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="31_jy5jr"]
 [ext_resource type="PackedScene" uid="uid://coha7fhwe5plg" path="res://Assets/Assets/Lights/Ceiling/CeilingLightLongOpen02/StaticCeilingLightLongOpen02.tscn" id="32_4rt4r"]
 [ext_resource type="PackedScene" uid="uid://cmy0krwhyeba4" path="res://Entities/DefaultPrisoner/default_prisoner.tscn" id="33_rgvan"]
-[ext_resource type="PackedScene" uid="uid://dk78uppevhuhy" path="res://Assets/Assets/Mics/Flashlight/Flashlight.tscn" id="35_6dseo"]
 [ext_resource type="PackedScene" uid="uid://b5b15rinbiefv" path="res://Assets/Assets/Furniture/Beds/MetalBed/StaticMetalBed01.tscn" id="36_tkv2x"]
 [ext_resource type="PackedScene" uid="uid://beaxqi7h2sjqk" path="res://Assets/Assets/Furniture/Desks/CheapDesk/StaticCheapDesk.tscn" id="37_c7635"]
 [ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="38_c7635"]
+[ext_resource type="PackedScene" uid="uid://dhtg8b6glyobb" path="res://Assets/Assets/Decorations/Wall/NumberPlate/MeshNumberPlate.tscn" id="38_drm8d"]
+[ext_resource type="PackedScene" uid="uid://dbi4bbim1t6ld" path="res://Entities/Monsters/Skinny/skinny_monster.tscn" id="39_drm8d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4rt4r"]
 size = Vector3(3.2, 3, 1)
@@ -59,6 +60,486 @@ size = Vector3(3, 2.94812, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7635"]
 size = Vector3(3, 2.94812, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_drm8d"]
+size = Vector3(1, 3, 3)
+
+[sub_resource type="Animation" id="Animation_drm8d"]
+resource_name = "Door"
+length = 0.6
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.20750405, 0.023428818, 0.12781028, 0.96956575, 0.19999999, 1, 0.20750406, 0.023428818, 0.12781028, 0.96956575, 0.4, 1, 0.20750411, 0.02342882, 0.1278103, 0.9695658, 0.6, 1, 0.20750411, 0.023428822, 0.1278103, 0.96956575)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.14458708, -0.07126301, 0.16471832, 0.9730797, 0.19999999, 1, -0.22083135, -0.109568946, -0.06085619, 0.96722525, 0.4, 1, -0.2486528, -0.12357015, -0.15322745, 0.94837946, 0.6, 1, -0.3241729, -0.16169249, -0.45406902, 0.8139956)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.026427383, 0.0053697783, 0.1703288, 0.9850182, 0.19999999, 1, 0.025803732, -0.011215061, 0.28874028, 0.956994, 0.4, 1, -0.03440878, 0.007908834, 0.15187106, 0.98776954, 0.6, 1, -0.03440878, 0.007908834, 0.15187106, 0.98776954)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.003")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.023882054, 0.019408455, 0.13261521, 0.9906898, 0.19999999, 1, 0.045160007, 0.0029479526, 0.19607866, 0.97954327, 0.4, 1, 0.10012855, -0.040463515, 0.35858804, 0.9272279, 0.6, 1, 0.13016413, -0.06477743, 0.44642392, 0.8829309)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.004")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.43650886, 0.013014813, 0.04487862, 0.8984858, 0.19999999, 1, 0.45686722, 0.032052267, 0.15028824, 0.8761612, 0.4, 1, 0.48048103, 0.06887371, 0.355181, 0.79889977, 0.6, 1, 0.48315972, 0.089608096, 0.47124097, 0.7324337)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.005")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.32603115, -0.10359793, -0.28277177, 0.896109, 0.19999999, 1, -0.28577328, -0.030661803, -0.083691604, 0.95414317, 0.4, 1, -0.28577328, -0.030661803, -0.0836916, 0.95414317, 0.6, 1, -0.28577328, -0.030661803, -0.08369159, 0.95414317)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.006")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.093711995, 1.0735489e-14, 2.9846904e-15, 0.9955994, 0.19999999, 1, -0.093711995, 1.0735489e-14, 2.9846904e-15, 0.9955994, 0.4, 1, -0.093711995, 1.0735489e-14, 2.9846904e-15, 0.9955994, 0.6, 1, -0.093711995, 1.0735489e-14, 2.9846904e-15, 0.9955994)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shoulder.L")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.49584544, -0.3789468, -0.4006883, 0.67080957, 0.19999999, 1, -0.49584544, -0.3789468, -0.4006883, 0.67080957, 0.4, 1, -0.49584544, -0.3789468, -0.4006883, 0.67080957, 0.6, 1, -0.49584544, -0.3789468, -0.4006883, 0.67080957)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SkinnyMonster/metarig/Skeleton3D:upper_arm.L")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.15141022, 0.63884646, -0.49195093, 0.5717818, 0.19999999, 1, -0.15141022, 0.63884646, -0.49195093, 0.5717818, 0.4, 1, -0.15141022, 0.63884646, -0.49195093, 0.5717818, 0.6, 1, -0.15141022, 0.63884646, -0.49195093, 0.5717818)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SkinnyMonster/metarig/Skeleton3D:forearm.L")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.2516679, 0.09036954, 0.06347441, 0.9614924, 0.19999999, 1, 0.2516679, 0.09036954, 0.06347441, 0.9614924, 0.4, 1, 0.2516679, 0.09036954, 0.06347441, 0.9614924, 0.6, 1, 0.2516679, 0.09036954, 0.06347441, 0.9614924)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SkinnyMonster/metarig/Skeleton3D:hand.L")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0.14880079, -0.039018027, -0.10708894, 0.9822769, 0.19999999, 1, 0.14880079, -0.039018027, -0.10708894, 0.9822769, 0.4, 1, 0.14880079, -0.039018027, -0.10708894, 0.9822769, 0.6, 1, 0.14880079, -0.039018027, -0.10708894, 0.9822769)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shoulder.R")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, -0.49584544, 0.3789468, 0.4006883, 0.67080957, 0.19999999, 1, -0.49584544, 0.3789468, 0.4006883, 0.67080957, 0.4, 1, -0.49584544, 0.3789468, 0.4006883, 0.67080957, 0.6, 1, -0.49584544, 0.3789468, 0.4006883, 0.67080957)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SkinnyMonster/metarig/Skeleton3D:upper_arm.R")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -0.15141022, -0.63884646, 0.49195093, 0.5717818, 0.19999999, 1, -0.15141022, -0.63884646, 0.49195093, 0.5717818, 0.4, 1, -0.15141022, -0.63884646, 0.49195093, 0.5717818, 0.6, 1, -0.15141022, -0.63884646, 0.49195093, 0.5717818)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SkinnyMonster/metarig/Skeleton3D:forearm.R")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0.2516679, -0.09036954, -0.06347441, 0.9614924, 0.19999999, 1, 0.2516679, -0.09036954, -0.06347441, 0.9614924, 0.4, 1, 0.2516679, -0.09036954, -0.06347441, 0.9614924, 0.6, 1, 0.2516679, -0.09036954, -0.06347441, 0.9614924)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SkinnyMonster/metarig/Skeleton3D:hand.R")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, 0.14880079, 0.039018027, 0.10708894, 0.9822769, 0.19999999, 1, 0.14880079, 0.039018027, 0.10708894, 0.9822769, 0.4, 1, 0.14880079, 0.039018027, 0.10708894, 0.9822769, 0.6, 1, 0.14880079, 0.039018027, 0.10708894, 0.9822769)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SkinnyMonster/metarig/Skeleton3D:pelvis.L")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, 0.16949068, 0.8043341, 0.2902777, -0.4899576, 0.19999999, 1, 0.16949068, 0.8043341, 0.2902777, -0.4899576, 0.4, 1, 0.16949068, 0.8043341, 0.2902777, -0.4899576, 0.6, 1, 0.16949068, 0.8043341, 0.2902777, -0.4899576)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("SkinnyMonster/metarig/Skeleton3D:pelvis.R")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -0.16949068, 0.8043341, 0.2902777, 0.4899576, 0.19999999, 1, -0.16949068, 0.8043341, 0.2902777, 0.4899576, 0.4, 1, -0.16949068, 0.8043341, 0.2902777, 0.4899576, 0.6, 1, -0.16949068, 0.8043341, 0.2902777, 0.4899576)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("SkinnyMonster/metarig/Skeleton3D:thigh.L")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, 0.981601, 0.06856423, -0.019494498, 0.17713937, 0.19999999, 1, 0.98160106, 0.06856423, -0.019494498, 0.17713937, 0.4, 1, 0.981601, 0.06856423, -0.019494498, 0.17713937, 0.6, 1, 0.98160106, 0.06856423, -0.019494498, 0.17713937)
+tracks/18/type = "rotation_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shin.L")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, 0.023261236, 0.018552301, 0.017383782, 0.9994061, 0.19999999, 1, 0.023261236, 0.018552301, 0.017383782, 0.9994061, 0.4, 1, 0.023261236, 0.018552301, 0.017383782, 0.9994061, 0.6, 1, 0.023261236, 0.018552301, 0.017383782, 0.9994061)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SkinnyMonster/metarig/Skeleton3D:foot.L")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, -0.51643056, -0.035042223, 0.04146995, 0.8546062, 0.19999999, 1, -0.51643056, -0.035042223, 0.04146995, 0.8546062, 0.4, 1, -0.51643056, -0.035042223, 0.04146995, 0.8546062, 0.6, 1, -0.51643056, -0.035042223, 0.04146995, 0.8546062)
+tracks/20/type = "rotation_3d"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SkinnyMonster/metarig/Skeleton3D:toe.L")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, 2.0862704e-08, 0.9640311, -0.2657896, -7.278233e-08, 0.19999999, 1, 2.0862704e-08, 0.9640311, -0.2657896, -7.278233e-08, 0.4, 1, 2.0862704e-08, 0.9640311, -0.2657896, -7.278233e-08, 0.6, 1, 2.0862704e-08, 0.9640311, -0.2657896, -7.278233e-08)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("SkinnyMonster/metarig/Skeleton3D:heel.02.L")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, 0.68167293, 0.68167293, -0.18794155, 0.18794155, 0.19999999, 1, 0.68167293, 0.68167293, -0.18794155, 0.18794155, 0.4, 1, 0.68167293, 0.68167293, -0.18794155, 0.18794155, 0.6, 1, 0.68167293, 0.68167293, -0.18794155, 0.18794155)
+tracks/22/type = "rotation_3d"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("SkinnyMonster/metarig/Skeleton3D:thigh.R")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, 0.981601, -0.06856423, 0.019494498, 0.17713937, 0.19999999, 1, 0.98160106, -0.06856423, 0.019494498, 0.17713937, 0.4, 1, 0.981601, -0.06856423, 0.019494498, 0.17713937, 0.6, 1, 0.98160106, -0.06856423, 0.019494498, 0.17713937)
+tracks/23/type = "rotation_3d"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shin.R")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = PackedFloat32Array(0, 1, 0.023261236, -0.018552301, -0.017383782, 0.9994061, 0.19999999, 1, 0.023261236, -0.018552301, -0.017383782, 0.9994061, 0.4, 1, 0.023261236, -0.018552301, -0.017383782, 0.9994061, 0.6, 1, 0.023261236, -0.018552301, -0.017383782, 0.9994061)
+tracks/24/type = "rotation_3d"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("SkinnyMonster/metarig/Skeleton3D:foot.R")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = PackedFloat32Array(0, 1, -0.51643056, 0.035042223, -0.04146995, 0.8546062, 0.19999999, 1, -0.51643056, 0.035042223, -0.04146995, 0.8546062, 0.4, 1, -0.51643056, 0.035042223, -0.04146995, 0.8546062, 0.6, 1, -0.51643056, 0.035042223, -0.04146995, 0.8546062)
+tracks/25/type = "rotation_3d"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("SkinnyMonster/metarig/Skeleton3D:toe.R")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = PackedFloat32Array(0, 1, -2.0862704e-08, 0.9640311, -0.2657896, 7.278233e-08, 0.19999999, 1, -2.0862704e-08, 0.9640311, -0.2657896, 7.278233e-08, 0.4, 1, -2.0862704e-08, 0.9640311, -0.2657896, 7.278233e-08, 0.6, 1, -2.0862704e-08, 0.9640311, -0.2657896, 7.278233e-08)
+tracks/26/type = "rotation_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("SkinnyMonster/metarig/Skeleton3D:heel.02.R")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat32Array(0, 1, 0.68167293, -0.68167293, 0.18794155, 0.18794155, 0.19999999, 1, 0.68167293, -0.68167293, 0.18794155, 0.18794155, 0.4, 1, 0.68167293, -0.68167293, 0.18794155, 0.18794155, 0.6, 1, 0.68167293, -0.68167293, 0.18794155, 0.18794155)
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("SkinnyMonster/RightHandIK:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.81666136, 1.0873086, 0.11099434), Vector3(-0.34582233, 1.0873086, 0.11054993)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("SkinnyMonster/RightHandIK2:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 0.8837727, -1)]
+}
+tracks/29/type = "rotation_3d"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("SkinnyMonster/RightHandIK")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = PackedFloat32Array(0, 1, -0.17125939, 0.12856415, 0.97654146, 0.022546655)
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("SkinnyMonster/HeadLookIK:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.32640982, 1.0425088, 7.962311)]
+}
+
+[sub_resource type="Animation" id="Animation_b28p8"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.18030506, 0, 0, 0.98361075)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.13224484, 1.1816227e-07, -1.5764815e-08, 0.9912171)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.06576287, -1.1895123e-07, -7.839543e-09, 0.9978353)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.003")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.06253544, 3.1997142e-15, -1.0891697e-15, 0.99804276)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.004")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.42747894, 1.0776821e-07, 5.095946e-08, 0.9040253)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.005")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.26492795, -1.1494974e-07, -3.1581862e-08, 0.9642682)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SkinnyMonster/metarig/Skeleton3D:spine.006")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.093711995, 1.0735489e-14, 2.9846904e-15, 0.9955994)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shoulder.L")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.49584544, -0.3789468, -0.4006883, 0.67080957)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SkinnyMonster/metarig/Skeleton3D:upper_arm.L")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.15141022, 0.63884646, -0.49195093, 0.5717818)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SkinnyMonster/metarig/Skeleton3D:forearm.L")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.2516679, 0.09036954, 0.06347441, 0.9614924)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SkinnyMonster/metarig/Skeleton3D:hand.L")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0.14880079, -0.039018027, -0.10708894, 0.9822769)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shoulder.R")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, -0.49584544, 0.3789468, 0.4006883, 0.67080957)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SkinnyMonster/metarig/Skeleton3D:upper_arm.R")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -0.15141022, -0.63884646, 0.49195093, 0.5717818)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SkinnyMonster/metarig/Skeleton3D:forearm.R")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0.2516679, -0.09036954, -0.06347441, 0.9614924)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("SkinnyMonster/metarig/Skeleton3D:hand.R")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, 0.14880079, 0.039018027, 0.10708894, 0.9822769)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SkinnyMonster/metarig/Skeleton3D:pelvis.L")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, 0.16949068, 0.8043341, 0.2902777, -0.4899576)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("SkinnyMonster/metarig/Skeleton3D:pelvis.R")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -0.16949068, 0.8043341, 0.2902777, 0.4899576)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("SkinnyMonster/metarig/Skeleton3D:thigh.L")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, 0.981601, 0.06856423, -0.019494498, 0.17713937)
+tracks/18/type = "rotation_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shin.L")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, 0.023261236, 0.018552301, 0.017383782, 0.9994061)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("SkinnyMonster/metarig/Skeleton3D:foot.L")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, -0.51643056, -0.035042223, 0.04146995, 0.8546062)
+tracks/20/type = "rotation_3d"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("SkinnyMonster/metarig/Skeleton3D:toe.L")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, 2.0862704e-08, 0.9640311, -0.2657896, -7.278233e-08)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("SkinnyMonster/metarig/Skeleton3D:heel.02.L")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, 0.68167293, 0.68167293, -0.18794155, 0.18794155)
+tracks/22/type = "rotation_3d"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("SkinnyMonster/metarig/Skeleton3D:thigh.R")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, 0.981601, -0.06856423, 0.019494498, 0.17713937)
+tracks/23/type = "rotation_3d"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("SkinnyMonster/metarig/Skeleton3D:shin.R")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = PackedFloat32Array(0, 1, 0.023261236, -0.018552301, -0.017383782, 0.9994061)
+tracks/24/type = "rotation_3d"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("SkinnyMonster/metarig/Skeleton3D:foot.R")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = PackedFloat32Array(0, 1, -0.51643056, 0.035042223, -0.04146995, 0.8546062)
+tracks/25/type = "rotation_3d"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("SkinnyMonster/metarig/Skeleton3D:toe.R")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = PackedFloat32Array(0, 1, -2.0862704e-08, 0.9640311, -0.2657896, 7.278233e-08)
+tracks/26/type = "rotation_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("SkinnyMonster/metarig/Skeleton3D:heel.02.R")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat32Array(0, 1, 0.68167293, -0.68167293, 0.18794155, 0.18794155)
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("SkinnyMonster/RightHandIK:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 1.0873086, 0)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("SkinnyMonster/RightHandIK2:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 1.8299999, -1)]
+}
+tracks/29/type = "rotation_3d"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("SkinnyMonster/RightHandIK")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = PackedFloat32Array(0, 1, 9.854453e-09, 0.13052617, 0.99144477, -7.4852e-08)
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("SkinnyMonster/HeadLookIK:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.6, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b28p8"]
+_data = {
+&"Door": SubResource("Animation_drm8d"),
+&"RESET": SubResource("Animation_b28p8")
+}
 
 [node name="BigCorridor" type="Node3D" unique_id=860356082]
 script = ExtResource("1_0ksg7")
@@ -385,6 +866,7 @@ texture_albedo = ExtResource("8_ec1yt")
 [node name="Assets" type="Node3D" parent="." unique_id=722804881]
 
 [node name="SquareVent" parent="Assets" unique_id=441020651 instance=ExtResource("6_5a1ox")]
+unique_name_in_owner = true
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -8.4, 0.1, 2.75)
 
 [node name="StaticBench" parent="Assets" unique_id=1893121587 instance=ExtResource("8_mwq0s")]
@@ -498,9 +980,6 @@ transform = Transform3D(-3.2147927e-08, -0.73545885, -0.6775694, 1, -4.371139e-0
 [node name="StaffDoor" parent="Assets" unique_id=7613722 instance=ExtResource("31_jy5jr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7, 0.1, -5.2000003)
 
-[node name="StaffDoor2" parent="Assets" unique_id=1623434203 instance=ExtResource("31_jy5jr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7, 0.1, -5.2000003)
-
 [node name="StaffDoor3" parent="Assets" unique_id=2108432235 instance=ExtResource("31_jy5jr")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24.7, 0.1, -2)
@@ -599,10 +1078,6 @@ shape = SubResource("BoxShape3D_0ksg7")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.9, 1.5, -5.9590745)
 shape = SubResource("BoxShape3D_0ksg7")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="TempWall" unique_id=2074895141]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12.379538, 1.5, -3.5795372)
-shape = SubResource("BoxShape3D_0ksg7")
-
 [node name="Area3D" type="Area3D" parent="TempWall" unique_id=1504765401]
 collision_layer = 0
 collision_mask = 8
@@ -616,13 +1091,23 @@ shape = SubResource("BoxShape3D_0ksg7")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.9, 1.5, -5.7999997)
 shape = SubResource("BoxShape3D_0ksg7")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="TempWall/Area3D" unique_id=1917474124]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12.220463, 1.5, -3.5795372)
+[node name="TempWall2" type="StaticBody3D" parent="." unique_id=1033273151]
+unique_name_in_owner = true
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="TempWall2" unique_id=33452282]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12.379538, 1.5, -3.5795372)
 shape = SubResource("BoxShape3D_0ksg7")
 
-[node name="Flashlight" parent="." unique_id=782332694 instance=ExtResource("35_6dseo")]
-unique_name_in_owner = true
-transform = Transform3D(0.97023666, 0, -0.24215913, 0, 1, 0, 0.24215913, 0, 0.97023666, -8.704625, 0.5347828, 0.49999982)
+[node name="Area3D" type="Area3D" parent="TempWall2" unique_id=1851898628]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="TempWall2/Area3D" unique_id=427200475]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12.220463, 1.5, -3.5795372)
+shape = SubResource("BoxShape3D_0ksg7")
 
 [node name="Blockade" type="StaticBody3D" parent="." unique_id=1299015088]
 unique_name_in_owner = true
@@ -707,6 +1192,76 @@ monitorable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47406, -1.7002997)
 shape = SubResource("BoxShape3D_c7635")
 
+[node name="ugh1" parent="." unique_id=1263754861 instance=ExtResource("38_drm8d")]
+unique_name_in_owner = true
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -8.401268, 2.1000001, -1.9)
+gi_mode = 2
+
+[node name="Label3D" parent="ugh1" index="0" unique_id=616751285]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 0, -0.0038499776, 0.00022180006)
+text = "001-007"
+
+[node name="ugh2" parent="." unique_id=317082623 instance=ExtResource("38_drm8d")]
+unique_name_in_owner = true
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -8.401268, 2.1000001, 7.4)
+gi_mode = 2
+
+[node name="Label3D" parent="ugh2" index="0" unique_id=616751285]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 0, -0.0038499776, 0.00022180006)
+text = "008-014"
+
+[node name="Peak" type="Node3D" parent="." unique_id=658633059]
+unique_name_in_owner = true
+
+[node name="StaffDoor2" parent="Peak" unique_id=337015757 instance=ExtResource("31_jy5jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7, 0.1, -5.2000003)
+
+[node name="Area3D" type="Area3D" parent="Peak" unique_id=1861701974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6, 1.6, -3.6)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Peak/Area3D" unique_id=387187862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70000076, 0, 0)
+shape = SubResource("BoxShape3D_drm8d")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Peak/Area3D" unique_id=27582173]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.8999977, 0, 4.1)
+shape = SubResource("BoxShape3D_drm8d")
+
+[node name="SkinnyMonster" parent="Peak" unique_id=1458533042 instance=ExtResource("39_drm8d")]
+transform = Transform3D(0.21986324, 0, 0.9755307, 0, 1, 0, -0.9755307, 0, 0.21986324, -26.403246, 0.12885445, -5.6602707)
+
+[node name="Skeleton3D" parent="Peak/SkinnyMonster/metarig" parent_id_path=PackedInt32Array(1458533042, 266047258) index="0" unique_id=1225787861]
+bones/0/position = Vector3(4.7683716e-07, 1.198854, -0.064888)
+bones/0/scale = Vector3(1, 1.0000001, 0.9999999)
+bones/1/position = Vector3(-1.5815772e-06, 0.18241532, -8.9484803e-07)
+bones/1/scale = Vector3(1.0000005, 1.0000004, 1.0000006)
+bones/2/position = Vector3(-1.9115175e-06, 0.13986307, 2.9807015e-07)
+bones/2/scale = Vector3(0.99999976, 0.99999976, 1)
+bones/3/position = Vector3(-5.119207e-07, 0.21465114, 1.7708298e-06)
+bones/3/scale = Vector3(1, 1.0000001, 1.0000004)
+bones/4/position = Vector3(-4.6409195e-07, 0.22584835, 8.569907e-07)
+bones/4/scale = Vector3(0.99999964, 1.0000004, 1.0000001)
+bones/5/position = Vector3(-2.3250033e-07, 0.06542956, -4.8947203e-07)
+bones/5/scale = Vector3(1.0000005, 1.0000001, 1.0000005)
+bones/17/rotation = Quaternion(0.98160106, 0.06856423, -0.019494498, 0.17713937)
+bones/22/rotation = Quaternion(0.98160106, -0.06856423, 0.019494498, 0.17713937)
+
+[node name="HeadLookIK" parent="Peak/SkinnyMonster" index="1" unique_id=1354052232]
+transform = Transform3D(1.0000005, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 1.0000005, 0, 1.6, 1)
+
+[node name="RightHandIK" parent="Peak/SkinnyMonster" index="4" unique_id=1614960415]
+transform = Transform3D(-1.0000008, 1.5099576e-07, 3.552715e-15, -1.4585088e-07, -0.9659255, 0.2588191, 3.908062e-08, 0.25881892, 0.9659262, -0.25, 1.0873086, 0)
+
+[node name="RightHandIK2" parent="Peak/SkinnyMonster" index="5" unique_id=842425413]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.25, 1.8299999, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Peak" unique_id=598717752]
+libraries/ = SubResource("AnimationLibrary_b28p8")
+
+[editable path="Assets/SquareVent"]
 [editable path="Assets/StaffDoor3"]
 [editable path="DefaultPrisoner"]
 [editable path="Blockade/StaticMetalBed01"]
@@ -720,3 +1275,7 @@ shape = SubResource("BoxShape3D_c7635")
 [editable path="Blockade/StaticBigCardboardBoxFlat02"]
 [editable path="Blockade/StaticBench3"]
 [editable path="Blockade/StaticIndustrialShelf"]
+[editable path="ugh1"]
+[editable path="ugh2"]
+[editable path="Peak/StaffDoor2"]
+[editable path="Peak/SkinnyMonster"]

@@ -2,16 +2,20 @@ extends Node3D
 
 
 var sitting_man_happened: bool = false
-var flashlight_picked_up: bool = false:
+var blockade_happened: bool = false:
 	set(value):
-		flashlight_picked_up = value
-		if value and %Flashlight:
-			%Flashlight.queue_free()
+		blockade_happened = value
+		if value:
+			%Blockade.global_position = Vector3(-9.9, 0.1, 1.8)
+			%StaffDoor3/Area3D.queue_free()
+var peak_happened: bool = false:
+	set(value):
+		peak_happened = value
+		if value:
+			%Peak/Area3D.queue_free()
 
 
 func _ready() -> void:
-	%Flashlight.hide()
-	
 	%InvisibleWalls/Area3D.body_entered.connect(func(player: PlayerCharacter):
 		player.add_thought("I shouldn't go there"))
 	
@@ -32,23 +36,28 @@ func _ready() -> void:
 			await get_tree().physics_frame)
 	%TempWall/Area3D.body_entered.connect(func(player: PlayerCharacter):
 		player.add_thought("Not this way"))
+	%TempWall2/Area3D.body_entered.connect(func(player: PlayerCharacter):
+		player.add_thought("I don't need to go to the kitchen"))
 	
 	%StaffDoor3/Hinge3D.failed_to_open.connect(func():
 		get_parent().kitchen_door = true)
 	
 	%StaffDoor3/Area3D.body_entered.connect(func(_p):
-		if !%StaffDoor3/Hinge3D.locked:
-			%StaffDoor3/Hinge3D.duration = 0.2
-			%StaffDoor3/Hinge3D.force_close()
-			%StaffDoor3/Hinge3D.locked = true
-			%StaffDoor3/Hinge3D.locked_message = ""
-			AudioManager.play_uid_sound_at("SFX", "uid://ou087mm5q5jl", %StaffDoor3.global_position, 5)
-			%Blockade.global_position += Vector3(0, 3, 0))
+		if get_parent().security_key:
+			blockade_happened = true)
 	
 	%Blockade/Area3D.body_entered.connect(func(player: PlayerCharacter):
 		player.add_thought("I could use the vents")
 		Game.story_description += "\nI could use the vent in my cell")
 	
+	%Peak/Area3D.body_entered.connect(func(_p):
+		%Peak/AnimationPlayer.play()
+		%Peak/StaffDoor2/Hinge3D.open = true
+		%Peak/StaffDoor2/Hinge3D.force_close()
+		peak_happened = true)
+	
+	get_parent().vent_open_signal.connect(func():
+		%SquareVent/Hinge3D.force_open(-1))
 	
 	get_parent().first_talk_signal.connect(func():
 		%TempWall.queue_free())
@@ -65,16 +74,26 @@ func _ready() -> void:
 		var imbake: LightmapGIData = load("uid://yo68ciruy22h")
 		$DynamicLightmapGI.light_data = imbake
 		
-		%Flashlight.show())
-	
-	%Flashlight.interactable.interacted.connect(func(_p):
-		flashlight_picked_up = true)
+		%SquareVent/Hinge3D.open_progress = -20
+		
+		%TempWall2.queue_free()
+		
+		%ugh1/Label3D.hide()
+		%ugh2/Label3D.hide()
+		
+		await get_tree().process_frame
+		if !peak_happened:
+			%Peak/StaffDoor2/Hinge3D.open_progress = -30
+			%Peak/AnimationPlayer.play("Door")
+			await get_tree().process_frame
+			%Peak/AnimationPlayer.pause())
 
 
 func save() -> Dictionary:
 	var file: Dictionary = {
 		"sitting_man_happened" = sitting_man_happened,
-		"flashlight_picked_up" = flashlight_picked_up,
+		"blockade_happened" = blockade_happened,
+		"peak_happened" = peak_happened,
 	}
 	
 	return file
@@ -82,4 +101,5 @@ func save() -> Dictionary:
 
 func load_save(file: Dictionary) -> void:
 	sitting_man_happened = file["sitting_man_happened"]
-	flashlight_picked_up = file["flashlight_picked_up"]
+	blockade_happened = file["blockade_happened"]
+	peak_happened = file["peak_happened"]

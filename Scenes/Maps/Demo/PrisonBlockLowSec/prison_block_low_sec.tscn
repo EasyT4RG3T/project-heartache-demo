@@ -97,7 +97,6 @@
 [ext_resource type="PackedScene" uid="uid://g5xnw3yiebpc" path="res://Assets/Assets/Furniture/Shelfs/Wall/WallBookShelf/MeshWallBookShelf.tscn" id="69_odj84"]
 [ext_resource type="Texture2D" uid="uid://dw1j21bo0x7o" path="res://Assets/Textures/Dirt/DirtSmear/DirtSmearNarrowThick.png" id="70_dqbm8"]
 [ext_resource type="PackedScene" uid="uid://c5tu4vi0j143d" path="res://Assets/Assets/Bathroom/Cleanware/LaundryDetergent01/DynamicLaundryDetergent01.tscn" id="70_pih7e"]
-[ext_resource type="Script" uid="uid://bpy5q0ccwpl1e" path="res://Scripts/Nodes/on_screen_notifier_3d.gd" id="71_dqbm8"]
 [ext_resource type="PackedScene" uid="uid://covj3dhtcfcb7" path="res://Assets/Assets/Bathroom/Cleanware/DishSoap01/DynamicDishSoap01.tscn" id="71_u1i4p"]
 [ext_resource type="PackedScene" uid="uid://dblkffd3ew5c6" path="res://Assets/Assets/Bathroom/Cleanware/CleaningSpray/DynamicCleningSpray.tscn" id="72_qvwg5"]
 [ext_resource type="PackedScene" uid="uid://c4meqoffwnpx" path="res://Entities/Guard/guard.tscn" id="73_8dy40"]
@@ -121,12 +120,6 @@ size = Vector3(0.3536499, 0.2453125, 0.1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dqbm8"]
 data = PackedVector3Array(2.3999999, 0, -2.6999998, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.6999998, 2.3999999, 0, -2.6999998, 3.3999999, 0, -4, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.6999998, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.9336379, 2.3999999, 0, -2.6999998, 2.3999999, 3, -2.6999998, 3.3999999, 3, -2.6999998, 2.3999999, 3, -2.6999998, 2.3999999, 3, -2.9336379, 3.3999999, 3, -2.6999998, 3.3999999, 0, -4, 3.242978, 0, -4, 2.3999999, 0, -2.9336379, 3.3999999, 0, -4, 3.242978, 3, -4, 3.242978, 0, -4, 2.3999999, 0, -2.6999998, 3.3999999, 0, -2.6999998, 3.3999999, 0, -4, 2.3999999, 0, -2.6999998, 3.3999999, 3, -2.6999998, 3.3999999, 0, -2.6999998, 3.3999999, 0, -4, 3.3999999, 0, -2.6999998, 3.3999999, 3, -2.6999998, 3.3999999, 3, -4, 2.3999999, 3, -2.9336379, 3.242978, 3, -4, 3.3999999, 0, -4, 3.3999999, 3, -4, 3.242978, 3, -4, 3.3999999, 0, -4, 3.3999999, 3, -2.6999998, 3.3999999, 3, -4, 3.3999999, 3, -4, 3.3999999, 3, -2.6999998, 2.3999999, 3, -2.9336379, 2.3999999, 3, -2.9336379, 2.3999999, 0, -2.9336379, 3.242978, 3, -4, 2.3999999, 0, -2.9336379, 3.242978, 0, -4, 3.242978, 3, -4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dqbm8"]
-size = Vector3(1.8000001, 3, 4.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vh4ft"]
-size = Vector3(1.5, 3, 10.3)
 
 [sub_resource type="Animation" id="Animation_8dy40"]
 resource_name = "Open"
@@ -1836,38 +1829,6 @@ text = "0 0 7"
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4000003, 0, -13.1)
 
-[node name="Hinge3D" parent="StaticCorridor/Assets/StaffDoor" index="0" unique_id=1673009916]
-transform = Transform3D(0.6427876, 0, 0.7660444, 0, 1, 0, -0.7660444, 0, 0.6427876, -0.5, 0, 0)
-duration = 0.4
-open_progress = 50.0
-open = true
-
-[node name="StaffDoorArea3D" type="Area3D" parent="StaticCorridor/Assets/StaffDoor" unique_id=771123008]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000003, 0, 13.1)
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor/Assets/StaffDoor/StaffDoorArea3D" unique_id=334087575]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 1.5, -10.75)
-shape = SubResource("BoxShape3D_dqbm8")
-
-[node name="StaffDoorOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="StaticCorridor/Assets/StaffDoor" unique_id=727865161 node_paths=PackedStringArray("area")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7683716e-07, 1, -0.19999886)
-aabb = AABB(-0.5, -1, -0.3, 1, 2, 0.6)
-script = ExtResource("71_dqbm8")
-area = NodePath("Area3D")
-metadata/_custom_type_script = "uid://bpy5q0ccwpl1e"
-
-[node name="Area3D" type="Area3D" parent="StaticCorridor/Assets/StaffDoor/StaffDoorOnScreenNotifier3D" unique_id=1600186450]
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCorridor/Assets/StaffDoor/StaffDoorOnScreenNotifier3D/Area3D" unique_id=257472424]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1500001, 0.5, 5.4500003)
-shape = SubResource("BoxShape3D_vh4ft")
-
 [node name="MeshNewsPaper01" parent="StaticCorridor/Assets" unique_id=1082913555 instance=ExtResource("66_b4hlf")]
 transform = Transform3D(0.99879915, 0.042746548, 0.023939418, -0.042011864, 0.99865466, -0.030394463, -0.025206469, 0.029352218, 0.9992512, 2.0723088, 0.010171197, -7.024491)
 
@@ -2215,7 +2176,6 @@ shape = SubResource("BoxShape3D_0h50o")
 [editable path="StaticCorridor/Assets/MeshNumberPlate5"]
 [editable path="StaticCorridor/Assets/MeshNumberPlate6"]
 [editable path="StaticCorridor/Assets/MeshNumberPlate7"]
-[editable path="StaticCorridor/Assets/StaffDoor"]
 [editable path="StaticCorridor/Guard"]
 [editable path="FakeCells/StaticFakeCell02/MeshMetalBed01/SkeletonBlanked04"]
 [editable path="FakeCells/StaticFakeCell02/MeshMetalBed01/SkeletonBlanked04/Skeleton"]

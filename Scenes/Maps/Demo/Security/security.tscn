@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ry3pgojopyu" path="res://Assets/Assets/Trash/TrashCans/TrashCanFull02/StaticTrashCanFull02.tscn" id="28_xirs0"]
 [ext_resource type="PackedScene" uid="uid://bqij3n0kldweg" path="res://Assets/Assets/Trash/TrashCans/TrashCan02/StaticTrashCan02.tscn" id="29_qqwul"]
 [ext_resource type="Material" uid="uid://2lae7vc2l0y0" path="res://Entities/Monsters/Skinny/SkinnyMonster.tres" id="31_5ve52"]
+[ext_resource type="Script" uid="uid://bpy5q0ccwpl1e" path="res://Scripts/Nodes/on_screen_notifier_3d.gd" id="33_7f88k"]
 [ext_resource type="PackedScene" uid="uid://dhtg8b6glyobb" path="res://Assets/Assets/Decorations/Wall/NumberPlate/MeshNumberPlate.tscn" id="34_eb4ll"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umu7i"]
@@ -1353,13 +1354,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.075, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StaticJanitor/Assets/SkinnyMonster" unique_id=595610443]
 libraries/ = SubResource("AnimationLibrary_7f88k")
 
-[node name="Area3D" type="Area3D" parent="StaticJanitor/Assets/SkinnyMonster" unique_id=37677776]
+[node name="Area3D" type="VisibleOnScreenNotifier3D" parent="StaticJanitor/Assets/SkinnyMonster" unique_id=967432711 node_paths=PackedStringArray("area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9439963, 0)
+aabb = AABB(-0.17335354, -0.17790192, -0.13937727, 0.34670708, 0.35580385, 0.27875453)
+script = ExtResource("33_7f88k")
+area = NodePath("Area3D")
+metadata/_custom_type_script = "uid://bpy5q0ccwpl1e"
+
+[node name="Area3D" type="Area3D" parent="StaticJanitor/Assets/SkinnyMonster/Area3D" unique_id=667096793]
 collision_layer = 0
 collision_mask = 8
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticJanitor/Assets/SkinnyMonster/Area3D" unique_id=1792039197]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23503542, 1.5, 1.0270734)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticJanitor/Assets/SkinnyMonster/Area3D/Area3D" unique_id=1792039197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23503542, -0.49999988, 1.0270734)
 shape = SubResource("BoxShape3D_5ve52")
 
 [node name="StaticSecurityCorridor" parent="." unique_id=389981551 instance=ExtResource("5_bn24p")]

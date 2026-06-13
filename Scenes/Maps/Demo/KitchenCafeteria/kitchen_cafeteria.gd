@@ -7,6 +7,13 @@ var burger_pos: Vector3 = Vector3(-0.085, 0.088, 0.001)
 var burger_rot: Vector3 = Vector3(0.409848, -0.142662, -0.220846)
 
 
+var flashlight_picked_up: bool = false:
+	set(value):
+		flashlight_picked_up = value
+		if value and %Flashlight:
+			%Flashlight.queue_free()
+
+
 var cutscene1_happened: bool = false:
 	set(value):
 		cutscene1_happened = value
@@ -27,8 +34,10 @@ var prisoners: Array = []
 
 func _ready() -> void:
 	%VaultHint.hide()
+	%Flashlight.hide()
 	
 	%Cutscene1/Area3D.body_entered.connect(func(_p):
+		%Friend2/AnimationPlayer.play("Sit4(Wave)")
 		cutscene1_happened = true
 		%Cutscene1.play_animation("Look")
 		DialogueManager.say("Our table", 2))
@@ -43,11 +52,11 @@ func _ready() -> void:
 		AudioManager.play_uid_sound("SFX", "uid://cn3tdffsy22my")
 		key_picked_up = true
 		SaverLoader.can_save += 1
-		DialogueManager.say("Simon was always prepared for everything", 3)
+		DialogueManager.say("Dave always knows what to do", 3)
 		await get_tree().create_timer(3).timeout
 		DialogueManager.say("I need to get to him... or his cell", 3)
 		await get_tree().create_timer(3).timeout
-		DialogueManager.say("I think his number was 12", 3)
+		DialogueManager.say("I think he's in 12", 3)
 		Game.story_description = "I need to get to cell 012"
 		SaverLoader.can_save -= 1)
 	
@@ -70,7 +79,7 @@ func _ready() -> void:
 	%Friends/InteractableFaze1.interacted.connect(func(player: PlayerCharacter):
 		get_parent().first_talk = true
 		player.interactable = null
-		Game.story_description = "I should check on Michael"
+		Game.story_description = "I should check on Michael in cell 008"
 		%Cutscene2.play_animation("Talk"))
 	
 	%Friends/InteractableFaze2.active = false
@@ -78,6 +87,7 @@ func _ready() -> void:
 		DialogueManager.say("Hey guys!", 2)
 		await get_tree().create_timer(2).timeout
 		DialogueManager.say("Michael is", 4)
+		AudioManager.play_uid_sound("SFX", "uid://cm8a6u7yjbf52")
 		get_parent().second_talk = true
 		player.interactable = null
 		await get_tree().create_timer(2).timeout
@@ -99,15 +109,19 @@ func _ready() -> void:
 			light.queue_free()
 		var imbake: LightmapGIData = load("uid://c5q78c3lqlufr")
 		$DynamicLightmapGI.light_data = imbake
-		AudioManager.play_uid_sound("SFX", "uid://cm8a6u7yjbf52")
 		
 		for light: StaticBodyLight3D in %StaticCeilingLights.get_children():
 			light.turn_off()
+		
+		%Flashlight.show()
 		
 		%Friends.queue_free()
 		%TempWall.queue_free()
 		for prisoner in prisoners:
 			prisoner.queue_free())
+	
+	%Flashlight.interactable.interacted.connect(func(_p):
+		flashlight_picked_up = true)
 	
 	get_parent().kitchen_door_signal.connect(func():
 		%VaultHint.show())
@@ -188,6 +202,7 @@ func save() -> Dictionary:
 	var file: Dictionary = {
 		"key_picked_up" = key_picked_up,
 		"cutscene1_happened" = cutscene1_happened,
+		"flashlight_picked_up" = flashlight_picked_up,
 	}
 	
 	return file
@@ -196,3 +211,4 @@ func save() -> Dictionary:
 func load_save(file: Dictionary) -> void:
 	key_picked_up = file["key_picked_up"]
 	cutscene1_happened = file["cutscene1_happened"]
+	flashlight_picked_up = file["flashlight_picked_up"]

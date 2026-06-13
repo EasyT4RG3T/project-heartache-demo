@@ -32,6 +32,7 @@
 [ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="16_27m7j"]
 [ext_resource type="PackedScene" uid="uid://c27b3fu4kgr3w" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsDL.tscn" id="16_n8b7t"]
 [ext_resource type="PackedScene" uid="uid://dhbggknk533a" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsDR.tscn" id="17_ayy1n"]
+[ext_resource type="PackedScene" uid="uid://dk78uppevhuhy" path="res://Assets/Assets/Mics/Flashlight/Flashlight.tscn" id="18_cv4tw"]
 [ext_resource type="PackedScene" uid="uid://b8j26kpigpoko" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsUL.tscn" id="18_x6iov"]
 [ext_resource type="PackedScene" uid="uid://b8jy14fdlnsuw" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsUR.tscn" id="19_o0adt"]
 [ext_resource type="PackedScene" uid="uid://c1db6dhtgao0h" path="res://Assets/Assets/Kitchen/Furniture/OvenStack/StaticOvenStack.tscn" id="20_cw25h"]
@@ -1438,6 +1439,10 @@ text = "[Space]"
 font = ExtResource("16_27m7j")
 font_size = 128
 outline_size = 6
+
+[node name="Flashlight" parent="StaticCafeteria" unique_id=782332694 instance=ExtResource("18_cv4tw")]
+unique_name_in_owner = true
+transform = Transform3D(-0.47876826, 0, 0.87794137, 0, 1, 0, -0.87794137, 0, -0.47876826, -15.972429, 0.84481865, 8.027362)
 
 [node name="StaticKitchen" parent="." unique_id=714011719 instance=ExtResource("4_sl6a2")]
 unique_name_in_owner = true

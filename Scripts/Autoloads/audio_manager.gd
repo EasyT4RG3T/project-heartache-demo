@@ -42,13 +42,14 @@ func play_uid_sound(bus: StringName, uid_sound: String, db: float = 0.0, pitch: 
 	return audio_player
 
 
-func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> AudioStreamPlayer3D:
+func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float = 0.0, pitch: float = 1.0, unit: float = 10.0) -> AudioStreamPlayer3D:
 	var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 	add_child(audio_player)
 	audio_player.bus = bus
 	audio_player.stream = sound
 	audio_player.volume_db = db
 	audio_player.pitch_scale = pitch
+	audio_player.unit_size = unit
 	audio_player.global_position = pos
 	audio_player.finished.connect(func():
 		audio_player.queue_free())
@@ -56,7 +57,7 @@ func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float 
 	return audio_player
 
 
-func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: float = 0.0, pitch: float = 1.0) -> AudioStreamPlayer3D:
+func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: float = 0.0, pitch: float = 1.0, unit: float = 10.0) -> AudioStreamPlayer3D:
 	var audio_player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
 	add_child(audio_player)
 	var sound: AudioStream = load(ResourceUID.uid_to_path(uid_sound))
@@ -64,6 +65,7 @@ func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: flo
 	audio_player.stream = sound
 	audio_player.volume_db = db
 	audio_player.pitch_scale = pitch
+	audio_player.unit_size = unit
 	audio_player.global_position = pos
 	audio_player.finished.connect(func():
 		audio_player.queue_free())

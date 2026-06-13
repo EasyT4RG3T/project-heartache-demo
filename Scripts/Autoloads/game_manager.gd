@@ -52,6 +52,7 @@ func load_main_menu() -> void:
 	SaverLoader.can_save = 1
 	player_character = null
 	InputManager.player_character = null
+	AudioManager.play_ambient("uid://c0fnk0pnoocus")
 	
 	Game.clear()
 	Game.running = false
@@ -59,6 +60,7 @@ func load_main_menu() -> void:
 	DialogueManager.clear()
 	
 	await get_tree().process_frame
+	is_new_game = false
 	
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	
@@ -218,13 +220,13 @@ func new_game() -> void:
 	get_tree().paused = true
 	
 	await get_tree().process_frame
+	is_new_game = true
 	
 	SaverLoader.clear_temp()
 	await Game.new_game()
 	load_player()
 	await get_tree().process_frame
 	
-	is_new_game = true
 	SaverLoader.can_save = 0
 	GameFullyLoaded.emit()
 	Game.running = true
@@ -252,6 +254,7 @@ func load_save(file: Dictionary) -> void:
 	get_tree().paused = true
 	
 	await get_tree().process_frame
+	is_new_game = false
 	
 	load_player()
 	player_character.load_save(file["player"])
