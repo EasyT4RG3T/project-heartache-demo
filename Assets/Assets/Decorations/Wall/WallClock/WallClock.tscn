@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b7xdpcc0h7qvb"]
+
+[ext_resource type="PackedScene" uid="uid://c7l7578vj8ayq" path="res://Assets/Assets/Decorations/Wall/WallClock/StaticWallClock.tscn" id="1_a2m0q"]
+[ext_resource type="Script" uid="uid://d2hox2bj7d4ur" path="res://Assets/Assets/Decorations/Wall/WallClock/wall_clock.gd" id="2_anwjw"]
+[ext_resource type="AudioStream" uid="uid://c6sy010anaq6j" path="res://Assets/Audio/SFX/Physical/Clock/ClockTicking.wav" id="2_lkoqq"]
+[ext_resource type="Material" uid="uid://y73nlnr7y1qq" path="res://Assets/Materials/Plastic/GrayPlastic.tres" id="3_0h78m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_anwjw"]
+material = ExtResource("3_0h78m")
+size = Vector2(0.01, 0.1)
+
+[node name="WallClock" unique_id=1455904131 instance=ExtResource("1_a2m0q")]
+script = ExtResource("2_anwjw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=282406582]
+unique_name_in_owner = true
+stream = ExtResource("2_lkoqq")
+unit_size = 2.0
+max_distance = 4.0
+bus = &"SFX"
+
+[node name="ClockHand" type="Node3D" parent="." index="3" unique_id=1391377674]
+unique_name_in_owner = true
+
+[node name="ClockHandMesh" type="MeshInstance3D" parent="ClockHand" index="0" unique_id=573587114]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.044726405, 0.006209586)
+gi_mode = 2
+mesh = SubResource("PlaneMesh_anwjw")

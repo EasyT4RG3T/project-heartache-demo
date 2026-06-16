@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project_Heartache"
-config/version="0.1.1"
+config/version="0.1.5"
 run/main_scene="uid://bk6rwqeytisu1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=144
@@ -24,11 +24,11 @@ driver/driver=""
 
 [autoload]
 
-GameManager="*res://Scripts/Autoloads/game_manager.gd"
+GameManager="*uid://bua52v6hey7sp"
 InputManager="*res://Scripts/Autoloads/input_manager.gd"
 Console="*res://Scripts/Autoloads/console.tscn"
 SaverLoader="*uid://ykafa18d674h"
-Game="*res://Scripts/Autoloads/game.gd"
+Game="*uid://c6lsg8mdiygf"
 AudioManager="*res://Scripts/Autoloads/audio_manager.gd"
 DialogueManager="*uid://conva0l7uc3pg"
 

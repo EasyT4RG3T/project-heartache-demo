@@ -3,10 +3,20 @@ extends Node
 
 var ambient_player: AudioStreamPlayer
 
+var audio_players: Array = []
+
 
 func clear() -> void:
 	if ambient_player.playing:
 		ambient_player.stop()
+	for audio_player in audio_players:
+		if audio_player:
+			audio_players.erase(audio_player)
+			audio_player.queue_free()
+
+
+func _init() -> void:
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 func _ready() -> void:
@@ -23,8 +33,10 @@ func play_sound(bus: StringName, sound: AudioStream, db: float = 0.0, pitch: flo
 	audio_player.volume_db = db
 	audio_player.pitch_scale = pitch
 	audio_player.finished.connect(func():
+		audio_players.erase(audio_player)
 		audio_player.queue_free())
 	audio_player.play()
+	audio_players.append(audio_player)
 	return audio_player
 
 
@@ -37,8 +49,10 @@ func play_uid_sound(bus: StringName, uid_sound: String, db: float = 0.0, pitch: 
 	audio_player.volume_db = db
 	audio_player.pitch_scale = pitch
 	audio_player.finished.connect(func():
+		audio_players.erase(audio_player)
 		audio_player.queue_free())
 	audio_player.play()
+	audio_players.append(audio_player)
 	return audio_player
 
 
@@ -50,10 +64,13 @@ func play_sound_at(bus: StringName, sound: AudioStream, pos: Vector3, db: float 
 	audio_player.volume_db = db
 	audio_player.pitch_scale = pitch
 	audio_player.unit_size = unit
+	audio_player.max_distance = unit * 2
 	audio_player.global_position = pos
 	audio_player.finished.connect(func():
+		audio_players.erase(audio_player)
 		audio_player.queue_free())
 	audio_player.play()
+	audio_players.append(audio_player)
 	return audio_player
 
 
@@ -66,10 +83,13 @@ func play_uid_sound_at(bus: StringName, uid_sound: String, pos: Vector3, db: flo
 	audio_player.volume_db = db
 	audio_player.pitch_scale = pitch
 	audio_player.unit_size = unit
+	audio_player.max_distance = unit * 2
 	audio_player.global_position = pos
 	audio_player.finished.connect(func():
+		audio_players.erase(audio_player)
 		audio_player.queue_free())
 	audio_player.play()
+	audio_players.append(audio_player)
 	return audio_player
 
 

@@ -4,8 +4,44 @@
 [ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="1_cwg5t"]
 [ext_resource type="FontFile" uid="uid://ec2tuv0fro0y" path="res://Assets/Fonts/Alkhemikal.ttf" id="3_38cwy"]
 [ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="4_8m75e"]
+[ext_resource type="Texture2D" uid="uid://b25ju32lahf7h" path="res://Scenes/Menus/SettingsMenu/Brightness_Show.png" id="5_8m75e"]
+[ext_resource type="Texture2D" uid="uid://d06ewycgwlt5r" path="res://Scenes/Menus/SettingsMenu/Brightness_Hide.png" id="6_6ww6g"]
+[ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="7_6ww6g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ww6g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sp7pw"]
+size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi2hn"]
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_color = Color(0, 0, 0, 1)
+use_z_clip_scale = true
+z_clip_scale = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8w5bb"]
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_712ha"]
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("5_8m75e")
+texture_filter = 2
+use_z_clip_scale = true
+z_clip_scale = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8sdt"]
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("6_6ww6g")
+texture_filter = 2
+use_z_clip_scale = true
+z_clip_scale = 0.5
 
 [node name="Intro" type="Control" unique_id=708625349]
 texture_filter = 3
@@ -119,3 +155,109 @@ Violence & Gore
 Jumpscares"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BrightnessTest" type="Node3D" parent="." unique_id=1985434603]
+unique_name_in_owner = true
+top_level = true
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BrightnessTest" unique_id=925779953]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.0028452277)
+layers = 524288
+sorting_offset = 0.9
+mesh = SubResource("PlaneMesh_sp7pw")
+surface_material_override/0 = SubResource("StandardMaterial3D_hi2hn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BrightnessTest" unique_id=1846283690]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.3, 0, 0)
+layers = 524288
+sorting_offset = 1.0
+mesh = SubResource("PlaneMesh_8w5bb")
+surface_material_override/0 = SubResource("StandardMaterial3D_712ha")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BrightnessTest" unique_id=1674732633]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.3, 0, 0)
+layers = 524288
+sorting_offset = 1.0
+mesh = SubResource("PlaneMesh_8w5bb")
+surface_material_override/0 = SubResource("StandardMaterial3D_n8sdt")
+
+[node name="DynamicSpotLight3D" type="SpotLight3D" parent="BrightnessTest" unique_id=1119812423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 0, 1.5)
+light_energy = 0.3
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+light_cull_mask = 4294443008
+shadow_bias = 0.01
+shadow_caster_mask = 4294443008
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+spot_range = 3.0
+spot_attenuation = 1.5
+spot_angle = 12.0
+spot_angle_attenuation = 4.0
+
+[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="BrightnessTest" unique_id=1183844763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30000007, 0, 1.5)
+light_energy = 0.02
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+light_cull_mask = 4294443008
+shadow_bias = 0.01
+shadow_caster_mask = 4294443008
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+spot_range = 3.0
+spot_attenuation = 1.5
+spot_angle = 12.0
+spot_angle_attenuation = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="BrightnessTest" unique_id=1415113994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.90000004)
+environment = ExtResource("7_6ww6g")
+
+[node name="BrightnessControl" type="Control" parent="BrightnessTest" unique_id=1008570542]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cwg5t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BrightnessTest/BrightnessControl" unique_id=589595535]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -100.0
+offset_top = -62.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="BrightnessTest/BrightnessControl/VBoxContainer" unique_id=1000133520]
+layout_mode = 2
+text = "Brightness"
+horizontal_alignment = 1
+
+[node name="BrightnessHSlider" type="HSlider" parent="BrightnessTest/BrightnessControl/VBoxContainer" unique_id=760764778]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+max_value = 5.0
+step = 0.01
+
+[node name="Button" type="Button" parent="BrightnessTest/BrightnessControl/VBoxContainer" unique_id=1108787486]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Done"
+
+[node name="Timer" type="Timer" parent="." unique_id=1710922389]
+unique_name_in_owner = true

@@ -8,6 +8,10 @@ extends RigidBody3D
 
 @export var collision_sound: String = ""
 
+signal collided
+signal was_picked_up
+signal was_put_down
+
 const default_collision_sound: String = "uid://tbgl4aqox0xy"
 
 var audio_grace: bool = false
@@ -47,6 +51,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 					AudioManager.play_uid_sound_at("SFX" ,collision_sound, collision_point, loudness)
 				else:
 					AudioManager.play_uid_sound_at("SFX" ,default_collision_sound, collision_point, loudness)
+		collided.emit()
 	collisions = new_collisions
 
 
@@ -94,6 +99,8 @@ func pick_up(player: PlayerCharacter) -> void:
 	if !ignore_player:
 		collision_layer = 32
 		set_collision_mask_value(4, true)
+	
+	was_picked_up.emit()
 
 
 func put_down(player: PlayerCharacter) -> void:
@@ -107,6 +114,8 @@ func put_down(player: PlayerCharacter) -> void:
 	if !ignore_player:
 		collision_layer = 2
 		set_collision_mask_value(4, false)
+	
+	was_put_down.emit()
 
 
 func update_parent() -> void:

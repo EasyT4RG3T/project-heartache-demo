@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b5aldrvnrrsvt"]
+
+[ext_resource type="Script" uid="uid://1vusm4ll73yh" path="res://Scripts/Nodes/dynamic_object_3d.gd" id="1_ugnms"]
+[ext_resource type="PackedScene" uid="uid://bxdb216luolyp" path="res://Assets/Assets/Kitchen/Utensils/Knife/MeshKnife.tscn" id="2_mfo0d"]
+[ext_resource type="ArrayMesh" uid="uid://1cctrt30kqgf" path="res://Assets/Assets/Kitchen/Utensils/Knife/Knife.obj" id="3_2urub"]
+[ext_resource type="Material" uid="uid://de3ynddeg62cv" path="res://Assets/Assets/Kitchen/Utensils/Knife/Knife.tres" id="4_06jay"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gx6xo"]
+points = PackedVector3Array(0.028230004, 0.0050783083, -0.01629354, 0.025592789, 0.004920712, 0.06419626, -0.0018834434, 0, -0.162, -0.0018834434, 0.01, -0.162, -0.005662607, 0.01, -0.023143739, 0.019043919, 0.004920712, 0.13877952, -0.005662607, 0, -0.023143739, -0.036224, 0, -0.162, -0.036224, 0.01, -0.162, -0.035561543, 0.01, -0.023143739, -0.03197796, 0.008574784, 0.14999846, -0.009605808, 0.008574784, 0.14507052, -0.009605808, 0.0014242365, 0.14507052, -0.023523735, 0.005, 0.19504899, -0.035561543, 0, -0.023143739, -0.03197796, 0.0014242365, 0.14999846, -0.03523978, 0.0014242365, 0.069823205, -0.03523978, 0.008574784, 0.069823205)
+
+[node name="DynamicKnife" type="RigidBody3D" unique_id=1423673502]
+mass = 0.4
+sleeping = true
+continuous_cd = true
+script = ExtResource("1_ugnms")
+ignore_player = true
+max_distance = 1.2
+min_distance = 0.4
+
+[node name="MeshKnife" type="MeshInstance3D" parent="." unique_id=792570182 instance=ExtResource("2_mfo0d")]
+gi_mode = 2
+mesh = ExtResource("3_2urub")
+surface_material_override/0 = ExtResource("4_06jay")
+
+[node name="@CollisionShape3D@41588" type="CollisionShape3D" parent="." unique_id=1390093640]
+shape = SubResource("ConvexPolygonShape3D_gx6xo")

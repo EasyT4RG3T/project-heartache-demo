@@ -13,6 +13,22 @@ var corridor_monster_ready_2: bool = false:
 		corridor_monster_ready_2 = value
 		var player = GameManager.player_character
 		var last_pos: float = player.global_position.z
+		
+		if player.look_vector.x < 2.5 and player.look_vector.x > 0:
+			player.look_vector.x = 2.5
+		if player.look_vector.x > -2.5 and player.look_vector.x < 0:
+			player.look_vector.x = -2.5
+		
+		if player.look_vector.y > 0.5 and player.look_vector.y > 0:
+			player.look_vector.y = 0.5
+		if player.look_vector.y < -0.5 and player.look_vector.y < 0:
+			player.look_vector.y = -0.5
+		
+		var look_rotation_x = Quaternion(Vector3.UP, player.look_vector.x)
+		var look_rotation_y = Quaternion(Vector3.RIGHT, player.look_vector.y)
+		
+		player.head.quaternion = look_rotation_x * look_rotation_y
+		
 		while value:
 			if player.look_vector.x < 2.5 and player.look_vector.x > 0:
 				player.look_vector.x = 2.5
@@ -35,7 +51,7 @@ var corridor_monster_ready_2: bool = false:
 func _ready() -> void:
 	%NoSaveArea3D.body_entered.connect(func(_body):
 		SaverLoader.can_save += 1)
-	%NoSaveArea3D.body_entered.connect(func(_body):
+	%NoSaveArea3D.body_exited.connect(func(_body):
 		SaverLoader.can_save -= 1)
 	
 	$FakeCells/StaticFakeCell02_2/BedMonsterOnScreenNotifier3D.screen_entered_plus.connect(func():
@@ -44,8 +60,8 @@ func _ready() -> void:
 		AudioManager.play_uid_sound("SFX", "uid://bs05hgwl2paw0", -5.0)
 		%BedMonster/AnimationPlayer.animation_finished.connect(func(_anim):
 			DialogueManager.say("I have to tell them something is wrong", 3)
-			bed_monster_happened = true)
-		Game.story_description = "I have to tell them Michael is gone")
+			Game.story_description = "I have to tell them Michael is gone"
+			bed_monster_happened = true))
 	
 	if randi_range(1, 1000) == 67:
 		var egg: StandardMaterial3D = load("uid://d34jsbwlmnipc")
@@ -101,7 +117,7 @@ func _jumpscare() -> void:
 	
 	AudioManager.play_uid_sound("SFX", "uid://b8jorf3nmlhbi", -12.0)
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	_end_demo()
 
 

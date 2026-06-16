@@ -4,6 +4,8 @@ extends Resource
 
 ## Game ##
 
+@export var first_time: bool = true
+
 @export var sensitivity: float = 10
 
 @export var max_fps: int = 144

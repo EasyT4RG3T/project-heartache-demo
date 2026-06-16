@@ -6,6 +6,12 @@ signal GameFullyLoaded
 var DEFAULT_ENVIRONMENT = preload("uid://b5hbq6dr1gixx")
 var STRIPPED_ENVIRONMENT = preload("uid://d2m0td6ed2a2t")
 
+@onready var corner_ui: VBoxContainer = %CornerUI
+@onready var journal_ui: TextureRect = %JournalUI
+@onready var progress_ui: TextureProgressBar = %ProgressUI
+
+var corner_ui_modulate: bool = false
+
 const main_menu_uid: String = "uid://evmnqmy0k477"
 const debug_uid: String = "uid://be8nto6fraipm"
 
@@ -24,6 +30,19 @@ func _init() -> void:
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	journal_ui.hide()
+	progress_ui.hide()
+
+
+func _physics_process(delta: float) -> void:
+	if corner_ui_modulate:
+		corner_ui.modulate.a -= delta * 0.5
+		if corner_ui.modulate.a < 0.6:
+			corner_ui_modulate = false
+	else:
+		corner_ui.modulate.a += delta * 0.5
+		if corner_ui.modulate.a >= 1.0:
+			corner_ui_modulate = true
 
 
 func screenshot(ss_name: String) -> void:
@@ -98,6 +117,9 @@ func apply_settings_data() -> void:
 	AudioServer.set_bus_volume_db(3, linear_to_db(clamp(SaverLoader.settings.ambient_volume, 0.0, 1.0)))
 	AudioServer.set_bus_volume_db(4, linear_to_db(clamp(SaverLoader.settings.music_volume, 0.0, 1.0)))
 	AudioServer.set_bus_volume_db(5, linear_to_db(clamp(SaverLoader.settings.menus_volume, 0.0, 1.0)))
+	
+	corner_ui.scale.x = SaverLoader.settings.hud_size * 2
+	corner_ui.scale.y = SaverLoader.settings.hud_size * 2
 	
 	DialogueManager.apply_settings()
 	
@@ -247,13 +269,14 @@ func load_save(file: Dictionary) -> void:
 	InputManager.player_character = null
 	InputManager.player_character_input = false
 	
+	get_tree().paused = true
+	
+	await get_tree().process_frame
+	
 	Game.clear()
 	AudioManager.clear()
 	DialogueManager.clear()
 	
-	get_tree().paused = true
-	
-	await get_tree().process_frame
 	is_new_game = false
 	
 	load_player()

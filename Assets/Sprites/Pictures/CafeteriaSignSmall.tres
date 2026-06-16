@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nqqoywcfq2v0"]
+
+[ext_resource type="Texture2D" uid="uid://btel1uhiywmp4" path="res://Assets/Sprites/Pictures/CafeteriaSignSmall.png" id="1_ofn4i"]
+
+[resource]
+albedo_texture = ExtResource("1_ofn4i")
+metallic = 0.7
+roughness = 0.5
+texture_filter = 2

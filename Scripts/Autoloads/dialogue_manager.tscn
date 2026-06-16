@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://conva0l7uc3pg"]
 
 [ext_resource type="Script" uid="uid://jm2dekw56t5u" path="res://Scripts/Autoloads/dialogue_manager.gd" id="1_prfwx"]
+[ext_resource type="Texture2D" uid="uid://dkerypx6l6yh1" path="res://Assets/Themes/MainTheme/UI_Continue.png" id="2_fqm66"]
 
 [node name="DialogueManager" type="Control" unique_id=1973029462]
 z_index = -2
@@ -26,9 +27,13 @@ offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=28285269]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ContinueUI" type="TextureRect" parent="VBoxContainer" unique_id=1265853253]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_fqm66")

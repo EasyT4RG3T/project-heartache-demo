@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgj6faqb2ll3w"]
+
+[ext_resource type="Texture2D" uid="uid://dvqkd3ga7npef" path="res://Assets/Materials/Metal/Metal/Metal_albedo.png" id="1_cmx56"]
+
+[resource]
+albedo_color = Color(1, 0.7783333, 0.3, 1)
+albedo_texture = ExtResource("1_cmx56")
+metallic = 0.8
+roughness = 0.2
+texture_filter = 2

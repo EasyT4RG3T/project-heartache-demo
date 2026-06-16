@@ -27,7 +27,9 @@ var GRAPHICS_SETTINGS_PATH = GAME_PATH + "graphics_settings.json"
 var GAME_DATA_PATH = GAME_PATH + "saves/"
 
 
-var can_save: int = 1
+var can_save: int = 1:
+	set(value):
+		can_save = value
 var can_chunk_save: int = 1
 var current_slot: String = "0":
 	set(value):

@@ -215,3 +215,17 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VentArea3D" unique_id=1669803896]
 shape = SubResource("BoxShape3D_8e585")
+
+[node name="VentArea3D2" type="Area3D" parent="." unique_id=2091580957]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8495684, 0, 2.6746912)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VentArea3D2" unique_id=991647643]
+shape = SubResource("BoxShape3D_8e585")
+
+[node name="FootMarker3D" type="Marker3D" parent="." unique_id=895129416]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15043163, 0.2, 2.6746912)

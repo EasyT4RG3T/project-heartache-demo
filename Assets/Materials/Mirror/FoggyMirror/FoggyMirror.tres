@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://e85lveg7y4i5" path="res://Assets/Materials/Noise/SlightNoise/SlightNoise_albedo.png" id="1_lnn3c"]
 
 [resource]
+albedo_color = Color(0.8, 0.8, 0.8, 1)
 albedo_texture = ExtResource("1_lnn3c")
 metallic = 0.9
-roughness = 0.01
+roughness = 0.2
 texture_filter = 2

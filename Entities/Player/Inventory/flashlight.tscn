@@ -10,6 +10,7 @@ script = ExtResource("1_j7gns")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.2, 0)
 light_projector = ExtResource("2_3urj3")
+light_cull_mask = 4294443007
 shadow_enabled = true
 shadow_bias = 0.01
 shadow_normal_bias = 2.0

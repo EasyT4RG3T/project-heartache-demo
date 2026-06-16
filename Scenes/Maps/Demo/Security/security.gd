@@ -19,6 +19,7 @@ var skinny_monster_happened: bool = false:
 
 func _ready() -> void:
 	%JanitorDoor/Hinge3D.opened.connect(func():
+		get_parent().refresh_hint_timer()
 		%JanitorDoor/Hinge3D/InteractableStaticBody3D.active = false)
 	
 	_light_blink(randf_range(0.5, 2))

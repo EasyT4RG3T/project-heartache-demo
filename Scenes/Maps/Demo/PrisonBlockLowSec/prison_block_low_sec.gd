@@ -11,9 +11,10 @@ var cell_opened: bool = false:
 	set(value):
 		cell_opened = value
 		if value:
-			if %Guard:
+			await get_tree().process_frame
+			if !get_parent().second_talk:
 				%Guard/AnimationPlayer.play("Stand")
-				while %Guard:
+				while !get_parent().second_talk:
 					%Guard/HeadLookIK.global_position = lerp(%Guard/HeadLookIK.global_position, GameManager.player_character.main_camera.global_position, get_physics_process_delta_time() * 10)
 					await get_tree().physics_frame
 

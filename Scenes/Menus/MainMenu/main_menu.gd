@@ -49,6 +49,10 @@ func _ready() -> void:
 		Console.menu_hint = false
 	else:
 		%ConsoleLabel.hide()
+	
+	if SaverLoader.settings.first_time:
+		SaverLoader.settings.first_time = false
+		SaverLoader.save_settings()
 
 
 var blink_timer: float = 0.0

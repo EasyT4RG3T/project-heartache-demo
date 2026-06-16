@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cetkir8p7djam"]
+
+[ext_resource type="Texture2D" uid="uid://crbrk2k1jmabh" path="res://Assets/Assets/Decorations/Wall/Calendar/Calendar_albedo.png" id="1_2xes3"]
+
+[resource]
+albedo_texture = ExtResource("1_2xes3")
+texture_filter = 2

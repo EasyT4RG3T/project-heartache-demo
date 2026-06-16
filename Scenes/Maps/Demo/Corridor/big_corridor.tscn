@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="31_jy5jr"]
 [ext_resource type="PackedScene" uid="uid://coha7fhwe5plg" path="res://Assets/Assets/Lights/Ceiling/CeilingLightLongOpen02/StaticCeilingLightLongOpen02.tscn" id="32_4rt4r"]
 [ext_resource type="PackedScene" uid="uid://cmy0krwhyeba4" path="res://Entities/DefaultPrisoner/default_prisoner.tscn" id="33_rgvan"]
+[ext_resource type="PackedScene" uid="uid://bkkrvccm68ub8" path="res://Assets/Assets/Decorations/Wall/Signs/MeshSmallSquareSign.tscn" id="35_04mus"]
+[ext_resource type="Material" uid="uid://nqqoywcfq2v0" path="res://Assets/Sprites/Pictures/CafeteriaSignSmall.tres" id="36_m2i4x"]
 [ext_resource type="PackedScene" uid="uid://b5b15rinbiefv" path="res://Assets/Assets/Furniture/Beds/MetalBed/StaticMetalBed01.tscn" id="36_tkv2x"]
 [ext_resource type="PackedScene" uid="uid://beaxqi7h2sjqk" path="res://Assets/Assets/Furniture/Desks/CheapDesk/StaticCheapDesk.tscn" id="37_c7635"]
 [ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="38_c7635"]
@@ -1046,6 +1048,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 [node name="DynamicCigaretteBox03" parent="Assets" unique_id=651074443 instance=ExtResource("11_mwq0s")]
 transform = Transform3D(0.99044216, 0.13792859, -6.02905e-09, 0, -4.371139e-08, -1, -0.13792859, 0.99044216, -4.3293603e-08, -27.715567, 0.5133857, -2.9700935)
 
+[node name="MeshSmallSquareSign" parent="Assets" unique_id=1199058579 instance=ExtResource("35_04mus")]
+transform = Transform3D(-4.371138e-08, 7.1054265e-15, 1, 7.1054265e-15, 1, -1.0022245e-21, -1, 8.4703295e-22, -4.371138e-08, -11.394226, 1.6000004, 4.2)
+gi_mode = 2
+surface_material_override/0 = ExtResource("36_m2i4x")
+
 [node name="DefaultPrisoner" parent="." unique_id=2036198890 instance=ExtResource("33_rgvan")]
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.503416, 0.1, -0.1)
@@ -1253,7 +1260,7 @@ bones/22/rotation = Quaternion(0.98160106, -0.06856423, 0.019494498, 0.17713937)
 transform = Transform3D(1.0000005, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 1.0000005, 0, 1.6, 1)
 
 [node name="RightHandIK" parent="Peak/SkinnyMonster" index="4" unique_id=1614960415]
-transform = Transform3D(-1.0000008, 1.5099576e-07, 3.552715e-15, -1.4585088e-07, -0.9659255, 0.2588191, 3.908062e-08, 0.25881892, 0.9659262, -0.25, 1.0873086, 0)
+transform = Transform3D(-1.0000008, 1.509957e-07, 3.552715e-15, -1.4585088e-07, -0.96592516, 0.2588191, 3.908062e-08, 0.25881884, 0.9659262, -0.25, 1.0873086, 0)
 
 [node name="RightHandIK2" parent="Peak/SkinnyMonster" index="5" unique_id=842425413]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.25, 1.8299999, -1)

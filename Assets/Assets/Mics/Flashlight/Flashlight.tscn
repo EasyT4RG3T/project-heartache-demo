@@ -2,8 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bujeqi3wpv1d4" path="res://Assets/Assets/Mics/Flashlight/MeshFlashlight.tscn" id="1_cmbxy"]
 [ext_resource type="Script" uid="uid://fl1t0cw7smae" path="res://Assets/Assets/Mics/Flashlight/flashlight.gd" id="1_jxt4h"]
-[ext_resource type="Texture2D" uid="uid://bijdbbevq0ttv" path="res://Entities/Player/Inventory/FlashlightMask.png" id="3_3qb3a"]
-[ext_resource type="Script" uid="uid://cmv4qm8gcm4fc" path="res://Scripts/Nodes/dynamic_spotlight_3d.gd" id="4_tcqfx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cmbxy"]
 size = Vector3(0.1, 0.1, 0.2)
@@ -18,21 +16,3 @@ script = ExtResource("1_jxt4h")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1183580667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017654128, 0)
 shape = SubResource("BoxShape3D_cmbxy")
-
-[node name="DynamicSpotLight3D" type="SpotLight3D" parent="." unique_id=1178740933]
-transform = Transform3D(-1, 2.646978e-23, 8.742278e-08, -2.6255331e-09, 0.999549, -0.030032601, -8.738334e-08, -0.030032601, -0.999549, 0, 0.017844565, 0.06711271)
-layers = 3
-light_volumetric_fog_energy = 5.0
-light_projector = ExtResource("3_3qb3a")
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_normal_bias = 2.0
-shadow_opacity = 0.9
-distance_fade_enabled = true
-distance_fade_begin = 5.0
-distance_fade_shadow = 10.0
-spot_range = 10.0
-spot_angle = 25.0
-spot_angle_attenuation = 1.5
-script = ExtResource("4_tcqfx")
-metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"

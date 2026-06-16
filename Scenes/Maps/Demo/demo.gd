@@ -46,13 +46,19 @@ var vent_open: bool = false:
 
 
 func _ready() -> void:
-	$HintTimer.timeout.connect(func():
-		GameManager.player_character.add_thought("[Tab] Journal"))
-	
-	await get_tree().process_frame
-	GameManager.player_character.global_position = Vector3(-0.817, 0, 0.041)
-	if GameManager.is_new_game:
-		%Cutscene.play_animation("Wake")
+	GameManager.GameFullyLoaded.connect(func():
+		$HintTimer.timeout.connect(func():
+			GameManager.player_character.add_thought("[Tab] Journal", false, 4))
+		
+		if GameManager.is_new_game:
+			%BlackScreen.show()
+			GameManager.player_character.global_position = Vector3(-0.817, 0, 0.041)
+			%Cutscene.play_animation("Wake")
+			while %BlackScreen.color.a > 0:
+				%BlackScreen.color.a -= 0.005
+				await get_tree().process_frame
+		else:
+			%BlackScreen.hide())
 
 
 func refresh_hint_timer() -> void:

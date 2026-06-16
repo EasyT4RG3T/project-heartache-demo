@@ -29,6 +29,9 @@ var key_picked_up: bool = false:
 			%Key.queue_free()
 
 
+var burger_fell: bool = false
+
+
 var prisoners: Array = []
 
 
@@ -40,6 +43,8 @@ func _ready() -> void:
 		%Friend2/AnimationPlayer.play("Sit4(Wave)")
 		cutscene1_happened = true
 		%Cutscene1.play_animation("Look")
+		%Cutscene1.animation_finished.connect(func(_a):
+			SaverLoader.auto_save_game_data())
 		DialogueManager.say("Our table", 2))
 	
 	$StaticKitchen/CrawlArea.body_entered.connect(func(_p):
@@ -48,6 +53,7 @@ func _ready() -> void:
 			%VaultHint.hide())
 	
 	%Key/KeyInteractable.interacted.connect(func(player: PlayerCharacter):
+		SaverLoader.auto_save_game_data()
 		player.inventory.add_key("Security Key")
 		AudioManager.play_uid_sound("SFX", "uid://cn3tdffsy22my")
 		key_picked_up = true
@@ -79,20 +85,19 @@ func _ready() -> void:
 	%Friends/InteractableFaze1.interacted.connect(func(player: PlayerCharacter):
 		get_parent().first_talk = true
 		player.interactable = null
-		Game.story_description = "I should check on Michael in cell 008"
-		%Cutscene2.play_animation("Talk"))
+		%Cutscene2.play_animation("Talk")
+		%Cutscene2.animation_finished.connect(func(_a):
+			Game.story_description = "I should check on Michael in cell 008"
+			SaverLoader.auto_save_game_data()))
 	
 	%Friends/InteractableFaze2.active = false
 	%Friends/InteractableFaze2.interacted.connect(func(player: PlayerCharacter):
-		DialogueManager.say("Hey guys!", 2)
-		await get_tree().create_timer(2).timeout
-		DialogueManager.say("Michael is", 4)
-		AudioManager.play_uid_sound("SFX", "uid://cm8a6u7yjbf52")
-		get_parent().second_talk = true
-		player.interactable = null
-		await get_tree().create_timer(2).timeout
-		DialogueManager.say("... gone", 2)
-		Game.story_description = "Everyone is gone?")
+		%Friends/InteractableFaze2.queue_free()
+		%Cutscene3.play_animation("Lights")
+		%Cutscene3.animation_finished.connect(func(_a):
+			Game.story_description = "Everyone is gone?"
+			SaverLoader.auto_save_game_data())
+		player.interactable = null)
 	
 	
 	get_parent().first_talk_signal.connect(func():
@@ -130,6 +135,21 @@ func _ready() -> void:
 		%SpecialTable.global_position = Vector3(-11.9, 0.1, 6.1)
 		%SpecialTable/StaticBench.show()
 		%SpecialTable/StaticBench2.show())
+	
+	%DynamicFoodTray.was_picked_up.connect(func():
+		GameManager.player_character.add_thought("[MMB] rotate objects"))
+	
+	%RigidBurger.collided.connect(func():
+		if burger_fell: return
+		for body in %RigidBurger.get_colliding_bodies():
+			if body != %DynamicFoodTray:
+				DialogueManager.say("Shit..", 2)
+				burger_fell = true)
+
+
+func do_second_talk() -> void:
+	AudioManager.play_uid_sound("SFX", "uid://cm8a6u7yjbf52")
+	get_parent().second_talk = true
 
 
 func _prisoner_sit_2(prisoner: Node) -> void:
@@ -203,6 +223,7 @@ func save() -> Dictionary:
 		"key_picked_up" = key_picked_up,
 		"cutscene1_happened" = cutscene1_happened,
 		"flashlight_picked_up" = flashlight_picked_up,
+		"burger_fell" = burger_fell,
 	}
 	
 	return file
@@ -212,3 +233,4 @@ func load_save(file: Dictionary) -> void:
 	key_picked_up = file["key_picked_up"]
 	cutscene1_happened = file["cutscene1_happened"]
 	flashlight_picked_up = file["flashlight_picked_up"]
+	burger_fell = file["burger_fell"]

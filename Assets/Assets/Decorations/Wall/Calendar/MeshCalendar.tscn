@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cv1v1851d4l8h"]
+
+[ext_resource type="ArrayMesh" uid="uid://nh0imik1a7m" path="res://Assets/Assets/Decorations/Wall/Calendar/Calendar.obj" id="1_h8bhx"]
+[ext_resource type="Material" uid="uid://cetkir8p7djam" path="res://Assets/Assets/Decorations/Wall/Calendar/Calendar.tres" id="2_uokba"]
+
+[node name="MeshCalendar" type="MeshInstance3D" unique_id=176272745]
+mesh = ExtResource("1_h8bhx")
+surface_material_override/0 = ExtResource("2_uokba")

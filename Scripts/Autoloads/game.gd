@@ -9,6 +9,8 @@ var story_description: String = "":
 		story_description = value
 		if GameManager.journal:
 			GameManager.journal.quest_rich_text_label.text = story_description
+			GameManager.journal.ui_hint()
+			AudioManager.play_uid_sound("SFX", "uid://dn8g7ipypuq2v")
 
 var running: bool = false:
 	set(value):

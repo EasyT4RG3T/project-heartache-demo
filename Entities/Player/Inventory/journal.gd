@@ -52,6 +52,12 @@ func add(item: String, text: String) -> RichTextLabel:
 	return label
 
 
+func ui_hint() -> void:
+	GameManager.journal_ui.show()
+	await get_tree().create_timer(3.0).timeout
+	GameManager.journal_ui.hide()
+
+
 func save() -> Dictionary:
 	var file: Dictionary = {
 		"disabled" = disabled

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bggbsiu27chh0"]
+
+[ext_resource type="PackedScene" uid="uid://cv1v1851d4l8h" path="res://Assets/Assets/Decorations/Wall/Calendar/MeshCalendar.tscn" id="1_f2ljf"]
+[ext_resource type="ArrayMesh" uid="uid://nh0imik1a7m" path="res://Assets/Assets/Decorations/Wall/Calendar/Calendar.obj" id="2_mxmtm"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lsdej"]
+data = PackedVector3Array(-0.089999996, 0.099999994, 0, 0.089999996, 0.07, 0, -0.089999996, 0.07, 0, 0.089999996, 0.099999994, 0, 0.089999996, 0.07, 0, -0.089999996, 0.099999994, 0, 0.089999996, 0.07, 0.0039999997, -0.089999996, 0.07, 0, 0.089999996, 0.07, 0, -0.089999996, 0.07, 0.0039999997, -0.089999996, 0.07, 0, 0.089999996, 0.07, 0.0039999997, -0.089999996, 0.07, 0.0039999997, 0.089999996, -0.099999994, 0.0039999997, -0.089999996, -0.099999994, 0.0039999997, 0.089999996, 0.07, 0.0039999997, 0.089999996, -0.099999994, 0.0039999997, -0.089999996, 0.07, 0.0039999997, -0.089999996, 0.07, 0.0039999997, -0.089999996, -0.099999994, 0, -0.089999996, 0.07, 0, -0.089999996, -0.099999994, 0.0039999997, -0.089999996, -0.099999994, 0, -0.089999996, 0.07, 0.0039999997, 0.089999996, -0.099999994, 0.0039999997, 0.089999996, 0.07, 0, 0.089999996, -0.099999994, 0, 0.089999996, 0.07, 0.0039999997, 0.089999996, 0.07, 0, 0.089999996, -0.099999994, 0.0039999997, -0.089999996, -0.099999994, 0.0039999997, 0.089999996, -0.099999994, 0, -0.089999996, -0.099999994, 0, 0.089999996, -0.099999994, 0.0039999997, 0.089999996, -0.099999994, 0, -0.089999996, -0.099999994, 0.0039999997)
+
+[node name="StaticCalendar" type="StaticBody3D" unique_id=1494442417]
+
+[node name="MeshCalendar" type="MeshInstance3D" parent="." unique_id=176272745 instance=ExtResource("1_f2ljf")]
+mesh = ExtResource("2_mxmtm")
+
+[node name="@CollisionShape3D@123686" type="CollisionShape3D" parent="." unique_id=1983992951]
+shape = SubResource("ConcavePolygonShape3D_lsdej")

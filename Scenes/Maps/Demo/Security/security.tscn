@@ -32,6 +32,7 @@
 [ext_resource type="Material" uid="uid://durgscxap4fi0" path="res://Assets/Assets/Bathroom/Towels/FoldedSmallTowel02.tres" id="21_kln3q"]
 [ext_resource type="PackedScene" uid="uid://bafdxotrgioln" path="res://Assets/Assets/Bathroom/ToiletBrush/DynamicToiletBrush.tscn" id="22_ufnrm"]
 [ext_resource type="PackedScene" uid="uid://b7l6l5acu4p6h" path="res://Assets/Assets/Bathroom/ToiletBrush/StaticToiletBrushHolder.tscn" id="23_wgtn4"]
+[ext_resource type="PackedScene" uid="uid://dk78uppevhuhy" path="res://Assets/Assets/Mics/Flashlight/Flashlight.tscn" id="25_qugdp"]
 [ext_resource type="PackedScene" uid="uid://bij6a6itenjlr" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox01/StaticBigCardboardBox01.tscn" id="26_p3v4c"]
 [ext_resource type="PackedScene" uid="uid://e4iblqa7tbty" path="res://Assets/Assets/Trash/CardboardBoxes/BigCardboardBox02/StaticBigCardboardBox02.tscn" id="27_7u05v"]
 [ext_resource type="PackedScene" uid="uid://b8ry3pgojopyu" path="res://Assets/Assets/Trash/TrashCans/TrashCanFull02/StaticTrashCanFull02.tscn" id="28_xirs0"]
@@ -983,6 +984,9 @@ transform = Transform3D(-0.056582324, -0.6170808, 0.7848629, 0.9958225, -0.09131
 
 [node name="StaticToiletBrushHolder" parent="StaticJanitor/Assets/StaticIndustrialShelf3" unique_id=230288076 instance=ExtResource("23_wgtn4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31406647, 0.22000045, 0.082084656)
+
+[node name="Flashlight" parent="StaticJanitor/Assets/StaticIndustrialShelf3" unique_id=782332694 instance=ExtResource("25_qugdp")]
+transform = Transform3D(0.68193454, 0, -0.7314132, 0, 1, 0, 0.7314132, 0, 0.68193454, -0.24111253, 1.4200001, 0.088760376)
 
 [node name="JanitorDoor" parent="StaticJanitor/Assets" unique_id=7613722 instance=ExtResource("7_tq8nf")]
 unique_name_in_owner = true

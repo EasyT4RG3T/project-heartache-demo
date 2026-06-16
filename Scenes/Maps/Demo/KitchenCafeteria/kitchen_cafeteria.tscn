@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://dfngop24p0gbc" path="res://Assets/Assets/Lights/Ceiling/CeilingLightRectangle/StaticCeilingLightRectangle.tscn" id="13_6fcup"]
 [ext_resource type="Material" uid="uid://bot5xyens3kuo" path="res://Assets/Sprites/Pictures/CafeteriaMenu.tres" id="13_ep0g3"]
 [ext_resource type="PackedScene" uid="uid://cfvcayctfo6fd" path="res://Assets/Assets/Kitchen/Furniture/Cooker/StaticCookerPot.tscn" id="13_q13u7"]
-[ext_resource type="PackedScene" uid="uid://bxdb216luolyp" path="res://Assets/Assets/Kitchen/Utensils/Knife/MeshKnife.tscn" id="13_r3jby"]
 [ext_resource type="PackedScene" uid="uid://d1v6552l61sq1" path="res://Assets/Assets/Kitchen/Furniture/Cooker/StaticCookerLid.tscn" id="14_aixd1"]
 [ext_resource type="PackedScene" uid="uid://b01wsuwb3x177" path="res://Assets/Assets/Kitchen/Furniture/FryerBasket/StaticFryerBasket.tscn" id="14_x6iov"]
 [ext_resource type="PackedScene" uid="uid://cgax6igwt415n" path="res://Assets/Assets/Kitchen/Utensils/PlasticFork/MeshPlasticFork.tscn" id="14_ynri0"]
@@ -32,11 +31,16 @@
 [ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="16_27m7j"]
 [ext_resource type="PackedScene" uid="uid://c27b3fu4kgr3w" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsDL.tscn" id="16_n8b7t"]
 [ext_resource type="PackedScene" uid="uid://dhbggknk533a" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsDR.tscn" id="17_ayy1n"]
+[ext_resource type="PackedScene" uid="uid://b7xdpcc0h7qvb" path="res://Assets/Assets/Decorations/Wall/WallClock/WallClock.tscn" id="17_q1i67"]
 [ext_resource type="PackedScene" uid="uid://dk78uppevhuhy" path="res://Assets/Assets/Mics/Flashlight/Flashlight.tscn" id="18_cv4tw"]
+[ext_resource type="AudioStream" uid="uid://d328r66myn1wh" path="res://Assets/Audio/Ambient/Chatter/GroupTalking.wav" id="18_kghsf"]
 [ext_resource type="PackedScene" uid="uid://b8j26kpigpoko" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsUL.tscn" id="18_x6iov"]
+[ext_resource type="Material" uid="uid://ctgopv0unrbxt" path="res://Assets/Materials/Light/White/WhiteLight.tres" id="19_2cd0s"]
 [ext_resource type="PackedScene" uid="uid://b8jy14fdlnsuw" path="res://Assets/Assets/Kitchen/Furniture/Fridge/StaticFridgeDoorsUR.tscn" id="19_o0adt"]
 [ext_resource type="PackedScene" uid="uid://c1db6dhtgao0h" path="res://Assets/Assets/Kitchen/Furniture/OvenStack/StaticOvenStack.tscn" id="20_cw25h"]
+[ext_resource type="Texture2D" uid="uid://bijdbbevq0ttv" path="res://Entities/Player/Inventory/FlashlightMask.png" id="20_prpvk"]
 [ext_resource type="PackedScene" uid="uid://ekbvbme4ai47" path="res://Assets/Assets/Kitchen/Furniture/CounterTopSmall/StaticCountertopSmall.tscn" id="21_5aw48"]
+[ext_resource type="Script" uid="uid://cmv4qm8gcm4fc" path="res://Scripts/Nodes/dynamic_spotlight_3d.gd" id="21_upu2a"]
 [ext_resource type="PackedScene" uid="uid://3p6tbkdy0a6c" path="res://Assets/Assets/Kitchen/Furniture/Stove/StaticStove.tscn" id="22_ibxot"]
 [ext_resource type="PackedScene" uid="uid://dxpr00d3xcouv" path="res://Assets/Assets/Kitchen/Furniture/KitchenSink/StaticKitchenSink.tscn" id="23_q13u7"]
 [ext_resource type="PackedScene" uid="uid://bas7d85v60q8r" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/StaticIndustrialShelf.tscn" id="24_aixd1"]
@@ -46,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://edkpx06yxm5f" path="res://Assets/Assets/Kitchen/Utensils/Pan/StaticPan.tscn" id="27_5aw48"]
 [ext_resource type="PackedScene" uid="uid://bvq5vhjcat220" path="res://Assets/Assets/Kitchen/Furniture/UtensilHanger/StaticUtensilHanger.tscn" id="27_d61sy"]
 [ext_resource type="PackedScene" uid="uid://dohrusatqh4qe" path="res://Assets/Assets/Kitchen/Utensils/WoodenSpoon/MeshWoodenSpoon.tscn" id="28_r3jby"]
+[ext_resource type="PackedScene" uid="uid://b5aldrvnrrsvt" path="res://Assets/Assets/Kitchen/Utensils/Knife/DynamicKnife.tscn" id="32_upu2a"]
 [ext_resource type="PackedScene" uid="uid://beb3nd87yuklp" path="res://Assets/Assets/Kitchen/Utensils/Tongs/MeshTongs.tscn" id="33_rmcr3"]
 [ext_resource type="PackedScene" uid="uid://bwvpe4osmv3bd" path="res://Assets/Assets/Decorations/Wall/Menu/MeshMenu.tscn" id="42_j03k8"]
 [ext_resource type="PackedScene" uid="uid://dvwtnd88yehjn" path="res://Assets/Assets/Doors/Staff/StaffDoor.tscn" id="43_kgisq"]
@@ -65,9 +70,12 @@
 [ext_resource type="PackedScene" uid="uid://didi6ndltsbr3" path="res://Assets/Assets/Kitchen/Utensils/FoodTray/StaticFoodTray.tscn" id="57_mtxfq"]
 [ext_resource type="PackedScene" uid="uid://bdqco3l41brvt" path="res://Assets/Assets/Kitchen/Utensils/Ladle/MeshLadle.tscn" id="58_27m7j"]
 [ext_resource type="Script" uid="uid://c6k6l4h73v30" path="res://Scripts/Nodes/cutscene.gd" id="64_cv4tw"]
+[ext_resource type="PackedScene" uid="uid://bxhuwslcyuhcr" path="res://Assets/Assets/Kitchen/Utensils/FoodTray/DynamicFoodTray.tscn" id="69_upu2a"]
+[ext_resource type="PackedScene" uid="uid://kfgrwmt1i0g0" path="res://Assets/Assets/Food/Burger/RigidBurger.tscn" id="70_m32il"]
+[ext_resource type="PackedScene" uid="uid://d4kvwarvn1dgn" path="res://Entities/DummyPlayer/dummy_player.tscn" id="72_1nenm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yfvcr"]
-size = Vector3(4, 3, 6)
+size = Vector3(4, 3, 6.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uxycd"]
 size = Vector3(1.6, 3, 1.6)
@@ -95,20 +103,38 @@ size = Vector3(1, 3, 2)
 
 [sub_resource type="Animation" id="Animation_cv4tw"]
 resource_name = "Look"
+length = 2.0
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Player")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -11.8, 1.7, 6.1, 0.5, 1, -11.8, 1.7, 6.1, 1, 1, -11.8, 1.7, 6.1)
+tracks/0/keys = PackedFloat32Array(0, 1, -11.8, 1.7, 6.1, 0.5, 1, -11.8, 1.7, 6.1, 2, 1, -11.8, 1.7, 6.1)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Player")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.70710677, 0, 0.70710677, 0.5, 1, 0, 0.45787388, 0, 0.88901716, 1, 1, 0, 0.45787388, 0, 0.88901716)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.70710677, 0, 0.70710677, 0.5, 1, 0, 0.48702908, 0, 0.8733857, 2, 1, 0, 0.48702908, 0, 0.8733857)
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [30, 0.5],
+"method": &"_change_fov"
+}, {
+"args": [80, 0.2],
+"method": &"_change_fov"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7a8oq"]
 length = 0.001
@@ -138,53 +164,86 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.53729963, 0, 0.8433914)
 
 [sub_resource type="Animation" id="Animation_gifer"]
 resource_name = "Talk"
-length = 16.0
+length = 3.2
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"0",
+"time": 0.0
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"1",
+"time": 1.0
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"2",
+"time": 1.2
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"3",
+"time": 1.6333333
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"4",
+"time": 1.9333333
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"5",
+"time": 2.3
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"6",
+"time": 2.5
+}, {
+"color": Color(1, 1, 1, 1),
+"name": &"7",
+"time": 2.7
+}]
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Player")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -18.596758, 1.8000001, 2.0720212, 0.23333333, 1, -18.596758, 1.8000001, 2.0720212, 1, 1, -19.074745, 1.2407273, 1.9033372, 4.8, 1, -19.074745, 1.2407273, 1.9033372, 5.2, 1, -19.074745, 1.2407273, 1.9033372, 7, 1, -19.074745, 1.2407273, 1.9033372, 7.3, 1, -19.074745, 1.2407273, 1.9033372, 9.8, 1, -19.074745, 1.2407273, 1.9033372, 10, 1, -19.074745, 1.2407273, 1.9033372, 15.5, 1, -19.074745, 1.2407273, 1.9033372, 16, 1, -18.275002, 1.7, 2.4029999)
+tracks/0/keys = PackedFloat32Array(0, 1, -18.596758, 1.8000001, 2.0720212, 0.23333333, 1, -18.596758, 1.8000001, 2.0720212, 1, 1, -19.074745, 1.2407273, 1.9033372, 1.2, 1, -19.074745, 1.2407273, 1.9033372, 1.6333333, 1, -19.074745, 1.2407273, 1.9033372, 1.9333335, 1, -19.074745, 1.2407273, 1.9033372, 2.2666667, 1, -19.074745, 1.2407273, 1.9033372, 2.7, 1, -19.074745, 1.2407273, 1.9033372, 3.2, 1, -18.275002, 1.7, 2.4029999)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Player")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.6517345, 0, 0.75844723, 0.23333333, 1, 0, 0.6517345, 0, 0.75844723, 1, 1, 0, 0.48067504, 0, 0.87689877, 4.8, 1, 0, 0.48067498, 0, 0.87689877, 5.2, 1, -0.07226179, 0.7348697, 0.065992214, 0.67111075, 7, 1, -0.07226179, 0.7348697, 0.065992214, 0.67111075, 7.3, 1, 0, 0.48067498, 0, 0.87689877, 9.8, 1, 0, 0.48067498, 0, 0.87689877, 10, 1, 0, 0.08410395, 0, 0.9964569, 15.5, 1, 0, 0.08410395, 0, 0.9964569, 16, 1, 0, 0.8688216, 0, -0.49512514)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.6517345, 0, 0.75844723, 0.23333333, 1, 0, 0.6517345, 0, 0.75844723, 1, 1, 0, 0.48067504, 0, 0.87689877, 1.2, 1, 0, 0.48067498, 0, 0.87689877, 1.6333333, 1, -0.07226179, 0.7348697, 0.065992214, 0.67111075, 1.9333335, 1, 0, 0.48067498, 0, 0.87689877, 2.2666667, 1, 0, 0.08410395, 0, 0.9964569, 2.7, 1, 0, 0.08410395, 0, 0.9964569, 3.2, 1, 0, 0.8688216, 0, -0.49512514)
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("%Cutscene2/..")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.26666668, 2, 4, 7, 10, 12, 14, 15.5),
+"times": PackedFloat32Array(0.26666668, 1.0333333, 1.2333333, 1.6666666, 1.9666667, 2.3333333, 2.5333333, 2.7333333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
-"args": ["Yo guys", 2.0],
+"args": ["Yo guys", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{birch}]Someone's late...[/font]", 3.0],
+"args": ["[{birch}]Someone's late...[/font]", 0.0],
 "method": &"_say"
 }, {
-"args": ["Guard didn't let me out until now", 4.0],
+"args": ["Guard didn't let me out until now", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{birch}]He was probably in the kitchen[/font]", 4.0],
+"args": ["[{birch}]He was probably in the kitchen[/font]", 0.0],
 "method": &"_say"
 }, {
-"args": ["Where's Michael?", 3.0],
+"args": ["Where's Michael?", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{alkhemikal}]I don't know man[/font]", 3.0],
+"args": ["[{alkhemikal}]I don't know man[/font]", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{alkhemikal}]Go check his cell[/font]", 2.0],
+"args": ["[{alkhemikal}]Go check his cell[/font]", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{alkhemikal}]He's in 008[/font]", 3.0],
+"args": ["[{alkhemikal}]He's in 008[/font]", 0.0],
 "method": &"_say"
 }]
 }
@@ -193,6 +252,81 @@ tracks/2/keys = {
 _data = {
 &"RESET": SubResource("Animation_2cd0s"),
 &"Talk": SubResource("Animation_gifer")
+}
+
+[sub_resource type="Animation" id="Animation_prpvk"]
+resource_name = "Lights"
+length = 6.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -18.3, 1.7, 2.0680223, 1, 1, -18.3, 1.7, 2.0680223, 5, 1, -18.3, 1.7, 2.0680223, 6, 1, -18.186174, 1.7, 2.0680223)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5551421, 0, 0.8317555, 1, 1, -0.08815476, 0.5520153, 0.058837514, 0.82707065, 5, 1, -0.08815476, 0.5520153, 0.058837514, 0.82707065, 6, 1, 0, 0.9960162, 0, -0.08917245)
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["Hey guys!", 2.0],
+"method": &"_say"
+}, {
+"args": ["Michael is", 4.0],
+"method": &"_say"
+}, {
+"args": ["... gone", 2.0],
+"method": &"_say"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Cutscene3/..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"do_second_talk"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_upu2a"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -18.3, 1.7, 2.3000002)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_upu2a"]
+_data = {
+&"Lights": SubResource("Animation_prpvk"),
+&"RESET": SubResource("Animation_upu2a")
 }
 
 [node name="KitchenCafeteria" type="Node3D" unique_id=1932620180]
@@ -272,19 +406,19 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCafeteria/InvisibleWalls" unique_id=701852049]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6, 1.5, 1.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6, 1.5, 1.4)
 shape = SubResource("BoxShape3D_yfvcr")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticCafeteria/InvisibleWalls" unique_id=1455269508]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6, 1.5, 10.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6, 1.5, 10.855617)
 shape = SubResource("BoxShape3D_yfvcr")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticCafeteria/InvisibleWalls" unique_id=1097210316]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6, 1.5, 10.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6, 1.5, 10.855617)
 shape = SubResource("BoxShape3D_yfvcr")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticCafeteria/InvisibleWalls" unique_id=1339018965]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6, 1.5, 1.6000004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6, 1.5, 1.3500004)
 shape = SubResource("BoxShape3D_yfvcr")
 
 [node name="Lights" type="Node3D" parent="StaticCafeteria" unique_id=1413491911]
@@ -1421,6 +1555,42 @@ metadata/_custom_type_script = "uid://dhhej803ct5gc"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticCafeteria/Friends/InteractableFaze2" unique_id=1661852157]
 shape = SubResource("BoxShape3D_05110")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StaticCafeteria/Friends" unique_id=582830992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6, 1.6, 1.6)
+stream = ExtResource("18_kghsf")
+volume_db = 20.0
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="StaticCafeteria/Friends" unique_id=2046043865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6, 1.6, 1.6)
+stream = ExtResource("18_kghsf")
+volume_db = 20.0
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="StaticCafeteria/Friends" unique_id=354793356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6, 1.6, 10.6)
+stream = ExtResource("18_kghsf")
+volume_db = 20.0
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="StaticCafeteria/Friends" unique_id=1694183074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6, 1.6, 10.6)
+stream = ExtResource("18_kghsf")
+volume_db = 20.0
+unit_size = 5.0
+autoplay = true
+max_distance = 10.0
+bus = &"SFX"
+
 [node name="TempWall" type="StaticBody3D" parent="StaticCafeteria" unique_id=632777512]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1.4, 6.1)
@@ -1443,6 +1613,27 @@ outline_size = 6
 [node name="Flashlight" parent="StaticCafeteria" unique_id=782332694 instance=ExtResource("18_cv4tw")]
 unique_name_in_owner = true
 transform = Transform3D(-0.47876826, 0, 0.87794137, 0, 1, 0, -0.87794137, 0, -0.47876826, -15.972429, 0.84481865, 8.027362)
+
+[node name="MeshFlashlight" parent="StaticCafeteria/Flashlight" index="0" unique_id=959831617]
+surface_material_override/1 = ExtResource("19_2cd0s")
+
+[node name="DynamicSpotLight3D2" type="SpotLight3D" parent="StaticCafeteria/Flashlight" unique_id=1145080706]
+transform = Transform3D(-1, 2.646978e-23, 8.742278e-08, -2.6255331e-09, 0.999549, -0.030032601, -8.738334e-08, -0.030032601, -0.999549, 0, 0.017844565, 0.06711271)
+layers = 3
+light_volumetric_fog_energy = 5.0
+light_projector = ExtResource("20_prpvk")
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 2.0
+shadow_opacity = 0.9
+distance_fade_enabled = true
+distance_fade_begin = 5.0
+distance_fade_shadow = 10.0
+spot_range = 10.0
+spot_angle = 25.0
+spot_angle_attenuation = 1.5
+script = ExtResource("21_upu2a")
+metadata/_custom_type_script = "uid://cmv4qm8gcm4fc"
 
 [node name="StaticKitchen" parent="." unique_id=714011719 instance=ExtResource("4_sl6a2")]
 unique_name_in_owner = true
@@ -1594,14 +1785,14 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25.
 [node name="StaticCuttingBoard" parent="StaticKitchen/Assets/StaticCountertopBig2" unique_id=1824466166 instance=ExtResource("12_n8b7t")]
 transform = Transform3D(0.9961947, 0, 0.08715585, 0, 1, 0, -0.08715585, 0, 0.9961947, -0.4738357, 1, 0.1494255)
 
-[node name="MeshKnife" parent="StaticKitchen/Assets/StaticCountertopBig2" unique_id=792570182 instance=ExtResource("13_r3jby")]
-transform = Transform3D(-0.8906893, 0, -0.4546125, 0, 1, 0, 0.4546125, 0, -0.8906893, -0.06791139, 1.0012078, 0.1295681)
+[node name="DynamicKnife" parent="StaticKitchen/Assets/StaticCountertopBig2" unique_id=1423673502 instance=ExtResource("32_upu2a")]
+transform = Transform3D(-0.9200747, 0, -0.39174303, 0, 1, 0, 0.39174303, 0, -0.9200747, -0.065930605, 0.9999999, 0.11895943)
 
 [node name="StaticCountertopBig4" parent="StaticKitchen/Assets" unique_id=557585033 instance=ExtResource("10_kmqwf")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.4, 0.1, 9.3)
 
-[node name="MeshKnife" parent="StaticKitchen/Assets/StaticCountertopBig4" unique_id=1351991168 instance=ExtResource("13_r3jby")]
-transform = Transform3D(0.78113925, 0, 0.62435687, 0, 1, 0, -0.62435687, 0, 0.78113925, -0.56532574, 1.0016235, -0.033096313)
+[node name="DynamicKnife" parent="StaticKitchen/Assets/StaticCountertopBig4" unique_id=485611914 instance=ExtResource("32_upu2a")]
+transform = Transform3D(0.81258225, 0, 0.5828465, 0, 1, 0, -0.5828465, 0, 0.81258225, -0.528039, 1, -0.06999206)
 
 [node name="StaticFryer" parent="StaticKitchen/Assets" unique_id=1068207671 instance=ExtResource("11_rarvb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.4, 0.1, 2.8999994)
@@ -1858,6 +2049,12 @@ transform = Transform3D(-0.07908546, 0, -0.9968679, 0, 1, 0, 0.9968679, 0, -0.07
 [node name="StaticFoodTray3" parent="StaticKitchen/Assets" unique_id=1786386372 instance=ExtResource("57_mtxfq")]
 transform = Transform3D(0.035562363, 0, -0.9993675, 0, 1, 0, 0.9993675, 0, 0.035562363, -27.622513, 1.5562682, -1.5073873)
 
+[node name="WallClock" parent="StaticKitchen/Assets" unique_id=1455904131 instance=ExtResource("17_q1i67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.999998, 2.4, -1.9000001)
+
+[node name="MeshWallClock" parent="StaticKitchen/Assets/WallClock" index="0" unique_id=229627461]
+gi_mode = 2
+
 [node name="Cutscene1" type="Node3D" parent="." unique_id=1294724281 node_paths=PackedStringArray("animation_player", "animated_player")]
 unique_name_in_owner = true
 script = ExtResource("64_cv4tw")
@@ -1878,7 +2075,7 @@ monitorable = false
 shape = SubResource("BoxShape3D_gifer")
 
 [node name="Player" type="Node3D" parent="Cutscene1" unique_id=926387807]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.8, 1.7, 6.1)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -11.8, 1.7, 6.1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene1" unique_id=353331326]
 libraries/ = SubResource("AnimationLibrary_7a8oq")
@@ -1891,13 +2088,43 @@ animated_player = NodePath("Player")
 exit_modes = Dictionary[String, int]({
 "Talk": 2
 })
+segmented = true
+segmented_track_id = 3
+dialogue_persist = 3.0
 metadata/_custom_type_script = "uid://c6k6l4h73v30"
 
 [node name="Player" type="Node3D" parent="Cutscene2" unique_id=1880974798]
-transform = Transform3D(0.42261815, 0, 0.9063076, 0, 1, 0, -0.9063076, 0, 0.42261815, -19.074745, 1.2407273, 1.9033372)
+transform = Transform3D(0.42261815, 0, 0.9063076, 0, 1, 0, -0.9063076, 0, 0.42261815, -18.275002, 1.7, 2.4029999)
+
+[node name="DummyPlayer" parent="Cutscene2/Player" unique_id=813126692 instance=ExtResource("72_1nenm")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene2" unique_id=743110186]
 libraries/ = SubResource("AnimationLibrary_2cd0s")
+
+[node name="Cutscene3" type="Node3D" parent="." unique_id=1614791154 node_paths=PackedStringArray("animation_player", "animated_player")]
+unique_name_in_owner = true
+script = ExtResource("64_cv4tw")
+animation_player = NodePath("AnimationPlayer")
+animated_player = NodePath("Player")
+exit_modes = Dictionary[String, int]({
+"Lights": 2
+})
+metadata/_custom_type_script = "uid://c6k6l4h73v30"
+
+[node name="Player" type="Node3D" parent="Cutscene3" unique_id=1252304063]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -18.3, 1.7, 2.3000002)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene3" unique_id=68706013]
+libraries/ = SubResource("AnimationLibrary_upu2a")
+
+[node name="DynamicFoodTray" parent="." unique_id=913270454 instance=ExtResource("69_upu2a")]
+unique_name_in_owner = true
+transform = Transform3D(0.064776175, 0, 0.99789983, 0, 1, 0, -0.99789983, 0, 0.064776175, -23.602898, 1.0999995, 5.4659896)
+
+[node name="RigidBurger" parent="DynamicFoodTray" unique_id=2043707068 instance=ExtResource("70_m32il")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.042957783, 0)
+mass = 0.2
 
 [editable path="StaticCafeteria/Assets/SpecialTable/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/SpecialTable/DefaultPrisoner2"]
@@ -1964,6 +2191,8 @@ libraries/ = SubResource("AnimationLibrary_2cd0s")
 [editable path="StaticCafeteria/Assets/StaticCafeteriaTable24/DefaultPrisoner3"]
 [editable path="StaticCafeteria/Friends/Friend1"]
 [editable path="StaticCafeteria/Friends/Friend2"]
+[editable path="StaticCafeteria/Flashlight"]
 [editable path="StaticKitchen/Assets/StaffDoor"]
 [editable path="StaticKitchen/Assets/Guard"]
 [editable path="StaticKitchen/Assets/Guard/Key/MeshNumberPlate"]
+[editable path="StaticKitchen/Assets/WallClock"]

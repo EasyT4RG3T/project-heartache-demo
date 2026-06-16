@@ -41,7 +41,7 @@ var d_crawl_query = MeshInstance3D
 var force_crawl: bool = false
 
 const player_head_position: Vector3 = Vector3(0, 1.6, 0)
-const player_crouch_head_position: Vector3 = Vector3(0, 0.6, 0)
+const player_crouch_head_position: Vector3 = Vector3(0, 0.7, 0)
 const player_crawl_head_position: Vector3 = Vector3(0, 0.3, 0)
 
 var direct_space_state: PhysicsDirectSpaceState3D
@@ -211,7 +211,6 @@ var phys_wanted_distance_min: float = 1.0
 var phys_wanted_distance: float = 0.0:
 	set(value):
 		phys_wanted_distance = clampf(value, phys_wanted_distance_min, phys_wanted_distance_max)
-		print(phys_wanted_distance)
 var phys_object: DynamicRigidBody3D:
 	set(value):
 		phys_object = value
@@ -312,7 +311,10 @@ func _handle_movement_input(event: InputEvent) -> void:
 
 func _handle_action_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
-		pause_menu.open()
+		if inventory.current_slot == inventory.Slots.INVENTORY:
+			inventory.switch_slot(inventory.Slots.NONE)
+		else:
+			pause_menu.open()
 	
 	if inventory_input:
 		inventory.take_input(event)
@@ -471,6 +473,7 @@ func change_movement_mode(mode: MovementMode, instant: bool = false, exit: bool 
 			InputManager.player_character_input = false
 		MovementMode.CUTSCENE:
 			InputManager.player_character_input = false
+			_change_fov_smooth(80)
 			var main_camera_tween: Tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 			main_camera_tween.tween_property(main_camera, "position", Vector3.ZERO, 0.2)
 			bob_time = 0
@@ -570,7 +573,7 @@ func _on_ground_movement(delta: float) -> void:
 		bob_time += distance_delta * bob_speed * ((abs(main_camera.position.x) + 1.0) * 4)
 		if bob_time >= PI and !bob_halftime:
 			if current_footsteps_mod.is_empty():
-				AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
+				AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace), -3)
 			else:
 				match current_footsteps_mod.pick_random():
 					FootstepsResource.Mod.WET:
@@ -578,7 +581,7 @@ func _on_ground_movement(delta: float) -> void:
 					FootstepsResource.Mod.METAL:
 						AudioManager.play_sound("SFX", footsteps_resource.random_metal_footstep(current_footsteps_pace))
 					_:
-						AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
+						AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace), -3)
 			bob_halftime = true
 		if bob_time >= TAU:
 			bob_time = 0
@@ -591,7 +594,7 @@ func _on_ground_movement(delta: float) -> void:
 					FootstepsResource.Mod.METAL:
 						AudioManager.play_sound("SFX", footsteps_resource.random_metal_footstep(current_footsteps_pace))
 					_:
-						AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace))
+						AudioManager.play_sound("SFX", footsteps_resource.random_footstep(current_footsteps_pace), -3)
 			bob_halftime = false
 		var side_bob: float = lerpf(-0.025, 0.025, ((sin(bob_time) + 1) / 2.0))
 		var down_bob: float = lerpf(0, -0.01, sin(bob_time * 2))

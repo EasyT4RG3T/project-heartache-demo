@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bkkrvccm68ub8"]
+
+[ext_resource type="ArrayMesh" uid="uid://s510iloy0j7q" path="res://Assets/Assets/Decorations/Wall/Signs/SmallSquareSign.obj" id="1_tt8o0"]
+
+[node name="MeshSmallSquareSign" type="MeshInstance3D" unique_id=1199058579]
+mesh = ExtResource("1_tt8o0")

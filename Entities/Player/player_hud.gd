@@ -6,8 +6,8 @@ extends Control
 
 
 @export var hud_color_primary: Color = Color.LIGHT_GRAY
-@export var hud_color_secondary: Color = Color.GRAY
-@export var hud_color_accent: Color = Color.GHOST_WHITE
+@export var hud_color_secondary: Color = Color.DIM_GRAY
+@export var hud_color_accent: Color = Color.GRAY
 @export var hud_opacity_active: float = 0.8
 @export var hud_opacity_inactive: float = 0.0
 @export var thought_text_offset: float = 50.0
@@ -158,8 +158,12 @@ func _draw_persistent(center: Vector2) -> void:
 
 
 func _draw_crosshair(center: Vector2) -> void:
-	draw_circle(center, crosshair_radius + 1, hud_color_secondary * Color(1, 1, 1, crosshair_opacity))
-	if !semi_active:
+	
+	if semi_active:
+		draw_circle(center, crosshair_radius + 1, hud_color_primary * Color(1, 1, 1, crosshair_opacity))
+		draw_circle(center, crosshair_radius, hud_color_secondary * Color(1, 1, 1, crosshair_opacity))
+	else:
+		draw_circle(center, crosshair_radius + 1, hud_color_secondary * Color(1, 1, 1, crosshair_opacity))
 		draw_circle(center, crosshair_radius, hud_color_primary * Color(1, 1, 1, crosshair_opacity))
 
 

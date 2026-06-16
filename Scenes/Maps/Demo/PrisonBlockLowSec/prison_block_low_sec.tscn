@@ -104,6 +104,8 @@
 [ext_resource type="PackedScene" uid="uid://03epcc7x4tum" path="res://Assets/Assets/Furniture/Beds/Pillows/Pillow02/MeshPillow02.tscn" id="73_pb06c"]
 [ext_resource type="PackedScene" uid="uid://bqij3n0kldweg" path="res://Assets/Assets/Trash/TrashCans/TrashCan02/StaticTrashCan02.tscn" id="73_u1i4p"]
 [ext_resource type="PackedScene" uid="uid://cl0f15jmdc0ql" path="res://Assets/Assets/Kitchen/Utensils/PlasticCupCrumpled/DynamicPlasticCupCrumpled.tscn" id="75_qvwg5"]
+[ext_resource type="PackedScene" uid="uid://bggbsiu27chh0" path="res://Assets/Assets/Decorations/Wall/Calendar/StaticCalendar.tscn" id="78_bbr8c"]
+[ext_resource type="PackedScene" uid="uid://b7xdpcc0h7qvb" path="res://Assets/Assets/Decorations/Wall/WallClock/WallClock.tscn" id="105_0h50o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ouh7u"]
 size = Vector3(0.5, 0.6, 0.5)
@@ -117,9 +119,6 @@ size = Vector2(0.6, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w41at"]
 size = Vector3(0.3536499, 0.2453125, 0.1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dqbm8"]
-data = PackedVector3Array(2.3999999, 0, -2.6999998, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.6999998, 2.3999999, 0, -2.6999998, 3.3999999, 0, -4, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.6999998, 2.3999999, 0, -2.9336379, 2.3999999, 3, -2.9336379, 2.3999999, 0, -2.6999998, 2.3999999, 3, -2.6999998, 3.3999999, 3, -2.6999998, 2.3999999, 3, -2.6999998, 2.3999999, 3, -2.9336379, 3.3999999, 3, -2.6999998, 3.3999999, 0, -4, 3.242978, 0, -4, 2.3999999, 0, -2.9336379, 3.3999999, 0, -4, 3.242978, 3, -4, 3.242978, 0, -4, 2.3999999, 0, -2.6999998, 3.3999999, 0, -2.6999998, 3.3999999, 0, -4, 2.3999999, 0, -2.6999998, 3.3999999, 3, -2.6999998, 3.3999999, 0, -2.6999998, 3.3999999, 0, -4, 3.3999999, 0, -2.6999998, 3.3999999, 3, -2.6999998, 3.3999999, 3, -4, 2.3999999, 3, -2.9336379, 3.242978, 3, -4, 3.3999999, 0, -4, 3.3999999, 3, -4, 3.242978, 3, -4, 3.3999999, 0, -4, 3.3999999, 3, -2.6999998, 3.3999999, 3, -4, 3.3999999, 3, -4, 3.3999999, 3, -2.6999998, 2.3999999, 3, -2.9336379, 2.3999999, 3, -2.9336379, 2.3999999, 0, -2.9336379, 3.242978, 3, -4, 2.3999999, 0, -2.9336379, 3.242978, 0, -4, 3.242978, 3, -4)
 
 [sub_resource type="Animation" id="Animation_8dy40"]
 resource_name = "Open"
@@ -1529,6 +1528,12 @@ transform = Transform3D(0.9351661, 0.34214005, -0.09167616, 0, 0.25881907, 0.965
 [node name="DynamicPlasticCup" parent="StaticCell01/Assets" unique_id=1654857338 instance=ExtResource("21_4vlnq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2465495, 0.07827611, -0.96227384)
 
+[node name="WallClock" parent="StaticCell01/Assets" unique_id=1455904131 instance=ExtResource("105_0h50o")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.4000001, 2.1, -0.4)
+
+[node name="StaticCalendar" parent="StaticCell01/Assets" unique_id=1494442417 instance=ExtResource("78_bbr8c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5998679, 1.5254463, -1.2521788)
+
 [node name="StaticCell02" parent="." unique_id=1313619584 instance=ExtResource("4_ome15")]
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="StaticCell02" unique_id=1814961352]
@@ -1577,14 +1582,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.37
 
 [node name="Hinge3D" parent="StaticCell02/Assets/CellDoor04" index="0" unique_id=861721976]
 max_positive = 110.0
-
-[node name="InvisibleWalls" type="StaticBody3D" parent="StaticCell02/Assets/CellDoor04/Hinge3D" index="2" unique_id=200358777]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.1, 0, -3.3104799)
-collision_layer = 128
-collision_mask = 0
-
-[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticCell02/Assets/CellDoor04/Hinge3D/InvisibleWalls" unique_id=1759688120]
-shape = SubResource("ConcavePolygonShape3D_dqbm8")
 
 [node name="StaticMetalBed01" parent="StaticCell02/Assets" unique_id=845255196 instance=ExtResource("7_wqn6u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9987884, -2.3841858e-07, -3.7057076)

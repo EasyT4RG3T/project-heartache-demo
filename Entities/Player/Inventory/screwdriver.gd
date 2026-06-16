@@ -16,10 +16,13 @@ var disabled: bool = true:
 			if journal_entry:
 				journal_entry.queue_free()
 		else:
-			journal_entry = GameManager.journal.add("Screwdriver", "[color=red][ ][/color] Screwdriver")
+			journal_entry = GameManager.journal.add("Screwdriver", "Screwdriver")
 var journal_entry: RichTextLabel
 
 var move_tween: Tween
+
+
+var hint: bool = false
 
 
 func _ready() -> void:
@@ -35,15 +38,23 @@ func start_unscrewing(pos: Transform3D, screw: Screw3D) -> void:
 	
 	show()
 	
+	hint = true
+	
 	move_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).set_ease(Tween.EASE_OUT)
 	move_tween.tween_property(self, "transform", pos, 0.2)
 	move_tween.finished.connect(func():
 		collision_shape_3d.disabled = false
+		hint = false
 		screw.start_unscrewing(p))
+
 
 func stop_unscrewing() -> void:
 	if move_tween:
 		move_tween.kill()
+	
+	if hint:
+		hint = false
+		GameManager.player_character.add_thought("[Hold E]")
 	
 	collision_shape_3d.disabled = true
 	

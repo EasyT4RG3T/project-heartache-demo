@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://lxnysi175bf5"]
+
+[ext_resource type="ArrayMesh" uid="uid://bb0dt7prdwjly" path="res://Assets/Assets/Decorations/Wall/WallClock/WallClock.obj" id="1_4wkxv"]
+[ext_resource type="Material" uid="uid://vof3gbtx4waq" path="res://Assets/Materials/Wood/SmoothWood/DarkSmoothWood.tres" id="2_k63xg"]
+[ext_resource type="Material" uid="uid://dnj7w2ve3c2j4" path="res://Assets/Assets/Decorations/Wall/WallClock/WallClock.tres" id="3_jvdvf"]
+
+[node name="MeshWallClock" type="MeshInstance3D" unique_id=229627461]
+mesh = ExtResource("1_4wkxv")
+surface_material_override/0 = ExtResource("2_k63xg")
+surface_material_override/1 = ExtResource("3_jvdvf")

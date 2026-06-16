@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ckpuiw51v3677"]
 
 [ext_resource type="ArrayMesh" uid="uid://d4di4cyd3f858" path="res://Assets/Assets/Keys/Key01/Key01.obj" id="1_nbka5"]
-[ext_resource type="Material" uid="uid://cep5eh0cpkk61" path="res://Assets/Materials/Metal/Metal/Metal.tres" id="2_fhour"]
+[ext_resource type="Material" uid="uid://cgj6faqb2ll3w" path="res://Assets/Materials/Metal/Gold/Gold.tres" id="2_bmi8g"]
 
 [node name="MeshKey01" type="MeshInstance3D" unique_id=590914060]
 mesh = ExtResource("1_nbka5")
-surface_material_override/0 = ExtResource("2_fhour")
+surface_material_override/0 = ExtResource("2_bmi8g")

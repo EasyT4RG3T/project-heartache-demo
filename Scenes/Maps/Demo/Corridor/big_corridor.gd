@@ -13,6 +13,7 @@ var peak_happened: bool = false:
 		peak_happened = value
 		if value:
 			%Peak/Area3D.queue_free()
+var window_hint_given: bool = false
 
 
 func _ready() -> void:
@@ -40,6 +41,9 @@ func _ready() -> void:
 		player.add_thought("I don't need to go to the kitchen"))
 	
 	%StaffDoor3/Hinge3D.failed_to_open.connect(func():
+		if !window_hint_given:
+			window_hint_given = true
+			Game.story_description = "I think i can jump through the cafeteria window"
 		get_parent().kitchen_door = true)
 	
 	%StaffDoor3/Area3D.body_entered.connect(func(_p):
@@ -47,6 +51,7 @@ func _ready() -> void:
 			blockade_happened = true)
 	
 	%Blockade/Area3D.body_entered.connect(func(player: PlayerCharacter):
+		%Blockade/Area3D.queue_free()
 		player.add_thought("I could use the vents")
 		Game.story_description += "\nI could use the vent in my cell")
 	
@@ -73,8 +78,6 @@ func _ready() -> void:
 		
 		var imbake: LightmapGIData = load("uid://yo68ciruy22h")
 		$DynamicLightmapGI.light_data = imbake
-		
-		%SquareVent/Hinge3D.open_progress = -20
 		
 		%TempWall2.queue_free()
 		

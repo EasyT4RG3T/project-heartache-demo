@@ -3,12 +3,34 @@ class_name Cutscene
 extends Node3D
 
 
+signal animation_finished(StringName)
+
 @export var animation_player: AnimationPlayer
 @export var animated_player: Node3D
 @export var exit_modes: Dictionary[String, PlayerCharacter.MovementMode]
 
+@export var segmented: bool = false
+@export var segmented_track_id: int = 0
+@export var dialogue_persist: float = 5.0
+var current_segment: int = 0
+var dialogue_to_clear: Dictionary[RichTextLabel, SceneTreeTimer] = {}
+
+
+var current_anim_name: String
+
 const UI_SKIP = preload("uid://b2fn5yvvmjf2m")
+const UI_CONTINUE = preload("uid://dkerypx6l6yh1")
+
 var skip_progress_bar: TextureProgressBar
+var continue_ui: TextureRect
+var wants_continue_ui: bool = false:
+	set(value):
+		wants_continue_ui = value
+		if !continue_ui: return
+		if value and !holding:
+			DialogueManager.continue_ui.show()
+		else:
+			DialogueManager.continue_ui.hide()
 
 var rigid_bodies: Array[DynamicRigidBody3D] = []
 
@@ -16,13 +38,17 @@ var skip_dialogue: bool = false
 
 var holding: bool = false:
 	set(value):
+		await get_tree().process_frame
 		holding = value
-		
-		while holding == true and skip_progress_bar:
+		wants_continue_ui = wants_continue_ui
+		while holding == true:
 			hold_timer -= get_process_delta_time()
-			skip_progress_bar.value = 1.0 - hold_timer
+			if hold_timer < 0.8:
+				GameManager.progress_ui.show()
+				GameManager.progress_ui.value = 1.0 - hold_timer
 			await get_tree().process_frame
 		if holding == false:
+			GameManager.progress_ui.hide()
 			hold_timer = 1.0
 			if skip_progress_bar:
 				skip_progress_bar.value = 0.0
@@ -31,18 +57,24 @@ var hold_timer: float = 1.0:
 		hold_timer = value
 		if value <= 0.0:
 			holding = false
-			if animation_player.is_playing():
+			dialogue_to_clear.clear()
+			DialogueManager.clear()
+			if segmented:
+				animation_player.animation_finished.connect(_finish_animation, CONNECT_ONE_SHOT)
+				animation_player.play_section(current_anim_name, animation_player.current_animation_position)
+				await get_tree().process_frame
+				animation_player.advance(animation_player.current_animation_length - animation_player.current_animation_position - 0.01)
+				await get_tree().process_frame
+				GameManager.player_character.head.global_position = animated_player.global_position
+				GameManager.player_character.head.global_rotation = animated_player.global_rotation
+			elif animation_player.is_playing():
 				skip_dialogue = true
-				DialogueManager.clear()
-				animation_player.advance(
-					animation_player.current_animation_length - animation_player.current_animation_position
-					- 0.01
-					)
+				animation_player.advance(animation_player.current_animation_length - animation_player.current_animation_position - 0.01)
 var holding_key: InputEvent
 
 
 func take_input(event: InputEvent) -> void:
-	if event is not InputEventMouse:
+	if event.is_action("escape") or event.is_action("spacebar") or event.is_action("enter"):
 		if holding_key and !event.is_match(holding_key, false): return
 		if event.is_pressed():
 			if holding: return
@@ -51,12 +83,34 @@ func take_input(event: InputEvent) -> void:
 		if event.is_released():
 			holding_key = null
 			holding = false
+			if segmented and hold_timer > 0.8:
+				if animation_player.is_playing(): return
+				
+				wants_continue_ui = false
+				
+				for dialogue in dialogue_to_clear:
+					DialogueManager.remove(dialogue)
+					dialogue_to_clear.erase(dialogue)
+				
+				if animation_player.get_animation(current_anim_name).has_marker(str(current_segment + 1)):
+					animation_player.play_section_with_markers(current_anim_name, str(current_segment), str(current_segment + 1))
+					current_segment += 1
+				else:
+					animation_player.animation_finished.connect(_finish_animation, CONNECT_ONE_SHOT)
+					animation_player.play_section_with_markers(current_anim_name, str(current_segment))
+				
+				while animation_player.is_playing():
+					GameManager.player_character.head.global_position = animated_player.global_position
+					GameManager.player_character.head.global_rotation = animated_player.global_rotation
+					await get_tree().process_frame
+				wants_continue_ui = true
 
 
 func play_animation(anim_name: String) -> void:
 	while InputManager.menu:
 		await get_tree().process_frame
 	
+	current_anim_name = anim_name
 	var animation: Animation = animation_player.get_animation(anim_name)
 	
 	skip_dialogue = false
@@ -85,8 +139,12 @@ func play_animation(anim_name: String) -> void:
 			Animation.TrackType.TYPE_SCALE_3D:
 				animation.scale_track_insert_key(track, 0.0, node.scale)
 	
-	animation_player.animation_finished.connect(_finish_animation, CONNECT_ONE_SHOT)
-	animation_player.play(anim_name)
+	if segmented and animation.has_marker("0"):
+		animation_player.play_section_with_markers(anim_name, "0", "1")
+		current_segment = 1
+	else:
+		animation_player.animation_finished.connect(_finish_animation, CONNECT_ONE_SHOT)
+		animation_player.play(anim_name)
 	
 	if animated_player:
 		GameManager.player_character.change_movement_mode(PlayerCharacter.MovementMode.CUTSCENE)
@@ -107,13 +165,27 @@ func play_animation(anim_name: String) -> void:
 		skip_progress_bar.offset_bottom = -10
 		skip_progress_bar.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS
 		
+		continue_ui = TextureRect.new()
+		add_child(continue_ui)
+		continue_ui.texture = UI_CONTINUE
+		continue_ui.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+		continue_ui.offset_left = -74
+		continue_ui.offset_top = -74
+		continue_ui.offset_right = -10
+		continue_ui.offset_bottom = -10
+		continue_ui.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS
+		continue_ui.hide()
+		
 		while animation_player.is_playing():
 			GameManager.player_character.head.global_position = animated_player.global_position
 			GameManager.player_character.head.global_rotation = animated_player.global_rotation
 			await get_tree().process_frame
+		wants_continue_ui = true
 
 
 func _finish_animation(anim_name: StringName) -> void:
+	holding = false
+	
 	for rigid: DynamicRigidBody3D in rigid_bodies:
 		rigid.linear_velocity = Vector3.ZERO
 		rigid.angular_velocity = Vector3.ZERO
@@ -132,10 +204,25 @@ func _finish_animation(anim_name: StringName) -> void:
 		InputManager.menu = null
 		
 		skip_progress_bar.queue_free()
+		continue_ui.queue_free()
+	
+	if !dialogue_to_clear.is_empty():
+		get_tree().create_timer(dialogue_persist).timeout.connect(func():
+			for dialogue in dialogue_to_clear:
+				DialogueManager.remove(dialogue)
+				dialogue_to_clear.erase(dialogue), CONNECT_ONE_SHOT)
 	
 	SaverLoader.can_save -= 1
+	
+	animation_finished.emit(anim_name)
 
 
-func _say(text: String) -> void:
+func _change_fov(fov: int = 80, duration: float = 0.5) -> void:
+	GameManager.player_character._change_fov_smooth(fov, duration)
+
+
+func _say(text: String, duration: float = 5.0) -> void:
 	if skip_dialogue: return
-	DialogueManager.say(text)
+	var dialogue: Dictionary = DialogueManager.say(text, duration)
+	if duration <= 0:
+		dialogue_to_clear.assign(dialogue)

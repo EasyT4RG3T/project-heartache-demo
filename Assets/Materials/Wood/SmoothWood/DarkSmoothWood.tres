@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://duwx7dnr7wkoi" path="res://Assets/Materials/Wood/SmoothWood/SmoothWood_orm.png" id="3_qgscu"]
 
 [resource]
+albedo_color = Color(0.43, 0.211775, 0.0559, 1)
 albedo_texture = ExtResource("1_qjyf6")
 orm_texture = ExtResource("3_qgscu")
 normal_enabled = true

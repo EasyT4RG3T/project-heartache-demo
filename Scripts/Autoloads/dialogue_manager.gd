@@ -2,6 +2,9 @@ extends Node
 
 
 @onready var vbox: VBoxContainer = %VBoxContainer
+@onready var continue_ui: TextureRect = %ContinueUI
+var continue_ui_modulate: bool = false
+
 const ALKHEMIKAL = "uid://ec2tuv0fro0y"
 const BELANIDI_SERIF_REGULAR = "uid://etpshq7cu6we"
 const BIRCH_LEAF = "uid://blrxf3yqmo8ap"
@@ -17,12 +20,29 @@ var default_font: String = RUNESCAPE_UF
 var default_font_size: int = 40
 
 
-var dialogues: Array[RichTextLabel] = []
+var dialogues: Dictionary[RichTextLabel, SceneTreeTimer] = {}
 
 
-func say(text: String, duration: float = 10) -> void:
+func _ready() -> void:
+	continue_ui.hide()
+
+
+func _physics_process(delta: float) -> void:
+	if continue_ui_modulate:
+		continue_ui.modulate.a -= delta * 0.5
+		if continue_ui.modulate.a < 0.6:
+			continue_ui_modulate = false
+	else:
+		continue_ui.modulate.a += delta * 0.5
+		if continue_ui.modulate.a >= 1.0:
+			continue_ui_modulate = true
+
+
+func say(text: String, duration: float = 10) -> Dictionary:
 	if dialogues.size() >= 3:
-		dialogues.pop_front().queue_free()
+		var key: RichTextLabel = dialogues.keys()[dialogues.keys().size() - 1]
+		if key:
+			key.queue_free()
 	
 	var label: RichTextLabel = RichTextLabel.new()
 	vbox.add_child(label)
@@ -54,17 +74,30 @@ func say(text: String, duration: float = 10) -> void:
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	
-	dialogues.append(label)
+	var dialogue: Dictionary = {}
+	if duration <= 0:
+		dialogue[label] = null
+		dialogues.assign(dialogue)
+		return dialogue
 	
-	await get_tree().create_timer(duration).timeout
+	dialogue[label] = get_tree().create_timer(duration)
+	dialogue[label].timeout.connect(func():
+		if label:
+			dialogues.erase(label)
+			label.queue_free(), CONNECT_ONE_SHOT)
+	
+	dialogues.assign(dialogue)
+	return dialogue
+
+
+func remove(label: RichTextLabel) -> void:
+	dialogues.erase(label)
 	if label:
-		dialogues.erase(label)
 		label.queue_free()
-	
-	return
 
 
 func clear() -> void:
+	continue_ui.hide()
 	for label in dialogues:
 		dialogues.erase(label)
 		if label:
@@ -73,3 +106,5 @@ func clear() -> void:
 
 func apply_settings() -> void:
 	default_font_size = SaverLoader.settings.subtitles
+	vbox.scale.x = SaverLoader.settings.hud_size
+	vbox.scale.y = SaverLoader.settings.hud_size
