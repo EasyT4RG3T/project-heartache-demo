@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://ec2tuv0fro0y" path="res://Assets/Fonts/Alkhemikal.ttf" id="3_38cwy"]
 [ext_resource type="FontFile" uid="uid://b4j2uqpcfscx" path="res://Assets/Fonts/runescape_uf.ttf" id="4_8m75e"]
 [ext_resource type="Texture2D" uid="uid://b25ju32lahf7h" path="res://Scenes/Menus/SettingsMenu/Brightness_Show.png" id="5_8m75e"]
+[ext_resource type="FontFile" uid="uid://deuuqjpwmbb7o" path="res://Assets/Fonts/Comicoro.ttf" id="5_sp7pw"]
 [ext_resource type="Texture2D" uid="uid://d06ewycgwlt5r" path="res://Scenes/Menus/SettingsMenu/Brightness_Hide.png" id="6_6ww6g"]
 [ext_resource type="Environment" uid="uid://b5hbq6dr1gixx" path="res://Assets/Environments/default_environment.tres" id="7_6ww6g"]
 
@@ -55,6 +56,7 @@ theme = ExtResource("1_cwg5t")
 script = ExtResource("1_2h0vi")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2143486061]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,6 +67,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Intro" type="Control" parent="." unique_id=1808803421]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -156,6 +159,110 @@ Jumpscares"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Hud" type="Control" parent="." unique_id=128996891]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hud" unique_id=717653301]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.5
+offset_top = -42.0
+offset_right = 124.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_cwg5t")
+theme_override_constants/separation = 20
+
+[node name="PersistentCrosshairCheckButton" type="CheckButton" parent="Hud/VBoxContainer" unique_id=620960673]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Permanent Center Dot"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hud/VBoxContainer" unique_id=1234660906]
+layout_mode = 2
+alignment = 1
+
+[node name="HUDSize" type="HBoxContainer" parent="Hud/VBoxContainer/HBoxContainer" unique_id=1229740634]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="HUDSizeLabel" type="Label" parent="Hud/VBoxContainer/HBoxContainer/HUDSize" unique_id=1545486144]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HUD Size: "
+
+[node name="HUDSizeLineEdit" type="LineEdit" parent="Hud/VBoxContainer/HBoxContainer/HUDSize" unique_id=641241085]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "1.0"
+max_length = 5
+emoji_menu_enabled = false
+
+[node name="SubtitlesSize" type="HBoxContainer" parent="Hud/VBoxContainer/HBoxContainer" unique_id=1481797941]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="SubtitlesSizeLabel" type="Label" parent="Hud/VBoxContainer/HBoxContainer/SubtitlesSize" unique_id=341527363]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Subtitles Size: "
+
+[node name="SubtitlesSizeLineEdit" type="LineEdit" parent="Hud/VBoxContainer/HBoxContainer/SubtitlesSize" unique_id=1659028166]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "40"
+max_length = 5
+emoji_menu_enabled = false
+
+[node name="HudButton" type="Button" parent="Hud/VBoxContainer" unique_id=428174327]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Done"
+
+[node name="ExampleText" type="RichTextLabel" parent="Hud/VBoxContainer" unique_id=1472039371]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=40]Example Text[/font_size]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThoughtLabel" type="RichTextLabel" parent="Hud" unique_id=68897119]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("5_sp7pw")
+bbcode_enabled = true
+text = "Example Interaction Text"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
 [node name="BrightnessTest" type="Node3D" parent="." unique_id=1985434603]
 unique_name_in_owner = true
 top_level = true
@@ -199,7 +306,7 @@ spot_angle_attenuation = 4.0
 
 [node name="DynamicSpotLight3D2" type="SpotLight3D" parent="BrightnessTest" unique_id=1183844763]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30000007, 0, 1.5)
-light_energy = 0.02
+light_energy = 0.016
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294443008
@@ -219,6 +326,7 @@ environment = ExtResource("7_6ww6g")
 
 [node name="BrightnessControl" type="Control" parent="BrightnessTest" unique_id=1008570542]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -242,7 +350,8 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="BrightnessTest/BrightnessControl/VBoxContainer" unique_id=1000133520]
 layout_mode = 2
-text = "Brightness"
+text = "Brightness
+Left Image Shouldn't Be Visible"
 horizontal_alignment = 1
 
 [node name="BrightnessHSlider" type="HSlider" parent="BrightnessTest/BrightnessControl/VBoxContainer" unique_id=760764778]
@@ -252,7 +361,7 @@ layout_mode = 2
 max_value = 5.0
 step = 0.01
 
-[node name="Button" type="Button" parent="BrightnessTest/BrightnessControl/VBoxContainer" unique_id=1108787486]
+[node name="BrightnessButton" type="Button" parent="BrightnessTest/BrightnessControl/VBoxContainer" unique_id=1108787486]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

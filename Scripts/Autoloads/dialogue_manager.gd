@@ -49,16 +49,18 @@ func say(text: String, duration: float = 10) -> Dictionary:
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.bbcode_enabled = true
 	text = text.format({
-		"alkhemikal": "font="+ALKHEMIKAL,
-		"belanidi": "font="+BELANIDI_SERIF_REGULAR,
-		"birch": "font="+BIRCH_LEAF,
-		"bonefish": "font="+BONEFISH,
-		"comicoro": "font="+COMICORO,
-		"homicide": "font="+DOUBLE_HOMICIDE,
-		"grape": "font="+GRAPE_SODA,
-		"notepen": "font="+NOTEPEN,
-		"peanut": "font="+PEANUT_MONEY,
-		"rune": "font="+RUNESCAPE_UF,
+		"alkhemikal": "font="+ALKHEMIKAL+"][font_size="+str(default_font_size),
+		"belanidi": "font="+BELANIDI_SERIF_REGULAR+"][font_size="+str(default_font_size * 0.65),
+		"birch": "font="+BIRCH_LEAF+"][font_size="+str(default_font_size),
+		"bonefish": "font="+BONEFISH+"][font_size="+str(default_font_size),
+		"comicoro": "font="+COMICORO+"][font_size="+str(default_font_size * 1.2),
+		"homicide": "font="+DOUBLE_HOMICIDE+"][font_size="+str(default_font_size),
+		"grape": "font="+GRAPE_SODA+"][font_size="+str(default_font_size),
+		"notepen": "font="+NOTEPEN+"][font_size="+str(default_font_size),
+		"peanut": "font="+PEANUT_MONEY+"][font_size="+str(default_font_size * 1.2),
+		"rune": "font="+RUNESCAPE_UF+"][font_size="+str(default_font_size),
+		
+		"endfont": "/font_size][/font",
 		
 		"red": "color=red",
 		"green": "color=green",
@@ -106,5 +108,5 @@ func clear() -> void:
 
 func apply_settings() -> void:
 	default_font_size = SaverLoader.settings.subtitles
-	vbox.scale.x = SaverLoader.settings.hud_size
-	vbox.scale.y = SaverLoader.settings.hud_size
+	var size = 64 * SaverLoader.settings.hud_size
+	continue_ui.custom_minimum_size = Vector2(size, size)

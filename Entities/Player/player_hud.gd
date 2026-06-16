@@ -158,7 +158,6 @@ func _draw_persistent(center: Vector2) -> void:
 
 
 func _draw_crosshair(center: Vector2) -> void:
-	
 	if semi_active:
 		draw_circle(center, crosshair_radius + 1, hud_color_primary * Color(1, 1, 1, crosshair_opacity))
 		draw_circle(center, crosshair_radius, hud_color_secondary * Color(1, 1, 1, crosshair_opacity))

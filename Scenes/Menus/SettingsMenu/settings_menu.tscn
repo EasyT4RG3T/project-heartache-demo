@@ -66,12 +66,11 @@ grow_vertical = 2
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=2034174625]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 2
+current_tab = 0
 use_hidden_tabs_for_min_size = true
 
 [node name="Game" type="Control" parent="VBoxContainer/TabContainer" unique_id=1903188767]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -293,6 +292,7 @@ text = "WIP"
 
 [node name="Graphics" type="Control" parent="VBoxContainer/TabContainer" unique_id=453174472]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -404,7 +404,7 @@ spot_angle_attenuation = 4.0
 
 [node name="DynamicSpotLight3D2" type="SpotLight3D" parent="VBoxContainer/TabContainer/Graphics/HBoxContainer/BrightnessTest" unique_id=643250436]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30000007, 0, 1.5)
-light_energy = 0.02
+light_energy = 0.016
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 light_cull_mask = 4294443008
