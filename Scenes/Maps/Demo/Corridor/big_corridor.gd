@@ -27,7 +27,7 @@ func _ready() -> void:
 	var area = %DefaultPrisoner/Area3D
 	area.body_entered.connect(func(player: PlayerCharacter):
 		if !sitting_man_happened:
-			DialogueManager.say("[{belanidi}][font_size=30]You took your sweet time[/font_size][/font]", 3)
+			DialogueManager.say("[{belanidi}]You took your sweet time[{endfont}]", 3)
 			sitting_man_happened = true
 		while area.has_overlapping_bodies():
 			%DefaultPrisoner/HeadLookIK.global_position = lerp(%DefaultPrisoner/HeadLookIK.global_position, player.main_camera.global_position, get_physics_process_delta_time() * 10)
@@ -56,7 +56,7 @@ func _ready() -> void:
 		Game.story_description += "\nI could use the vent in my cell")
 	
 	%Peak/Area3D.body_entered.connect(func(_p):
-		%Peak/AnimationPlayer.play()
+		%Peak/AnimationPlayer.play("Door")
 		%Peak/StaffDoor2/Hinge3D.open = true
 		%Peak/StaffDoor2/Hinge3D.force_close()
 		peak_happened = true)

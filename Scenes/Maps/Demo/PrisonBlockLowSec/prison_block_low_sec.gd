@@ -11,7 +11,7 @@ var cell_opened: bool = false:
 	set(value):
 		cell_opened = value
 		if value:
-			await get_tree().process_frame
+			await GameManager.GameFullyLoaded
 			if !get_parent().second_talk:
 				%Guard/AnimationPlayer.play("Stand")
 				while !get_parent().second_talk:
@@ -53,7 +53,7 @@ func _ready() -> void:
 func _open_cell() -> void:
 	$StaticCell01/Assets/CellDoor01/Hinge3D.force_open()
 	$StaticCell01/Assets/CellDoor01/Hinge3D/InteractableStaticBody3D.interactable.active = false
-	DialogueManager.say("[{alkhemikal}]You're late for breakfast[/font]", 3)
+	DialogueManager.say("[{alkhemikal}]You're late for breakfast[{endfont}]", 3)
 	AudioManager.play_uid_sound_at("SFX", "uid://dfd6nswnuicaj", $StaticCell01/Assets/CellDoor01.global_position)
 
 

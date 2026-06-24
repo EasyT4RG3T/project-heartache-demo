@@ -13,6 +13,7 @@ var STRIPPED_ENVIRONMENT = preload("uid://d2m0td6ed2a2t")
 var corner_ui_modulate: bool = false
 
 const main_menu_uid: String = "uid://evmnqmy0k477"
+const credits_uid: String = "uid://dn21gsavpkrx2"
 const debug_uid: String = "uid://be8nto6fraipm"
 
 var debug_overlay: DebugOverlay
@@ -71,7 +72,6 @@ func load_main_menu() -> void:
 	SaverLoader.can_save = 1
 	player_character = null
 	InputManager.player_character = null
-	AudioManager.play_ambient("uid://c0fnk0pnoocus")
 	
 	Game.clear()
 	Game.running = false
@@ -86,7 +86,28 @@ func load_main_menu() -> void:
 	var menu = load(main_menu_uid)
 	menu = menu.instantiate()
 	Game.add_child(menu)
+	AudioManager.play_ambient("uid://c0fnk0pnoocus")
 	SaverLoader.hide_loading_screen()
+
+
+func load_credits() -> void:
+	SaverLoader.can_save = 1
+	player_character = null
+	InputManager.player_character = null
+	
+	Game.clear()
+	Game.running = false
+	AudioManager.clear()
+	DialogueManager.clear()
+	
+	await get_tree().process_frame
+	
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	
+	var credits = load(credits_uid)
+	credits = credits.instantiate()
+	AudioManager.play_ambient("uid://c0fnk0pnoocus")
+	Game.add_child(credits)
 
 
 func set_debug_overlay(value: int) -> void:

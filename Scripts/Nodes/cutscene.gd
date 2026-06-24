@@ -59,6 +59,7 @@ var hold_timer: float = 1.0:
 			holding = false
 			dialogue_to_clear.clear()
 			DialogueManager.clear()
+			skip_dialogue = true
 			if segmented:
 				animation_player.animation_finished.connect(_finish_animation, CONNECT_ONE_SHOT)
 				animation_player.play_section(current_anim_name, animation_player.current_animation_position)
@@ -68,7 +69,6 @@ var hold_timer: float = 1.0:
 				GameManager.player_character.head.global_position = animated_player.global_position
 				GameManager.player_character.head.global_rotation = animated_player.global_rotation
 			elif animation_player.is_playing():
-				skip_dialogue = true
 				animation_player.advance(animation_player.current_animation_length - animation_player.current_animation_position - 0.01)
 var holding_key: InputEvent
 
@@ -205,6 +205,8 @@ func _finish_animation(anim_name: StringName) -> void:
 		
 		skip_progress_bar.queue_free()
 		continue_ui.queue_free()
+	
+	DialogueManager.continue_ui.hide()
 	
 	if !dialogue_to_clear.is_empty():
 		get_tree().create_timer(dialogue_persist).timeout.connect(func():

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dn21gsavpkrx2"]
+
+[ext_resource type="Theme" uid="uid://b0uh1pcsxlvvv" path="res://Assets/Themes/MainTheme/main_theme.tres" id="1_6vvtk"]
+[ext_resource type="Script" uid="uid://c6qnn0n623dmb" path="res://Scenes/Menus/Credits/credits.gd" id="1_jedge"]
+
+[node name="Credits" type="Control" unique_id=1265459187]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jedge")
+
+[node name="BlackScreen" type="ColorRect" parent="." unique_id=905876874]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ThanksText" type="RichTextLabel" parent="BlackScreen" unique_id=365887137]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6vvtk")
+theme_override_constants/line_separation = 10
+bbcode_enabled = true
+text = "[font_size=40]Thank You For Playing The Demo[/font_size]
+
+This is over 2 years of learning everything through trial and error
+put into this one small demo
+
+Full game will be more story and puzzle focused
+
+Demo is here so i can show everyone what i've been doing all this time
+and hopefully show that this project can be scaled to make a full game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsText" type="RichTextLabel" parent="BlackScreen" unique_id=115335727]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6vvtk")
+theme_override_constants/line_separation = 10
+bbcode_enabled = true
+text = "[font_size=40]Special Thanks to Playtesters:[/font_size]
+
+[font_size=35]Pookie
+Vania
+Alex
+Yamace[/font_size]
+
+[font_size=20]without you this demo would've been a confusing mess[/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1

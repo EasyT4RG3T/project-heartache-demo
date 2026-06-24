@@ -7,6 +7,7 @@
 [ext_resource type="LightmapGIData" uid="uid://ckbq71xgcdy3d" path="res://Scenes/Menus/MainMenu/main_menu.lmbake" id="5_7cp3c"]
 [ext_resource type="Script" uid="uid://cgdsvug1kpr63" path="res://Scripts/Nodes/static_omnilight_3d.gd" id="5_rbcii"]
 [ext_resource type="PackedScene" uid="uid://dpjtjtvpmu0oj" path="res://Assets/Assets/Furniture/Shelfs/Standing/IndustrialShelf/MeshIndustrialShelf.tscn" id="5_yobja"]
+[ext_resource type="FontFile" uid="uid://xoru8jjgd8sd" path="res://Assets/Fonts/Notepen.ttf" id="5_yyg8x"]
 [ext_resource type="Script" uid="uid://cmv4qm8gcm4fc" path="res://Scripts/Nodes/dynamic_spotlight_3d.gd" id="6_kw60b"]
 [ext_resource type="Script" uid="uid://bepwmrgf0c61o" path="res://Scripts/Nodes/dynamic_lightmap_gi.gd" id="6_rur1y"]
 [ext_resource type="PackedScene" uid="uid://06ske2hi4t8b" path="res://Assets/Assets/Lights/Ceiling/CeilingLightBulb/MeshCeilingLightBulb.tscn" id="7_rbcii"]
@@ -215,6 +216,26 @@ theme_override_fonts/font = ExtResource("3_gphap")
 theme_override_font_sizes/font_size = 100
 text = "Stuck"
 
+[node name="Label" type="Label" parent="Start/VBoxContainer2/HBoxContainer/Label2" unique_id=46418920]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.08726646
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("4_gphap")
+theme_override_colors/font_color = Color(0.63, 0.63, 0.63, 1)
+theme_override_fonts/font = ExtResource("5_yyg8x")
+theme_override_font_sizes/font_size = 50
+text = "DEMO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="Start/VBoxContainer2" unique_id=854181270]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -259,15 +280,37 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Version: "
 
-[node name="CreditLabel" type="Label" parent="." unique_id=1572135206]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=918940932]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -26.0
-offset_right = 78.0
+offset_top = -40.0
+offset_right = 195.0
 grow_vertical = 0
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2116233988]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="LinkButtonYoutube" type="LinkButton" parent="VBoxContainer/HBoxContainer" unique_id=1556435993]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Youtube"
+uri = "https://www.youtube.com/@EasyT4RG3T"
+
+[node name="LinkButtonTwitter" type="LinkButton" parent="VBoxContainer/HBoxContainer" unique_id=2133056122]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Twitter"
+uri = "https://x.com/EasyT4RG3T"
+
+[node name="CreditLabel" type="Label" parent="VBoxContainer" unique_id=1572135206]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Made by: EasyT4RG3T"
 
 [node name="ConsoleLabel" type="Label" parent="." unique_id=1335573385]
@@ -283,8 +326,12 @@ offset_top = -26.0
 offset_right = 97.5
 grow_horizontal = 2
 grow_vertical = 0
-text = "[~] debug console :)"
+text = "[~] developer console :)"
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="ConsoleLabel" unique_id=1695685929]
+process_callback = 0
+one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=368641447]
 unique_name_in_owner = true

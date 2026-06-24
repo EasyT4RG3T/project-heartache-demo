@@ -138,7 +138,8 @@ func _direction_check(player: PlayerCharacter) -> void:
 	elif !open_negative:
 		direction = 1
 	else:
-		direction = static_direction.dot(player.main_camera.global_basis.z)
+		direction = global_basis.z.dot(player.main_camera.global_basis.z)
+		#direction = static_direction.dot(player.main_camera.global_basis.z)
 
 
 func _can_unlock(player: PlayerCharacter) -> bool:

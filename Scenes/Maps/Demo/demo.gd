@@ -57,12 +57,22 @@ func _ready() -> void:
 			while %BlackScreen.color.a > 0:
 				%BlackScreen.color.a -= 0.005
 				await get_tree().process_frame
+			GameManager.player_character.add_thought("Hold [Space] to skip")
 		else:
 			%BlackScreen.hide())
 
 
 func refresh_hint_timer() -> void:
 	$HintTimer.start(60)
+
+
+func credits() -> void:
+	%BlackScreen.show()
+	%BlackScreen.color.a = 0.0
+	while %BlackScreen.color.a < 1.0:
+		%BlackScreen.color.a += 0.01
+		await get_tree().process_frame
+	GameManager.load_credits()
 
 
 func save() -> Dictionary:

@@ -81,6 +81,7 @@ operation = 2
 size = Vector3(100, 100, 100)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="FloorStaticBody3D" unique_id=1097401015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038859367, -9.536743e-07, -0.0021409988)
 mesh = SubResource("ArrayMesh_igepr")
 
 [node name="Vault" type="Node3D" parent="." unique_id=760102218]

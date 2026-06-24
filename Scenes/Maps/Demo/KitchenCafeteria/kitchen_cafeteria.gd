@@ -137,7 +137,10 @@ func _ready() -> void:
 		%SpecialTable/StaticBench2.show())
 	
 	%DynamicFoodTray.was_picked_up.connect(func():
-		GameManager.player_character.add_thought("[MMB] rotate objects"))
+		GameManager.player_character.add_thought("[MMB] rotate and zoom objects"))
+	
+	%RigidBurger/InteractableStaticBody3D.interacted.connect(func(player: PlayerCharacter):
+		player.add_thought("I should pick up the tray"))
 	
 	%RigidBurger.collided.connect(func():
 		if burger_fell: return

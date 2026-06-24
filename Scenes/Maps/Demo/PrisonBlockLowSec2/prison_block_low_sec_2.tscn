@@ -562,6 +562,30 @@ tracks/39/path = NodePath("RightHandIK")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = PackedFloat32Array(0, 1, 4.3711385e-08, 4.8428785e-08, 0.99999994, -2.279727e-15)
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("MeshInstance3D:position")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.05125942, 0.0048103333, -0.3294265)]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("MeshInstance3D2:position")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.051260367, -0.07283831, -0.32770407)]
+}
 
 [sub_resource type="Animation" id="Animation_7ynuy"]
 resource_name = "Scare"
@@ -761,7 +785,7 @@ tracks/27/enabled = true
 tracks/27/path = NodePath("metarig/Skeleton3D:spine")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
-tracks/27/keys = PackedFloat32Array(0, 1, 0, -0.3669901, -0.672532, 0.2, 1, 0, -0.3669901, -0.672532, 0.3, 1, 0, -0.3669901, -0.672532)
+tracks/27/keys = PackedFloat32Array(0, 1, -0.04, -0.367, -0.673)
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
@@ -898,6 +922,30 @@ tracks/40/path = NodePath("RightLegIK")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = PackedFloat32Array(0, 1, 0.8660254, 0, 0, 0.49999997)
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("MeshInstance3D:position")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.1920353, -0.008124828, 0.5052216), Vector3(0.3000845, -0.013792038, -0.6448039), Vector3(0.11305766, -0.0064878464, -0.51657045), Vector3(-0.021393918, 0.0008158684, -0.33792847)]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("MeshInstance3D2:position")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.1920344, -0.08577347, 0.50694406), Vector3(0.3086213, -0.09144068, -0.6499443), Vector3(0.11732559, -0.08413696, -0.5201896), Vector3(-0.021394864, -0.07683277, -0.34002626)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_en7er"]
 _data = {
@@ -1477,7 +1525,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="SkinnyMonster/metarig" index="0" unique_id=1225787861]
-bones/0/position = Vector3(0, -0.3669901, -0.672532)
+bones/0/position = Vector3(-0.04, -0.36699998, -0.673)
 bones/0/scale = Vector3(1, 1, 0.99999976)
 bones/1/position = Vector3(-0.47126937, 0.58644384, -0.125523)
 bones/1/scale = Vector3(1, 0.99999994, 1.0000001)
@@ -1510,13 +1558,23 @@ libraries/ = SubResource("AnimationLibrary_en7er")
 [node name="StaticOmniLight3D" type="OmniLight3D" parent="SkinnyMonster" unique_id=1516447130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08058596, 0)
 layers = 3
-light_energy = 0.2
+light_energy = 0.1
 distance_fade_enabled = true
 distance_fade_begin = 5.0
 distance_fade_shadow = 10.0
 omni_range = 0.5
 script = ExtResource("15_xho1q")
 metadata/_custom_type_script = "uid://cgdsvug1kpr63"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SkinnyMonster" unique_id=1592844969]
+transform = Transform3D(-3.6260804e-08, -1.0000001, -1.1920929e-07, 1, 1.5893253e-08, -2.9802326e-08, 0, -1.1920929e-07, 1.0000001, -0.05125942, 0.0048103333, -0.3294265)
+mesh = SubResource("QuadMesh_y825v")
+surface_material_override/0 = ExtResource("21_gu0ly")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SkinnyMonster" unique_id=522333260]
+transform = Transform3D(-2.881023e-08, -1, -8.940697e-08, 1.0000001, -1.3909066e-08, -2.9802333e-08, 0, -8.940697e-08, 1.0000001, -0.051260367, -0.07283831, -0.32770407)
+mesh = SubResource("QuadMesh_y825v")
+surface_material_override/0 = ExtResource("21_gu0ly")
 
 [editable path="StaticCorridor_2/Assets/MeshNumberPlate"]
 [editable path="StaticCorridor_2/Assets/MeshNumberPlate2"]

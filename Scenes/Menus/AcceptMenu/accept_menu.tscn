@@ -20,6 +20,8 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [node name="AcceptMenu" type="Control" unique_id=1740015095 groups=["Menu"]]
+process_mode = 3
+z_index = 300
 texture_filter = 3
 layout_mode = 3
 anchors_preset = 15

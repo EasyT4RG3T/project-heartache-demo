@@ -41,8 +41,7 @@ func _physics_process(delta: float) -> void:
 func say(text: String, duration: float = 10) -> Dictionary:
 	if dialogues.size() >= 3:
 		var key: RichTextLabel = dialogues.keys()[dialogues.keys().size() - 1]
-		if key:
-			key.queue_free()
+		remove(key)
 	
 	var label: RichTextLabel = RichTextLabel.new()
 	vbox.add_child(label)
@@ -93,7 +92,8 @@ func say(text: String, duration: float = 10) -> Dictionary:
 
 
 func remove(label: RichTextLabel) -> void:
-	dialogues.erase(label)
+	if dialogues.has(label):
+		dialogues.erase(label)
 	if label:
 		label.queue_free()
 

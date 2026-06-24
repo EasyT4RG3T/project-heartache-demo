@@ -43,6 +43,8 @@ var autosave_slot: int = 0:
 		settings.last_autosave = value
 		save_settings()
 
+var queue_quit: bool = false
+
 
 var thread_load_progress: Array = []
 var progress_message: String = "":
@@ -176,6 +178,9 @@ func _ready() -> void:
 	load_graphics_settings(0)
 	
 	clear_temp()
+	
+	await get_tree().process_frame
+	InputManager.process_mode = Node.PROCESS_MODE_ALWAYS
 
 
 func _exit_tree() -> void:
@@ -485,7 +490,7 @@ func _load_version_alert(game_data: Dictionary, slot: String) -> void:
 	accept_menu.message = "Loading a save from a different game version/nAre you sure you want to continue?"
 	accept_menu.accept_text = "Yes, load anyway"
 	accept_menu.cancel_text = "No, abort"
-	get_tree().root.add_child(accept_menu)
+	previous_menu.add_child(accept_menu)
 	accept_menu.accepted.connect(func():
 		accept_menu.queue_free()
 		GameManager.load_save(game_data)
@@ -625,6 +630,9 @@ func _notification(what: int) -> void:
 			get_tree().quit.call_deferred()
 			return
 		if can_save > 0:
+			if queue_quit:
+				get_tree().quit.call_deferred()
+			queue_quit = true
 			get_tree().paused = true
 			var prev_menu: Node = InputManager.menu
 			var previous_mouse_mode = DisplayServer.mouse_get_mode()
@@ -635,15 +643,11 @@ func _notification(what: int) -> void:
 			accept_menu.message = "Cannot save at this moment/nQuit without saving?"
 			accept_menu.accept_text = "Yes"
 			accept_menu.cancel_text = "No"
-			if prev_menu:
-				prev_menu.add_child(accept_menu)
-			else:
-				add_child(accept_menu)
-			accept_menu.z_as_relative = false
-			accept_menu.z_index = 251
+			get_tree().root.add_child(accept_menu)
 			accept_menu.accepted.connect(func():
 				get_tree().quit.call_deferred())
 			accept_menu.cancelled.connect(func():
+				queue_quit = false
 				accept_menu.queue_free()
 				InputManager.menu = prev_menu
 				DisplayServer.mouse_set_mode(previous_mouse_mode)

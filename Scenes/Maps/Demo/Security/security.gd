@@ -37,7 +37,7 @@ func _light_blink(time: float) -> void:
 	if $StaticJanitor/Lights/DynamicSpotLight3D.visible:
 		$StaticJanitor/Lights/DynamicSpotLight3D.hide()
 		_light_blink(randf_range(0.1, 0.2))
-		AudioManager.play_uid_sound_at("SFX", sparks.pick_random(), $StaticJanitor/Lights/DynamicSpotLight3D.global_position, 0, 1, 1)
+		AudioManager.play_uid_sound_at("SFX", sparks.pick_random(), $StaticJanitor/Lights/DynamicSpotLight3D.global_position, 20, 1, 1.5)
 	else:
 		$StaticJanitor/Lights/DynamicSpotLight3D.show()
 		_light_blink(randf_range(0.1, 5))

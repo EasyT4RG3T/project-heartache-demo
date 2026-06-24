@@ -11,7 +11,7 @@ var blink: float = 0.0
 func take_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		_go_next()
-	elif event.is_action("escape") or event.is_action("spacebar") or event.is_action("enter") and event.is_pressed():
+	elif event.is_action_pressed("escape") or event.is_action_pressed("spacebar") or event.is_action_pressed("enter"):
 		_go_next()
 
 
@@ -27,7 +27,7 @@ func _ready() -> void:
 	%Timer.timeout.connect(func():
 		_go_next())
 	
-	%Timer.start(5.0)
+	%Timer.start(3.0)
 
 
 func _physics_process(delta: float) -> void:

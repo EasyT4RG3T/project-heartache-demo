@@ -28,6 +28,8 @@ func take_input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
+	z_index = 300
+	
 	if !editable:
 		line_edit.hide()
 		label.text = message
@@ -38,6 +40,7 @@ func _ready() -> void:
 	
 	accept.text = accept_text
 	accept.pressed.connect(func():
+		print("test")
 		accepted.emit())
 	
 	if cancel_button:

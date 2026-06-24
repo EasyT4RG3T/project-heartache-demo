@@ -117,13 +117,10 @@ func _jumpscare() -> void:
 	
 	AudioManager.play_uid_sound("SFX", "uid://b8jorf3nmlhbi", -12.0)
 	
-	await get_tree().create_timer(1).timeout
-	_end_demo()
-
-
-func _end_demo() -> void:
-	Console.menu_hint = true
-	GameManager.load_main_menu()
+	await get_tree().create_timer(1.0).timeout
+	SaverLoader.show_loading_screen()
+	SaverLoader.progress_message = ""
+	get_parent().credits()
 
 
 func save() -> Dictionary:

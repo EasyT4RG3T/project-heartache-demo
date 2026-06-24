@@ -47,6 +47,10 @@ func _ready() -> void:
 	if Console.menu_hint:
 		%ConsoleLabel.show()
 		Console.menu_hint = false
+		%ConsoleLabel/Timer.timeout.connect(func():
+			%ConsoleLabel.modulate = Color(randf_range(0,1),randf_range(0,1),randf_range(0,1), 1.0)
+			%ConsoleLabel/Timer.start(0.5))
+		%ConsoleLabel/Timer.start(0.5)
 	else:
 		%ConsoleLabel.hide()
 	

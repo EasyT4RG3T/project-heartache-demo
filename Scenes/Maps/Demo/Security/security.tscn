@@ -1344,7 +1344,7 @@ transform = Transform3D(-0.8585733, 0.021249613, -0.5122505, -0.021249628, -0.99
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.8299999, -1)
 
 [node name="LeftLegIK" type="Marker3D" parent="StaticJanitor/Assets/SkinnyMonster" unique_id=687312280]
-transform = Transform3D(0.8995629, -0.24081293, 0.36441272, 0.24081296, -0.4226184, -0.87372935, 0.36441293, 0.8737296, -0.32218072, 0.1003916, 0.07540267, 0)
+transform = Transform3D(0.8995628, -0.24081293, 0.36441272, 0.24081293, -0.4226184, -0.87372935, 0.36441287, 0.8737296, -0.32218072, 0.1003916, 0.07540267, 0)
 
 [node name="LeftLegIK2" type="Marker3D" parent="StaticJanitor/Assets/SkinnyMonster" unique_id=1233223771]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1003916, 1.0754026, 1)

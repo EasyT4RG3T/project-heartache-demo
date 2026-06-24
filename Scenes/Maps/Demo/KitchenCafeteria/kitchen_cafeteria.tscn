@@ -225,25 +225,25 @@ tracks/2/keys = {
 "args": ["Yo guys", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{birch}]Someone's late...[/font]", 0.0],
+"args": ["[{birch}]Someone's late...[{endfont}]", 0.0],
 "method": &"_say"
 }, {
 "args": ["Guard didn't let me out until now", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{birch}]He was probably in the kitchen[/font]", 0.0],
+"args": ["[{birch}]He was probably in the kitchen[{endfont}]", 0.0],
 "method": &"_say"
 }, {
 "args": ["Where's Michael?", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{alkhemikal}]I don't know man[/font]", 0.0],
+"args": ["[{alkhemikal}]I don't know man[{endfont}]", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{alkhemikal}]Go check his cell[/font]", 0.0],
+"args": ["[{alkhemikal}]Go check his cell[{endfont}]", 0.0],
 "method": &"_say"
 }, {
-"args": ["[{alkhemikal}]He's in 008[/font]", 0.0],
+"args": ["[{alkhemikal}]He's in 008[{endfont}]", 0.0],
 "method": &"_say"
 }]
 }
@@ -328,6 +328,10 @@ _data = {
 &"Lights": SubResource("Animation_prpvk"),
 &"RESET": SubResource("Animation_upu2a")
 }
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kghsf"]
+height = 0.08
+radius = 0.085
 
 [node name="KitchenCafeteria" type="Node3D" unique_id=1932620180]
 script = ExtResource("1_5tvj5")
@@ -2094,7 +2098,7 @@ dialogue_persist = 3.0
 metadata/_custom_type_script = "uid://c6k6l4h73v30"
 
 [node name="Player" type="Node3D" parent="Cutscene2" unique_id=1880974798]
-transform = Transform3D(0.42261815, 0, 0.9063076, 0, 1, 0, -0.9063076, 0, 0.42261815, -18.275002, 1.7, 2.4029999)
+transform = Transform3D(0.42261815, 0, 0.9063076, 0, 1, 0, -0.9063076, 0, 0.42261815, -18.596758, 1.8000001, 2.0720212)
 
 [node name="DummyPlayer" parent="Cutscene2/Player" unique_id=813126692 instance=ExtResource("72_1nenm")]
 
@@ -2120,11 +2124,22 @@ libraries/ = SubResource("AnimationLibrary_upu2a")
 [node name="DynamicFoodTray" parent="." unique_id=913270454 instance=ExtResource("69_upu2a")]
 unique_name_in_owner = true
 transform = Transform3D(0.064776175, 0, 0.99789983, 0, 1, 0, -0.99789983, 0, 0.064776175, -23.602898, 1.0999995, 5.4659896)
+mass = 0.02
 
 [node name="RigidBurger" parent="DynamicFoodTray" unique_id=2043707068 instance=ExtResource("70_m32il")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.042957783, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.052265048, 0)
 mass = 0.2
+
+[node name="InteractableStaticBody3D" type="StaticBody3D" parent="DynamicFoodTray/RigidBurger" unique_id=372445012]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("15_l2jke")
+metadata/_custom_type_script = "uid://dhhej803ct5gc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DynamicFoodTray/RigidBurger/InteractableStaticBody3D" unique_id=1009867004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0077730417, 0)
+shape = SubResource("CylinderShape3D_kghsf")
 
 [editable path="StaticCafeteria/Assets/SpecialTable/DefaultPrisoner"]
 [editable path="StaticCafeteria/Assets/SpecialTable/DefaultPrisoner2"]
